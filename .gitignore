@@ -1,0 +1,9 @@
+# Raw vTools exports contain personal data (names, emails, phone numbers) —
+# never commit these. Re-export them locally following README.md.
+Student Branch and Member Count.csv
+Student Branch Chapters and Affinity Group Member Count.csv
+Volunteer List by OU.csv
+IEEE-Events-*.csv
+
+# Local tooling
+.claude/
