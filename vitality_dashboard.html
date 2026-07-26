@@ -108,13 +108,56 @@
   .chip-tag { color: var(--text-muted); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.03em; }
 
   footer { color: var(--text-muted); font-size: 0.75rem; margin-top: 24px; line-height: 1.6; }
+
+  .byline { margin: 0 0 14px; display: flex; gap: 8px; flex-wrap: wrap; }
+  .byline a {
+    display: inline-flex; align-items: center; gap: 6px;
+    color: var(--text-secondary); font-size: 0.8rem; text-decoration: none;
+    border: 1px solid var(--border); border-radius: 999px; padding: 4px 12px;
+  }
+  .byline a:hover { color: var(--text-primary); border-color: var(--text-secondary); }
+
+  .resources { margin: 0 0 24px; }
+  .resources summary {
+    cursor: pointer; font-weight: 600; font-size: 0.9rem; padding: 10px 14px;
+    background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px;
+  }
+  .resources[open] summary { border-radius: 10px 10px 0 0; }
+  .resources-body {
+    border: 1px solid var(--border); border-top: none; border-radius: 0 0 10px 10px;
+    padding: 14px 16px; background: var(--surface-1); font-size: 0.85rem; color: var(--text-secondary);
+  }
+  .resources-body h3 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.03em; color: var(--text-muted); margin: 14px 0 6px; }
+  .resources-body h3:first-child { margin-top: 0; }
+  .resources-body ul { margin: 0 0 4px; padding-left: 20px; }
+  .resources-body li { margin: 4px 0; }
+  .resources-body a { color: inherit; }
 </style>
 </head>
 <body>
 <div class="viz-root">
   <div class="container">
+    <p class="byline"><a href="https://www.linkedin.com/in/cristobalarroyo/" target="_blank" rel="noopener">By Cristóbal Arroyo</a> <a href="https://github.com/Crola1702/st_ou_vitality" target="_blank" rel="noopener">See on GitHub</a></p>
     <h1>IEEE Student OU Vitality Dashboard</h1>
     <p class="subtitle">Generated from local vTools exports. Events source: IEEE-Events-2026-07-24.csv.</p>
+
+    <details class="resources">
+      <summary>Requirements &amp; resources for students</summary>
+      <div class="resources-body">
+        <h3>Vitality rules</h3>
+        <ul>
+          <li><strong>Rama Estudiantil (Student Branch):</strong> &ge;12 miembros, &ge;4 eventos, Chair y Counselor</li>
+          <li><strong>Capítulo Estudiantil (Chapter):</strong> &ge;6 miembros, &ge;2 eventos técnicos, Chair y Advisor</li>
+          <li><strong>Grupo de Afinidad (Affinity Group):</strong> &ge;6 miembros, &ge;2 eventos, Chair y Advisor</li>
+        </ul>
+        <h3>How to meet them</h3>
+        <ul>
+          <li><a href="https://kb.ieee.org/vtools/blog/kb/creating-an-event/" target="_blank" rel="noopener">Cómo reportar eventos</a></li>
+          <li><a href="https://kb.ieee.org/vtools/blog/kb/adding-an-officer-to-an-organizational-unit/" target="_blank" rel="noopener">Cómo reportar officers (junta directiva)</a></li>
+          <li><a href="https://docs.google.com/presentation/d/1fWFIQsnbMlWU6ntJnggUviMP9IQuYSa6_9Kpz6CVN6E/edit?usp=drive_link" target="_blank" rel="noopener">Cómo atraer miembros</a></li>
+        </ul>
+      </div>
+    </details>
 
     <div class="tiles">
       <div class="tile">
