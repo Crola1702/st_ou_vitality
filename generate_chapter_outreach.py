@@ -23,6 +23,7 @@ import csv
 
 from generate_vitality_report import (
     BASE_DIR,
+    CRITERIA,
     VOLUNTEER_FILE,
     counselor_role,
     evaluate,
@@ -57,6 +58,20 @@ def load_contacts() -> dict[str, list[dict]]:
 def format_contacts(contacts: list[dict], positions: list[str]) -> str:
     picked = [c for c in contacts if c["position"] in positions]
     return "; ".join(f"{c['name']} <{c['email']}>" for c in picked)
+
+
+def missing_requirements(ou, result) -> str:
+    criteria = CRITERIA[ou.ou_type]
+    bits = []
+    if not result["members_met"]:
+        bits.append(f"Miembros: {ou.member_count}/{criteria['min_members']} requeridos")
+    if not result["events_met"]:
+        bits.append(f"Eventos técnicos reportados: {ou.events_technical}/{criteria['min_events']} requeridos")
+    if not result["chair_met"]:
+        bits.append("Chair no reportado en vTools")
+    if not result["counselor_met"]:
+        bits.append(f"{result['role2']} no reportado en vTools")
+    return "; ".join(bits)
 
 
 def main() -> None:
@@ -101,6 +116,7 @@ def main() -> None:
                 "Members": f"{ou.member_count}/{6} {'OK' if result['members_met'] else 'MISSING'}",
                 "Events (Technical)": f"{ou.events_technical}/{2} {'OK' if result['events_met'] else 'MISSING'}",
                 "Officers Status": result["officers_status"],
+                "Missing Requirements": missing_requirements(ou, result),
                 "Chapter Officer Contacts": chapter_officer_str,
                 "Parent Student Branch": branch.name if branch else "",
                 "Parent STB SPO ID": branch.spoid if branch else "",
