@@ -17,6 +17,9 @@
  *      right before sending anything for real.
  *   7. Set DRY_RUN = false and run again to actually send.
  *
+ * Every email is CC'd to the SAC team (SAC_TEAM_CC below) — update that
+ * constant if the team roster changes.
+ *
  * Re-running is safe: rows that already have a value in "Sent At" are
  * skipped, and rows with no contactable recipients are skipped too (check
  * "Recipient Count" == 0 in the sheet — those chapters need manual outreach,
@@ -33,6 +36,7 @@ var RESPONSE_DEADLINE_TEXT = 'TODO: set this, e.g. "26 de agosto de 2026"';
 var GUIDE_DRIVE_FILE_ID = ''; // optional — leave blank to send without an attachment
 var SHEET_NAME = 'Outreach';
 var SENDER_NAME = 'SAC – Conexiones IEEE Sección Colombia';
+var SAC_TEAM_CC = 'Daniel Gomez Pinzon <danielgomezpinzon@ieee.org>, sac@ieee.org.co, cristobal.arroyo@ieee.org';
 
 function sendOutreachEmails() {
   var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(SHEET_NAME);
@@ -70,10 +74,11 @@ function sendOutreachEmails() {
     var htmlBody = buildEmailBody(society);
 
     if (DRY_RUN) {
-      Logger.log('[DRY RUN] To: ' + recipients + '\nSubject: ' + subject);
+      Logger.log('[DRY RUN] To: ' + recipients + '\nCc: ' + SAC_TEAM_CC + '\nSubject: ' + subject);
     } else {
       GmailApp.sendEmail(recipients, subject, stripHtml(htmlBody), {
         htmlBody: htmlBody,
+        cc: SAC_TEAM_CC,
         attachments: attachments,
         name: SENDER_NAME,
       });
