@@ -28,6 +28,16 @@ excluding cancelled events. Events that are scheduled/hosted but not yet
 reported are tallied separately and shown as an informational "+N
 unreported" note — they don't count until reported.
 
+Officer titles are normalized before matching (vTools sometimes prefixes
+them, e.g. "Affinity Group Chair" or "SIGHT Advisor", instead of using the
+plain role name — see `normalize_position()`), so those still count as
+Chair/Advisor/etc.
+
+The dashboard also has a **Quick Wins** section: units that meet the
+Members and Officers requirements and are missing *only* Events, sorted by
+how few more events they need — the fastest path to full compliance for
+each of them.
+
 The raw exports contain personal data (officer names, emails, phone
 numbers) and are **git-ignored** — only the generated, aggregated
 `vitality_report.csv` and `vitality_dashboard.html` are committed and
@@ -138,3 +148,26 @@ The script is idempotent (it stamps a "Sent At" column so re-runs don't
 double-send) and skips chapters with zero contactable officers — those
 need manual follow-up. See the comment block at the top of the `.gs` file
 for full setup details and Gmail sending-quota notes.
+
+## Officer succession & term limits
+
+`officer_terms/generate_officer_terms.py` flags elected officer positions
+(Chair, Vice Chair, Secretary, Treasurer, Webmaster — Counselor/Advisor are
+appointed, not elected, so they're excluded) that need attention:
+
+```sh
+python3 officer_terms/generate_officer_terms.py
+```
+
+This writes `officer_terms/officer_terms.csv` — one row per (OU, officer)
+pair that's either:
+
+- **due for succession**: `Position End` is within 90 days (`SUCCESSION_ALERT_DAYS`
+  in the script), so an election should be organized before the seat goes
+  vacant, or
+- **past the term limit**: the officer has held the position 2+ years
+  (`TERM_LIMIT_YEARS`) since `Position Start`, regardless of what
+  `Position End` says.
+
+Sorted most-urgent first. **This file contains personal data and is
+git-ignored — never commit it.**

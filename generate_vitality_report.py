@@ -68,6 +68,23 @@ def counselor_role(ou_type: str) -> str:
     return "Counselor" if ou_type == "Student Branch" else "Advisor"
 
 
+STANDARD_POSITIONS = {"Chair", "Vice Chair", "Secretary", "Treasurer", "Webmaster", "Advisor", "Counselor"}
+POSITION_PREFIXES = ("Affinity Group ", "SIGHT ")
+
+
+def normalize_position(position: str) -> str:
+    """vTools sometimes prefixes officer titles for Affinity Groups/SIGHT
+    (e.g. "Affinity Group Chair", "SIGHT Vice-Chair") instead of using the
+    plain role name — fold those back to the standard title so they match
+    Chair/Advisor/etc. checks elsewhere."""
+    candidate = position.replace("Vice-Chair", "Vice Chair")
+    for prefix in POSITION_PREFIXES:
+        if candidate.startswith(prefix):
+            candidate = candidate[len(prefix):]
+            break
+    return candidate if candidate in STANDARD_POSITIONS else position
+
+
 def find_events_file() -> Path:
     matches = [p for p in BASE_DIR.glob("*Events*.csv")]
     if not matches:
@@ -176,7 +193,7 @@ def load_officers(units: dict[str, OU]) -> None:
             ou = units.get(spoid)
             if ou is None:
                 continue
-            ou.officers.add(row["OU Position"].strip())
+            ou.officers.add(normalize_position(row["OU Position"].strip()))
 
 
 def parse_event_date(value: str) -> datetime | None:
@@ -488,6 +505,44 @@ def build_dashboard(units: list[OU], path: Path, events_path: Path) -> None:
         render_section(ou_type, by_type[ou_type]) for ou_type in ["Student Branch", "Student Branch Chapter", "Affinity Group"]
     )
 
+    def render_quick_wins(all_units: list[OU]) -> str:
+        candidates = []
+        for ou in all_units:
+            result = evaluate(ou)
+            if result["overall"]:
+                continue
+            if result["members_met"] and result["officers_met"] and not result["events_met"]:
+                needed = CRITERIA[ou.ou_type]["min_events"] - result["event_count"]
+                candidates.append((needed, ou, result))
+        if not candidates:
+            return ""
+        candidates.sort(key=lambda c: (c[0], c[1].name))
+
+        rows_html = "".join(
+            f"""<tr class="ou-row" data-name="{html.escape(ou.name.lower())}" data-spoid="{html.escape(ou.spoid.lower())}" data-university="{html.escape(ou.university.lower())}" data-society="{html.escape(ou.society.lower())}" data-members="{ou.member_count}">
+              <td class="name-cell">{html.escape(ou.name)}</td>
+              <td>{html.escape(ou.ou_type)}</td>
+              <td class="mono">{html.escape(ou.spoid)}</td>
+              <td>{stat_span(f"{result['event_count']}/{CRITERIA[ou.ou_type]['min_events']}", STATUS_WARNING)}</td>
+              <td>{stat_span(f"{needed} more", STATUS_SERIOUS)}</td>
+            </tr>"""
+            for needed, ou, result in candidates
+        )
+
+        return f"""
+        <section class="ou-section quick-wins">
+          <h2>Quick Wins <span class="req-note">(only missing Events — {len(candidates)} unit{'s' if len(candidates) != 1 else ''} one push away from full vitality)</span></h2>
+          <div class="table-wrap">
+          <table id="table-quick-wins">
+            <thead><tr><th>Unit Name</th><th>Type</th><th>SPO ID</th><th>Events</th><th>Events Needed</th></tr></thead>
+            <tbody>{rows_html}</tbody>
+          </table>
+          </div>
+        </section>
+        """
+
+    quick_wins_html = render_quick_wins(units)
+
     page = f"""<!doctype html>
 <html lang="en">
 <head>
@@ -568,6 +623,8 @@ def build_dashboard(units: list[OU], path: Path, events_path: Path) -> None:
   .ou-section {{ margin-bottom: 32px; }}
   .ou-section h2 {{ font-size: 1.1rem; margin: 0 0 4px; }}
   .req-note {{ font-weight: 400; font-size: 0.8rem; color: var(--text-secondary); }}
+  .quick-wins {{ border: 1px solid {STATUS_SERIOUS}; border-radius: 10px; padding: 14px 16px 4px; background: var(--surface-1); }}
+  .quick-wins .table-wrap {{ border: none; }}
 
   .table-wrap {{ overflow-x: auto; border: 1px solid var(--border); border-radius: 10px; }}
   table {{ border-collapse: collapse; width: 100%; background: var(--surface-1); font-size: 0.88rem; }}
@@ -671,6 +728,8 @@ def build_dashboard(units: list[OU], path: Path, events_path: Path) -> None:
     <div class="member-summary">
       {member_summary_html}
     </div>
+
+    {quick_wins_html}
 
     {sections_html}
 
