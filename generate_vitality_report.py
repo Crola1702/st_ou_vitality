@@ -5,7 +5,9 @@ Reads the vTools exports already present in this directory:
   - Student Branch and Member Count.csv
   - Student Branch Chapters and Affinity Group Member Count.csv
   - Volunteer List by OU.csv
-  - IEEE-Events-*.csv (most recently dated file matching this pattern)
+  - Any *Events*.csv file (most recently modified match; the vTools events
+    export from https://events.vtools.ieee.org, with columns including
+    Event Date, Event Category, SPOID, Reported On, Cancelled)
 
 Assumptions:
   - OU type is derived from the SPOID prefix: STB = Student Branch,
@@ -13,11 +15,16 @@ Assumptions:
   - The second required officer role is "Counselor" for Student Branches and
     "Advisor" for Chapters/Affinity Groups (the source data never mixes the
     two within a type).
-  - An event counts toward every OU listed in its "Hosts" field (plus its
-    primary SPOID), not just the primary reporting OU, since branches,
-    chapters and affinity groups frequently co-host the same event.
-  - Every event row present in the events CSV is counted as-is; there is no
-    reporting-period filter applied.
+  - An event counts toward every OU listed in its comma-separated "SPOID"
+    field, not just the first one, since branches, chapters and affinity
+    groups frequently co-host the same event.
+  - Only events dated on or after MIN_EVENT_YEAR count toward requirements;
+    earlier rows are dropped entirely (not even shown as unreported).
+  - Cancelled events (Cancelled == "1") are dropped entirely.
+  - Of the remaining events, only *reported* ones (every "Reported On" entry
+    on the row is a real timestamp, not "N/A") count toward the Events
+    requirement. Unreported events are tallied separately and surfaced as
+    an informational detail, not counted toward vitality.
   - Requirements met is out of 3: Members, Events, and Officers (Officers
     only counts as met if BOTH Chair and Counselor/Advisor are present;
     having just one of the two is tracked separately as "Partial").
@@ -30,7 +37,7 @@ from __future__ import annotations
 
 import csv
 import html
-import re
+from datetime import datetime
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent
@@ -38,6 +45,8 @@ BASE_DIR = Path(__file__).resolve().parent
 BRANCH_MEMBER_FILE = BASE_DIR / "Student Branch and Member Count.csv"
 CHAPTER_MEMBER_FILE = BASE_DIR / "Student Branch Chapters and Affinity Group Member Count.csv"
 VOLUNTEER_FILE = BASE_DIR / "Volunteer List by OU.csv"
+
+MIN_EVENT_YEAR = 2026
 
 OPTIONAL_OFFICERS = ["Vice Chair", "Secretary", "Treasurer", "Webmaster"]
 
@@ -59,10 +68,10 @@ def counselor_role(ou_type: str) -> str:
 
 
 def find_events_file() -> Path:
-    matches = sorted(BASE_DIR.glob("IEEE-Events-*.csv"))
+    matches = [p for p in BASE_DIR.glob("*Events*.csv")]
     if not matches:
-        raise FileNotFoundError("No IEEE-Events-*.csv file found in project directory")
-    return matches[-1]
+        raise FileNotFoundError("No *Events*.csv file found in project directory")
+    return max(matches, key=lambda p: p.stat().st_mtime)
 
 
 def ou_type_for_spoid(spoid: str) -> str | None:
@@ -104,6 +113,8 @@ class OU:
         "member_count",
         "events_general",
         "events_technical",
+        "events_unreported_general",
+        "events_unreported_technical",
         "officers",
     )
 
@@ -116,6 +127,8 @@ class OU:
         self.member_count = member_count
         self.events_general = 0
         self.events_technical = 0
+        self.events_unreported_general = 0
+        self.events_unreported_technical = 0
         self.officers: set[str] = set()
 
 
@@ -165,34 +178,43 @@ def load_officers(units: dict[str, OU]) -> None:
             ou.officers.add(row["OU Position"].strip())
 
 
-HOST_ID_RE = re.compile(r"^(STB|SBC|SBA)[A-Z0-9]+")
-
-
-def parse_host_ids(hosts_field: str, primary_spoid: str) -> set[str]:
-    ids = set()
-    primary_spoid = primary_spoid.strip()
-    if primary_spoid:
-        ids.add(primary_spoid)
-    for part in hosts_field.split("|"):
-        candidate = part.split(" - ", 1)[0].strip()
-        if HOST_ID_RE.match(candidate):
-            ids.add(candidate)
-    return ids
+def parse_event_date(value: str) -> datetime | None:
+    value = value.strip()
+    if value.endswith(" UTC"):
+        value = value[: -len(" UTC")]
+    try:
+        return datetime.strptime(value, "%Y-%m-%d %H:%M:%S")
+    except ValueError:
+        return None
 
 
 def load_events(units: dict[str, OU]) -> None:
     events_path = find_events_file()
     with open(events_path, encoding="utf-8-sig") as f:
         for row in csv.DictReader(f):
-            host_ids = parse_host_ids(row.get("Hosts", ""), row.get("SPOID", ""))
+            event_date = parse_event_date(row.get("Event Date", ""))
+            if event_date is None or event_date.year < MIN_EVENT_YEAR:
+                continue
+            if row.get("Cancelled", "").strip() == "1":
+                continue
+
+            spoids = {s.strip() for s in row.get("SPOID", "").split(",") if s.strip()}
+            reported_values = [v.strip() for v in row.get("Reported On", "").split(",")]
+            is_reported = bool(reported_values) and all(v != "N/A" for v in reported_values)
             is_technical = row.get("Event Category", "").strip() == "Technical"
-            for spoid in host_ids:
+
+            for spoid in spoids:
                 ou = units.get(spoid)
                 if ou is None:
                     continue
-                ou.events_general += 1
-                if is_technical:
-                    ou.events_technical += 1
+                if is_reported:
+                    ou.events_general += 1
+                    if is_technical:
+                        ou.events_technical += 1
+                else:
+                    ou.events_unreported_general += 1
+                    if is_technical:
+                        ou.events_unreported_technical += 1
 
 
 def evaluate(ou: OU) -> dict:
@@ -246,6 +268,7 @@ def write_csv(units: list[OU], path: Path) -> None:
         "Members Met",
         "Events (General)",
         "Events (Technical)",
+        "Events (Unreported)",
         "Events Required",
         "Events Met",
         "Chair",
@@ -278,6 +301,7 @@ def write_csv(units: list[OU], path: Path) -> None:
                     "Members Met": "Yes" if result["members_met"] else "No",
                     "Events (General)": ou.events_general,
                     "Events (Technical)": ou.events_technical if ou.ou_type == "Student Branch Chapter" else "",
+                    "Events (Unreported)": ou.events_unreported_general,
                     "Events Required": criteria["min_events"],
                     "Events Met": "Yes" if result["events_met"] else "No",
                     "Chair": "Yes" if result["chair_met"] else "No",
@@ -381,6 +405,8 @@ def build_dashboard(units: list[OU], path: Path, events_path: Path) -> None:
 
             events_color = STATUS_GOOD if result["events_met"] else STATUS_CRITICAL
             events_cell = stat_span(f"{result['event_count']} ▸", events_color)
+            if ou.events_unreported_general:
+                events_cell += f'<span class="sub-note">+{ou.events_unreported_general} unreported</span>'
 
             officers_color = OFFICER_STATUS_COLOR[result["officers_status"]]
             officers_cell = stat_span(f"{result['officers_status']} ▸", officers_color)
@@ -388,13 +414,21 @@ def build_dashboard(units: list[OU], path: Path, events_path: Path) -> None:
             req_color = REQUIREMENTS_COLOR[result["requirements_met"]]
             req_cell = stat_span(f"{result['requirements_met']}/3 · {REQUIREMENTS_LABEL[result['requirements_met']]}", req_color)
 
-            events_detail_bits = [f"General events: <strong>{ou.events_general}</strong>"]
+            events_detail_bits = [f"Reported general events: <strong>{ou.events_general}</strong>"]
             if criteria["technical_only"]:
-                events_detail_bits.append(f"Technical events: <strong>{ou.events_technical}</strong> (required &ge; {criteria['min_events']})")
+                events_detail_bits.append(f"Reported technical events: <strong>{ou.events_technical}</strong> (required &ge; {criteria['min_events']})")
             else:
-                events_detail_bits.append(f"Technical events (informational): <strong>{ou.events_technical}</strong>")
-                events_detail_bits.append(f"Required: &ge; {criteria['min_events']} events, any category")
+                events_detail_bits.append(f"Reported technical events (informational): <strong>{ou.events_technical}</strong>")
+                events_detail_bits.append(f"Required: &ge; {criteria['min_events']} reported events, any category")
             events_detail = " &nbsp;&middot;&nbsp; ".join(events_detail_bits)
+            if ou.events_unreported_general:
+                events_detail += (
+                    f'<div class="unreported-note">⚠ {ou.events_unreported_general} unreported event'
+                    f'{"s" if ou.events_unreported_general != 1 else ""}'
+                    f'{f" ({ou.events_unreported_technical} technical)" if ou.events_unreported_technical else ""} '
+                    f"— scheduled in vTools but not yet reported; submit the post-event report to have them count."
+                    f"</div>"
+                )
 
             officer_rows = [("Chair", result["chair_met"], True), (role2, result["counselor_met"], True)]
             officer_rows += [(name, result["optional_met"][name], False) for name in OPTIONAL_OFFICERS]
@@ -551,6 +585,9 @@ def build_dashboard(units: list[OU], path: Path, events_path: Path) -> None:
   }}
   .chip-tag {{ color: var(--text-muted); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.03em; }}
 
+  .sub-note {{ margin-left: 6px; font-size: 0.75rem; font-weight: 400; color: var(--text-muted); white-space: nowrap; }}
+  .unreported-note {{ margin-top: 6px; color: var(--text-muted); }}
+
   footer {{ color: var(--text-muted); font-size: 0.75rem; margin-top: 24px; line-height: 1.6; }}
 
   .byline {{ margin: 0 0 14px; display: flex; gap: 8px; flex-wrap: wrap; }}
@@ -636,7 +673,8 @@ def build_dashboard(units: list[OU], path: Path, events_path: Path) -> None:
       {stat_span('Partial', STATUS_WARNING)} = only one present &nbsp;
       {stat_span('Not Met', STATUS_CRITICAL)} = neither present.
       In the detail panel, required officer chips (Chair, Counselor/Advisor) show red when missing; optional officer chips (Vice Chair, Secretary, Treasurer, Webmaster) show yellow when missing.
-      Event counts include events co-hosted with other OUs.
+      Event counts include events co-hosted with other OUs, from {MIN_EVENT_YEAR} onward, excluding cancelled events.
+      Only <strong>reported</strong> events (post-event report submitted in vTools) count toward the Events requirement; unreported events appear as a "+N unreported" note and in the Events detail panel, but don't count until reported.
     </footer>
   </div>
 </div>

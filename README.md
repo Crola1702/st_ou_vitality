@@ -22,6 +22,12 @@ each OU against IEEE's minimum activity requirements:
 Vice Chair, Secretary, Treasurer and Webmaster are tracked as optional
 officer roles (shown in yellow when missing, rather than red).
 
+Only **reported** events (a post-event report submitted in vTools) count
+toward the Events requirement, dated in `MIN_EVENT_YEAR` (2026) or later,
+excluding cancelled events. Events that are scheduled/hosted but not yet
+reported are tallied separately and shown as an informational "+N
+unreported" note — they don't count until reported.
+
 The raw exports contain personal data (officer names, emails, phone
 numbers) and are **git-ignored** — only the generated, aggregated
 `vitality_report.csv` and `vitality_dashboard.html` are committed and
@@ -34,29 +40,46 @@ below. All of them come from vTools (https://vtools.ieee.org) — exact menu
 wording can shift between vTools UI versions, so use the column list to
 confirm you've got the right report if the navigation looks different.
 
-1. **`Student Branch and Member Count.csv`**
-   vTools Reports → Geo (Student Branch) report, at the Student Branch
-   level, showing one row per Student Branch with its attendee/member
-   count. Must include: `Student Branch`, `Student Branch SPO ID`,
-   `School Name`, `Count of SB Attendees`.
+1. **`Student Branch and Member Count.csv`** and
+   **`Student Branch Chapters and Affinity Group Member Count.csv`**
 
-2. **`Student Branch Chapters and Affinity Group Member Count.csv`**
-   The same Geo report, at the Student Branch Chapter / Affinity Group
-   level. Must include: `Student Branch Chapter`,
-   `Student Branch Chapter SPO ID`, `School Name`,
-   `Count of SB Chapter Attendees`.
+   In **IEEE OU Analytics** → **Geo OU Analysis** → **Student Branch
+   Summary** tab, download the two available crosstab CSVs and save/rename
+   them to the two filenames above (one is the Student Branch–level
+   crosstab, the other the Chapter/Affinity-Group–level crosstab).
+   Must include: `Student Branch` / `Student Branch Chapter`,
+   `Student Branch SPO ID` / `Student Branch Chapter SPO ID`,
+   `School Name`, `Count of SB Attendees` / `Count of SB Chapter Attendees`.
 
-3. **`Volunteer List by OU.csv`**
-   vTools Reports → Volunteer/Officer report, exported for all Student
-   Branches, Chapters and Affinity Groups in your Section/Council/Region.
-   Must include: `OU Name`, `OU SPO ID`, `OU Position`, `OU Position Status`.
+2. **`Volunteer List by OU.csv`**
 
-4. **`IEEE-Events-<export-date>.csv`** (e.g. `IEEE-Events-2026-07-24.csv`)
-   From https://events.vtools.ieee.org — export the events report for the
-   relevant Section/Council/Region and date range. Keep the filename
-   prefixed with `IEEE-Events-`; the script automatically picks the most
-   recently dated file matching that pattern. Must include: `Event Date`,
-   `Event Category`, `SPOID`, `Hosts`.
+   In **IEEE OU Analytics** → **Volunteer Positions & History** →
+   **Volunteer Positions**, filter to:
+   - OU Type: `STB`, `SBC`, `Affinity` (all three)
+   - OU Position Status: `Filled`
+   - Officer Position Status: `Active`
+
+   Then export/download the results. Must include: `OU Name`,
+   `OU SPO ID`, `OU Position`, `OU Position Status`.
+
+3. **Any `*Events*.csv` file** (e.g. `IEEE_vTools_Events_2026.csv`)
+
+   Go to https://events.vtools.ieee.org/events/search, click
+   **Advanced Search**, and set:
+   - Region: `R9 - Latin America - Region`
+   - Section: `R90705 - Colombia Section` (or your own section)
+   - Event Date & Time → **After**: `31 Dec 2025 12:00 PM` (i.e. the day
+     before `MIN_EVENT_YEAR` starts — leave **Before** empty)
+   - Leave `Virtual?`, `Reported?`, `Registration Open?` and `Draft?`
+     unchecked, so the export includes both reported **and** unreported
+     events — the script needs both to compute the "unreported" detail.
+
+   Then click **Search** and download/export the results. The filename
+   just needs "Events" somewhere in it; the script picks the most recently
+   modified file matching that pattern. Must include: `Event Date`,
+   `Event Category`, `SPOID` (comma-separated list when an event has
+   multiple co-hosts), `Reported On` (comma-separated, one per SPOID;
+   `N/A` means that event hasn't been reported yet), `Cancelled` (`1`/`0`).
 
 These are vTools's native tab-delimited, UTF-16 exports for the first three
 reports (Excel-oriented) and a standard UTF-8 CSV for the events export —
