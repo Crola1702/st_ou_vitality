@@ -11,13 +11,13 @@
   .toc h1 { font-size: 1.4rem; }
   .toc ul { columns: 2; gap: 24px; padding-left: 20px; }
   .toc li { margin: 4px 0; }
-  .toc a { color: #111; text-decoration: none; }
+  .toc a { color: #111; text-decoration: none; cursor: pointer; }
   .toc a:hover { text-decoration: underline; }
-  .university-page {
+  .group-page {
     max-width: 900px; margin: 0 auto 40px; background: #fff; padding: 40px;
     border: 1px solid #ddd; border-radius: 4px;
   }
-  .university-page h1 { font-size: 1.6rem; margin: 0 0 2px; }
+  .group-page h1 { font-size: 1.6rem; margin: 0 0 2px; }
   .subtitle { color: #555; font-size: 0.85rem; margin: 0 0 20px; }
   .stat-row { display: flex; gap: 24px; margin-bottom: 24px; }
   .stat-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.03em; color: #666; }
@@ -32,20 +32,29 @@
   th, td { padding: 6px 8px; text-align: left; border-bottom: 1px solid #eee; }
   th { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.02em; color: #666; }
   td.mono { font-variant-numeric: tabular-nums; color: #555; }
+  .page-toolbar { margin-bottom: 12px; }
+  .page-toolbar button {
+    font: inherit; cursor: pointer; padding: 6px 14px; border-radius: 6px; border: 1px solid #ccc;
+    background: #fafafa; color: #111;
+  }
+  .page-toolbar button:hover { background: #eee; }
   @media print {
     body { background: #fff; }
-    .toc, .university-page { page-break-after: always; border: none; box-shadow: none; margin: 0; max-width: none; }
+    .toc, .group-page { page-break-after: always; border: none; box-shadow: none; margin: 0; max-width: none; }
+    .no-print { display: none !important; }
+    body.print-single .group-page:not(.print-target) { display: none; }
   }
 </style>
 </head>
 <body>
   <section class="toc">
     <h1>IEEE Student OU Vitality — University Reports</h1>
-    <p class="subtitle">Generated 2026-08-13 · one printable page per university · print this document (Ctrl/Cmd+P → Save as PDF) to hand off to a specific Student Branch.</p>
-    <ul><li><a href="#antonio-narino-university">Antonio Narino University</a></li><li><a href="#corporacion-universitaria-minuto-de-dios-uniminuto">Corporacion Universitaria Minuto de Dios UNIMINUTO</a></li><li><a href="#corporacion-universitaria-unitec">Corporacion Universitaria Unitec</a></li><li><a href="#corporaci-n-universitaria-del-huila-corhuila">Corporación Universitaria del Huila – CORHUILA</a></li><li><a href="#de-la-salle-university">De La Salle University</a></li><li><a href="#escuela-colombiana-de-ingenieria-julio-garavito">Escuela Colombiana De Ingenieria Julio Garavito</a></li><li><a href="#escuela-colombiana-de-carreras-industriales">Escuela Colombiana de Carreras Industriales</a></li><li><a href="#escuela-de-aviacion-del-ejercito">Escuela De Aviacion Del Ejercito</a></li><li><a href="#escuela-tecnologica-instituto-tecnico-central">Escuela Tecnologica Instituto Tecnico Central</a></li><li><a href="#fundacion-universitaria-compensar">Fundacion Universitaria Compensar</a></li><li><a href="#granada-univ-militar-nueva">Granada Univ Militar Nueva</a></li><li><a href="#icesi-university">Icesi University</a></li><li><a href="#institucion-universitaria-cesmag">Institucion Universitaria CESMAG</a></li><li><a href="#instituto-tecnologico-metropolitano">Instituto Tecnologico Metropolitano</a></li><li><a href="#pontificia-univ-javeriana-sede-bogota">Pontificia Univ Javeriana Sede Bogota</a></li><li><a href="#pontificia-universidad-javeriana-cali">Pontificia Universidad Javeriana-Cali</a></li><li><a href="#servicio-nacional-de-aprendizale-antioquia">Servicio Nacional de Aprendizale - Antioquia</a></li><li><a href="#unidades-tecnologicas-de-santander">Unidades Tecnologicas de Santander</a></li><li><a href="#univ-cooperativa-de-colombia-sede-bogota">Univ Cooperativa De Colombia Sede Bogota</a></li><li><a href="#univ-de-ibague-coruniversitaria">Univ De Ibague - Coruniversitaria</a></li><li><a href="#univ-distrital-francisco-jose-de-caldas-bolivar">Univ Distrital Francisco Jose de Caldas - Bolivar</a></li><li><a href="#univ-pontificia-bolivariana-upb-">Univ Pontificia Bolivariana (UPB)</a></li><li><a href="#univ-santo-tomas-de-aquino">Univ Santo Tomas De Aquino</a></li><li><a href="#universidad-autonoma-de-bucaramanga">Universidad Autonoma de Bucaramanga</a></li><li><a href="#universidad-autonoma-de-occidente">Universidad Autonoma de Occidente</a></li><li><a href="#universidad-catolica-de-colombia">Universidad Catolica de Colombia</a></li><li><a href="#universidad-central">Universidad Central</a></li><li><a href="#universidad-distrital-francisco-jose-de-caldas">Universidad Distrital Francisco Jose de Caldas</a></li><li><a href="#universidad-eafit">Universidad EAFIT</a></li><li><a href="#universidad-el-bosque">Universidad El Bosque</a></li><li><a href="#universidad-francisco-de-paula-santander">Universidad Francisco de Paula Santander</a></li><li><a href="#universidad-incca-de-colombia">Universidad INCCA de Colombia</a></li><li><a href="#universidad-industrial-de-santander">Universidad Industrial de Santander</a></li><li><a href="#universidad-jorge-tadeo-lozano">Universidad Jorge Tadeo Lozano</a></li><li><a href="#universidad-mariana">Universidad Mariana</a></li><li><a href="#universidad-nacional-abierta-y-a-distancia">Universidad Nacional Abierta y a Distancia</a></li><li><a href="#universidad-nacional-de-colombia-sede-bogota">Universidad Nacional De Colombia Sede Bogota</a></li><li><a href="#universidad-nacional-de-colombia-sede-medellin">Universidad Nacional de Colombia Sede Medellin</a></li><li><a href="#universidad-nacional-sede-manizales">Universidad Nacional sede Manizales</a></li><li><a href="#universidad-pedagogica-nacional">Universidad Pedagogica Nacional</a></li><li><a href="#universidad-pedagogica-y-tec-de-colombia">Universidad Pedagogica Y Tec de Colombia</a></li><li><a href="#universidad-piloto-de-colombia">Universidad Piloto de Colombia</a></li><li><a href="#universidad-santiago-de-cali">Universidad Santiago de Cali</a></li><li><a href="#universidad-santo-tomas-tunja">Universidad Santo Tomas - Tunja</a></li><li><a href="#universidad-santo-tomas-bucaramanga">Universidad Santo Tomas-Bucaramanga</a></li><li><a href="#universidad-sergio-arboleda">Universidad Sergio Arboleda</a></li><li><a href="#universidad-surcolombiana">Universidad Surcolombiana</a></li><li><a href="#universidad-tecnologica-de-pereira">Universidad Tecnologica de Pereira</a></li><li><a href="#universidad-de-antioquia">Universidad de Antioquia</a></li><li><a href="#universidad-de-cundinamarca">Universidad de Cundinamarca</a></li><li><a href="#universidad-de-investigacion-y-desarrollo">Universidad de Investigacion y Desarrollo</a></li><li><a href="#universidad-de-medellin">Universidad de Medellin</a></li><li><a href="#universidad-de-narino">Universidad de Narino</a></li><li><a href="#universidad-de-san-buenaventura">Universidad de San Buenaventura</a></li><li><a href="#universidad-de-san-buenaventura-cali">Universidad de San Buenaventura - Cali</a></li><li><a href="#universidad-de-la-sabana">Universidad de la Sabana</a></li><li><a href="#universidad-de-los-andes">Universidad de los Andes</a></li><li><a href="#universidad-de-los-llanos">Universidad de los Llanos</a></li><li><a href="#universidad-del-cauca">Universidad del Cauca</a></li><li><a href="#universidad-del-quindio">Universidad del Quindio</a></li><li><a href="#universidad-del-rosario">Universidad del Rosario</a></li><li><a href="#universidad-del-valle">Universidad del Valle</a></li><li><a href="#university-of-pamplona">University of Pamplona</a></li><li><a href="#university-of-san-buenaventura">University of San Buenaventura</a></li></ul>
+    <p class="subtitle">Generated 2026-08-13 · one printable page per university · click a name to print just that page, or print this whole document (Ctrl/Cmd+P → Save as PDF) for all of them.</p>
+    <ul><li><a href="#antonio-narino-university" onclick="printOnly('antonio-narino-university')">Antonio Narino University</a></li><li><a href="#corporacion-universitaria-minuto-de-dios-uniminuto" onclick="printOnly('corporacion-universitaria-minuto-de-dios-uniminuto')">Corporacion Universitaria Minuto de Dios UNIMINUTO</a></li><li><a href="#corporacion-universitaria-unitec" onclick="printOnly('corporacion-universitaria-unitec')">Corporacion Universitaria Unitec</a></li><li><a href="#corporaci-n-universitaria-del-huila-corhuila" onclick="printOnly('corporaci-n-universitaria-del-huila-corhuila')">Corporación Universitaria del Huila – CORHUILA</a></li><li><a href="#de-la-salle-university" onclick="printOnly('de-la-salle-university')">De La Salle University</a></li><li><a href="#escuela-colombiana-de-ingenieria-julio-garavito" onclick="printOnly('escuela-colombiana-de-ingenieria-julio-garavito')">Escuela Colombiana De Ingenieria Julio Garavito</a></li><li><a href="#escuela-colombiana-de-carreras-industriales" onclick="printOnly('escuela-colombiana-de-carreras-industriales')">Escuela Colombiana de Carreras Industriales</a></li><li><a href="#escuela-de-aviacion-del-ejercito" onclick="printOnly('escuela-de-aviacion-del-ejercito')">Escuela De Aviacion Del Ejercito</a></li><li><a href="#escuela-tecnologica-instituto-tecnico-central" onclick="printOnly('escuela-tecnologica-instituto-tecnico-central')">Escuela Tecnologica Instituto Tecnico Central</a></li><li><a href="#fundacion-universitaria-compensar" onclick="printOnly('fundacion-universitaria-compensar')">Fundacion Universitaria Compensar</a></li><li><a href="#granada-univ-militar-nueva" onclick="printOnly('granada-univ-militar-nueva')">Granada Univ Militar Nueva</a></li><li><a href="#icesi-university" onclick="printOnly('icesi-university')">Icesi University</a></li><li><a href="#institucion-universitaria-cesmag" onclick="printOnly('institucion-universitaria-cesmag')">Institucion Universitaria CESMAG</a></li><li><a href="#instituto-tecnologico-metropolitano" onclick="printOnly('instituto-tecnologico-metropolitano')">Instituto Tecnologico Metropolitano</a></li><li><a href="#pontificia-univ-javeriana-sede-bogota" onclick="printOnly('pontificia-univ-javeriana-sede-bogota')">Pontificia Univ Javeriana Sede Bogota</a></li><li><a href="#pontificia-universidad-javeriana-cali" onclick="printOnly('pontificia-universidad-javeriana-cali')">Pontificia Universidad Javeriana-Cali</a></li><li><a href="#servicio-nacional-de-aprendizale-antioquia" onclick="printOnly('servicio-nacional-de-aprendizale-antioquia')">Servicio Nacional de Aprendizale - Antioquia</a></li><li><a href="#unidades-tecnologicas-de-santander" onclick="printOnly('unidades-tecnologicas-de-santander')">Unidades Tecnologicas de Santander</a></li><li><a href="#univ-cooperativa-de-colombia-sede-bogota" onclick="printOnly('univ-cooperativa-de-colombia-sede-bogota')">Univ Cooperativa De Colombia Sede Bogota</a></li><li><a href="#univ-de-ibague-coruniversitaria" onclick="printOnly('univ-de-ibague-coruniversitaria')">Univ De Ibague - Coruniversitaria</a></li><li><a href="#univ-distrital-francisco-jose-de-caldas-bolivar" onclick="printOnly('univ-distrital-francisco-jose-de-caldas-bolivar')">Univ Distrital Francisco Jose de Caldas - Bolivar</a></li><li><a href="#univ-pontificia-bolivariana-upb" onclick="printOnly('univ-pontificia-bolivariana-upb')">Univ Pontificia Bolivariana (UPB)</a></li><li><a href="#univ-santo-tomas-de-aquino" onclick="printOnly('univ-santo-tomas-de-aquino')">Univ Santo Tomas De Aquino</a></li><li><a href="#universidad-autonoma-de-bucaramanga" onclick="printOnly('universidad-autonoma-de-bucaramanga')">Universidad Autonoma de Bucaramanga</a></li><li><a href="#universidad-autonoma-de-occidente" onclick="printOnly('universidad-autonoma-de-occidente')">Universidad Autonoma de Occidente</a></li><li><a href="#universidad-catolica-de-colombia" onclick="printOnly('universidad-catolica-de-colombia')">Universidad Catolica de Colombia</a></li><li><a href="#universidad-central" onclick="printOnly('universidad-central')">Universidad Central</a></li><li><a href="#universidad-distrital-francisco-jose-de-caldas" onclick="printOnly('universidad-distrital-francisco-jose-de-caldas')">Universidad Distrital Francisco Jose de Caldas</a></li><li><a href="#universidad-eafit" onclick="printOnly('universidad-eafit')">Universidad EAFIT</a></li><li><a href="#universidad-el-bosque" onclick="printOnly('universidad-el-bosque')">Universidad El Bosque</a></li><li><a href="#universidad-francisco-de-paula-santander" onclick="printOnly('universidad-francisco-de-paula-santander')">Universidad Francisco de Paula Santander</a></li><li><a href="#universidad-incca-de-colombia" onclick="printOnly('universidad-incca-de-colombia')">Universidad INCCA de Colombia</a></li><li><a href="#universidad-industrial-de-santander" onclick="printOnly('universidad-industrial-de-santander')">Universidad Industrial de Santander</a></li><li><a href="#universidad-jorge-tadeo-lozano" onclick="printOnly('universidad-jorge-tadeo-lozano')">Universidad Jorge Tadeo Lozano</a></li><li><a href="#universidad-mariana" onclick="printOnly('universidad-mariana')">Universidad Mariana</a></li><li><a href="#universidad-nacional-abierta-y-a-distancia" onclick="printOnly('universidad-nacional-abierta-y-a-distancia')">Universidad Nacional Abierta y a Distancia</a></li><li><a href="#universidad-nacional-de-colombia-sede-bogota" onclick="printOnly('universidad-nacional-de-colombia-sede-bogota')">Universidad Nacional De Colombia Sede Bogota</a></li><li><a href="#universidad-nacional-de-colombia-sede-medellin" onclick="printOnly('universidad-nacional-de-colombia-sede-medellin')">Universidad Nacional de Colombia Sede Medellin</a></li><li><a href="#universidad-nacional-sede-manizales" onclick="printOnly('universidad-nacional-sede-manizales')">Universidad Nacional sede Manizales</a></li><li><a href="#universidad-pedagogica-nacional" onclick="printOnly('universidad-pedagogica-nacional')">Universidad Pedagogica Nacional</a></li><li><a href="#universidad-pedagogica-y-tec-de-colombia" onclick="printOnly('universidad-pedagogica-y-tec-de-colombia')">Universidad Pedagogica Y Tec de Colombia</a></li><li><a href="#universidad-piloto-de-colombia" onclick="printOnly('universidad-piloto-de-colombia')">Universidad Piloto de Colombia</a></li><li><a href="#universidad-santiago-de-cali" onclick="printOnly('universidad-santiago-de-cali')">Universidad Santiago de Cali</a></li><li><a href="#universidad-santo-tomas-tunja" onclick="printOnly('universidad-santo-tomas-tunja')">Universidad Santo Tomas - Tunja</a></li><li><a href="#universidad-santo-tomas-bucaramanga" onclick="printOnly('universidad-santo-tomas-bucaramanga')">Universidad Santo Tomas-Bucaramanga</a></li><li><a href="#universidad-sergio-arboleda" onclick="printOnly('universidad-sergio-arboleda')">Universidad Sergio Arboleda</a></li><li><a href="#universidad-surcolombiana" onclick="printOnly('universidad-surcolombiana')">Universidad Surcolombiana</a></li><li><a href="#universidad-tecnologica-de-pereira" onclick="printOnly('universidad-tecnologica-de-pereira')">Universidad Tecnologica de Pereira</a></li><li><a href="#universidad-de-antioquia" onclick="printOnly('universidad-de-antioquia')">Universidad de Antioquia</a></li><li><a href="#universidad-de-cundinamarca" onclick="printOnly('universidad-de-cundinamarca')">Universidad de Cundinamarca</a></li><li><a href="#universidad-de-investigacion-y-desarrollo" onclick="printOnly('universidad-de-investigacion-y-desarrollo')">Universidad de Investigacion y Desarrollo</a></li><li><a href="#universidad-de-medellin" onclick="printOnly('universidad-de-medellin')">Universidad de Medellin</a></li><li><a href="#universidad-de-narino" onclick="printOnly('universidad-de-narino')">Universidad de Narino</a></li><li><a href="#universidad-de-san-buenaventura" onclick="printOnly('universidad-de-san-buenaventura')">Universidad de San Buenaventura</a></li><li><a href="#universidad-de-san-buenaventura-cali" onclick="printOnly('universidad-de-san-buenaventura-cali')">Universidad de San Buenaventura - Cali</a></li><li><a href="#universidad-de-la-sabana" onclick="printOnly('universidad-de-la-sabana')">Universidad de la Sabana</a></li><li><a href="#universidad-de-los-andes" onclick="printOnly('universidad-de-los-andes')">Universidad de los Andes</a></li><li><a href="#universidad-de-los-llanos" onclick="printOnly('universidad-de-los-llanos')">Universidad de los Llanos</a></li><li><a href="#universidad-del-cauca" onclick="printOnly('universidad-del-cauca')">Universidad del Cauca</a></li><li><a href="#universidad-del-quindio" onclick="printOnly('universidad-del-quindio')">Universidad del Quindio</a></li><li><a href="#universidad-del-rosario" onclick="printOnly('universidad-del-rosario')">Universidad del Rosario</a></li><li><a href="#universidad-del-valle" onclick="printOnly('universidad-del-valle')">Universidad del Valle</a></li><li><a href="#university-of-pamplona" onclick="printOnly('university-of-pamplona')">University of Pamplona</a></li><li><a href="#university-of-san-buenaventura" onclick="printOnly('university-of-san-buenaventura')">University of San Buenaventura</a></li></ul>
   </section>
   
-        <section class="university-page" id="antonio-narino-university">
+        <section class="group-page" id="antonio-narino-university">
+          <div class="page-toolbar no-print"><button onclick="printOnly('antonio-narino-university')">Print this page</button></div>
           <h1>Antonio Narino University</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -76,6 +85,7 @@
                 <td>Antonio Narino University,WIE</td>
                 <td>Affinity Group</td>
                 <td class="mono">SBA64411</td>
+                
                 <td>38</td>
                 <td>1/2</td>
                 <td>Met</td>
@@ -84,6 +94,7 @@
                 <td>Antonio Narino University</td>
                 <td>Student Branch</td>
                 <td class="mono">STB64411A</td>
+                
                 <td>48</td>
                 <td>4/4</td>
                 <td>Met</td>
@@ -92,6 +103,7 @@
                 <td>Antonio Narino University,COM19</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC64411D</td>
+                
                 <td>18</td>
                 <td>0/2</td>
                 <td>Met</td>
@@ -100,6 +112,7 @@
                 <td>Antonio Narino University,EMB18</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC64411C</td>
+                
                 <td>12</td>
                 <td>0/2</td>
                 <td>Met</td>
@@ -108,6 +121,7 @@
                 <td>Antonio Narino University,RA24</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC64411B</td>
+                
                 <td>25</td>
                 <td>0/2</td>
                 <td>Met</td>
@@ -116,6 +130,7 @@
                 <td>Antonio Narino University,TEM14</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC64411A</td>
+                
                 <td>20</td>
                 <td>0/2</td>
                 <td>Met</td>
@@ -124,7 +139,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="corporacion-universitaria-minuto-de-dios-uniminuto">
+        <section class="group-page" id="corporacion-universitaria-minuto-de-dios-uniminuto">
+          <div class="page-toolbar no-print"><button onclick="printOnly('corporacion-universitaria-minuto-de-dios-uniminuto')">Print this page</button></div>
           <h1>Corporacion Universitaria Minuto de Dios UNIMINUTO</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -155,6 +171,7 @@
                 <td>Corporacion Universitaria Minuto de Dios UNIMINUTO</td>
                 <td>Student Branch</td>
                 <td class="mono">STB60103228</td>
+                
                 <td>0</td>
                 <td>0/4</td>
                 <td>Not Met</td>
@@ -163,7 +180,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="corporacion-universitaria-unitec">
+        <section class="group-page" id="corporacion-universitaria-unitec">
+          <div class="page-toolbar no-print"><button onclick="printOnly('corporacion-universitaria-unitec')">Print this page</button></div>
           <h1>Corporacion Universitaria Unitec</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -194,6 +212,7 @@
                 <td>Corporacion Universitaria Unitec</td>
                 <td>Student Branch</td>
                 <td class="mono">STB18371</td>
+                
                 <td>0</td>
                 <td>0/4</td>
                 <td>Not Met</td>
@@ -202,7 +221,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="corporaci-n-universitaria-del-huila-corhuila">
+        <section class="group-page" id="corporaci-n-universitaria-del-huila-corhuila">
+          <div class="page-toolbar no-print"><button onclick="printOnly('corporaci-n-universitaria-del-huila-corhuila')">Print this page</button></div>
           <h1>Corporación Universitaria del Huila – CORHUILA</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -233,6 +253,7 @@
                 <td>Corporación Universitaria del Huila – CORHUILA,WIE</td>
                 <td>Affinity Group</td>
                 <td class="mono">SBA60236869</td>
+                
                 <td>8</td>
                 <td>1/2</td>
                 <td>Met</td>
@@ -241,6 +262,7 @@
                 <td>Corporación Universitaria del Huila – CORHUILA</td>
                 <td>Student Branch</td>
                 <td class="mono">STB60236869</td>
+                
                 <td>32</td>
                 <td>9/4</td>
                 <td>Met</td>
@@ -249,6 +271,7 @@
                 <td>Corporación Universitaria del Huila–CORHUILA,RA24</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC60236869</td>
+                
                 <td>10</td>
                 <td>0/2</td>
                 <td>Met</td>
@@ -257,7 +280,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="de-la-salle-university">
+        <section class="group-page" id="de-la-salle-university">
+          <div class="page-toolbar no-print"><button onclick="printOnly('de-la-salle-university')">Print this page</button></div>
           <h1>De La Salle University</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -288,6 +312,7 @@
                 <td>De La Salle University</td>
                 <td>Student Branch</td>
                 <td class="mono">STB40010389</td>
+                
                 <td>6</td>
                 <td>0/4</td>
                 <td>Met</td>
@@ -296,6 +321,7 @@
                 <td>De La Salle University,AES10</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC40010389B</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -304,6 +330,7 @@
                 <td>De La Salle University,PE31</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC40010389A</td>
+                
                 <td>1</td>
                 <td>0/2</td>
                 <td>Partial</td>
@@ -312,6 +339,7 @@
                 <td>De La Salle University,RA24</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC40010389</td>
+                
                 <td>2</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -320,7 +348,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="escuela-colombiana-de-ingenieria-julio-garavito">
+        <section class="group-page" id="escuela-colombiana-de-ingenieria-julio-garavito">
+          <div class="page-toolbar no-print"><button onclick="printOnly('escuela-colombiana-de-ingenieria-julio-garavito')">Print this page</button></div>
           <h1>Escuela Colombiana De Ingenieria Julio Garavito</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -351,6 +380,7 @@
                 <td>Escuela Colombiana De Ing Julio Garavito, WIE</td>
                 <td>Affinity Group</td>
                 <td class="mono">SBA27011</td>
+                
                 <td>3</td>
                 <td>0/2</td>
                 <td>Partial</td>
@@ -359,6 +389,7 @@
                 <td>Escuela Colombiana De Ingenieria Julio Garavito</td>
                 <td>Student Branch</td>
                 <td class="mono">STB27011</td>
+                
                 <td>9</td>
                 <td>0/4</td>
                 <td>Met</td>
@@ -367,6 +398,7 @@
                 <td>Escuela Colombiana DeIng Julio Garavito,AES10</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC27011B</td>
+                
                 <td>1</td>
                 <td>0/2</td>
                 <td>Partial</td>
@@ -375,6 +407,7 @@
                 <td>Escuela Colombiana de Ingenieria, PE31</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC27011A</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -383,7 +416,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="escuela-colombiana-de-carreras-industriales">
+        <section class="group-page" id="escuela-colombiana-de-carreras-industriales">
+          <div class="page-toolbar no-print"><button onclick="printOnly('escuela-colombiana-de-carreras-industriales')">Print this page</button></div>
           <h1>Escuela Colombiana de Carreras Industriales</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -414,6 +448,7 @@
                 <td>Escuela Colombiana de Carreras Industriales,WIE</td>
                 <td>Affinity Group</td>
                 <td class="mono">SBA05421</td>
+                
                 <td>16</td>
                 <td>3/2</td>
                 <td>Met</td>
@@ -422,6 +457,7 @@
                 <td>Escuela Colombiana de Carreras Industriales</td>
                 <td>Student Branch</td>
                 <td class="mono">STB05421</td>
+                
                 <td>18</td>
                 <td>1/4</td>
                 <td>Met</td>
@@ -430,6 +466,7 @@
                 <td>Escuela Colombiana de Carreras Industriales, AES10</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC05421A</td>
+                
                 <td>3</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -438,6 +475,7 @@
                 <td>Escuela Colombiana de Carreras Industriales, COM19</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC05421B</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -446,6 +484,7 @@
                 <td>Escuela Colombiana de Carreras Industriales, RA24</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC05421</td>
+                
                 <td>12</td>
                 <td>3/2</td>
                 <td>Partial</td>
@@ -454,6 +493,7 @@
                 <td>Escuela Colombiana de Carreras Industriales,EMB18</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC05421C</td>
+                
                 <td>1</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -462,7 +502,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="escuela-de-aviacion-del-ejercito">
+        <section class="group-page" id="escuela-de-aviacion-del-ejercito">
+          <div class="page-toolbar no-print"><button onclick="printOnly('escuela-de-aviacion-del-ejercito')">Print this page</button></div>
           <h1>Escuela De Aviacion Del Ejercito</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -493,6 +534,7 @@
                 <td>Escuela De Aviacion Del Ejercito</td>
                 <td>Student Branch</td>
                 <td class="mono">STB60204105</td>
+                
                 <td>0</td>
                 <td>0/4</td>
                 <td>Not Met</td>
@@ -501,7 +543,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="escuela-tecnologica-instituto-tecnico-central">
+        <section class="group-page" id="escuela-tecnologica-instituto-tecnico-central">
+          <div class="page-toolbar no-print"><button onclick="printOnly('escuela-tecnologica-instituto-tecnico-central')">Print this page</button></div>
           <h1>Escuela Tecnologica Instituto Tecnico Central</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -532,6 +575,7 @@
                 <td>Escuela Tecnologica Instituto Tecnico Central, WIE</td>
                 <td>Affinity Group</td>
                 <td class="mono">SBA13041</td>
+                
                 <td>5</td>
                 <td>0/2</td>
                 <td>Met</td>
@@ -540,6 +584,7 @@
                 <td>Escuela Tecnologica Instituto Tecnico Central</td>
                 <td>Student Branch</td>
                 <td class="mono">STB13041</td>
+                
                 <td>7</td>
                 <td>1/4</td>
                 <td>Partial</td>
@@ -548,6 +593,7 @@
                 <td>Escuela Tecnologica Inst Tecnico Central, C16</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC13041A</td>
+                
                 <td>1</td>
                 <td>0/2</td>
                 <td>Partial</td>
@@ -556,6 +602,7 @@
                 <td>Escuela Tecnologica Inst Tecnico Central, RA24</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC13041B</td>
+                
                 <td>6</td>
                 <td>0/2</td>
                 <td>Partial</td>
@@ -564,6 +611,7 @@
                 <td>Escuela Tecnologica Inst Tecnico Central,AES10</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC13041C</td>
+                
                 <td>1</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -572,6 +620,7 @@
                 <td>Escuela Tecnologica Inst Tecnico Central,OE22</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC13041D</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -580,7 +629,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="fundacion-universitaria-compensar">
+        <section class="group-page" id="fundacion-universitaria-compensar">
+          <div class="page-toolbar no-print"><button onclick="printOnly('fundacion-universitaria-compensar')">Print this page</button></div>
           <h1>Fundacion Universitaria Compensar</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -611,6 +661,7 @@
                 <td>Fundacion Universitaria Compensar</td>
                 <td>Student Branch</td>
                 <td class="mono">STB60222205</td>
+                
                 <td>3</td>
                 <td>0/4</td>
                 <td>Not Met</td>
@@ -619,7 +670,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="granada-univ-militar-nueva">
+        <section class="group-page" id="granada-univ-militar-nueva">
+          <div class="page-toolbar no-print"><button onclick="printOnly('granada-univ-militar-nueva')">Print this page</button></div>
           <h1>Granada Univ Militar Nueva</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -650,6 +702,7 @@
                 <td>Granada Univ Militar Nueva, WIE</td>
                 <td>Affinity Group</td>
                 <td class="mono">SBA63981</td>
+                
                 <td>7</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -658,6 +711,7 @@
                 <td>Granada Univ Militar Nueva</td>
                 <td>Student Branch</td>
                 <td class="mono">STB63981</td>
+                
                 <td>8</td>
                 <td>0/4</td>
                 <td>Met</td>
@@ -666,6 +720,7 @@
                 <td>Granada Univ Militar Nueva, AP03</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC63981E</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -674,6 +729,7 @@
                 <td>Granada Univ Militar Nueva, C16</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC6398A</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -682,6 +738,7 @@
                 <td>Granada Univ Militar Nueva, COM19</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC63981</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -690,6 +747,7 @@
                 <td>Granada Univ Militar Nueva, CS23</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC63981C</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -698,6 +756,7 @@
                 <td>Granada Univ Militar Nueva, IA34</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC6398C</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -706,6 +765,7 @@
                 <td>Granada Univ Militar Nueva, RA24</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC6398B</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -714,6 +774,7 @@
                 <td>Granada Univ Militar Nueva, TEM14</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC6398E</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -722,6 +783,7 @@
                 <td>Granada Univ Militar Nueva,AES10</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC63981F</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -730,6 +792,7 @@
                 <td>Granada Univ Militar Nueva,VT06</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC63981D</td>
+                
                 <td>1</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -738,7 +801,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="icesi-university">
+        <section class="group-page" id="icesi-university">
+          <div class="page-toolbar no-print"><button onclick="printOnly('icesi-university')">Print this page</button></div>
           <h1>Icesi University</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -769,6 +833,7 @@
                 <td>Icesi University, WIE</td>
                 <td>Affinity Group</td>
                 <td class="mono">SBA02571</td>
+                
                 <td>11</td>
                 <td>4/2</td>
                 <td>Met</td>
@@ -777,6 +842,7 @@
                 <td>Icesi University</td>
                 <td>Student Branch</td>
                 <td class="mono">STB02571</td>
+                
                 <td>41</td>
                 <td>8/4</td>
                 <td>Met</td>
@@ -785,6 +851,7 @@
                 <td>Icesi University COM19</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC02571A</td>
+                
                 <td>10</td>
                 <td>3/2</td>
                 <td>Partial</td>
@@ -793,6 +860,7 @@
                 <td>Icesi University,C16</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC02571B</td>
+                
                 <td>11</td>
                 <td>6/2</td>
                 <td>Met</td>
@@ -801,6 +869,7 @@
                 <td>Icesi University,CIS11</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC02571C</td>
+                
                 <td>9</td>
                 <td>0/2</td>
                 <td>Met</td>
@@ -809,7 +878,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="institucion-universitaria-cesmag">
+        <section class="group-page" id="institucion-universitaria-cesmag">
+          <div class="page-toolbar no-print"><button onclick="printOnly('institucion-universitaria-cesmag')">Print this page</button></div>
           <h1>Institucion Universitaria CESMAG</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -840,6 +910,7 @@
                 <td>Institucion Universitaria CESMAG,WIE</td>
                 <td>Affinity Group</td>
                 <td class="mono">SBA03103</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -848,6 +919,7 @@
                 <td>Institucion Universitaria CESMAG</td>
                 <td>Student Branch</td>
                 <td class="mono">STB03103</td>
+                
                 <td>0</td>
                 <td>0/4</td>
                 <td>Not Met</td>
@@ -856,6 +928,7 @@
                 <td>Institucion Universitaria CESMAG,PE31</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC03103A</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -864,6 +937,7 @@
                 <td>Institucion Universitaria CESMAG,RA24</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC03103</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -872,7 +946,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="instituto-tecnologico-metropolitano">
+        <section class="group-page" id="instituto-tecnologico-metropolitano">
+          <div class="page-toolbar no-print"><button onclick="printOnly('instituto-tecnologico-metropolitano')">Print this page</button></div>
           <h1>Instituto Tecnologico Metropolitano</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -903,6 +978,7 @@
                 <td>Instituto Tecnologico Metropolitano</td>
                 <td>Student Branch</td>
                 <td class="mono">STB12561</td>
+                
                 <td>1</td>
                 <td>0/4</td>
                 <td>Not Met</td>
@@ -911,7 +987,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="pontificia-univ-javeriana-sede-bogota">
+        <section class="group-page" id="pontificia-univ-javeriana-sede-bogota">
+          <div class="page-toolbar no-print"><button onclick="printOnly('pontificia-univ-javeriana-sede-bogota')">Print this page</button></div>
           <h1>Pontificia Univ Javeriana Sede Bogota</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -942,6 +1019,7 @@
                 <td>Pontificia Univ Javeriana Sede Bogota, WIE</td>
                 <td>Affinity Group</td>
                 <td class="mono">SBA04591</td>
+                
                 <td>6</td>
                 <td>2/2</td>
                 <td>Partial</td>
@@ -950,6 +1028,7 @@
                 <td>Pontificia Univ Javeriana Sede Bogota</td>
                 <td>Student Branch</td>
                 <td class="mono">STB04591</td>
+                
                 <td>47</td>
                 <td>69/4</td>
                 <td>Met</td>
@@ -958,6 +1037,7 @@
                 <td>Pontificia Univ Javeriana Sede Bogota, PE31</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC04591H</td>
+                
                 <td>2</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -966,6 +1046,7 @@
                 <td>Pontificia Univ Javeriana Sede Bogota,AES10</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC04591F</td>
+                
                 <td>4</td>
                 <td>2/2</td>
                 <td>Partial</td>
@@ -974,6 +1055,7 @@
                 <td>Pontificia Univ Javeriana Sede Bogota,C16</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC04591C</td>
+                
                 <td>8</td>
                 <td>3/2</td>
                 <td>Partial</td>
@@ -982,6 +1064,7 @@
                 <td>Pontificia Univ Javeriana Sede Bogota,CS23</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC04591A</td>
+                
                 <td>1</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -990,6 +1073,7 @@
                 <td>Pontificia Univ Javeriana Sede Bogota,ED15</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC04591E</td>
+                
                 <td>7</td>
                 <td>1/2</td>
                 <td>Met</td>
@@ -998,6 +1082,7 @@
                 <td>Pontificia Univ Javeriana Sede Bogota,EMB18</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC04591D</td>
+                
                 <td>8</td>
                 <td>12/2</td>
                 <td>Met</td>
@@ -1006,6 +1091,7 @@
                 <td>Pontificia Univ Javeriana Sede Bogota,IA34</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC04591B</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -1014,6 +1100,7 @@
                 <td>Pontificia Univ Javeriana Sede Bogota,PE31</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC04591K</td>
+                
                 <td>2</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -1022,6 +1109,7 @@
                 <td>Pontificia Univ Javeriana Sede Bogota,PHO36</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC04591J</td>
+                
                 <td>3</td>
                 <td>2/2</td>
                 <td>Partial</td>
@@ -1030,6 +1118,7 @@
                 <td>Pontificia Univ Javeriana Sede Bogota,RA24</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC04591G</td>
+                
                 <td>10</td>
                 <td>13/2</td>
                 <td>Met</td>
@@ -1038,6 +1127,7 @@
                 <td>Pontificia Univ Javeriana Sede Bogota,SP01</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC04591I</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -1046,7 +1136,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="pontificia-universidad-javeriana-cali">
+        <section class="group-page" id="pontificia-universidad-javeriana-cali">
+          <div class="page-toolbar no-print"><button onclick="printOnly('pontificia-universidad-javeriana-cali')">Print this page</button></div>
           <h1>Pontificia Universidad Javeriana-Cali</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -1077,6 +1168,7 @@
                 <td>Pontificia Universidad Javeriana-Cali</td>
                 <td>Student Branch</td>
                 <td class="mono">STB60181</td>
+                
                 <td>1</td>
                 <td>0/4</td>
                 <td>Not Met</td>
@@ -1085,7 +1177,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="servicio-nacional-de-aprendizale-antioquia">
+        <section class="group-page" id="servicio-nacional-de-aprendizale-antioquia">
+          <div class="page-toolbar no-print"><button onclick="printOnly('servicio-nacional-de-aprendizale-antioquia')">Print this page</button></div>
           <h1>Servicio Nacional de Aprendizale - Antioquia</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -1116,6 +1209,7 @@
                 <td>Servicio Nacional de Aprendizale - Antioquia</td>
                 <td>Student Branch</td>
                 <td class="mono">STB09881</td>
+                
                 <td>5</td>
                 <td>0/4</td>
                 <td>Not Met</td>
@@ -1124,7 +1218,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="unidades-tecnologicas-de-santander">
+        <section class="group-page" id="unidades-tecnologicas-de-santander">
+          <div class="page-toolbar no-print"><button onclick="printOnly('unidades-tecnologicas-de-santander')">Print this page</button></div>
           <h1>Unidades Tecnologicas de Santander</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -1155,6 +1250,7 @@
                 <td>Unidades Tecnologicas de Santander</td>
                 <td>Student Branch</td>
                 <td class="mono">STB60137284</td>
+                
                 <td>15</td>
                 <td>0/4</td>
                 <td>Met</td>
@@ -1163,7 +1259,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="univ-cooperativa-de-colombia-sede-bogota">
+        <section class="group-page" id="univ-cooperativa-de-colombia-sede-bogota">
+          <div class="page-toolbar no-print"><button onclick="printOnly('univ-cooperativa-de-colombia-sede-bogota')">Print this page</button></div>
           <h1>Univ Cooperativa De Colombia Sede Bogota</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -1194,6 +1291,7 @@
                 <td>Univ Cooperativa De Colombia Sede Bogota,WIE</td>
                 <td>Affinity Group</td>
                 <td class="mono">SBA62391</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -1202,6 +1300,7 @@
                 <td>Univ Cooperativa De Colombia Sede Bogota</td>
                 <td>Student Branch</td>
                 <td class="mono">STB62391</td>
+                
                 <td>0</td>
                 <td>0/4</td>
                 <td>Not Met</td>
@@ -1210,7 +1309,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="univ-de-ibague-coruniversitaria">
+        <section class="group-page" id="univ-de-ibague-coruniversitaria">
+          <div class="page-toolbar no-print"><button onclick="printOnly('univ-de-ibague-coruniversitaria')">Print this page</button></div>
           <h1>Univ De Ibague - Coruniversitaria</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -1241,6 +1341,7 @@
                 <td>Univ De Ibague - Coruniversitaria</td>
                 <td>Student Branch</td>
                 <td class="mono">STB62121</td>
+                
                 <td>0</td>
                 <td>0/4</td>
                 <td>Not Met</td>
@@ -1249,6 +1350,7 @@
                 <td>Univ De Ibague - Coruniversitaria,IA34</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC62121A</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -1257,7 +1359,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="univ-distrital-francisco-jose-de-caldas-bolivar">
+        <section class="group-page" id="univ-distrital-francisco-jose-de-caldas-bolivar">
+          <div class="page-toolbar no-print"><button onclick="printOnly('univ-distrital-francisco-jose-de-caldas-bolivar')">Print this page</button></div>
           <h1>Univ Distrital Francisco Jose de Caldas - Bolivar</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -1288,6 +1391,7 @@
                 <td>Univ Dist Francisco Jose de Caldas - Bolivar,WIE</td>
                 <td>Affinity Group</td>
                 <td class="mono">SBA18011</td>
+                
                 <td>20</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -1296,6 +1400,7 @@
                 <td>Univ Distrital Francisco Jose de Caldas - Bolivar</td>
                 <td>Student Branch</td>
                 <td class="mono">STB18011</td>
+                
                 <td>25</td>
                 <td>0/4</td>
                 <td>Met</td>
@@ -1304,6 +1409,7 @@
                 <td>Univ Dist Francisco Jose de Caldas - Bolivar, RA24</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC18011A</td>
+                
                 <td>4</td>
                 <td>0/2</td>
                 <td>Partial</td>
@@ -1312,6 +1418,7 @@
                 <td>Univ Dist Francisco Jose de Caldas - Bolivar,C16</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC18011C</td>
+                
                 <td>3</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -1320,6 +1427,7 @@
                 <td>Univ Dist Francisco Jose de Caldas - Bolivar,COM19</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC18011B</td>
+                
                 <td>22</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -1328,6 +1436,7 @@
                 <td>Univ Dist Francisco Jose de Caldas Fac Tec, PE31</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC18011</td>
+                
                 <td>1</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -1336,7 +1445,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="univ-pontificia-bolivariana-upb-">
+        <section class="group-page" id="univ-pontificia-bolivariana-upb">
+          <div class="page-toolbar no-print"><button onclick="printOnly('univ-pontificia-bolivariana-upb')">Print this page</button></div>
           <h1>Univ Pontificia Bolivariana (UPB)</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -1367,6 +1477,7 @@
                 <td>Univ Pontificia Bolivariana (UPB), WIE</td>
                 <td>Affinity Group</td>
                 <td class="mono">SBA09021</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -1375,6 +1486,7 @@
                 <td>Univ Pontificia Bolivariana (UPB)</td>
                 <td>Student Branch</td>
                 <td class="mono">STB09021</td>
+                
                 <td>5</td>
                 <td>0/4</td>
                 <td>Not Met</td>
@@ -1383,6 +1495,7 @@
                 <td>Univ Pontificia Bolivariana (UPB),COM19</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC090211</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -1391,7 +1504,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="univ-santo-tomas-de-aquino">
+        <section class="group-page" id="univ-santo-tomas-de-aquino">
+          <div class="page-toolbar no-print"><button onclick="printOnly('univ-santo-tomas-de-aquino')">Print this page</button></div>
           <h1>Univ Santo Tomas De Aquino</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -1422,6 +1536,7 @@
                 <td>Univ Santo Tomas De Aquino, WIE</td>
                 <td>Affinity Group</td>
                 <td class="mono">SBA09851</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -1430,6 +1545,7 @@
                 <td>Univ Santo Tomas De Aquino</td>
                 <td>Student Branch</td>
                 <td class="mono">STB09851</td>
+                
                 <td>1</td>
                 <td>0/4</td>
                 <td>Not Met</td>
@@ -1438,6 +1554,7 @@
                 <td>Univ Santo Tomas De Aquino,C16</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC0985A</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -1446,6 +1563,7 @@
                 <td>Univ Santo Tomas De Aquino,COM19</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC09851</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -1454,6 +1572,7 @@
                 <td>Univ Santo Tomas De Aquino,PE31</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC09851B</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -1462,6 +1581,7 @@
                 <td>Univ Santo Tomas De Aquino,RA24</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC0985B</td>
+                
                 <td>1</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -1470,6 +1590,7 @@
                 <td>Univ Santo Tomas De Aquino,SP01</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC09851A</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -1478,7 +1599,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="universidad-autonoma-de-bucaramanga">
+        <section class="group-page" id="universidad-autonoma-de-bucaramanga">
+          <div class="page-toolbar no-print"><button onclick="printOnly('universidad-autonoma-de-bucaramanga')">Print this page</button></div>
           <h1>Universidad Autonoma de Bucaramanga</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -1509,6 +1631,7 @@
                 <td>Universidad Autonoma de Bucaramanga</td>
                 <td>Student Branch</td>
                 <td class="mono">STB65361</td>
+                
                 <td>0</td>
                 <td>0/4</td>
                 <td>Not Met</td>
@@ -1517,6 +1640,7 @@
                 <td>Universidad Autonoma de Bucaramanga,EMB18</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC65361</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -1525,7 +1649,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="universidad-autonoma-de-occidente">
+        <section class="group-page" id="universidad-autonoma-de-occidente">
+          <div class="page-toolbar no-print"><button onclick="printOnly('universidad-autonoma-de-occidente')">Print this page</button></div>
           <h1>Universidad Autonoma de Occidente</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -1556,6 +1681,7 @@
                 <td>Universidad Autonoma de Occidente,WIE</td>
                 <td>Affinity Group</td>
                 <td class="mono">SBA29341</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -1564,6 +1690,7 @@
                 <td>Universidad Autonoma de Occidente</td>
                 <td>Student Branch</td>
                 <td class="mono">STB29341</td>
+                
                 <td>1</td>
                 <td>0/4</td>
                 <td>Not Met</td>
@@ -1572,7 +1699,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="universidad-catolica-de-colombia">
+        <section class="group-page" id="universidad-catolica-de-colombia">
+          <div class="page-toolbar no-print"><button onclick="printOnly('universidad-catolica-de-colombia')">Print this page</button></div>
           <h1>Universidad Catolica de Colombia</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -1603,6 +1731,7 @@
                 <td>Universidad Catolica de Colombia,SIGHT</td>
                 <td>Affinity Group</td>
                 <td class="mono">SBA62201S</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -1611,6 +1740,7 @@
                 <td>Universidad Catolica de Colombia,WIE</td>
                 <td>Affinity Group</td>
                 <td class="mono">SBA62201</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -1619,6 +1749,7 @@
                 <td>Universidad Catolica de Colombia</td>
                 <td>Student Branch</td>
                 <td class="mono">STB62201</td>
+                
                 <td>2</td>
                 <td>0/4</td>
                 <td>Not Met</td>
@@ -1627,6 +1758,7 @@
                 <td>Universidad Catolica de Colombia,C16</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC62201A</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -1635,6 +1767,7 @@
                 <td>Universidad Catolica de Colombia,COM19</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC62201</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -1643,6 +1776,7 @@
                 <td>Universidad Catolica de Colombia,ED15/NANO42</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC62201B</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -1651,6 +1785,7 @@
                 <td>Universidad Catolica de Colombia,PHO36</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC62201C</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -1659,7 +1794,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="universidad-central">
+        <section class="group-page" id="universidad-central">
+          <div class="page-toolbar no-print"><button onclick="printOnly('universidad-central')">Print this page</button></div>
           <h1>Universidad Central</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -1690,6 +1826,7 @@
                 <td>Universidad Central</td>
                 <td>Student Branch</td>
                 <td class="mono">STB65251</td>
+                
                 <td>11</td>
                 <td>1/4</td>
                 <td>Partial</td>
@@ -1698,7 +1835,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="universidad-distrital-francisco-jose-de-caldas">
+        <section class="group-page" id="universidad-distrital-francisco-jose-de-caldas">
+          <div class="page-toolbar no-print"><button onclick="printOnly('universidad-distrital-francisco-jose-de-caldas')">Print this page</button></div>
           <h1>Universidad Distrital Francisco Jose de Caldas</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -1729,6 +1867,7 @@
                 <td>Univ Distrital Francisco Jose De Cal, WIE</td>
                 <td>Affinity Group</td>
                 <td class="mono">SBA04331</td>
+                
                 <td>18</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -1737,6 +1876,7 @@
                 <td>Univ. Distrital Francisco Jose de Caldas SB SIGHT</td>
                 <td>Affinity Group</td>
                 <td class="mono">SBA04331S</td>
+                
                 <td>43</td>
                 <td>1/2</td>
                 <td>Not Met</td>
@@ -1745,6 +1885,7 @@
                 <td>Universidad Distrital Francisco Jose de Caldas</td>
                 <td>Student Branch</td>
                 <td class="mono">STB04331</td>
+                
                 <td>80</td>
                 <td>4/4</td>
                 <td>Met</td>
@@ -1753,6 +1894,7 @@
                 <td>Francisco Jose De Caldas Distrital, ED15</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC0433N</td>
+                
                 <td>15</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -1761,6 +1903,7 @@
                 <td>Francisco Jose De Caldas Distrital, IA34</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC0433J</td>
+                
                 <td>15</td>
                 <td>0/2</td>
                 <td>Partial</td>
@@ -1769,6 +1912,7 @@
                 <td>Francisco Jose De Caldas Distrital, RA24</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC0433I</td>
+                
                 <td>33</td>
                 <td>1/2</td>
                 <td>Partial</td>
@@ -1777,6 +1921,7 @@
                 <td>Francisco Jose De Caldas Distrital, TEM14</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC0433M</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -1785,6 +1930,7 @@
                 <td>Francisco Jose De Caldas Distrital,E25</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC0433O</td>
+                
                 <td>6</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -1793,6 +1939,7 @@
                 <td>Univ Distrital Francisco Jose De Caldas, AES10</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC0433K</td>
+                
                 <td>2</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -1801,6 +1948,7 @@
                 <td>Univ Distrital Francisco Jose De Caldas, CAS04</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC0433D</td>
+                
                 <td>24</td>
                 <td>0/2</td>
                 <td>Partial</td>
@@ -1809,6 +1957,7 @@
                 <td>Univ Distrital Francisco Jose De Caldas, CS23</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC0433C</td>
+                
                 <td>4</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -1817,6 +1966,7 @@
                 <td>Univ Distrital Francisco Jose De Caldas, PEL35</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC0433L</td>
+                
                 <td>12</td>
                 <td>4/2</td>
                 <td>Met</td>
@@ -1825,6 +1975,7 @@
                 <td>Univ Distrital Francisco Jose De Caldas, SP01</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC0433A</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -1833,6 +1984,7 @@
                 <td>Univ Distrital Francisco Jose De Caldas,C16</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC04331</td>
+                
                 <td>13</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -1841,6 +1993,7 @@
                 <td>Univ Distrital Francisco Jose De Caldas,COM19</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC0433B</td>
+                
                 <td>15</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -1849,6 +2002,7 @@
                 <td>Univ Distrital Francisco Jose De Caldas,EMB18</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC0433F</td>
+                
                 <td>13</td>
                 <td>0/2</td>
                 <td>Partial</td>
@@ -1857,6 +2011,7 @@
                 <td>Univ Distrital Francisco Jose de Caldas, GRS29</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC0433E</td>
+                
                 <td>9</td>
                 <td>0/2</td>
                 <td>Met</td>
@@ -1865,6 +2020,7 @@
                 <td>Univ Distrital Francisco Jose de Caldas, PE31</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC0433H</td>
+                
                 <td>16</td>
                 <td>0/2</td>
                 <td>Met</td>
@@ -1873,7 +2029,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="universidad-eafit">
+        <section class="group-page" id="universidad-eafit">
+          <div class="page-toolbar no-print"><button onclick="printOnly('universidad-eafit')">Print this page</button></div>
           <h1>Universidad EAFIT</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -1904,6 +2061,7 @@
                 <td>Universidad EAFIT</td>
                 <td>Student Branch</td>
                 <td class="mono">STB64421</td>
+                
                 <td>4</td>
                 <td>0/4</td>
                 <td>Not Met</td>
@@ -1912,7 +2070,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="universidad-el-bosque">
+        <section class="group-page" id="universidad-el-bosque">
+          <div class="page-toolbar no-print"><button onclick="printOnly('universidad-el-bosque')">Print this page</button></div>
           <h1>Universidad El Bosque</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -1943,6 +2102,7 @@
                 <td>Univ El Bosque, WIE</td>
                 <td>Affinity Group</td>
                 <td class="mono">SBA60951</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -1951,6 +2111,7 @@
                 <td>Universidad el Bosque</td>
                 <td>Student Branch</td>
                 <td class="mono">STB60951</td>
+                
                 <td>10</td>
                 <td>0/4</td>
                 <td>Partial</td>
@@ -1959,6 +2120,7 @@
                 <td>Univ El Bosque, COM19</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC60951</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -1967,6 +2129,7 @@
                 <td>Univ El Bosque, IA34</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC60951G</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -1975,6 +2138,7 @@
                 <td>Univ El Bosque, SIT30</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC60951F</td>
+                
                 <td>2</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -1983,6 +2147,7 @@
                 <td>Universidad El Bosque, PE31</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC60951D</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -1991,6 +2156,7 @@
                 <td>Universidad el Bosque, C16</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC60951A</td>
+                
                 <td>2</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -1999,6 +2165,7 @@
                 <td>Universidad el Bosque, CS23</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC60951B</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -2007,6 +2174,7 @@
                 <td>Universidad el Bosque, EMB18</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC60951C</td>
+                
                 <td>4</td>
                 <td>0/2</td>
                 <td>Met</td>
@@ -2015,6 +2183,7 @@
                 <td>Universidad el Bosque, RA24</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC60951E</td>
+                
                 <td>1</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -2023,7 +2192,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="universidad-francisco-de-paula-santander">
+        <section class="group-page" id="universidad-francisco-de-paula-santander">
+          <div class="page-toolbar no-print"><button onclick="printOnly('universidad-francisco-de-paula-santander')">Print this page</button></div>
           <h1>Universidad Francisco de Paula Santander</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -2054,6 +2224,7 @@
                 <td>Universidad Francisco De Paula Santander,WIE</td>
                 <td>Affinity Group</td>
                 <td class="mono">SBA10591</td>
+                
                 <td>1</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -2062,6 +2233,7 @@
                 <td>Universidad Francisco de Paula Santander</td>
                 <td>Student Branch</td>
                 <td class="mono">STB10591</td>
+                
                 <td>2</td>
                 <td>0/4</td>
                 <td>Met</td>
@@ -2070,6 +2242,7 @@
                 <td>Universidad Francisco de Paula Santander,COM19</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC10591A</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -2078,6 +2251,7 @@
                 <td>Universidad Francisco de Paula Santander,PE31</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC10591B</td>
+                
                 <td>1</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -2086,6 +2260,7 @@
                 <td>Universidad Francisco de Paula Santander,RA24</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC10591C</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -2094,6 +2269,7 @@
                 <td>Universidad Francisco de Paula Santander,SP01</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC10591D</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -2102,7 +2278,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="universidad-incca-de-colombia">
+        <section class="group-page" id="universidad-incca-de-colombia">
+          <div class="page-toolbar no-print"><button onclick="printOnly('universidad-incca-de-colombia')">Print this page</button></div>
           <h1>Universidad INCCA de Colombia</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -2133,6 +2310,7 @@
                 <td>Universidad INCCA de Colombia</td>
                 <td>Student Branch</td>
                 <td class="mono">STB03411</td>
+                
                 <td>0</td>
                 <td>0/4</td>
                 <td>Not Met</td>
@@ -2141,6 +2319,7 @@
                 <td>Universidad Incca de Colombia, RA24</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC034111</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -2149,7 +2328,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="universidad-industrial-de-santander">
+        <section class="group-page" id="universidad-industrial-de-santander">
+          <div class="page-toolbar no-print"><button onclick="printOnly('universidad-industrial-de-santander')">Print this page</button></div>
           <h1>Universidad Industrial de Santander</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -2180,6 +2360,7 @@
                 <td>Universidad Industrial de Santander, WIE</td>
                 <td>Affinity Group</td>
                 <td class="mono">SBA10511</td>
+                
                 <td>12</td>
                 <td>3/2</td>
                 <td>Not Met</td>
@@ -2188,6 +2369,7 @@
                 <td>Universidad Industrial de Santander</td>
                 <td>Student Branch</td>
                 <td class="mono">STB10511</td>
+                
                 <td>68</td>
                 <td>10/4</td>
                 <td>Met</td>
@@ -2196,6 +2378,7 @@
                 <td>Francisco de Paula Santander,C16</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC1051A</td>
+                
                 <td>20</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -2204,6 +2387,7 @@
                 <td>Francisco de Paula Santander,CS23</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC1051B</td>
+                
                 <td>6</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -2212,6 +2396,7 @@
                 <td>Universidad Industrial de Santander,AES10</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC10511E</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -2220,6 +2405,7 @@
                 <td>Universidad Industrial de Santander,C16</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC10511I</td>
+                
                 <td>20</td>
                 <td>2/2</td>
                 <td>Met</td>
@@ -2228,6 +2414,7 @@
                 <td>Universidad Industrial de Santander,CS23</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC10511H</td>
+                
                 <td>6</td>
                 <td>0/2</td>
                 <td>Met</td>
@@ -2236,6 +2423,7 @@
                 <td>Universidad Industrial de Santander,E25</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC10511J</td>
+                
                 <td>10</td>
                 <td>4/2</td>
                 <td>Met</td>
@@ -2244,6 +2432,7 @@
                 <td>Universidad Industrial de Santander,ED15</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC10511D</td>
+                
                 <td>20</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -2252,6 +2441,7 @@
                 <td>Universidad Industrial de Santander,EMB18</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC10511C</td>
+                
                 <td>15</td>
                 <td>0/2</td>
                 <td>Met</td>
@@ -2260,6 +2450,7 @@
                 <td>Universidad Industrial de Santander,PE31</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC1015A</td>
+                
                 <td>6</td>
                 <td>4/2</td>
                 <td>Met</td>
@@ -2268,6 +2459,7 @@
                 <td>Universidad Industrial de Santander,RA24</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC10511G</td>
+                
                 <td>6</td>
                 <td>1/2</td>
                 <td>Met</td>
@@ -2276,6 +2468,7 @@
                 <td>Universidad Industrial de Santander,SP01</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC10511</td>
+                
                 <td>8</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -2284,6 +2477,7 @@
                 <td>Universidad Industrial de Santander,SSC37</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC10511F</td>
+                
                 <td>11</td>
                 <td>3/2</td>
                 <td>Met</td>
@@ -2292,7 +2486,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="universidad-jorge-tadeo-lozano">
+        <section class="group-page" id="universidad-jorge-tadeo-lozano">
+          <div class="page-toolbar no-print"><button onclick="printOnly('universidad-jorge-tadeo-lozano')">Print this page</button></div>
           <h1>Universidad Jorge Tadeo Lozano</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -2323,6 +2518,7 @@
                 <td>Universidad Jorge Tadeo Lozano</td>
                 <td>Student Branch</td>
                 <td class="mono">STB65061A</td>
+                
                 <td>20</td>
                 <td>18/4</td>
                 <td>Met</td>
@@ -2331,7 +2527,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="universidad-mariana">
+        <section class="group-page" id="universidad-mariana">
+          <div class="page-toolbar no-print"><button onclick="printOnly('universidad-mariana')">Print this page</button></div>
           <h1>Universidad Mariana</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -2362,6 +2559,7 @@
                 <td>Universidad Mariana</td>
                 <td>Student Branch</td>
                 <td class="mono">STB14023</td>
+                
                 <td>0</td>
                 <td>0/4</td>
                 <td>Not Met</td>
@@ -2370,7 +2568,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="universidad-nacional-abierta-y-a-distancia">
+        <section class="group-page" id="universidad-nacional-abierta-y-a-distancia">
+          <div class="page-toolbar no-print"><button onclick="printOnly('universidad-nacional-abierta-y-a-distancia')">Print this page</button></div>
           <h1>Universidad Nacional Abierta y a Distancia</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -2401,6 +2600,7 @@
                 <td>Universidad Nacional Abierta y a Distancia,WIE</td>
                 <td>Affinity Group</td>
                 <td class="mono">SBA13071</td>
+                
                 <td>8</td>
                 <td>0/2</td>
                 <td>Met</td>
@@ -2409,6 +2609,7 @@
                 <td>Universidad Nacional Abierta y a Distancia</td>
                 <td>Student Branch</td>
                 <td class="mono">STB13071</td>
+                
                 <td>27</td>
                 <td>0/4</td>
                 <td>Met</td>
@@ -2417,6 +2618,7 @@
                 <td>Universidad Nacional Abierta y a Distancia,AES10</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC13071A</td>
+                
                 <td>7</td>
                 <td>0/2</td>
                 <td>Met</td>
@@ -2425,6 +2627,7 @@
                 <td>Universidad Nacional Abierta y a Distancia,C16</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC13071</td>
+                
                 <td>9</td>
                 <td>0/2</td>
                 <td>Met</td>
@@ -2433,7 +2636,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="universidad-nacional-de-colombia-sede-bogota">
+        <section class="group-page" id="universidad-nacional-de-colombia-sede-bogota">
+          <div class="page-toolbar no-print"><button onclick="printOnly('universidad-nacional-de-colombia-sede-bogota')">Print this page</button></div>
           <h1>Universidad Nacional De Colombia Sede Bogota</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -2464,6 +2668,7 @@
                 <td>Universidad Nacional De Colombia Sede-Bogota,WIE</td>
                 <td>Affinity Group</td>
                 <td class="mono">SBA06431</td>
+                
                 <td>16</td>
                 <td>1/2</td>
                 <td>Not Met</td>
@@ -2472,6 +2677,7 @@
                 <td>Universidad Nacional De Colombia Sede Bogota</td>
                 <td>Student Branch</td>
                 <td class="mono">STB06431</td>
+                
                 <td>43</td>
                 <td>4/4</td>
                 <td>Met</td>
@@ -2480,6 +2686,7 @@
                 <td>Uni Nac de Colombia Sede Bogota,EMC27/NANO42/SEN39</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC06431H</td>
+                
                 <td>4</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -2488,6 +2695,7 @@
                 <td>Universidad Nacional De Colombia Sede Bogota,AES10</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC06431I</td>
+                
                 <td>2</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -2496,6 +2704,7 @@
                 <td>Universidad Nacional De Colombia Sede Bogota,AP03</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC06431G</td>
+                
                 <td>15</td>
                 <td>2/2</td>
                 <td>Met</td>
@@ -2504,6 +2713,7 @@
                 <td>Universidad Nacional De Colombia Sede Bogota,C16</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC06431F</td>
+                
                 <td>2</td>
                 <td>2/2</td>
                 <td>Met</td>
@@ -2512,6 +2722,7 @@
                 <td>Universidad Nacional De Colombia Sede Bogota,CAS04</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC06431A</td>
+                
                 <td>8</td>
                 <td>0/2</td>
                 <td>Met</td>
@@ -2520,6 +2731,7 @@
                 <td>Universidad Nacional De Colombia Sede Bogota,COM19</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC06431C</td>
+                
                 <td>2</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -2528,6 +2740,7 @@
                 <td>Universidad Nacional De Colombia Sede Bogota,ED15</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC06431J</td>
+                
                 <td>4</td>
                 <td>0/2</td>
                 <td>Partial</td>
@@ -2536,6 +2749,7 @@
                 <td>Universidad Nacional De Colombia Sede Bogota,EMB18</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC06431E</td>
+                
                 <td>5</td>
                 <td>0/2</td>
                 <td>Partial</td>
@@ -2544,6 +2758,7 @@
                 <td>Universidad Nacional De Colombia Sede Bogota,IA34</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC06431B</td>
+                
                 <td>1</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -2552,6 +2767,7 @@
                 <td>Universidad Nacional De Colombia Sede Bogota,PE31</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC064311</td>
+                
                 <td>5</td>
                 <td>0/2</td>
                 <td>Met</td>
@@ -2560,6 +2776,7 @@
                 <td>Universidad Nacional De Colombia Sede Bogota,RA24</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC06431D</td>
+                
                 <td>9</td>
                 <td>1/2</td>
                 <td>Met</td>
@@ -2568,6 +2785,7 @@
                 <td>Universidad Nacional De Colombia Sede Bogota,TEM14</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC06431K</td>
+                
                 <td>5</td>
                 <td>0/2</td>
                 <td>Met</td>
@@ -2576,7 +2794,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="universidad-nacional-de-colombia-sede-medellin">
+        <section class="group-page" id="universidad-nacional-de-colombia-sede-medellin">
+          <div class="page-toolbar no-print"><button onclick="printOnly('universidad-nacional-de-colombia-sede-medellin')">Print this page</button></div>
           <h1>Universidad Nacional de Colombia Sede Medellin</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -2607,6 +2826,7 @@
                 <td>Universidad Nacional de Colombia Sede Medellin</td>
                 <td>Student Branch</td>
                 <td class="mono">STB66021</td>
+                
                 <td>10</td>
                 <td>0/4</td>
                 <td>Not Met</td>
@@ -2615,7 +2835,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="universidad-nacional-sede-manizales">
+        <section class="group-page" id="universidad-nacional-sede-manizales">
+          <div class="page-toolbar no-print"><button onclick="printOnly('universidad-nacional-sede-manizales')">Print this page</button></div>
           <h1>Universidad Nacional sede Manizales</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -2646,6 +2867,7 @@
                 <td>Univ Nacional Sede Manizales, WIE</td>
                 <td>Affinity Group</td>
                 <td class="mono">SBA61301</td>
+                
                 <td>1</td>
                 <td>5/2</td>
                 <td>Not Met</td>
@@ -2654,6 +2876,7 @@
                 <td>Universidad Nacional sede Manizales</td>
                 <td>Student Branch</td>
                 <td class="mono">STB61301</td>
+                
                 <td>7</td>
                 <td>2/4</td>
                 <td>Met</td>
@@ -2662,6 +2885,7 @@
                 <td>Univ Nacional Sede Manizales, PE31</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC61301A</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -2670,6 +2894,7 @@
                 <td>Univ Nacional Sede Manizales,ED15</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC61301B</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -2678,6 +2903,7 @@
                 <td>Universidad Nacional sede Manizales,IA34</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC61301</td>
+                
                 <td>7</td>
                 <td>0/2</td>
                 <td>Met</td>
@@ -2686,7 +2912,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="universidad-pedagogica-nacional">
+        <section class="group-page" id="universidad-pedagogica-nacional">
+          <div class="page-toolbar no-print"><button onclick="printOnly('universidad-pedagogica-nacional')">Print this page</button></div>
           <h1>Universidad Pedagogica Nacional</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -2717,6 +2944,7 @@
                 <td>Universidad Pedagogica Nacional</td>
                 <td>Student Branch</td>
                 <td class="mono">STB08221</td>
+                
                 <td>0</td>
                 <td>0/4</td>
                 <td>Not Met</td>
@@ -2725,6 +2953,7 @@
                 <td>Universidad Pedagogica Nacional, E25</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC08221</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -2733,7 +2962,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="universidad-pedagogica-y-tec-de-colombia">
+        <section class="group-page" id="universidad-pedagogica-y-tec-de-colombia">
+          <div class="page-toolbar no-print"><button onclick="printOnly('universidad-pedagogica-y-tec-de-colombia')">Print this page</button></div>
           <h1>Universidad Pedagogica Y Tec de Colombia</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -2764,6 +2994,7 @@
                 <td>Universidad Pedagogica Y Tec de Colombia</td>
                 <td>Student Branch</td>
                 <td class="mono">STB60931</td>
+                
                 <td>1</td>
                 <td>0/4</td>
                 <td>Not Met</td>
@@ -2772,7 +3003,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="universidad-piloto-de-colombia">
+        <section class="group-page" id="universidad-piloto-de-colombia">
+          <div class="page-toolbar no-print"><button onclick="printOnly('universidad-piloto-de-colombia')">Print this page</button></div>
           <h1>Universidad Piloto de Colombia</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -2803,6 +3035,7 @@
                 <td>Universidad Piloto de Colombia,WIE</td>
                 <td>Affinity Group</td>
                 <td class="mono">SBA81721</td>
+                
                 <td>1</td>
                 <td>1/2</td>
                 <td>Not Met</td>
@@ -2811,6 +3044,7 @@
                 <td>Universidad Piloto de Colombia</td>
                 <td>Student Branch</td>
                 <td class="mono">STB81721</td>
+                
                 <td>14</td>
                 <td>18/4</td>
                 <td>Met</td>
@@ -2819,7 +3053,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="universidad-santiago-de-cali">
+        <section class="group-page" id="universidad-santiago-de-cali">
+          <div class="page-toolbar no-print"><button onclick="printOnly('universidad-santiago-de-cali')">Print this page</button></div>
           <h1>Universidad Santiago de Cali</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -2850,6 +3085,7 @@
                 <td>Universidad Santiago de Cali,WIE</td>
                 <td>Affinity Group</td>
                 <td class="mono">SBA64461</td>
+                
                 <td>14</td>
                 <td>2/2</td>
                 <td>Partial</td>
@@ -2858,6 +3094,7 @@
                 <td>Universidad Santiago de Cali</td>
                 <td>Student Branch</td>
                 <td class="mono">STB64461</td>
+                
                 <td>26</td>
                 <td>1/4</td>
                 <td>Partial</td>
@@ -2866,6 +3103,7 @@
                 <td>Universidad Santiago de Cali,C16</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC64461</td>
+                
                 <td>7</td>
                 <td>2/2</td>
                 <td>Partial</td>
@@ -2874,6 +3112,7 @@
                 <td>Universidad Santiago de Cali,EMB18</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC64461B</td>
+                
                 <td>8</td>
                 <td>1/2</td>
                 <td>Met</td>
@@ -2882,6 +3121,7 @@
                 <td>Universidad Santiago de Cali,RA24</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC64461A</td>
+                
                 <td>8</td>
                 <td>2/2</td>
                 <td>Met</td>
@@ -2890,6 +3130,7 @@
                 <td>Universidad Santiago de Cali,SP01</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC64461C</td>
+                
                 <td>6</td>
                 <td>1/2</td>
                 <td>Not Met</td>
@@ -2898,7 +3139,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="universidad-santo-tomas-tunja">
+        <section class="group-page" id="universidad-santo-tomas-tunja">
+          <div class="page-toolbar no-print"><button onclick="printOnly('universidad-santo-tomas-tunja')">Print this page</button></div>
           <h1>Universidad Santo Tomas - Tunja</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -2929,6 +3171,7 @@
                 <td>Universidad Santo Tomas - Tunja, SIGHT</td>
                 <td>Affinity Group</td>
                 <td class="mono">SBA04081S</td>
+                
                 <td>26</td>
                 <td>0/2</td>
                 <td>Partial</td>
@@ -2937,6 +3180,7 @@
                 <td>Universidad Santo Tomas - Tunja, WIE</td>
                 <td>Affinity Group</td>
                 <td class="mono">SBA04081</td>
+                
                 <td>20</td>
                 <td>0/2</td>
                 <td>Partial</td>
@@ -2945,6 +3189,7 @@
                 <td>Universidad Santo Tomas - Tunja</td>
                 <td>Student Branch</td>
                 <td class="mono">STB04081</td>
+                
                 <td>20</td>
                 <td>0/4</td>
                 <td>Partial</td>
@@ -2953,6 +3198,7 @@
                 <td>Universidad Santo Tomas - Tunja, AES10</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC04081C</td>
+                
                 <td>6</td>
                 <td>1/2</td>
                 <td>Partial</td>
@@ -2961,6 +3207,7 @@
                 <td>Universidad Santo Tomas - Tunja, ED15</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC04081A</td>
+                
                 <td>7</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -2969,6 +3216,7 @@
                 <td>Universidad Santo Tomas - Tunja, RA24</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC04081B</td>
+                
                 <td>8</td>
                 <td>0/2</td>
                 <td>Met</td>
@@ -2977,7 +3225,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="universidad-santo-tomas-bucaramanga">
+        <section class="group-page" id="universidad-santo-tomas-bucaramanga">
+          <div class="page-toolbar no-print"><button onclick="printOnly('universidad-santo-tomas-bucaramanga')">Print this page</button></div>
           <h1>Universidad Santo Tomas-Bucaramanga</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -3008,6 +3257,7 @@
                 <td>Universidad Santo Tomas-Bucaramanga</td>
                 <td>Student Branch</td>
                 <td class="mono">STB60232106</td>
+                
                 <td>32</td>
                 <td>1/4</td>
                 <td>Met</td>
@@ -3016,6 +3266,7 @@
                 <td>Universidad Santo Tomas-Bucaramanga,COM19</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC60232106A</td>
+                
                 <td>14</td>
                 <td>0/2</td>
                 <td>Met</td>
@@ -3024,6 +3275,7 @@
                 <td>Universidad Santo Tomas-Bucaramanga,RA24</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC60232106</td>
+                
                 <td>16</td>
                 <td>0/2</td>
                 <td>Met</td>
@@ -3032,7 +3284,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="universidad-sergio-arboleda">
+        <section class="group-page" id="universidad-sergio-arboleda">
+          <div class="page-toolbar no-print"><button onclick="printOnly('universidad-sergio-arboleda')">Print this page</button></div>
           <h1>Universidad Sergio Arboleda</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -3063,6 +3316,7 @@
                 <td>Universidad Sergio Arboleda,WIE</td>
                 <td>Affinity Group</td>
                 <td class="mono">SBA01201</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -3071,6 +3325,7 @@
                 <td>Universidad Sergio Arboleda</td>
                 <td>Student Branch</td>
                 <td class="mono">STB01201</td>
+                
                 <td>0</td>
                 <td>0/4</td>
                 <td>Not Met</td>
@@ -3079,6 +3334,7 @@
                 <td>Universidad Sergio Arboleda,EMB18/RA24</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC01201</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -3087,7 +3343,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="universidad-surcolombiana">
+        <section class="group-page" id="universidad-surcolombiana">
+          <div class="page-toolbar no-print"><button onclick="printOnly('universidad-surcolombiana')">Print this page</button></div>
           <h1>Universidad Surcolombiana</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -3118,6 +3375,7 @@
                 <td>Universidad Surcolombiana, WIE</td>
                 <td>Affinity Group</td>
                 <td class="mono">SBA16735</td>
+                
                 <td>19</td>
                 <td>0/2</td>
                 <td>Partial</td>
@@ -3126,6 +3384,7 @@
                 <td>Universidad Surcolombiana</td>
                 <td>Student Branch</td>
                 <td class="mono">STB16735</td>
+                
                 <td>25</td>
                 <td>1/4</td>
                 <td>Met</td>
@@ -3134,6 +3393,7 @@
                 <td>Universidad Surcolombiana, CS23</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC16735A</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -3142,6 +3402,7 @@
                 <td>Universidad Surcolombiana, RA24</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC16735</td>
+                
                 <td>8</td>
                 <td>10/2</td>
                 <td>Partial</td>
@@ -3150,6 +3411,7 @@
                 <td>Universidad Surcolombiana,PE31</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC16735B</td>
+                
                 <td>16</td>
                 <td>0/2</td>
                 <td>Met</td>
@@ -3158,7 +3420,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="universidad-tecnologica-de-pereira">
+        <section class="group-page" id="universidad-tecnologica-de-pereira">
+          <div class="page-toolbar no-print"><button onclick="printOnly('universidad-tecnologica-de-pereira')">Print this page</button></div>
           <h1>Universidad Tecnologica de Pereira</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -3189,6 +3452,7 @@
                 <td>Universidad Tecnologica de Pereira, WIE</td>
                 <td>Affinity Group</td>
                 <td class="mono">SBA17431</td>
+                
                 <td>3</td>
                 <td>1/2</td>
                 <td>Partial</td>
@@ -3197,6 +3461,7 @@
                 <td>Universidad Tecnologica de Pereira</td>
                 <td>Student Branch</td>
                 <td class="mono">STB17431</td>
+                
                 <td>20</td>
                 <td>1/4</td>
                 <td>Met</td>
@@ -3205,6 +3470,7 @@
                 <td>Univ Tecnologica de Pereira,CS23/SEN39/CSC41</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC17431B</td>
+                
                 <td>1</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -3213,6 +3479,7 @@
                 <td>Universidad Tecnologica de Pereira, PE31</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC17431</td>
+                
                 <td>2</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -3221,6 +3488,7 @@
                 <td>Universidad Tecnologica de Pereira, PEL35</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC17431A</td>
+                
                 <td>5</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -3229,6 +3497,7 @@
                 <td>Universidad Tecnologica de Pereira,AES10</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC17431E</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -3237,6 +3506,7 @@
                 <td>Universidad Tecnologica de Pereira,CAS04</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC17431F</td>
+                
                 <td>11</td>
                 <td>2/2</td>
                 <td>Met</td>
@@ -3245,6 +3515,7 @@
                 <td>Universidad Tecnologica de Pereira,IA34</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC17431C</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -3253,6 +3524,7 @@
                 <td>Universidad Tecnologica de Pereira,RA24</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC17431D</td>
+                
                 <td>1</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -3261,7 +3533,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="universidad-de-antioquia">
+        <section class="group-page" id="universidad-de-antioquia">
+          <div class="page-toolbar no-print"><button onclick="printOnly('universidad-de-antioquia')">Print this page</button></div>
           <h1>Universidad de Antioquia</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -3292,6 +3565,7 @@
                 <td>Universidad de Antioquia</td>
                 <td>Student Branch</td>
                 <td class="mono">STB14361</td>
+                
                 <td>6</td>
                 <td>3/4</td>
                 <td>Met</td>
@@ -3300,6 +3574,7 @@
                 <td>Universidad de Antioquia, PE31</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC14361A</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -3308,7 +3583,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="universidad-de-cundinamarca">
+        <section class="group-page" id="universidad-de-cundinamarca">
+          <div class="page-toolbar no-print"><button onclick="printOnly('universidad-de-cundinamarca')">Print this page</button></div>
           <h1>Universidad de Cundinamarca</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -3339,6 +3615,7 @@
                 <td>Universidad de Cundinamarca</td>
                 <td>Student Branch</td>
                 <td class="mono">STB64431</td>
+                
                 <td>0</td>
                 <td>0/4</td>
                 <td>Not Met</td>
@@ -3347,7 +3624,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="universidad-de-investigacion-y-desarrollo">
+        <section class="group-page" id="universidad-de-investigacion-y-desarrollo">
+          <div class="page-toolbar no-print"><button onclick="printOnly('universidad-de-investigacion-y-desarrollo')">Print this page</button></div>
           <h1>Universidad de Investigacion y Desarrollo</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -3378,6 +3656,7 @@
                 <td>Universidad de Investigacion y Desarrollo</td>
                 <td>Student Branch</td>
                 <td class="mono">STB64635</td>
+                
                 <td>0</td>
                 <td>0/4</td>
                 <td>Not Met</td>
@@ -3386,7 +3665,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="universidad-de-medellin">
+        <section class="group-page" id="universidad-de-medellin">
+          <div class="page-toolbar no-print"><button onclick="printOnly('universidad-de-medellin')">Print this page</button></div>
           <h1>Universidad de Medellin</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -3417,6 +3697,7 @@
                 <td>Universidad de Medellin</td>
                 <td>Student Branch</td>
                 <td class="mono">STB07871</td>
+                
                 <td>0</td>
                 <td>0/4</td>
                 <td>Not Met</td>
@@ -3425,7 +3706,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="universidad-de-narino">
+        <section class="group-page" id="universidad-de-narino">
+          <div class="page-toolbar no-print"><button onclick="printOnly('universidad-de-narino')">Print this page</button></div>
           <h1>Universidad de Narino</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -3456,6 +3738,7 @@
                 <td>Universidad de Narino, WIE</td>
                 <td>Affinity Group</td>
                 <td class="mono">SBA64151</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -3464,6 +3747,7 @@
                 <td>Universidad de Narino</td>
                 <td>Student Branch</td>
                 <td class="mono">STB64151</td>
+                
                 <td>5</td>
                 <td>0/4</td>
                 <td>Not Met</td>
@@ -3472,6 +3756,7 @@
                 <td>Universidad de Narino, CIS11</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC64151</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -3480,6 +3765,7 @@
                 <td>Universidad de Narino, RA24</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC64151B</td>
+                
                 <td>2</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -3488,6 +3774,7 @@
                 <td>Universidad de Narino,PE31</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC64151A</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -3496,7 +3783,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="universidad-de-san-buenaventura">
+        <section class="group-page" id="universidad-de-san-buenaventura">
+          <div class="page-toolbar no-print"><button onclick="printOnly('universidad-de-san-buenaventura')">Print this page</button></div>
           <h1>Universidad de San Buenaventura</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -3527,6 +3815,7 @@
                 <td>Universidad de San Buenaventura,WIE</td>
                 <td>Affinity Group</td>
                 <td class="mono">SBA62571</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -3535,6 +3824,7 @@
                 <td>Universidad de San Buenaventura</td>
                 <td>Student Branch</td>
                 <td class="mono">STB62571</td>
+                
                 <td>0</td>
                 <td>0/4</td>
                 <td>Not Met</td>
@@ -3543,6 +3833,7 @@
                 <td>Universidad de San Buenaventura,COM19</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC62571</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -3551,6 +3842,7 @@
                 <td>Universidad de San Buenaventura,CS23</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC62571F</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -3559,6 +3851,7 @@
                 <td>Universidad de San Buenaventura,CT08</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC62571A</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -3567,6 +3860,7 @@
                 <td>Universidad de San Buenaventura,ED15</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC62571E</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -3575,6 +3869,7 @@
                 <td>Universidad de San Buenaventura,EMB18</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC6257D</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -3583,6 +3878,7 @@
                 <td>Universidad de San Buenaventura,IA34</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC6257C</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -3591,6 +3887,7 @@
                 <td>Universidad de San Buenaventura,PE31</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC6257A</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -3599,6 +3896,7 @@
                 <td>Universidad de San Buenaventura,RA24</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC6257B</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -3607,6 +3905,7 @@
                 <td>Universidad de San Buenaventura,SMC28</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC62571D</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -3615,7 +3914,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="universidad-de-san-buenaventura-cali">
+        <section class="group-page" id="universidad-de-san-buenaventura-cali">
+          <div class="page-toolbar no-print"><button onclick="printOnly('universidad-de-san-buenaventura-cali')">Print this page</button></div>
           <h1>Universidad de San Buenaventura - Cali</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -3646,6 +3946,7 @@
                 <td>Universidad de San Buenaventura - Cali</td>
                 <td>Student Branch</td>
                 <td class="mono">STB07901</td>
+                
                 <td>0</td>
                 <td>0/4</td>
                 <td>Not Met</td>
@@ -3654,6 +3955,7 @@
                 <td>Universidad de San Buenaventura - Cali,C16</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC07901A</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -3662,6 +3964,7 @@
                 <td>Universidad de San Buenaventura - Cali,ED15</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC07901B</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -3670,7 +3973,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="universidad-de-la-sabana">
+        <section class="group-page" id="universidad-de-la-sabana">
+          <div class="page-toolbar no-print"><button onclick="printOnly('universidad-de-la-sabana')">Print this page</button></div>
           <h1>Universidad de la Sabana</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -3701,6 +4005,7 @@
                 <td>Universidad de la Sabana</td>
                 <td>Student Branch</td>
                 <td class="mono">STB66041</td>
+                
                 <td>31</td>
                 <td>0/4</td>
                 <td>Partial</td>
@@ -3709,6 +4014,7 @@
                 <td>Universidad de la Sabana, C16</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC66041A</td>
+                
                 <td>3</td>
                 <td>0/2</td>
                 <td>Partial</td>
@@ -3717,6 +4023,7 @@
                 <td>Universidad de la Sabana, RA24</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC66041B</td>
+                
                 <td>7</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -3725,7 +4032,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="universidad-de-los-andes">
+        <section class="group-page" id="universidad-de-los-andes">
+          <div class="page-toolbar no-print"><button onclick="printOnly('universidad-de-los-andes')">Print this page</button></div>
           <h1>Universidad de los Andes</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -3756,6 +4064,7 @@
                 <td>Universidad de los Andes, WIE</td>
                 <td>Affinity Group</td>
                 <td class="mono">SBA12991</td>
+                
                 <td>41</td>
                 <td>4/2</td>
                 <td>Partial</td>
@@ -3764,6 +4073,7 @@
                 <td>Universidad de los Andes</td>
                 <td>Student Branch</td>
                 <td class="mono">STB12991</td>
+                
                 <td>132</td>
                 <td>101/4</td>
                 <td>Met</td>
@@ -3772,6 +4082,7 @@
                 <td>Universidad de los Andes,AES10</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC12991K</td>
+                
                 <td>2</td>
                 <td>0/2</td>
                 <td>Met</td>
@@ -3780,6 +4091,7 @@
                 <td>Universidad de los Andes,C16</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC12991H</td>
+                
                 <td>23</td>
                 <td>1/2</td>
                 <td>Met</td>
@@ -3788,6 +4100,7 @@
                 <td>Universidad de los Andes,CAS04</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC12991C</td>
+                
                 <td>13</td>
                 <td>5/2</td>
                 <td>Met</td>
@@ -3796,6 +4109,7 @@
                 <td>Universidad de los Andes,CIS11</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC12991E</td>
+                
                 <td>11</td>
                 <td>0/2</td>
                 <td>Met</td>
@@ -3804,6 +4118,7 @@
                 <td>Universidad de los Andes,COM19</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC12991B</td>
+                
                 <td>13</td>
                 <td>2/2</td>
                 <td>Partial</td>
@@ -3812,6 +4127,7 @@
                 <td>Universidad de los Andes,CS23</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC12991A</td>
+                
                 <td>6</td>
                 <td>2/2</td>
                 <td>Met</td>
@@ -3820,6 +4136,7 @@
                 <td>Universidad de los Andes,E25</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC12991M</td>
+                
                 <td>17</td>
                 <td>3/2</td>
                 <td>Met</td>
@@ -3828,6 +4145,7 @@
                 <td>Universidad de los Andes,ED15</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC12991J</td>
+                
                 <td>16</td>
                 <td>0/2</td>
                 <td>Partial</td>
@@ -3836,6 +4154,7 @@
                 <td>Universidad de los Andes,EMB18</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC12991L</td>
+                
                 <td>20</td>
                 <td>3/2</td>
                 <td>Met</td>
@@ -3844,6 +4163,7 @@
                 <td>Universidad de los Andes,IA34</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC12991G</td>
+                
                 <td>20</td>
                 <td>0/2</td>
                 <td>Met</td>
@@ -3852,6 +4172,7 @@
                 <td>Universidad de los Andes,PE31</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC12991F</td>
+                
                 <td>22</td>
                 <td>1/2</td>
                 <td>Met</td>
@@ -3860,6 +4181,7 @@
                 <td>Universidad de los Andes,PEL35</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC12991O</td>
+                
                 <td>18</td>
                 <td>2/2</td>
                 <td>Met</td>
@@ -3868,6 +4190,7 @@
                 <td>Universidad de los Andes,RA24</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC12991I</td>
+                
                 <td>20</td>
                 <td>4/2</td>
                 <td>Met</td>
@@ -3876,6 +4199,7 @@
                 <td>Universidad de los Andes,SP01</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC12991D</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -3884,6 +4208,7 @@
                 <td>Universidad de los Andes,SSC37</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC12991P</td>
+                
                 <td>7</td>
                 <td>2/2</td>
                 <td>Partial</td>
@@ -3892,6 +4217,7 @@
                 <td>Universidad de los Andes,VT06</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC12991N</td>
+                
                 <td>3</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -3900,7 +4226,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="universidad-de-los-llanos">
+        <section class="group-page" id="universidad-de-los-llanos">
+          <div class="page-toolbar no-print"><button onclick="printOnly('universidad-de-los-llanos')">Print this page</button></div>
           <h1>Universidad de los Llanos</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -3931,6 +4258,7 @@
                 <td>Universidad de los Llanos</td>
                 <td>Student Branch</td>
                 <td class="mono">STB02331</td>
+                
                 <td>0</td>
                 <td>0/4</td>
                 <td>Not Met</td>
@@ -3939,6 +4267,7 @@
                 <td>Los Llanos Univ De, IA34</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC02331</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -3947,7 +4276,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="universidad-del-cauca">
+        <section class="group-page" id="universidad-del-cauca">
+          <div class="page-toolbar no-print"><button onclick="printOnly('universidad-del-cauca')">Print this page</button></div>
           <h1>Universidad del Cauca</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -3978,6 +4308,7 @@
                 <td>Universidad del Cauca,WIE</td>
                 <td>Affinity Group</td>
                 <td class="mono">SBA09161</td>
+                
                 <td>36</td>
                 <td>1/2</td>
                 <td>Not Met</td>
@@ -3986,6 +4317,7 @@
                 <td>Universidad del Cauca</td>
                 <td>Student Branch</td>
                 <td class="mono">STB09161</td>
+                
                 <td>53</td>
                 <td>9/4</td>
                 <td>Met</td>
@@ -3994,6 +4326,7 @@
                 <td>Universidad del Cauca,AES10</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC09161C</td>
+                
                 <td>9</td>
                 <td>7/2</td>
                 <td>Met</td>
@@ -4002,6 +4335,7 @@
                 <td>Universidad del Cauca,C16</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC09161B</td>
+                
                 <td>10</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -4010,6 +4344,7 @@
                 <td>Universidad del Cauca,C16/COM19</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC09161</td>
+                
                 <td>20</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -4018,6 +4353,7 @@
                 <td>Universidad del Cauca,COM19</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC09161A</td>
+                
                 <td>16</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -4026,6 +4362,7 @@
                 <td>Universidad del Cauca,ED15</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC09161D</td>
+                
                 <td>19</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -4034,6 +4371,7 @@
                 <td>Universidad del Cauca,RA24</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC09161E</td>
+                
                 <td>17</td>
                 <td>0/2</td>
                 <td>Met</td>
@@ -4042,7 +4380,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="universidad-del-quindio">
+        <section class="group-page" id="universidad-del-quindio">
+          <div class="page-toolbar no-print"><button onclick="printOnly('universidad-del-quindio')">Print this page</button></div>
           <h1>Universidad del Quindio</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -4073,6 +4412,7 @@
                 <td>Universidad del Quindio,WIE</td>
                 <td>Affinity Group</td>
                 <td class="mono">SBA65911</td>
+                
                 <td>7</td>
                 <td>4/2</td>
                 <td>Partial</td>
@@ -4081,6 +4421,7 @@
                 <td>Universidad del Quindio</td>
                 <td>Student Branch</td>
                 <td class="mono">STB65911</td>
+                
                 <td>9</td>
                 <td>4/4</td>
                 <td>Met</td>
@@ -4089,6 +4430,7 @@
                 <td>Universidad Autonoma de Campeche,IA34</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC65681</td>
+                
                 <td>0</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -4097,6 +4439,7 @@
                 <td>Universidad del Quindio,ED15</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC65911</td>
+                
                 <td>7</td>
                 <td>2/2</td>
                 <td>Met</td>
@@ -4105,7 +4448,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="universidad-del-rosario">
+        <section class="group-page" id="universidad-del-rosario">
+          <div class="page-toolbar no-print"><button onclick="printOnly('universidad-del-rosario')">Print this page</button></div>
           <h1>Universidad del Rosario</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -4136,6 +4480,7 @@
                 <td>Universidad del Rosario</td>
                 <td>Student Branch</td>
                 <td class="mono">STB99411</td>
+                
                 <td>12</td>
                 <td>2/4</td>
                 <td>Met</td>
@@ -4144,6 +4489,7 @@
                 <td>Universidad del Rosario,C16</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC99411C</td>
+                
                 <td>5</td>
                 <td>0/2</td>
                 <td>Met</td>
@@ -4152,6 +4498,7 @@
                 <td>Universidad del Rosario,CIS11</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC99411B</td>
+                
                 <td>2</td>
                 <td>0/2</td>
                 <td>Partial</td>
@@ -4160,6 +4507,7 @@
                 <td>Universidad del Rosario,EMB18</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC99411</td>
+                
                 <td>4</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -4168,6 +4516,7 @@
                 <td>Universidad del Rosario,RA24</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC99411A</td>
+                
                 <td>2</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -4176,7 +4525,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="universidad-del-valle">
+        <section class="group-page" id="universidad-del-valle">
+          <div class="page-toolbar no-print"><button onclick="printOnly('universidad-del-valle')">Print this page</button></div>
           <h1>Universidad del Valle</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -4207,6 +4557,7 @@
                 <td>Universidad del Valle,WIE</td>
                 <td>Affinity Group</td>
                 <td class="mono">SBA95801</td>
+                
                 <td>32</td>
                 <td>2/2</td>
                 <td>Met</td>
@@ -4215,6 +4566,7 @@
                 <td>Universidad del Valle</td>
                 <td>Student Branch</td>
                 <td class="mono">STB95801</td>
+                
                 <td>107</td>
                 <td>23/4</td>
                 <td>Met</td>
@@ -4223,6 +4575,7 @@
                 <td>Universidad del Valle, CAS04</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC95801</td>
+                
                 <td>39</td>
                 <td>2/2</td>
                 <td>Met</td>
@@ -4231,6 +4584,7 @@
                 <td>Universidad del Valle, RA24</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC95801A</td>
+                
                 <td>26</td>
                 <td>1/2</td>
                 <td>Partial</td>
@@ -4239,6 +4593,7 @@
                 <td>Universidad del Valle,AES10</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC95801C</td>
+                
                 <td>10</td>
                 <td>1/2</td>
                 <td>Partial</td>
@@ -4247,6 +4602,7 @@
                 <td>Universidad del Valle,C16</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC95801G</td>
+                
                 <td>27</td>
                 <td>3/2</td>
                 <td>Met</td>
@@ -4255,6 +4611,7 @@
                 <td>Universidad del Valle,CS23</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC95801D</td>
+                
                 <td>11</td>
                 <td>1/2</td>
                 <td>Met</td>
@@ -4263,6 +4620,7 @@
                 <td>Universidad del Valle,IM09</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC95801F</td>
+                
                 <td>16</td>
                 <td>2/2</td>
                 <td>Met</td>
@@ -4271,6 +4629,7 @@
                 <td>Universidad del Valle,PE31</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC95801B</td>
+                
                 <td>18</td>
                 <td>2/2</td>
                 <td>Partial</td>
@@ -4279,6 +4638,7 @@
                 <td>Universidad del Valle,PHO36</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC95801E</td>
+                
                 <td>1</td>
                 <td>1/2</td>
                 <td>Not Met</td>
@@ -4287,7 +4647,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="university-of-pamplona">
+        <section class="group-page" id="university-of-pamplona">
+          <div class="page-toolbar no-print"><button onclick="printOnly('university-of-pamplona')">Print this page</button></div>
           <h1>University of Pamplona</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -4318,6 +4679,7 @@
                 <td>University of Pamplona</td>
                 <td>Student Branch</td>
                 <td class="mono">STB41556639</td>
+                
                 <td>43</td>
                 <td>0/4</td>
                 <td>Partial</td>
@@ -4326,6 +4688,7 @@
                 <td>University of Pamplona,CIS11</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC41556639</td>
+                
                 <td>12</td>
                 <td>0/2</td>
                 <td>Not Met</td>
@@ -4334,6 +4697,7 @@
                 <td>University of Pamplona,PE31</td>
                 <td>Student Branch Chapter</td>
                 <td class="mono">SBC41556639A</td>
+                
                 <td>6</td>
                 <td>0/2</td>
                 <td>Partial</td>
@@ -4342,7 +4706,8 @@
           </table>
         </section>
         
-        <section class="university-page" id="university-of-san-buenaventura">
+        <section class="group-page" id="university-of-san-buenaventura">
+          <div class="page-toolbar no-print"><button onclick="printOnly('university-of-san-buenaventura')">Print this page</button></div>
           <h1>University of San Buenaventura</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-08-13</p>
           <div class="stat-row">
@@ -4373,6 +4738,7 @@
                 <td>University of San Buenaventura</td>
                 <td>Student Branch</td>
                 <td class="mono">STB03171</td>
+                
                 <td>2</td>
                 <td>0/4</td>
                 <td>Not Met</td>
@@ -4381,5 +4747,17 @@
           </table>
         </section>
         
+<script>
+  function printOnly(id) {
+    document.querySelectorAll('.group-page').forEach(el => el.classList.remove('print-target'));
+    const target = document.getElementById(id);
+    if (target) target.classList.add('print-target');
+    document.body.classList.add('print-single');
+    window.print();
+  }
+  window.addEventListener('afterprint', () => {
+    document.body.classList.remove('print-single');
+  });
+</script>
 </body>
 </html>

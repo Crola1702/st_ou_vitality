@@ -6,6 +6,7 @@ on:
     paths:
       - vitality_dashboard.html
       - university_report.html
+      - society_report.html
       - .github/workflows/pages.yml
   workflow_dispatch:
 
@@ -36,6 +37,9 @@ jobs:
           fi
           if [ -f university_report.html ]; then
             cp university_report.html _site/university_report.html
+          fi
+          if [ -f society_report.html ]; then
+            cp society_report.html _site/society_report.html
           fi
 
       - uses: actions/upload-pages-artifact@v3
