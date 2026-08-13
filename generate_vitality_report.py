@@ -37,6 +37,7 @@ from __future__ import annotations
 
 import csv
 import html
+import json
 from datetime import datetime
 from pathlib import Path
 
@@ -381,6 +382,17 @@ def build_dashboard(units: list[OU], path: Path, events_path: Path) -> None:
     university_options = "".join(f'<option value="{html.escape(u.lower())}">{html.escape(u)}</option>' for u in universities)
     society_options = "".join(f'<option value="{html.escape(s.lower())}">{html.escape(s)}</option>' for s in societies)
 
+    university_to_societies: dict[str, set[str]] = {}
+    society_to_universities: dict[str, set[str]] = {}
+    for ou in units:
+        if not ou.university or not ou.society:
+            continue
+        u_key, s_key = ou.university.lower(), ou.society.lower()
+        university_to_societies.setdefault(u_key, set()).add(s_key)
+        society_to_universities.setdefault(s_key, set()).add(u_key)
+    university_to_societies_json = json.dumps({k: sorted(v) for k, v in university_to_societies.items()})
+    society_to_universities_json = json.dumps({k: sorted(v) for k, v in society_to_universities.items()})
+
     row_counter = 0
 
     def render_section(ou_type: str, ou_list: list[OU]) -> str:
@@ -683,6 +695,31 @@ def build_dashboard(units: list[OU], path: Path, events_path: Path) -> None:
   const universitySelect = document.getElementById('university-filter');
   const societySelect = document.getElementById('society-filter');
   const memberSlugByTable = {{ 'table-stb': 'stb', 'table-sbc': 'sbc', 'table-sba': 'sba' }};
+  const universityToSocieties = {university_to_societies_json};
+  const societyToUniversities = {society_to_universities_json};
+
+  function refineFilterOptions() {{
+    const uni = universitySelect.value;
+    const soc = societySelect.value;
+
+    const validSocieties = uni ? new Set(universityToSocieties[uni] || []) : null;
+    Array.from(societySelect.options).forEach(opt => {{
+      if (!opt.value) return; // "All Societies"
+      const visible = !validSocieties || validSocieties.has(opt.value);
+      opt.hidden = !visible;
+      opt.disabled = !visible;
+    }});
+    if (soc && validSocieties && !validSocieties.has(soc)) societySelect.value = '';
+
+    const validUniversities = soc ? new Set(societyToUniversities[soc] || []) : null;
+    Array.from(universitySelect.options).forEach(opt => {{
+      if (!opt.value) return; // "All Universities"
+      const visible = !validUniversities || validUniversities.has(opt.value);
+      opt.hidden = !visible;
+      opt.disabled = !visible;
+    }});
+    if (uni && validUniversities && !validUniversities.has(uni)) universitySelect.value = '';
+  }}
 
   function applyFilters() {{
     const q = searchInput.value.trim().toLowerCase();
@@ -733,10 +770,11 @@ def build_dashboard(units: list[OU], path: Path, events_path: Path) -> None:
   }}
 
   searchInput.addEventListener('input', applyFilters);
-  universitySelect.addEventListener('change', applyFilters);
-  societySelect.addEventListener('change', applyFilters);
+  universitySelect.addEventListener('change', () => {{ refineFilterOptions(); applyFilters(); }});
+  societySelect.addEventListener('change', () => {{ refineFilterOptions(); applyFilters(); }});
 
   loadFiltersFromURL();
+  refineFilterOptions();
   applyFilters();
 
   function toggleRow(id) {{
