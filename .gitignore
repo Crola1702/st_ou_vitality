@@ -6,7 +6,7 @@ Volunteer List by OU.csv
 *Events*.csv
 
 # Generated outreach lists contain officer names/emails — also PII, never commit.
-chapter_outreach.csv
+chapter_outreach/chapter_outreach.csv
 
 # Local tooling
 .claude/

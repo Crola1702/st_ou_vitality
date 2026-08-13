@@ -2,8 +2,9 @@
  * Sends the chapter revitalization email to every row of the "Outreach" sheet.
  *
  * Setup:
- *   1. Run `python3 generate_chapter_outreach.py` to produce chapter_outreach.csv
- *      (never commit that file — it contains officer names/emails).
+ *   1. Run `python3 chapter_outreach/generate_chapter_outreach.py` to produce
+ *      chapter_outreach/chapter_outreach.csv (never commit that file — it
+ *      contains officer names/emails).
  *   2. Create a Google Sheet. File > Import > Upload chapter_outreach.csv,
  *      "Insert new sheet", then rename that tab to "Outreach".
  *   3. Set RESPONSE_DEADLINE_TEXT below to this round's actual response deadline.
