@@ -43,6 +43,11 @@ data, safe to commit) so trends build up over time as you re-run the
 script. Re-running on the same day is a no-op (it won't duplicate that
 day's snapshot).
 
+The dashboard's **Trends** tab charts % of OUs meeting full vitality over
+time, one line per OU type, built from `vitality_history.csv`. With a
+single snapshot recorded it just shows a dot per type; the lines fill in
+as more monthly runs accumulate.
+
 It also writes `university_report.html` and `society_report.html` — print-
 friendly, one-page-per-group handouts (summary stats, a requirements-met
 breakdown bar, and a unit table; the society report also lists each unit's

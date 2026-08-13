@@ -391,6 +391,35 @@ def write_history(units: list[OU], path: Path) -> None:
             )
 
 
+def load_history_trend(path: Path) -> dict:
+    """Aggregate vitality_history.csv into % meeting full vitality per
+    (date, OU type), for the Trends tab's line chart. Returns
+    {"dates": [...], "series": {ou_type: [pct, ...]}}; empty if no history
+    file exists yet."""
+    ou_types = ["Student Branch", "Student Branch Chapter", "Affinity Group"]
+    if not path.exists():
+        return {"dates": [], "series": {t: [] for t in ou_types}}
+
+    counts: dict[str, dict[str, list[int]]] = {}  # date -> type -> [met, total]
+    with open(path, encoding="utf-8") as f:
+        for row in csv.DictReader(f):
+            date, ou_type = row["Date"], row["Unit Type"]
+            bucket = counts.setdefault(date, {}).setdefault(ou_type, [0, 0])
+            bucket[1] += 1
+            if row["Overall Vitality"] == "Met":
+                bucket[0] += 1
+
+    dates = sorted(counts)
+    series = {
+        ou_type: [
+            round(counts[date][ou_type][0] / counts[date][ou_type][1] * 100, 1) if ou_type in counts[date] else None
+            for date in dates
+        ]
+        for ou_type in ou_types
+    }
+    return {"dates": dates, "series": series}
+
+
 STATUS_GOOD = "#0ca30c"
 STATUS_WARNING = "#fab219"
 STATUS_SERIOUS = "#ec835a"
@@ -410,7 +439,7 @@ def stat_span(text: str, color: str) -> str:
     return f'<span class="stat" style="color:{color}">{dot(color)}{html.escape(str(text))}</span>'
 
 
-def build_dashboard(units: list[OU], path: Path, events_path: Path) -> None:
+def build_dashboard(units: list[OU], path: Path, events_path: Path, history_path: Path) -> None:
     by_type: dict[str, list[OU]] = {"Student Branch": [], "Student Branch Chapter": [], "Affinity Group": []}
     for ou in units:
         by_type[ou.ou_type].append(ou)
@@ -614,6 +643,37 @@ def build_dashboard(units: list[OU], path: Path, events_path: Path) -> None:
 
     quick_wins_html, quick_wins_count = render_quick_wins(units)
 
+    trend_data = load_history_trend(history_path)
+    trend_json = json.dumps(trend_data)
+    trend_series = [
+        ("Student Branch", "Student Branch", "--series-1"),
+        ("Student Branch Chapter", "Chapter", "--series-2"),
+        ("Affinity Group", "Affinity Group", "--series-3"),
+    ]
+    trend_series_js = json.dumps([[key, f"var({var})"] for key, _label, var in trend_series])
+
+    n_dates = len(trend_data["dates"])
+    trend_note = (
+        f"% of OUs meeting full vitality (3/3) over time, by type. Builds up as you re-run the script "
+        f"— currently {n_dates} date{'s' if n_dates != 1 else ''} recorded."
+    )
+    if not trend_data["dates"]:
+        trend_card_html = '<p class="empty">No history yet — run the script again on a later date to start building the trend.</p>'
+    else:
+        legend_html = "".join(
+            f'<span class="legend-item"><span class="legend-swatch" style="background:var({var})"></span>{html.escape(label)}</span>'
+            for _key, label, var in trend_series
+        )
+        trend_card_html = f'''
+        <div class="trend-card">
+          <div class="trend-legend">{legend_html}</div>
+          <div id="trend-svg-wrap" class="trend-svg-wrap">
+            <svg id="trend-svg"></svg>
+            <div id="trend-tooltip" class="trend-tooltip" hidden></div>
+          </div>
+        </div>
+        '''
+
     page = f"""<!doctype html>
 <html lang="en">
 <head>
@@ -630,6 +690,9 @@ def build_dashboard(units: list[OU], path: Path, events_path: Path) -> None:
     --text-muted:     #898781;
     --gridline:       #e1e0d9;
     --border:         rgba(11,11,11,0.10);
+    --series-1:       #2a78d6;
+    --series-2:       #eb6834;
+    --series-3:       #1baf7a;
   }}
   @media (prefers-color-scheme: dark) {{
     :root:where(:not([data-theme="light"])) .viz-root {{
@@ -641,6 +704,9 @@ def build_dashboard(units: list[OU], path: Path, events_path: Path) -> None:
       --text-muted:     #898781;
       --gridline:       #2c2c2a;
       --border:         rgba(255,255,255,0.10);
+      --series-1:       #3987e5;
+      --series-2:       #d95926;
+      --series-3:       #199e70;
     }}
   }}
   :root[data-theme="dark"] .viz-root {{
@@ -652,6 +718,9 @@ def build_dashboard(units: list[OU], path: Path, events_path: Path) -> None:
     --text-muted:     #898781;
     --gridline:       #2c2c2a;
     --border:         rgba(255,255,255,0.10);
+    --series-1:       #3987e5;
+    --series-2:       #d95926;
+    --series-3:       #199e70;
   }}
 
   * {{ box-sizing: border-box; }}
@@ -706,6 +775,23 @@ def build_dashboard(units: list[OU], path: Path, events_path: Path) -> None:
     background: {STATUS_SERIOUS}; color: #fff; font-size: 0.72rem; font-weight: 700;
   }}
   .tab-panel[hidden] {{ display: none; }}
+
+  .trend-card {{ background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px; padding: 16px; }}
+  .trend-legend {{ display: flex; gap: 16px; margin-bottom: 8px; flex-wrap: wrap; }}
+  .legend-item {{ display: inline-flex; align-items: center; gap: 6px; font-size: 0.8rem; color: var(--text-secondary); }}
+  .legend-swatch {{ width: 12px; height: 3px; border-radius: 2px; flex: none; }}
+  .trend-svg-wrap {{ position: relative; width: 100%; }}
+  #trend-svg {{ width: 100%; display: block; }}
+  .trend-axis-label {{ fill: var(--text-muted); font-size: 11px; font-variant-numeric: tabular-nums; }}
+  .trend-direct-label {{ fill: var(--text-secondary); font-size: 11px; font-weight: 600; font-variant-numeric: tabular-nums; }}
+  .trend-tooltip {{
+    position: absolute; background: var(--surface-1); border: 1px solid var(--border); border-radius: 8px;
+    padding: 8px 10px; font-size: 0.78rem; pointer-events: none; box-shadow: 0 4px 12px rgba(0,0,0,0.15); min-width: 140px;
+  }}
+  .trend-tooltip-date {{ color: var(--text-muted); font-size: 0.7rem; margin-bottom: 4px; }}
+  .trend-tooltip-row {{ display: flex; align-items: center; gap: 6px; margin: 2px 0; color: var(--text-secondary); }}
+  .trend-tooltip-key {{ width: 10px; height: 3px; border-radius: 2px; flex: none; }}
+  .trend-tooltip-row strong {{ color: var(--text-primary); font-variant-numeric: tabular-nums; }}
 
   .table-wrap {{ overflow-x: auto; border: 1px solid var(--border); border-radius: 10px; }}
   table {{ border-collapse: collapse; width: 100%; background: var(--surface-1); font-size: 0.88rem; }}
@@ -813,6 +899,7 @@ def build_dashboard(units: list[OU], path: Path, events_path: Path) -> None:
     <div class="tabs">
       <button class="tab-btn active" data-tab="overview" onclick="showTab('overview')">Overview</button>
       <button class="tab-btn" data-tab="quick-wins" onclick="showTab('quick-wins')">Quick Wins <span class="tab-badge">{quick_wins_count}</span></button>
+      <button class="tab-btn" data-tab="trends" onclick="showTab('trends')">Trends</button>
     </div>
 
     <div id="tab-overview" class="tab-panel">
@@ -822,6 +909,11 @@ def build_dashboard(units: list[OU], path: Path, events_path: Path) -> None:
     <div id="tab-quick-wins" class="tab-panel" hidden>
       <p class="req-note">Units missing exactly one requirement (Members, Events, or Officers) — the fastest path to full vitality, sorted by smallest gap first.</p>
       {quick_wins_html}
+    </div>
+
+    <div id="tab-trends" class="tab-panel" hidden>
+      <p class="req-note">{trend_note}</p>
+      {trend_card_html}
     </div>
 
     <footer>
@@ -935,7 +1027,124 @@ def build_dashboard(units: list[OU], path: Path, events_path: Path) -> None:
   function showTab(name) {{
     document.querySelectorAll('.tab-panel').forEach(p => {{ p.hidden = p.id !== `tab-${{name}}`; }});
     document.querySelectorAll('.tab-btn').forEach(b => {{ b.classList.toggle('active', b.dataset.tab === name); }});
+    if (name === 'trends') renderTrendChart();
   }}
+
+  const trendData = {trend_json};
+  const trendSeriesDefs = {trend_series_js};
+
+  function renderTrendChart() {{
+    const svg = document.getElementById('trend-svg');
+    const wrap = document.getElementById('trend-svg-wrap');
+    const tooltip = document.getElementById('trend-tooltip');
+    if (!svg || !wrap) return;
+    const dates = trendData.dates;
+    if (!dates.length) return;
+
+    const width = wrap.clientWidth || 700;
+    const height = 280;
+    const pad = {{ top: 16, right: 16, bottom: 28, left: 40 }};
+    svg.setAttribute('width', width);
+    svg.setAttribute('height', height);
+    svg.setAttribute('viewBox', `0 0 ${{width}} ${{height}}`);
+    svg.innerHTML = '';
+
+    const plotW = width - pad.left - pad.right;
+    const plotH = height - pad.top - pad.bottom;
+    const xFor = i => dates.length === 1 ? pad.left + plotW / 2 : pad.left + (i / (dates.length - 1)) * plotW;
+    const yFor = v => pad.top + plotH - (v / 100) * plotH;
+
+    const NS = 'http://www.w3.org/2000/svg';
+    function el(tag, attrs) {{
+      const e = document.createElementNS(NS, tag);
+      for (const k in attrs) e.setAttribute(k, attrs[k]);
+      return e;
+    }}
+
+    [0, 25, 50, 75, 100].forEach(v => {{
+      const y = yFor(v);
+      svg.appendChild(el('line', {{ x1: pad.left, x2: width - pad.right, y1: y, y2: y, stroke: 'var(--gridline)', 'stroke-width': 1 }}));
+      const label = el('text', {{ x: pad.left - 8, y: y + 4, 'text-anchor': 'end', class: 'trend-axis-label' }});
+      label.textContent = v + '%';
+      svg.appendChild(label);
+    }});
+
+    const labelIdxs = dates.length <= 6 ? dates.map((_, i) => i) : [0, Math.floor((dates.length - 1) / 2), dates.length - 1];
+    labelIdxs.forEach(i => {{
+      const label = el('text', {{ x: xFor(i), y: height - 6, 'text-anchor': 'middle', class: 'trend-axis-label' }});
+      label.textContent = dates[i];
+      svg.appendChild(label);
+    }});
+
+    trendSeriesDefs.forEach(([key, color]) => {{
+      const values = trendData.series[key];
+      const points = values.map((v, i) => v === null || v === undefined ? null : [xFor(i), yFor(v)]).filter(Boolean);
+      if (points.length > 1) {{
+        const d = points.map((p, i) => (i === 0 ? 'M' : 'L') + p[0] + ',' + p[1]).join(' ');
+        svg.appendChild(el('path', {{ d, fill: 'none', stroke: color, 'stroke-width': 2, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }}));
+      }}
+      points.forEach(([x, y]) => {{
+        svg.appendChild(el('circle', {{ cx: x, cy: y, r: 5, fill: color, stroke: 'var(--surface-1)', 'stroke-width': 2 }}));
+      }});
+      if (points.length) {{
+        const [lx, ly] = points[points.length - 1];
+        const lastVal = values[values.length - 1];
+        const label = el('text', {{ x: Math.min(lx + 8, width - pad.right - 28), y: ly + 4, class: 'trend-direct-label' }});
+        label.textContent = lastVal + '%';
+        svg.appendChild(label);
+      }}
+    }});
+
+    const crosshair = el('line', {{ x1: 0, x2: 0, y1: pad.top, y2: pad.top + plotH, stroke: 'var(--text-muted)', 'stroke-width': 1, visibility: 'hidden' }});
+    svg.appendChild(crosshair);
+
+    svg.addEventListener('pointermove', (e) => {{
+      const rect = svg.getBoundingClientRect();
+      const mx = e.clientX - rect.left;
+      let idx = 0, best = Infinity;
+      dates.forEach((_, i) => {{
+        const d = Math.abs(xFor(i) - mx);
+        if (d < best) {{ best = d; idx = i; }}
+      }});
+      crosshair.setAttribute('x1', xFor(idx));
+      crosshair.setAttribute('x2', xFor(idx));
+      crosshair.setAttribute('visibility', 'visible');
+
+      tooltip.hidden = false;
+      tooltip.style.left = Math.min(xFor(idx) + 12, width - 150) + 'px';
+      tooltip.style.top = pad.top + 'px';
+      tooltip.textContent = '';
+      const dateEl = document.createElement('div');
+      dateEl.className = 'trend-tooltip-date';
+      dateEl.textContent = dates[idx];
+      tooltip.appendChild(dateEl);
+      trendSeriesDefs.forEach(([key, color]) => {{
+        const v = trendData.series[key][idx];
+        const row = document.createElement('div');
+        row.className = 'trend-tooltip-row';
+        const keyEl = document.createElement('span');
+        keyEl.className = 'trend-tooltip-key';
+        keyEl.style.background = color;
+        const valueEl = document.createElement('strong');
+        valueEl.textContent = (v === null || v === undefined) ? '—' : v + '%';
+        const labelEl = document.createElement('span');
+        labelEl.textContent = ' ' + key;
+        row.appendChild(keyEl);
+        row.appendChild(valueEl);
+        row.appendChild(labelEl);
+        tooltip.appendChild(row);
+      }});
+    }});
+    svg.addEventListener('pointerleave', () => {{
+      crosshair.setAttribute('visibility', 'hidden');
+      tooltip.hidden = true;
+    }});
+  }}
+
+  window.addEventListener('resize', () => {{
+    const trendsTab = document.getElementById('tab-trends');
+    if (trendsTab && !trendsTab.hidden) renderTrendChart();
+  }});
 
   function sortByMembers(tableId, th) {{
     const table = document.getElementById(tableId);
@@ -1164,8 +1373,8 @@ def main() -> None:
     society_report_path = BASE_DIR / "society_report.html"
 
     write_csv(units, csv_path)
-    build_dashboard(units, html_path, events_path)
     write_history(units, history_path)
+    build_dashboard(units, html_path, events_path, history_path)
     build_university_report(units, university_report_path)
     build_society_report(units, society_report_path)
 
