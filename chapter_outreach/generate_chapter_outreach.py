@@ -20,9 +20,13 @@ git-ignored (see .gitignore).
 from __future__ import annotations
 
 import csv
+import sys
+from pathlib import Path
+
+THIS_DIR = Path(__file__).resolve().parent
+sys.path.insert(0, str(THIS_DIR.parent))
 
 from generate_vitality_report import (
-    BASE_DIR,
     CRITERIA,
     VOLUNTEER_FILE,
     counselor_role,
@@ -32,7 +36,7 @@ from generate_vitality_report import (
     load_ou_universe,
 )
 
-OUTPUT_PATH = BASE_DIR / "chapter_outreach.csv"
+OUTPUT_PATH = THIS_DIR / "chapter_outreach.csv"
 
 CHAPTER_OFFICER_POSITIONS = ["Chair", "Advisor", "Vice Chair", "Secretary", "Treasurer", "Webmaster"]
 

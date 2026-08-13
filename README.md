@@ -108,25 +108,27 @@ commit and push it — the GitHub Actions workflow in
 
 ## Chapter revitalization outreach
 
-`generate_chapter_outreach.py` (run after `generate_vitality_report.py`,
-since it reuses the same source CSVs) builds a contact list for every
-Student Branch Chapter that doesn't meet all 3 vitality requirements:
+Everything for this lives in `chapter_outreach/`. `generate_chapter_outreach.py`
+(run after `generate_vitality_report.py`, since it reuses the same source
+CSVs) builds a contact list for every Student Branch Chapter that doesn't
+meet all 3 vitality requirements:
 
 ```sh
-python3 generate_chapter_outreach.py
+python3 chapter_outreach/generate_chapter_outreach.py
 ```
 
-This writes `chapter_outreach.csv` — one row per non-compliant chapter,
-with that chapter's officer emails, its parent Student Branch's Chair/
-Counselor emails, and a ready-to-use deduped recipient list. **This file
-contains personal data and is git-ignored — never commit it.**
+This writes `chapter_outreach/chapter_outreach.csv` — one row per
+non-compliant chapter, with that chapter's officer emails, its parent
+Student Branch's Chair/Counselor emails, which specific requirements it's
+missing, and a ready-to-use deduped recipient list. **This file contains
+personal data and is git-ignored — never commit it.**
 
 To actually send the revitalization email:
 
-1. Import `chapter_outreach.csv` into a Google Sheet, on a tab named
-   `Outreach`.
-2. Open `chapter_outreach_email.gs` in this repo, copy it into
-   Extensions → Apps Script on that Sheet.
+1. Import `chapter_outreach/chapter_outreach.csv` into a Google Sheet, on a
+   tab named `Outreach`.
+2. Open `chapter_outreach/chapter_outreach_email.gs` in this repo, copy it
+   into Extensions → Apps Script on that Sheet.
 3. Set `RESPONSE_DEADLINE_TEXT` (and optionally `GUIDE_DRIVE_FILE_ID` for
    an attachment) at the top of the script.
 4. Run `sendOutreachEmails()` with `DRY_RUN = true` first and check the
