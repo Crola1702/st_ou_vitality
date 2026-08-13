@@ -5,5 +5,9 @@ Student Branch Chapters and Affinity Group Member Count.csv
 Volunteer List by OU.csv
 *Events*.csv
 
+# Generated outreach lists contain officer names/emails — also PII, never commit.
+chapter_outreach.csv
+
 # Local tooling
 .claude/
+__pycache__/
