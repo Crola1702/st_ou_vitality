@@ -38,6 +38,7 @@ from __future__ import annotations
 import csv
 import html
 import json
+import re
 from datetime import datetime
 from pathlib import Path
 
@@ -766,7 +767,7 @@ def build_dashboard(units: list[OU], path: Path, events_path: Path) -> None:
 <body>
 <div class="viz-root">
   <div class="container">
-    <p class="byline"><a href="https://www.linkedin.com/in/cristobalarroyo/" target="_blank" rel="noopener">By Cristóbal Arroyo</a> <a href="https://github.com/Crola1702/st_ou_vitality" target="_blank" rel="noopener">See on GitHub</a></p>
+    <p class="byline"><a href="https://www.linkedin.com/in/cristobalarroyo/" target="_blank" rel="noopener">By Cristóbal Arroyo</a> <a href="https://github.com/Crola1702/st_ou_vitality" target="_blank" rel="noopener">See on GitHub</a> <a href="university_report.html" target="_blank" rel="noopener">Printable University Reports</a></p>
     <h1>IEEE Student OU Vitality Dashboard</h1>
     <p class="subtitle">Generated from local vTools exports. Events source: {html.escape(events_path.name)}.</p>
 
@@ -964,6 +965,127 @@ def build_dashboard(units: list[OU], path: Path, events_path: Path) -> None:
     path.write_text(page, encoding="utf-8")
 
 
+def build_university_report(units: list[OU], path: Path) -> None:
+    """A print-friendly, one-page-per-university handout: summary stats, a
+    requirements-met breakdown bar, and a unit table. Always light-themed
+    (it's meant to be printed / saved as PDF, not viewed as a web app)."""
+    by_university: dict[str, list[OU]] = {}
+    for ou in units:
+        by_university.setdefault(ou.university, []).append(ou)
+
+    generated_on = datetime.now().strftime("%Y-%m-%d")
+
+    toc_items = "".join(
+        f'<li><a href="#{html.escape(re.sub(r"[^a-z0-9]+", "-", university.lower()))}">{html.escape(university)}</a></li>'
+        for university in sorted(by_university)
+    )
+
+    pages = []
+    for university in sorted(by_university):
+        ou_list = sorted(by_university[university], key=lambda o: (o.ou_type, o.name))
+        results = {ou.spoid: evaluate(ou) for ou in ou_list}
+        total = len(ou_list)
+        met = sum(1 for r in results.values() if r["overall"])
+        total_members = sum(ou.member_count for ou in ou_list)
+
+        level_counts = {3: 0, 2: 0, 1: 0, 0: 0}
+        for r in results.values():
+            level_counts[r["requirements_met"]] += 1
+        max_level_count = max(level_counts.values()) or 1
+
+        bar_rows = "".join(
+            f'''<div class="bar-row">
+                <div class="bar-label">{REQUIREMENTS_LABEL[level]} ({level}/3)</div>
+                <div class="bar-track"><div class="bar-fill" style="width:{level_counts[level] / max_level_count * 100:.0f}%;background:{REQUIREMENTS_COLOR[level]}"></div></div>
+                <div class="bar-value">{level_counts[level]}</div>
+              </div>'''
+            for level in (3, 2, 1, 0)
+        )
+
+        table_rows = "".join(
+            f'''<tr>
+                <td>{html.escape(ou.name)}</td>
+                <td>{html.escape(ou.ou_type)}</td>
+                <td class="mono">{html.escape(ou.spoid)}</td>
+                <td>{ou.member_count}</td>
+                <td>{results[ou.spoid]["event_count"]}/{CRITERIA[ou.ou_type]["min_events"]}</td>
+                <td>{results[ou.spoid]["officers_status"]}</td>
+                <td style="color:{REQUIREMENTS_COLOR[results[ou.spoid]["requirements_met"]]}">{results[ou.spoid]["requirements_met"]}/3</td>
+              </tr>'''
+            for ou in ou_list
+        )
+
+        anchor = re.sub(r"[^a-z0-9]+", "-", university.lower())
+        pages.append(f'''
+        <section class="university-page" id="{html.escape(anchor)}">
+          <h1>{html.escape(university)}</h1>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated {generated_on}</p>
+          <div class="stat-row">
+            <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">{total}</div></div>
+            <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:{STATUS_GOOD}">{met}/{total}</div></div>
+            <div class="stat"><div class="stat-label">Total Members</div><div class="stat-value">{total_members}</div></div>
+          </div>
+          <div class="bar-chart">{bar_rows}</div>
+          <table>
+            <thead><tr><th>Unit</th><th>Type</th><th>SPO ID</th><th>Members</th><th>Events</th><th>Officers</th><th>Req. Met</th></tr></thead>
+            <tbody>{table_rows}</tbody>
+          </table>
+        </section>
+        ''')
+
+    page = f"""<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>IEEE Student OU Vitality — University Reports</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  * {{ box-sizing: border-box; }}
+  body {{ margin: 0; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; background: #f2f2f0; color: #111; }}
+  .toc {{ max-width: 700px; margin: 40px auto; padding: 0 20px; }}
+  .toc h1 {{ font-size: 1.4rem; }}
+  .toc ul {{ columns: 2; gap: 24px; padding-left: 20px; }}
+  .toc li {{ margin: 4px 0; }}
+  .toc a {{ color: #111; text-decoration: none; }}
+  .toc a:hover {{ text-decoration: underline; }}
+  .university-page {{
+    max-width: 900px; margin: 0 auto 40px; background: #fff; padding: 40px;
+    border: 1px solid #ddd; border-radius: 4px;
+  }}
+  .university-page h1 {{ font-size: 1.6rem; margin: 0 0 2px; }}
+  .subtitle {{ color: #555; font-size: 0.85rem; margin: 0 0 20px; }}
+  .stat-row {{ display: flex; gap: 24px; margin-bottom: 24px; }}
+  .stat-label {{ font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.03em; color: #666; }}
+  .stat-value {{ font-size: 1.4rem; font-weight: 700; }}
+  .bar-chart {{ margin-bottom: 28px; }}
+  .bar-row {{ display: grid; grid-template-columns: 110px 1fr 28px; align-items: center; gap: 10px; margin: 6px 0; }}
+  .bar-label {{ font-size: 0.78rem; color: #333; }}
+  .bar-track {{ background: #eee; border-radius: 999px; height: 14px; overflow: hidden; }}
+  .bar-fill {{ height: 100%; border-radius: 999px; }}
+  .bar-value {{ font-size: 0.8rem; font-weight: 700; text-align: right; font-variant-numeric: tabular-nums; }}
+  table {{ border-collapse: collapse; width: 100%; font-size: 0.82rem; }}
+  th, td {{ padding: 6px 8px; text-align: left; border-bottom: 1px solid #eee; }}
+  th {{ font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.02em; color: #666; }}
+  td.mono {{ font-variant-numeric: tabular-nums; color: #555; }}
+  @media print {{
+    body {{ background: #fff; }}
+    .toc, .university-page {{ page-break-after: always; border: none; box-shadow: none; margin: 0; max-width: none; }}
+  }}
+</style>
+</head>
+<body>
+  <section class="toc">
+    <h1>IEEE Student OU Vitality — University Reports</h1>
+    <p class="subtitle">Generated {generated_on} · one printable page per university · print this document (Ctrl/Cmd+P → Save as PDF) to hand off to a specific Student Branch.</p>
+    <ul>{toc_items}</ul>
+  </section>
+  {"".join(pages)}
+</body>
+</html>
+"""
+    path.write_text(page, encoding="utf-8")
+
+
 def main() -> None:
     units_map = load_ou_universe()
     load_officers(units_map)
@@ -976,15 +1098,17 @@ def main() -> None:
     csv_path = BASE_DIR / "vitality_report.csv"
     html_path = BASE_DIR / "vitality_dashboard.html"
     history_path = BASE_DIR / "vitality_history.csv"
+    university_report_path = BASE_DIR / "university_report.html"
 
     write_csv(units, csv_path)
     build_dashboard(units, html_path, events_path)
     write_history(units, history_path)
+    build_university_report(units, university_report_path)
 
     total = len(units)
     met = sum(1 for ou in units if evaluate(ou)["overall"])
     print(f"Processed {total} OUs ({met} meeting full vitality criteria).")
-    print(f"Wrote {csv_path.name} and {html_path.name}")
+    print(f"Wrote {csv_path.name}, {html_path.name}, and {university_report_path.name}")
 
 
 if __name__ == "__main__":
