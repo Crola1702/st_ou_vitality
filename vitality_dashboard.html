@@ -2946,11 +2946,32 @@
       const el = document.querySelector(`#members-${slug} .tile-value`);
       if (el) el.textContent = sums[slug];
     });
+
+    updateURLParams();
+  }
+
+  function updateURLParams() {
+    const params = new URLSearchParams();
+    if (searchInput.value.trim()) params.set('q', searchInput.value.trim());
+    if (universitySelect.value) params.set('university', universitySelect.value);
+    if (societySelect.value) params.set('society', societySelect.value);
+    const qs = params.toString();
+    history.replaceState(null, '', qs ? `?${qs}` : window.location.pathname);
+  }
+
+  function loadFiltersFromURL() {
+    const params = new URLSearchParams(window.location.search);
+    if (params.has('q')) searchInput.value = params.get('q');
+    if (params.has('university')) universitySelect.value = params.get('university');
+    if (params.has('society')) societySelect.value = params.get('society');
   }
 
   searchInput.addEventListener('input', applyFilters);
   universitySelect.addEventListener('change', applyFilters);
   societySelect.addEventListener('change', applyFilters);
+
+  loadFiltersFromURL();
+  applyFilters();
 
   function toggleRow(id) {
     const row = document.getElementById(id);
