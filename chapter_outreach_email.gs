@@ -70,8 +70,9 @@ function sendOutreachEmails() {
 
     var chapterName = row[col['Chapter Name']];
     var society = row[col['Society']];
+    var missingRequirements = String(row[col['Missing Requirements']] || '');
     var subject = 'Proceso de revitalización – Capítulo ' + society + ' (' + chapterName + ')';
-    var htmlBody = buildEmailBody(society);
+    var htmlBody = buildEmailBody(society, missingRequirements);
 
     if (DRY_RUN) {
       Logger.log('[DRY RUN] To: ' + recipients + '\nCc: ' + SAC_TEAM_CC + '\nSubject: ' + subject);
@@ -90,28 +91,19 @@ function sendOutreachEmails() {
   Logger.log((DRY_RUN ? '[DRY RUN] ' : '') + 'Processed ' + sentCount + ' chapter(s), skipped ' + skippedCount + ' (already sent or no contactable recipients).');
 }
 
-function buildEmailBody(society) {
+function buildEmailBody(society, missingRequirements) {
+  var missingItems = missingRequirements
+    ? missingRequirements.split(';').map(function (s) { return s.trim(); }).filter(String)
+    : [];
+  var missingList = missingItems.map(function (item) { return '<li>' + item + '</li>'; }).join('');
+
   return ''
     + '<p>Estimados Presidentes, Officers, Consejeros y miembros del capítulo de ' + society + ' de las Ramas Estudiantiles IEEE,</p>'
-    + '<p>Reciban un cordial saludo,</p>'
-    + '<p>Desde el SAC–Conexiones de IEEE Sección Colombia nos encontramos adelantando el proceso de revitalización y depuración de los Capítulos de Rama Estudiantil, con el propósito de fortalecer nuestras comunidades técnicas y garantizar el cumplimiento de los lineamientos establecidos en el IEEE MGA Operations Manual.</p>'
-    + '<p>Como parte de este proceso, estamos realizando la verificación del estado de cada capítulo con base en los requisitos mínimos de permanencia, entre ellos:</p>'
-    + '<ul>'
-    + '<li>Contar con un mínimo de 6 miembros IEEE Student Member o Graduate Student Member.</li>'
-    + '<li>Haber realizado y reportado al menos dos (2) reuniones o actividades técnicas durante el año.</li>'
-    + '<li>Mantener los officers registrados y actualizados en vTools.</li>'
-    + '<li>Contar con una estructura organizacional activa y en funcionamiento.</li>'
-    + '</ul>'
-    + '<p>Hemos identificado que su capítulo presenta información pendiente de validar o requiere actualización de alguno de estos criterios. Por esta razón, solicitamos muy amablemente que respondan este correo a más tardar el día ' + RESPONSE_DEADLINE_TEXT + ', indicando el estado actual de su capítulo y su intención de:</p>'
-    + '<ul>'
-    + '<li>Continuar con el proceso de fortalecimiento y reactivación del capítulo, o</li>'
-    + '<li>Informar si el capítulo no continuará con sus actividades.</li>'
-    + '</ul>'
-    + '<p>Es importante mencionar que este proceso busca brindar acompañamiento a todas las unidades que deseen continuar activas. Nuestro equipo está dispuesto a apoyarlos mediante asesorías, capacitaciones y orientación para cumplir con los requisitos establecidos.</p>'
-    + '<p>No obstante, si no se recibe respuesta dentro del plazo indicado, el capítulo será considerado como sin intención de continuidad, por lo que se iniciará el proceso correspondiente de revisión para su cierre o disolución, conforme a los lineamientos establecidos por IEEE y el plan de depuración de unidades de la IEEE Sección Colombia.</p>'
-    + '<p>Agradecemos su atención y compromiso con el fortalecimiento de la comunidad IEEE en Colombia.</p>'
-    + '<p>Quedamos atentos a su respuesta y a brindar el acompañamiento necesario para apoyar la continuidad de su capítulo'
-    + (GUIDE_DRIVE_FILE_ID ? ', adjuntamos una guía que servirá como apoyo' : '') + '.</p>'
+    + '<p>Desde el SAC–Conexiones de IEEE Sección Colombia estamos revisando la vitalidad de los Capítulos de Rama Estudiantil, conforme al IEEE MGA Operations Manual. Su capítulo actualmente no cumple con:</p>'
+    + '<ul>' + missingList + '</ul>'
+    + '<p>Por favor respondan este correo a más tardar el ' + RESPONSE_DEADLINE_TEXT + ', indicando si continuarán con el proceso de fortalecimiento y reactivación del capítulo, o si este no continuará con sus actividades. De no recibir respuesta dentro del plazo, el capítulo se considerará sin intención de continuidad y se iniciará el proceso de cierre conforme a los lineamientos de IEEE.</p>'
+    + '<p>Con gusto los apoyamos con asesoría y orientación para cumplir estos requisitos'
+    + (GUIDE_DRIVE_FILE_ID ? '; adjuntamos una guía de referencia' : '') + '.</p>'
     + '<p>Cordialmente,<br>' + SENDER_NAME + '</p>';
 }
 
