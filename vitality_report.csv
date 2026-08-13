@@ -1,9 +1,9 @@
 Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
-"Antonio Narino University,WIE",SBA64411,Affinity Group,Antonio Narino University,WIE,38,6,Yes,1,,0,2,No,No,,Yes,Yes,Yes,Yes,Yes,Partial,1/3,Not Met
-"Corporación Universitaria del Huila – CORHUILA,WIE",SBA60236869,Affinity Group,Corporación Universitaria del Huila – CORHUILA,WIE,8,6,Yes,1,,1,2,No,No,,Yes,No,No,No,No,Partial,1/3,Not Met
+"Antonio Narino University,WIE",SBA64411,Affinity Group,Antonio Narino University,WIE,38,6,Yes,1,,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Corporación Universitaria del Huila – CORHUILA,WIE",SBA60236869,Affinity Group,Corporación Universitaria del Huila – CORHUILA,WIE,8,6,Yes,1,,1,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
 "Escuela Colombiana De Ing Julio Garavito, WIE",SBA27011,Affinity Group,Escuela Colombiana De Ingenieria Julio Garavito,WIE,3,6,No,0,,0,2,No,Yes,,No,No,No,No,No,Partial,0/3,Not Met
-"Escuela Colombiana de Carreras Industriales,WIE",SBA05421,Affinity Group,Escuela Colombiana de Carreras Industriales,WIE,16,6,Yes,3,,0,2,Yes,No,,Yes,Yes,Yes,Yes,Yes,Partial,2/3,Not Met
-"Escuela Tecnologica Instituto Tecnico Central, WIE",SBA13041,Affinity Group,Escuela Tecnologica Instituto Tecnico Central,WIE,5,6,No,0,,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"Escuela Colombiana de Carreras Industriales,WIE",SBA05421,Affinity Group,Escuela Colombiana de Carreras Industriales,WIE,16,6,Yes,3,,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Escuela Tecnologica Instituto Tecnico Central, WIE",SBA13041,Affinity Group,Escuela Tecnologica Instituto Tecnico Central,WIE,5,6,No,0,,0,2,No,Yes,,Yes,No,No,No,No,Met,1/3,Not Met
 "Granada Univ Militar Nueva, WIE",SBA63981,Affinity Group,Granada Univ Militar Nueva,WIE,7,6,Yes,0,,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
 "Icesi University, WIE",SBA02571,Affinity Group,Icesi University,WIE,11,6,Yes,4,,3,2,Yes,Yes,,Yes,Yes,No,Yes,No,Met,3/3,Met
 "Institucion Universitaria CESMAG,WIE",SBA03103,Affinity Group,Institucion Universitaria CESMAG,WIE,0,6,No,0,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
@@ -21,21 +21,21 @@ Univ. Distrital Francisco Jose de Caldas SB SIGHT,SBA04331S,Affinity Group,Unive
 "Universidad Catolica de Colombia,WIE",SBA62201,Affinity Group,Universidad Catolica de Colombia,WIE,0,6,No,0,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad Francisco De Paula Santander,WIE",SBA10591,Affinity Group,Universidad Francisco de Paula Santander,WIE,1,6,No,0,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad Industrial de Santander, WIE",SBA10511,Affinity Group,Universidad Industrial de Santander,WIE,12,6,Yes,3,,0,2,Yes,No,,No,No,No,No,No,Not Met,2/3,Not Met
-"Universidad Nacional Abierta y a Distancia,WIE",SBA13071,Affinity Group,Universidad Nacional Abierta y a Distancia,WIE,8,6,Yes,0,,0,2,No,No,,Yes,Yes,Yes,Yes,Yes,Partial,1/3,Not Met
+"Universidad Nacional Abierta y a Distancia,WIE",SBA13071,Affinity Group,Universidad Nacional Abierta y a Distancia,WIE,8,6,Yes,0,,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 "Universidad Nacional De Colombia Sede-Bogota,WIE",SBA06431,Affinity Group,Universidad Nacional De Colombia Sede Bogota,WIE,16,6,Yes,1,,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
 "Universidad Piloto de Colombia,WIE",SBA81721,Affinity Group,Universidad Piloto de Colombia,WIE,1,6,No,1,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad Santiago de Cali,WIE",SBA64461,Affinity Group,Universidad Santiago de Cali,WIE,14,6,Yes,2,,2,2,Yes,Yes,,No,Yes,Yes,Yes,Yes,Partial,2/3,Not Met
-"Universidad Santo Tomas - Tunja, SIGHT",SBA04081S,Affinity Group,Universidad Santo Tomas - Tunja,SIGHT,26,6,Yes,0,,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
-"Universidad Santo Tomas - Tunja, WIE",SBA04081,Affinity Group,Universidad Santo Tomas - Tunja,WIE,20,6,Yes,0,,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Universidad Santo Tomas - Tunja, SIGHT",SBA04081S,Affinity Group,Universidad Santo Tomas - Tunja,SIGHT,26,6,Yes,0,,0,2,No,No,,Yes,No,No,No,No,Partial,1/3,Not Met
+"Universidad Santo Tomas - Tunja, WIE",SBA04081,Affinity Group,Universidad Santo Tomas - Tunja,WIE,20,6,Yes,0,,0,2,No,Yes,,No,No,No,No,No,Partial,1/3,Not Met
 "Universidad Sergio Arboleda,WIE",SBA01201,Affinity Group,Universidad Sergio Arboleda,WIE,0,6,No,0,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad Surcolombiana, WIE",SBA16735,Affinity Group,Universidad Surcolombiana,WIE,19,6,Yes,0,,1,2,No,Yes,,No,No,No,No,No,Partial,1/3,Not Met
 "Universidad Tecnologica de Pereira, WIE",SBA17431,Affinity Group,Universidad Tecnologica de Pereira,WIE,3,6,No,1,,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
 "Universidad de Narino, WIE",SBA64151,Affinity Group,Universidad de Narino,WIE,0,6,No,0,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad de San Buenaventura,WIE",SBA62571,Affinity Group,Universidad de San Buenaventura,WIE,0,6,No,0,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
-"Universidad de los Andes, WIE",SBA12991,Affinity Group,Universidad de los Andes,WIE,41,6,Yes,4,,1,2,Yes,No,,No,Yes,Yes,Yes,Yes,Not Met,2/3,Not Met
+"Universidad de los Andes, WIE",SBA12991,Affinity Group,Universidad de los Andes,WIE,41,6,Yes,4,,1,2,Yes,Yes,,No,Yes,Yes,Yes,Yes,Partial,2/3,Not Met
 "Universidad del Cauca,WIE",SBA09161,Affinity Group,Universidad del Cauca,WIE,36,6,Yes,1,,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
-"Universidad del Quindio,WIE",SBA65911,Affinity Group,Universidad del Quindio,WIE,7,6,Yes,4,,1,2,Yes,No,,No,Yes,No,No,No,Not Met,2/3,Not Met
-"Universidad del Valle,WIE",SBA95801,Affinity Group,Universidad del Valle,WIE,32,6,Yes,2,,0,2,Yes,No,,Yes,No,No,No,No,Partial,2/3,Not Met
+"Universidad del Quindio,WIE",SBA65911,Affinity Group,Universidad del Quindio,WIE,7,6,Yes,4,,1,2,Yes,Yes,,No,Yes,No,No,No,Partial,2/3,Not Met
+"Universidad del Valle,WIE",SBA95801,Affinity Group,Universidad del Valle,WIE,32,6,Yes,2,,0,2,Yes,Yes,,Yes,No,No,No,No,Met,3/3,Met
 Antonio Narino University,STB64411A,Student Branch,Antonio Narino University,,48,12,Yes,4,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Corporacion Universitaria Minuto de Dios UNIMINUTO,STB60103228,Student Branch,Corporacion Universitaria Minuto de Dios UNIMINUTO,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Corporacion Universitaria Unitec,STB18371,Student Branch,Corporacion Universitaria Unitec,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
