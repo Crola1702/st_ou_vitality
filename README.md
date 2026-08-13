@@ -43,12 +43,20 @@ data, safe to commit) so trends build up over time as you re-run the
 script. Re-running on the same day is a no-op (it won't duplicate that
 day's snapshot).
 
-It also writes `university_report.html` — a print-friendly, one-page-per-
-university handout (summary stats, a requirements-met breakdown bar, and a
-unit table), linked from the dashboard header as "Printable University
-Reports". Open it and print (Ctrl/Cmd+P → Save as PDF) to hand a specific
-university's page off to its Student Branch. It's always light-themed
-regardless of the viewer's OS theme, since it's meant to be printed.
+It also writes `university_report.html` and `society_report.html` — print-
+friendly, one-page-per-group handouts (summary stats, a requirements-met
+breakdown bar, and a unit table; the society report also lists each unit's
+university, since a society like WIE spans many), linked from the
+dashboard header as "Printable University/Society Reports". Both are
+always light-themed regardless of the viewer's OS theme, since they're
+meant to be printed.
+
+Click a name in either report's table of contents (or the "Print this
+page" button on a page) to print just that one group — it scopes
+`window.print()` to that page via a `print-single` body class instead of
+printing the whole document. Printing the document normally (Ctrl/Cmd+P
+without clicking a name first) still prints every page, useful for
+archiving the full set at once.
 
 The raw exports contain personal data (officer names, emails, phone
 numbers) and are **git-ignored** — only the generated, aggregated

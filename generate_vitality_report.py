@@ -39,6 +39,7 @@ import csv
 import html
 import json
 import re
+from collections.abc import Callable
 from datetime import datetime
 from pathlib import Path
 
@@ -767,7 +768,7 @@ def build_dashboard(units: list[OU], path: Path, events_path: Path) -> None:
 <body>
 <div class="viz-root">
   <div class="container">
-    <p class="byline"><a href="https://www.linkedin.com/in/cristobalarroyo/" target="_blank" rel="noopener">By Cristóbal Arroyo</a> <a href="https://github.com/Crola1702/st_ou_vitality" target="_blank" rel="noopener">See on GitHub</a> <a href="university_report.html" target="_blank" rel="noopener">Printable University Reports</a></p>
+    <p class="byline"><a href="https://www.linkedin.com/in/cristobalarroyo/" target="_blank" rel="noopener">By Cristóbal Arroyo</a> <a href="https://github.com/Crola1702/st_ou_vitality" target="_blank" rel="noopener">See on GitHub</a> <a href="university_report.html" target="_blank" rel="noopener">Printable University Reports</a> <a href="society_report.html" target="_blank" rel="noopener">Printable Society Reports</a></p>
     <h1>IEEE Student OU Vitality Dashboard</h1>
     <p class="subtitle">Generated from local vTools exports. Events source: {html.escape(events_path.name)}.</p>
 
@@ -965,24 +966,42 @@ def build_dashboard(units: list[OU], path: Path, events_path: Path) -> None:
     path.write_text(page, encoding="utf-8")
 
 
-def build_university_report(units: list[OU], path: Path) -> None:
-    """A print-friendly, one-page-per-university handout: summary stats, a
+def build_grouped_print_report(
+    units: list[OU],
+    path: Path,
+    *,
+    group_key: Callable[[OU], str],
+    group_label: str,
+    doc_title: str,
+    extra_column: tuple[str, Callable[[OU], str]] | None = None,
+) -> None:
+    """A print-friendly, one-page-per-group handout: summary stats, a
     requirements-met breakdown bar, and a unit table. Always light-themed
-    (it's meant to be printed / saved as PDF, not viewed as a web app)."""
-    by_university: dict[str, list[OU]] = {}
+    (it's meant to be printed / saved as PDF, not viewed as a web app).
+    Clicking a name in the table of contents (or the button on a page)
+    prints just that group's page via printOnly(), instead of the whole
+    document."""
+    groups: dict[str, list[OU]] = {}
     for ou in units:
-        by_university.setdefault(ou.university, []).append(ou)
+        key = group_key(ou)
+        if key:
+            groups.setdefault(key, []).append(ou)
 
     generated_on = datetime.now().strftime("%Y-%m-%d")
 
+    def anchor_for(name: str) -> str:
+        return re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")
+
     toc_items = "".join(
-        f'<li><a href="#{html.escape(re.sub(r"[^a-z0-9]+", "-", university.lower()))}">{html.escape(university)}</a></li>'
-        for university in sorted(by_university)
+        f'<li><a href="#{html.escape(anchor_for(name))}" onclick="printOnly(\'{html.escape(anchor_for(name))}\')">{html.escape(name)}</a></li>'
+        for name in sorted(groups)
     )
 
+    extra_th = f"<th>{html.escape(extra_column[0])}</th>" if extra_column else ""
+
     pages = []
-    for university in sorted(by_university):
-        ou_list = sorted(by_university[university], key=lambda o: (o.ou_type, o.name))
+    for name in sorted(groups):
+        ou_list = sorted(groups[name], key=lambda o: (o.ou_type, o.name))
         results = {ou.spoid: evaluate(ou) for ou in ou_list}
         total = len(ou_list)
         met = sum(1 for r in results.values() if r["overall"])
@@ -1007,6 +1026,7 @@ def build_university_report(units: list[OU], path: Path) -> None:
                 <td>{html.escape(ou.name)}</td>
                 <td>{html.escape(ou.ou_type)}</td>
                 <td class="mono">{html.escape(ou.spoid)}</td>
+                {f"<td>{html.escape(extra_column[1](ou))}</td>" if extra_column else ""}
                 <td>{ou.member_count}</td>
                 <td>{results[ou.spoid]["event_count"]}/{CRITERIA[ou.ou_type]["min_events"]}</td>
                 <td>{results[ou.spoid]["officers_status"]}</td>
@@ -1015,10 +1035,11 @@ def build_university_report(units: list[OU], path: Path) -> None:
             for ou in ou_list
         )
 
-        anchor = re.sub(r"[^a-z0-9]+", "-", university.lower())
+        anchor = anchor_for(name)
         pages.append(f'''
-        <section class="university-page" id="{html.escape(anchor)}">
-          <h1>{html.escape(university)}</h1>
+        <section class="group-page" id="{html.escape(anchor)}">
+          <div class="page-toolbar no-print"><button onclick="printOnly('{html.escape(anchor)}')">Print this page</button></div>
+          <h1>{html.escape(name)}</h1>
           <p class="subtitle">IEEE Student OU Vitality Report — generated {generated_on}</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">{total}</div></div>
@@ -1027,7 +1048,7 @@ def build_university_report(units: list[OU], path: Path) -> None:
           </div>
           <div class="bar-chart">{bar_rows}</div>
           <table>
-            <thead><tr><th>Unit</th><th>Type</th><th>SPO ID</th><th>Members</th><th>Events</th><th>Officers</th><th>Req. Met</th></tr></thead>
+            <thead><tr><th>Unit</th><th>Type</th><th>SPO ID</th>{extra_th}<th>Members</th><th>Events</th><th>Officers</th><th>Req. Met</th></tr></thead>
             <tbody>{table_rows}</tbody>
           </table>
         </section>
@@ -1037,7 +1058,7 @@ def build_university_report(units: list[OU], path: Path) -> None:
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>IEEE Student OU Vitality — University Reports</title>
+<title>{html.escape(doc_title)}</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
   * {{ box-sizing: border-box; }}
@@ -1046,13 +1067,13 @@ def build_university_report(units: list[OU], path: Path) -> None:
   .toc h1 {{ font-size: 1.4rem; }}
   .toc ul {{ columns: 2; gap: 24px; padding-left: 20px; }}
   .toc li {{ margin: 4px 0; }}
-  .toc a {{ color: #111; text-decoration: none; }}
+  .toc a {{ color: #111; text-decoration: none; cursor: pointer; }}
   .toc a:hover {{ text-decoration: underline; }}
-  .university-page {{
+  .group-page {{
     max-width: 900px; margin: 0 auto 40px; background: #fff; padding: 40px;
     border: 1px solid #ddd; border-radius: 4px;
   }}
-  .university-page h1 {{ font-size: 1.6rem; margin: 0 0 2px; }}
+  .group-page h1 {{ font-size: 1.6rem; margin: 0 0 2px; }}
   .subtitle {{ color: #555; font-size: 0.85rem; margin: 0 0 20px; }}
   .stat-row {{ display: flex; gap: 24px; margin-bottom: 24px; }}
   .stat-label {{ font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.03em; color: #666; }}
@@ -1067,23 +1088,64 @@ def build_university_report(units: list[OU], path: Path) -> None:
   th, td {{ padding: 6px 8px; text-align: left; border-bottom: 1px solid #eee; }}
   th {{ font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.02em; color: #666; }}
   td.mono {{ font-variant-numeric: tabular-nums; color: #555; }}
+  .page-toolbar {{ margin-bottom: 12px; }}
+  .page-toolbar button {{
+    font: inherit; cursor: pointer; padding: 6px 14px; border-radius: 6px; border: 1px solid #ccc;
+    background: #fafafa; color: #111;
+  }}
+  .page-toolbar button:hover {{ background: #eee; }}
   @media print {{
     body {{ background: #fff; }}
-    .toc, .university-page {{ page-break-after: always; border: none; box-shadow: none; margin: 0; max-width: none; }}
+    .toc, .group-page {{ page-break-after: always; border: none; box-shadow: none; margin: 0; max-width: none; }}
+    .no-print {{ display: none !important; }}
+    body.print-single .group-page:not(.print-target) {{ display: none; }}
   }}
 </style>
 </head>
 <body>
   <section class="toc">
-    <h1>IEEE Student OU Vitality — University Reports</h1>
-    <p class="subtitle">Generated {generated_on} · one printable page per university · print this document (Ctrl/Cmd+P → Save as PDF) to hand off to a specific Student Branch.</p>
+    <h1>{html.escape(doc_title)}</h1>
+    <p class="subtitle">Generated {generated_on} · one printable page per {html.escape(group_label.lower())} · click a name to print just that page, or print this whole document (Ctrl/Cmd+P → Save as PDF) for all of them.</p>
     <ul>{toc_items}</ul>
   </section>
   {"".join(pages)}
+<script>
+  function printOnly(id) {{
+    document.querySelectorAll('.group-page').forEach(el => el.classList.remove('print-target'));
+    const target = document.getElementById(id);
+    if (target) target.classList.add('print-target');
+    document.body.classList.add('print-single');
+    window.print();
+  }}
+  window.addEventListener('afterprint', () => {{
+    document.body.classList.remove('print-single');
+  }});
+</script>
 </body>
 </html>
 """
     path.write_text(page, encoding="utf-8")
+
+
+def build_university_report(units: list[OU], path: Path) -> None:
+    build_grouped_print_report(
+        units,
+        path,
+        group_key=lambda ou: ou.university,
+        group_label="University",
+        doc_title="IEEE Student OU Vitality — University Reports",
+    )
+
+
+def build_society_report(units: list[OU], path: Path) -> None:
+    build_grouped_print_report(
+        units,
+        path,
+        group_key=lambda ou: ou.society,
+        group_label="Society",
+        doc_title="IEEE Student OU Vitality — Society Reports",
+        extra_column=("University", lambda ou: ou.university),
+    )
 
 
 def main() -> None:
@@ -1099,16 +1161,18 @@ def main() -> None:
     html_path = BASE_DIR / "vitality_dashboard.html"
     history_path = BASE_DIR / "vitality_history.csv"
     university_report_path = BASE_DIR / "university_report.html"
+    society_report_path = BASE_DIR / "society_report.html"
 
     write_csv(units, csv_path)
     build_dashboard(units, html_path, events_path)
     write_history(units, history_path)
     build_university_report(units, university_report_path)
+    build_society_report(units, society_report_path)
 
     total = len(units)
     met = sum(1 for ou in units if evaluate(ou)["overall"])
     print(f"Processed {total} OUs ({met} meeting full vitality criteria).")
-    print(f"Wrote {csv_path.name}, {html_path.name}, and {university_report_path.name}")
+    print(f"Wrote {csv_path.name}, {html_path.name}, {university_report_path.name}, and {society_report_path.name}")
 
 
 if __name__ == "__main__":
