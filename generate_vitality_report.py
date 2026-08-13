@@ -336,6 +336,59 @@ def write_csv(units: list[OU], path: Path) -> None:
             )
 
 
+HISTORY_FIELDNAMES = [
+    "Date",
+    "SPO ID",
+    "Unit Type",
+    "University",
+    "Society",
+    "Member Count",
+    "Requirements Met",
+    "Members Met",
+    "Events Met",
+    "Officers Status",
+    "Overall Vitality",
+]
+
+
+def write_history(units: list[OU], path: Path) -> None:
+    """Append one snapshot row per OU for today's run, so re-running this
+    script over time builds up a trend history. No personal data — safe to
+    commit. Skips appending if today's date is already recorded, so
+    re-running the script the same day doesn't create duplicate rows."""
+    run_date = datetime.now().strftime("%Y-%m-%d")
+
+    if path.exists():
+        with open(path, encoding="utf-8") as f:
+            existing_dates = {row["Date"] for row in csv.DictReader(f)}
+        if run_date in existing_dates:
+            print(f"{path.name} already has a snapshot for {run_date}, skipping.")
+            return
+
+    write_header = not path.exists()
+    with open(path, "a", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=HISTORY_FIELDNAMES)
+        if write_header:
+            writer.writeheader()
+        for ou in units:
+            result = evaluate(ou)
+            writer.writerow(
+                {
+                    "Date": run_date,
+                    "SPO ID": ou.spoid,
+                    "Unit Type": ou.ou_type,
+                    "University": ou.university,
+                    "Society": ou.society,
+                    "Member Count": ou.member_count,
+                    "Requirements Met": result["requirements_met"],
+                    "Members Met": "Yes" if result["members_met"] else "No",
+                    "Events Met": "Yes" if result["events_met"] else "No",
+                    "Officers Status": result["officers_status"],
+                    "Overall Vitality": "Met" if result["overall"] else "Not Met",
+                }
+            )
+
+
 STATUS_GOOD = "#0ca30c"
 STATUS_WARNING = "#fab219"
 STATUS_SERIOUS = "#ec835a"
@@ -505,43 +558,59 @@ def build_dashboard(units: list[OU], path: Path, events_path: Path) -> None:
         render_section(ou_type, by_type[ou_type]) for ou_type in ["Student Branch", "Student Branch Chapter", "Affinity Group"]
     )
 
-    def render_quick_wins(all_units: list[OU]) -> str:
+    def render_quick_wins(all_units: list[OU]) -> tuple[str, int]:
         candidates = []
         for ou in all_units:
             result = evaluate(ou)
-            if result["overall"]:
+            if result["requirements_met"] != 2:
                 continue
-            if result["members_met"] and result["officers_met"] and not result["events_met"]:
-                needed = CRITERIA[ou.ou_type]["min_events"] - result["event_count"]
-                candidates.append((needed, ou, result))
+            criteria = CRITERIA[ou.ou_type]
+            if not result["members_met"]:
+                gap = max(0, criteria["min_members"] - ou.member_count)
+                missing = "Members"
+                detail = f"{gap} more member{'s' if gap != 1 else ''} ({ou.member_count}/{criteria['min_members']})"
+            elif not result["events_met"]:
+                gap = max(0, criteria["min_events"] - result["event_count"])
+                missing = "Events"
+                detail = f"{gap} more event{'s' if gap != 1 else ''} ({result['event_count']}/{criteria['min_events']})"
+            else:
+                missing_roles = []
+                if not result["chair_met"]:
+                    missing_roles.append("Chair")
+                if not result["counselor_met"]:
+                    missing_roles.append(result["role2"])
+                gap = len(missing_roles)
+                missing = "Officers"
+                detail = f"Needs {' & '.join(missing_roles)} reported in vTools"
+            candidates.append((gap, ou, missing, detail))
+
         if not candidates:
-            return ""
+            return "<p class=\"empty\">No units are one requirement away right now.</p>", 0
         candidates.sort(key=lambda c: (c[0], c[1].name))
 
+        missing_color = {"Members": STATUS_WARNING, "Events": STATUS_WARNING, "Officers": STATUS_SERIOUS}
         rows_html = "".join(
             f"""<tr class="ou-row" data-name="{html.escape(ou.name.lower())}" data-spoid="{html.escape(ou.spoid.lower())}" data-university="{html.escape(ou.university.lower())}" data-society="{html.escape(ou.society.lower())}" data-members="{ou.member_count}">
               <td class="name-cell">{html.escape(ou.name)}</td>
               <td>{html.escape(ou.ou_type)}</td>
               <td class="mono">{html.escape(ou.spoid)}</td>
-              <td>{stat_span(f"{result['event_count']}/{CRITERIA[ou.ou_type]['min_events']}", STATUS_WARNING)}</td>
-              <td>{stat_span(f"{needed} more", STATUS_SERIOUS)}</td>
+              <td>{stat_span(missing, missing_color[missing])}</td>
+              <td>{html.escape(detail)}</td>
             </tr>"""
-            for needed, ou, result in candidates
+            for gap, ou, missing, detail in candidates
         )
 
-        return f"""
-        <section class="ou-section quick-wins">
-          <h2>Quick Wins <span class="req-note">(only missing Events — {len(candidates)} unit{'s' if len(candidates) != 1 else ''} one push away from full vitality)</span></h2>
-          <div class="table-wrap">
-          <table id="table-quick-wins">
-            <thead><tr><th>Unit Name</th><th>Type</th><th>SPO ID</th><th>Events</th><th>Events Needed</th></tr></thead>
-            <tbody>{rows_html}</tbody>
-          </table>
-          </div>
-        </section>
+        table_html = f"""
+        <div class="table-wrap">
+        <table id="table-quick-wins">
+          <thead><tr><th>Unit Name</th><th>Type</th><th>SPO ID</th><th>Missing</th><th>Detail</th></tr></thead>
+          <tbody>{rows_html}</tbody>
+        </table>
+        </div>
         """
+        return table_html, len(candidates)
 
-    quick_wins_html = render_quick_wins(units)
+    quick_wins_html, quick_wins_count = render_quick_wins(units)
 
     page = f"""<!doctype html>
 <html lang="en">
@@ -623,8 +692,18 @@ def build_dashboard(units: list[OU], path: Path, events_path: Path) -> None:
   .ou-section {{ margin-bottom: 32px; }}
   .ou-section h2 {{ font-size: 1.1rem; margin: 0 0 4px; }}
   .req-note {{ font-weight: 400; font-size: 0.8rem; color: var(--text-secondary); }}
-  .quick-wins {{ border: 1px solid {STATUS_SERIOUS}; border-radius: 10px; padding: 14px 16px 4px; background: var(--surface-1); }}
-  .quick-wins .table-wrap {{ border: none; }}
+  .tabs {{ display: flex; gap: 8px; margin-bottom: 16px; border-bottom: 1px solid var(--border); }}
+  .tab-btn {{
+    font: inherit; cursor: pointer; padding: 10px 16px; border: none; border-bottom: 2px solid transparent;
+    background: none; color: var(--text-secondary); font-weight: 600; font-size: 0.9rem;
+  }}
+  .tab-btn:hover {{ color: var(--text-primary); }}
+  .tab-btn.active {{ color: var(--text-primary); border-bottom-color: {STATUS_SERIOUS}; }}
+  .tab-badge {{
+    display: inline-block; margin-left: 4px; padding: 1px 7px; border-radius: 999px;
+    background: {STATUS_SERIOUS}; color: #fff; font-size: 0.72rem; font-weight: 700;
+  }}
+  .tab-panel[hidden] {{ display: none; }}
 
   .table-wrap {{ overflow-x: auto; border: 1px solid var(--border); border-radius: 10px; }}
   table {{ border-collapse: collapse; width: 100%; background: var(--surface-1); font-size: 0.88rem; }}
@@ -729,9 +808,19 @@ def build_dashboard(units: list[OU], path: Path, events_path: Path) -> None:
       {member_summary_html}
     </div>
 
-    {quick_wins_html}
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="overview" onclick="showTab('overview')">Overview</button>
+      <button class="tab-btn" data-tab="quick-wins" onclick="showTab('quick-wins')">Quick Wins <span class="tab-badge">{quick_wins_count}</span></button>
+    </div>
 
-    {sections_html}
+    <div id="tab-overview" class="tab-panel">
+      {sections_html}
+    </div>
+
+    <div id="tab-quick-wins" class="tab-panel" hidden>
+      <p class="req-note">Units missing exactly one requirement (Members, Events, or Officers) — the fastest path to full vitality, sorted by smallest gap first.</p>
+      {quick_wins_html}
+    </div>
 
     <footer>
       Click an <strong>Events</strong> or <strong>Officers</strong> cell to see the detailed breakdown.<br>
@@ -841,6 +930,11 @@ def build_dashboard(units: list[OU], path: Path, events_path: Path) -> None:
     row.style.display = row.style.display === 'none' ? 'table-row' : 'none';
   }}
 
+  function showTab(name) {{
+    document.querySelectorAll('.tab-panel').forEach(p => {{ p.hidden = p.id !== `tab-${{name}}`; }});
+    document.querySelectorAll('.tab-btn').forEach(b => {{ b.classList.toggle('active', b.dataset.tab === name); }});
+  }}
+
   function sortByMembers(tableId, th) {{
     const table = document.getElementById(tableId);
     const tbody = table.querySelector('tbody');
@@ -881,9 +975,11 @@ def main() -> None:
 
     csv_path = BASE_DIR / "vitality_report.csv"
     html_path = BASE_DIR / "vitality_dashboard.html"
+    history_path = BASE_DIR / "vitality_history.csv"
 
     write_csv(units, csv_path)
     build_dashboard(units, html_path, events_path)
+    write_history(units, history_path)
 
     total = len(units)
     met = sum(1 for ou in units if evaluate(ou)["overall"])
