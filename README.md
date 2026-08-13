@@ -33,10 +33,15 @@ them, e.g. "Affinity Group Chair" or "SIGHT Advisor", instead of using the
 plain role name — see `normalize_position()`), so those still count as
 Chair/Advisor/etc.
 
-The dashboard also has a **Quick Wins** section: units that meet the
-Members and Officers requirements and are missing *only* Events, sorted by
-how few more events they need — the fastest path to full compliance for
-each of them.
+The dashboard has a **Quick Wins** tab: units missing exactly one of the
+3 requirements (Members, Events, or Officers), sorted by smallest gap
+first — the fastest path to full compliance for each of them.
+
+Every run also appends a snapshot to `vitality_history.csv` (one row per
+OU: date, requirements met, members/events/officers status — no personal
+data, safe to commit) so trends build up over time as you re-run the
+script. Re-running on the same day is a no-op (it won't duplicate that
+day's snapshot).
 
 The raw exports contain personal data (officer names, emails, phone
 numbers) and are **git-ignored** — only the generated, aggregated
