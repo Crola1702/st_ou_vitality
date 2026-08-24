@@ -86,6 +86,17 @@ below. All of them come from vTools (https://vtools.ieee.org) — exact menu
 wording can shift between vTools UI versions, so use the column list to
 confirm you've got the right report if the navigation looks different.
 
+To fetch these (plus the optional `Member Detail View.csv`) without
+clicking through the portals by hand each time, see `automations/README.md`
+— browser-automation scripts that replicate the same exports. Once you've
+done the one-time setup/login there, `./run_all.sh` from the project root
+runs the whole pipeline in one shot: fetch every source file, then
+regenerate the report, dashboard, and every downstream tool
+(`chapter_outreach/`, `officer_terms/`, `member_society_lookup/`) — the
+one command to run periodically. `chapter_outreach/` and `officer_terms/`
+write officer names/emails to a local CSV each time — same as running them
+by hand, those files stay git-ignored (see their sections below).
+
 1. **`Student Branch and Member Count.csv`** and
    **`Student Branch Chapters and Affinity Group Member Count.csv`**
 

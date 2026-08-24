@@ -13,7 +13,10 @@ via GitHub Pages.
 
 No package manager, no lockfile, no test suite — every script is `python3
 <script>.py`, stdlib only (`csv`, `html`, `json`, `re`, `datetime`,
-`pathlib`, `collections.abc`).
+`pathlib`, `collections.abc`). The one exception is `automations/`
+(playwright-based browser automation to fetch the source CSVs) — it has
+its own `requirements.txt` and virtualenv, deliberately kept separate from
+the stdlib-only report pipeline.
 
 ## Commands
 
@@ -22,6 +25,16 @@ python3 generate_vitality_report.py                    # main report + dashboard
 python3 chapter_outreach/generate_chapter_outreach.py   # after the above — reuses its source CSVs
 python3 officer_terms/generate_officer_terms.py         # after the above — reuses its source CSVs
 ```
+
+`./run_all.sh` (repo root) runs the whole pipeline in one shot: fetches every
+source CSV via `automations/` (assumes its one-time setup/login is already
+done — see `automations/README.md`), then runs all of the above plus
+`member_society_lookup/generate_member_society_lookup.py`, in dependency
+order. `chapter_outreach/`/`officer_terms/` writing officer names/emails to
+a local CSV each run is no different from running them by hand — those
+outputs stay git-ignored either way. Does not log in itself — a fetch step
+failing with an auth error means the saved session expired; re-run login
+and retry.
 
 There's no lint/test/build config in this repo — verify changes by
 re-running the relevant script and opening the generated HTML in a
@@ -103,6 +116,14 @@ All are separate entry points that **import from `generate_vitality_report.py`**
 - `chapter_outreach/generate_chapter_outreach.py` — builds a per-chapter contact list (chapter officers + parent Student Branch's Chair/Counselor, matched by exact `School Name` since STB/SBC SPOID numbering doesn't align) for every non-compliant Chapter, plus a `Missing Requirements` breakdown. Filters out volunteers with `OK to Contact != "Y"`. Output feeds `chapter_outreach_email.gs`, a Google Apps Script (paste into a Sheet's Extensions → Apps Script) that sends the revitalization email — dry-run by default, idempotent via a "Sent At" column, CCs a fixed `SAC_TEAM_CC`.
 - `officer_terms/generate_officer_terms.py` — flags **elected** positions only (Chair/Vice Chair/Secretary/Treasurer/Webmaster — Counselor/Advisor are appointed, excluded) whose `Position End` is within `SUCCESSION_ALERT_DAYS` (90) or whose tenure since `Position Start` exceeds `TERM_LIMIT_YEARS` (2).
 - `member_society_lookup/generate_member_society_lookup.py` — reads `Member Detail View.csv` and always (re)writes `member_society_lookup/lookup.html`, a self-contained local page embedding only `{membership number: Society List}` pairs (no other columns) with a paste-a-list-and-count UI; optionally also prints a CLI report if membership numbers are passed as args/`--file`. `lookup.html` embeds a per-member identifier for every member in the export, so unlike every other dashboard output it must **never** be committed or published — it's git-ignored even though (unlike the CSVs above) it contains no names/emails.
+
+### `automations/` — fetching the source CSVs
+
+Two standalone Playwright scripts, unrelated to the `generate_vitality_report.py` import chain above (they only produce the raw CSVs it later reads) — see `automations/README.md` for setup and the full export recipe.
+
+- `tableau_export.py` — replicates Tableau's internal VizQL session protocol (`startSession` → `bootstrapSession` → `ensure-layout-for-sheet` → apply filters/parameters → `export-crosstab-to-csvserver` → download the tempfile) against `tblanalytics.ieee.org`, reconstructed from a captured HAR. `FILTER_PRESETS` hardcodes the index-based categorical-filter clicks two dashboards need before they show data (`volunteer_positions` → `Volunteer List by OU.csv`, `members_detail` → `Member Detail View.csv`); the other two source files use the general `export`/`list-sheets` commands directly. Best-effort — breaks on a Tableau Server upgrade.
+- `vtools_export.py` — simpler: drives the real vTools Events advanced-search page and captures the "Download as CSV" button's browser download, for `*Events*.csv`.
+- Both need one-time interactive `login` (real browser, IEEE SSO) before `export`, saving session cookies to `storage_state.json`/`vtools_storage_state.json` next to the scripts (`STATE_FILE` is resolved relative to `Path(__file__).resolve().parent`, not the caller's cwd, specifically so this holds regardless of where the command is run from). Those files, plus a leftover unused `.env` (`TABLEAU_PAT`, never read by either script) and `automations/.venv/`, are git-ignored — never remove those `.gitignore` entries.
 
 ### Styling/design conventions
 

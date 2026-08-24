@@ -13,13 +13,18 @@
  *      GUIDE_DRIVE_FILE_ID below to attach it to every email.
  *   5. In the Sheet: Extensions > Apps Script, replace the boilerplate with
  *      this file's contents, save.
- *   6. Run sendOutreachEmails() with DRY_RUN = true first, then check
+ *   6. Set the SAC team's CC list as a Script Property (NOT in this file —
+ *      this file is committed to git, Script Properties are per-deployment
+ *      only): Project Settings (gear icon) > Script Properties > Add script
+ *      property, key `SAC_TEAM_CC`, value e.g.
+ *      "Name <email@ieee.org>, team@ieee.org".
+ *   7. Run sendOutreachEmails() with DRY_RUN = true first, then check
  *      View > Logs (or Executions) to confirm the recipients/subjects look
  *      right before sending anything for real.
- *   7. Set DRY_RUN = false and run again to actually send.
+ *   8. Set DRY_RUN = false and run again to actually send.
  *
- * Every email is CC'd to the SAC team (SAC_TEAM_CC below) — update that
- * constant if the team roster changes.
+ * Every email is CC'd to the SAC team — see step 6 above to configure who
+ * that is for your deployment.
  *
  * Re-running is safe: rows that already have a value in "Sent At" are
  * skipped, and rows with no contactable recipients are skipped too (check
@@ -37,9 +42,13 @@ var RESPONSE_DEADLINE_TEXT = 'TODO: set this, e.g. "26 de agosto de 2026"';
 var GUIDE_DRIVE_FILE_ID = ''; // optional — leave blank to send without an attachment
 var SHEET_NAME = 'Outreach';
 var SENDER_NAME = 'SAC – Conexiones IEEE Sección Colombia';
-var SAC_TEAM_CC = 'REDACTED';
+// Set via Project Settings > Script Properties (key "SAC_TEAM_CC") — see setup step 6.
+// Never hardcode real names/emails here: this file is committed to git.
+var SAC_TEAM_CC = PropertiesService.getScriptProperties().getProperty('SAC_TEAM_CC') || '';
 
 function sendOutreachEmails() {
+  if (!SAC_TEAM_CC) throw new Error('SAC_TEAM_CC Script Property is not set — see setup step 6.');
+
   var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(SHEET_NAME);
   if (!sheet) throw new Error('No sheet named "' + SHEET_NAME + '" found — see setup step 2.');
 

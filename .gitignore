@@ -13,6 +13,12 @@ officer_terms/officer_terms.csv
 # Embeds membership number -> society pairs for every member — never commit.
 member_society_lookup/lookup.html
 
+# automations/: browser session cookies and secrets — never commit.
+automations/storage_state.json
+automations/vtools_storage_state.json
+automations/.env
+automations/.venv/
+
 # Local tooling
 .claude/
 __pycache__/
