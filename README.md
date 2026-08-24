@@ -48,6 +48,17 @@ time, one line per OU type, built from `vitality_history.csv`. With a
 single snapshot recorded it just shows a dot per type; the lines fill in
 as more monthly runs accumulate.
 
+If `Member Detail View.csv` (see below) is present, every run also appends
+a snapshot to `society_membership_history.csv` — one row per IEEE Society:
+date, society, member count (Colombia Section only). This is aggregate
+data only — no membership numbers, no names — safe to commit and publish,
+unlike the source file. The Trends tab charts member count over time
+underneath the OU vitality chart, defaulting to the top 5 Societies by
+latest count — a "Filter societies" panel lets you swap in any other
+combination, up to 8 at once (more than that stops being distinguishable
+by color). Skipped entirely if `Member Detail View.csv` isn't present
+that run.
+
 It also writes `university_report.html` and `society_report.html` — print-
 friendly, one-page-per-group handouts (summary stats, a requirements-met
 breakdown bar, and a unit table; the society report also lists each unit's
@@ -196,3 +207,29 @@ pair that's either:
 
 Sorted most-urgent first. **This file contains personal data and is
 git-ignored — never commit it.**
+
+## Society membership lookup
+
+Given a list of IEEE membership numbers (e.g. an event's registration list,
+or an OU's roster), `member_society_lookup/generate_member_society_lookup.py`
+counts how many belong to each IEEE Society — useful for answering "how many
+Society X members were at this event/OU?".
+
+It reads `Member Detail View.csv` (vTools's per-member export, placed in
+this directory — same native UTF-16 tab-delimited format as the other raw
+exports). **This file contains personal data (name, email, address, phone)
+and is git-ignored — never commit it.**
+
+Every run writes `member_society_lookup/lookup.html`, a self-contained local
+page with a paste-a-list-and-count UI — open it directly in a browser instead
+of using the CLI. It embeds only {membership number: society list} pairs (no
+names/emails/anything else), but that's still a per-member identifier for
+every member in the export, so **this file is also git-ignored and must
+never be committed or published** — unlike `vitality_dashboard.html`, it's
+not meant to go on GitHub Pages.
+
+```sh
+python3 member_society_lookup/generate_member_society_lookup.py            # just (re)build lookup.html
+python3 member_society_lookup/generate_member_society_lookup.py 0001 0002 0003  # also print a CLI report
+python3 member_society_lookup/generate_member_society_lookup.py --file numbers.txt
+```

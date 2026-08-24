@@ -123,6 +123,77 @@ def derive_society(unit_name: str, university: str) -> str:
     return tokens[-1] if tokens else ""
 
 
+# IEEE Society membership codes as they appear in vTools's per-member
+# "Society List" export column (e.g. "MEMPE031"). Also used, in a compact
+# form, to render human-readable names for the codes derive_society() pulls
+# out of OU chapter names (e.g. "PE31") — those two code shapes are the same
+# underlying society, just formatted differently by the two vTools exports.
+SOCIETY_MEMBERSHIP_CODES: dict[str, str] = {
+    "MEMAES010": "IEEE Aerospace and Electronic Systems Society",
+    "MEMAP003": "IEEE Antennas and Propagation Society",
+    "MEMBT002": "IEEE Broadcast Technology Society",
+    "MEMC016": "IEEE Computer Society",
+    "MEMCAS004": "IEEE Circuits and Systems Society",
+    "MEMCIS011": "IEEE Computational Intelligence Society",
+    "MEMCOM019": "IEEE Communications Society",
+    "MEMCS023": "IEEE Control Systems Society",
+    "MEMCT008": "IEEE Consumer Technology Society",
+    "MEMDEI032": "IEEE Dielectrics and Electrical Insulation Society",
+    "MEME025": "IEEE Education Society",
+    "MEMED015": "IEEE Electron Devices Society",
+    "MEMEMB018": "IEEE Engineering in Medicine and Biology Society",
+    "MEMEMC027": "IEEE Electromagnetic Compatibility Society",
+    "MEMEP021": "IEEE Electronics Packaging Society",
+    "MEMGRS029": "IEEE Geoscience and Remote Sensing Society",
+    "MEMIA034": "IEEE Industry Applications Society",
+    "MEMIE013": "IEEE Industrial Electronics Society",
+    "MEMIM009": "IEEE Instrumentation and Measurement Society",
+    "MEMIT012": "IEEE Information Theory Society",
+    "MEMITSS038": "IEEE Intelligent Transportation Systems Society",
+    "MEMMAG033": "IEEE Magnetics Society",
+    "MEMMTT017": "IEEE Microwave Theory and Techniques Society",
+    "MEMNPS005": "IEEE Nuclear and Plasma Sciences Society",
+    "MEMOE022": "IEEE Oceanic Engineering Society",
+    "MEMPC026": "IEEE Professional Communication Society",
+    "MEMPE031": "IEEE Power & Energy Society",
+    "MEMPEL035": "IEEE Power Electronics Society",
+    "MEMPHO036": "IEEE Photonics Society",
+    "MEMPSE043": "IEEE Product Safety Engineering Society",
+    "MEMRA024": "IEEE Robotics and Automation Society",
+    "MEMRL007": "IEEE Reliability Society",
+    "MEMSIT030": "IEEE Society on Social Implications of Technology",
+    "MEMSMC028": "IEEE Systems, Man, and Cybernetics Society",
+    "MEMSP001": "IEEE Signal Processing Society",
+    "MEMSSC037": "IEEE Solid-State Circuits Society",
+    "MEMTEM014": "IEEE Technology and Engineering Management Society",
+    "MEMUFFC020": "IEEE Ultrasonics, Ferroelectrics, and Frequency Control Society",
+    "MEMVT006": "IEEE Vehicular Technology Society",
+}
+
+
+def _compact_society_code(mem_code: str) -> str:
+    """"MEMVT006" -> "VT06", matching derive_society()'s OU-name-derived codes
+    (which keep the number zero-padded to 2 digits, not fully stripped)."""
+    match = re.match(r"^MEM([A-Z]+)(\d+)$", mem_code)
+    if not match:
+        return mem_code
+    letters, digits = match.groups()
+    return f"{letters}{int(digits):02d}"
+
+
+SOCIETY_NAMES_BY_COMPACT_CODE: dict[str, str] = {
+    _compact_society_code(code): name for code, name in SOCIETY_MEMBERSHIP_CODES.items()
+}
+
+
+def society_display_name(code: str) -> str:
+    """Human-readable name(s) for an OU's (possibly "/"-joined, multi-society)
+    society code. Falls back to the raw code for anything not in
+    SOCIETY_MEMBERSHIP_CODES (Councils, Affinity Groups like WIE/SIGHT, etc.)."""
+    parts = [SOCIETY_NAMES_BY_COMPACT_CODE.get(part, part) for part in code.split("/")]
+    return " / ".join(parts)
+
+
 class OU:
     __slots__ = (
         "name",
@@ -420,6 +491,95 @@ def load_history_trend(path: Path) -> dict:
     return {"dates": dates, "series": series}
 
 
+SOCIETY_MEMBER_FILE = BASE_DIR / "Member Detail View.csv"
+SOCIETY_HISTORY_FIELDNAMES = ["Date", "Society Code", "Society Name", "Member Count"]
+SOCIETY_TREND_TOP_N = 5
+SOCIETY_TREND_MAX_SELECTED = 8  # the validated categorical palette has 8 slots — more stops being distinguishable
+
+
+def count_society_memberships() -> dict[str, int]:
+    """Society membership code -> member count, from Member Detail View.csv
+    (Colombia Section only — a handful of stray other-section rows show up
+    in the export and shouldn't count). Returns {} if the file isn't present
+    (it's optional, unlike the four core vTools exports)."""
+    if not SOCIETY_MEMBER_FILE.exists():
+        return {}
+    counts: dict[str, int] = {}
+    with open(SOCIETY_MEMBER_FILE, encoding="utf-16") as f:
+        for row in csv.DictReader(f, delimiter="\t"):
+            if row.get("Section", "").strip() != "Colombia Section":
+                continue
+            for code in row.get("Society List", "").strip().split(","):
+                code = code.strip()
+                if code:
+                    counts[code] = counts.get(code, 0) + 1
+    return counts
+
+
+def write_society_history(counts: dict[str, int], path: Path) -> None:
+    """Append one snapshot row per society for today's run, mirroring
+    write_history(). Aggregate counts only — no personal data, safe to
+    commit. No-op if Member Detail View.csv wasn't present this run."""
+    if not counts:
+        return
+
+    run_date = datetime.now().strftime("%Y-%m-%d")
+
+    if path.exists():
+        with open(path, encoding="utf-8") as f:
+            existing_dates = {row["Date"] for row in csv.DictReader(f)}
+        if run_date in existing_dates:
+            print(f"{path.name} already has a snapshot for {run_date}, skipping.")
+            return
+
+    write_header = not path.exists()
+    with open(path, "a", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=SOCIETY_HISTORY_FIELDNAMES)
+        if write_header:
+            writer.writeheader()
+        for code, count in sorted(counts.items()):
+            writer.writerow(
+                {
+                    "Date": run_date,
+                    "Society Code": code,
+                    "Society Name": SOCIETY_MEMBERSHIP_CODES.get(code, code),
+                    "Member Count": count,
+                }
+            )
+
+
+def load_society_history_trend(path: Path, default_top_n: int = SOCIETY_TREND_TOP_N) -> dict:
+    """Aggregate society_membership_history.csv into member counts per
+    (date, society), for the Trends tab's filterable chart. Returns EVERY
+    society seen (ordered by latest recorded count, descending) plus
+    `default_codes` (the top default_top_n) for the chart's initial
+    selection — the client-side filter picks a subset of what's already
+    embedded, no regeneration needed. Returns
+    {"dates": [...], "series": {code: [count, ...]}, "labels": {code: name},
+    "default_codes": [...]}; empty if no history file exists yet."""
+    if not path.exists():
+        return {"dates": [], "series": {}, "labels": {}, "default_codes": []}
+
+    counts: dict[str, dict[str, int]] = {}  # date -> code -> count
+    names: dict[str, str] = {}
+    with open(path, encoding="utf-8") as f:
+        for row in csv.DictReader(f):
+            date, code = row["Date"], row["Society Code"]
+            counts.setdefault(date, {})[code] = int(row["Member Count"])
+            names[code] = row["Society Name"]
+
+    dates = sorted(counts)
+    if not dates:
+        return {"dates": [], "series": {}, "labels": {}, "default_codes": []}
+
+    latest = counts[dates[-1]]
+    ordered_codes = sorted(latest, key=lambda c: -latest[c])
+
+    series = {code: [counts[date].get(code) for date in dates] for code in ordered_codes}
+    labels = {code: names[code] for code in ordered_codes}
+    return {"dates": dates, "series": series, "labels": labels, "default_codes": ordered_codes[:default_top_n]}
+
+
 STATUS_GOOD = "#0ca30c"
 STATUS_WARNING = "#fab219"
 STATUS_SERIOUS = "#ec835a"
@@ -439,7 +599,7 @@ def stat_span(text: str, color: str) -> str:
     return f'<span class="stat" style="color:{color}">{dot(color)}{html.escape(str(text))}</span>'
 
 
-def build_dashboard(units: list[OU], path: Path, events_path: Path, history_path: Path) -> None:
+def build_dashboard(units: list[OU], path: Path, events_path: Path, history_path: Path, society_history_path: Path) -> None:
     by_type: dict[str, list[OU]] = {"Student Branch": [], "Student Branch Chapter": [], "Affinity Group": []}
     for ou in units:
         by_type[ou.ou_type].append(ou)
@@ -481,7 +641,7 @@ def build_dashboard(units: list[OU], path: Path, events_path: Path, history_path
     societies = sorted({ou.society for ou in units if ou.society})
 
     university_options = "".join(f'<option value="{html.escape(u.lower())}">{html.escape(u)}</option>' for u in universities)
-    society_options = "".join(f'<option value="{html.escape(s.lower())}">{html.escape(s)}</option>' for s in societies)
+    society_options = "".join(f'<option value="{html.escape(s.lower())}">{html.escape(society_display_name(s))}</option>' for s in societies)
 
     university_to_societies: dict[str, set[str]] = {}
     society_to_universities: dict[str, set[str]] = {}
@@ -650,7 +810,7 @@ def build_dashboard(units: list[OU], path: Path, events_path: Path, history_path
         ("Student Branch Chapter", "Chapter", "--series-2"),
         ("Affinity Group", "Affinity Group", "--series-3"),
     ]
-    trend_series_js = json.dumps([[key, f"var({var})"] for key, _label, var in trend_series])
+    trend_series_js = json.dumps([[key, f"var({var})", label] for key, label, var in trend_series])
 
     n_dates = len(trend_data["dates"])
     trend_note = (
@@ -674,6 +834,44 @@ def build_dashboard(units: list[OU], path: Path, events_path: Path, history_path
         </div>
         '''
 
+    society_trend_data = load_society_history_trend(society_history_path)
+    society_trend_json = json.dumps(society_trend_data)
+    society_all_codes = list(society_trend_data["series"].keys())  # already ordered by latest count, descending
+    society_all_defs_js = json.dumps([[code, society_trend_data["labels"][code]] for code in society_all_codes])
+    society_default_codes_js = json.dumps(society_trend_data["default_codes"])
+
+    n_society_dates = len(society_trend_data["dates"])
+    n_default = len(society_trend_data["default_codes"])
+    society_trend_note = (
+        f"Member count over time by IEEE Society, from Member Detail View.csv. Choose up to "
+        f"{SOCIETY_TREND_MAX_SELECTED} to chart at once — defaults to the top {SOCIETY_TREND_TOP_N} by latest "
+        f"count. Builds up as you re-run the script — currently {n_society_dates} "
+        f"date{'s' if n_society_dates != 1 else ''} recorded."
+    )
+    if not society_trend_data["dates"]:
+        society_trend_card_html = (
+            '<p class="empty">No history yet — place Member Detail View.csv in the project directory and '
+            "re-run the script on a later date to start building this trend.</p>"
+        )
+    else:
+        society_trend_card_html = f'''
+        <div class="trend-card">
+          <div class="society-filter">
+            <button type="button" id="society-filter-toggle" class="filter-toggle" onclick="toggleSocietyFilterPanel()">Filter societies ({n_default} shown) &#9662;</button>
+            <div id="society-filter-panel" class="filter-panel" hidden>
+              <p class="filter-hint">Choose up to {SOCIETY_TREND_MAX_SELECTED} societies to chart at once (categorical colors stay distinguishable up to 8).</p>
+              <div id="society-filter-list" class="filter-checklist"></div>
+              <button type="button" class="filter-reset" onclick="resetSocietyFilter()">Reset to top {SOCIETY_TREND_TOP_N}</button>
+            </div>
+          </div>
+          <div class="trend-legend" id="society-trend-legend"></div>
+          <div id="society-trend-svg-wrap" class="trend-svg-wrap">
+            <svg id="society-trend-svg"></svg>
+            <div id="society-trend-tooltip" class="trend-tooltip" hidden></div>
+          </div>
+        </div>
+        '''
+
     page = f"""<!doctype html>
 <html lang="en">
 <head>
@@ -693,6 +891,11 @@ def build_dashboard(units: list[OU], path: Path, events_path: Path, history_path
     --series-1:       #2a78d6;
     --series-2:       #eb6834;
     --series-3:       #1baf7a;
+    --series-4:       #eda100;
+    --series-5:       #e87ba4;
+    --series-6:       #008300;
+    --series-7:       #4a3aa7;
+    --series-8:       #e34948;
   }}
   @media (prefers-color-scheme: dark) {{
     :root:where(:not([data-theme="light"])) .viz-root {{
@@ -707,6 +910,11 @@ def build_dashboard(units: list[OU], path: Path, events_path: Path, history_path
       --series-1:       #3987e5;
       --series-2:       #d95926;
       --series-3:       #199e70;
+      --series-4:       #c98500;
+      --series-5:       #d55181;
+      --series-6:       #008300;
+      --series-7:       #9085e9;
+      --series-8:       #e66767;
     }}
   }}
   :root[data-theme="dark"] .viz-root {{
@@ -721,6 +929,11 @@ def build_dashboard(units: list[OU], path: Path, events_path: Path, history_path
     --series-1:       #3987e5;
     --series-2:       #d95926;
     --series-3:       #199e70;
+    --series-4:       #c98500;
+    --series-5:       #d55181;
+    --series-6:       #008300;
+    --series-7:       #9085e9;
+    --series-8:       #e66767;
   }}
 
   * {{ box-sizing: border-box; }}
@@ -776,7 +989,31 @@ def build_dashboard(units: list[OU], path: Path, events_path: Path, history_path
   }}
   .tab-panel[hidden] {{ display: none; }}
 
+  .trend-heading {{ font-size: 1rem; margin: 20px 0 4px; }}
+  .trend-heading:first-of-type {{ margin-top: 0; }}
   .trend-card {{ background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px; padding: 16px; }}
+  .society-filter {{ margin-bottom: 10px; }}
+  .filter-toggle {{
+    font: inherit; font-size: 0.8rem; color: var(--text-secondary); background: var(--page-plane);
+    border: 1px solid var(--border); border-radius: 6px; padding: 5px 10px; cursor: pointer;
+  }}
+  .filter-toggle:hover {{ color: var(--text-primary); }}
+  .filter-panel {{
+    margin-top: 8px; padding: 10px 12px; background: var(--page-plane);
+    border: 1px solid var(--border); border-radius: 8px;
+  }}
+  .filter-hint {{ margin: 0 0 8px; font-size: 0.78rem; color: var(--text-muted); }}
+  .filter-checklist {{
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 4px 12px; max-height: 220px; overflow-y: auto;
+  }}
+  .filter-check-item {{ display: flex; align-items: center; gap: 6px; font-size: 0.82rem; color: var(--text-secondary); }}
+  .filter-check-item input:disabled + span {{ color: var(--text-muted); }}
+  .filter-reset {{
+    margin-top: 8px; font: inherit; font-size: 0.78rem; color: var(--text-secondary); background: none;
+    border: 1px solid var(--border); border-radius: 6px; padding: 4px 9px; cursor: pointer;
+  }}
+  .filter-reset:hover {{ color: var(--text-primary); }}
   .trend-legend {{ display: flex; gap: 16px; margin-bottom: 8px; flex-wrap: wrap; }}
   .legend-item {{ display: inline-flex; align-items: center; gap: 6px; font-size: 0.8rem; color: var(--text-secondary); }}
   .legend-swatch {{ width: 12px; height: 3px; border-radius: 2px; flex: none; }}
@@ -912,8 +1149,13 @@ def build_dashboard(units: list[OU], path: Path, events_path: Path, history_path
     </div>
 
     <div id="tab-trends" class="tab-panel" hidden>
+      <h3 class="trend-heading">OU Vitality</h3>
       <p class="req-note">{trend_note}</p>
       {trend_card_html}
+
+      <h3 class="trend-heading">Society Memberships</h3>
+      <p class="req-note">{society_trend_note}</p>
+      {society_trend_card_html}
     </div>
 
     <footer>
@@ -1027,23 +1269,27 @@ def build_dashboard(units: list[OU], path: Path, events_path: Path, history_path
   function showTab(name) {{
     document.querySelectorAll('.tab-panel').forEach(p => {{ p.hidden = p.id !== `tab-${{name}}`; }});
     document.querySelectorAll('.tab-btn').forEach(b => {{ b.classList.toggle('active', b.dataset.tab === name); }});
-    if (name === 'trends') renderTrendChart();
+    if (name === 'trends') {{ renderTrendChart(); renderSocietyTrendChart(); }}
   }}
 
   const trendData = {trend_json};
   const trendSeriesDefs = {trend_series_js};
+  const societyTrendData = {society_trend_json};
+  const societyAllDefs = {society_all_defs_js};
+  const societyDefaultCodes = {society_default_codes_js};
+  const SOCIETY_MAX_SELECTED = {SOCIETY_TREND_MAX_SELECTED};
+  const societySeriesVars = ['--series-1', '--series-2', '--series-3', '--series-4', '--series-5', '--series-6', '--series-7', '--series-8'];
+  let societySelected = new Set(societyDefaultCodes);
 
-  function renderTrendChart() {{
-    const svg = document.getElementById('trend-svg');
-    const wrap = document.getElementById('trend-svg-wrap');
-    const tooltip = document.getElementById('trend-tooltip');
-    if (!svg || !wrap) return;
-    const dates = trendData.dates;
-    if (!dates.length) return;
+  function renderLineChart(svgId, wrapId, tooltipId, dates, seriesDefs, dataSeries, mode) {{
+    const svg = document.getElementById(svgId);
+    const wrap = document.getElementById(wrapId);
+    const tooltip = document.getElementById(tooltipId);
+    if (!svg || !wrap || !dates.length) return;
 
     const width = wrap.clientWidth || 700;
     const height = 280;
-    const pad = {{ top: 16, right: 16, bottom: 28, left: 40 }};
+    const pad = {{ top: 16, right: 16, bottom: 28, left: mode === 'count' ? 48 : 40 }};
     svg.setAttribute('width', width);
     svg.setAttribute('height', height);
     svg.setAttribute('viewBox', `0 0 ${{width}} ${{height}}`);
@@ -1052,7 +1298,25 @@ def build_dashboard(units: list[OU], path: Path, events_path: Path, history_path
     const plotW = width - pad.left - pad.right;
     const plotH = height - pad.top - pad.bottom;
     const xFor = i => dates.length === 1 ? pad.left + plotW / 2 : pad.left + (i / (dates.length - 1)) * plotW;
-    const yFor = v => pad.top + plotH - (v / 100) * plotH;
+
+    let yMax, yTicks, fmt;
+    if (mode === 'percent') {{
+      yMax = 100;
+      yTicks = [0, 25, 50, 75, 100];
+      fmt = v => v + '%';
+    }} else {{
+      let maxVal = 0;
+      seriesDefs.forEach(([key]) => {{
+        (dataSeries[key] || []).forEach(v => {{ if (v !== null && v !== undefined && v > maxVal) maxVal = v; }});
+      }});
+      const steps = [1, 2, 5, 10, 20, 25, 50, 100, 200, 250, 500, 1000, 2000, 2500, 5000, 10000];
+      let step = steps[steps.length - 1];
+      for (const s of steps) {{ if (maxVal / s <= 4) {{ step = s; break; }} }}
+      yMax = step * 4 || 4;
+      yTicks = [0, step, step * 2, step * 3, step * 4];
+      fmt = v => String(v);
+    }}
+    const yFor = v => pad.top + plotH - (v / yMax) * plotH;
 
     const NS = 'http://www.w3.org/2000/svg';
     function el(tag, attrs) {{
@@ -1061,11 +1325,11 @@ def build_dashboard(units: list[OU], path: Path, events_path: Path, history_path
       return e;
     }}
 
-    [0, 25, 50, 75, 100].forEach(v => {{
+    yTicks.forEach(v => {{
       const y = yFor(v);
       svg.appendChild(el('line', {{ x1: pad.left, x2: width - pad.right, y1: y, y2: y, stroke: 'var(--gridline)', 'stroke-width': 1 }}));
       const label = el('text', {{ x: pad.left - 8, y: y + 4, 'text-anchor': 'end', class: 'trend-axis-label' }});
-      label.textContent = v + '%';
+      label.textContent = fmt(v);
       svg.appendChild(label);
     }});
 
@@ -1076,8 +1340,8 @@ def build_dashboard(units: list[OU], path: Path, events_path: Path, history_path
       svg.appendChild(label);
     }});
 
-    trendSeriesDefs.forEach(([key, color]) => {{
-      const values = trendData.series[key];
+    seriesDefs.forEach(([key, color]) => {{
+      const values = dataSeries[key] || [];
       const points = values.map((v, i) => v === null || v === undefined ? null : [xFor(i), yFor(v)]).filter(Boolean);
       if (points.length > 1) {{
         const d = points.map((p, i) => (i === 0 ? 'M' : 'L') + p[0] + ',' + p[1]).join(' ');
@@ -1090,7 +1354,7 @@ def build_dashboard(units: list[OU], path: Path, events_path: Path, history_path
         const [lx, ly] = points[points.length - 1];
         const lastVal = values[values.length - 1];
         const label = el('text', {{ x: Math.min(lx + 8, width - pad.right - 28), y: ly + 4, class: 'trend-direct-label' }});
-        label.textContent = lastVal + '%';
+        label.textContent = fmt(lastVal);
         svg.appendChild(label);
       }}
     }});
@@ -1118,17 +1382,17 @@ def build_dashboard(units: list[OU], path: Path, events_path: Path, history_path
       dateEl.className = 'trend-tooltip-date';
       dateEl.textContent = dates[idx];
       tooltip.appendChild(dateEl);
-      trendSeriesDefs.forEach(([key, color]) => {{
-        const v = trendData.series[key][idx];
+      seriesDefs.forEach(([key, color, label]) => {{
+        const v = (dataSeries[key] || [])[idx];
         const row = document.createElement('div');
         row.className = 'trend-tooltip-row';
         const keyEl = document.createElement('span');
         keyEl.className = 'trend-tooltip-key';
         keyEl.style.background = color;
         const valueEl = document.createElement('strong');
-        valueEl.textContent = (v === null || v === undefined) ? '—' : v + '%';
+        valueEl.textContent = (v === null || v === undefined) ? '—' : fmt(v);
         const labelEl = document.createElement('span');
-        labelEl.textContent = ' ' + key;
+        labelEl.textContent = ' ' + label;
         row.appendChild(keyEl);
         row.appendChild(valueEl);
         row.appendChild(labelEl);
@@ -1141,9 +1405,83 @@ def build_dashboard(units: list[OU], path: Path, events_path: Path, history_path
     }});
   }}
 
+  function renderTrendChart() {{
+    renderLineChart('trend-svg', 'trend-svg-wrap', 'trend-tooltip', trendData.dates, trendSeriesDefs, trendData.series, 'percent');
+  }}
+
+  function currentSocietySeriesDefs() {{
+    return societyAllDefs
+      .filter(([code]) => societySelected.has(code))
+      .map(([code, label], i) => [code, `var(${{societySeriesVars[i % societySeriesVars.length]}})`, label]);
+  }}
+
+  function toggleSocietyFilterPanel() {{
+    const panel = document.getElementById('society-filter-panel');
+    if (panel) panel.hidden = !panel.hidden;
+  }}
+
+  function renderSocietyFilterList() {{
+    const list = document.getElementById('society-filter-list');
+    if (!list) return;
+    list.innerHTML = '';
+    societyAllDefs.forEach(([code, label]) => {{
+      const item = document.createElement('label');
+      item.className = 'filter-check-item';
+      const cb = document.createElement('input');
+      cb.type = 'checkbox';
+      cb.checked = societySelected.has(code);
+      cb.disabled = !cb.checked && societySelected.size >= SOCIETY_MAX_SELECTED;
+      cb.addEventListener('change', () => {{
+        if (cb.checked) societySelected.add(code); else societySelected.delete(code);
+        onSocietySelectionChange();
+      }});
+      const span = document.createElement('span');
+      span.textContent = label;
+      item.appendChild(cb);
+      item.appendChild(span);
+      list.appendChild(item);
+    }});
+  }}
+
+  function renderSocietyLegend() {{
+    const legend = document.getElementById('society-trend-legend');
+    if (!legend) return;
+    legend.innerHTML = '';
+    currentSocietySeriesDefs().forEach(([code, color, label]) => {{
+      const item = document.createElement('span');
+      item.className = 'legend-item';
+      const swatch = document.createElement('span');
+      swatch.className = 'legend-swatch';
+      swatch.style.background = color;
+      item.appendChild(swatch);
+      item.appendChild(document.createTextNode(label));
+      legend.appendChild(item);
+    }});
+  }}
+
+  function onSocietySelectionChange() {{
+    const toggle = document.getElementById('society-filter-toggle');
+    if (toggle) toggle.textContent = `Filter societies (${{societySelected.size}} shown) ▾`;
+    renderSocietyFilterList();
+    renderSocietyLegend();
+    renderSocietyTrendChart();
+  }}
+
+  function resetSocietyFilter() {{
+    societySelected = new Set(societyDefaultCodes);
+    onSocietySelectionChange();
+  }}
+
+  function renderSocietyTrendChart() {{
+    renderLineChart('society-trend-svg', 'society-trend-svg-wrap', 'society-trend-tooltip', societyTrendData.dates, currentSocietySeriesDefs(), societyTrendData.series, 'count');
+  }}
+
+  renderSocietyFilterList();
+  renderSocietyLegend();
+
   window.addEventListener('resize', () => {{
     const trendsTab = document.getElementById('tab-trends');
-    if (trendsTab && !trendsTab.hidden) renderTrendChart();
+    if (trendsTab && !trendsTab.hidden) {{ renderTrendChart(); renderSocietyTrendChart(); }}
   }});
 
   function sortByMembers(tableId, th) {{
@@ -1369,12 +1707,14 @@ def main() -> None:
     csv_path = BASE_DIR / "vitality_report.csv"
     html_path = BASE_DIR / "vitality_dashboard.html"
     history_path = BASE_DIR / "vitality_history.csv"
+    society_history_path = BASE_DIR / "society_membership_history.csv"
     university_report_path = BASE_DIR / "university_report.html"
     society_report_path = BASE_DIR / "society_report.html"
 
     write_csv(units, csv_path)
     write_history(units, history_path)
-    build_dashboard(units, html_path, events_path, history_path)
+    write_society_history(count_society_memberships(), society_history_path)
+    build_dashboard(units, html_path, events_path, history_path, society_history_path)
     build_university_report(units, university_report_path)
     build_society_report(units, society_report_path)
 

@@ -47,13 +47,22 @@ The first three are vTools's native **tab-delimited, UTF-16** exports
 (`encoding="utf-16"`, `delimiter="\t"`); the events file is standard
 UTF-8 CSV (`encoding="utf-8-sig"`).
 
-All four are git-ignored (personal data: names, emails, phone numbers) —
+A fifth file, `Member Detail View.csv` (also native tab-delimited UTF-16),
+is **optional** — it enables the Society Memberships trend and the
+`member_society_lookup/` tool, but `generate_vitality_report.py` runs fine
+without it (`count_society_memberships()` just returns `{}` and that trend
+stays empty). It's the heaviest of the five for PII (name, email, address,
+phone per member), so it's git-ignored like the required four.
+
+All five are git-ignored (personal data: names, emails, phone numbers) —
 `.gitignore` covers them by literal/glob filename. Generated outputs
 derived from them (`vitality_report.csv`, `vitality_dashboard.html`,
-`vitality_history.csv`, `university_report.html`, `society_report.html`)
-contain no PII and are committed; `chapter_outreach/chapter_outreach.csv`
-and `officer_terms/officer_terms.csv` **do** contain PII (officer
-names/emails) and are git-ignored even though they're generated.
+`vitality_history.csv`, `society_membership_history.csv`,
+`university_report.html`, `society_report.html`) contain no PII and are
+committed; `chapter_outreach/chapter_outreach.csv`,
+`officer_terms/officer_terms.csv`, and `member_society_lookup/lookup.html`
+**do** contain PII (officer names/emails, or per-member society pairs) and
+are git-ignored even though they're generated.
 
 ## Architecture
 
@@ -78,26 +87,29 @@ All consume the same `list[OU]` + `evaluate()`:
 
 - `write_csv()` — flat CSV, one row per OU.
 - `write_history(units, path)` — **appends** one snapshot row per OU per day to `vitality_history.csv` (idempotent per day: checks existing `Date` values before appending, so re-running the same day is a no-op). Must run *before* `build_dashboard()` in `main()` so the Trends tab includes today's snapshot.
-- `build_dashboard()` — the big one (~700 lines of an f-string templating an entire self-contained HTML page: inline `<style>`/`<script>`, no external assets). Produces `vitality_dashboard.html` with three tabs (Overview / Quick Wins / Trends — client-side JS tab switcher, no routing), university/society filters that sync to URL query params and cascade against each other (option lists narrow based on the other filter's selection, computed from a university↔society JSON map embedded at generation time), and a hand-rolled inline-SVG line chart (`renderTrendChart()`) reading `load_history_trend()`'s aggregation of `vitality_history.csv`.
+- `count_society_memberships()` + `write_society_history()` — same idempotent-per-day snapshot pattern as `write_history()`, but reads the optional `Member Detail View.csv` (Colombia Section rows only) and appends one row per IEEE Society to `society_membership_history.csv` (`{date, code, name, count}` — aggregate only, no membership numbers). No-ops silently if `Member Detail View.csv` isn't present that run, unlike the four core exports which are required.
+- `build_dashboard()` — the big one (~700 lines of an f-string templating an entire self-contained HTML page: inline `<style>`/`<script>`, no external assets). Produces `vitality_dashboard.html` with three tabs (Overview / Quick Wins / Trends — client-side JS tab switcher, no routing), university/society filters that sync to URL query params and cascade against each other (option lists narrow based on the other filter's selection, computed from a university↔society JSON map embedded at generation time), and two hand-rolled inline-SVG line charts sharing one generic `renderLineChart()` (a `'percent'`-mode chart for `renderTrendChart()` reading `load_history_trend()`'s aggregation of `vitality_history.csv`, and a `'count'`-mode chart for `renderSocietyTrendChart()` reading `load_society_history_trend()`'s full aggregation of `society_membership_history.csv` (every society, ordered by latest count). A checkbox filter panel (client-side, all data already embedded) lets the viewer pick which societies to chart, capped at `SOCIETY_TREND_MAX_SELECTED` (8, matching the validated categorical palette's slot count) and defaulting to the top `SOCIETY_TREND_TOP_N` (5); colors are assigned positionally among the current selection (`--series-1..8`), not fixed per society, since the selectable set is much larger than 8.
+- `SOCIETY_MEMBERSHIP_CODES` (in `generate_vitality_report.py`) maps vTools's per-member society codes (e.g. `"MEMPE031"`) to full names; `society_display_name()` derives the same mapping in the compact form (`"PE31"`) that `derive_society()` pulls out of OU chapter names, for the dashboard's Society filter labels. Codes not in this dict (Councils like `SEN39`/`NANO42`, Affinity Groups `WIE`/`SIGHT`) fall back to the raw code — extend the dict rather than guessing.
 - `build_grouped_print_report()` — generic print-friendly report generator (group-by key + optional extra column), used by both `build_university_report()` and `build_society_report()`. Always light-themed (meant to be printed/saved as PDF), one page per group with `page-break-after: always`, and a `printOnly(id)` JS helper that scopes `window.print()` to a single group's page via a `print-single` body class + `print-target` class, triggered by clicking a name in the table of contents.
 
 `main()` orchestrates all of the above in the order dependencies require
 (officers/events must be loaded before `evaluate()` is meaningful; history
 must be written before the dashboard reads it).
 
-### Satellite scripts (`chapter_outreach/`, `officer_terms/`)
+### Satellite scripts (`chapter_outreach/`, `officer_terms/`, `member_society_lookup/`)
 
-Both are separate entry points that **import from `generate_vitality_report.py`** (via `sys.path.insert(0, str(Path(__file__).resolve().parent.parent))` since it's not a package) to reuse `load_ou_universe`, `evaluate`, `CRITERIA`, `counselor_role`, `normalize_position`, etc., rather than re-implementing OU loading. Run `generate_vitality_report.py` first if the source CSVs have been re-exported, since both of these read the same raw files independently.
+All are separate entry points that **import from `generate_vitality_report.py`** (via `sys.path.insert(0, str(Path(__file__).resolve().parent.parent))` since it's not a package) to reuse `load_ou_universe`, `evaluate`, `CRITERIA`, `counselor_role`, `normalize_position`, `SOCIETY_MEMBERSHIP_CODES`, etc., rather than re-implementing OU loading. Run `generate_vitality_report.py` first if the source CSVs have been re-exported, since these read the same raw files independently.
 
 - `chapter_outreach/generate_chapter_outreach.py` — builds a per-chapter contact list (chapter officers + parent Student Branch's Chair/Counselor, matched by exact `School Name` since STB/SBC SPOID numbering doesn't align) for every non-compliant Chapter, plus a `Missing Requirements` breakdown. Filters out volunteers with `OK to Contact != "Y"`. Output feeds `chapter_outreach_email.gs`, a Google Apps Script (paste into a Sheet's Extensions → Apps Script) that sends the revitalization email — dry-run by default, idempotent via a "Sent At" column, CCs a fixed `SAC_TEAM_CC`.
 - `officer_terms/generate_officer_terms.py` — flags **elected** positions only (Chair/Vice Chair/Secretary/Treasurer/Webmaster — Counselor/Advisor are appointed, excluded) whose `Position End` is within `SUCCESSION_ALERT_DAYS` (90) or whose tenure since `Position Start` exceeds `TERM_LIMIT_YEARS` (2).
+- `member_society_lookup/generate_member_society_lookup.py` — reads `Member Detail View.csv` and always (re)writes `member_society_lookup/lookup.html`, a self-contained local page embedding only `{membership number: Society List}` pairs (no other columns) with a paste-a-list-and-count UI; optionally also prints a CLI report if membership numbers are passed as args/`--file`. `lookup.html` embeds a per-member identifier for every member in the export, so unlike every other dashboard output it must **never** be committed or published — it's git-ignored even though (unlike the CSVs above) it contains no names/emails.
 
 ### Styling/design conventions
 
 The dashboard follows the project's `dataviz` skill conventions throughout — reuse these rather than inventing new colors:
 
 - Fixed 4-step status palette (`STATUS_GOOD`/`WARNING`/`SERIOUS`/`CRITICAL`) for pass/fail states, reserved — never used for chart series.
-- Categorical series colors (`--series-1/2/3`, one per OU type) for the Trends chart — a different token set from the status palette, both defined as CSS custom properties on `.viz-root` with light values on `:root` and dark values duplicated under both a `prefers-color-scheme: dark` media query and a `[data-theme="dark"]` selector (so an explicit toggle always wins over OS setting).
+- Categorical series colors (`--series-1` through `--series-8`, the validated default palette's full 8-slot order for line/adjacent-pair charts) — 3 used for OU type, up to 8 for the filterable society trend — a different token set from the status palette, both defined as CSS custom properties on `.viz-root` with light values on `:root` and dark values duplicated under both a `prefers-color-scheme: dark` media query and a `[data-theme="dark"]` selector (so an explicit toggle always wins over OS setting).
 - Print reports (`university_report.html`, `society_report.html`) deliberately do **not** follow this dark/light system — they're hardcoded light, since they're meant to be printed.
 
 ### CI/CD

@@ -3,11 +3,15 @@
 Student Branch and Member Count.csv
 Student Branch Chapters and Affinity Group Member Count.csv
 Volunteer List by OU.csv
+Member Detail View.csv
 *Events*.csv
 
 # Generated outreach lists contain officer names/emails — also PII, never commit.
 chapter_outreach/chapter_outreach.csv
 officer_terms/officer_terms.csv
+
+# Embeds membership number -> society pairs for every member — never commit.
+member_society_lookup/lookup.html
 
 # Local tooling
 .claude/
