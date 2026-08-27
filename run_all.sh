@@ -6,15 +6,35 @@
 # same as every other PII output here; nothing about this script changes
 # that).
 #
-# Assumes you've already run the one-time setup and login steps in
-# automations/README.md (this script does NOT log in — if a fetch step
-# fails with an auth error, go do that first, then re-run this).
+# Assumes you've already run the one-time setup in automations/README.md.
+# The main pipeline below does NOT log in itself — if a fetch step fails
+# with an auth error, run the login steps first (or `./run_all.sh --login`),
+# then re-run this:
+#   automations/.venv/bin/python automations/tableau_export.py login
+#   automations/.venv/bin/python automations/vtools_export.py login
 #
-# Usage: ./run_all.sh
+# Usage: ./run_all.sh [-h|--help] [--login]
 set -euo pipefail
 cd "$(dirname "${BASH_SOURCE[0]}")"
 
 VENV_PY="automations/.venv/bin/python"
+
+case "${1:-}" in
+  -h|--help)
+    sed -n '2,16p' "${BASH_SOURCE[0]}" | sed 's/^# \{0,1\}//'
+    echo "  --login    Run the interactive login steps, then exit."
+    exit 0
+    ;;
+  --login)
+    if [ ! -x "$VENV_PY" ]; then
+      echo "automations/.venv not found — see automations/README.md's Setup section first." >&2
+      exit 1
+    fi
+    "$VENV_PY" automations/tableau_export.py login
+    "$VENV_PY" automations/vtools_export.py login
+    exit 0
+    ;;
+esac
 
 if [ ! -x "$VENV_PY" ]; then
   echo "automations/.venv not found — see automations/README.md's Setup section first." >&2
