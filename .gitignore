@@ -13,6 +13,21 @@ officer_terms/officer_terms.csv
 # Embeds membership number -> society pairs for every member — never commit.
 member_society_lookup/lookup.html
 
+# Per-member grade-promotion log (names/emails) and the snapshot cache it
+# diffs against (member numbers) — both PII-adjacent, never commit.
+# membership_promotions_summary.csv is the aggregate-only, no-PII companion
+# to this and IS committed (feeds the dashboard's promotion tooltip).
+membership_grade_changes.csv
+member_grade_snapshot.csv
+
+# Snapshot of older raw vTools exports kept for backfilling history — same PII as above.
+old/
+
+# Local daily archive of the generated dashboard/reports (pre-overwrite snapshots) —
+# kept for local reference only; not committed, to avoid bloating the repo with a
+# full HTML page per day.
+archive/
+
 # automations/: browser session cookies and secrets — never commit.
 automations/storage_state.json
 automations/vtools_storage_state.json
@@ -22,3 +37,4 @@ automations/.venv/
 # Local tooling
 .claude/
 __pycache__/
+.~lock.*#

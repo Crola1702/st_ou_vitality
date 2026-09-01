@@ -496,6 +496,18 @@ SOCIETY_HISTORY_FIELDNAMES = ["Date", "Society Code", "Society Name", "Member Co
 SOCIETY_TREND_TOP_N = 5
 SOCIETY_TREND_MAX_SELECTED = 8  # the validated categorical palette has 8 slots — more stops being distinguishable
 
+GRADE_HISTORY_FIELDNAMES = ["Date", "Grade", "Member Count"]
+GRADE_TREND_KEYS = ["Student Member", "Graduate Student Member", "Member"]  # student -> professional progression
+GRADE_SERIES_VARS = ["--series-1", "--series-2", "--series-3"]
+
+GRADE_SNAPSHOT_FILE = BASE_DIR / "member_grade_snapshot.csv"
+GRADE_SNAPSHOT_FIELDNAMES = ["Member/Customer Number", "Grade"]
+PROMOTIONS_LOG_FILE = BASE_DIR / "membership_grade_changes.csv"
+PROMOTIONS_LOG_FIELDNAMES = ["Date", "Member/Customer Number", "First Name", "Last Name", "Email Address", "From Grade", "To Grade"]
+PROMOTIONS_SUMMARY_FILE = BASE_DIR / "membership_promotions_summary.csv"
+PROMOTIONS_SUMMARY_FIELDNAMES = ["Date", "From Grade", "To Grade", "Count"]
+PROMOTION_SOURCE_GRADES = {"Student Member", "Graduate Student Member"}
+
 
 def count_society_memberships() -> dict[str, int]:
     """Society membership code -> member count, from Member Detail View.csv
@@ -580,6 +592,221 @@ def load_society_history_trend(path: Path, default_top_n: int = SOCIETY_TREND_TO
     return {"dates": dates, "series": series, "labels": labels, "default_codes": ordered_codes[:default_top_n]}
 
 
+def count_member_grades(directory: dict[str, dict]) -> dict[str, int]:
+    """Counts for GRADE_TREND_KEYS (Student Member, Graduate Student
+    Member, Member — the student-to-professional progression), from an
+    already-loaded load_member_directory(). Other grades (Senior Member,
+    ...) are out of scope for this trend and not counted."""
+    counts: dict[str, int] = {}
+    for info in directory.values():
+        grade = info["grade"]
+        if grade in GRADE_TREND_KEYS:
+            counts[grade] = counts.get(grade, 0) + 1
+    return counts
+
+
+def write_grade_history(counts: dict[str, int], path: Path) -> None:
+    """Append one snapshot row per membership grade for today's run,
+    mirroring write_society_history(). No-op if Member Detail View.csv
+    wasn't present this run."""
+    if not counts:
+        return
+
+    run_date = datetime.now().strftime("%Y-%m-%d")
+
+    if path.exists():
+        with open(path, encoding="utf-8") as f:
+            existing_dates = {row["Date"] for row in csv.DictReader(f)}
+        if run_date in existing_dates:
+            print(f"{path.name} already has a snapshot for {run_date}, skipping.")
+            return
+
+    write_header = not path.exists()
+    with open(path, "a", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=GRADE_HISTORY_FIELDNAMES)
+        if write_header:
+            writer.writeheader()
+        for grade, count in sorted(counts.items()):
+            writer.writerow({"Date": run_date, "Grade": grade, "Member Count": count})
+
+
+def load_grade_history_trend(path: Path, promotions_by_date: dict[str, list[dict]] | None = None) -> dict:
+    """Aggregate membership_type_history.csv into member counts per (date,
+    grade), for the Trends tab's membership-type bar chart. Fixed to
+    GRADE_TREND_KEYS, in that order, rather than every grade ever recorded
+    — older snapshot rows for other grades (if any) are ignored.
+
+    A grade missing from an older snapshot (e.g. a partial export that
+    only covered Student/Graduate Student Member) is backward-estimated
+    from the next dated value minus the promotions recorded flowing into
+    that grade on that later date — approximate (it ignores departures
+    out of the grade and any inflow other than a tracked promotion), so
+    every estimated cell is flagged in "estimated" for the chart to
+    render distinctly rather than as real recorded data. A cell stays
+    unfilled if the next value is itself unknown, or promotions_by_date
+    has nothing recorded for that later date.
+
+    {"dates": [...], "series": {grade: [count, ...]}, "estimated": {grade:
+    [bool, ...]}}; empty if no history file exists yet."""
+    if not path.exists():
+        return {"dates": [], "series": {}, "estimated": {}}
+
+    counts: dict[str, dict[str, int]] = {}  # date -> grade -> count
+    with open(path, encoding="utf-8") as f:
+        for row in csv.DictReader(f):
+            date, grade = row["Date"], row["Grade"]
+            if grade not in GRADE_TREND_KEYS:
+                continue
+            counts.setdefault(date, {})[grade] = int(row["Member Count"])
+
+    dates = sorted(counts)
+    if not dates:
+        return {"dates": [], "series": {}, "estimated": {}}
+
+    promotions_by_date = promotions_by_date or {}
+    series = {grade: [counts[date].get(grade) for date in dates] for grade in GRADE_TREND_KEYS}
+    estimated = {grade: [False] * len(dates) for grade in GRADE_TREND_KEYS}
+
+    for grade in GRADE_TREND_KEYS:
+        values = series[grade]
+        for i in range(len(dates) - 2, -1, -1):
+            if values[i] is not None:
+                continue
+            later_value = values[i + 1]
+            if later_value is None:
+                continue
+            inflow = sum(p["count"] for p in promotions_by_date.get(dates[i + 1], []) if p["to"] == grade)
+            if inflow == 0:
+                continue
+            values[i] = later_value - inflow
+            estimated[grade][i] = True
+
+    return {"dates": dates, "series": series, "estimated": estimated}
+
+
+def load_member_directory() -> dict[str, dict]:
+    """Member/Customer Number -> {grade, first, last, email}, every
+    Colombia Section row in Member Detail View.csv. Returns {} if the
+    file isn't present."""
+    if not SOCIETY_MEMBER_FILE.exists():
+        return {}
+    directory: dict[str, dict] = {}
+    with open(SOCIETY_MEMBER_FILE, encoding="utf-16") as f:
+        for row in csv.DictReader(f, delimiter="\t"):
+            if row.get("Section", "").strip() != "Colombia Section":
+                continue
+            num = row.get("Member/Customer Number", "").strip()
+            if not num:
+                continue
+            directory[num] = {
+                "grade": row.get("Grade", "").strip(),
+                "first": row.get("First Name", "").strip(),
+                "last": row.get("Last Name", "").strip(),
+                "email": row.get("Email Address", "").strip(),
+            }
+    return directory
+
+
+def load_grade_snapshot(path: Path) -> dict[str, str]:
+    """Member/Customer Number -> Grade, as recorded on the last run.
+    Returns {} if no snapshot has been taken yet (first run)."""
+    if not path.exists():
+        return {}
+    with open(path, encoding="utf-8") as f:
+        return {row["Member/Customer Number"]: row["Grade"] for row in csv.DictReader(f)}
+
+
+def write_grade_snapshot(directory: dict[str, dict], path: Path) -> None:
+    """Overwrite the per-member grade snapshot with today's directory, so
+    the next run can diff against it. No-op if the directory is empty
+    (Member Detail View.csv wasn't present this run) — keeps whatever
+    snapshot already exists rather than wiping it."""
+    if not directory:
+        return
+    with open(path, "w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=GRADE_SNAPSHOT_FIELDNAMES)
+        writer.writeheader()
+        for num, info in sorted(directory.items()):
+            writer.writerow({"Member/Customer Number": num, "Grade": info["grade"]})
+
+
+def detect_promotions(previous: dict[str, str], directory: dict[str, dict]) -> list[dict]:
+    """Members whose grade moved away from PROMOTION_SOURCE_GRADES
+    (Student Member / Graduate Student Member) since the last snapshot.
+    Empty if there's no previous snapshot to diff against (first run) —
+    that run only seeds the baseline, it doesn't log a promotion batch."""
+    if not previous:
+        return []
+    promotions = []
+    for num, old_grade in previous.items():
+        if old_grade not in PROMOTION_SOURCE_GRADES:
+            continue
+        info = directory.get(num)
+        if info is None or info["grade"] == old_grade:
+            continue
+        promotions.append({"num": num, "from": old_grade, "to": info["grade"], **info})
+    return promotions
+
+
+def write_promotions_log(promotions: list[dict], path: Path) -> None:
+    """Append today's newly detected promotions, with names/emails —
+    local reference only, PII, git-ignored. No-op if nothing changed."""
+    if not promotions:
+        return
+    run_date = datetime.now().strftime("%Y-%m-%d")
+    write_header = not path.exists()
+    with open(path, "a", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=PROMOTIONS_LOG_FIELDNAMES)
+        if write_header:
+            writer.writeheader()
+        for p in promotions:
+            writer.writerow(
+                {
+                    "Date": run_date,
+                    "Member/Customer Number": p["num"],
+                    "First Name": p["first"],
+                    "Last Name": p["last"],
+                    "Email Address": p["email"],
+                    "From Grade": p["from"],
+                    "To Grade": p["to"],
+                }
+            )
+
+
+def write_promotions_summary(promotions: list[dict], path: Path) -> None:
+    """Append today's promotion counts grouped by (From Grade, To Grade)
+    — aggregate only, no PII, safe to commit and embed in the public
+    dashboard. No-op if nothing changed."""
+    if not promotions:
+        return
+    run_date = datetime.now().strftime("%Y-%m-%d")
+    counts: dict[tuple[str, str], int] = {}
+    for p in promotions:
+        key = (p["from"], p["to"])
+        counts[key] = counts.get(key, 0) + 1
+    write_header = not path.exists()
+    with open(path, "a", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=PROMOTIONS_SUMMARY_FIELDNAMES)
+        if write_header:
+            writer.writeheader()
+        for (from_grade, to_grade), count in sorted(counts.items()):
+            writer.writerow({"Date": run_date, "From Grade": from_grade, "To Grade": to_grade, "Count": count})
+
+
+def load_promotions_summary(path: Path) -> dict[str, list[dict]]:
+    """Date -> [{from, to, count}, ...], for the Trends tab's promotion
+    click-to-reveal panel. Empty if no summary file exists yet."""
+    if not path.exists():
+        return {}
+    by_date: dict[str, list[dict]] = {}
+    with open(path, encoding="utf-8") as f:
+        for row in csv.DictReader(f):
+            by_date.setdefault(row["Date"], []).append(
+                {"from": row["From Grade"], "to": row["To Grade"], "count": int(row["Count"])}
+            )
+    return by_date
+
+
 STATUS_GOOD = "#0ca30c"
 STATUS_WARNING = "#fab219"
 STATUS_SERIOUS = "#ec835a"
@@ -599,7 +826,15 @@ def stat_span(text: str, color: str) -> str:
     return f'<span class="stat" style="color:{color}">{dot(color)}{html.escape(str(text))}</span>'
 
 
-def build_dashboard(units: list[OU], path: Path, events_path: Path, history_path: Path, society_history_path: Path) -> None:
+def build_dashboard(
+    units: list[OU],
+    path: Path,
+    events_path: Path,
+    history_path: Path,
+    society_history_path: Path,
+    grade_history_path: Path,
+    promotions_summary_path: Path,
+) -> None:
     by_type: dict[str, list[OU]] = {"Student Branch": [], "Student Branch Chapter": [], "Affinity Group": []}
     for ou in units:
         by_type[ou.ou_type].append(ou)
@@ -872,6 +1107,42 @@ def build_dashboard(units: list[OU], path: Path, events_path: Path, history_path
         </div>
         '''
 
+    grade_promotions_by_date = load_promotions_summary(promotions_summary_path)
+    grade_trend_data = load_grade_history_trend(grade_history_path, grade_promotions_by_date)
+    grade_trend_json = json.dumps(grade_trend_data)
+    grade_series_js = json.dumps([[grade, f"var({var})", grade] for grade, var in zip(GRADE_TREND_KEYS, GRADE_SERIES_VARS)])
+    grade_promotions_json = json.dumps(grade_promotions_by_date)
+
+    n_grade_dates = len(grade_trend_data["dates"])
+    grade_trend_note = (
+        f"Member count over time for Student Member, Graduate Student Member, and Member, from Member "
+        f"Detail View.csv. Builds up as you re-run the script — currently {n_grade_dates} "
+        f"date{'s' if n_grade_dates != 1 else ''} recorded. Click a bar group to see how many were "
+        f"promoted to a higher grade since the previous snapshot. A dashed, lighter bar (≈) is a "
+        f"back-estimated value for a grade a snapshot didn't capture — the next dated value minus "
+        f"promotions recorded flowing into it since, not a real recorded count."
+    )
+    if not grade_trend_data["dates"]:
+        grade_trend_card_html = (
+            '<p class="empty">No history yet — place Member Detail View.csv in the project directory and '
+            "re-run the script on a later date to start building this trend.</p>"
+        )
+    else:
+        grade_legend_html = "".join(
+            f'<span class="legend-item"><span class="legend-swatch" style="background:var({var})"></span>{html.escape(grade)}</span>'
+            for grade, var in zip(GRADE_TREND_KEYS, GRADE_SERIES_VARS)
+        )
+        grade_trend_card_html = f'''
+        <div class="trend-card">
+          <div class="trend-legend">{grade_legend_html}</div>
+          <div id="grade-bar-svg-wrap" class="trend-svg-wrap">
+            <svg id="grade-bar-svg"></svg>
+            <div id="grade-bar-tooltip" class="trend-tooltip" hidden></div>
+          </div>
+          <div id="grade-bar-detail" class="promotion-detail" hidden></div>
+        </div>
+        '''
+
     page = f"""<!doctype html>
 <html lang="en">
 <head>
@@ -992,6 +1263,12 @@ def build_dashboard(units: list[OU], path: Path, events_path: Path, history_path
   .trend-heading {{ font-size: 1rem; margin: 20px 0 4px; }}
   .trend-heading:first-of-type {{ margin-top: 0; }}
   .trend-card {{ background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px; padding: 16px; }}
+  .promotion-detail {{
+    margin-top: 12px; padding: 10px 12px; background: var(--page-plane);
+    border: 1px solid var(--border); border-radius: 8px; font-size: 0.85rem; color: var(--text-secondary);
+  }}
+  .promotion-detail strong {{ color: var(--text-primary); }}
+  .promotion-detail .promotion-row {{ margin-top: 4px; }}
   .society-filter {{ margin-bottom: 10px; }}
   .filter-toggle {{
     font: inherit; font-size: 0.8rem; color: var(--text-secondary); background: var(--page-plane);
@@ -1149,6 +1426,10 @@ def build_dashboard(units: list[OU], path: Path, events_path: Path, history_path
     </div>
 
     <div id="tab-trends" class="tab-panel" hidden>
+      <h3 class="trend-heading">Membership Grades (Student → Professional)</h3>
+      <p class="req-note">{grade_trend_note}</p>
+      {grade_trend_card_html}
+
       <h3 class="trend-heading">OU Vitality</h3>
       <p class="req-note">{trend_note}</p>
       {trend_card_html}
@@ -1269,7 +1550,7 @@ def build_dashboard(units: list[OU], path: Path, events_path: Path, history_path
   function showTab(name) {{
     document.querySelectorAll('.tab-panel').forEach(p => {{ p.hidden = p.id !== `tab-${{name}}`; }});
     document.querySelectorAll('.tab-btn').forEach(b => {{ b.classList.toggle('active', b.dataset.tab === name); }});
-    if (name === 'trends') {{ renderTrendChart(); renderSocietyTrendChart(); }}
+    if (name === 'trends') {{ renderTrendChart(); renderSocietyTrendChart(); renderGradeBarChart(); }}
   }}
 
   const trendData = {trend_json};
@@ -1277,6 +1558,9 @@ def build_dashboard(units: list[OU], path: Path, events_path: Path, history_path
   const societyTrendData = {society_trend_json};
   const societyAllDefs = {society_all_defs_js};
   const societyDefaultCodes = {society_default_codes_js};
+  const gradeTrendData = {grade_trend_json};
+  const gradeSeriesDefs = {grade_series_js};
+  const gradePromotionsByDate = {grade_promotions_json};
   const SOCIETY_MAX_SELECTED = {SOCIETY_TREND_MAX_SELECTED};
   const societySeriesVars = ['--series-1', '--series-2', '--series-3', '--series-4', '--series-5', '--series-6', '--series-7', '--series-8'];
   let societySelected = new Set(societyDefaultCodes);
@@ -1409,6 +1693,194 @@ def build_dashboard(units: list[OU], path: Path, events_path: Path, history_path
     renderLineChart('trend-svg', 'trend-svg-wrap', 'trend-tooltip', trendData.dates, trendSeriesDefs, trendData.series, 'percent');
   }}
 
+  let gradeBarPinnedIndex = null;
+
+  function renderGradeBarChart() {{
+    const svg = document.getElementById('grade-bar-svg');
+    const wrap = document.getElementById('grade-bar-svg-wrap');
+    const tooltip = document.getElementById('grade-bar-tooltip');
+    const detail = document.getElementById('grade-bar-detail');
+    const dates = gradeTrendData.dates;
+    if (!svg || !wrap || !dates.length) return;
+
+    const width = wrap.clientWidth || 700;
+    const height = 280;
+    const pad = {{ top: 16, right: 16, bottom: 28, left: 48 }};
+    svg.setAttribute('width', width);
+    svg.setAttribute('height', height);
+    svg.setAttribute('viewBox', `0 0 ${{width}} ${{height}}`);
+    svg.innerHTML = '';
+
+    const plotW = width - pad.left - pad.right;
+    const plotH = height - pad.top - pad.bottom;
+    const groupW = plotW / dates.length;
+
+    let maxVal = 0;
+    gradeSeriesDefs.forEach(([key]) => {{
+      (gradeTrendData.series[key] || []).forEach(v => {{ if (v !== null && v !== undefined && v > maxVal) maxVal = v; }});
+    }});
+    const steps = [1, 2, 5, 10, 20, 25, 50, 100, 200, 250, 500, 1000, 2000, 2500, 5000, 10000];
+    let step = steps[steps.length - 1];
+    for (const s of steps) {{ if (maxVal / s <= 4) {{ step = s; break; }} }}
+    const yMax = step * 4 || 4;
+    const yTicks = [0, step, step * 2, step * 3, step * 4];
+    const yFor = v => pad.top + plotH - (v / yMax) * plotH;
+
+    const NS = 'http://www.w3.org/2000/svg';
+    function el(tag, attrs) {{
+      const e = document.createElementNS(NS, tag);
+      for (const k in attrs) e.setAttribute(k, attrs[k]);
+      return e;
+    }}
+    function barPath(x, yTop, w, h) {{
+      const r = Math.max(0, Math.min(4, w / 2, h));
+      return `M${{x}},${{yTop + h}} L${{x}},${{yTop + r}} Q${{x}},${{yTop}} ${{x + r}},${{yTop}} L${{x + w - r}},${{yTop}} Q${{x + w}},${{yTop}} ${{x + w}},${{yTop + r}} L${{x + w}},${{yTop + h}} Z`;
+    }}
+
+    yTicks.forEach(v => {{
+      const y = yFor(v);
+      svg.appendChild(el('line', {{ x1: pad.left, x2: width - pad.right, y1: y, y2: y, stroke: 'var(--gridline)', 'stroke-width': 1 }}));
+      const label = el('text', {{ x: pad.left - 8, y: y + 4, 'text-anchor': 'end', class: 'trend-axis-label' }});
+      label.textContent = String(v);
+      svg.appendChild(label);
+    }});
+
+    const BAR_MAX = 24, BAR_GAP = 2, GROUP_PAD = 0.18;
+    const usableGroupW = groupW * (1 - GROUP_PAD * 2);
+    const nSeries = gradeSeriesDefs.length;
+    const barW = Math.max(4, Math.min(BAR_MAX, (usableGroupW - BAR_GAP * (nSeries - 1)) / nSeries));
+    const groupContentW = barW * nSeries + BAR_GAP * (nSeries - 1);
+
+    const groupRects = [];
+    dates.forEach((date, i) => {{
+      const groupCenterX = pad.left + i * groupW + groupW / 2;
+      const groupX = groupCenterX - groupContentW / 2;
+
+      const dateLabel = el('text', {{ x: groupCenterX, y: height - 6, 'text-anchor': 'middle', class: 'trend-axis-label' }});
+      dateLabel.textContent = date;
+      svg.appendChild(dateLabel);
+
+      gradeSeriesDefs.forEach(([key, color], j) => {{
+        const v = (gradeTrendData.series[key] || [])[i];
+        if (v === null || v === undefined) return;
+        const isEstimated = !!(gradeTrendData.estimated && gradeTrendData.estimated[key] && gradeTrendData.estimated[key][i]);
+        const x = groupX + j * (barW + BAR_GAP);
+        const yTop = yFor(v);
+        const h = pad.top + plotH - yTop;
+        const barAttrs = {{ d: barPath(x, yTop, barW, h), fill: color }};
+        if (isEstimated) {{
+          barAttrs['fill-opacity'] = '0.45';
+          barAttrs.stroke = color;
+          barAttrs['stroke-width'] = '1.5';
+          barAttrs['stroke-dasharray'] = '3,2';
+        }}
+        svg.appendChild(el('path', barAttrs));
+        const valueLabel = el('text', {{ x: x + barW / 2, y: yTop - 6, 'text-anchor': 'middle', class: 'trend-direct-label' }});
+        valueLabel.textContent = isEstimated ? `≈${{v}}` : String(v);
+        svg.appendChild(valueLabel);
+      }});
+
+      const hit = el('rect', {{
+        x: pad.left + i * groupW, y: pad.top, width: groupW, height: plotH, fill: 'transparent',
+        cursor: 'pointer', tabindex: '0', role: 'button',
+        'aria-label': `Show promotions recorded for ${{date}}`,
+      }});
+      groupRects.push(hit);
+      svg.appendChild(hit);
+    }});
+
+    const highlight = el('rect', {{ x: 0, y: pad.top, width: groupW, height: plotH, fill: 'var(--text-muted)', opacity: 0.08, visibility: 'hidden' }});
+    svg.insertBefore(highlight, svg.firstChild);
+
+    function showGroupTooltip(i) {{
+      const groupCenterX = pad.left + i * groupW + groupW / 2;
+      highlight.setAttribute('x', pad.left + i * groupW);
+      highlight.setAttribute('visibility', 'visible');
+
+      tooltip.hidden = false;
+      tooltip.style.left = Math.min(groupCenterX + 12, width - 170) + 'px';
+      tooltip.style.top = pad.top + 'px';
+      tooltip.textContent = '';
+      const dateEl = document.createElement('div');
+      dateEl.className = 'trend-tooltip-date';
+      dateEl.textContent = dates[i];
+      tooltip.appendChild(dateEl);
+      gradeSeriesDefs.forEach(([key, color, label]) => {{
+        const v = (gradeTrendData.series[key] || [])[i];
+        const row = document.createElement('div');
+        row.className = 'trend-tooltip-row';
+        const keyEl = document.createElement('span');
+        keyEl.className = 'trend-tooltip-key';
+        keyEl.style.background = color;
+        const valueEl = document.createElement('strong');
+        valueEl.textContent = (v === null || v === undefined) ? '—' : String(v);
+        const labelEl = document.createElement('span');
+        labelEl.textContent = ' ' + label;
+        row.appendChild(keyEl);
+        row.appendChild(valueEl);
+        row.appendChild(labelEl);
+        tooltip.appendChild(row);
+      }});
+    }}
+
+    function showPromotionDetail(i) {{
+      if (!detail) return;
+      detail.innerHTML = '';
+      const heading = document.createElement('strong');
+      if (i === 0) {{
+        heading.textContent = `${{dates[i]}}: no earlier snapshot to compare against.`;
+        detail.appendChild(heading);
+      }} else {{
+        const entries = gradePromotionsByDate[dates[i]] || [];
+        if (!entries.length) {{
+          heading.textContent = `No promotions recorded between ${{dates[i - 1]}} and ${{dates[i]}}.`;
+          detail.appendChild(heading);
+        }} else {{
+          heading.textContent = `Promoted since ${{dates[i - 1]}}:`;
+          detail.appendChild(heading);
+          entries.forEach(({{from: fromGrade, to: toGrade, count}}) => {{
+            const row = document.createElement('div');
+            row.className = 'promotion-row';
+            row.textContent = `${{count}} ${{fromGrade}} → ${{toGrade}}`;
+            detail.appendChild(row);
+          }});
+        }}
+      }}
+      detail.hidden = false;
+    }}
+
+    function highlightPinned() {{
+      if (gradeBarPinnedIndex === null) {{
+        highlight.setAttribute('visibility', 'hidden');
+        return;
+      }}
+      highlight.setAttribute('x', pad.left + gradeBarPinnedIndex * groupW);
+      highlight.setAttribute('visibility', 'visible');
+    }}
+    highlightPinned();
+    if (gradeBarPinnedIndex !== null) showPromotionDetail(gradeBarPinnedIndex);
+
+    groupRects.forEach((hit, i) => {{
+      hit.addEventListener('pointerenter', () => showGroupTooltip(i));
+      hit.addEventListener('pointermove', () => showGroupTooltip(i));
+      hit.addEventListener('pointerleave', () => {{
+        tooltip.hidden = true;
+        highlightPinned();
+      }});
+      function activate() {{
+        gradeBarPinnedIndex = (gradeBarPinnedIndex === i) ? null : i;
+        highlightPinned();
+        if (gradeBarPinnedIndex === null) {{
+          if (detail) detail.hidden = true;
+        }} else {{
+          showPromotionDetail(i);
+        }}
+      }}
+      hit.addEventListener('click', activate);
+      hit.addEventListener('keydown', (e) => {{ if (e.key === 'Enter' || e.key === ' ') {{ e.preventDefault(); activate(); }} }});
+    }});
+  }}
+
   function currentSocietySeriesDefs() {{
     return societyAllDefs
       .filter(([code]) => societySelected.has(code))
@@ -1481,7 +1953,7 @@ def build_dashboard(units: list[OU], path: Path, events_path: Path, history_path
 
   window.addEventListener('resize', () => {{
     const trendsTab = document.getElementById('tab-trends');
-    if (trendsTab && !trendsTab.hidden) {{ renderTrendChart(); renderSocietyTrendChart(); }}
+    if (trendsTab && !trendsTab.hidden) {{ renderTrendChart(); renderSocietyTrendChart(); renderGradeBarChart(); }}
   }});
 
   function sortByMembers(tableId, th) {{
@@ -1695,6 +2167,28 @@ def build_society_report(units: list[OU], path: Path) -> None:
     )
 
 
+ARCHIVE_DIR = BASE_DIR / "archive"
+
+
+def archive_current_outputs(paths: list[Path], archive_dir: Path) -> None:
+    """Copy each path's current (pre-overwrite) content into
+    archive_dir/<today>/<name>, so a day's dashboard/reports aren't lost
+    when the next run regenerates them in place. Idempotent per day like
+    every other snapshot in this pipeline: skips a path already archived
+    today. No-op for a path that doesn't exist yet (first run) — nothing
+    to preserve."""
+    run_date = datetime.now().strftime("%Y-%m-%d")
+    day_dir = archive_dir / run_date
+    for path in paths:
+        if not path.exists():
+            continue
+        dest = day_dir / path.name
+        if dest.exists():
+            continue
+        day_dir.mkdir(parents=True, exist_ok=True)
+        dest.write_bytes(path.read_bytes())
+
+
 def main() -> None:
     units_map = load_ou_universe()
     load_officers(units_map)
@@ -1708,13 +2202,24 @@ def main() -> None:
     html_path = BASE_DIR / "vitality_dashboard.html"
     history_path = BASE_DIR / "vitality_history.csv"
     society_history_path = BASE_DIR / "society_membership_history.csv"
+    grade_history_path = BASE_DIR / "membership_type_history.csv"
     university_report_path = BASE_DIR / "university_report.html"
     society_report_path = BASE_DIR / "society_report.html"
+
+    member_directory = load_member_directory()
+    previous_grade_snapshot = load_grade_snapshot(GRADE_SNAPSHOT_FILE)
+    promotions = detect_promotions(previous_grade_snapshot, member_directory)
+
+    archive_current_outputs([csv_path, html_path, university_report_path, society_report_path], ARCHIVE_DIR)
 
     write_csv(units, csv_path)
     write_history(units, history_path)
     write_society_history(count_society_memberships(), society_history_path)
-    build_dashboard(units, html_path, events_path, history_path, society_history_path)
+    write_grade_history(count_member_grades(member_directory), grade_history_path)
+    write_promotions_log(promotions, PROMOTIONS_LOG_FILE)
+    write_promotions_summary(promotions, PROMOTIONS_SUMMARY_FILE)
+    write_grade_snapshot(member_directory, GRADE_SNAPSHOT_FILE)
+    build_dashboard(units, html_path, events_path, history_path, society_history_path, grade_history_path, PROMOTIONS_SUMMARY_FILE)
     build_university_report(units, university_report_path)
     build_society_report(units, society_report_path)
 
