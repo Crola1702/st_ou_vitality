@@ -644,7 +644,9 @@ def load_grade_history_trend(path: Path, promotions_by_date: dict[str, list[dict
     every estimated cell is flagged in "estimated" for the chart to
     render distinctly rather than as real recorded data. A cell stays
     unfilled if the next value is itself unknown, or promotions_by_date
-    has nothing recorded for that later date.
+    has no entry at all for that later date (never verified) — but a
+    verified-zero entry (checked, and nothing flowed in) is still used,
+    distinct from "never checked."
 
     {"dates": [...], "series": {grade: [count, ...]}, "estimated": {grade:
     [bool, ...]}}; empty if no history file exists yet."""
@@ -675,9 +677,10 @@ def load_grade_history_trend(path: Path, promotions_by_date: dict[str, list[dict
             later_value = values[i + 1]
             if later_value is None:
                 continue
-            inflow = sum(p["count"] for p in promotions_by_date.get(dates[i + 1], []) if p["to"] == grade)
-            if inflow == 0:
-                continue
+            later_date = dates[i + 1]
+            if later_date not in promotions_by_date:
+                continue  # never verified for this date — leave the gap rather than guess
+            inflow = sum(p["count"] for p in promotions_by_date[later_date] if p["to"] == grade)
             values[i] = later_value - inflow
             estimated[grade][i] = True
 
