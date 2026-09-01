@@ -630,15 +630,26 @@ def write_grade_history(counts: dict[str, int], path: Path) -> None:
             writer.writerow({"Date": run_date, "Grade": grade, "Member Count": count})
 
 
-def load_grade_history_trend(path: Path) -> dict:
+def load_grade_history_trend(path: Path, promotions_by_date: dict[str, list[dict]] | None = None) -> dict:
     """Aggregate membership_type_history.csv into member counts per (date,
     grade), for the Trends tab's membership-type bar chart. Fixed to
     GRADE_TREND_KEYS, in that order, rather than every grade ever recorded
     — older snapshot rows for other grades (if any) are ignored.
-    {"dates": [...], "series": {grade: [count, ...]}}; empty if no history
-    file exists yet."""
+
+    A grade missing from an older snapshot (e.g. a partial export that
+    only covered Student/Graduate Student Member) is backward-estimated
+    from the next dated value minus the promotions recorded flowing into
+    that grade on that later date — approximate (it ignores departures
+    out of the grade and any inflow other than a tracked promotion), so
+    every estimated cell is flagged in "estimated" for the chart to
+    render distinctly rather than as real recorded data. A cell stays
+    unfilled if the next value is itself unknown, or promotions_by_date
+    has nothing recorded for that later date.
+
+    {"dates": [...], "series": {grade: [count, ...]}, "estimated": {grade:
+    [bool, ...]}}; empty if no history file exists yet."""
     if not path.exists():
-        return {"dates": [], "series": {}}
+        return {"dates": [], "series": {}, "estimated": {}}
 
     counts: dict[str, dict[str, int]] = {}  # date -> grade -> count
     with open(path, encoding="utf-8") as f:
@@ -650,10 +661,27 @@ def load_grade_history_trend(path: Path) -> dict:
 
     dates = sorted(counts)
     if not dates:
-        return {"dates": [], "series": {}}
+        return {"dates": [], "series": {}, "estimated": {}}
 
+    promotions_by_date = promotions_by_date or {}
     series = {grade: [counts[date].get(grade) for date in dates] for grade in GRADE_TREND_KEYS}
-    return {"dates": dates, "series": series}
+    estimated = {grade: [False] * len(dates) for grade in GRADE_TREND_KEYS}
+
+    for grade in GRADE_TREND_KEYS:
+        values = series[grade]
+        for i in range(len(dates) - 2, -1, -1):
+            if values[i] is not None:
+                continue
+            later_value = values[i + 1]
+            if later_value is None:
+                continue
+            inflow = sum(p["count"] for p in promotions_by_date.get(dates[i + 1], []) if p["to"] == grade)
+            if inflow == 0:
+                continue
+            values[i] = later_value - inflow
+            estimated[grade][i] = True
+
+    return {"dates": dates, "series": series, "estimated": estimated}
 
 
 def load_member_directory() -> dict[str, dict]:
@@ -1080,7 +1108,7 @@ def build_dashboard(
         '''
 
     grade_promotions_by_date = load_promotions_summary(promotions_summary_path)
-    grade_trend_data = load_grade_history_trend(grade_history_path)
+    grade_trend_data = load_grade_history_trend(grade_history_path, grade_promotions_by_date)
     grade_trend_json = json.dumps(grade_trend_data)
     grade_series_js = json.dumps([[grade, f"var({var})", grade] for grade, var in zip(GRADE_TREND_KEYS, GRADE_SERIES_VARS)])
     grade_promotions_json = json.dumps(grade_promotions_by_date)
@@ -1090,7 +1118,9 @@ def build_dashboard(
         f"Member count over time for Student Member, Graduate Student Member, and Member, from Member "
         f"Detail View.csv. Builds up as you re-run the script — currently {n_grade_dates} "
         f"date{'s' if n_grade_dates != 1 else ''} recorded. Click a bar group to see how many were "
-        f"promoted to a higher grade since the previous snapshot."
+        f"promoted to a higher grade since the previous snapshot. A dashed, lighter bar (≈) is a "
+        f"back-estimated value for a grade a snapshot didn't capture — the next dated value minus "
+        f"promotions recorded flowing into it since, not a real recorded count."
     )
     if not grade_trend_data["dates"]:
         grade_trend_card_html = (
@@ -1733,12 +1763,20 @@ def build_dashboard(
       gradeSeriesDefs.forEach(([key, color], j) => {{
         const v = (gradeTrendData.series[key] || [])[i];
         if (v === null || v === undefined) return;
+        const isEstimated = !!(gradeTrendData.estimated && gradeTrendData.estimated[key] && gradeTrendData.estimated[key][i]);
         const x = groupX + j * (barW + BAR_GAP);
         const yTop = yFor(v);
         const h = pad.top + plotH - yTop;
-        svg.appendChild(el('path', {{ d: barPath(x, yTop, barW, h), fill: color }}));
+        const barAttrs = {{ d: barPath(x, yTop, barW, h), fill: color }};
+        if (isEstimated) {{
+          barAttrs['fill-opacity'] = '0.45';
+          barAttrs.stroke = color;
+          barAttrs['stroke-width'] = '1.5';
+          barAttrs['stroke-dasharray'] = '3,2';
+        }}
+        svg.appendChild(el('path', barAttrs));
         const valueLabel = el('text', {{ x: x + barW / 2, y: yTop - 6, 'text-anchor': 'middle', class: 'trend-direct-label' }});
-        valueLabel.textContent = String(v);
+        valueLabel.textContent = isEstimated ? `≈${{v}}` : String(v);
         svg.appendChild(valueLabel);
       }});
 
