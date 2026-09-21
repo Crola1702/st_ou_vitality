@@ -1,0 +1,53 @@
+Date,SPO ID,Unit Type,University,Society,Member Count,Requirements Met,Members Met,Events Met,Officers Status,Overall Vitality
+2026-09-21,SBA53001S,Affinity Group,Centroamericana Univ Jose Simeon Canas,SIGHT,16,1,Yes,No,Partial,Not Met
+2026-09-21,SBA53001,Affinity Group,Centroamericana Univ Jose Simeon Canas,WIE,11,2,Yes,Yes,Partial,Not Met
+2026-09-21,SBA11409,Affinity Group,Escuela Especializada Ingenieria ITCA-FEPADE,WIE,10,3,Yes,Yes,Met,Met
+2026-09-21,SBA60431S,Affinity Group,Universidad Don Bosco,SB SIGHT Group,80,2,Yes,Yes,Not Met,Not Met
+2026-09-21,SBA60431,Affinity Group,Universidad Don Bosco,WIE,62,2,Yes,Yes,Not Met,Not Met
+2026-09-21,SBA10117,Affinity Group,Universidad Dr Jose Matias Delgado,WIE,37,2,Yes,Yes,Partial,Not Met
+2026-09-21,SBA29381,Affinity Group,Universidad Evangélica de El Salvador,WIE,18,3,Yes,Yes,Met,Met
+2026-09-21,SBA99671S,Affinity Group,Universidad de el Salvador,SIGHT,14,1,Yes,No,Partial,Not Met
+2026-09-21,SBA07081S,Affinity Group,Universidad de Sonsonate,SB SIGHT,1,0,No,No,Not Met,Not Met
+2026-09-21,SBA07081,Affinity Group,Universidad de Sonsonate,WIE,1,0,No,No,Not Met,Not Met
+2026-09-21,SBA99671,Affinity Group,Universidad de el Salvador,WIE,31,3,Yes,Yes,Met,Met
+2026-09-21,STB53001,Student Branch,Centroamericana Univ Jose Simeon Canas,,50,3,Yes,Yes,Met,Met
+2026-09-21,STB29381A,Student Branch,Universidad Evangélica de El Salvador,,47,3,Yes,Yes,Met,Met
+2026-09-21,STB11409,Student Branch,Escuela Especializada Ingenieria ITCA-FEPADE,,21,3,Yes,Yes,Met,Met
+2026-09-21,STB11702,Student Branch,Facultad Multidisciplinaria de Occidente UES,,0,0,No,No,Not Met,Not Met
+2026-09-21,STB60431,Student Branch,Universidad Don Bosco,,167,3,Yes,Yes,Met,Met
+2026-09-21,STB10117,Student Branch,Universidad Dr Jose Matias Delgado,,48,3,Yes,Yes,Met,Met
+2026-09-21,STB30041,Student Branch,Universidad Politecnica de El Salvador,,0,0,No,No,Not Met,Not Met
+2026-09-21,STB07081,Student Branch,Universidad de Sonsonate,,1,0,No,No,Not Met,Not Met
+2026-09-21,STB99671,Student Branch,Universidad de el Salvador,,88,3,Yes,Yes,Met,Met
+2026-09-21,SBC53001,Student Branch Chapter,Centroamericana Univ Jose Simeon Canas,C16,9,1,Yes,No,Partial,Not Met
+2026-09-21,SBC53001A,Student Branch Chapter,Centroamericana Univ Jose Simeon Canas,COM19,1,0,No,No,Not Met,Not Met
+2026-09-21,SBC53001B,Student Branch Chapter,Centroamericana Univ Jose Simeon Canas,IA34,10,1,Yes,No,Not Met,Not Met
+2026-09-21,SBC53001C,Student Branch Chapter,Centroamericana Univ Jose Simeon Canas,PE31,11,2,Yes,No,Met,Not Met
+2026-09-21,SBC53001D,Student Branch Chapter,Centroamericana Univ Jose Simeon Canas,RA24,8,3,Yes,Yes,Met,Met
+2026-09-21,SBC11409,Student Branch Chapter,Escuela Especializada Ingenieria ITCA-FEPADE,ED15,13,2,Yes,No,Met,Not Met
+2026-09-21,SBC11702,Student Branch Chapter,Facultad Multidisciplinaria de Occidente UES,GRS29,0,0,No,No,Not Met,Not Met
+2026-09-21,SBC60431D,Student Branch Chapter,Universidad Don Bosco,AES10,12,3,Yes,Yes,Met,Met
+2026-09-21,SBC60431C,Student Branch Chapter,Universidad Don Bosco,C16,39,2,Yes,Yes,Partial,Not Met
+2026-09-21,SBC60431I,Student Branch Chapter,Universidad Don Bosco,CAS04,20,2,Yes,No,Met,Not Met
+2026-09-21,SBC60431A,Student Branch Chapter,Universidad Don Bosco,COM19,6,1,Yes,No,Not Met,Not Met
+2026-09-21,SBC60431G,Student Branch Chapter,Universidad Don Bosco,ED15,46,2,Yes,Yes,Partial,Not Met
+2026-09-21,SBC60431E,Student Branch Chapter,Universidad Don Bosco,EMB18,39,3,Yes,Yes,Met,Met
+2026-09-21,SBC60431H,Student Branch Chapter,Universidad Don Bosco,IA34,27,3,Yes,Yes,Met,Met
+2026-09-21,SBC60431,Student Branch Chapter,Universidad Don Bosco,PE31,21,2,Yes,Yes,Partial,Not Met
+2026-09-21,SBC60431B,Student Branch Chapter,Universidad Don Bosco,RA24,23,2,Yes,Yes,Partial,Not Met
+2026-09-21,SBC60431F,Student Branch Chapter,Universidad Don Bosco,TEM14,26,2,Yes,Yes,Not Met,Not Met
+2026-09-21,SBC29381A,Student Branch Chapter,Universidad Evangélica de El Salvador,C16,16,2,Yes,No,Met,Not Met
+2026-09-21,SBC29381,Student Branch Chapter,Universidad Evangélica de El Salvador,RA24,14,2,Yes,No,Met,Not Met
+2026-09-21,SBC30041,Student Branch Chapter,Universidad Politecnica de El Salvador,PE31,0,0,No,No,Not Met,Not Met
+2026-09-21,SBC07081A,Student Branch Chapter,Universidad de Sonsonate,C16,0,0,No,No,Not Met,Not Met
+2026-09-21,SBC07081B,Student Branch Chapter,Universidad de Sonsonate,PE31,0,0,No,No,Not Met,Not Met
+2026-09-21,SBC07081C,Student Branch Chapter,Universidad de Sonsonate,IA34,0,0,No,No,Not Met,Not Met
+2026-09-21,SBC07081D,Student Branch Chapter,Universidad de Sonsonate,RA24,0,0,No,No,Not Met,Not Met
+2026-09-21,SBC99671B,Student Branch Chapter,Universidad de el Salvador,COM19,5,1,No,No,Met,Not Met
+2026-09-21,SBC99671A,Student Branch Chapter,Universidad de el Salvador,IA34,30,2,Yes,Yes,Partial,Not Met
+2026-09-21,SBC99671,Student Branch Chapter,Universidad de el Salvador,PE31,31,1,Yes,No,Partial,Not Met
+2026-09-21,SBC99671C,Student Branch Chapter,Universidad de el Salvador,PEL35,13,1,Yes,No,Partial,Not Met
+2026-09-21,SBC99671F,Student Branch Chapter,Universidad de el Salvador,C16,20,2,Yes,Yes,Partial,Not Met
+2026-09-21,SBC99671G,Student Branch Chapter,Universidad de el Salvador,ED15,15,1,Yes,No,Partial,Not Met
+2026-09-21,SBC99671D,Student Branch Chapter,Universidad de el Salvador,GRS29,31,1,Yes,No,Partial,Not Met
+2026-09-21,SBC99671E,Student Branch Chapter,Universidad de el Salvador,RA24,8,1,Yes,No,Partial,Not Met

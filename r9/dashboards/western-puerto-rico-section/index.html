@@ -1,0 +1,1064 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>IEEE Student OU Vitality: Western Puerto Rico Section</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  .viz-root {
+    color-scheme: light;
+    --surface-1:      #fcfcfb;
+    --page-plane:     #f9f9f7;
+    --text-primary:   #0b0b0b;
+    --text-secondary: #52514e;
+    --text-muted:     #898781;
+    --gridline:       #e1e0d9;
+    --border:         rgba(11,11,11,0.10);
+    --series-1:       #2a78d6;
+    --series-2:       #eb6834;
+    --series-3:       #1baf7a;
+    --series-4:       #eda100;
+    --series-5:       #e87ba4;
+    --series-6:       #008300;
+    --series-7:       #4a3aa7;
+    --series-8:       #e34948;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:where(:not([data-theme="light"])) .viz-root {
+      color-scheme: dark;
+      --surface-1:      #1a1a19;
+      --page-plane:     #0d0d0d;
+      --text-primary:   #ffffff;
+      --text-secondary: #c3c2b7;
+      --text-muted:     #898781;
+      --gridline:       #2c2c2a;
+      --border:         rgba(255,255,255,0.10);
+      --series-1:       #3987e5;
+      --series-2:       #d95926;
+      --series-3:       #199e70;
+      --series-4:       #c98500;
+      --series-5:       #d55181;
+      --series-6:       #008300;
+      --series-7:       #9085e9;
+      --series-8:       #e66767;
+    }
+  }
+  :root[data-theme="dark"] .viz-root {
+    color-scheme: dark;
+    --surface-1:      #1a1a19;
+    --page-plane:     #0d0d0d;
+    --text-primary:   #ffffff;
+    --text-secondary: #c3c2b7;
+    --text-muted:     #898781;
+    --gridline:       #2c2c2a;
+    --border:         rgba(255,255,255,0.10);
+    --series-1:       #3987e5;
+    --series-2:       #d95926;
+    --series-3:       #199e70;
+    --series-4:       #c98500;
+    --series-5:       #d55181;
+    --series-6:       #008300;
+    --series-7:       #9085e9;
+    --series-8:       #e66767;
+  }
+
+  * { box-sizing: border-box; }
+  body { margin: 0; }
+  .viz-root {
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    background: var(--page-plane);
+    color: var(--text-primary);
+    min-height: 100vh;
+    padding: 24px;
+  }
+  .container { max-width: 1800px; margin: 0 auto; }
+  h1 { font-size: 1.5rem; margin: 0 0 4px; }
+  .subtitle { color: var(--text-secondary); font-size: 0.9rem; margin: 0 0 20px; }
+
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-bottom: 24px; }
+  .tile {
+    background: var(--surface-1);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .tile-label { font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.03em; }
+  .tile-value { font-size: 1.5rem; font-weight: 600; margin-top: 4px; font-variant-numeric: tabular-nums; }
+
+  .filter-row { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
+  #search, .filter-row select {
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface-1);
+    color: var(--text-primary);
+    font-size: 0.9rem;
+  }
+  #search { width: 100%; max-width: 320px; }
+  .filter-row select { max-width: 260px; }
+
+  .member-summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-bottom: 24px; max-width: 600px; }
+
+  .ou-section { margin-bottom: 32px; }
+  .ou-section h2 { font-size: 1.1rem; margin: 0 0 4px; }
+  .req-note { font-weight: 400; font-size: 0.8rem; color: var(--text-secondary); }
+  .tabs { display: flex; gap: 8px; margin-bottom: 16px; border-bottom: 1px solid var(--border); }
+  .tab-btn {
+    font: inherit; cursor: pointer; padding: 10px 16px; border: none; border-bottom: 2px solid transparent;
+    background: none; color: var(--text-secondary); font-weight: 600; font-size: 0.9rem;
+  }
+  .tab-btn:hover { color: var(--text-primary); }
+  .tab-btn.active { color: var(--text-primary); border-bottom-color: #ec835a; }
+  .tab-badge {
+    display: inline-block; margin-left: 4px; padding: 1px 7px; border-radius: 999px;
+    background: #ec835a; color: #fff; font-size: 0.72rem; font-weight: 700;
+  }
+  .tab-panel[hidden] { display: none; }
+
+  .trend-heading { font-size: 1rem; margin: 20px 0 4px; }
+  .trend-heading:first-of-type { margin-top: 0; }
+  .trend-card { background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px; padding: 16px; }
+  .promotion-detail {
+    margin-top: 12px; padding: 10px 12px; background: var(--page-plane);
+    border: 1px solid var(--border); border-radius: 8px; font-size: 0.85rem; color: var(--text-secondary);
+  }
+  .promotion-detail strong { color: var(--text-primary); }
+  .promotion-detail .promotion-row { margin-top: 4px; }
+  .society-filter { margin-bottom: 10px; }
+  .filter-toggle {
+    font: inherit; font-size: 0.8rem; color: var(--text-secondary); background: var(--page-plane);
+    border: 1px solid var(--border); border-radius: 6px; padding: 5px 10px; cursor: pointer;
+  }
+  .filter-toggle:hover { color: var(--text-primary); }
+  .filter-panel {
+    margin-top: 8px; padding: 10px 12px; background: var(--page-plane);
+    border: 1px solid var(--border); border-radius: 8px;
+  }
+  .filter-hint { margin: 0 0 8px; font-size: 0.78rem; color: var(--text-muted); }
+  .filter-checklist {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 4px 12px; max-height: 220px; overflow-y: auto;
+  }
+  .filter-check-item { display: flex; align-items: center; gap: 6px; font-size: 0.82rem; color: var(--text-secondary); }
+  .filter-check-item input:disabled + span { color: var(--text-muted); }
+  .filter-reset {
+    margin-top: 8px; font: inherit; font-size: 0.78rem; color: var(--text-secondary); background: none;
+    border: 1px solid var(--border); border-radius: 6px; padding: 4px 9px; cursor: pointer;
+  }
+  .filter-reset:hover { color: var(--text-primary); }
+  .trend-legend { display: flex; gap: 16px; margin-bottom: 8px; flex-wrap: wrap; }
+  .legend-item { display: inline-flex; align-items: center; gap: 6px; font-size: 0.8rem; color: var(--text-secondary); }
+  .legend-swatch { width: 12px; height: 3px; border-radius: 2px; flex: none; }
+  .trend-svg-wrap { position: relative; width: 100%; }
+  #trend-svg { width: 100%; display: block; }
+  .trend-axis-label { fill: var(--text-muted); font-size: 11px; font-variant-numeric: tabular-nums; }
+  .trend-direct-label { fill: var(--text-secondary); font-size: 11px; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .trend-tooltip {
+    position: absolute; background: var(--surface-1); border: 1px solid var(--border); border-radius: 8px;
+    padding: 8px 10px; font-size: 0.78rem; pointer-events: none; box-shadow: 0 4px 12px rgba(0,0,0,0.15); min-width: 140px;
+  }
+  .trend-tooltip-date { color: var(--text-muted); font-size: 0.7rem; margin-bottom: 4px; }
+  .trend-tooltip-row { display: flex; align-items: center; gap: 6px; margin: 2px 0; color: var(--text-secondary); }
+  .trend-tooltip-key { width: 10px; height: 3px; border-radius: 2px; flex: none; }
+  .trend-tooltip-row strong { color: var(--text-primary); font-variant-numeric: tabular-nums; }
+
+  .table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 10px; }
+  table { border-collapse: collapse; width: 100%; background: var(--surface-1); font-size: 0.88rem; }
+  th, td { padding: 9px 12px; text-align: left; white-space: nowrap; border-bottom: 1px solid var(--gridline); }
+  th { color: var(--text-secondary); font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.02em; }
+  td.name-cell { white-space: normal; min-width: 130px; max-width: 200px; }
+  th.sortable { cursor: pointer; user-select: none; }
+  th.sortable:hover { color: var(--text-primary); }
+  .sort-arrow { display: inline-block; width: 0.8em; }
+  td.mono { font-variant-numeric: tabular-nums; color: var(--text-secondary); }
+  tr.ou-row:hover td { background: var(--page-plane); }
+  .detail-row td { border-bottom: 1px solid var(--gridline); background: var(--page-plane); }
+  .empty { color: var(--text-muted); text-align: center; padding: 20px; }
+
+  td.clickable { cursor: pointer; }
+  td.clickable:hover .stat { text-decoration: underline; }
+
+  .stat { display: inline-flex; align-items: center; gap: 6px; font-variant-numeric: tabular-nums; font-weight: 600; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; flex: none; }
+
+  .detail-panel { padding: 6px 4px; font-size: 0.85rem; color: var(--text-secondary); white-space: normal; }
+  .chip-row { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--surface-1); border: 1px solid var(--border); border-radius: 999px;
+    padding: 4px 10px 4px 8px; font-size: 0.8rem;
+  }
+  .chip-tag { color: var(--text-muted); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.03em; }
+
+  .sub-note { margin-left: 6px; font-size: 0.75rem; font-weight: 400; color: var(--text-muted); white-space: nowrap; }
+  .unreported-note { margin-top: 6px; color: var(--text-muted); }
+
+  footer { color: var(--text-muted); font-size: 0.75rem; margin-top: 24px; line-height: 1.6; }
+
+  .byline { margin: 0 0 14px; display: flex; gap: 8px; flex-wrap: wrap; }
+  .byline a {
+    display: inline-flex; align-items: center; gap: 6px;
+    color: var(--text-secondary); font-size: 0.8rem; text-decoration: none;
+    border: 1px solid var(--border); border-radius: 999px; padding: 4px 12px;
+  }
+  .byline a:hover { color: var(--text-primary); border-color: var(--text-secondary); }
+  .scope-nav { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 0 0 20px; }
+  .scope-nav a { color: var(--text-secondary); font-size: 0.9rem; }
+  .scope-nav a:hover { color: var(--text-primary); }
+  .scope-nav select {
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface-1);
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    max-width: 320px;
+  }
+
+  .resources { margin: 0 0 24px; }
+  .resources summary {
+    cursor: pointer; font-weight: 600; font-size: 0.9rem; padding: 10px 14px;
+    background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px;
+  }
+  .resources[open] summary { border-radius: 10px 10px 0 0; }
+  .resources-body {
+    border: 1px solid var(--border); border-top: none; border-radius: 0 0 10px 10px;
+    padding: 14px 16px; background: var(--surface-1); font-size: 0.85rem; color: var(--text-secondary);
+  }
+  .resources-body h3 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.03em; color: var(--text-muted); margin: 14px 0 6px; }
+  .resources-body h3:first-child { margin-top: 0; }
+  .resources-body ul { margin: 0 0 4px; padding-left: 20px; }
+  .resources-body li { margin: 4px 0; }
+  .resources-body a { color: inherit; }
+</style>
+</head>
+<body>
+<div class="viz-root">
+  <div class="container">
+    <p class="byline"><a href="https://www.linkedin.com/in/cristobalarroyo/" target="_blank" rel="noopener">By Cristóbal Arroyo</a> <a href="https://github.com/Crola1702/st_ou_vitality" target="_blank" rel="noopener">See on GitHub</a> <a href="university_report.html" target="_blank" rel="noopener">Printable University Reports</a> <a href="society_report.html" target="_blank" rel="noopener">Printable Society Reports</a></p>
+    <h1>IEEE Student OU Vitality: Western Puerto Rico Section</h1>
+    <p class="subtitle">Generated from local vTools exports. Events source: IEEE_vTools_Events_20260921151537.csv.</p>
+    <div class="scope-nav"><a href="../index.html">&larr; All sections</a><select id="scope-select" aria-label="Section" onchange="location.href=this.value"><option value="../region/index.html">Latin America - Region 9</option><option value="../aguascalientes-section/index.html">Aguascalientes Section</option><option value="../argentina-section/index.html">Argentina Section</option><option value="../bolivia-section/index.html">Bolivia Section</option><option value="../centro-occidente-section/index.html">Centro Occidente Section</option><option value="../centro-norte-brasil-section/index.html">Centro-Norte Brasil Section</option><option value="../chile-section/index.html">Chile Section</option><option value="../chile-sur-section/index.html">Chile Sur Section</option><option value="../colombia-section/index.html">Colombia Section</option><option value="../colombian-caribbean-section/index.html">Colombian Caribbean Section</option><option value="../costa-rica-section/index.html">Costa Rica Section</option><option value="../dominican-republic-section/index.html">Dominican Republic Section</option><option value="../ecuador-section/index.html">Ecuador Section</option><option value="../el-salvador-section/index.html">El Salvador Section</option><option value="../guadalajara-section/index.html">Guadalajara Section</option><option value="../guanajuato-section/index.html">Guanajuato Section</option><option value="../guatemala-section/index.html">Guatemala Section</option><option value="../honduras-section/index.html">Honduras Section</option><option value="../mexico-section/index.html">Mexico Section</option><option value="../minas-gerais-section/index.html">Minas Gerais Section</option><option value="../monterrey-section/index.html">Monterrey Section</option><option value="../morelos-section/index.html">Morelos Section</option><option value="../nicaragua-section/index.html">Nicaragua Section</option><option value="../northeast-brazil-section/index.html">Northeast Brazil Section</option><option value="../panama-section/index.html">Panama Section</option><option value="../paraguay-section/index.html">Paraguay Section</option><option value="../peru-section/index.html">Peru Section</option><option value="../puebla-section/index.html">Puebla Section</option><option value="../puerto-rico-caribbean-section/index.html">Puerto Rico &amp; Caribbean Section</option><option value="../queretaro-section/index.html">Queretaro Section</option><option value="../rio-de-janeiro-section/index.html">Rio De Janeiro Section</option><option value="../south-brazil-section/index.html">South Brazil Section</option><option value="../trinidad-and-tobago-section/index.html">Trinidad And Tobago Section</option><option value="../uruguay-section/index.html">Uruguay Section</option><option value="../venezuela-section/index.html">Venezuela Section</option><option value="../veracruz-section/index.html">Veracruz Section</option><option value="../western-puerto-rico-section/index.html" selected>Western Puerto Rico Section</option></select></div>
+
+    <details class="resources">
+      <summary>Requirements &amp; resources for students</summary>
+      <div class="resources-body">
+        <h3>Vitality rules</h3>
+        <ul>
+          <li><strong>Rama Estudiantil (Student Branch):</strong> &ge;12 miembros, &ge;4 eventos, Chair y Counselor</li>
+          <li><strong>Capítulo Estudiantil (Chapter):</strong> &ge;6 miembros, &ge;2 eventos técnicos, Chair y Advisor</li>
+          <li><strong>Grupo de Afinidad (Affinity Group):</strong> &ge;6 miembros, &ge;2 eventos, Chair y Advisor</li>
+        </ul>
+        <h3>How to meet them</h3>
+        <ul>
+          <li><a href="https://kb.ieee.org/vtools/blog/kb/creating-an-event/" target="_blank" rel="noopener">Cómo reportar eventos</a></li>
+          <li><a href="https://kb.ieee.org/vtools/blog/kb/adding-an-officer-to-an-organizational-unit/" target="_blank" rel="noopener">Cómo reportar officers (junta directiva)</a></li>
+          <li><a href="https://docs.google.com/presentation/d/1fWFIQsnbMlWU6ntJnggUviMP9IQuYSa6_9Kpz6CVN6E/edit?usp=drive_link" target="_blank" rel="noopener">Cómo atraer miembros</a></li>
+        </ul>
+      </div>
+    </details>
+
+    <div class="tiles">
+      <div class="tile">
+          <div class="tile-label">Total OUs</div>
+          <div class="tile-value">12</div>
+        </div>
+<div class="tile">
+          <div class="tile-label">Meeting Full Vitality (3/3)</div>
+          <div class="tile-value" style="color:#0ca30c">2 (17%)</div>
+        </div>
+<div class="tile">
+          <div class="tile-label">Student Branch</div>
+          <div class="tile-value">1/3 (33%)</div>
+        </div>
+<div class="tile">
+          <div class="tile-label">Student Branch Chapter</div>
+          <div class="tile-value">0/8 (0%)</div>
+        </div>
+<div class="tile">
+          <div class="tile-label">Affinity Group</div>
+          <div class="tile-value">1/1 (100%)</div>
+        </div>
+    </div>
+
+    <div class="filter-row">
+      <input id="search" type="text" placeholder="Filter by unit name or SPO ID…">
+      <select id="university-filter">
+        <option value="">All Universities</option>
+        <option value="interamerican university of puerto rico">Interamerican University of Puerto Rico</option><option value="puerto rico univ of-mayaguez">Puerto Rico Univ Of-Mayaguez</option><option value="university of puerto rico at aguadilla">University of Puerto Rico at Aguadilla</option>
+      </select>
+      <select id="society-filter">
+        <option value="">All Societies</option>
+        <option value="ap03">IEEE Antennas and Propagation Society</option><option value="c16">IEEE Computer Society</option><option value="cas04">IEEE Circuits and Systems Society</option><option value="com19">IEEE Communications Society</option><option value="cs23">IEEE Control Systems Society</option><option value="emb18">IEEE Engineering in Medicine and Biology Society</option><option value="pe31">IEEE Power &amp; Energy Society</option><option value="ra24">IEEE Robotics and Automation Society</option><option value="wie">WIE</option>
+      </select>
+    </div>
+
+    <div class="member-summary">
+      <div class="tile" id="members-stb">
+          <div class="tile-label">Student Branch Members</div>
+          <div class="tile-value" data-sum="173">173</div>
+        </div>
+<div class="tile" id="members-sbc">
+          <div class="tile-label">Student Branch Chapter Members</div>
+          <div class="tile-value" data-sum="160">160</div>
+        </div>
+<div class="tile" id="members-sba">
+          <div class="tile-label">Affinity Group Members</div>
+          <div class="tile-value" data-sum="26">26</div>
+        </div>
+    </div>
+
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="overview" onclick="showTab('overview')">Overview</button>
+      <button class="tab-btn" data-tab="quick-wins" onclick="showTab('quick-wins')">Quick Wins <span class="tab-badge">4</span></button>
+      <button class="tab-btn" data-tab="trends" onclick="showTab('trends')">Trends</button>
+    </div>
+
+    <div id="tab-overview" class="tab-panel">
+      
+        <section class="ou-section">
+          <h2>Student Branch <span class="req-note">(≥12 members, ≥4 events; Chair &amp; Counselor required)</span></h2>
+          <div class="table-wrap">
+          <table id="table-stb">
+            <thead><tr><th>Unit Name</th><th>SPO ID</th><th class="sortable" onclick="sortByMembers('table-stb', this)" data-dir="">Members <span class="sort-arrow"></span></th><th>Events</th><th>Officers</th><th>Requirements Met</th></tr></thead>
+            <tbody>
+              <tr class="ou-row" data-name="interamerican university of puerto rico" data-spoid="stb35171" data-university="interamerican university of puerto rico" data-society="" data-members="2">
+                  <td class="name-cell">Interamerican University of Puerto Rico</td>
+                  <td class="mono">STB35171</td>
+                  <td><span class="stat" style="color:#d03b3b"><span class="dot" style="background:#d03b3b"></span>2</span></td>
+                  <td class="clickable" onclick="toggleRow('ev-1')"><span class="stat" style="color:#d03b3b"><span class="dot" style="background:#d03b3b"></span>0 ▸</span></td>
+                  <td class="clickable" onclick="toggleRow('of-1')"><span class="stat" style="color:#d03b3b"><span class="dot" style="background:#d03b3b"></span>Not Met ▸</span></td>
+                  <td><span class="stat" style="color:#d03b3b"><span class="dot" style="background:#d03b3b"></span>0/3 · None</span></td>
+                </tr>
+                <tr class="detail-row" id="ev-1" style="display:none"><td colspan="6"><div class="detail-panel">Reported general events: <strong>0</strong> &nbsp;&middot;&nbsp; Reported technical events (informational): <strong>0</strong> &nbsp;&middot;&nbsp; Required: &ge; 4 reported events, any category</div></td></tr>
+                <tr class="detail-row" id="of-1" style="display:none"><td colspan="6"><div class="detail-panel"><div class="chip-row"><span class="chip"><span class="stat" style="color:#d03b3b"><span class="dot" style="background:#d03b3b"></span>Chair</span><span class="chip-tag">required</span></span><span class="chip"><span class="stat" style="color:#d03b3b"><span class="dot" style="background:#d03b3b"></span>Counselor</span><span class="chip-tag">required</span></span><span class="chip"><span class="stat" style="color:#fab219"><span class="dot" style="background:#fab219"></span>Vice Chair</span><span class="chip-tag">optional</span></span><span class="chip"><span class="stat" style="color:#fab219"><span class="dot" style="background:#fab219"></span>Secretary</span><span class="chip-tag">optional</span></span><span class="chip"><span class="stat" style="color:#fab219"><span class="dot" style="background:#fab219"></span>Treasurer</span><span class="chip-tag">optional</span></span><span class="chip"><span class="stat" style="color:#fab219"><span class="dot" style="background:#fab219"></span>Webmaster</span><span class="chip-tag">optional</span></span></div></div></td></tr><tr class="ou-row" data-name="puerto rico univ of-mayaguez" data-spoid="stb01571" data-university="puerto rico univ of-mayaguez" data-society="" data-members="171">
+                  <td class="name-cell">Puerto Rico Univ Of-Mayaguez</td>
+                  <td class="mono">STB01571</td>
+                  <td><span class="stat" style="color:#0ca30c"><span class="dot" style="background:#0ca30c"></span>171</span></td>
+                  <td class="clickable" onclick="toggleRow('ev-2')"><span class="stat" style="color:#0ca30c"><span class="dot" style="background:#0ca30c"></span>9 ▸</span></td>
+                  <td class="clickable" onclick="toggleRow('of-2')"><span class="stat" style="color:#0ca30c"><span class="dot" style="background:#0ca30c"></span>Met ▸</span></td>
+                  <td><span class="stat" style="color:#0ca30c"><span class="dot" style="background:#0ca30c"></span>3/3 · Full</span></td>
+                </tr>
+                <tr class="detail-row" id="ev-2" style="display:none"><td colspan="6"><div class="detail-panel">Reported general events: <strong>9</strong> &nbsp;&middot;&nbsp; Reported technical events (informational): <strong>0</strong> &nbsp;&middot;&nbsp; Required: &ge; 4 reported events, any category</div></td></tr>
+                <tr class="detail-row" id="of-2" style="display:none"><td colspan="6"><div class="detail-panel"><div class="chip-row"><span class="chip"><span class="stat" style="color:#0ca30c"><span class="dot" style="background:#0ca30c"></span>Chair</span><span class="chip-tag">required</span></span><span class="chip"><span class="stat" style="color:#0ca30c"><span class="dot" style="background:#0ca30c"></span>Counselor</span><span class="chip-tag">required</span></span><span class="chip"><span class="stat" style="color:#fab219"><span class="dot" style="background:#fab219"></span>Vice Chair</span><span class="chip-tag">optional</span></span><span class="chip"><span class="stat" style="color:#0ca30c"><span class="dot" style="background:#0ca30c"></span>Secretary</span><span class="chip-tag">optional</span></span><span class="chip"><span class="stat" style="color:#fab219"><span class="dot" style="background:#fab219"></span>Treasurer</span><span class="chip-tag">optional</span></span><span class="chip"><span class="stat" style="color:#fab219"><span class="dot" style="background:#fab219"></span>Webmaster</span><span class="chip-tag">optional</span></span></div></div></td></tr><tr class="ou-row" data-name="university of puerto rico at aguadilla" data-spoid="stb61221" data-university="university of puerto rico at aguadilla" data-society="" data-members="0">
+                  <td class="name-cell">University of Puerto Rico at Aguadilla</td>
+                  <td class="mono">STB61221</td>
+                  <td><span class="stat" style="color:#d03b3b"><span class="dot" style="background:#d03b3b"></span>0</span></td>
+                  <td class="clickable" onclick="toggleRow('ev-3')"><span class="stat" style="color:#d03b3b"><span class="dot" style="background:#d03b3b"></span>0 ▸</span></td>
+                  <td class="clickable" onclick="toggleRow('of-3')"><span class="stat" style="color:#d03b3b"><span class="dot" style="background:#d03b3b"></span>Not Met ▸</span></td>
+                  <td><span class="stat" style="color:#d03b3b"><span class="dot" style="background:#d03b3b"></span>0/3 · None</span></td>
+                </tr>
+                <tr class="detail-row" id="ev-3" style="display:none"><td colspan="6"><div class="detail-panel">Reported general events: <strong>0</strong> &nbsp;&middot;&nbsp; Reported technical events (informational): <strong>0</strong> &nbsp;&middot;&nbsp; Required: &ge; 4 reported events, any category</div></td></tr>
+                <tr class="detail-row" id="of-3" style="display:none"><td colspan="6"><div class="detail-panel"><div class="chip-row"><span class="chip"><span class="stat" style="color:#d03b3b"><span class="dot" style="background:#d03b3b"></span>Chair</span><span class="chip-tag">required</span></span><span class="chip"><span class="stat" style="color:#d03b3b"><span class="dot" style="background:#d03b3b"></span>Counselor</span><span class="chip-tag">required</span></span><span class="chip"><span class="stat" style="color:#fab219"><span class="dot" style="background:#fab219"></span>Vice Chair</span><span class="chip-tag">optional</span></span><span class="chip"><span class="stat" style="color:#fab219"><span class="dot" style="background:#fab219"></span>Secretary</span><span class="chip-tag">optional</span></span><span class="chip"><span class="stat" style="color:#fab219"><span class="dot" style="background:#fab219"></span>Treasurer</span><span class="chip-tag">optional</span></span><span class="chip"><span class="stat" style="color:#fab219"><span class="dot" style="background:#fab219"></span>Webmaster</span><span class="chip-tag">optional</span></span></div></div></td></tr>
+            </tbody>
+          </table>
+          </div>
+        </section>
+        
+        <section class="ou-section">
+          <h2>Student Branch Chapter <span class="req-note">(≥6 members, ≥2 technical events; Chair &amp; Advisor required)</span></h2>
+          <div class="table-wrap">
+          <table id="table-sbc">
+            <thead><tr><th>Unit Name</th><th>SPO ID</th><th class="sortable" onclick="sortByMembers('table-sbc', this)" data-dir="">Members <span class="sort-arrow"></span></th><th>Events</th><th>Officers</th><th>Requirements Met</th></tr></thead>
+            <tbody>
+              <tr class="ou-row" data-name="puerto rico univ of - mayaguez,ra24" data-spoid="sbc01571d" data-university="puerto rico univ of-mayaguez" data-society="ra24" data-members="36">
+                  <td class="name-cell">Puerto Rico Univ Of - Mayaguez,RA24</td>
+                  <td class="mono">SBC01571D</td>
+                  <td><span class="stat" style="color:#0ca30c"><span class="dot" style="background:#0ca30c"></span>36</span></td>
+                  <td class="clickable" onclick="toggleRow('ev-4')"><span class="stat" style="color:#d03b3b"><span class="dot" style="background:#d03b3b"></span>0 ▸</span></td>
+                  <td class="clickable" onclick="toggleRow('of-4')"><span class="stat" style="color:#0ca30c"><span class="dot" style="background:#0ca30c"></span>Met ▸</span></td>
+                  <td><span class="stat" style="color:#fab219"><span class="dot" style="background:#fab219"></span>2/3 · Partial</span></td>
+                </tr>
+                <tr class="detail-row" id="ev-4" style="display:none"><td colspan="6"><div class="detail-panel">Reported general events: <strong>4</strong> &nbsp;&middot;&nbsp; Reported technical events: <strong>0</strong> (required &ge; 2)</div></td></tr>
+                <tr class="detail-row" id="of-4" style="display:none"><td colspan="6"><div class="detail-panel"><div class="chip-row"><span class="chip"><span class="stat" style="color:#0ca30c"><span class="dot" style="background:#0ca30c"></span>Chair</span><span class="chip-tag">required</span></span><span class="chip"><span class="stat" style="color:#0ca30c"><span class="dot" style="background:#0ca30c"></span>Advisor</span><span class="chip-tag">required</span></span><span class="chip"><span class="stat" style="color:#0ca30c"><span class="dot" style="background:#0ca30c"></span>Vice Chair</span><span class="chip-tag">optional</span></span><span class="chip"><span class="stat" style="color:#0ca30c"><span class="dot" style="background:#0ca30c"></span>Secretary</span><span class="chip-tag">optional</span></span><span class="chip"><span class="stat" style="color:#fab219"><span class="dot" style="background:#fab219"></span>Treasurer</span><span class="chip-tag">optional</span></span><span class="chip"><span class="stat" style="color:#fab219"><span class="dot" style="background:#fab219"></span>Webmaster</span><span class="chip-tag">optional</span></span></div></div></td></tr><tr class="ou-row" data-name="puerto rico univ of-mayaguez,ap03" data-spoid="sbc01571g" data-university="puerto rico univ of-mayaguez" data-society="ap03" data-members="8">
+                  <td class="name-cell">Puerto Rico Univ Of-Mayaguez,AP03</td>
+                  <td class="mono">SBC01571G</td>
+                  <td><span class="stat" style="color:#0ca30c"><span class="dot" style="background:#0ca30c"></span>8</span></td>
+                  <td class="clickable" onclick="toggleRow('ev-5')"><span class="stat" style="color:#d03b3b"><span class="dot" style="background:#d03b3b"></span>0 ▸</span></td>
+                  <td class="clickable" onclick="toggleRow('of-5')"><span class="stat" style="color:#0ca30c"><span class="dot" style="background:#0ca30c"></span>Met ▸</span></td>
+                  <td><span class="stat" style="color:#fab219"><span class="dot" style="background:#fab219"></span>2/3 · Partial</span></td>
+                </tr>
+                <tr class="detail-row" id="ev-5" style="display:none"><td colspan="6"><div class="detail-panel">Reported general events: <strong>0</strong> &nbsp;&middot;&nbsp; Reported technical events: <strong>0</strong> (required &ge; 2)</div></td></tr>
+                <tr class="detail-row" id="of-5" style="display:none"><td colspan="6"><div class="detail-panel"><div class="chip-row"><span class="chip"><span class="stat" style="color:#0ca30c"><span class="dot" style="background:#0ca30c"></span>Chair</span><span class="chip-tag">required</span></span><span class="chip"><span class="stat" style="color:#0ca30c"><span class="dot" style="background:#0ca30c"></span>Advisor</span><span class="chip-tag">required</span></span><span class="chip"><span class="stat" style="color:#0ca30c"><span class="dot" style="background:#0ca30c"></span>Vice Chair</span><span class="chip-tag">optional</span></span><span class="chip"><span class="stat" style="color:#fab219"><span class="dot" style="background:#fab219"></span>Secretary</span><span class="chip-tag">optional</span></span><span class="chip"><span class="stat" style="color:#0ca30c"><span class="dot" style="background:#0ca30c"></span>Treasurer</span><span class="chip-tag">optional</span></span><span class="chip"><span class="stat" style="color:#0ca30c"><span class="dot" style="background:#0ca30c"></span>Webmaster</span><span class="chip-tag">optional</span></span></div></div></td></tr><tr class="ou-row" data-name="puerto rico univ of-mayaguez,c16" data-spoid="sbc01571" data-university="puerto rico univ of-mayaguez" data-society="c16" data-members="20">
+                  <td class="name-cell">Puerto Rico Univ Of-Mayaguez,C16</td>
+                  <td class="mono">SBC01571</td>
+                  <td><span class="stat" style="color:#0ca30c"><span class="dot" style="background:#0ca30c"></span>20</span></td>
+                  <td class="clickable" onclick="toggleRow('ev-6')"><span class="stat" style="color:#d03b3b"><span class="dot" style="background:#d03b3b"></span>1 ▸</span><span class="sub-note">+1 unreported</span></td>
+                  <td class="clickable" onclick="toggleRow('of-6')"><span class="stat" style="color:#fab219"><span class="dot" style="background:#fab219"></span>Partial ▸</span></td>
+                  <td><span class="stat" style="color:#ec835a"><span class="dot" style="background:#ec835a"></span>1/3 · Minimal</span></td>
+                </tr>
+                <tr class="detail-row" id="ev-6" style="display:none"><td colspan="6"><div class="detail-panel">Reported general events: <strong>10</strong> &nbsp;&middot;&nbsp; Reported technical events: <strong>1</strong> (required &ge; 2)<div class="unreported-note">⚠ 1 unreported event — scheduled in vTools but not yet reported; submit the post-event report to have them count.</div></div></td></tr>
+                <tr class="detail-row" id="of-6" style="display:none"><td colspan="6"><div class="detail-panel"><div class="chip-row"><span class="chip"><span class="stat" style="color:#0ca30c"><span class="dot" style="background:#0ca30c"></span>Chair</span><span class="chip-tag">required</span></span><span class="chip"><span class="stat" style="color:#d03b3b"><span class="dot" style="background:#d03b3b"></span>Advisor</span><span class="chip-tag">required</span></span><span class="chip"><span class="stat" style="color:#0ca30c"><span class="dot" style="background:#0ca30c"></span>Vice Chair</span><span class="chip-tag">optional</span></span><span class="chip"><span class="stat" style="color:#0ca30c"><span class="dot" style="background:#0ca30c"></span>Secretary</span><span class="chip-tag">optional</span></span><span class="chip"><span class="stat" style="color:#fab219"><span class="dot" style="background:#fab219"></span>Treasurer</span><span class="chip-tag">optional</span></span><span class="chip"><span class="stat" style="color:#0ca30c"><span class="dot" style="background:#0ca30c"></span>Webmaster</span><span class="chip-tag">optional</span></span></div></div></td></tr><tr class="ou-row" data-name="puerto rico univ of-mayaguez,cas04" data-spoid="sbc01571f" data-university="puerto rico univ of-mayaguez" data-society="cas04" data-members="13">
+                  <td class="name-cell">Puerto Rico Univ Of-Mayaguez,CAS04</td>
+                  <td class="mono">SBC01571F</td>
+                  <td><span class="stat" style="color:#0ca30c"><span class="dot" style="background:#0ca30c"></span>13</span></td>
+                  <td class="clickable" onclick="toggleRow('ev-7')"><span class="stat" style="color:#d03b3b"><span class="dot" style="background:#d03b3b"></span>0 ▸</span></td>
+                  <td class="clickable" onclick="toggleRow('of-7')"><span class="stat" style="color:#fab219"><span class="dot" style="background:#fab219"></span>Partial ▸</span></td>
+                  <td><span class="stat" style="color:#ec835a"><span class="dot" style="background:#ec835a"></span>1/3 · Minimal</span></td>
+                </tr>
+                <tr class="detail-row" id="ev-7" style="display:none"><td colspan="6"><div class="detail-panel">Reported general events: <strong>4</strong> &nbsp;&middot;&nbsp; Reported technical events: <strong>0</strong> (required &ge; 2)</div></td></tr>
+                <tr class="detail-row" id="of-7" style="display:none"><td colspan="6"><div class="detail-panel"><div class="chip-row"><span class="chip"><span class="stat" style="color:#0ca30c"><span class="dot" style="background:#0ca30c"></span>Chair</span><span class="chip-tag">required</span></span><span class="chip"><span class="stat" style="color:#d03b3b"><span class="dot" style="background:#d03b3b"></span>Advisor</span><span class="chip-tag">required</span></span><span class="chip"><span class="stat" style="color:#fab219"><span class="dot" style="background:#fab219"></span>Vice Chair</span><span class="chip-tag">optional</span></span><span class="chip"><span class="stat" style="color:#fab219"><span class="dot" style="background:#fab219"></span>Secretary</span><span class="chip-tag">optional</span></span><span class="chip"><span class="stat" style="color:#fab219"><span class="dot" style="background:#fab219"></span>Treasurer</span><span class="chip-tag">optional</span></span><span class="chip"><span class="stat" style="color:#fab219"><span class="dot" style="background:#fab219"></span>Webmaster</span><span class="chip-tag">optional</span></span></div></div></td></tr><tr class="ou-row" data-name="puerto rico univ of-mayaguez,com19" data-spoid="sbc01571a" data-university="puerto rico univ of-mayaguez" data-society="com19" data-members="4">
+                  <td class="name-cell">Puerto Rico Univ Of-Mayaguez,COM19</td>
+                  <td class="mono">SBC01571A</td>
+                  <td><span class="stat" style="color:#d03b3b"><span class="dot" style="background:#d03b3b"></span>4</span></td>
+                  <td class="clickable" onclick="toggleRow('ev-8')"><span class="stat" style="color:#d03b3b"><span class="dot" style="background:#d03b3b"></span>0 ▸</span></td>
+                  <td class="clickable" onclick="toggleRow('of-8')"><span class="stat" style="color:#d03b3b"><span class="dot" style="background:#d03b3b"></span>Not Met ▸</span></td>
+                  <td><span class="stat" style="color:#d03b3b"><span class="dot" style="background:#d03b3b"></span>0/3 · None</span></td>
+                </tr>
+                <tr class="detail-row" id="ev-8" style="display:none"><td colspan="6"><div class="detail-panel">Reported general events: <strong>0</strong> &nbsp;&middot;&nbsp; Reported technical events: <strong>0</strong> (required &ge; 2)</div></td></tr>
+                <tr class="detail-row" id="of-8" style="display:none"><td colspan="6"><div class="detail-panel"><div class="chip-row"><span class="chip"><span class="stat" style="color:#d03b3b"><span class="dot" style="background:#d03b3b"></span>Chair</span><span class="chip-tag">required</span></span><span class="chip"><span class="stat" style="color:#d03b3b"><span class="dot" style="background:#d03b3b"></span>Advisor</span><span class="chip-tag">required</span></span><span class="chip"><span class="stat" style="color:#fab219"><span class="dot" style="background:#fab219"></span>Vice Chair</span><span class="chip-tag">optional</span></span><span class="chip"><span class="stat" style="color:#fab219"><span class="dot" style="background:#fab219"></span>Secretary</span><span class="chip-tag">optional</span></span><span class="chip"><span class="stat" style="color:#fab219"><span class="dot" style="background:#fab219"></span>Treasurer</span><span class="chip-tag">optional</span></span><span class="chip"><span class="stat" style="color:#fab219"><span class="dot" style="background:#fab219"></span>Webmaster</span><span class="chip-tag">optional</span></span></div></div></td></tr><tr class="ou-row" data-name="puerto rico univ of-mayaguez,cs23" data-spoid="sbc01571c" data-university="puerto rico univ of-mayaguez" data-society="cs23" data-members="1">
+                  <td class="name-cell">Puerto Rico Univ Of-Mayaguez,CS23</td>
+                  <td class="mono">SBC01571C</td>
+                  <td><span class="stat" style="color:#d03b3b"><span class="dot" style="background:#d03b3b"></span>1</span></td>
+                  <td class="clickable" onclick="toggleRow('ev-9')"><span class="stat" style="color:#d03b3b"><span class="dot" style="background:#d03b3b"></span>0 ▸</span></td>
+                  <td class="clickable" onclick="toggleRow('of-9')"><span class="stat" style="color:#d03b3b"><span class="dot" style="background:#d03b3b"></span>Not Met ▸</span></td>
+                  <td><span class="stat" style="color:#d03b3b"><span class="dot" style="background:#d03b3b"></span>0/3 · None</span></td>
+                </tr>
+                <tr class="detail-row" id="ev-9" style="display:none"><td colspan="6"><div class="detail-panel">Reported general events: <strong>0</strong> &nbsp;&middot;&nbsp; Reported technical events: <strong>0</strong> (required &ge; 2)</div></td></tr>
+                <tr class="detail-row" id="of-9" style="display:none"><td colspan="6"><div class="detail-panel"><div class="chip-row"><span class="chip"><span class="stat" style="color:#d03b3b"><span class="dot" style="background:#d03b3b"></span>Chair</span><span class="chip-tag">required</span></span><span class="chip"><span class="stat" style="color:#d03b3b"><span class="dot" style="background:#d03b3b"></span>Advisor</span><span class="chip-tag">required</span></span><span class="chip"><span class="stat" style="color:#fab219"><span class="dot" style="background:#fab219"></span>Vice Chair</span><span class="chip-tag">optional</span></span><span class="chip"><span class="stat" style="color:#fab219"><span class="dot" style="background:#fab219"></span>Secretary</span><span class="chip-tag">optional</span></span><span class="chip"><span class="stat" style="color:#fab219"><span class="dot" style="background:#fab219"></span>Treasurer</span><span class="chip-tag">optional</span></span><span class="chip"><span class="stat" style="color:#fab219"><span class="dot" style="background:#fab219"></span>Webmaster</span><span class="chip-tag">optional</span></span></div></div></td></tr><tr class="ou-row" data-name="puerto rico univ of-mayaguez,emb18" data-spoid="sbc01571e" data-university="puerto rico univ of-mayaguez" data-society="emb18" data-members="28">
+                  <td class="name-cell">Puerto Rico Univ Of-Mayaguez,EMB18</td>
+                  <td class="mono">SBC01571E</td>
+                  <td><span class="stat" style="color:#0ca30c"><span class="dot" style="background:#0ca30c"></span>28</span></td>
+                  <td class="clickable" onclick="toggleRow('ev-10')"><span class="stat" style="color:#d03b3b"><span class="dot" style="background:#d03b3b"></span>0 ▸</span><span class="sub-note">+3 unreported</span></td>
+                  <td class="clickable" onclick="toggleRow('of-10')"><span class="stat" style="color:#0ca30c"><span class="dot" style="background:#0ca30c"></span>Met ▸</span></td>
+                  <td><span class="stat" style="color:#fab219"><span class="dot" style="background:#fab219"></span>2/3 · Partial</span></td>
+                </tr>
+                <tr class="detail-row" id="ev-10" style="display:none"><td colspan="6"><div class="detail-panel">Reported general events: <strong>7</strong> &nbsp;&middot;&nbsp; Reported technical events: <strong>0</strong> (required &ge; 2)<div class="unreported-note">⚠ 3 unreported events (2 technical) — scheduled in vTools but not yet reported; submit the post-event report to have them count.</div></div></td></tr>
+                <tr class="detail-row" id="of-10" style="display:none"><td colspan="6"><div class="detail-panel"><div class="chip-row"><span class="chip"><span class="stat" style="color:#0ca30c"><span class="dot" style="background:#0ca30c"></span>Chair</span><span class="chip-tag">required</span></span><span class="chip"><span class="stat" style="color:#0ca30c"><span class="dot" style="background:#0ca30c"></span>Advisor</span><span class="chip-tag">required</span></span><span class="chip"><span class="stat" style="color:#fab219"><span class="dot" style="background:#fab219"></span>Vice Chair</span><span class="chip-tag">optional</span></span><span class="chip"><span class="stat" style="color:#fab219"><span class="dot" style="background:#fab219"></span>Secretary</span><span class="chip-tag">optional</span></span><span class="chip"><span class="stat" style="color:#fab219"><span class="dot" style="background:#fab219"></span>Treasurer</span><span class="chip-tag">optional</span></span><span class="chip"><span class="stat" style="color:#fab219"><span class="dot" style="background:#fab219"></span>Webmaster</span><span class="chip-tag">optional</span></span></div></div></td></tr><tr class="ou-row" data-name="puerto rico univ of-mayaguez,pe31" data-spoid="sbc01571b" data-university="puerto rico univ of-mayaguez" data-society="pe31" data-members="50">
+                  <td class="name-cell">Puerto Rico Univ Of-Mayaguez,PE31</td>
+                  <td class="mono">SBC01571B</td>
+                  <td><span class="stat" style="color:#0ca30c"><span class="dot" style="background:#0ca30c"></span>50</span></td>
+                  <td class="clickable" onclick="toggleRow('ev-11')"><span class="stat" style="color:#d03b3b"><span class="dot" style="background:#d03b3b"></span>0 ▸</span></td>
+                  <td class="clickable" onclick="toggleRow('of-11')"><span class="stat" style="color:#0ca30c"><span class="dot" style="background:#0ca30c"></span>Met ▸</span></td>
+                  <td><span class="stat" style="color:#fab219"><span class="dot" style="background:#fab219"></span>2/3 · Partial</span></td>
+                </tr>
+                <tr class="detail-row" id="ev-11" style="display:none"><td colspan="6"><div class="detail-panel">Reported general events: <strong>3</strong> &nbsp;&middot;&nbsp; Reported technical events: <strong>0</strong> (required &ge; 2)</div></td></tr>
+                <tr class="detail-row" id="of-11" style="display:none"><td colspan="6"><div class="detail-panel"><div class="chip-row"><span class="chip"><span class="stat" style="color:#0ca30c"><span class="dot" style="background:#0ca30c"></span>Chair</span><span class="chip-tag">required</span></span><span class="chip"><span class="stat" style="color:#0ca30c"><span class="dot" style="background:#0ca30c"></span>Advisor</span><span class="chip-tag">required</span></span><span class="chip"><span class="stat" style="color:#0ca30c"><span class="dot" style="background:#0ca30c"></span>Vice Chair</span><span class="chip-tag">optional</span></span><span class="chip"><span class="stat" style="color:#0ca30c"><span class="dot" style="background:#0ca30c"></span>Secretary</span><span class="chip-tag">optional</span></span><span class="chip"><span class="stat" style="color:#0ca30c"><span class="dot" style="background:#0ca30c"></span>Treasurer</span><span class="chip-tag">optional</span></span><span class="chip"><span class="stat" style="color:#fab219"><span class="dot" style="background:#fab219"></span>Webmaster</span><span class="chip-tag">optional</span></span></div></div></td></tr>
+            </tbody>
+          </table>
+          </div>
+        </section>
+        
+        <section class="ou-section">
+          <h2>Affinity Group <span class="req-note">(≥6 members, ≥2 events; Chair &amp; Advisor required)</span></h2>
+          <div class="table-wrap">
+          <table id="table-sba">
+            <thead><tr><th>Unit Name</th><th>SPO ID</th><th class="sortable" onclick="sortByMembers('table-sba', this)" data-dir="">Members <span class="sort-arrow"></span></th><th>Events</th><th>Officers</th><th>Requirements Met</th></tr></thead>
+            <tbody>
+              <tr class="ou-row" data-name="puerto rico univ of-mayaguez, wie" data-spoid="sba01571" data-university="puerto rico univ of-mayaguez" data-society="wie" data-members="26">
+                  <td class="name-cell">Puerto Rico Univ Of-Mayaguez, WIE</td>
+                  <td class="mono">SBA01571</td>
+                  <td><span class="stat" style="color:#0ca30c"><span class="dot" style="background:#0ca30c"></span>26</span></td>
+                  <td class="clickable" onclick="toggleRow('ev-12')"><span class="stat" style="color:#0ca30c"><span class="dot" style="background:#0ca30c"></span>4 ▸</span></td>
+                  <td class="clickable" onclick="toggleRow('of-12')"><span class="stat" style="color:#0ca30c"><span class="dot" style="background:#0ca30c"></span>Met ▸</span></td>
+                  <td><span class="stat" style="color:#0ca30c"><span class="dot" style="background:#0ca30c"></span>3/3 · Full</span></td>
+                </tr>
+                <tr class="detail-row" id="ev-12" style="display:none"><td colspan="6"><div class="detail-panel">Reported general events: <strong>4</strong> &nbsp;&middot;&nbsp; Reported technical events (informational): <strong>0</strong> &nbsp;&middot;&nbsp; Required: &ge; 2 reported events, any category</div></td></tr>
+                <tr class="detail-row" id="of-12" style="display:none"><td colspan="6"><div class="detail-panel"><div class="chip-row"><span class="chip"><span class="stat" style="color:#0ca30c"><span class="dot" style="background:#0ca30c"></span>Chair</span><span class="chip-tag">required</span></span><span class="chip"><span class="stat" style="color:#0ca30c"><span class="dot" style="background:#0ca30c"></span>Advisor</span><span class="chip-tag">required</span></span><span class="chip"><span class="stat" style="color:#fab219"><span class="dot" style="background:#fab219"></span>Vice Chair</span><span class="chip-tag">optional</span></span><span class="chip"><span class="stat" style="color:#fab219"><span class="dot" style="background:#fab219"></span>Secretary</span><span class="chip-tag">optional</span></span><span class="chip"><span class="stat" style="color:#fab219"><span class="dot" style="background:#fab219"></span>Treasurer</span><span class="chip-tag">optional</span></span><span class="chip"><span class="stat" style="color:#fab219"><span class="dot" style="background:#fab219"></span>Webmaster</span><span class="chip-tag">optional</span></span></div></div></td></tr>
+            </tbody>
+          </table>
+          </div>
+        </section>
+        
+    </div>
+
+    <div id="tab-quick-wins" class="tab-panel" hidden>
+      <p class="req-note">Units missing exactly one requirement (Members, Events, or Officers) — the fastest path to full vitality, sorted by smallest gap first.</p>
+      
+        <div class="table-wrap">
+        <table id="table-quick-wins">
+          <thead><tr><th>Unit Name</th><th>Type</th><th>SPO ID</th><th>Missing</th><th>Detail</th></tr></thead>
+          <tbody><tr class="ou-row" data-name="puerto rico univ of - mayaguez,ra24" data-spoid="sbc01571d" data-university="puerto rico univ of-mayaguez" data-society="ra24" data-members="36">
+              <td class="name-cell">Puerto Rico Univ Of - Mayaguez,RA24</td>
+              <td>Student Branch Chapter</td>
+              <td class="mono">SBC01571D</td>
+              <td><span class="stat" style="color:#fab219"><span class="dot" style="background:#fab219"></span>Events</span></td>
+              <td>2 more events (0/2)</td>
+            </tr><tr class="ou-row" data-name="puerto rico univ of-mayaguez,ap03" data-spoid="sbc01571g" data-university="puerto rico univ of-mayaguez" data-society="ap03" data-members="8">
+              <td class="name-cell">Puerto Rico Univ Of-Mayaguez,AP03</td>
+              <td>Student Branch Chapter</td>
+              <td class="mono">SBC01571G</td>
+              <td><span class="stat" style="color:#fab219"><span class="dot" style="background:#fab219"></span>Events</span></td>
+              <td>2 more events (0/2)</td>
+            </tr><tr class="ou-row" data-name="puerto rico univ of-mayaguez,emb18" data-spoid="sbc01571e" data-university="puerto rico univ of-mayaguez" data-society="emb18" data-members="28">
+              <td class="name-cell">Puerto Rico Univ Of-Mayaguez,EMB18</td>
+              <td>Student Branch Chapter</td>
+              <td class="mono">SBC01571E</td>
+              <td><span class="stat" style="color:#fab219"><span class="dot" style="background:#fab219"></span>Events</span></td>
+              <td>2 more events (0/2)</td>
+            </tr><tr class="ou-row" data-name="puerto rico univ of-mayaguez,pe31" data-spoid="sbc01571b" data-university="puerto rico univ of-mayaguez" data-society="pe31" data-members="50">
+              <td class="name-cell">Puerto Rico Univ Of-Mayaguez,PE31</td>
+              <td>Student Branch Chapter</td>
+              <td class="mono">SBC01571B</td>
+              <td><span class="stat" style="color:#fab219"><span class="dot" style="background:#fab219"></span>Events</span></td>
+              <td>2 more events (0/2)</td>
+            </tr></tbody>
+        </table>
+        </div>
+        
+    </div>
+
+    <div id="tab-trends" class="tab-panel" hidden>
+      <h3 class="trend-heading">Membership Grades (Student → Professional)</h3>
+      <p class="req-note">Member count over time for Student Member, Graduate Student Member, and Member, from Member Detail View.csv. Builds up as you re-run the script — currently 0 dates recorded. Click a bar group to see how many were promoted to a higher grade since the previous snapshot. A dashed, lighter bar (≈) is a back-estimated value for a grade a snapshot didn't capture — the next dated value minus promotions recorded flowing into it since, not a real recorded count.</p>
+      <p class="empty">No history yet — place Member Detail View.csv in the project directory and re-run the script on a later date to start building this trend.</p>
+
+      <h3 class="trend-heading">OU Vitality</h3>
+      <p class="req-note">% of OUs meeting full vitality (3/3) over time, by type. Builds up as you re-run the script — currently 1 date recorded.</p>
+      
+        <div class="trend-card">
+          <div class="trend-legend"><span class="legend-item"><span class="legend-swatch" style="background:var(--series-1)"></span>Student Branch</span><span class="legend-item"><span class="legend-swatch" style="background:var(--series-2)"></span>Chapter</span><span class="legend-item"><span class="legend-swatch" style="background:var(--series-3)"></span>Affinity Group</span></div>
+          <div id="trend-svg-wrap" class="trend-svg-wrap">
+            <svg id="trend-svg"></svg>
+            <div id="trend-tooltip" class="trend-tooltip" hidden></div>
+          </div>
+        </div>
+        
+
+      <h3 class="trend-heading">Society Memberships</h3>
+      <p class="req-note">Member count over time by IEEE Society, from Member Detail View.csv. Choose up to 8 to chart at once — defaults to the top 5 by latest count. Builds up as you re-run the script — currently 0 dates recorded.</p>
+      <p class="empty">No history yet — place Member Detail View.csv in the project directory and re-run the script on a later date to start building this trend.</p>
+    </div>
+
+    <footer>
+      Click an <strong>Events</strong> or <strong>Officers</strong> cell to see the detailed breakdown.<br>
+      Requirements Met is out of 3 (Members, Events, Officers):
+      <span class="stat" style="color:#0ca30c"><span class="dot" style="background:#0ca30c"></span>3/3 Full</span> &nbsp;
+      <span class="stat" style="color:#fab219"><span class="dot" style="background:#fab219"></span>2/3 Partial</span> &nbsp;
+      <span class="stat" style="color:#ec835a"><span class="dot" style="background:#ec835a"></span>1/3 Minimal</span> &nbsp;
+      <span class="stat" style="color:#d03b3b"><span class="dot" style="background:#d03b3b"></span>0/3 None</span><br>
+      Officers: <span class="stat" style="color:#0ca30c"><span class="dot" style="background:#0ca30c"></span>Met</span> = Chair &amp; Counselor/Advisor both present &nbsp;
+      <span class="stat" style="color:#fab219"><span class="dot" style="background:#fab219"></span>Partial</span> = only one present &nbsp;
+      <span class="stat" style="color:#d03b3b"><span class="dot" style="background:#d03b3b"></span>Not Met</span> = neither present.
+      In the detail panel, required officer chips (Chair, Counselor/Advisor) show red when missing; optional officer chips (Vice Chair, Secretary, Treasurer, Webmaster) show yellow when missing.
+      Event counts include events co-hosted with other OUs, from 2026 onward, excluding cancelled events.
+      Only <strong>reported</strong> events (post-event report submitted in vTools) count toward the Events requirement; unreported events appear as a "+N unreported" note and in the Events detail panel, but don't count until reported.
+    </footer>
+  </div>
+</div>
+<script>
+  const searchInput = document.getElementById('search');
+  const universitySelect = document.getElementById('university-filter');
+  const societySelect = document.getElementById('society-filter');
+  const memberSlugByTable = { 'table-stb': 'stb', 'table-sbc': 'sbc', 'table-sba': 'sba' };
+  const universityToSocieties = {"puerto rico univ of-mayaguez": ["ap03", "c16", "cas04", "com19", "cs23", "emb18", "pe31", "ra24", "wie"]};
+  const societyToUniversities = {"wie": ["puerto rico univ of-mayaguez"], "ra24": ["puerto rico univ of-mayaguez"], "ap03": ["puerto rico univ of-mayaguez"], "c16": ["puerto rico univ of-mayaguez"], "cas04": ["puerto rico univ of-mayaguez"], "com19": ["puerto rico univ of-mayaguez"], "cs23": ["puerto rico univ of-mayaguez"], "emb18": ["puerto rico univ of-mayaguez"], "pe31": ["puerto rico univ of-mayaguez"]};
+
+  function refineFilterOptions() {
+    const uni = universitySelect.value;
+    const soc = societySelect.value;
+
+    const validSocieties = uni ? new Set(universityToSocieties[uni] || []) : null;
+    Array.from(societySelect.options).forEach(opt => {
+      if (!opt.value) return; // "All Societies"
+      const visible = !validSocieties || validSocieties.has(opt.value);
+      opt.hidden = !visible;
+      opt.disabled = !visible;
+    });
+    if (soc && validSocieties && !validSocieties.has(soc)) societySelect.value = '';
+
+    const validUniversities = soc ? new Set(societyToUniversities[soc] || []) : null;
+    Array.from(universitySelect.options).forEach(opt => {
+      if (!opt.value) return; // "All Universities"
+      const visible = !validUniversities || validUniversities.has(opt.value);
+      opt.hidden = !visible;
+      opt.disabled = !visible;
+    });
+    if (uni && validUniversities && !validUniversities.has(uni)) universitySelect.value = '';
+  }
+
+  function applyFilters() {
+    const q = searchInput.value.trim().toLowerCase();
+    const uni = universitySelect.value;
+    const soc = societySelect.value;
+
+    const sums = { stb: 0, sbc: 0, sba: 0 };
+
+    document.querySelectorAll('table').forEach(table => {
+      const slug = memberSlugByTable[table.id];
+      table.querySelectorAll('.ou-row').forEach(row => {
+        const match = (!q || row.dataset.name.includes(q) || row.dataset.spoid.includes(q))
+          && (!uni || row.dataset.university === uni)
+          && (!soc || row.dataset.society === soc);
+        row.style.display = match ? '' : 'none';
+        if (match && slug) sums[slug] += parseInt(row.dataset.members, 10) || 0;
+
+        let next = row.nextElementSibling;
+        while (next && next.classList.contains('detail-row')) {
+          if (!match) next.style.display = 'none';
+          next = next.nextElementSibling;
+        }
+      });
+    });
+
+    Object.keys(sums).forEach(slug => {
+      const el = document.querySelector(`#members-${slug} .tile-value`);
+      if (el) el.textContent = sums[slug];
+    });
+
+    updateURLParams();
+  }
+
+  function updateURLParams() {
+    const params = new URLSearchParams();
+    if (searchInput.value.trim()) params.set('q', searchInput.value.trim());
+    if (universitySelect.value) params.set('university', universitySelect.value);
+    if (societySelect.value) params.set('society', societySelect.value);
+    const qs = params.toString();
+    history.replaceState(null, '', qs ? `?${qs}` : window.location.pathname);
+  }
+
+  function loadFiltersFromURL() {
+    const params = new URLSearchParams(window.location.search);
+    if (params.has('q')) searchInput.value = params.get('q');
+    if (params.has('university')) universitySelect.value = params.get('university');
+    if (params.has('society')) societySelect.value = params.get('society');
+  }
+
+  searchInput.addEventListener('input', applyFilters);
+  universitySelect.addEventListener('change', () => { refineFilterOptions(); applyFilters(); });
+  societySelect.addEventListener('change', () => { refineFilterOptions(); applyFilters(); });
+
+  loadFiltersFromURL();
+  refineFilterOptions();
+  applyFilters();
+
+  function toggleRow(id) {
+    const row = document.getElementById(id);
+    row.style.display = row.style.display === 'none' ? 'table-row' : 'none';
+  }
+
+  function showTab(name) {
+    document.querySelectorAll('.tab-panel').forEach(p => { p.hidden = p.id !== `tab-${name}`; });
+    document.querySelectorAll('.tab-btn').forEach(b => { b.classList.toggle('active', b.dataset.tab === name); });
+    if (name === 'trends') { renderTrendChart(); renderSocietyTrendChart(); renderGradeBarChart(); }
+  }
+
+  const trendData = {"dates": ["2026-09-21"], "series": {"Student Branch": [33.3], "Student Branch Chapter": [0.0], "Affinity Group": [100.0]}};
+  const trendSeriesDefs = [["Student Branch", "var(--series-1)", "Student Branch"], ["Student Branch Chapter", "var(--series-2)", "Chapter"], ["Affinity Group", "var(--series-3)", "Affinity Group"]];
+  const societyTrendData = {"dates": [], "series": {}, "labels": {}, "default_codes": []};
+  const societyAllDefs = [];
+  const societyDefaultCodes = [];
+  const gradeTrendData = {"dates": [], "series": {}, "estimated": {}};
+  const gradeSeriesDefs = [["Student Member", "var(--series-1)", "Student Member"], ["Graduate Student Member", "var(--series-2)", "Graduate Student Member"], ["Member", "var(--series-3)", "Member"]];
+  const gradePromotionsByDate = {};
+  const SOCIETY_MAX_SELECTED = 8;
+  const societySeriesVars = ['--series-1', '--series-2', '--series-3', '--series-4', '--series-5', '--series-6', '--series-7', '--series-8'];
+  let societySelected = new Set(societyDefaultCodes);
+
+  function renderLineChart(svgId, wrapId, tooltipId, dates, seriesDefs, dataSeries, mode) {
+    const svg = document.getElementById(svgId);
+    const wrap = document.getElementById(wrapId);
+    const tooltip = document.getElementById(tooltipId);
+    if (!svg || !wrap || !dates.length) return;
+
+    const width = wrap.clientWidth || 700;
+    const height = 280;
+    const pad = { top: 16, right: 16, bottom: 28, left: mode === 'count' ? 48 : 40 };
+    svg.setAttribute('width', width);
+    svg.setAttribute('height', height);
+    svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
+    svg.innerHTML = '';
+
+    const plotW = width - pad.left - pad.right;
+    const plotH = height - pad.top - pad.bottom;
+    const xFor = i => dates.length === 1 ? pad.left + plotW / 2 : pad.left + (i / (dates.length - 1)) * plotW;
+
+    let yMax, yTicks, fmt;
+    if (mode === 'percent') {
+      yMax = 100;
+      yTicks = [0, 25, 50, 75, 100];
+      fmt = v => v + '%';
+    } else {
+      let maxVal = 0;
+      seriesDefs.forEach(([key]) => {
+        (dataSeries[key] || []).forEach(v => { if (v !== null && v !== undefined && v > maxVal) maxVal = v; });
+      });
+      const steps = [1, 2, 5, 10, 20, 25, 50, 100, 200, 250, 500, 1000, 2000, 2500, 5000, 10000];
+      let step = steps[steps.length - 1];
+      for (const s of steps) { if (maxVal / s <= 4) { step = s; break; } }
+      yMax = step * 4 || 4;
+      yTicks = [0, step, step * 2, step * 3, step * 4];
+      fmt = v => String(v);
+    }
+    const yFor = v => pad.top + plotH - (v / yMax) * plotH;
+
+    const NS = 'http://www.w3.org/2000/svg';
+    function el(tag, attrs) {
+      const e = document.createElementNS(NS, tag);
+      for (const k in attrs) e.setAttribute(k, attrs[k]);
+      return e;
+    }
+
+    yTicks.forEach(v => {
+      const y = yFor(v);
+      svg.appendChild(el('line', { x1: pad.left, x2: width - pad.right, y1: y, y2: y, stroke: 'var(--gridline)', 'stroke-width': 1 }));
+      const label = el('text', { x: pad.left - 8, y: y + 4, 'text-anchor': 'end', class: 'trend-axis-label' });
+      label.textContent = fmt(v);
+      svg.appendChild(label);
+    });
+
+    const labelIdxs = dates.length <= 6 ? dates.map((_, i) => i) : [0, Math.floor((dates.length - 1) / 2), dates.length - 1];
+    labelIdxs.forEach(i => {
+      const label = el('text', { x: xFor(i), y: height - 6, 'text-anchor': 'middle', class: 'trend-axis-label' });
+      label.textContent = dates[i];
+      svg.appendChild(label);
+    });
+
+    seriesDefs.forEach(([key, color]) => {
+      const values = dataSeries[key] || [];
+      const points = values.map((v, i) => v === null || v === undefined ? null : [xFor(i), yFor(v)]).filter(Boolean);
+      if (points.length > 1) {
+        const d = points.map((p, i) => (i === 0 ? 'M' : 'L') + p[0] + ',' + p[1]).join(' ');
+        svg.appendChild(el('path', { d, fill: 'none', stroke: color, 'stroke-width': 2, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }));
+      }
+      points.forEach(([x, y]) => {
+        svg.appendChild(el('circle', { cx: x, cy: y, r: 5, fill: color, stroke: 'var(--surface-1)', 'stroke-width': 2 }));
+      });
+      if (points.length) {
+        const [lx, ly] = points[points.length - 1];
+        const lastVal = values[values.length - 1];
+        const label = el('text', { x: Math.min(lx + 8, width - pad.right - 28), y: ly + 4, class: 'trend-direct-label' });
+        label.textContent = fmt(lastVal);
+        svg.appendChild(label);
+      }
+    });
+
+    const crosshair = el('line', { x1: 0, x2: 0, y1: pad.top, y2: pad.top + plotH, stroke: 'var(--text-muted)', 'stroke-width': 1, visibility: 'hidden' });
+    svg.appendChild(crosshair);
+
+    svg.addEventListener('pointermove', (e) => {
+      const rect = svg.getBoundingClientRect();
+      const mx = e.clientX - rect.left;
+      let idx = 0, best = Infinity;
+      dates.forEach((_, i) => {
+        const d = Math.abs(xFor(i) - mx);
+        if (d < best) { best = d; idx = i; }
+      });
+      crosshair.setAttribute('x1', xFor(idx));
+      crosshair.setAttribute('x2', xFor(idx));
+      crosshair.setAttribute('visibility', 'visible');
+
+      tooltip.hidden = false;
+      tooltip.style.left = Math.min(xFor(idx) + 12, width - 150) + 'px';
+      tooltip.style.top = pad.top + 'px';
+      tooltip.textContent = '';
+      const dateEl = document.createElement('div');
+      dateEl.className = 'trend-tooltip-date';
+      dateEl.textContent = dates[idx];
+      tooltip.appendChild(dateEl);
+      seriesDefs.forEach(([key, color, label]) => {
+        const v = (dataSeries[key] || [])[idx];
+        const row = document.createElement('div');
+        row.className = 'trend-tooltip-row';
+        const keyEl = document.createElement('span');
+        keyEl.className = 'trend-tooltip-key';
+        keyEl.style.background = color;
+        const valueEl = document.createElement('strong');
+        valueEl.textContent = (v === null || v === undefined) ? '—' : fmt(v);
+        const labelEl = document.createElement('span');
+        labelEl.textContent = ' ' + label;
+        row.appendChild(keyEl);
+        row.appendChild(valueEl);
+        row.appendChild(labelEl);
+        tooltip.appendChild(row);
+      });
+    });
+    svg.addEventListener('pointerleave', () => {
+      crosshair.setAttribute('visibility', 'hidden');
+      tooltip.hidden = true;
+    });
+  }
+
+  function renderTrendChart() {
+    renderLineChart('trend-svg', 'trend-svg-wrap', 'trend-tooltip', trendData.dates, trendSeriesDefs, trendData.series, 'percent');
+  }
+
+  let gradeBarPinnedIndex = null;
+
+  function renderGradeBarChart() {
+    const svg = document.getElementById('grade-bar-svg');
+    const wrap = document.getElementById('grade-bar-svg-wrap');
+    const tooltip = document.getElementById('grade-bar-tooltip');
+    const detail = document.getElementById('grade-bar-detail');
+    const dates = gradeTrendData.dates;
+    if (!svg || !wrap || !dates.length) return;
+
+    const width = wrap.clientWidth || 700;
+    const height = 280;
+    const pad = { top: 16, right: 16, bottom: 28, left: 48 };
+    svg.setAttribute('width', width);
+    svg.setAttribute('height', height);
+    svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
+    svg.innerHTML = '';
+
+    const plotW = width - pad.left - pad.right;
+    const plotH = height - pad.top - pad.bottom;
+    const groupW = plotW / dates.length;
+
+    let maxVal = 0;
+    gradeSeriesDefs.forEach(([key]) => {
+      (gradeTrendData.series[key] || []).forEach(v => { if (v !== null && v !== undefined && v > maxVal) maxVal = v; });
+    });
+    const steps = [1, 2, 5, 10, 20, 25, 50, 100, 200, 250, 500, 1000, 2000, 2500, 5000, 10000];
+    let step = steps[steps.length - 1];
+    for (const s of steps) { if (maxVal / s <= 4) { step = s; break; } }
+    const yMax = step * 4 || 4;
+    const yTicks = [0, step, step * 2, step * 3, step * 4];
+    const yFor = v => pad.top + plotH - (v / yMax) * plotH;
+
+    const NS = 'http://www.w3.org/2000/svg';
+    function el(tag, attrs) {
+      const e = document.createElementNS(NS, tag);
+      for (const k in attrs) e.setAttribute(k, attrs[k]);
+      return e;
+    }
+    function barPath(x, yTop, w, h) {
+      const r = Math.max(0, Math.min(4, w / 2, h));
+      return `M${x},${yTop + h} L${x},${yTop + r} Q${x},${yTop} ${x + r},${yTop} L${x + w - r},${yTop} Q${x + w},${yTop} ${x + w},${yTop + r} L${x + w},${yTop + h} Z`;
+    }
+
+    yTicks.forEach(v => {
+      const y = yFor(v);
+      svg.appendChild(el('line', { x1: pad.left, x2: width - pad.right, y1: y, y2: y, stroke: 'var(--gridline)', 'stroke-width': 1 }));
+      const label = el('text', { x: pad.left - 8, y: y + 4, 'text-anchor': 'end', class: 'trend-axis-label' });
+      label.textContent = String(v);
+      svg.appendChild(label);
+    });
+
+    const BAR_MAX = 24, BAR_GAP = 2, GROUP_PAD = 0.18;
+    const usableGroupW = groupW * (1 - GROUP_PAD * 2);
+    const nSeries = gradeSeriesDefs.length;
+    const barW = Math.max(4, Math.min(BAR_MAX, (usableGroupW - BAR_GAP * (nSeries - 1)) / nSeries));
+    const groupContentW = barW * nSeries + BAR_GAP * (nSeries - 1);
+
+    const groupRects = [];
+    dates.forEach((date, i) => {
+      const groupCenterX = pad.left + i * groupW + groupW / 2;
+      const groupX = groupCenterX - groupContentW / 2;
+
+      const dateLabel = el('text', { x: groupCenterX, y: height - 6, 'text-anchor': 'middle', class: 'trend-axis-label' });
+      dateLabel.textContent = date;
+      svg.appendChild(dateLabel);
+
+      gradeSeriesDefs.forEach(([key, color], j) => {
+        const v = (gradeTrendData.series[key] || [])[i];
+        if (v === null || v === undefined) return;
+        const isEstimated = !!(gradeTrendData.estimated && gradeTrendData.estimated[key] && gradeTrendData.estimated[key][i]);
+        const x = groupX + j * (barW + BAR_GAP);
+        const yTop = yFor(v);
+        const h = pad.top + plotH - yTop;
+        const barAttrs = { d: barPath(x, yTop, barW, h), fill: color };
+        if (isEstimated) {
+          barAttrs['fill-opacity'] = '0.45';
+          barAttrs.stroke = color;
+          barAttrs['stroke-width'] = '1.5';
+          barAttrs['stroke-dasharray'] = '3,2';
+        }
+        svg.appendChild(el('path', barAttrs));
+        const valueLabel = el('text', { x: x + barW / 2, y: yTop - 6, 'text-anchor': 'middle', class: 'trend-direct-label' });
+        valueLabel.textContent = isEstimated ? `≈${v}` : String(v);
+        svg.appendChild(valueLabel);
+      });
+
+      const hit = el('rect', {
+        x: pad.left + i * groupW, y: pad.top, width: groupW, height: plotH, fill: 'transparent',
+        cursor: 'pointer', tabindex: '0', role: 'button',
+        'aria-label': `Show promotions recorded for ${date}`,
+      });
+      groupRects.push(hit);
+      svg.appendChild(hit);
+    });
+
+    const highlight = el('rect', { x: 0, y: pad.top, width: groupW, height: plotH, fill: 'var(--text-muted)', opacity: 0.08, visibility: 'hidden' });
+    svg.insertBefore(highlight, svg.firstChild);
+
+    function showGroupTooltip(i) {
+      const groupCenterX = pad.left + i * groupW + groupW / 2;
+      highlight.setAttribute('x', pad.left + i * groupW);
+      highlight.setAttribute('visibility', 'visible');
+
+      tooltip.hidden = false;
+      tooltip.style.left = Math.min(groupCenterX + 12, width - 170) + 'px';
+      tooltip.style.top = pad.top + 'px';
+      tooltip.textContent = '';
+      const dateEl = document.createElement('div');
+      dateEl.className = 'trend-tooltip-date';
+      dateEl.textContent = dates[i];
+      tooltip.appendChild(dateEl);
+      gradeSeriesDefs.forEach(([key, color, label]) => {
+        const v = (gradeTrendData.series[key] || [])[i];
+        const row = document.createElement('div');
+        row.className = 'trend-tooltip-row';
+        const keyEl = document.createElement('span');
+        keyEl.className = 'trend-tooltip-key';
+        keyEl.style.background = color;
+        const valueEl = document.createElement('strong');
+        valueEl.textContent = (v === null || v === undefined) ? '—' : String(v);
+        const labelEl = document.createElement('span');
+        labelEl.textContent = ' ' + label;
+        row.appendChild(keyEl);
+        row.appendChild(valueEl);
+        row.appendChild(labelEl);
+        tooltip.appendChild(row);
+      });
+    }
+
+    function showPromotionDetail(i) {
+      if (!detail) return;
+      detail.innerHTML = '';
+      const heading = document.createElement('strong');
+      if (i === 0) {
+        heading.textContent = `${dates[i]}: no earlier snapshot to compare against.`;
+        detail.appendChild(heading);
+      } else {
+        const entries = gradePromotionsByDate[dates[i]] || [];
+        if (!entries.length) {
+          heading.textContent = `No promotions recorded between ${dates[i - 1]} and ${dates[i]}.`;
+          detail.appendChild(heading);
+        } else {
+          heading.textContent = `Promoted since ${dates[i - 1]}:`;
+          detail.appendChild(heading);
+          entries.forEach(({from: fromGrade, to: toGrade, count}) => {
+            const row = document.createElement('div');
+            row.className = 'promotion-row';
+            row.textContent = `${count} ${fromGrade} → ${toGrade}`;
+            detail.appendChild(row);
+          });
+        }
+      }
+      detail.hidden = false;
+    }
+
+    function highlightPinned() {
+      if (gradeBarPinnedIndex === null) {
+        highlight.setAttribute('visibility', 'hidden');
+        return;
+      }
+      highlight.setAttribute('x', pad.left + gradeBarPinnedIndex * groupW);
+      highlight.setAttribute('visibility', 'visible');
+    }
+    highlightPinned();
+    if (gradeBarPinnedIndex !== null) showPromotionDetail(gradeBarPinnedIndex);
+
+    groupRects.forEach((hit, i) => {
+      hit.addEventListener('pointerenter', () => showGroupTooltip(i));
+      hit.addEventListener('pointermove', () => showGroupTooltip(i));
+      hit.addEventListener('pointerleave', () => {
+        tooltip.hidden = true;
+        highlightPinned();
+      });
+      function activate() {
+        gradeBarPinnedIndex = (gradeBarPinnedIndex === i) ? null : i;
+        highlightPinned();
+        if (gradeBarPinnedIndex === null) {
+          if (detail) detail.hidden = true;
+        } else {
+          showPromotionDetail(i);
+        }
+      }
+      hit.addEventListener('click', activate);
+      hit.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(); } });
+    });
+  }
+
+  function currentSocietySeriesDefs() {
+    return societyAllDefs
+      .filter(([code]) => societySelected.has(code))
+      .map(([code, label], i) => [code, `var(${societySeriesVars[i % societySeriesVars.length]})`, label]);
+  }
+
+  function toggleSocietyFilterPanel() {
+    const panel = document.getElementById('society-filter-panel');
+    if (panel) panel.hidden = !panel.hidden;
+  }
+
+  function renderSocietyFilterList() {
+    const list = document.getElementById('society-filter-list');
+    if (!list) return;
+    list.innerHTML = '';
+    societyAllDefs.forEach(([code, label]) => {
+      const item = document.createElement('label');
+      item.className = 'filter-check-item';
+      const cb = document.createElement('input');
+      cb.type = 'checkbox';
+      cb.checked = societySelected.has(code);
+      cb.disabled = !cb.checked && societySelected.size >= SOCIETY_MAX_SELECTED;
+      cb.addEventListener('change', () => {
+        if (cb.checked) societySelected.add(code); else societySelected.delete(code);
+        onSocietySelectionChange();
+      });
+      const span = document.createElement('span');
+      span.textContent = label;
+      item.appendChild(cb);
+      item.appendChild(span);
+      list.appendChild(item);
+    });
+  }
+
+  function renderSocietyLegend() {
+    const legend = document.getElementById('society-trend-legend');
+    if (!legend) return;
+    legend.innerHTML = '';
+    currentSocietySeriesDefs().forEach(([code, color, label]) => {
+      const item = document.createElement('span');
+      item.className = 'legend-item';
+      const swatch = document.createElement('span');
+      swatch.className = 'legend-swatch';
+      swatch.style.background = color;
+      item.appendChild(swatch);
+      item.appendChild(document.createTextNode(label));
+      legend.appendChild(item);
+    });
+  }
+
+  function onSocietySelectionChange() {
+    const toggle = document.getElementById('society-filter-toggle');
+    if (toggle) toggle.textContent = `Filter societies (${societySelected.size} shown) ▾`;
+    renderSocietyFilterList();
+    renderSocietyLegend();
+    renderSocietyTrendChart();
+  }
+
+  function resetSocietyFilter() {
+    societySelected = new Set(societyDefaultCodes);
+    onSocietySelectionChange();
+  }
+
+  function renderSocietyTrendChart() {
+    renderLineChart('society-trend-svg', 'society-trend-svg-wrap', 'society-trend-tooltip', societyTrendData.dates, currentSocietySeriesDefs(), societyTrendData.series, 'count');
+  }
+
+  renderSocietyFilterList();
+  renderSocietyLegend();
+
+  window.addEventListener('resize', () => {
+    const trendsTab = document.getElementById('tab-trends');
+    if (trendsTab && !trendsTab.hidden) { renderTrendChart(); renderSocietyTrendChart(); renderGradeBarChart(); }
+  });
+
+  function sortByMembers(tableId, th) {
+    const table = document.getElementById(tableId);
+    const tbody = table.querySelector('tbody');
+    const dir = th.dataset.dir === 'asc' ? 'desc' : 'asc';
+    table.querySelectorAll('th.sortable').forEach(h => { h.dataset.dir = ''; h.querySelector('.sort-arrow').textContent = ''; });
+    th.dataset.dir = dir;
+    th.querySelector('.sort-arrow').textContent = dir === 'asc' ? '▲' : '▼';
+
+    const rows = Array.from(tbody.children);
+    const groups = [];
+    for (let i = 0; i < rows.length; i++) {
+      if (rows[i].classList.contains('ou-row')) {
+        const group = [rows[i]];
+        let j = i + 1;
+        while (j < rows.length && rows[j].classList.contains('detail-row')) { group.push(rows[j]); j++; }
+        groups.push({ group, members: parseInt(rows[i].dataset.members, 10) || 0 });
+        i = j - 1;
+      }
+    }
+    groups.sort((a, b) => dir === 'asc' ? a.members - b.members : b.members - a.members);
+    groups.forEach(g => g.group.forEach(el => tbody.appendChild(el)));
+  }
+</script>
+</body>
+</html>

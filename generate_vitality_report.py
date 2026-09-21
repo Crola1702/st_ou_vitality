@@ -87,10 +87,10 @@ def normalize_position(position: str) -> str:
     return candidate if candidate in STANDARD_POSITIONS else position
 
 
-def find_events_file() -> Path:
-    matches = [p for p in BASE_DIR.glob("*Events*.csv")]
+def find_events_file(base_dir: Path = BASE_DIR) -> Path:
+    matches = [p for p in base_dir.glob("*Events*.csv")]
     if not matches:
-        raise FileNotFoundError("No *Events*.csv file found in project directory")
+        raise FileNotFoundError(f"No *Events*.csv file found in {base_dir}")
     return max(matches, key=lambda p: p.stat().st_mtime)
 
 
@@ -207,15 +207,31 @@ class OU:
         "events_unreported_general",
         "events_unreported_technical",
         "officers",
+        "section",
+        "council",
     )
 
-    def __init__(self, name: str, spoid: str, ou_type: str, university: str, member_count: int):
+    def __init__(
+        self,
+        name: str,
+        spoid: str,
+        ou_type: str,
+        university: str,
+        member_count: int,
+        section: str = "",
+        council: str = "",
+    ):
         self.name = name
         self.spoid = spoid
         self.ou_type = ou_type
         self.university = university
         self.society = derive_society(name, university) if ou_type != "Student Branch" else ""
         self.member_count = member_count
+        # IEEE geographic parents (e.g. "Colombia Section" / "Andean Council"),
+        # only used by multi-section runs (r9/) to group OUs; "" when the
+        # export doesn't carry them.
+        self.section = section
+        self.council = council
         self.events_general = 0
         self.events_technical = 0
         self.events_unreported_general = 0
@@ -223,10 +239,18 @@ class OU:
         self.officers: set[str] = set()
 
 
-def load_ou_universe() -> dict[str, OU]:
+def load_ou_universe(
+    branch_file: Path = BRANCH_MEMBER_FILE,
+    chapter_file: Path = CHAPTER_MEMBER_FILE,
+) -> dict[str, OU]:
+    """SPOID -> OU from the two member-count exports. The file arguments
+    exist for multi-section runs (r9/) that read exports from elsewhere;
+    the defaults are the repo-root files. Section/Council come from the
+    exports' own columns (exact vTools headers, trailing spaces included)
+    and are left "" when absent."""
     units: dict[str, OU] = {}
 
-    with open(BRANCH_MEMBER_FILE, encoding="utf-16") as f:
+    with open(branch_file, encoding="utf-16") as f:
         for row in csv.DictReader(f, delimiter="\t"):
             spoid = row["Student Branch SPO ID"].strip()
             if not spoid:
@@ -237,9 +261,11 @@ def load_ou_universe() -> dict[str, OU]:
                 ou_type="Student Branch",
                 university=row["School Name "].strip(),
                 member_count=clean_number(row["Count of SB Attendees"]),
+                section=row.get("Section Name   ", "").strip(),
+                council=row.get("Council Name     ", "").strip(),
             )
 
-    with open(CHAPTER_MEMBER_FILE, encoding="utf-16") as f:
+    with open(chapter_file, encoding="utf-16") as f:
         for row in csv.DictReader(f, delimiter="\t"):
             spoid = row["Student Branch Chapter SPO ID"].strip()
             if not spoid:
@@ -254,14 +280,23 @@ def load_ou_universe() -> dict[str, OU]:
                 ou_type=ou_type,
                 university=row["School Name "].strip(),
                 member_count=clean_number(row[member_col]),
+                section=row.get("Section Name   ", "").strip(),
+                council=row.get("Council Name     ", "").strip(),
             )
 
     return units
 
 
-def load_officers(units: dict[str, OU]) -> None:
-    with open(VOLUNTEER_FILE, encoding="utf-16") as f:
+def load_officers(units: dict[str, OU], volunteer_file: Path = VOLUNTEER_FILE) -> None:
+    """Populate each OU's officer-title set from the volunteer export. Only
+    currently held positions count: the root export is already Active-only,
+    but the region-wide variant (r9/) also lists every "Past" holder, and
+    counting those would report vacant seats as filled."""
+    with open(volunteer_file, encoding="utf-16") as f:
         for row in csv.DictReader(f, delimiter="\t"):
+            status = row.get("Volunteer Position Status", "").strip()
+            if status and status != "Active":
+                continue
             spoid = row["OU SPO ID"].strip()
             ou = units.get(spoid)
             if ou is None:
@@ -279,8 +314,9 @@ def parse_event_date(value: str) -> datetime | None:
         return None
 
 
-def load_events(units: dict[str, OU]) -> None:
-    events_path = find_events_file()
+def load_events(units: dict[str, OU], events_path: Path | None = None) -> None:
+    if events_path is None:
+        events_path = find_events_file()
     with open(events_path, encoding="utf-8-sig") as f:
         for row in csv.DictReader(f):
             event_date = parse_event_date(row.get("Event Date", ""))
@@ -837,7 +873,14 @@ def build_dashboard(
     society_history_path: Path,
     grade_history_path: Path,
     promotions_summary_path: Path,
+    *,
+    title: str = "IEEE Student OU Vitality Dashboard",
+    nav_html: str = "",
 ) -> None:
+    """Write the self-contained dashboard page. `title` is the page/H1
+    title; `nav_html` is raw HTML inserted under the subtitle (multi-section
+    runs put their scope switcher there) — both default to the single
+    Colombia dashboard's output."""
     by_type: dict[str, list[OU]] = {"Student Branch": [], "Student Branch Chapter": [], "Affinity Group": []}
     for ou in units:
         by_type[ou.ou_type].append(ou)
@@ -1150,7 +1193,7 @@ def build_dashboard(
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>IEEE Student OU Vitality Dashboard</title>
+<title>{html.escape(title)}</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
   .viz-root {{
@@ -1350,6 +1393,18 @@ def build_dashboard(
     border: 1px solid var(--border); border-radius: 999px; padding: 4px 12px;
   }}
   .byline a:hover {{ color: var(--text-primary); border-color: var(--text-secondary); }}
+  .scope-nav {{ display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 0 0 20px; }}
+  .scope-nav a {{ color: var(--text-secondary); font-size: 0.9rem; }}
+  .scope-nav a:hover {{ color: var(--text-primary); }}
+  .scope-nav select {{
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface-1);
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    max-width: 320px;
+  }}
 
   .resources {{ margin: 0 0 24px; }}
   .resources summary {{
@@ -1372,8 +1427,9 @@ def build_dashboard(
 <div class="viz-root">
   <div class="container">
     <p class="byline"><a href="https://www.linkedin.com/in/cristobalarroyo/" target="_blank" rel="noopener">By Cristóbal Arroyo</a> <a href="https://github.com/Crola1702/st_ou_vitality" target="_blank" rel="noopener">See on GitHub</a> <a href="university_report.html" target="_blank" rel="noopener">Printable University Reports</a> <a href="society_report.html" target="_blank" rel="noopener">Printable Society Reports</a></p>
-    <h1>IEEE Student OU Vitality Dashboard</h1>
+    <h1>{html.escape(title)}</h1>
     <p class="subtitle">Generated from local vTools exports. Events source: {html.escape(events_path.name)}.</p>
+{nav_html}
 
     <details class="resources">
       <summary>Requirements &amp; resources for students</summary>

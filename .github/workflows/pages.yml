@@ -7,6 +7,7 @@ on:
       - vitality_dashboard.html
       - university_report.html
       - society_report.html
+      - r9/dashboards/**
       - .github/workflows/pages.yml
   workflow_dispatch:
 
@@ -40,6 +41,11 @@ jobs:
           fi
           if [ -f society_report.html ]; then
             cp society_report.html _site/society_report.html
+          fi
+          # Region 9 dashboards (beta): served as-is under /beta_r9/, so the
+          # section picker's relative links keep working.
+          if [ -d r9/dashboards ]; then
+            cp -r r9/dashboards _site/beta_r9
           fi
 
       - uses: actions/upload-pages-artifact@v3

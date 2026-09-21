@@ -1,0 +1,33 @@
+Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
+"Instituto Tecnologico De Morelia,WIE",SBA99521,Affinity Group,Instituto Tecnologico de Morelia,WIE,16,6,Yes,3,,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Univ Michoacana De San Nicolas De Hidalgo, WIE",SBA02671,Affinity Group,Universidad Michoacana de San Nicolas de Hidalgo,WIE,1,6,No,0,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+Instituto Tecnologico De Lazaro Cardenas,STB99992A,Student Branch,Instituto Tecnologico De Lazaro Cardenas,,65,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+Instituto Tecnologico De Morelia,STB99521,Student Branch,Instituto Tecnologico de Morelia,,76,12,Yes,10,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Instituto Tecnologico Superior de Patzcuaro,STB11555,Student Branch,Instituto Tecnologico Superior de Patzcuaro,,1,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Instituto Tecnologico Superior de Uruapan,STB11527,Student Branch,Instituto Tecnologico Superior de Uruapan,,12,12,Yes,0,,0,4,No,Yes,No,,No,No,No,No,Partial,1/3,Not Met
+Instituto Tecnologico de la Costa Grande,STB62521A,Student Branch,Instituto Tecnologico de la Costa Grande,,20,12,Yes,0,,0,4,No,Yes,Yes,,No,No,No,No,Met,2/3,Not Met
+Univ Michoacana De San Nicolas De Hidalgo,STB02671,Student Branch,Universidad Michoacana de San Nicolas de Hidalgo,,2,12,No,6,,4,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+Universidad Technologica De Morelia,STB18021,Student Branch,Universidad Tecnologica de Morelia,,5,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Universidad Vasco de Quiroga,STB45891557,Student Branch,Universidad Vasco de Quiroga,,20,12,Yes,1,,0,4,No,Yes,Yes,,No,Yes,Yes,Yes,Met,2/3,Not Met
+Universidad de Colima - Sede Manzanillo,STB66251,Student Branch,Universidad de Colima - Sede Manzanillo,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+"Instituto Tecnologico De Lazaro Cardenas,AES10",SBC99992E,Student Branch Chapter,Instituto Tecnologico De Lazaro Cardenas,AES10,3,6,No,0,0,0,2,No,Yes,,No,Yes,Yes,No,Yes,Partial,0/3,Not Met
+"Instituto Tecnologico De Lazaro Cardenas,C16",SBC99992C,Student Branch Chapter,Instituto Tecnologico De Lazaro Cardenas,C16,10,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,Yes,No,No,Met,2/3,Not Met
+"Instituto Tecnologico De Lazaro Cardenas,CAS04",SBC99992D,Student Branch Chapter,Instituto Tecnologico De Lazaro Cardenas,CAS04,6,6,Yes,8,1,0,2,No,Yes,,Yes,No,No,No,Yes,Met,2/3,Not Met
+"Instituto Tecnologico De Lazaro Cardenas,CIS11",SBC99992F,Student Branch Chapter,Instituto Tecnologico De Lazaro Cardenas,CIS11,12,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,No,No,Yes,Met,2/3,Not Met
+"Instituto Tecnologico De Lazaro Cardenas,ED15",SBC99992A,Student Branch Chapter,Instituto Tecnologico De Lazaro Cardenas,ED15,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Instituto Tecnologico De Lazaro Cardenas,PE31",SBC99992G,Student Branch Chapter,Instituto Tecnologico De Lazaro Cardenas,PE31,8,6,Yes,4,1,12,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Instituto Tecnologico De Lazaro Cardenas,RA24",SBC99992B,Student Branch Chapter,Instituto Tecnologico De Lazaro Cardenas,RA24,20,6,Yes,0,0,2,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+"Instituto Tecnologico De Morelia, C16",SBC99521B,Student Branch Chapter,Instituto Tecnologico de Morelia,C16,10,6,Yes,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,1/3,Not Met
+"Instituto Tecnologico De Morelia, EMB18",SBC99521A,Student Branch Chapter,Instituto Tecnologico de Morelia,EMB18,15,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,No,Yes,Yes,Met,2/3,Not Met
+"Instituto Tecnologico De Morelia, PE31",SBC99521E,Student Branch Chapter,Instituto Tecnologico de Morelia,PE31,11,6,Yes,1,1,4,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Instituto Tecnologico De Morelia,COM19",SBC995211,Student Branch Chapter,Instituto Tecnologico de Morelia,COM19,5,6,No,0,0,0,2,No,Yes,,No,Yes,No,No,No,Partial,0/3,Not Met
+"Instituto Tecnologico De Morelia,ED15",SBC99521D,Student Branch Chapter,Instituto Tecnologico de Morelia,ED15,11,6,Yes,1,1,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Instituto Tecnologico De Morelia,IA34",SBC99521C,Student Branch Chapter,Instituto Tecnologico de Morelia,IA34,5,6,No,1,0,0,2,No,Yes,,Yes,Yes,No,Yes,No,Met,1/3,Not Met
+"Instituto Tecnologico De Morelia,RA24",SBC99521F,Student Branch Chapter,Instituto Tecnologico de Morelia,RA24,5,6,No,0,0,0,2,No,No,,Yes,Yes,No,Yes,No,Partial,0/3,Not Met
+"Instituto Tecnologico Superior de Patzcuaro,RA24",SBC11555,Student Branch Chapter,Instituto Tecnologico Superior de Patzcuaro,RA24,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Instituto Tecnologico de Morelia,PEL35",SBC99521G,Student Branch Chapter,Instituto Tecnologico de Morelia,PEL35,3,6,No,0,0,0,2,No,Yes,,Yes,No,No,Yes,No,Met,1/3,Not Met
+"Univ Michoacana De San Nicolas De Hidalgo,C16",SBC02671B,Student Branch Chapter,Universidad Michoacana de San Nicolas de Hidalgo,C16,1,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Univ Michoacana De San Nicolas De Hidalgo,IA34",SBC02671A,Student Branch Chapter,Universidad Michoacana de San Nicolas de Hidalgo,IA34,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Univ Michoacana De San Nicolas De Hidalgo,PE31",SBC026711,Student Branch Chapter,Universidad Michoacana de San Nicolas de Hidalgo,PE31,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Univ Michoacana de San Nicolas de Hidalgo,RA24",SBC02671C,Student Branch Chapter,Universidad Michoacana de San Nicolas de Hidalgo,RA24,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Universidad de Colima - Sede Manzanillo,COM19",SBC66251C,Student Branch Chapter,Universidad de Colima - Sede Manzanillo,COM19,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met

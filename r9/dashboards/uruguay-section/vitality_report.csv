@@ -1,0 +1,13 @@
+Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
+Ort Instituto Tecnologico-Uruguay,STB60261,Student Branch,Ort Instituto Tecnologico-Uruguay,,1,12,No,1,,1,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Univ Mayor De La Republica Oriental Del Uruguay,STB17841,Student Branch,Univ Mayor De La Republica Oriental Del Uruguay,,2,12,No,5,,1,4,Yes,Yes,No,,Yes,Yes,Yes,Yes,Partial,1/3,Not Met
+Universidad De Montevideo,STB45891747,Student Branch,Universidad De Montevideo,,7,12,No,1,,1,4,No,Yes,No,,No,No,No,Yes,Partial,0/3,Not Met
+Universidad Tecnológica del Uruguay,STB60216685,Student Branch,Universidad Tecnológica del Uruguay,,25,12,Yes,2,,5,4,No,Yes,Yes,,Yes,Yes,Yes,No,Met,2/3,Not Met
+Uruguay Catolica Univ De Damas Larranag,STB60011,Student Branch,Uruguay Univ Catolica De Damaso Larranaga,,9,12,No,1,,0,4,No,Yes,No,,No,No,No,No,Partial,0/3,Not Met
+Uruguay Univ del Trabajo,STB60001,Student Branch,Uruguay Univ del Trabajo,,0,12,No,0,,0,4,No,Yes,No,,No,No,No,No,Partial,0/3,Not Met
+"Ort Instituto Tecnologico - Uruguay, PE31",SBC602611,Student Branch Chapter,Ort Instituto Tecnologico-Uruguay,PE31,0,6,No,1,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Univ Mayor De La Republica Oriental-Uruguay,EMB18",SBC178411,Student Branch Chapter,Univ Mayor De La Republica Oriental Del Uruguay,EMB18,0,6,No,4,1,0,2,No,Yes,,Yes,Yes,Yes,No,No,Met,1/3,Not Met
+"Universidad De Montevideo,COM19/C16",SBC45891747A,Student Branch Chapter,Universidad De Montevideo,COM19/C16,5,6,No,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,1/3,Not Met
+"Universidad De Montevideo,RA24",SBC45891747,Student Branch Chapter,Universidad De Montevideo,RA24,4,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Universidad Tecnológica del Uruguay,COM19",SBC60216685A,Student Branch Chapter,Universidad Tecnológica del Uruguay,COM19,13,6,Yes,0,0,1,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+"Universidad Tecnológica del Uruguay,EMB18",SBC60216685,Student Branch Chapter,Universidad Tecnológica del Uruguay,EMB18,11,6,Yes,1,1,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met

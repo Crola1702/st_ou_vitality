@@ -1,0 +1,51 @@
+Date,SPO ID,Unit Type,University,Society,Member Count,Requirements Met,Members Met,Events Met,Officers Status,Overall Vitality
+2026-09-21,SBA03571,Affinity Group,Instituto Tecnologico Superior de Coatzacoalcos,WIE,12,2,Yes,No,Met,Not Met
+2026-09-21,SBA29431,Affinity Group,Instituto Tecnologico De Veracruz,WIE,7,1,Yes,No,Not Met,Not Met
+2026-09-21,SBA01015,Affinity Group,Instituto Tecnologico Superior de Xalapa,WIE,6,1,Yes,No,Not Met,Not Met
+2026-09-21,SBA01022,Affinity Group,Universidad Veracruzana - FIME,WIE,31,3,Yes,Yes,Met,Met
+2026-09-21,SBA11411,Affinity Group,Universidad Veracruzana Sede Coatzacoalcos,WIE,0,0,No,No,Not Met,Not Met
+2026-09-21,STB29431,Student Branch,Instituto Tecnologico De Veracruz,,71,2,Yes,No,Met,Not Met
+2026-09-21,STB03571,Student Branch,Instituto Tecnologico Superior de Coatzacoalcos,,57,2,Yes,No,Met,Not Met
+2026-09-21,STB60224241,Student Branch,Instituto Tecnologico Superior de Misantla,,15,1,Yes,No,Partial,Not Met
+2026-09-21,STB60209749,Student Branch,Instituto Tecnologico Superior de Naranjos,,0,0,No,No,Not Met,Not Met
+2026-09-21,STB10089,Student Branch,Instituto Tecnologico Superior de Poza Rica,,5,0,No,No,Not Met,Not Met
+2026-09-21,STB01015,Student Branch,Instituto Tecnologico Superior de Xalapa,,30,2,Yes,No,Met,Not Met
+2026-09-21,STB37821,Student Branch,Instituto Tecnologico de Orizaba,,31,2,Yes,No,Met,Not Met
+2026-09-21,STB63191,Student Branch,Universidad Cristobal Colon,,31,2,Yes,No,Met,Not Met
+2026-09-21,STB01022,Student Branch,Universidad Veracruzana - FIME,,44,2,Yes,No,Met,Not Met
+2026-09-21,STB60191,Student Branch,Universidad Veracruzana FIE,,75,2,Yes,No,Met,Not Met
+2026-09-21,STB65671,Student Branch,Universidad Veracruzana Ing Boca del Rio,,124,2,Yes,Yes,Partial,Not Met
+2026-09-21,STB29161,Student Branch,Universidad Veracruzana Microna,,9,1,No,No,Met,Not Met
+2026-09-21,STB60235185,Student Branch,Universidad Veracruzana Orizaba Cordoba,,67,2,Yes,No,Met,Not Met
+2026-09-21,STB11411,Student Branch,Universidad Veracruzana Sede Coatzacoalcos,,0,0,No,No,Not Met,Not Met
+2026-09-21,STB60221827,Student Branch,Universidad Veracruzana-LSCA,,30,1,Yes,No,Not Met,Not Met
+2026-09-21,STB11700,Student Branch,Universidad Veracruzana-Poza Rica,,13,2,Yes,No,Met,Not Met
+2026-09-21,SBC03571E,Student Branch Chapter,Instituto Tecnologico Superior de Coatzacoalcos,PEL35,0,0,No,No,Not Met,Not Met
+2026-09-21,SBC03571C,Student Branch Chapter,Instituto Tecnologico Superior de Coatzacoalcos,IA34,0,0,No,No,Not Met,Not Met
+2026-09-21,SBC03571D,Student Branch Chapter,Instituto Tecnologico Superior de Coatzacoalcos,IE13,0,0,No,No,Not Met,Not Met
+2026-09-21,SBC03571B,Student Branch Chapter,Instituto Tecnologico Superior de Coatzacoalcos,PE31,15,3,Yes,Yes,Met,Met
+2026-09-21,SBC03571A,Student Branch Chapter,Instituto Tecnologico Superior de Coatzacoalcos,RA24,27,2,Yes,No,Met,Not Met
+2026-09-21,SBC03571F,Student Branch Chapter,Instituto Tecnologico Superior de Coatzacoalcos,IM09,0,0,No,No,Not Met,Not Met
+2026-09-21,SBC2943A,Student Branch Chapter,Instituto Tecnologico De Veracruz,C16,12,2,Yes,No,Met,Not Met
+2026-09-21,SBC29431,Student Branch Chapter,Instituto Tecnologico De Veracruz,RA24,37,2,Yes,No,Met,Not Met
+2026-09-21,SBC2943B,Student Branch Chapter,Instituto Tecnologico De Veracruz,PE31,7,1,Yes,No,Partial,Not Met
+2026-09-21,SBC01015,Student Branch Chapter,Instituto Tecnologico Superior de Xalapa,C16,9,2,Yes,No,Met,Not Met
+2026-09-21,SBC37821,Student Branch Chapter,Instituto Tecnologico de Orizaba,RA24,22,2,Yes,No,Met,Not Met
+2026-09-21,SBC63191,Student Branch Chapter,Universidad Cristobal Colon,C16/COM19/ED15,7,1,Yes,No,Not Met,Not Met
+2026-09-21,SBC01022A,Student Branch Chapter,Universidad Veracruzana - FIME,ED15,35,2,Yes,No,Met,Not Met
+2026-09-21,SBC01022,Student Branch Chapter,Universidad Veracruzana - FIME,PE31,38,2,Yes,No,Met,Not Met
+2026-09-21,SBC60191B,Student Branch Chapter,Universidad Veracruzana FIE,AES10,10,2,Yes,No,Met,Not Met
+2026-09-21,SBC60191A,Student Branch Chapter,Universidad Veracruzana FIE,EMB18,24,1,Yes,No,Partial,Not Met
+2026-09-21,SBC60191,Student Branch Chapter,Universidad Veracruzana FIE,RA24,33,1,Yes,No,Partial,Not Met
+2026-09-21,SBC65671,Student Branch Chapter,Universidad Veracruzana Ing Boca del Rio,CS23,0,0,No,No,Not Met,Not Met
+2026-09-21,SBC65671B,Student Branch Chapter,Universidad Veracruzana Ing Boca del Rio,ED15,8,2,Yes,No,Met,Not Met
+2026-09-21,SBC65671A,Student Branch Chapter,Universidad Veracruzana Ing Boca del Rio,RA24,34,3,Yes,Yes,Met,Met
+2026-09-21,SBC65671C,Student Branch Chapter,Universidad Veracruzana Ing Boca del Rio,SMC28,0,0,No,No,Not Met,Not Met
+2026-09-21,SBC65671E,Student Branch Chapter,Universidad Veracruzana Ing Boca del Rio,C16,32,3,Yes,Yes,Met,Met
+2026-09-21,SBC65671D,Student Branch Chapter,Universidad Veracruzana Ing Boca del Rio,PE31,2,0,No,No,Not Met,Not Met
+2026-09-21,SBC65671F,Student Branch Chapter,Universidad Veracruzana Ing Boca del Rio,TEM14,21,2,Yes,No,Met,Not Met
+2026-09-21,SBC65671G,Student Branch Chapter,Universidad Veracruzana Ing Boca del Rio,VT06,22,2,Yes,No,Met,Not Met
+2026-09-21,SBC29161,Student Branch Chapter,Universidad Veracruzana Microna,ED15,1,0,No,No,Partial,Not Met
+2026-09-21,SBC11411A,Student Branch Chapter,Universidad Veracruzana Sede Coatzacoalcos,ED15,0,0,No,No,Not Met,Not Met
+2026-09-21,SBC11411,Student Branch Chapter,Universidad Veracruzana Sede Coatzacoalcos,PE31,0,0,No,No,Not Met,Not Met
+2026-09-21,SBC60221827,Student Branch Chapter,Universidad Veracruzana-LSCA,C16,6,2,Yes,No,Met,Not Met

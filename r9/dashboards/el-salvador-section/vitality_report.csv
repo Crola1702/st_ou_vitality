@@ -1,0 +1,53 @@
+Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
+"Centroamericana Univ Jose Simeon Canas,SIGHT",SBA53001S,Affinity Group,Centroamericana Univ Jose Simeon Canas,SIGHT,16,6,Yes,1,,0,2,No,Yes,,No,No,No,No,No,Partial,1/3,Not Met
+"Centroamericana Univ Jose Simeon Canas,WIE",SBA53001,Affinity Group,Centroamericana Univ Jose Simeon Canas,WIE,11,6,Yes,2,,1,2,Yes,Yes,,No,No,No,No,No,Partial,2/3,Not Met
+"Escuela Especializada Ingenieria ITCA-FEPADE,WIE",SBA11409,Affinity Group,Escuela Especializada Ingenieria ITCA-FEPADE,WIE,10,6,Yes,4,,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+Universidad Don Bosco SB SIGHT Group,SBA60431S,Affinity Group,Universidad Don Bosco,SB SIGHT Group,80,6,Yes,5,,4,2,Yes,No,,No,Yes,Yes,Yes,No,Not Met,2/3,Not Met
+"Universidad Don Bosco,WIE",SBA60431,Affinity Group,Universidad Don Bosco,WIE,62,6,Yes,8,,4,2,Yes,No,,No,No,No,No,No,Not Met,2/3,Not Met
+"Universidad Dr Jose Matias Delgado,WIE",SBA10117,Affinity Group,Universidad Dr Jose Matias Delgado,WIE,37,6,Yes,7,,0,2,Yes,Yes,,No,Yes,Yes,Yes,Yes,Partial,2/3,Not Met
+"Universidad Evangélica de El Salvador,WIE",SBA29381,Affinity Group,Universidad Evangélica de El Salvador,WIE,18,6,Yes,2,,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
+"Universidad de El Salvador,SIGHT",SBA99671S,Affinity Group,Universidad de el Salvador,SIGHT,14,6,Yes,0,,1,2,No,Yes,,No,Yes,Yes,Yes,No,Partial,1/3,Not Met
+Universidad de Sonsonate SB SIGHT,SBA07081S,Affinity Group,Universidad de Sonsonate,SB SIGHT,1,6,No,0,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Universidad de Sonsonate, WIE",SBA07081,Affinity Group,Universidad de Sonsonate,WIE,1,6,No,0,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Universidad de el Salvador, WIE",SBA99671,Affinity Group,Universidad de el Salvador,WIE,31,6,Yes,4,,4,2,Yes,Yes,,Yes,Yes,No,Yes,Yes,Met,3/3,Met
+Centroamericana Univ Jose Simeon Canas,STB53001,Student Branch,Centroamericana Univ Jose Simeon Canas,,50,12,Yes,5,,6,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+El Salvador Univ Evangelica Univ,STB29381A,Student Branch,Universidad Evangélica de El Salvador,,47,12,Yes,21,,2,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Escuela Especializada Ingenieria ITCA-FEPADE,STB11409,Student Branch,Escuela Especializada Ingenieria ITCA-FEPADE,,21,12,Yes,16,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Facultad Multidisciplinaria de Occidente UES,STB11702,Student Branch,Facultad Multidisciplinaria de Occidente UES,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Universidad Don Bosco,STB60431,Student Branch,Universidad Don Bosco,,167,12,Yes,53,,8,4,Yes,Yes,Yes,,Yes,No,Yes,Yes,Met,3/3,Met
+Universidad Dr Jose Matias Delgado,STB10117,Student Branch,Universidad Dr Jose Matias Delgado,,48,12,Yes,9,,1,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Universidad Politecnica de El Salvador,STB30041,Student Branch,Universidad Politecnica de El Salvador,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Universidad de Sonsonate,STB07081,Student Branch,Universidad de Sonsonate,,1,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Universidad de el Salvador,STB99671,Student Branch,Universidad de el Salvador,,88,12,Yes,13,,15,4,Yes,Yes,Yes,,Yes,Yes,No,Yes,Met,3/3,Met
+"Centroamericana Univ Jose Simeon Canas,C16",SBC53001,Student Branch Chapter,Centroamericana Univ Jose Simeon Canas,C16,9,6,Yes,1,0,1,2,No,Yes,,No,No,No,No,No,Partial,1/3,Not Met
+"Centroamericana Univ Jose Simeon Canas,COM19",SBC53001A,Student Branch Chapter,Centroamericana Univ Jose Simeon Canas,COM19,1,6,No,1,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Centroamericana Univ Jose Simeon Canas,IA34",SBC53001B,Student Branch Chapter,Centroamericana Univ Jose Simeon Canas,IA34,10,6,Yes,1,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Centroamericana Univ Jose Simeon Canas,PE31",SBC53001C,Student Branch Chapter,Centroamericana Univ Jose Simeon Canas,PE31,11,6,Yes,2,1,3,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
+"Centroamericana Univ Jose Simeon Canas,RA24",SBC53001D,Student Branch Chapter,Centroamericana Univ Jose Simeon Canas,RA24,8,6,Yes,3,2,0,2,Yes,Yes,,Yes,Yes,No,No,Yes,Met,3/3,Met
+"Escuela Especializada Ingenieria ITCA-FEPADE,ED15",SBC11409,Student Branch Chapter,Escuela Especializada Ingenieria ITCA-FEPADE,ED15,13,6,Yes,3,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Facultad Multidisciplinaria de Occidente UES,GRS29",SBC11702,Student Branch Chapter,Facultad Multidisciplinaria de Occidente UES,GRS29,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Universidad Don Bosco,AES10",SBC60431D,Student Branch Chapter,Universidad Don Bosco,AES10,12,6,Yes,7,4,1,2,Yes,Yes,,Yes,No,Yes,No,Yes,Met,3/3,Met
+"Universidad Don Bosco,C16",SBC60431C,Student Branch Chapter,Universidad Don Bosco,C16,39,6,Yes,14,2,1,2,Yes,Yes,,No,Yes,Yes,Yes,Yes,Partial,2/3,Not Met
+"Universidad Don Bosco,CAS04",SBC60431I,Student Branch Chapter,Universidad Don Bosco,CAS04,20,6,Yes,2,1,1,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Universidad Don Bosco,COM19",SBC60431A,Student Branch Chapter,Universidad Don Bosco,COM19,6,6,Yes,3,0,1,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Universidad Don Bosco,ED15",SBC60431G,Student Branch Chapter,Universidad Don Bosco,ED15,46,6,Yes,9,5,1,2,Yes,Yes,,No,Yes,No,No,Yes,Partial,2/3,Not Met
+"Universidad Don Bosco,EMB18",SBC60431E,Student Branch Chapter,Universidad Don Bosco,EMB18,39,6,Yes,11,3,2,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Universidad Don Bosco,IA34",SBC60431H,Student Branch Chapter,Universidad Don Bosco,IA34,27,6,Yes,15,5,0,2,Yes,Yes,,Yes,No,Yes,Yes,No,Met,3/3,Met
+"Universidad Don Bosco,PE31",SBC60431,Student Branch Chapter,Universidad Don Bosco,PE31,21,6,Yes,3,2,1,2,Yes,Yes,,No,Yes,Yes,No,Yes,Partial,2/3,Not Met
+"Universidad Don Bosco,RA24",SBC60431B,Student Branch Chapter,Universidad Don Bosco,RA24,23,6,Yes,11,6,3,2,Yes,Yes,,No,No,No,No,No,Partial,2/3,Not Met
+"Universidad Don Bosco,TEM14",SBC60431F,Student Branch Chapter,Universidad Don Bosco,TEM14,26,6,Yes,8,4,1,2,Yes,No,,No,No,No,No,No,Not Met,2/3,Not Met
+"Universidad Evangélica de El Salvador,C16",SBC29381A,Student Branch Chapter,Universidad Evangélica de El Salvador,C16,16,6,Yes,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+"Universidad Evangélica de El Salvador,RA24",SBC29381,Student Branch Chapter,Universidad Evangélica de El Salvador,RA24,14,6,Yes,1,0,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+"Universidad Politecnica de El Salvador,PE31",SBC30041,Student Branch Chapter,Universidad Politecnica de El Salvador,PE31,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Universidad de Sonsonate, C16",SBC07081A,Student Branch Chapter,Universidad de Sonsonate,C16,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Universidad de Sonsonate, PE31",SBC07081B,Student Branch Chapter,Universidad de Sonsonate,PE31,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Universidad de Sonsonate,IA34",SBC07081C,Student Branch Chapter,Universidad de Sonsonate,IA34,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Universidad de Sonsonate,RA24",SBC07081D,Student Branch Chapter,Universidad de Sonsonate,RA24,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Universidad de el Salvador, COM19",SBC99671B,Student Branch Chapter,Universidad de el Salvador,COM19,5,6,No,1,1,3,2,No,Yes,,Yes,No,Yes,Yes,No,Met,1/3,Not Met
+"Universidad de el Salvador, IA34",SBC99671A,Student Branch Chapter,Universidad de el Salvador,IA34,30,6,Yes,15,14,0,2,Yes,Yes,,No,Yes,Yes,Yes,Yes,Partial,2/3,Not Met
+"Universidad de el Salvador, PE31",SBC99671,Student Branch Chapter,Universidad de el Salvador,PE31,31,6,Yes,2,1,1,2,No,Yes,,No,No,Yes,No,Yes,Partial,1/3,Not Met
+"Universidad de el Salvador, PEL35",SBC99671C,Student Branch Chapter,Universidad de el Salvador,PEL35,13,6,Yes,0,0,1,2,No,Yes,,No,Yes,No,Yes,Yes,Partial,1/3,Not Met
+"Universidad de el Salvador,C16",SBC99671F,Student Branch Chapter,Universidad de el Salvador,C16,20,6,Yes,6,4,1,2,Yes,Yes,,No,Yes,Yes,Yes,Yes,Partial,2/3,Not Met
+"Universidad de el Salvador,ED15",SBC99671G,Student Branch Chapter,Universidad de el Salvador,ED15,15,6,Yes,1,0,5,2,No,Yes,,No,Yes,Yes,Yes,Yes,Partial,1/3,Not Met
+"Universidad de el Salvador,GRS29",SBC99671D,Student Branch Chapter,Universidad de el Salvador,GRS29,31,6,Yes,1,1,1,2,No,Yes,,No,No,Yes,Yes,No,Partial,1/3,Not Met
+"Universidad de el Salvador,RA24",SBC99671E,Student Branch Chapter,Universidad de el Salvador,RA24,8,6,Yes,0,0,0,2,No,Yes,,No,Yes,Yes,Yes,Yes,Partial,1/3,Not Met

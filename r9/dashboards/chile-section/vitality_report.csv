@@ -1,0 +1,63 @@
+Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
+"Federico Santa Maria Technical University,WIE",SBA04321,Affinity Group,Federico Santa Maria Technical University,WIE,6,6,Yes,2,,1,2,Yes,Yes,,Yes,No,No,No,No,Met,3/3,Met
+"Pontificia Univ Catolica de Valparaiso,SIGHT",SBA21611S,Affinity Group,Pontificia Universidad Catolica de Valparaiso,SIGHT,4,6,No,0,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Pontificia Universidad Catolica de Chile,SIGHT",SBA09191S,Affinity Group,Pontificia Universidad Catolica de Chile,SIGHT,1,6,No,0,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Pontificia Universidad Catolica de Valparaiso,WIE",SBA21611,Affinity Group,Pontificia Universidad Catolica de Valparaiso,WIE,14,6,Yes,0,,2,2,No,No,,No,Yes,No,Yes,No,Not Met,1/3,Not Met
+"Universidad De Chile,WIE",SBA11791,Affinity Group,Universidad De Chile,WIE,18,6,Yes,5,,2,2,Yes,Yes,,No,Yes,Yes,No,No,Partial,2/3,Not Met
+Universidad Diego Portales IEEE SIGHT,SBA06771S,Affinity Group,Universidad Diego Portales,IEEE SIGHT,16,6,Yes,0,,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Universidad Diego Portales, WIE",SBA06771,Affinity Group,Universidad Diego Portales,WIE,4,6,No,7,,4,2,Yes,Yes,,No,No,No,No,No,Partial,1/3,Not Met
+"Universidad de Chile,SIGHT",SBA11791S,Affinity Group,Universidad De Chile,SIGHT,19,6,Yes,4,,1,2,Yes,Yes,,No,Yes,Yes,Yes,Yes,Partial,2/3,Not Met
+"Universidad de Santiago de Chile,SIGHT",SBA92021S,Affinity Group,Universidad de Santiago de Chile,SIGHT,6,6,Yes,0,,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Universidad de Santiago de Chile,WIE",SBA92021,Affinity Group,Universidad de Santiago de Chile,WIE,8,6,Yes,3,,2,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+Federico Santa Maria Technical University,STB04321,Student Branch,Federico Santa Maria Technical University,,48,12,Yes,1,,3,4,No,Yes,Yes,,No,Yes,Yes,No,Met,2/3,Not Met
+Pontificia Universidad Catolica de Chile,STB09191,Student Branch,Pontificia Universidad Catolica de Chile,,43,12,Yes,2,,5,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+Pontificia Universidad Catolica de Valparaiso,STB21611,Student Branch,Pontificia Universidad Catolica de Valparaiso,,58,12,Yes,1,,4,4,No,Yes,Yes,,No,No,Yes,Yes,Met,2/3,Not Met
+Universidad Adolfo Ibanez,STB11521,Student Branch,Universidad Adolfo Ibanez,,4,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Universidad Andres Bello,STB10224,Student Branch,Universidad Andres Bello,,24,12,Yes,1,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+Universidad De Chile,STB11791,Student Branch,Universidad De Chile,,92,12,Yes,10,,3,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Universidad Diego Portales,STB06771,Student Branch,Universidad Diego Portales,,20,12,Yes,7,,4,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Universidad Finis Terrae,STB60243738,Student Branch,Universidad Finis Terrae,,20,12,Yes,1,,1,4,No,Yes,Yes,,No,No,No,No,Met,2/3,Not Met
+Universidad Mayor,STB41581008,Student Branch,Universidad Mayor,,11,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Universidad San Sebastian,STB60209602,Student Branch,Universidad San Sebastian,,1,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Universidad Technologica Metropolitana,STB01991,Student Branch,Universidad Tecnologica Metropolitana,,1,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Universidad de Antofagasta,STB28261,Student Branch,Universidad de Antofagasta,,20,12,Yes,0,,3,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+Universidad de Los Lagos,STB60243777,Student Branch,Universidad de Los Lagos,,16,12,Yes,2,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+Universidad de O'Higgins,STB60226547,Student Branch,Universidad de O'Higgins,,6,12,No,7,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,No,Met,2/3,Not Met
+Universidad de Santiago de Chile,STB92021,Student Branch,Universidad de Santiago de Chile,,32,12,Yes,0,,0,4,No,Yes,No,,Yes,Yes,Yes,Yes,Partial,1/3,Not Met
+Universidad de Tarapaca,STB29371,Student Branch,Universidad de Tarapaca,,4,12,No,0,,0,4,No,Yes,No,,No,No,No,No,Partial,0/3,Not Met
+Universidad de Valparaiso,STB64627,Student Branch,Universidad de Valparaiso,,3,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+"Federico Santa Maria Tech Univ,CAS04/SSC37/ED15",SBC04321A,Student Branch Chapter,Federico Santa Maria Technical University,CAS04/SSC37/ED15,9,6,Yes,0,0,2,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
+"Federico Santa Maria Technical University,C16",SBC04321,Student Branch Chapter,Federico Santa Maria Technical University,C16,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Federico Santa Maria Technical University,PE31",SBC04321B,Student Branch Chapter,Federico Santa Maria Technical University,PE31,3,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"Federico Santa Maria Technical University,RA24",SBC04321C,Student Branch Chapter,Federico Santa Maria Technical University,RA24,16,6,Yes,0,0,1,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+"Pontificia Univ Catolica de Chile, PE31/PEL35",SBC091911,Student Branch Chapter,Pontificia Universidad Catolica de Chile,PE31/PEL35,5,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Pontificia Univ Catolica de Chile,SSC37/ED15",SBC09191C,Student Branch Chapter,Pontificia Universidad Catolica de Chile,SSC37/ED15,8,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Pontificia Univ Catolica de Valparaiso, C16",SBC21611,Student Branch Chapter,Pontificia Universidad Catolica de Valparaiso,C16,22,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Pontificia Univ Catolica de Valparaiso, CAS04",SBC2161D,Student Branch Chapter,Pontificia Universidad Catolica de Valparaiso,CAS04,10,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Pontificia Univ Catolica de Valparaiso, CIS11",SBC21611E,Student Branch Chapter,Pontificia Universidad Catolica de Valparaiso,CIS11,1,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Pontificia Univ Catolica de Valparaiso, MTT17",SBC2161A,Student Branch Chapter,Pontificia Universidad Catolica de Valparaiso,MTT17,11,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Pontificia Univ Catolica de Valparaiso, PE31",SBC2161C,Student Branch Chapter,Pontificia Universidad Catolica de Valparaiso,PE31,1,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Pontificia Univ Catolica de Valparaiso, PEL35",SBC2161B,Student Branch Chapter,Pontificia Universidad Catolica de Valparaiso,PEL35,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Pontificia Universidad Catolica de Chile, CAS04",SBC09191A,Student Branch Chapter,Pontificia Universidad Catolica de Chile,CAS04,6,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Pontificia Universidad Catolica de Chile,EMB18",SBC09191D,Student Branch Chapter,Pontificia Universidad Catolica de Chile,EMB18,2,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Pontificia Universidad Catolica de Chile,OE22",SBC09191B,Student Branch Chapter,Pontificia Universidad Catolica de Chile,OE22,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Pontificia Universidad Catolica de Valparaiso,AP03",SBC2161F,Student Branch Chapter,Pontificia Universidad Catolica de Valparaiso,AP03,12,6,Yes,1,1,1,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Universidad Andres Bello,RA24,CIS11,C16",SBC10224,Student Branch Chapter,Universidad Andres Bello,"RA24,CIS11,C16",0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Universidad De Chile,C16",SBC11791D,Student Branch Chapter,Universidad De Chile,C16,11,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Universidad De Chile,CIS11",SBC11791E,Student Branch Chapter,Universidad De Chile,CIS11,12,6,Yes,0,0,0,2,No,Yes,,Yes,No,Yes,No,No,Met,2/3,Not Met
+"Universidad De Chile,IA34",SBC11791B,Student Branch Chapter,Universidad De Chile,IA34,9,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Universidad De Chile,PE31",SBC11791A,Student Branch Chapter,Universidad De Chile,PE31,14,6,Yes,1,0,1,2,No,Yes,,No,Yes,Yes,Yes,Yes,Partial,1/3,Not Met
+"Universidad De Chile,RA24",SBC11791C,Student Branch Chapter,Universidad De Chile,RA24,13,6,Yes,3,2,0,2,Yes,Yes,,Yes,Yes,Yes,No,No,Met,3/3,Met
+"Universidad Diego Portales, C16",SBC06771A,Student Branch Chapter,Universidad Diego Portales,C16,5,6,No,7,6,4,2,Yes,Yes,,No,No,No,No,No,Partial,1/3,Not Met
+"Universidad Diego Portales,COM19",SBC06771B,Student Branch Chapter,Universidad Diego Portales,COM19,5,6,No,7,6,4,2,Yes,Yes,,No,No,No,No,No,Partial,1/3,Not Met
+"Universidad San Sebastian,COM19,C16",SBC60209602,Student Branch Chapter,Universidad San Sebastian,"COM19,C16",0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Universidad de Antofagasta,PE31",SBC28261,Student Branch Chapter,Universidad de Antofagasta,PE31,7,6,Yes,1,1,0,2,No,Yes,,No,No,No,No,No,Partial,1/3,Not Met
+"Universidad de Antofagasta,RA24",SBC28261A,Student Branch Chapter,Universidad de Antofagasta,RA24,7,6,Yes,0,0,0,2,No,Yes,,No,No,No,No,No,Partial,1/3,Not Met
+"Universidad de Santiago de Chile,C16/COM19",SBC92021,Student Branch Chapter,Universidad de Santiago de Chile,C16/COM19,3,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"Universidad de Santiago de Chile,CIS11",SBC92021D,Student Branch Chapter,Universidad de Santiago de Chile,CIS11,1,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Universidad de Santiago de Chile,CS23",SBC92021E,Student Branch Chapter,Universidad de Santiago de Chile,CS23,4,6,No,2,0,0,2,No,Yes,,No,Yes,Yes,Yes,Yes,Partial,0/3,Not Met
+"Universidad de Santiago de Chile,EMB18",SBC92021C,Student Branch Chapter,Universidad de Santiago de Chile,EMB18,8,6,Yes,2,2,0,2,Yes,Yes,,No,Yes,Yes,Yes,Yes,Partial,2/3,Not Met
+"Universidad de Santiago de Chile,PE31",SBC92021B,Student Branch Chapter,Universidad de Santiago de Chile,PE31,6,6,Yes,0,0,0,2,No,Yes,,No,No,No,No,No,Partial,1/3,Not Met
+"Universidad de Santiago de Chile,PHO36",SBC92021A,Student Branch Chapter,Universidad de Santiago de Chile,PHO36,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Universidad de Valparaiso,CIS11",SBC64627A,Student Branch Chapter,Universidad de Valparaiso,CIS11,1,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Universidad de Valparaiso,EMB18",SBC64627,Student Branch Chapter,Universidad de Valparaiso,EMB18,1,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met

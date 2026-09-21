@@ -1,0 +1,32 @@
+Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
+"Costa Rica Institute of Technology,SB SIGHT",SBA39461S,Affinity Group,Costa Rica Institute of Technology,SB SIGHT,32,6,Yes,0,,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Costa Rica Institute of Technology,WIE",SBA39461,Affinity Group,Costa Rica Institute of Technology,WIE,30,6,Yes,11,,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Universidad de Costa Rica,WIE",SBA11121,Affinity Group,Universidad de Costa Rica,WIE,9,6,Yes,4,,0,2,Yes,Yes,,No,Yes,Yes,Yes,No,Partial,2/3,Not Met
+Costa Rica Institute of Technology,STB39461,Student Branch,Costa Rica Institute of Technology,,127,12,Yes,13,,2,4,Yes,Yes,Yes,,Yes,No,Yes,Yes,Met,3/3,Met
+Fidelitas Univ,STB62171,Student Branch,Fidelitas Univ,,3,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Inst Tecnologico de Costa Rica - Sede San Carlos,STB11587,Student Branch,Inst Tecnologico de Costa Rica - Sede San Carlos,,12,12,Yes,18,,5,4,Yes,Yes,No,,Yes,Yes,Yes,Yes,Partial,2/3,Not Met
+National University of Costa Rica,STB40239987,Student Branch,National University of Costa Rica,,27,12,Yes,2,,3,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+Univ LatinoAmericana De Ciencia Y Tec ULACIT,STB20225,Student Branch,Universidad Latinoamericana de Ciencia y Tec,,1,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Universidad Invenio,STB60104734,Student Branch,Universidad Invenio,,27,12,Yes,20,,3,4,Yes,Yes,Yes,,Yes,Yes,Yes,No,Met,3/3,Met
+Universidad Latina de Costa Rica,STB65071,Student Branch,Universidad Latina de Costa Rica,,2,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Universidad de Costa Rica,STB11121,Student Branch,Universidad de Costa Rica,,44,12,Yes,12,,2,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Universidad de Costa Rica - Sede Guanacaste,STB10064,Student Branch,Universidad de Costa Rica - Sede Guanacaste,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+"Costa Rica Inst of Technology,ED15",SBC39461J,Student Branch Chapter,Costa Rica Institute of Technology,ED15,14,6,Yes,8,3,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Costa Rica Inst of Technology,RFID741,BIO46",SBC39461F,Student Branch Chapter,Costa Rica Institute of Technology,BIO46,4,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Costa Rica Institute of Technology,AES10",SBC39461I,Student Branch Chapter,Costa Rica Institute of Technology,AES10,12,6,Yes,2,1,0,2,No,Yes,,No,Yes,Yes,No,No,Partial,1/3,Not Met
+"Costa Rica Institute of Technology,C16",SBC39461E,Student Branch Chapter,Costa Rica Institute of Technology,C16,27,6,Yes,0,0,0,2,No,Yes,,Yes,No,Yes,Yes,Yes,Met,2/3,Not Met
+"Costa Rica Institute of Technology,CAS04",SBC39461B,Student Branch Chapter,Costa Rica Institute of Technology,CAS04,6,6,Yes,0,0,1,2,No,Yes,,No,No,No,Yes,No,Partial,1/3,Not Met
+"Costa Rica Institute of Technology,EMB18",SBC39461D,Student Branch Chapter,Costa Rica Institute of Technology,EMB18,23,6,Yes,0,0,0,2,No,Yes,,No,No,No,No,No,Partial,1/3,Not Met
+"Costa Rica Institute of Technology,IA34",SBC39461C,Student Branch Chapter,Costa Rica Institute of Technology,IA34,2,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Costa Rica Institute of Technology,IE13",SBC39461G,Student Branch Chapter,Costa Rica Institute of Technology,IE13,2,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Costa Rica Institute of Technology,NPS05",SBC39461A,Student Branch Chapter,Costa Rica Institute of Technology,NPS05,9,6,Yes,1,1,0,2,No,Yes,,No,Yes,Yes,Yes,Yes,Partial,1/3,Not Met
+"Costa Rica Institute of Technology,PE31",SBC39461,Student Branch Chapter,Costa Rica Institute of Technology,PE31,2,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Costa Rica Institute of Technology,RA24",SBC39461H,Student Branch Chapter,Costa Rica Institute of Technology,RA24,16,6,Yes,5,3,1,2,Yes,Yes,,Yes,No,Yes,No,Yes,Met,3/3,Met
+"Inst Tecno de Costa Rica - Sede San Carlos, RA24",SBC11587,Student Branch Chapter,Inst Tecnologico de Costa Rica - Sede San Carlos,RA24,0,6,No,0,0,1,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Inst Tecno de Costa Rica - Sede San Carlos,ED15",SBC11587B,Student Branch Chapter,Inst Tecnologico de Costa Rica - Sede San Carlos,ED15,1,6,No,5,0,3,2,No,Yes,,Yes,No,Yes,No,No,Met,1/3,Not Met
+"Inst Tecnologico de Costa Rica-Sede San Carlos,C16",SBC11587A,Student Branch Chapter,Inst Tecnologico de Costa Rica - Sede San Carlos,C16,5,6,No,5,0,4,2,No,Yes,,No,Yes,No,No,No,Partial,0/3,Not Met
+"Universidad de Costa Rica, EMB18",SBC11121B,Student Branch Chapter,Universidad de Costa Rica,EMB18,5,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Universidad de Costa Rica, PE31",SBC11121A,Student Branch Chapter,Universidad de Costa Rica,PE31,10,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Universidad de Costa Rica,AES10",SBC11121E,Student Branch Chapter,Universidad de Costa Rica,AES10,4,6,No,2,2,0,2,Yes,Yes,,Yes,No,Yes,No,No,Met,2/3,Not Met
+"Universidad de Costa Rica,C16",SBC11121C,Student Branch Chapter,Universidad de Costa Rica,C16,4,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Universidad de Costa Rica,NPS05",SBC11121D,Student Branch Chapter,Universidad de Costa Rica,NPS05,3,6,No,1,1,0,2,No,Yes,,No,Yes,Yes,No,No,Partial,0/3,Not Met

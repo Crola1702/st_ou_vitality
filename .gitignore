@@ -6,12 +6,19 @@ Volunteer List by OU.csv
 Member Detail View.csv
 *Events*.csv
 
+# Region-wide raw exports for r9/ — the whole folder, since some of the
+# member-level files there don't match the filenames above.
+r9/R9 Data/
+
 # Generated outreach lists contain officer names/emails — also PII, never commit.
 chapter_outreach/chapter_outreach.csv
 officer_terms/officer_terms.csv
 
 # Embeds membership number -> society pairs for every member — never commit.
 member_society_lookup/lookup.html
+
+# Embeds membership number -> officer position pairs for every officer — never commit.
+officer_lookup/lookup.html
 
 # Per-member grade-promotion log (names/emails) and the snapshot cache it
 # diffs against (member numbers) — both PII-adjacent, never commit.

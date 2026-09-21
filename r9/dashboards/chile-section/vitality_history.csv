@@ -1,0 +1,63 @@
+Date,SPO ID,Unit Type,University,Society,Member Count,Requirements Met,Members Met,Events Met,Officers Status,Overall Vitality
+2026-09-21,SBA04321,Affinity Group,Federico Santa Maria Technical University,WIE,6,3,Yes,Yes,Met,Met
+2026-09-21,SBA21611S,Affinity Group,Pontificia Universidad Catolica de Valparaiso,SIGHT,4,0,No,No,Not Met,Not Met
+2026-09-21,SBA09191S,Affinity Group,Pontificia Universidad Catolica de Chile,SIGHT,1,0,No,No,Not Met,Not Met
+2026-09-21,SBA21611,Affinity Group,Pontificia Universidad Catolica de Valparaiso,WIE,14,1,Yes,No,Not Met,Not Met
+2026-09-21,SBA11791,Affinity Group,Universidad De Chile,WIE,18,2,Yes,Yes,Partial,Not Met
+2026-09-21,SBA06771S,Affinity Group,Universidad Diego Portales,IEEE SIGHT,16,1,Yes,No,Not Met,Not Met
+2026-09-21,SBA06771,Affinity Group,Universidad Diego Portales,WIE,4,1,No,Yes,Partial,Not Met
+2026-09-21,SBA11791S,Affinity Group,Universidad De Chile,SIGHT,19,2,Yes,Yes,Partial,Not Met
+2026-09-21,SBA92021S,Affinity Group,Universidad de Santiago de Chile,SIGHT,6,1,Yes,No,Not Met,Not Met
+2026-09-21,SBA92021,Affinity Group,Universidad de Santiago de Chile,WIE,8,3,Yes,Yes,Met,Met
+2026-09-21,STB04321,Student Branch,Federico Santa Maria Technical University,,48,2,Yes,No,Met,Not Met
+2026-09-21,STB09191,Student Branch,Pontificia Universidad Catolica de Chile,,43,2,Yes,No,Met,Not Met
+2026-09-21,STB21611,Student Branch,Pontificia Universidad Catolica de Valparaiso,,58,2,Yes,No,Met,Not Met
+2026-09-21,STB11521,Student Branch,Universidad Adolfo Ibanez,,4,0,No,No,Not Met,Not Met
+2026-09-21,STB10224,Student Branch,Universidad Andres Bello,,24,2,Yes,No,Met,Not Met
+2026-09-21,STB11791,Student Branch,Universidad De Chile,,92,3,Yes,Yes,Met,Met
+2026-09-21,STB06771,Student Branch,Universidad Diego Portales,,20,3,Yes,Yes,Met,Met
+2026-09-21,STB60243738,Student Branch,Universidad Finis Terrae,,20,2,Yes,No,Met,Not Met
+2026-09-21,STB41581008,Student Branch,Universidad Mayor,,11,0,No,No,Not Met,Not Met
+2026-09-21,STB60209602,Student Branch,Universidad San Sebastian,,1,0,No,No,Not Met,Not Met
+2026-09-21,STB01991,Student Branch,Universidad Tecnologica Metropolitana,,1,0,No,No,Not Met,Not Met
+2026-09-21,STB28261,Student Branch,Universidad de Antofagasta,,20,2,Yes,No,Met,Not Met
+2026-09-21,STB60243777,Student Branch,Universidad de Los Lagos,,16,2,Yes,No,Met,Not Met
+2026-09-21,STB60226547,Student Branch,Universidad de O'Higgins,,6,2,No,Yes,Met,Not Met
+2026-09-21,STB92021,Student Branch,Universidad de Santiago de Chile,,32,1,Yes,No,Partial,Not Met
+2026-09-21,STB29371,Student Branch,Universidad de Tarapaca,,4,0,No,No,Partial,Not Met
+2026-09-21,STB64627,Student Branch,Universidad de Valparaiso,,3,0,No,No,Not Met,Not Met
+2026-09-21,SBC04321A,Student Branch Chapter,Federico Santa Maria Technical University,CAS04/SSC37/ED15,9,2,Yes,No,Met,Not Met
+2026-09-21,SBC04321,Student Branch Chapter,Federico Santa Maria Technical University,C16,0,0,No,No,Not Met,Not Met
+2026-09-21,SBC04321B,Student Branch Chapter,Federico Santa Maria Technical University,PE31,3,0,No,No,Partial,Not Met
+2026-09-21,SBC04321C,Student Branch Chapter,Federico Santa Maria Technical University,RA24,16,2,Yes,No,Met,Not Met
+2026-09-21,SBC091911,Student Branch Chapter,Pontificia Universidad Catolica de Chile,PE31/PEL35,5,0,No,No,Not Met,Not Met
+2026-09-21,SBC09191C,Student Branch Chapter,Pontificia Universidad Catolica de Chile,SSC37/ED15,8,1,Yes,No,Not Met,Not Met
+2026-09-21,SBC21611,Student Branch Chapter,Pontificia Universidad Catolica de Valparaiso,C16,22,2,Yes,No,Met,Not Met
+2026-09-21,SBC2161D,Student Branch Chapter,Pontificia Universidad Catolica de Valparaiso,CAS04,10,2,Yes,No,Met,Not Met
+2026-09-21,SBC21611E,Student Branch Chapter,Pontificia Universidad Catolica de Valparaiso,CIS11,1,0,No,No,Not Met,Not Met
+2026-09-21,SBC2161A,Student Branch Chapter,Pontificia Universidad Catolica de Valparaiso,MTT17,11,1,Yes,No,Not Met,Not Met
+2026-09-21,SBC2161C,Student Branch Chapter,Pontificia Universidad Catolica de Valparaiso,PE31,1,0,No,No,Not Met,Not Met
+2026-09-21,SBC2161B,Student Branch Chapter,Pontificia Universidad Catolica de Valparaiso,PEL35,0,0,No,No,Not Met,Not Met
+2026-09-21,SBC09191A,Student Branch Chapter,Pontificia Universidad Catolica de Chile,CAS04,6,1,Yes,No,Not Met,Not Met
+2026-09-21,SBC09191D,Student Branch Chapter,Pontificia Universidad Catolica de Chile,EMB18,2,0,No,No,Not Met,Not Met
+2026-09-21,SBC09191B,Student Branch Chapter,Pontificia Universidad Catolica de Chile,OE22,0,0,No,No,Not Met,Not Met
+2026-09-21,SBC2161F,Student Branch Chapter,Pontificia Universidad Catolica de Valparaiso,AP03,12,2,Yes,No,Met,Not Met
+2026-09-21,SBC10224,Student Branch Chapter,Universidad Andres Bello,"RA24,CIS11,C16",0,0,No,No,Not Met,Not Met
+2026-09-21,SBC11791D,Student Branch Chapter,Universidad De Chile,C16,11,1,Yes,No,Not Met,Not Met
+2026-09-21,SBC11791E,Student Branch Chapter,Universidad De Chile,CIS11,12,2,Yes,No,Met,Not Met
+2026-09-21,SBC11791B,Student Branch Chapter,Universidad De Chile,IA34,9,1,Yes,No,Not Met,Not Met
+2026-09-21,SBC11791A,Student Branch Chapter,Universidad De Chile,PE31,14,1,Yes,No,Partial,Not Met
+2026-09-21,SBC11791C,Student Branch Chapter,Universidad De Chile,RA24,13,3,Yes,Yes,Met,Met
+2026-09-21,SBC06771A,Student Branch Chapter,Universidad Diego Portales,C16,5,1,No,Yes,Partial,Not Met
+2026-09-21,SBC06771B,Student Branch Chapter,Universidad Diego Portales,COM19,5,1,No,Yes,Partial,Not Met
+2026-09-21,SBC60209602,Student Branch Chapter,Universidad San Sebastian,"COM19,C16",0,0,No,No,Not Met,Not Met
+2026-09-21,SBC28261,Student Branch Chapter,Universidad de Antofagasta,PE31,7,1,Yes,No,Partial,Not Met
+2026-09-21,SBC28261A,Student Branch Chapter,Universidad de Antofagasta,RA24,7,1,Yes,No,Partial,Not Met
+2026-09-21,SBC92021,Student Branch Chapter,Universidad de Santiago de Chile,C16/COM19,3,0,No,No,Partial,Not Met
+2026-09-21,SBC92021D,Student Branch Chapter,Universidad de Santiago de Chile,CIS11,1,0,No,No,Not Met,Not Met
+2026-09-21,SBC92021E,Student Branch Chapter,Universidad de Santiago de Chile,CS23,4,0,No,No,Partial,Not Met
+2026-09-21,SBC92021C,Student Branch Chapter,Universidad de Santiago de Chile,EMB18,8,2,Yes,Yes,Partial,Not Met
+2026-09-21,SBC92021B,Student Branch Chapter,Universidad de Santiago de Chile,PE31,6,1,Yes,No,Partial,Not Met
+2026-09-21,SBC92021A,Student Branch Chapter,Universidad de Santiago de Chile,PHO36,0,0,No,No,Not Met,Not Met
+2026-09-21,SBC64627A,Student Branch Chapter,Universidad de Valparaiso,CIS11,1,0,No,No,Not Met,Not Met
+2026-09-21,SBC64627,Student Branch Chapter,Universidad de Valparaiso,EMB18,1,0,No,No,Not Met,Not Met

@@ -163,6 +163,36 @@ commit and push it — the GitHub Actions workflow in
 `.github/workflows/pages.yml` redeploys GitHub Pages from
 `vitality_dashboard.html` on every push to `main`.
 
+### Region 9 dashboards, one per Section
+
+`r9/generate_r9_vitality.py` runs the same evaluation over region-wide
+exports and splits the result per Section, so nobody has to open the
+whole region (about 2,000 OUs) unless they want to. Put these in
+`r9/R9 Data/` (same formats as above, exported for the whole region):
+
+- `Student Branch and Member Count.csv`
+- `Student Branch Chapters and Affinity Group Member Count.csv`
+- `Volunteer List by OU with Region & Section.csv` (the Tableau variant
+  that adds `OU Region`/`OU Section`; it also lists past officers, which
+  the loader ignores)
+- Any `*Events*.csv`
+
+```sh
+python3 r9/generate_r9_vitality.py
+```
+
+This writes `r9/dashboards/index.html` (a Section picker grouped by
+Council), `r9/dashboards/region/` (the whole region) and one
+`r9/dashboards/<section-slug>/` per Section, each with the same
+`index.html` / `vitality_report.csv` / `vitality_history.csv` /
+printable reports the root pipeline produces. Every dashboard has a
+Section switcher under its title. Member-level trends (society
+memberships, membership grades) are not computed for R9.
+
+The Pages workflow publishes `r9/dashboards/` as-is under `/beta_r9/`
+(so `<pages-url>/beta_r9/` is the Section picker), on every push to
+`main` that touches that folder.
+
 ## Chapter revitalization outreach
 
 Everything for this lives in `chapter_outreach/`. `generate_chapter_outreach.py`

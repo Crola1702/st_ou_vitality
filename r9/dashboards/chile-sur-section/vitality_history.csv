@@ -1,0 +1,25 @@
+Date,SPO ID,Unit Type,University,Society,Member Count,Requirements Met,Members Met,Events Met,Officers Status,Overall Vitality
+2026-09-21,SBA20241,Affinity Group,Universidad Austral De Chile,WIE,7,2,Yes,No,Met,Not Met
+2026-09-21,SBA33031,Affinity Group,Universidad Del Bio-Bio,WIE,7,2,Yes,Yes,Not Met,Not Met
+2026-09-21,SBA04831,Affinity Group,University of Concepcion,WIE,31,2,Yes,Yes,Partial,Not Met
+2026-09-21,SBA60061,Affinity Group,University of La Frontera,WIE,0,0,No,No,Not Met,Not Met
+2026-09-21,STB20241,Student Branch,Universidad Austral De Chile,,24,2,Yes,No,Met,Not Met
+2026-09-21,STB10207,Student Branch,Universidad Catolica de la Santisima Concepcion,,2,0,No,No,Not Met,Not Met
+2026-09-21,STB33031,Student Branch,Universidad Del Bio-Bio,,16,1,Yes,No,Not Met,Not Met
+2026-09-21,STB60063426,Student Branch,Universidad de Talca,,13,1,Yes,No,Partial,Not Met
+2026-09-21,STB04831,Student Branch,University of Concepcion,,79,3,Yes,Yes,Met,Met
+2026-09-21,STB60061,Student Branch,University of La Frontera,,17,2,Yes,No,Met,Not Met
+2026-09-21,STB20621,Student Branch,University of Magallanes,,0,0,No,No,Not Met,Not Met
+2026-09-21,SBC20241,Student Branch Chapter,Universidad Austral De Chile,RA24,7,2,Yes,No,Met,Not Met
+2026-09-21,SBC20241A,Student Branch Chapter,Universidad Austral De Chile,EMB18,6,1,Yes,No,Not Met,Not Met
+2026-09-21,SBC33031,Student Branch Chapter,Universidad Del Bio-Bio,C16,1,0,No,No,Partial,Not Met
+2026-09-21,SBC33031A,Student Branch Chapter,Universidad Del Bio-Bio,PHO36,5,0,No,No,Partial,Not Met
+2026-09-21,SBC04831,Student Branch Chapter,University of Concepcion,C16,11,1,Yes,No,Not Met,Not Met
+2026-09-21,SBC04831D,Student Branch Chapter,University of Concepcion,COM19,17,2,Yes,No,Met,Not Met
+2026-09-21,SBC04831E,Student Branch Chapter,University of Concepcion,CS23,13,2,Yes,No,Met,Not Met
+2026-09-21,SBC04831A,Student Branch Chapter,University of Concepcion,EMB18,28,3,Yes,Yes,Met,Met
+2026-09-21,SBC04831C,Student Branch Chapter,University of Concepcion,PE31,30,3,Yes,Yes,Met,Met
+2026-09-21,SBC04831B,Student Branch Chapter,University of Concepcion,RA24,12,3,Yes,Yes,Met,Met
+2026-09-21,SBC20621,Student Branch Chapter,University of Magallanes,C16,0,0,No,No,Not Met,Not Met
+2026-09-21,SBC2062B,Student Branch Chapter,University of Magallanes,CAS04,0,0,No,No,Not Met,Not Met
+2026-09-21,SBC2062A,Student Branch Chapter,University of Magallanes,PE31,0,0,No,No,Not Met,Not Met

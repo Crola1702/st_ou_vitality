@@ -1,0 +1,25 @@
+Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
+"Universidad Austral De Chile,WIE",SBA20241,Affinity Group,Universidad Austral De Chile,WIE,7,6,Yes,1,,0,2,No,Yes,,Yes,Yes,No,No,No,Met,2/3,Not Met
+"Universidad Del Bio-Bio,WIE",SBA33031,Affinity Group,Universidad Del Bio-Bio,WIE,7,6,Yes,2,,0,2,Yes,No,,No,No,No,No,No,Not Met,2/3,Not Met
+"University of Concepcion,WIE",SBA04831,Affinity Group,University of Concepcion,WIE,31,6,Yes,7,,2,2,Yes,Yes,,No,No,Yes,No,Yes,Partial,2/3,Not Met
+"University of La Frontera,WIE",SBA60061,Affinity Group,University of La Frontera,WIE,0,6,No,0,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+Universidad Austral De Chile,STB20241,Student Branch,Universidad Austral De Chile,,24,12,Yes,3,,1,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+Universidad Catolica de la Santisima Concepcion,STB10207,Student Branch,Universidad Catolica de la Santisima Concepcion,,2,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Universidad Del Bio-Bio,STB33031,Student Branch,Universidad Del Bio-Bio,,16,12,Yes,1,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
+Universidad de Talca,STB60063426,Student Branch,Universidad de Talca,,13,12,Yes,1,,0,4,No,Yes,No,,No,No,No,No,Partial,1/3,Not Met
+University of Concepcion,STB04831,Student Branch,University of Concepcion,,79,12,Yes,5,,1,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+University of La Frontera,STB60061,Student Branch,University of La Frontera,,17,12,Yes,1,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+University of Magallanes,STB20621,Student Branch,University of Magallanes,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+"Universidad Austral De Chile, RA24",SBC20241,Student Branch Chapter,Universidad Austral De Chile,RA24,7,6,Yes,0,0,1,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Universidad Austral De Chile,EMB18",SBC20241A,Student Branch Chapter,Universidad Austral De Chile,EMB18,6,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Universidad Del Bio-Bio,C16",SBC33031,Student Branch Chapter,Universidad Del Bio-Bio,C16,1,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"Universidad Del Bio-Bio,PHO36",SBC33031A,Student Branch Chapter,Universidad Del Bio-Bio,PHO36,5,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"University of Concepcion,C16",SBC04831,Student Branch Chapter,University of Concepcion,C16,11,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"University of Concepcion,COM19",SBC04831D,Student Branch Chapter,University of Concepcion,COM19,17,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"University of Concepcion,CS23",SBC04831E,Student Branch Chapter,University of Concepcion,CS23,13,6,Yes,1,1,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+"University of Concepcion,EMB18",SBC04831A,Student Branch Chapter,University of Concepcion,EMB18,28,6,Yes,2,2,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"University of Concepcion,PE31",SBC04831C,Student Branch Chapter,University of Concepcion,PE31,30,6,Yes,2,2,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"University of Concepcion,RA24",SBC04831B,Student Branch Chapter,University of Concepcion,RA24,12,6,Yes,27,21,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"University of Magallanes,C16",SBC20621,Student Branch Chapter,University of Magallanes,C16,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"University of Magallanes,CAS04",SBC2062B,Student Branch Chapter,University of Magallanes,CAS04,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"University of Magallanes,PE31",SBC2062A,Student Branch Chapter,University of Magallanes,PE31,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met

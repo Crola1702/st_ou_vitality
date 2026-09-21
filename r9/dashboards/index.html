@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>IEEE Region 9 Student OU Vitality</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  .viz-root {
+    color-scheme: light;
+    --surface-1:      #fcfcfb;
+    --page-plane:     #f9f9f7;
+    --text-primary:   #0b0b0b;
+    --text-secondary: #52514e;
+    --text-muted:     #898781;
+    --gridline:       #e1e0d9;
+    --border:         rgba(11,11,11,0.10);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:where(:not([data-theme="light"])) .viz-root {
+      color-scheme: dark;
+      --surface-1:      #1a1a19;
+      --page-plane:     #0d0d0d;
+      --text-primary:   #ffffff;
+      --text-secondary: #c3c2b7;
+      --text-muted:     #898781;
+      --gridline:       #2c2c2a;
+      --border:         rgba(255,255,255,0.10);
+    }
+  }
+  :root[data-theme="dark"] .viz-root {
+    color-scheme: dark;
+    --surface-1:      #1a1a19;
+    --page-plane:     #0d0d0d;
+    --text-primary:   #ffffff;
+    --text-secondary: #c3c2b7;
+    --text-muted:     #898781;
+    --gridline:       #2c2c2a;
+    --border:         rgba(255,255,255,0.10);
+  }
+
+  * { box-sizing: border-box; }
+  body { margin: 0; }
+  .viz-root {
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    background: var(--page-plane);
+    color: var(--text-primary);
+    min-height: 100vh;
+    padding: 24px 16px;
+  }
+  .container { max-width: 1100px; margin: 0 auto; }
+  h1 { font-size: 1.5rem; margin: 0 0 4px; }
+  .subtitle { color: var(--text-secondary); font-size: 0.9rem; margin: 0 0 20px; }
+  a { color: inherit; }
+
+  .region-card {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 16px 28px;
+    background: var(--surface-1);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 28px;
+  }
+  .region-card .title { font-weight: 600; font-size: 1.05rem; flex: 1 1 260px; }
+  .region-card .title small { display: block; font-weight: 400; color: var(--text-secondary); font-size: 0.85rem; margin-top: 2px; }
+  .stat { min-width: 110px; }
+  .stat-label { font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.03em; }
+  .stat-value { font-size: 1.4rem; font-weight: 600; margin-top: 2px; font-variant-numeric: tabular-nums; }
+  .btn {
+    display: inline-block; padding: 9px 16px; border-radius: 8px;
+    border: 1px solid var(--border); background: var(--surface-1);
+    text-decoration: none; font-size: 0.9rem; font-weight: 500;
+  }
+  .btn:hover { border-color: var(--text-secondary); }
+
+  .council { margin-bottom: 28px; }
+  .council h2 { font-size: 1.05rem; margin: 0 0 8px; }
+  .council .count { font-weight: 400; font-size: 0.8rem; color: var(--text-secondary); margin-left: 6px; }
+  table { width: 100%; border-collapse: collapse; background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; font-size: 0.9rem; }
+  th, td { padding: 9px 12px; border-bottom: 1px solid var(--gridline); text-align: left; }
+  th { font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.03em; font-weight: 500; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover td { background: color-mix(in srgb, var(--text-primary) 4%, transparent); }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  td.muted { color: var(--text-muted); }
+  .pct { color: var(--text-secondary); }
+  td a.open { font-size: 0.8rem; color: var(--text-secondary); }
+  @media (max-width: 720px) {
+    th:nth-child(n+4):not(:last-child), td:nth-child(n+4):not(:last-child) { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="viz-root">
+  <div class="container">
+    <h1>IEEE Region 9 Student OU Vitality</h1>
+    <p class="subtitle">Pick a Section to open its dashboard, or open the whole region at once (about 1,971 OUs, a heavier page).</p>
+
+    <div class="region-card">
+      <div class="title">Latin America - Region 9<small>36 sections</small></div>
+      <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">1,971</div></div>
+      <div class="stat"><div class="stat-label">Full vitality</div><div class="stat-value" style="color:#0ca30c">295 <span class="pct">(15%)</span></div></div>
+      <a class="btn" href="region/index.html">Open whole region</a>
+    </div>
+
+    <section class="council">
+      <h2>Andean Council <span class="count">6 sections</span></h2>
+      <table>
+        <thead>
+          <tr><th>Section</th><th class="num">OUs</th><th class="num">Full vitality</th><th class="num">Student Branches</th><th class="num">Chapters</th><th class="num">Affinity Groups</th><th></th></tr>
+        </thead>
+        <tbody>
+          <tr><td><a href="bolivia-section/index.html">Bolivia Section</a></td><td class="num">73</td><td class="num">8 <span class="pct">(11%)</span></td><td class="num">2/22</td><td class="num">5/47</td><td class="num">1/4</td><td><a class="open" href="bolivia-section/index.html">Open</a></td></tr><tr><td><a href="colombia-section/index.html">Colombia Section</a></td><td class="num">295</td><td class="num">53 <span class="pct">(18%)</span></td><td class="num">14/64</td><td class="num">34/194</td><td class="num">5/37</td><td><a class="open" href="colombia-section/index.html">Open</a></td></tr><tr><td><a href="colombian-caribbean-section/index.html">Colombian Caribbean Section</a></td><td class="num">78</td><td class="num">25 <span class="pct">(32%)</span></td><td class="num">9/18</td><td class="num">12/49</td><td class="num">4/11</td><td><a class="open" href="colombian-caribbean-section/index.html">Open</a></td></tr><tr><td><a href="ecuador-section/index.html">Ecuador Section</a></td><td class="num">178</td><td class="num">41 <span class="pct">(23%)</span></td><td class="num">9/35</td><td class="num">20/110</td><td class="num">12/33</td><td><a class="open" href="ecuador-section/index.html">Open</a></td></tr><tr><td><a href="peru-section/index.html">Peru Section</a></td><td class="num">257</td><td class="num">24 <span class="pct">(9%)</span></td><td class="num">5/46</td><td class="num">14/178</td><td class="num">5/33</td><td><a class="open" href="peru-section/index.html">Open</a></td></tr><tr><td><a href="venezuela-section/index.html">Venezuela Section</a></td><td class="num">8</td><td class="num">0 <span class="pct">(0%)</span></td><td class="num">0/4</td><td class="num">0/2</td><td class="num">0/2</td><td><a class="open" href="venezuela-section/index.html">Open</a></td></tr>
+        </tbody>
+      </table>
+    </section>
+    <section class="council">
+      <h2>Brazil Council <span class="count">5 sections</span></h2>
+      <table>
+        <thead>
+          <tr><th>Section</th><th class="num">OUs</th><th class="num">Full vitality</th><th class="num">Student Branches</th><th class="num">Chapters</th><th class="num">Affinity Groups</th><th></th></tr>
+        </thead>
+        <tbody>
+          <tr><td><a href="centro-norte-brasil-section/index.html">Centro-Norte Brasil Section</a></td><td class="num">47</td><td class="num">11 <span class="pct">(23%)</span></td><td class="num">4/15</td><td class="num">5/25</td><td class="num">2/7</td><td><a class="open" href="centro-norte-brasil-section/index.html">Open</a></td></tr><tr><td><a href="minas-gerais-section/index.html">Minas Gerais Section</a></td><td class="num">31</td><td class="num">11 <span class="pct">(35%)</span></td><td class="num">1/9</td><td class="num">9/17</td><td class="num">1/5</td><td><a class="open" href="minas-gerais-section/index.html">Open</a></td></tr><tr><td><a href="northeast-brazil-section/index.html">Northeast Brazil Section</a></td><td class="num">107</td><td class="num">16 <span class="pct">(15%)</span></td><td class="num">4/26</td><td class="num">7/59</td><td class="num">5/22</td><td><a class="open" href="northeast-brazil-section/index.html">Open</a></td></tr><tr><td><a href="rio-de-janeiro-section/index.html">Rio De Janeiro Section</a></td><td class="num">44</td><td class="num">6 <span class="pct">(14%)</span></td><td class="num">3/10</td><td class="num">3/25</td><td class="num">0/9</td><td><a class="open" href="rio-de-janeiro-section/index.html">Open</a></td></tr><tr><td><a href="south-brazil-section/index.html">South Brazil Section</a></td><td class="num">89</td><td class="num">5 <span class="pct">(6%)</span></td><td class="num">2/26</td><td class="num">2/51</td><td class="num">1/12</td><td><a class="open" href="south-brazil-section/index.html">Open</a></td></tr>
+        </tbody>
+      </table>
+    </section>
+    <section class="council">
+      <h2>Central Amer.&amp; Panama Council <span class="count">6 sections</span></h2>
+      <table>
+        <thead>
+          <tr><th>Section</th><th class="num">OUs</th><th class="num">Full vitality</th><th class="num">Student Branches</th><th class="num">Chapters</th><th class="num">Affinity Groups</th><th></th></tr>
+        </thead>
+        <tbody>
+          <tr><td><a href="costa-rica-section/index.html">Costa Rica Section</a></td><td class="num">31</td><td class="num">6 <span class="pct">(19%)</span></td><td class="num">3/9</td><td class="num">2/19</td><td class="num">1/3</td><td><a class="open" href="costa-rica-section/index.html">Open</a></td></tr><tr><td><a href="el-salvador-section/index.html">El Salvador Section</a></td><td class="num">52</td><td class="num">13 <span class="pct">(25%)</span></td><td class="num">6/9</td><td class="num">4/32</td><td class="num">3/11</td><td><a class="open" href="el-salvador-section/index.html">Open</a></td></tr><tr><td><a href="guatemala-section/index.html">Guatemala Section</a></td><td class="num">16</td><td class="num">1 <span class="pct">(6%)</span></td><td class="num">0/6</td><td class="num">0/7</td><td class="num">1/3</td><td><a class="open" href="guatemala-section/index.html">Open</a></td></tr><tr><td><a href="honduras-section/index.html">Honduras Section</a></td><td class="num">20</td><td class="num">2 <span class="pct">(10%)</span></td><td class="num">2/4</td><td class="num">0/10</td><td class="num">0/6</td><td><a class="open" href="honduras-section/index.html">Open</a></td></tr><tr><td><a href="nicaragua-section/index.html">Nicaragua Section</a></td><td class="num">11</td><td class="num">0 <span class="pct">(0%)</span></td><td class="num">0/3</td><td class="num">0/7</td><td class="num">0/1</td><td><a class="open" href="nicaragua-section/index.html">Open</a></td></tr><tr><td><a href="panama-section/index.html">Panama Section</a></td><td class="num">25</td><td class="num">10 <span class="pct">(40%)</span></td><td class="num">3/6</td><td class="num">6/15</td><td class="num">1/4</td><td><a class="open" href="panama-section/index.html">Open</a></td></tr>
+        </tbody>
+      </table>
+    </section>
+    <section class="council">
+      <h2>Cono Sur Council <span class="count">5 sections</span></h2>
+      <table>
+        <thead>
+          <tr><th>Section</th><th class="num">OUs</th><th class="num">Full vitality</th><th class="num">Student Branches</th><th class="num">Chapters</th><th class="num">Affinity Groups</th><th></th></tr>
+        </thead>
+        <tbody>
+          <tr><td><a href="argentina-section/index.html">Argentina Section</a></td><td class="num">75</td><td class="num">5 <span class="pct">(7%)</span></td><td class="num">2/30</td><td class="num">2/38</td><td class="num">1/7</td><td><a class="open" href="argentina-section/index.html">Open</a></td></tr><tr><td><a href="chile-section/index.html">Chile Section</a></td><td class="num">62</td><td class="num">5 <span class="pct">(8%)</span></td><td class="num">2/17</td><td class="num">1/35</td><td class="num">2/10</td><td><a class="open" href="chile-section/index.html">Open</a></td></tr><tr><td><a href="chile-sur-section/index.html">Chile Sur Section</a></td><td class="num">24</td><td class="num">4 <span class="pct">(17%)</span></td><td class="num">1/7</td><td class="num">3/13</td><td class="num">0/4</td><td><a class="open" href="chile-sur-section/index.html">Open</a></td></tr><tr><td><a href="paraguay-section/index.html">Paraguay Section</a></td><td class="num">26</td><td class="num">2 <span class="pct">(8%)</span></td><td class="num">2/9</td><td class="num">0/12</td><td class="num">0/5</td><td><a class="open" href="paraguay-section/index.html">Open</a></td></tr><tr><td><a href="uruguay-section/index.html">Uruguay Section</a></td><td class="num">12</td><td class="num">0 <span class="pct">(0%)</span></td><td class="num">0/6</td><td class="num">0/6</td><td class="num muted">0</td><td><a class="open" href="uruguay-section/index.html">Open</a></td></tr>
+        </tbody>
+      </table>
+    </section>
+    <section class="council">
+      <h2>Mexican Council <span class="count">9 sections</span></h2>
+      <table>
+        <thead>
+          <tr><th>Section</th><th class="num">OUs</th><th class="num">Full vitality</th><th class="num">Student Branches</th><th class="num">Chapters</th><th class="num">Affinity Groups</th><th></th></tr>
+        </thead>
+        <tbody>
+          <tr><td><a href="aguascalientes-section/index.html">Aguascalientes Section</a></td><td class="num">12</td><td class="num">2 <span class="pct">(17%)</span></td><td class="num">2/5</td><td class="num">0/6</td><td class="num">0/1</td><td><a class="open" href="aguascalientes-section/index.html">Open</a></td></tr><tr><td><a href="centro-occidente-section/index.html">Centro Occidente Section</a></td><td class="num">32</td><td class="num">2 <span class="pct">(6%)</span></td><td class="num">1/9</td><td class="num">0/21</td><td class="num">1/2</td><td><a class="open" href="centro-occidente-section/index.html">Open</a></td></tr><tr><td><a href="guanajuato-section/index.html">Guanajuato Section</a></td><td class="num">13</td><td class="num">0 <span class="pct">(0%)</span></td><td class="num">0/6</td><td class="num">0/7</td><td class="num muted">0</td><td><a class="open" href="guanajuato-section/index.html">Open</a></td></tr><tr><td><a href="mexico-section/index.html">Mexico Section</a></td><td class="num">138</td><td class="num">21 <span class="pct">(15%)</span></td><td class="num">9/64</td><td class="num">9/63</td><td class="num">3/11</td><td><a class="open" href="mexico-section/index.html">Open</a></td></tr><tr><td><a href="monterrey-section/index.html">Monterrey Section</a></td><td class="num">34</td><td class="num">2 <span class="pct">(6%)</span></td><td class="num">1/10</td><td class="num">1/21</td><td class="num">0/3</td><td><a class="open" href="monterrey-section/index.html">Open</a></td></tr><tr><td><a href="morelos-section/index.html">Morelos Section</a></td><td class="num">16</td><td class="num">0 <span class="pct">(0%)</span></td><td class="num">0/6</td><td class="num">0/9</td><td class="num">0/1</td><td><a class="open" href="morelos-section/index.html">Open</a></td></tr><tr><td><a href="puebla-section/index.html">Puebla Section</a></td><td class="num">34</td><td class="num">7 <span class="pct">(21%)</span></td><td class="num">6/11</td><td class="num">1/21</td><td class="num">0/2</td><td><a class="open" href="puebla-section/index.html">Open</a></td></tr><tr><td><a href="queretaro-section/index.html">Queretaro Section</a></td><td class="num">5</td><td class="num">0 <span class="pct">(0%)</span></td><td class="num">0/3</td><td class="num">0/2</td><td class="num muted">0</td><td><a class="open" href="queretaro-section/index.html">Open</a></td></tr><tr><td><a href="veracruz-section/index.html">Veracruz Section</a></td><td class="num">50</td><td class="num">4 <span class="pct">(8%)</span></td><td class="num">0/16</td><td class="num">3/29</td><td class="num">1/5</td><td><a class="open" href="veracruz-section/index.html">Open</a></td></tr>
+        </tbody>
+      </table>
+    </section>
+    <section class="council">
+      <h2>Region 9 - No Council <span class="count">5 sections</span></h2>
+      <table>
+        <thead>
+          <tr><th>Section</th><th class="num">OUs</th><th class="num">Full vitality</th><th class="num">Student Branches</th><th class="num">Chapters</th><th class="num">Affinity Groups</th><th></th></tr>
+        </thead>
+        <tbody>
+          <tr><td><a href="dominican-republic-section/index.html">Dominican Republic Section</a></td><td class="num">1</td><td class="num">0 <span class="pct">(0%)</span></td><td class="num">0/1</td><td class="num muted">0</td><td class="num muted">0</td><td><a class="open" href="dominican-republic-section/index.html">Open</a></td></tr><tr><td><a href="guadalajara-section/index.html">Guadalajara Section</a></td><td class="num">49</td><td class="num">7 <span class="pct">(14%)</span></td><td class="num">2/15</td><td class="num">4/28</td><td class="num">1/6</td><td><a class="open" href="guadalajara-section/index.html">Open</a></td></tr><tr><td><a href="puerto-rico-caribbean-section/index.html">Puerto Rico &amp; Caribbean Section</a></td><td class="num">11</td><td class="num">0 <span class="pct">(0%)</span></td><td class="num">0/5</td><td class="num">0/4</td><td class="num">0/2</td><td><a class="open" href="puerto-rico-caribbean-section/index.html">Open</a></td></tr><tr><td><a href="trinidad-and-tobago-section/index.html">Trinidad And Tobago Section</a></td><td class="num">3</td><td class="num">0 <span class="pct">(0%)</span></td><td class="num">0/1</td><td class="num">0/1</td><td class="num">0/1</td><td><a class="open" href="trinidad-and-tobago-section/index.html">Open</a></td></tr><tr><td><a href="western-puerto-rico-section/index.html">Western Puerto Rico Section</a></td><td class="num">12</td><td class="num">2 <span class="pct">(17%)</span></td><td class="num">1/3</td><td class="num">0/8</td><td class="num">1/1</td><td><a class="open" href="western-puerto-rico-section/index.html">Open</a></td></tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+</div>
+</body>
+</html>

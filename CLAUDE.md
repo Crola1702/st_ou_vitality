@@ -24,6 +24,7 @@ the stdlib-only report pipeline.
 python3 generate_vitality_report.py                    # main report + dashboard (run first)
 python3 chapter_outreach/generate_chapter_outreach.py   # after the above — reuses its source CSVs
 python3 officer_terms/generate_officer_terms.py         # after the above — reuses its source CSVs
+python3 r9/generate_r9_vitality.py                      # independent: Region 9 dashboards from r9/R9 Data/
 ```
 
 `./run_all.sh` (repo root) runs the whole pipeline in one shot: fetches every
@@ -123,6 +124,12 @@ All are separate entry points that **import from `generate_vitality_report.py`**
 - `officer_terms/generate_officer_terms.py` — flags **elected** positions only (Chair/Vice Chair/Secretary/Treasurer/Webmaster — Counselor/Advisor are appointed, excluded) whose `Position End` is within `SUCCESSION_ALERT_DAYS` (90) or whose tenure since `Position Start` exceeds `TERM_LIMIT_YEARS` (2).
 - `member_society_lookup/generate_member_society_lookup.py` — reads `Member Detail View.csv` and always (re)writes `member_society_lookup/lookup.html`, a self-contained local page embedding only `{membership number: Society List}` pairs (no other columns) with a paste-a-list-and-count UI; optionally also prints a CLI report if membership numbers are passed as args/`--file`. `lookup.html` embeds a per-member identifier for every member in the export, so unlike every other dashboard output it must **never** be committed or published — it's git-ignored even though (unlike the CSVs above) it contains no names/emails.
 
+### `r9/` — Region 9 dashboards split by Section
+
+`r9/generate_r9_vitality.py` is a fourth satellite entry point: it imports the root loaders/generators and runs them over region-wide exports in `r9/R9 Data/` (git-ignored as a whole folder). It relies on the root loaders' **optional keyword parameters** (`load_ou_universe(branch_file, chapter_file)`, `load_officers(units, volunteer_file)`, `find_events_file(base_dir)`, `load_events(units, events_path)`, and `build_dashboard(..., title=, nav_html=)`) — their defaults must keep reproducing the root Colombia output exactly. `OU.section`/`OU.council` are read from the exports' `"Section Name   "`/`"Council Name     "` columns (trailing spaces are vTools's) and are `""` for exports without them.
+
+It loads the region once, groups OUs by `ou.section`, and writes one scope directory per Section plus `region/` under `r9/dashboards/` (each with `index.html`, `vitality_report.csv`, `vitality_history.csv`, and both printable reports, so the dashboard's relative report links work unchanged), plus a `r9/dashboards/index.html` Section picker grouped by Council. Scope is OU vitality only: `Member Detail View.csv` is never read, so the society/grade trend cards stay in their empty state and no PII snapshot/log files are produced. Note the R9 volunteer export (`Volunteer List by OU with Region & Section.csv`) also lists **Past** position holders; `load_officers()` skips any row whose `Volunteer Position Status` is not `Active` for that reason (the root export is Active-only, so this is a no-op there).
+
 ### `automations/` — fetching the source CSVs
 
 Two standalone Playwright scripts, unrelated to the `generate_vitality_report.py` import chain above (they only produce the raw CSVs it later reads) — see `automations/README.md` for setup and the full export recipe.
@@ -143,7 +150,10 @@ The dashboard follows the project's `dataviz` skill conventions throughout — r
 
 `.github/workflows/pages.yml` deploys to GitHub Pages on push to `main`
 when `vitality_dashboard.html`, `university_report.html`, or
-`society_report.html` change (or on manual dispatch): copies
-`vitality_dashboard.html`→`_site/index.html` plus the CSV/other HTML
-reports, then `actions/upload-pages-artifact` + `actions/deploy-pages`.
-No build step — the committed HTML files are deployed as-is.
+`society_report.html`, or anything under `r9/dashboards/` change (or on
+manual dispatch): copies `vitality_dashboard.html`→`_site/index.html`
+plus the CSV/other HTML reports, and `r9/dashboards/`→`_site/beta_r9/`
+(the Region 9 beta, served as-is so its relative links hold), then
+`actions/upload-pages-artifact` + `actions/deploy-pages`. No build step
+— the committed HTML files are deployed as-is, which is why
+`r9/dashboards/` is committed (no PII in it) rather than ignored.

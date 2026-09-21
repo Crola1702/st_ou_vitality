@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>IEEE Student OU Vitality — Society Reports</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; background: #f2f2f0; color: #111; }
+  .toc { max-width: 700px; margin: 40px auto; padding: 0 20px; }
+  .toc h1 { font-size: 1.4rem; }
+  .toc ul { columns: 2; gap: 24px; padding-left: 20px; }
+  .toc li { margin: 4px 0; }
+  .toc a { color: #111; text-decoration: none; cursor: pointer; }
+  .toc a:hover { text-decoration: underline; }
+  .group-page {
+    max-width: 900px; margin: 0 auto 40px; background: #fff; padding: 40px;
+    border: 1px solid #ddd; border-radius: 4px;
+  }
+  .group-page h1 { font-size: 1.6rem; margin: 0 0 2px; }
+  .subtitle { color: #555; font-size: 0.85rem; margin: 0 0 20px; }
+  .stat-row { display: flex; gap: 24px; margin-bottom: 24px; }
+  .stat-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.03em; color: #666; }
+  .stat-value { font-size: 1.4rem; font-weight: 700; }
+  .bar-chart { margin-bottom: 28px; }
+  .bar-row { display: grid; grid-template-columns: 110px 1fr 28px; align-items: center; gap: 10px; margin: 6px 0; }
+  .bar-label { font-size: 0.78rem; color: #333; }
+  .bar-track { background: #eee; border-radius: 999px; height: 14px; overflow: hidden; }
+  .bar-fill { height: 100%; border-radius: 999px; }
+  .bar-value { font-size: 0.8rem; font-weight: 700; text-align: right; font-variant-numeric: tabular-nums; }
+  table { border-collapse: collapse; width: 100%; font-size: 0.82rem; }
+  th, td { padding: 6px 8px; text-align: left; border-bottom: 1px solid #eee; }
+  th { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.02em; color: #666; }
+  td.mono { font-variant-numeric: tabular-nums; color: #555; }
+  .page-toolbar { margin-bottom: 12px; }
+  .page-toolbar button {
+    font: inherit; cursor: pointer; padding: 6px 14px; border-radius: 6px; border: 1px solid #ccc;
+    background: #fafafa; color: #111;
+  }
+  .page-toolbar button:hover { background: #eee; }
+  @media print {
+    body { background: #fff; }
+    .toc, .group-page { page-break-after: always; border: none; box-shadow: none; margin: 0; max-width: none; }
+    .no-print { display: none !important; }
+    body.print-single .group-page:not(.print-target) { display: none; }
+  }
+</style>
+</head>
+<body>
+  <section class="toc">
+    <h1>IEEE Student OU Vitality — Society Reports</h1>
+    <p class="subtitle">Generated 2026-09-21 · one printable page per society · click a name to print just that page, or print this whole document (Ctrl/Cmd+P → Save as PDF) for all of them.</p>
+    <ul></ul>
+  </section>
+  
+<script>
+  function printOnly(id) {
+    document.querySelectorAll('.group-page').forEach(el => el.classList.remove('print-target'));
+    const target = document.getElementById(id);
+    if (target) target.classList.add('print-target');
+    document.body.classList.add('print-single');
+    window.print();
+  }
+  window.addEventListener('afterprint', () => {
+    document.body.classList.remove('print-single');
+  });
+</script>
+</body>
+</html>

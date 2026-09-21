@@ -1,0 +1,51 @@
+Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
+"Inst Tec Sup De Coatzacoalcos, WIE",SBA03571,Affinity Group,Instituto Tecnologico Superior de Coatzacoalcos,WIE,12,6,Yes,0,,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+"Instituto Tecnologico De Veracruz, WIE",SBA29431,Affinity Group,Instituto Tecnologico De Veracruz,WIE,7,6,Yes,0,,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Instituto Tecnologico Superior de Xalapa, WIE",SBA01015,Affinity Group,Instituto Tecnologico Superior de Xalapa,WIE,6,6,Yes,0,,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Universidad Veracruzana - FIME,WIE",SBA01022,Affinity Group,Universidad Veracruzana - FIME,WIE,31,6,Yes,2,,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
+"Universidad Veracruzana Sede Coatzacoalcos,WIE",SBA11411,Affinity Group,Universidad Veracruzana Sede Coatzacoalcos,WIE,0,6,No,0,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+Instituto Tecnologico De Veracruz,STB29431,Student Branch,Instituto Tecnologico De Veracruz,,71,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+Instituto Tecnologico Superior de Coatzacoalcos,STB03571,Student Branch,Instituto Tecnologico Superior de Coatzacoalcos,,57,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+Instituto Tecnologico Superior de Misantla,STB60224241,Student Branch,Instituto Tecnologico Superior de Misantla,,15,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+Instituto Tecnologico Superior de Naranjos,STB60209749,Student Branch,Instituto Tecnologico Superior de Naranjos,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Instituto Tecnologico Superior de Poza Rica,STB10089,Student Branch,Instituto Tecnologico Superior de Poza Rica,,5,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Instituto Tecnologico Superior de Xalapa,STB01015,Student Branch,Instituto Tecnologico Superior de Xalapa,,30,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,Yes,No,Met,2/3,Not Met
+Instituto Tecnologico de Orizaba,STB37821,Student Branch,Instituto Tecnologico de Orizaba,,31,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+Universidad Cristobal Colon,STB63191,Student Branch,Universidad Cristobal Colon,,31,12,Yes,1,,1,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+Universidad Veracruzana - FIME,STB01022,Student Branch,Universidad Veracruzana - FIME,,44,12,Yes,2,,0,4,No,Yes,Yes,,Yes,Yes,Yes,No,Met,2/3,Not Met
+Universidad Veracruzana FIE,STB60191,Student Branch,Universidad Veracruzana FIE,,75,12,Yes,2,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+Universidad Veracruzana Ing Boca del Rio,STB65671,Student Branch,Universidad Veracruzana Ing Boca del Rio,,124,12,Yes,12,,4,4,Yes,No,Yes,,No,No,No,No,Partial,2/3,Not Met
+Universidad Veracruzana Microna,STB29161,Student Branch,Universidad Veracruzana Microna,,9,12,No,0,,0,4,No,Yes,Yes,,No,No,No,No,Met,1/3,Not Met
+Universidad Veracruzana Orizaba Cordoba,STB60235185,Student Branch,Universidad Veracruzana Orizaba Cordoba,,67,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+Universidad Veracruzana Sede Coatzacoalcos,STB11411,Student Branch,Universidad Veracruzana Sede Coatzacoalcos,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Universidad Veracruzana-LSCA,STB60221827,Student Branch,Universidad Veracruzana-LSCA,,30,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
+Universidad Veracruzana-Poza Rica,STB11700,Student Branch,Universidad Veracruzana-Poza Rica,,13,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,Yes,No,Met,2/3,Not Met
+"Inst Tec Sup De Coatzacoalcos, PEL35",SBC03571E,Student Branch Chapter,Instituto Tecnologico Superior de Coatzacoalcos,PEL35,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Inst Tech Sup de Coatzacoalcos, IA34",SBC03571C,Student Branch Chapter,Instituto Tecnologico Superior de Coatzacoalcos,IA34,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Inst Tech Sup de Coatzacoalcos, IE13",SBC03571D,Student Branch Chapter,Instituto Tecnologico Superior de Coatzacoalcos,IE13,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Inst Tech Sup de Coatzacoalcos, PE31",SBC03571B,Student Branch Chapter,Instituto Tecnologico Superior de Coatzacoalcos,PE31,15,6,Yes,2,2,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
+"Inst Tech Sup de Coatzacoalcos,RA24",SBC03571A,Student Branch Chapter,Instituto Tecnologico Superior de Coatzacoalcos,RA24,27,6,Yes,1,1,1,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Instituto Tecn Superior de Coatzacoalcos,IM09",SBC03571F,Student Branch Chapter,Instituto Tecnologico Superior de Coatzacoalcos,IM09,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Instituto Tecnologico De Veracruz, C16",SBC2943A,Student Branch Chapter,Instituto Tecnologico De Veracruz,C16,12,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
+"Instituto Tecnologico De Veracruz, RA24",SBC29431,Student Branch Chapter,Instituto Tecnologico De Veracruz,RA24,37,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Instituto Tecnologico De Veracruz,PE31",SBC2943B,Student Branch Chapter,Instituto Tecnologico De Veracruz,PE31,7,6,Yes,1,1,0,2,No,Yes,,No,Yes,Yes,Yes,Yes,Partial,1/3,Not Met
+"Instituto Tecnologico Superior de Xalapa,C16",SBC01015,Student Branch Chapter,Instituto Tecnologico Superior de Xalapa,C16,9,6,Yes,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+"Instituto Tecnologico de Orizaba,RA24",SBC37821,Student Branch Chapter,Instituto Tecnologico de Orizaba,RA24,22,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Universidad Cristobal Colon,C16/COM19/ED15",SBC63191,Student Branch Chapter,Universidad Cristobal Colon,C16/COM19/ED15,7,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Universidad Veracruzana - FIME,ED15",SBC01022A,Student Branch Chapter,Universidad Veracruzana - FIME,ED15,35,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
+"Universidad Veracruzana - FIME,PE31",SBC01022,Student Branch Chapter,Universidad Veracruzana - FIME,PE31,38,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
+"Universidad Veracruzana FIE,AES10",SBC60191B,Student Branch Chapter,Universidad Veracruzana FIE,AES10,10,6,Yes,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+"Universidad Veracruzana FIE,EMB18",SBC60191A,Student Branch Chapter,Universidad Veracruzana FIE,EMB18,24,6,Yes,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,1/3,Not Met
+"Universidad Veracruzana FIE,RA24",SBC60191,Student Branch Chapter,Universidad Veracruzana FIE,RA24,33,6,Yes,0,0,0,2,No,Yes,,No,No,No,No,No,Partial,1/3,Not Met
+"Universidad Veracruzana Ing Boca del Rio, CS23",SBC65671,Student Branch Chapter,Universidad Veracruzana Ing Boca del Rio,CS23,0,6,No,1,1,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Universidad Veracruzana Ing Boca del Rio, ED15",SBC65671B,Student Branch Chapter,Universidad Veracruzana Ing Boca del Rio,ED15,8,6,Yes,0,0,1,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
+"Universidad Veracruzana Ing Boca del Rio, RA24",SBC65671A,Student Branch Chapter,Universidad Veracruzana Ing Boca del Rio,RA24,34,6,Yes,10,9,3,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Universidad Veracruzana Ing Boca del Rio, SMC28",SBC65671C,Student Branch Chapter,Universidad Veracruzana Ing Boca del Rio,SMC28,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Universidad Veracruzana Ing Boca del Rio,C16",SBC65671E,Student Branch Chapter,Universidad Veracruzana Ing Boca del Rio,C16,32,6,Yes,6,5,2,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Universidad Veracruzana Ing Boca del Rio,PE31",SBC65671D,Student Branch Chapter,Universidad Veracruzana Ing Boca del Rio,PE31,2,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Universidad Veracruzana Ing Boca del Rio,TEM14",SBC65671F,Student Branch Chapter,Universidad Veracruzana Ing Boca del Rio,TEM14,21,6,Yes,1,1,2,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Universidad Veracruzana Ing Boca del Rio,VT06",SBC65671G,Student Branch Chapter,Universidad Veracruzana Ing Boca del Rio,VT06,22,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Universidad Veracruzana Microna,ED15",SBC29161,Student Branch Chapter,Universidad Veracruzana Microna,ED15,1,6,No,0,0,1,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"Universidad Veracruzana Sede Coatzacoalcos,ED15",SBC11411A,Student Branch Chapter,Universidad Veracruzana Sede Coatzacoalcos,ED15,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Universidad Veracruzana Sede Coatzacoalcos,PE31",SBC11411,Student Branch Chapter,Universidad Veracruzana Sede Coatzacoalcos,PE31,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Universidad Veracruzana-LSCA,C16",SBC60221827,Student Branch Chapter,Universidad Veracruzana-LSCA,C16,6,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,No,No,Yes,Met,2/3,Not Met

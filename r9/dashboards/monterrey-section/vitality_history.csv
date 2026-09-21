@@ -1,0 +1,35 @@
+Date,SPO ID,Unit Type,University,Society,Member Count,Requirements Met,Members Met,Events Met,Officers Status,Overall Vitality
+2026-09-21,SBA05171,Affinity Group,Instituto Tec Estudios-Monterrey,WIE,0,1,No,No,Met,Not Met
+2026-09-21,SBA21581,Affinity Group,Instituto Tecnologico de La Laguna,WIE,18,2,Yes,No,Met,Not Met
+2026-09-21,SBA14941,Affinity Group,Universidad de Monterrey,WIE,26,1,Yes,No,Partial,Not Met
+2026-09-21,STB05171,Student Branch,Instituto Tec Estudios-Monterrey,,8,0,No,No,Partial,Not Met
+2026-09-21,STB89501,Student Branch,Instituto Tecnologico De Ciudad Madero,,16,1,Yes,No,Partial,Not Met
+2026-09-21,STB60631,Student Branch,Instituto Tecnologico Superior de Lerdo,,0,0,No,No,Not Met,Not Met
+2026-09-21,STB21581,Student Branch,Instituto Tecnologico de La Laguna,,26,2,Yes,No,Met,Not Met
+2026-09-21,STB66521,Student Branch,Instituto Tecnologico de Nuevo Leon,,5,0,No,No,Partial,Not Met
+2026-09-21,STB65721,Student Branch,Universidad Autonoma de Ciudad Juarez,,8,0,No,No,Not Met,Not Met
+2026-09-21,STB59501,Student Branch,Universidad Autonoma de Nuevo Leon,,76,3,Yes,Yes,Met,Met
+2026-09-21,STB16731,Student Branch,Universidad Regiomontana,,0,0,No,No,Not Met,Not Met
+2026-09-21,STB10021,Student Branch,Universidad Tec Milenio Campus Las Torres,,1,0,No,No,Not Met,Not Met
+2026-09-21,STB14941,Student Branch,Universidad de Monterrey,,58,2,Yes,No,Met,Not Met
+2026-09-21,SBC0517A,Student Branch Chapter,Instituto Tec Estudios-Monterrey,PE31,0,0,No,No,Not Met,Not Met
+2026-09-21,SBC0517C,Student Branch Chapter,Instituto Tec Estudios-Monterrey,RA24,0,2,No,Yes,Met,Not Met
+2026-09-21,SBC05171,Student Branch Chapter,Instituto Tec Estudios-Monterrey,C16,1,0,No,No,Partial,Not Met
+2026-09-21,SBC0517B,Student Branch Chapter,Instituto Tec Estudios-Monterrey,COM19,0,1,No,No,Met,Not Met
+2026-09-21,SBC66521,Student Branch Chapter,Instituto Tecnologico de Nuevo Leon,RA24,0,0,No,No,Not Met,Not Met
+2026-09-21,SBC21581A,Student Branch Chapter,Instituto Tecnologico de La Laguna,EMB18,1,0,No,No,Not Met,Not Met
+2026-09-21,SBC21581B,Student Branch Chapter,Instituto Tecnologico de La Laguna,IA34,19,2,Yes,No,Met,Not Met
+2026-09-21,SBC21581C,Student Branch Chapter,Instituto Tecnologico de La Laguna,MAG33,12,2,Yes,No,Met,Not Met
+2026-09-21,SBC21581,Student Branch Chapter,Instituto Tecnologico de La Laguna,PE31,10,2,Yes,No,Met,Not Met
+2026-09-21,SBC66521A,Student Branch Chapter,Instituto Tecnologico de Nuevo Leon,EMB18,1,0,No,No,Not Met,Not Met
+2026-09-21,SBC59501A,Student Branch Chapter,Universidad Autonoma de Nuevo Leon,C16,9,2,Yes,Yes,Partial,Not Met
+2026-09-21,SBC59501F,Student Branch Chapter,Universidad Autonoma de Nuevo Leon,COM19,10,2,Yes,No,Met,Not Met
+2026-09-21,SBC59501D,Student Branch Chapter,Universidad Autonoma de Nuevo Leon,CS23,8,2,Yes,No,Met,Not Met
+2026-09-21,SBC59501C,Student Branch Chapter,Universidad Autonoma de Nuevo Leon,EMB18,4,0,No,No,Partial,Not Met
+2026-09-21,SBC59501,Student Branch Chapter,Universidad Autonoma de Nuevo Leon,PHO36,1,0,No,No,Partial,Not Met
+2026-09-21,SBC59501B,Student Branch Chapter,Universidad Autonoma de Nuevo Leon,RA24,6,3,Yes,Yes,Met,Met
+2026-09-21,SBC59501E,Student Branch Chapter,Universidad Autonoma de Nuevo Leon,VT06,12,2,Yes,No,Met,Not Met
+2026-09-21,SBC10021,Student Branch Chapter,Universidad Tec Milenio Campus Las Torres,RA24,1,0,No,No,Not Met,Not Met
+2026-09-21,SBC14941B,Student Branch Chapter,Universidad de Monterrey,EMB18,11,1,Yes,No,Not Met,Not Met
+2026-09-21,SBC14941A,Student Branch Chapter,Universidad de Monterrey,RA24,1,0,No,No,Not Met,Not Met
+2026-09-21,SBC14941D,Student Branch Chapter,Universidad de Monterrey,CAS04,13,2,Yes,No,Met,Not Met

@@ -1,0 +1,32 @@
+Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
+"Federal University of Sao Joao del-Rei,WIE",SBA11757,Affinity Group,Federal University of Sao Joao del-Rei,WIE,5,6,No,5,,0,2,Yes,Yes,,No,Yes,Yes,Yes,No,Partial,1/3,Not Met
+"PUC Minas-Pocos de Caldas,WIE",SBA20129,Affinity Group,PUC Minas-Pocos de Caldas,WIE,0,6,No,0,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Pontifica Univ Catolica de Minas Gerais,WIE",SBA04981,Affinity Group,Pontifical Catholic University of Minas Gerais,WIE,1,6,No,0,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Universidade Federal De Juiz De Fora,SIGHT",SBA13491S,Affinity Group,Universidade Federal De Juiz De Fora,SIGHT,85,6,Yes,1,,2,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
+"Universidade Federal De Juiz De Fora,WIE",SBA13491,Affinity Group,Universidade Federal De Juiz De Fora,WIE,70,6,Yes,7,,3,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
+Centro Federal Educacao Tecnologico-Minas Gerais,STB40000276,Student Branch,Centro Federal Educacao Tecnologico-Minas Gerais,,14,12,Yes,0,,0,4,No,No,Yes,,Yes,No,Yes,No,Partial,1/3,Not Met
+Federal University of Minas Gerais,STB12521,Student Branch,Federal University of Minas Gerais,,26,12,Yes,1,,0,4,No,Yes,Yes,,Yes,Yes,No,Yes,Met,2/3,Not Met
+Federal University of Ouro Preto,STB40273279,Student Branch,Federal University of Ouro Preto,,13,12,Yes,3,,0,4,No,Yes,Yes,,Yes,Yes,Yes,No,Met,2/3,Not Met
+Federal University of Sao Joao del-Rei,STB11757,Student Branch,Federal University of Sao Joao del-Rei,,13,12,Yes,3,,0,4,No,Yes,Yes,,Yes,Yes,Yes,No,Met,2/3,Not Met
+Federal University of Vicosa,STB66311,Student Branch,Federal University of Vicosa,,4,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+PUC Minas-Pocos de Caldas,STB20129,Student Branch,PUC Minas-Pocos de Caldas,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Pontifical Catholic University of Minas Gerais,STB04981,Student Branch,Pontifical Catholic University of Minas Gerais,,1,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Universidade Federal De Juiz De Fora,STB13491,Student Branch,Universidade Federal De Juiz De Fora,,87,12,Yes,43,,8,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Universidade Federal de Lavras,STB60021935,Student Branch,Universidade Federal de Lavras,,14,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Federal University of Minas Gerais,IA34",SBC12521,Student Branch Chapter,Federal University of Minas Gerais,IA34,2,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Federal University of Sao Joao del-Rei,PE31",SBC11757A,Student Branch Chapter,Federal University of Sao Joao del-Rei,PE31,3,6,No,2,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"Federal University of Sao Joao del-Rei,RA24",SBC11757,Student Branch Chapter,Federal University of Sao Joao del-Rei,RA24,2,6,No,1,0,0,2,No,Yes,,No,No,No,No,No,Partial,0/3,Not Met
+"PUC Minas-Pocos de Caldas,PE31",SBC20129,Student Branch Chapter,PUC Minas-Pocos de Caldas,PE31,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"PUC Minas-Pocos de Caldas,RA24",SBC20129A,Student Branch Chapter,PUC Minas-Pocos de Caldas,RA24,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Pontifica Univ Catolica de Minas Gerais,C16",SBC04981B,Student Branch Chapter,Pontifical Catholic University of Minas Gerais,C16,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Pontifica Univ Catolica de Minas Gerais,RA24",SBC04981A,Student Branch Chapter,Pontifical Catholic University of Minas Gerais,RA24,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Univ Federal De Juiz De Fora, IA34",SBC13491D,Student Branch Chapter,Universidade Federal De Juiz De Fora,IA34,45,6,Yes,18,8,4,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Univ Federal De Juiz De Fora, RA24",SBC13491A,Student Branch Chapter,Universidade Federal De Juiz De Fora,RA24,33,6,Yes,13,7,2,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Universidade Federal De Juiz De Fora,AES10",SBC13491I,Student Branch Chapter,Universidade Federal De Juiz De Fora,AES10,13,6,Yes,10,9,1,2,Yes,Yes,,Yes,Yes,No,No,Yes,Met,3/3,Met
+"Universidade Federal De Juiz De Fora,AP03",SBC13491H,Student Branch Chapter,Universidade Federal De Juiz De Fora,AP03,36,6,Yes,4,2,0,2,Yes,Yes,,Yes,Yes,No,No,No,Met,3/3,Met
+"Universidade Federal De Juiz De Fora,C16",SBC13491G,Student Branch Chapter,Universidade Federal De Juiz De Fora,C16,56,6,Yes,15,13,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Universidade Federal De Juiz De Fora,CAS04",SBC13491B,Student Branch Chapter,Universidade Federal De Juiz De Fora,CAS04,14,6,Yes,3,3,2,2,Yes,Yes,,Yes,Yes,Yes,No,No,Met,3/3,Met
+"Universidade Federal De Juiz De Fora,COM19",SBC13491C,Student Branch Chapter,Universidade Federal De Juiz De Fora,COM19,42,6,Yes,4,3,1,2,Yes,Yes,,Yes,No,No,Yes,No,Met,3/3,Met
+"Universidade Federal De Juiz De Fora,E25",SBC13491E,Student Branch Chapter,Universidade Federal De Juiz De Fora,E25,47,6,Yes,30,6,2,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Universidade Federal De Juiz De Fora,PE31",SBC13491,Student Branch Chapter,Universidade Federal De Juiz De Fora,PE31,56,6,Yes,25,24,2,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Universidade Federal De Juiz De Fora,VT06",SBC13491F,Student Branch Chapter,Universidade Federal De Juiz De Fora,VT06,19,6,Yes,1,0,1,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
