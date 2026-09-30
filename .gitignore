@@ -45,3 +45,6 @@ automations/.venv/
 .claude/
 __pycache__/
 .~lock.*#
+
+# Ad-hoc export with officer names/emails (PII)
+colombia_counselors_advisors.csv
