@@ -1,0 +1,44 @@
+name: Mirror to IEEE GitLab
+
+# One-way mirror: GitHub is the source of truth, the GitLab copy is read-only.
+# Needs a repository secret IEEE_GITLAB_TOKEN: a GitLab project access token
+# with the write_repository scope and a role allowed to push to main.
+
+on:
+  push:
+    branches: [main]
+    tags: ["*"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: mirror
+  cancel-in-progress: false
+
+env:
+  GITLAB_HOST: opensource.ieee.org
+  GITLAB_PATH: cristobal.arroyo/st_ou_vitality
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Push branches and tags to GitLab
+        env:
+          GITLAB_TOKEN: ${{ secrets.IEEE_GITLAB_TOKEN }}
+        run: |
+          if [ -z "$GITLAB_TOKEN" ]; then
+            echo "IEEE_GITLAB_TOKEN secret is not set" >&2
+            exit 1
+          fi
+          url="https://oauth2:${GITLAB_TOKEN}@${GITLAB_HOST}/${GITLAB_PATH}.git"
+          # Not --mirror: it also pushes refs/remotes/*, which GitLab rejects
+          # ("deny updating a hidden ref").
+          git push "$url" --all
+          git push "$url" --tags
