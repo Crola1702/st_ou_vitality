@@ -43,6 +43,15 @@ browser (the Chrome dev tools skill / `run` skill is the normal way to do
 this in a Claude Code session, since `file://` URLs can't be navigated
 directly — serve the directory with `python3 -m http.server` instead).
 
+## Changelog
+
+Whenever a new tool or feature is added to the project (a new script,
+dashboard card, report, or other user-facing capability), also add an entry
+to `CHANGELOG.md` in the same change. Fixes and behavior changes to existing
+tools belong there too. Do **not** add changelog entries for routine data
+refreshes (re-exported source CSVs, regenerated outputs, new history rows)
+or for CI/workflow trigger changes.
+
 ## Required local input files (never commit these)
 
 Four vTools exports must exist in the repo root before running
