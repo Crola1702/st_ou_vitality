@@ -50,7 +50,10 @@ dashboard card, report, or other user-facing capability), also add an entry
 to `CHANGELOG.md` in the same change. Fixes and behavior changes to existing
 tools belong there too. Do **not** add changelog entries for routine data
 refreshes (re-exported source CSVs, regenerated outputs, new history rows)
-or for CI/workflow trigger changes.
+or for tweaks to when an existing CI workflow runs (path filters, branch or
+schedule triggers). A new CI capability (a new deploy target, mirror, or
+workflow that publishes or syncs something) is a feature and does get an
+entry.
 
 ## Required local input files (never commit these)
 

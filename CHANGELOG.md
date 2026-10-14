@@ -4,6 +4,20 @@ Notable changes to this project. Format loosely follows
 [Keep a Changelog](https://keepachangelog.com/), dated by day rather than by
 version since this project doesn't cut releases.
 
+## 2026-10-14
+
+### Added
+
+- **IEEE GitLab mirror** (`.github/workflows/mirror.yml`): every push to
+  `main` and every tag is pushed to the project on `opensource.ieee.org`.
+  One-way: GitHub stays the source of truth and the GitLab copy is
+  read-only. Needs the `IEEE_GITLAB_TOKEN` repository secret (a GitLab
+  project access token with `write_repository`).
+- **GitLab Pages deploy** (`.gitlab-ci.yml`): publishes the same site as the
+  GitHub Pages workflow (dashboard, reports, CSV, and the Region 9 beta under
+  `/beta_r9/`) from the GitLab copy, so the dashboard is also available on
+  IEEE's instance.
+
 ## 2026-09-28
 
 ### Added
