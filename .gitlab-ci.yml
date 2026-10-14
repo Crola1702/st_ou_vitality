@@ -1,0 +1,30 @@
+# GitLab Pages deploy, mirroring .github/workflows/pages.yml.
+# This repo is mirrored here from GitHub (see .github/workflows/mirror.yml),
+# so this file only runs on the GitLab copy.
+
+pages:
+  stage: deploy
+  image: alpine:3.20
+  script:
+    - mkdir -p public
+    - cp vitality_dashboard.html public/index.html
+    - '[ -f vitality_report.csv ] && cp vitality_report.csv public/vitality_report.csv || true'
+    - '[ -f university_report.html ] && cp university_report.html public/university_report.html || true'
+    - '[ -f society_report.html ] && cp society_report.html public/society_report.html || true'
+    # Region 9 dashboards (beta): served as-is under /beta_r9/, so the
+    # section picker's relative links keep working.
+    - '[ -d r9/dashboards ] && cp -r r9/dashboards public/beta_r9 || true'
+  artifacts:
+    paths:
+      - public
+  rules:
+    # Manual run from Build > Pipelines > Run pipeline.
+    - if: '$CI_PIPELINE_SOURCE == "web" && $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
+    # Same path filter as the GitHub workflow.
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
+      changes:
+        - vitality_dashboard.html
+        - university_report.html
+        - society_report.html
+        - r9/dashboards/**/*
+        - .gitlab-ci.yml
