@@ -4,6 +4,108 @@ Notable changes to this project. Format loosely follows
 [Keep a Changelog](https://keepachangelog.com/), dated by day rather than by
 version since this project doesn't cut releases.
 
+## 2026-09-28
+
+### Added
+
+- **Officer lookup tool** (`officer_lookup/generate_officer_lookup.py`): given
+  a list of IEEE membership numbers, reports which of them hold an officer
+  position, in which OU and OU type, plus a breakdown by OU type and position.
+  Reads `Volunteer List by OU.csv` and writes `officer_lookup/lookup.html`, a
+  local paste-a-list page. It embeds membership number to position pairs, so
+  it is git-ignored and never published.
+
+## 2026-09-21
+
+### Added
+
+- **Region 9 dashboards** (`r9/generate_r9_vitality.py`): runs the existing
+  evaluation over region-wide vTools exports in `r9/R9 Data/` (git-ignored)
+  and writes one dashboard per Section plus a whole-region one under
+  `r9/dashboards/`, with a Council-grouped Section picker as the landing
+  page. Scope is OU vitality only; `Member Detail View.csv` is not read, so
+  the society and grade trend cards stay empty.
+- GitHub Pages now also publishes `r9/dashboards/` under `/beta_r9/`
+  (`.github/workflows/pages.yml`).
+
+### Changed
+
+- The root loaders and `build_dashboard()` gained optional keyword
+  parameters (input paths, `title`, `nav_html`) so `r9/` can reuse them. The
+  defaults reproduce the Colombia output unchanged. `OU` now carries
+  `section` and `council`, read from the exports' own columns.
+- `load_officers()` skips positions whose `Volunteer Position Status` is not
+  `Active`. The region-wide volunteer export also lists past holders, which
+  made vacant seats look filled. No effect on the root export, which is
+  Active-only.
+
+## 2026-09-11
+
+### Added
+
+- `membership_status_report_2026.md`: a Spanish-language snapshot report of
+  Colombia Section OU vitality and membership trends as of 2026-09-10,
+  derived from the committed history CSVs (aggregates only).
+
+## 2026-09-01
+
+### Added
+
+- **Membership Grades trend** on the Trends tab: a grouped bar chart of
+  Student Member, Graduate Student Member and Member counts per snapshot,
+  with a click-to-reveal panel showing promotion counts since the previous
+  snapshot (no names).
+- **Promotion tracking**: each run diffs every member's grade against
+  `member_grade_snapshot.csv` and logs promotions out of Student Member or
+  Graduate Student Member. Aggregate counts go to
+  `membership_promotions_summary.csv` (committed, no PII); per-member detail
+  goes to `membership_grade_changes.csv` and `member_grade_snapshot.csv`
+  (git-ignored). The first run only seeds the baseline.
+- **Daily archive** of the generated dashboard and reports before each
+  overwrite, kept locally in `archive/` (git-ignored).
+- Historical backfill from older vTools exports: 4 Membership Grades dates
+  and 2 Society Memberships dates back to 2025-09-29, plus an OU Vitality
+  snapshot for 2025-12-22 reconstructed from an older officer export
+  (`Position Start`/`Position End`) and that year's events cutoff.
+
+### Fixed
+
+- `load_grade_history_trend()` now tells a verified-zero promotion count
+  apart from no data for a date, so a confirmed "nothing changed" result can
+  fill a gap. Two remaining gaps were filled from real per-member diffs, and
+  both windows had zero grade transitions.
+
+### Notes
+
+- The back-estimate of a missing grade from promotion inflow was removed and
+  then restored the same day (`884f2c1`, reverted by `00841ef`), so it is
+  still in place.
+
+## 2026-08-27
+
+### Changed
+
+- `run_all.sh` gained `-h/--help` and `--login` (runs both interactive
+  logins, then exits), and its header now documents the login steps.
+
+## 2026-08-24
+
+### Added
+
+- **`automations/`**: Playwright scripts that fetch the vTools and Tableau
+  source CSVs, replacing manual portal clicks. Own `requirements.txt` and
+  virtualenv, separate from the stdlib-only report pipeline. Session cookies,
+  `.env` and `.venv` are git-ignored.
+- **`run_all.sh`**: one-shot pipeline that fetches every source file, then
+  regenerates the report, dashboard and all downstream tools.
+
+### Fixed
+
+- `chapter_outreach_email.gs` had `SAC_TEAM_CC` hardcoded with a real name
+  and personal email. It now reads from Apps Script's Script Properties, so
+  the real value never lives in git. The old value is being scrubbed from
+  history separately.
+
 ## 2026-08-23
 
 ### Added
