@@ -60,6 +60,12 @@ python automations/tableau_export.py export-preset members_detail --out "Member 
 python automations/vtools_export.py export \
   --search-url "https://events.vtools.ieee.org/events/search/advanced?sub=true&store_values=true&search=&category_id=&subcategory_id=&meeting%5Bregion_spoid%5D=R9&meeting%5Bsection_spoid%5D=R90705&meeting%5Bou_spoid%5D=&society=&meeting_after=01+Jan+2026+12%3A00+AM&meeting_before=&geo_distance=&geo_search=&order=start_time&per_page=30" \
   --out "IEEE_vTools_Events_2026.csv"
+
+# 5 (alternative, no login or browser): the public vTools Events feed.
+# --ou-universe limits it to the OUs in the member-count exports (~20 s);
+# without it, all of Region 9 from 2026-01-01 (~4 min). Override with --span,
+# or pass explicit --spoids A,B.
+python3 automations/vtools_feed_export.py --ou-universe --out "IEEE_vTools_Events_2026.csv"
 ```
 
 `--headed` shows the browser window, which is the default recommendation
