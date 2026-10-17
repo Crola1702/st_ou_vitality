@@ -11,7 +11,6 @@
 # with an auth error, run the login steps first (or `./run_all.sh --login`),
 # then re-run this:
 #   automations/.venv/bin/python automations/tableau_export.py login
-#   automations/.venv/bin/python automations/vtools_export.py login
 #
 # Usage: ./run_all.sh [-h|--help] [--login]
 set -euo pipefail
@@ -31,7 +30,6 @@ case "${1:-}" in
       exit 1
     fi
     "$VENV_PY" automations/tableau_export.py login
-    "$VENV_PY" automations/vtools_export.py login
     exit 0
     ;;
 esac
@@ -40,10 +38,9 @@ if [ ! -x "$VENV_PY" ]; then
   echo "automations/.venv not found — see automations/README.md's Setup section first." >&2
   exit 1
 fi
-if [ ! -f "automations/storage_state.json" ] || [ ! -f "automations/vtools_storage_state.json" ]; then
-  echo "No saved login session — run the login steps in automations/README.md first:" >&2
+if [ ! -f "automations/storage_state.json" ]; then
+  echo "No saved login session — run the login step in automations/README.md first:" >&2
   echo "  $VENV_PY automations/tableau_export.py login" >&2
-  echo "  $VENV_PY automations/vtools_export.py login" >&2
   exit 1
 fi
 
@@ -59,10 +56,8 @@ echo "== 2/5: Volunteer List by OU =="
 echo "== 3/5: Member Detail View =="
 "$VENV_PY" automations/tableau_export.py export-preset members_detail --out "Member Detail View.csv" --headed
 
-echo "== 4/5: vTools Events =="
-"$VENV_PY" automations/vtools_export.py export \
-  --search-url "https://events.vtools.ieee.org/events/search/advanced?sub=true&store_values=true&search=&category_id=&subcategory_id=&meeting%5Bregion_spoid%5D=R9&meeting%5Bsection_spoid%5D=R90705&meeting%5Bou_spoid%5D=&society=&meeting_after=01+Jan+2026+12%3A00+AM&meeting_before=&geo_distance=&geo_search=&order=start_time&per_page=30" \
-  --out "IEEE_vTools_Events_2026.csv"
+echo "== 4/5: vTools Events (public feed, no login) =="
+python3 automations/vtools_feed_export.py --ou-universe --out "IEEE_vTools_Events_2026.csv"
 
 echo "== 5/5: Regenerating report, dashboard, and downstream tools =="
 python3 generate_vitality_report.py

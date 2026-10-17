@@ -4,6 +4,18 @@ Notable changes to this project. Format loosely follows
 [Keep a Changelog](https://keepachangelog.com/), dated by day rather than by
 version since this project doesn't cut releases.
 
+## 2026-10-17
+
+### Added
+
+- **vTools Events feed export** (`automations/vtools_feed_export.py`): fetches
+  events from vTools's public Events feed API (no login, stdlib only) and
+  writes a CSV in the format `load_events()` reads, as an alternative to
+  `vtools_export.py`. Per-OU reported event counts match the advanced-search
+  download; the feed omits cancelled events and future ones, which never
+  counted anyway. `--ou-universe` (or `--spoids`) limits the fetch to the
+  events those OUs host or co-host, ~20 s instead of ~4 min for all of R9.
+
 ## 2026-10-14
 
 ### Added
