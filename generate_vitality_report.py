@@ -872,9 +872,15 @@ ASSETS_DIR = BASE_DIR / "dashboard_assets"
 def render_asset(name: str, **values: object) -> str:
     """Read a dashboard CSS/JS file and fill its `@@NAME@@` placeholders."""
     text = (ASSETS_DIR / name).read_text(encoding="utf-8")
+    # Compare against the raw template, not the filled text, so substituted
+    # data containing "@@" can't trip the check.
+    expected = set(re.findall(r"@@(\w+)@@", text))
+    if expected != set(values):
+        raise ValueError(
+            f"{name}: placeholders {sorted(expected)} don't match supplied {sorted(values)}"
+        )
     for key, value in values.items():
         text = text.replace(f"@@{key}@@", str(value))
-    assert "@@" not in text, f"unfilled placeholder in {name}"
     return text
 
 
