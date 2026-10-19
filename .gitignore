@@ -48,3 +48,4 @@ __pycache__/
 
 # Ad-hoc export with officer names/emails (PII)
 colombia_counselors_advisors.csv
+.codegraph/

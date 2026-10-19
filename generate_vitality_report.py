@@ -87,6 +87,12 @@ def normalize_position(position: str) -> str:
     return candidate if candidate in STANDARD_POSITIONS else position
 
 
+def read_vtools_tsv(path: Path):
+    """Yield rows of a vTools export (tab-delimited, UTF-16) as dicts."""
+    with open(path, encoding="utf-16") as f:
+        yield from csv.DictReader(f, delimiter="\t")
+
+
 def find_events_file(base_dir: Path = BASE_DIR) -> Path:
     matches = [p for p in base_dir.glob("*Events*.csv")]
     if not matches:
@@ -250,39 +256,37 @@ def load_ou_universe(
     and are left "" when absent."""
     units: dict[str, OU] = {}
 
-    with open(branch_file, encoding="utf-16") as f:
-        for row in csv.DictReader(f, delimiter="\t"):
-            spoid = row["Student Branch SPO ID"].strip()
-            if not spoid:
-                continue
-            units[spoid] = OU(
-                name=row["Student Branch"].strip(),
-                spoid=spoid,
-                ou_type="Student Branch",
-                university=row["School Name "].strip(),
-                member_count=clean_number(row["Count of SB Attendees"]),
-                section=row.get("Section Name   ", "").strip(),
-                council=row.get("Council Name     ", "").strip(),
-            )
+    for row in read_vtools_tsv(branch_file):
+        spoid = row["Student Branch SPO ID"].strip()
+        if not spoid:
+            continue
+        units[spoid] = OU(
+            name=row["Student Branch"].strip(),
+            spoid=spoid,
+            ou_type="Student Branch",
+            university=row["School Name "].strip(),
+            member_count=clean_number(row["Count of SB Attendees"]),
+            section=row.get("Section Name   ", "").strip(),
+            council=row.get("Council Name     ", "").strip(),
+        )
 
-    with open(chapter_file, encoding="utf-16") as f:
-        for row in csv.DictReader(f, delimiter="\t"):
-            spoid = row["Student Branch Chapter SPO ID"].strip()
-            if not spoid:
-                continue
-            ou_type = ou_type_for_spoid(spoid)
-            if ou_type is None:
-                continue
-            member_col = "Count of SB Chapter Attendees (v_geo_student_branch_chap)"
-            units[spoid] = OU(
-                name=row["Student Branch Chapter"].strip(),
-                spoid=spoid,
-                ou_type=ou_type,
-                university=row["School Name "].strip(),
-                member_count=clean_number(row[member_col]),
-                section=row.get("Section Name   ", "").strip(),
-                council=row.get("Council Name     ", "").strip(),
-            )
+    for row in read_vtools_tsv(chapter_file):
+        spoid = row["Student Branch Chapter SPO ID"].strip()
+        if not spoid:
+            continue
+        ou_type = ou_type_for_spoid(spoid)
+        if ou_type is None:
+            continue
+        member_col = "Count of SB Chapter Attendees (v_geo_student_branch_chap)"
+        units[spoid] = OU(
+            name=row["Student Branch Chapter"].strip(),
+            spoid=spoid,
+            ou_type=ou_type,
+            university=row["School Name "].strip(),
+            member_count=clean_number(row[member_col]),
+            section=row.get("Section Name   ", "").strip(),
+            council=row.get("Council Name     ", "").strip(),
+        )
 
     return units
 
@@ -292,16 +296,15 @@ def load_officers(units: dict[str, OU], volunteer_file: Path = VOLUNTEER_FILE) -
     currently held positions count: the root export is already Active-only,
     but the region-wide variant (r9/) also lists every "Past" holder, and
     counting those would report vacant seats as filled."""
-    with open(volunteer_file, encoding="utf-16") as f:
-        for row in csv.DictReader(f, delimiter="\t"):
-            status = row.get("Volunteer Position Status", "").strip()
-            if status and status != "Active":
-                continue
-            spoid = row["OU SPO ID"].strip()
-            ou = units.get(spoid)
-            if ou is None:
-                continue
-            ou.officers.add(normalize_position(row["OU Position"].strip()))
+    for row in read_vtools_tsv(volunteer_file):
+        status = row.get("Volunteer Position Status", "").strip()
+        if status and status != "Active":
+            continue
+        spoid = row["OU SPO ID"].strip()
+        ou = units.get(spoid)
+        if ou is None:
+            continue
+        ou.officers.add(normalize_position(row["OU Position"].strip()))
 
 
 def parse_event_date(value: str) -> datetime | None:
@@ -553,14 +556,13 @@ def count_society_memberships() -> dict[str, int]:
     if not SOCIETY_MEMBER_FILE.exists():
         return {}
     counts: dict[str, int] = {}
-    with open(SOCIETY_MEMBER_FILE, encoding="utf-16") as f:
-        for row in csv.DictReader(f, delimiter="\t"):
-            if row.get("Section", "").strip() != "Colombia Section":
-                continue
-            for code in row.get("Society List", "").strip().split(","):
-                code = code.strip()
-                if code:
-                    counts[code] = counts.get(code, 0) + 1
+    for row in read_vtools_tsv(SOCIETY_MEMBER_FILE):
+        if row.get("Section", "").strip() != "Colombia Section":
+            continue
+        for code in row.get("Society List", "").strip().split(","):
+            code = code.strip()
+            if code:
+                counts[code] = counts.get(code, 0) + 1
     return counts
 
 
@@ -730,19 +732,18 @@ def load_member_directory() -> dict[str, dict]:
     if not SOCIETY_MEMBER_FILE.exists():
         return {}
     directory: dict[str, dict] = {}
-    with open(SOCIETY_MEMBER_FILE, encoding="utf-16") as f:
-        for row in csv.DictReader(f, delimiter="\t"):
-            if row.get("Section", "").strip() != "Colombia Section":
-                continue
-            num = row.get("Member/Customer Number", "").strip()
-            if not num:
-                continue
-            directory[num] = {
-                "grade": row.get("Grade", "").strip(),
-                "first": row.get("First Name", "").strip(),
-                "last": row.get("Last Name", "").strip(),
-                "email": row.get("Email Address", "").strip(),
-            }
+    for row in read_vtools_tsv(SOCIETY_MEMBER_FILE):
+        if row.get("Section", "").strip() != "Colombia Section":
+            continue
+        num = row.get("Member/Customer Number", "").strip()
+        if not num:
+            continue
+        directory[num] = {
+            "grade": row.get("Grade", "").strip(),
+            "first": row.get("First Name", "").strip(),
+            "last": row.get("Last Name", "").strip(),
+            "email": row.get("Email Address", "").strip(),
+        }
     return directory
 
 

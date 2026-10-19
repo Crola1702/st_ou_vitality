@@ -34,6 +34,7 @@ from generate_vitality_report import (
     load_events,
     load_officers,
     load_ou_universe,
+    read_vtools_tsv,
 )
 
 OUTPUT_PATH = THIS_DIR / "chapter_outreach.csv"
@@ -44,18 +45,17 @@ CHAPTER_OFFICER_POSITIONS = ["Chair", "Advisor", "Vice Chair", "Secretary", "Tre
 def load_contacts() -> dict[str, list[dict]]:
     """spoid -> list of {position, name, email} for OK-to-contact volunteers."""
     contacts: dict[str, list[dict]] = {}
-    with open(VOLUNTEER_FILE, encoding="utf-16") as f:
-        for row in csv.DictReader(f, delimiter="\t"):
-            if row.get("OK to Contact", "").strip() != "Y":
-                continue
-            email = row.get("Email Address", "").strip()
-            if not email:
-                continue
-            spoid = row["OU SPO ID"].strip()
-            name = f"{row.get('First Name', '').strip()} {row.get('Last Name', '').strip()}".strip()
-            contacts.setdefault(spoid, []).append(
-                {"position": row["OU Position"].strip(), "name": name, "email": email}
-            )
+    for row in read_vtools_tsv(VOLUNTEER_FILE):
+        if row.get("OK to Contact", "").strip() != "Y":
+            continue
+        email = row.get("Email Address", "").strip()
+        if not email:
+            continue
+        spoid = row["OU SPO ID"].strip()
+        name = f"{row.get('First Name', '').strip()} {row.get('Last Name', '').strip()}".strip()
+        contacts.setdefault(spoid, []).append(
+            {"position": row["OU Position"].strip(), "name": name, "email": email}
+        )
     return contacts
 
 
