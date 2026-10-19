@@ -320,14 +320,21 @@ class CliNumbersTest(unittest.TestCase):
 
 
 class RenderAssetTest(unittest.TestCase):
-    def test_every_placeholder_is_filled(self):
-        # render_asset asserts on leftovers, so a missing kwarg fails loudly.
-        with self.assertRaises(AssertionError):
+    def test_missing_placeholder_value_raises(self):
+        with self.assertRaises(ValueError):
             gvr.render_asset("dashboard.css")
+
+    def test_extra_value_raises(self):
+        with self.assertRaises(ValueError):
+            gvr.render_asset("dashboard.css", STATUS_SERIOUS="#123456", UNUSED="x")
 
     def test_known_placeholder_substituted(self):
         css = gvr.render_asset("dashboard.css", STATUS_SERIOUS="#123456")
         self.assertIn("#123456", css)
+
+    def test_value_containing_at_signs_is_allowed(self):
+        css = gvr.render_asset("dashboard.css", STATUS_SERIOUS="a@@b")
+        self.assertIn("a@@b", css)
 
 
 class SharedHelpersTest(unittest.TestCase):
