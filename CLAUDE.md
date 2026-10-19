@@ -11,7 +11,7 @@ and publishes the result as CSVs and static, self-contained HTML pages (no
 build step, no dependencies, no server). The main dashboard is published
 via GitHub Pages.
 
-No package manager, no lockfile, no test suite — every script is `python3
+No package manager, no lockfile — every script is `python3
 <script>.py`, stdlib only (`csv`, `html`, `json`, `re`, `datetime`,
 `pathlib`, `collections.abc`). The one exception is `automations/`
 (playwright-based browser automation to fetch the source CSVs) — it has
@@ -37,7 +37,15 @@ outputs stay git-ignored either way. Does not log in itself — a fetch step
 failing with an auth error means the saved session expired; re-run login
 and retry.
 
-There's no lint/test/build config in this repo — verify changes by
+Tests live in `tests/` (stdlib `unittest`, synthetic fixtures only, no
+vTools exports needed): `python3 -m unittest discover tests`. They cover the
+loaders, `evaluate`, the trend loaders, promotion detection, and a
+`build_dashboard` smoke test (inline JS is syntax-checked with `node` when
+installed). For a coverage report, if `coverage` is installed:
+`python3 -m coverage run --source=. --omit='tests/*,automations/*,archive/*,old/*' -m unittest discover tests && python3 -m coverage report -m`.
+The dashboard's runtime JS behavior is not tested.
+
+There's no lint/build config — also verify changes by
 re-running the relevant script and opening the generated HTML in a
 browser (the Chrome dev tools skill / `run` skill is the normal way to do
 this in a Claude Code session, since `file://` URLs can't be navigated

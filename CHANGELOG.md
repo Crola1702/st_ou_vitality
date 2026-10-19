@@ -4,6 +4,18 @@ Notable changes to this project. Format loosely follows
 [Keep a Changelog](https://keepachangelog.com/), dated by day rather than by
 version since this project doesn't cut releases.
 
+## 2026-10-19
+
+### Added
+
+- **Test suite** (`tests/test_dashboard.py`, run with
+  `python3 -m unittest discover tests`): stdlib-only tests on synthetic
+  fixtures covering the source loaders, `evaluate`, the trend loaders,
+  promotion detection, the shared lookup helpers, and a `build_dashboard`
+  smoke test (placeholders filled, assets inlined, inline JS parses). A
+  GitHub Actions workflow (`.github/workflows/tests.yml`) runs them on every
+  pull request and every push to `main`.
+
 ## 2026-10-17
 
 ### Added
