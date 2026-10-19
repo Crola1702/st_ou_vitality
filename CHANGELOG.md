@@ -12,7 +12,9 @@ version since this project doesn't cut releases.
   `python3 -m unittest discover tests`): stdlib-only tests on synthetic
   fixtures covering the source loaders, `evaluate`, the trend loaders,
   promotion detection, the shared lookup helpers, and a `build_dashboard`
-  smoke test (placeholders filled, assets inlined, inline JS parses).
+  smoke test (placeholders filled, assets inlined, inline JS parses). A
+  GitHub Actions workflow (`.github/workflows/tests.yml`) runs them on every
+  push to `main`.
 
 ## 2026-10-17
 
