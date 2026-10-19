@@ -14,7 +14,7 @@ version since this project doesn't cut releases.
   promotion detection, the shared lookup helpers, and a `build_dashboard`
   smoke test (placeholders filled, assets inlined, inline JS parses). A
   GitHub Actions workflow (`.github/workflows/tests.yml`) runs them on every
-  push to `main`.
+  pull request and every push to `main`.
 
 ## 2026-10-17
 
