@@ -1,0 +1,14 @@
+# "Asistencia a ZC 2026.xlsx" / "ZC Piloto". Attendance list (everyone attended).
+name = "zc-piloto-2026"
+
+[columns]
+first_name = "Nombres"
+last_name = "Apellidos"
+document_id = "N° de documento de identidad."
+# The real header continues on a second line ("Puede revisarla en IEEE-Collabratec ...").
+member_id = { startswith = "Número de membresía (Opcional)" }
+organization = { coalesce = ["Datos de Rama estudiantil", "Si seleccionó otra, ¿cuál?"], skip_values = ["otra", "other"] }
+role = "Cargo que ocupa"
+
+[attended]
+mode = "always"

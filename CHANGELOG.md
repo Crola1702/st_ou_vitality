@@ -4,6 +4,31 @@ Notable changes to this project. Format loosely follows
 [Keep a Changelog](https://keepachangelog.com/), dated by day rather than by
 version since this project doesn't cut releases.
 
+## 2026-10-23
+
+### Added
+
+- **Events intelligence** (`events_intelligence/events_intelligence.py`):
+  ingests attendance lists from any number of IEEE events (CSV or XLSX, any
+  layout, mapped by TOML format profiles in `events_intelligence/profiles/`,
+  events listed in `events_intelligence/events.toml`), matches each
+  attendee to an IEEE member (typed member number, a learned national ID to
+  member number memory, email, or exact name), enriches them with grade,
+  societies, officer positions and school, and writes per-event and
+  cross-event reports (`attendance.csv`/`.xlsx`, `people.csv`,
+  `non_members.csv`, `event_summary.csv`, `data_quality.csv`) plus a local
+  `report.html`. Every input and output contains personal data and is
+  git-ignored. `run_all.sh` runs it when its venv and manifest exist. Ships
+  profiles for the 2026 Zona Centro / Zona Santanderes files and the 2025
+  legacy layouts.
+
+### Changed
+
+- `render_asset()` takes an optional `assets_dir`, so satellite tools can
+  inline their own CSS/JS; the dashboard's output is unchanged.
+- The test workflow installs `openpyxl` so the events intelligence XLSX
+  tests run in CI.
+
 ## 2026-10-19
 
 ### Added

@@ -1,0 +1,18 @@
+# Legacy 2025: Google Forms (SAC). "Unviersidad" is the form's real typo, and
+# "Cargo que ocupa" appears twice (the first occurrence wins).
+name = "legacy-sac"
+
+[columns]
+first_name = "Nombres"
+last_name = "Apellidos"
+email = "Correo electrónico"
+member_id = { startswith = "Número de membresía (Opcional)" }
+organization = "Seleccione la Unviersidad / Empresa a la que pertenece"
+role = "Cargo que ocupa"
+attended = "Asistencia"
+
+[attended]
+mode = "column"
+true = ["true"]
+false = ["false"]
+blank = "false"

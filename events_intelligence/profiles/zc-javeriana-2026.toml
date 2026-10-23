@@ -1,0 +1,11 @@
+# "Asistencia a ZC 2026.xlsx" / "ZC Javeriana". Attendance list (everyone attended).
+# "Numero" holds phone numbers, not membership numbers: never map it.
+name = "zc-javeriana-2026"
+
+[columns]
+full_name = "Nombre completo"
+document_id = "Cedula"
+email = "Correo"
+
+[attended]
+mode = "always"

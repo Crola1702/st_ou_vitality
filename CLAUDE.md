@@ -38,7 +38,9 @@ failing with an auth error means the saved session expired; re-run login
 and retry.
 
 Tests live in `tests/` (stdlib `unittest`, synthetic fixtures only, no
-vTools exports needed): `python3 -m unittest discover tests`. They cover the
+vTools exports needed): `python3 -m unittest discover tests`. The
+`events_intelligence/` XLSX tests skip themselves without `openpyxl` (CI
+installs it). They cover the
 loaders, `evaluate`, the trend loaders, promotion detection, and a
 `build_dashboard` smoke test (inline JS is syntax-checked with `node` when
 installed). For a coverage report, if `coverage` is installed:
@@ -101,6 +103,10 @@ committed; `chapter_outreach/chapter_outreach.csv`,
 `membership_grade_changes.csv`, and `member_grade_snapshot.csv` **do**
 contain PII (officer or member names/emails/numbers) and are git-ignored
 even though they're generated.
+Everything under `events_intelligence/attendance/`, `state/` and `output/`
+(raw attendance lists with names, national IDs and phones, the
+document-to-member mapping, every attendance report) is PII and git-ignored
+too; only its code, `profiles/`, `events.toml` and docs are committed.
 
 ## Architecture
 
@@ -149,6 +155,31 @@ All are separate entry points that **import from `generate_vitality_report.py`**
 `r9/generate_r9_vitality.py` is a fourth satellite entry point: it imports the root loaders/generators and runs them over region-wide exports in `r9/R9 Data/` (git-ignored as a whole folder). It relies on the root loaders' **optional keyword parameters** (`load_ou_universe(branch_file, chapter_file)`, `load_officers(units, volunteer_file)`, `find_events_file(base_dir)`, `load_events(units, events_path)`, and `build_dashboard(..., title=, nav_html=)`) — their defaults must keep reproducing the root Colombia output exactly. `OU.section`/`OU.council` are read from the exports' `"Section Name   "`/`"Council Name     "` columns (trailing spaces are vTools's) and are `""` for exports without them.
 
 It loads the region once, groups OUs by `ou.section`, and writes one scope directory per Section plus `region/` under `r9/dashboards/` (each with `index.html`, `vitality_report.csv`, `vitality_history.csv`, and both printable reports, so the dashboard's relative report links work unchanged), plus a `r9/dashboards/index.html` Section picker grouped by Council. Scope is OU vitality only: `Member Detail View.csv` is never read, so the society/grade trend cards stay in their empty state and no PII snapshot/log files are produced. Note the R9 volunteer export (`Volunteer List by OU with Region & Section.csv`) also lists **Past** position holders; `load_officers()` skips any row whose `Volunteer Position Status` is not `Active` for that reason (the root export is Active-only, so this is a no-op there).
+
+### `events_intelligence/` — event attendance reports
+
+A satellite entry point (`events_intelligence/events_intelligence.py`,
+`check` / `profile check` / `build`) that ingests attendance lists from any
+number of events and reports on the attendees; `SPEC.md` there is the
+design and `README.md` the usage. Unlike the rest of the report pipeline it
+needs `openpyxl` (XLSX), kept in its own `requirements.txt` and
+`events_intelligence/.venv/`; nothing at the root may import from it.
+`ingest.py` applies declarative TOML format profiles (`profiles/*.toml`,
+one per file layout) to CSV/XLSX sources listed in `events.toml`;
+`resolve.py` matches attendees to members (typed member number →
+learned `state/doc_mapping.csv` → email → exact normalized name) and
+enriches them through the root loaders (`load_member_directory()`,
+`load_society_lists()`, `load_officer_positions()`, read via their module
+path constants at call time so tests can patch them) plus its own optional
+Students export loader; `report.py` writes the CSV/XLSX outputs and
+`report.html` (assets in `report_assets/`, inlined with the root
+`render_asset(..., assets_dir=)`). Builds are deterministic: same inputs →
+byte-identical outputs (no timestamps in outputs, XLSX zip/property dates
+pinned). `state/attendee_status.csv` is write-once per (event, person) and
+looked up under every key an attendee could have, so a person first seen
+as a non-member keeps that status after they later resolve to a member.
+Tests: `tests/test_events_intelligence.py` (XLSX cases `skipUnless`
+openpyxl).
 
 ### `automations/` — fetching the source CSVs
 

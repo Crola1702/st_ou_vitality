@@ -1,0 +1,10 @@
+# "Asistencia a ZC 2026.xlsx" / "ZC Rosario". Attendance list (everyone attended).
+name = "zc-rosario-2026"
+
+[columns]
+full_name = "Nombre"
+organization = "Unidad / Organización"
+role = "Rol"
+
+[attended]
+mode = "always"

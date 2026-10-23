@@ -1,0 +1,58 @@
+# Events Intelligence manifest: one [[event]] per event, one [[event.source]]
+# per attendance file/sheet (files live in attendance/, which is git-ignored).
+# Event metadata is not PII, so this file is committed.
+#
+# Dates and organizers below are placeholders: fill in the real ones.
+# Validate with: python3 events_intelligence/events_intelligence.py check
+
+[[event]]
+id = "zc-2026-javeriana"
+name = "Zona Centro - Javeriana"
+date = "2026-03-14"
+organizer = "SB Pontificia Universidad Javeriana"
+tags = ["zona-centro", "2026"]
+
+  [[event.source]]
+  file = "Asistencia a ZC 2026.xlsx"
+  sheet = "ZC Javeriana"
+  profile = "zc-javeriana-2026"
+
+[[event]]
+id = "zc-2026-rosario"
+name = "Zona Centro - Rosario"
+date = "2026-05-16"
+organizer = "SB Universidad del Rosario"
+tags = ["zona-centro", "2026"]
+
+  [[event.source]]
+  file = "Asistencia a ZC 2026.xlsx"
+  sheet = "ZC Rosario"
+  profile = "zc-rosario-2026"
+
+[[event]]
+id = "zc-2026-piloto"
+name = "Zona Centro - Piloto"
+date = "2026-08-22"
+organizer = "SB Universidad Piloto de Colombia"
+tags = ["zona-centro", "2026"]
+
+  [[event.source]]
+  file = "Asistencia a ZC 2026.xlsx"
+  sheet = "ZC Piloto"
+  profile = "zc-piloto-2026"
+
+[[event]]
+id = "zs-2026-04"
+name = "Zona Santanderes - Abril"
+date = "2026-04-25"
+tags = ["zona-santanderes", "2026"]
+
+  [[event.source]]
+  file = "Inscripción Zona Santanderes - Abril (Responses).xlsx"
+  sheet = "Form Responses 1"
+  profile = "google-forms-zona"
+
+  [[event.source]]
+  file = "Inscripción Zona Santanderes - Abril (Responses).xlsx"
+  sheet = "LISTADO EXTERNOS"
+  profile = "walk-in-list"

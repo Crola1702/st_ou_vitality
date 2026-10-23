@@ -869,9 +869,11 @@ def stat_span(text: str, color: str) -> str:
 ASSETS_DIR = BASE_DIR / "dashboard_assets"
 
 
-def render_asset(name: str, **values: object) -> str:
-    """Read a dashboard CSS/JS file and fill its `@@NAME@@` placeholders."""
-    text = (ASSETS_DIR / name).read_text(encoding="utf-8")
+def render_asset(name: str, assets_dir: Path = ASSETS_DIR, **values: object) -> str:
+    """Read a dashboard CSS/JS file and fill its `@@NAME@@` placeholders.
+    `assets_dir` lets satellite tools (e.g. `events_intelligence/`) reuse
+    this for their own asset folder."""
+    text = (assets_dir / name).read_text(encoding="utf-8")
     # Compare against the raw template, not the filled text, so substituted
     # data containing "@@" can't trip the check.
     expected = set(re.findall(r"@@(\w+)@@", text))
