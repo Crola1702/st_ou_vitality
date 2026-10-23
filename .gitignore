@@ -49,3 +49,15 @@ __pycache__/
 # Ad-hoc export with officer names/emails (PII)
 colombia_counselors_advisors.csv
 .codegraph/
+
+# Manually downloaded OU Analytics exports (member/student PII) and the HAR
+# captures used to reverse-engineer them (contain session cookies). Never commit.
+manual_exports/
+*.har
+
+# events_intelligence/: raw attendance lists (names, national IDs, phones) and
+# every generated output/state derived from them. Never commit.
+events_intelligence/attendance/
+events_intelligence/output/
+events_intelligence/state/
+events_intelligence/.venv/
