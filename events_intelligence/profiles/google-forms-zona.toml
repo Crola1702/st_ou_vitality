@@ -1,0 +1,22 @@
+# Google Forms registration for the 2026 zone meetings, e.g.
+# "Inscripción Zona Santanderes - Abril (Responses).xlsx" / "Form Responses 1".
+# Attendance is marked by hand in the "Asistencia " column (X / x / blank).
+# Never mapped: Timestamp, Número de teléfono, the lunch question, Cargo que ocupa 2.
+name = "google-forms-zona"
+
+[columns]
+first_name = "Nombres"
+last_name = "Apellidos"
+document_id = "N° de documento de identidad."
+# The typed address first; the Google account address when that is blank.
+email = { coalesce = ["Correo electrónico", "Email Address"] }
+member_id = { startswith = "Número de membresía (Opcional)" }
+# The select list, or the free-text answer when the select is blank or "Otra".
+organization = { coalesce = ["Seleccione la Universidad / Empresa a la que pertenece", "Indique la Universidad / Empresa a la que pertenece"], skip_values = ["otra", "other"] }
+role = "Cargo que ocupa"
+attended = "Asistencia"
+
+[attended]
+mode = "column"
+# Default true/false value lists; the 2026 form only uses X / x / blank.
+blank = "false"

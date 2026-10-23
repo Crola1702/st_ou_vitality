@@ -21,4 +21,6 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      # events_intelligence/'s XLSX tests need openpyxl; the rest is stdlib only.
+      - run: python3 -m pip install -r events_intelligence/requirements.txt
       - run: python3 -m unittest discover tests -v

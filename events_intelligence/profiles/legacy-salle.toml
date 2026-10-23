@@ -1,0 +1,15 @@
+# Legacy 2025: Microsoft Forms (La Salle).
+name = "legacy-salle"
+
+[columns]
+full_name = "Nombre completo"
+document_id = "Documento"
+email = "Correo electronico."
+member_id = "Número de Membresia."
+organization = "Rama estudiantil a la que pertenece."
+role = "Cargo que ocupa."
+attended = "Asistencia"
+
+[attended]
+mode = "column"
+blank = "false"

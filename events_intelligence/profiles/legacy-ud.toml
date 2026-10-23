@@ -1,0 +1,21 @@
+# Legacy 2025: check-in app export (UD), ";"-separated CSV. "Status" is
+# "Arrived" for people who checked in.
+name = "legacy-ud"
+
+[read]
+delimiter = ";"
+encoding = "auto"
+
+[columns]
+full_name = "Full Name"
+document_id = "ID"
+email = "Email"
+member_id = "IEEE Membership"
+organization = "University"
+attended = "Status"
+
+[attended]
+mode = "column"
+true = ["arrived", "checked in"]
+false = ["registered", "not arrived", "cancelled"]
+blank = "false"

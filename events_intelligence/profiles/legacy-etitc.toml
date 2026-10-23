@@ -1,0 +1,13 @@
+# Legacy 2025: manual list (ETITC).
+name = "legacy-etitc"
+
+[columns]
+full_name = "Nombre Completo"
+document_id = "Numero De Documento"
+organization = "Universidad"
+role = "Rol"
+attended = "Asistencia"
+
+[attended]
+mode = "column"
+blank = "false"

@@ -1,0 +1,15 @@
+# Legacy 2025: Google Forms (ECCI).
+name = "legacy-ecci"
+
+[columns]
+first_name = "Nombres"
+last_name = "Apellidos"
+document_id = "Documento"
+member_id = "Membresía"
+organization = "Unviersidad / Empresa"
+role = "Cargo que ocupa"
+attended = "Asistencia"
+
+[attended]
+mode = "column"
+blank = "false"

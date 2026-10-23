@@ -65,4 +65,14 @@ python3 chapter_outreach/generate_chapter_outreach.py
 python3 officer_terms/generate_officer_terms.py
 python3 member_society_lookup/generate_member_society_lookup.py
 
+# Optional: event attendance reports (all outputs git-ignored, PII).
+EI_PY="events_intelligence/.venv/bin/python"
+if [ -x "$EI_PY" ] && [ -f "events_intelligence/events.toml" ]; then
+  echo "== Events intelligence =="
+  "$EI_PY" events_intelligence/events_intelligence.py build \
+    || echo "events_intelligence build failed (see above); the rest of the pipeline is done." >&2
+else
+  echo "== Skipping events intelligence (no events_intelligence/.venv or events.toml; see events_intelligence/README.md) =="
+fi
+
 echo "== Done =="

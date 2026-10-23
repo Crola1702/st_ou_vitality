@@ -1,0 +1,12 @@
+# Legacy 2025: manual list (UMNG).
+name = "legacy-umng"
+
+[columns]
+full_name = "Nombre"
+document_id = "NUMERO DE DOCUMENTO"
+member_id = "Membresia"
+attended = "Asistencia"
+
+[attended]
+mode = "column"
+blank = "false"

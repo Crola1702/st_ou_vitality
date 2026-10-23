@@ -274,3 +274,17 @@ python3 member_society_lookup/generate_member_society_lookup.py            # jus
 python3 member_society_lookup/generate_member_society_lookup.py 0001 0002 0003  # also print a CLI report
 python3 member_society_lookup/generate_member_society_lookup.py --file numbers.txt
 ```
+
+## Events intelligence (event attendance reports)
+
+`events_intelligence/` ingests attendance lists from any number of IEEE
+events (CSV or XLSX, any layout, described by TOML format profiles),
+resolves each attendee against `Member Detail View.csv`,
+`Volunteer List by OU.csv` and an optional Students export, and writes
+per-event and cross-event reports: who attends most and least, which
+attendees are not active members, which are officers and of what OU, and
+which schools and societies they come from. Every input, state file and
+output of this tool contains personal data and is git-ignored. See
+[`events_intelligence/README.md`](events_intelligence/README.md) for setup
+and usage, and [`events_intelligence/SPEC.md`](events_intelligence/SPEC.md)
+for the full design.

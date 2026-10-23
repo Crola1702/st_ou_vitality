@@ -1,0 +1,13 @@
+# Walk-in list kept next to a registration form, e.g. the "LISTADO EXTERNOS"
+# sheet of the Zona Santanderes workbook. No attendance column: everyone
+# listed attended.
+name = "walk-in-list"
+
+[columns]
+first_name = "Nombres"
+last_name = "Apellidos"
+document_id = "Documento"
+organization = "Entidad"
+
+[attended]
+mode = "always"

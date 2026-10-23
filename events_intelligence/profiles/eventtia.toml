@@ -1,0 +1,16 @@
+# Legacy 2025: Eventtia export (French headers).
+name = "eventtia"
+
+[columns]
+first_name = "Prénom"
+last_name = "Nom"
+document_id = "Número De Identidad"
+email = "Email"
+member_id = "Membresia"
+organization = "Entreprise"
+role = "Fonction"
+attended = "Asistencia"
+
+[attended]
+mode = "column"
+blank = "false"
