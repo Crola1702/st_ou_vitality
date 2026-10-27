@@ -4,6 +4,18 @@ Notable changes to this project. Format loosely follows
 [Keep a Changelog](https://keepachangelog.com/), dated by day rather than by
 version since this project doesn't cut releases.
 
+## 2026-10-26
+
+### Fixed
+
+- **`run_all.sh` step 1 exported every OU worldwide** (~12k instead of
+  Colombia's ~300): the Student Branch Summary export applied no filters
+  and relied on the view's default. New `student_branch_summary` preset
+  (Section = Colombia, Region = R9) and an `export --filters <preset>`
+  option apply them before both crosstabs are downloaded. This also broke
+  step 4: the events feed got ~12k SPOIDs in one URL and dropped the
+  connection.
+
 ## 2026-10-19
 
 ### Added

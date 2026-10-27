@@ -45,7 +45,7 @@ if [ ! -f "automations/storage_state.json" ]; then
 fi
 
 echo "== 1/5: Student Branch Summary (both crosstabs) =="
-"$VENV_PY" automations/tableau_export.py export --headed \
+"$VENV_PY" automations/tableau_export.py export --headed --filters student_branch_summary \
   --workbook GeoOUAnalysis --view StudentBranchSummary --sheet "Student Branch Summary" \
   --sheetdoc-id "{9F37FD96-C0CB-44E2-B6C0-4AD55CC98A4A}" --out "Student Branch and Member Count.csv" \
   --sheetdoc-id "{CED8B60A-2103-44CD-9018-C8E76B42E9BA}" --out "Student Branch Chapters and Affinity Group Member Count.csv"

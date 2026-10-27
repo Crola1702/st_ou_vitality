@@ -60,6 +60,27 @@ STATE_FILE = Path(__file__).resolve().parent / "storage_state.json"
 # but if a report ever starts coming back empty or with the wrong rows again, the domain
 # order may have shifted — re-capture a HAR of applying the filters manually and update here.
 FILTER_PRESETS = {
+    # Without these the view exports every OU worldwide. Its other crosstab
+    # ({CED8B60A-...}) shares the filters: `export --filters student_branch_summary`.
+    "student_branch_summary": {
+        "workbook": "GeoOUAnalysis",
+        "view": "StudentBranchSummary",
+        "landing_sheet": "Student Branch Summary",
+        "export_sheet": "Student Branch Summary",
+        "sheetdoc_id": "{9F37FD96-C0CB-44E2-B6C0-4AD55CC98A4A}",
+        "parameters": [],
+        "filters": [
+            # Section: Colombia Section (index into the full, unfiltered 360-value domain,
+            # so this must run before the Region filter narrows it)
+            {"worksheet": "Analysis by Section (Student Branch Summary)",
+             "globalFieldName": "[federated.0p2ukz61by12sj15vbbz30g00k6c].[none:Section:nk]",
+             "op": "replace", "indices": [66]},
+            # Region: R9 only (R1..R10, index 8)
+            {"worksheet": "Analysis by Section (Student Branch Summary)",
+             "globalFieldName": "[federated.0p2ukz61by12sj15vbbz30g00k6c].[none:Calculation_1129840590165643272:nk]",
+             "op": "replace", "indices": [8]},
+        ],
+    },
     "volunteer_positions": {
         "workbook": "VolunteerPositionsHistory",
         "view": "VolunteerPositions",
@@ -364,7 +385,8 @@ def cmd_list_sheets(workbook: str, view: str, sheet: str, headless: bool = True)
         browser.close()
 
 
-def cmd_export(workbook: str, view: str, sheet: str, pairs: list, headless: bool = True) -> None:
+def cmd_export(workbook: str, view: str, sheet: str, pairs: list, headless: bool = True,
+               filters_preset: str | None = None) -> None:
     """pairs: list of (sheetdoc_id_or_None, out_path) tuples, all exported from ONE shared
     VizQL session — avoids tearing a session down and immediately rebuilding a new one,
     which can trip IEEE's front-end proxy on rapid back-to-back runs."""
@@ -378,6 +400,10 @@ def cmd_export(workbook: str, view: str, sheet: str, pairs: list, headless: bool
         req = context.request  # shares cookies with the authenticated browser context
 
         sessions_base, sess_headers = _establish_session(context, req, workbook, view, sheet)
+        if filters_preset:
+            cfg = FILTER_PRESETS[filters_preset]
+            _apply_filters_and_parameters(req, sessions_base, sess_headers, sheet,
+                                           cfg["parameters"], cfg["filters"])
 
         for sheetdoc_id, out in pairs:
             # Open the export dialog server-side (seen in the trace right before the
@@ -443,6 +469,8 @@ if __name__ == "__main__":
                            'a matching --out for each crosstab you want from the same tab.')
     exp.add_argument("--out", action="append", type=Path, required=True,
                       help="Output CSV path. Repeat to pair with each --sheetdoc-id, in order.")
+    exp.add_argument("--filters", choices=list(FILTER_PRESETS),
+                      help="Apply this preset's filters/parameters (on --sheet) before exporting")
     exp.add_argument("--headed", action="store_true", help="Show the browser window (debugging)")
 
     pre = sub.add_parser("export-preset", help="Export a hardcoded filter/parameter preset (see FILTER_PRESETS)")
@@ -462,4 +490,5 @@ if __name__ == "__main__":
             sys.exit("--sheetdoc-id and --out must be given the same number of times.")
         ids = args.sheetdoc_id or [None] * len(args.out)
         pairs = list(zip(ids, args.out))
-        cmd_export(args.workbook, args.view, args.sheet, pairs, headless=not args.headed)
+        cmd_export(args.workbook, args.view, args.sheet, pairs, headless=not args.headed,
+                   filters_preset=args.filters)
