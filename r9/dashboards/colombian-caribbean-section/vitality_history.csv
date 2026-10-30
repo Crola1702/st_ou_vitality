@@ -77,3 +77,83 @@ Date,SPO ID,Unit Type,University,Society,Member Count,Requirements Met,Members M
 2026-09-21,SBC63011H,Student Branch Chapter,Universidad del Norte,IA34,43,3,Yes,Yes,Met,Met
 2026-09-21,SBC63011J,Student Branch Chapter,Universidad del Norte,TEM14,9,1,Yes,No,Partial,Not Met
 2026-09-21,SBC63011G,Student Branch Chapter,Universidad del Norte,VT06,21,2,Yes,Yes,Partial,Not Met
+2026-10-30,SBA66461,Affinity Group,Institucion Universitaria de Barranquilla,WIE,10,1,Yes,No,Not Met,Not Met
+2026-10-30,SBA66461S,Affinity Group,Institucion Universitaria de Barranquilla,SB SIGHT,23,1,Yes,No,Not Met,Not Met
+2026-10-30,SBA64131,Affinity Group,Univ Cooperativa de Colombia Sede Santa Martac,WIE,12,2,Yes,Yes,Not Met,Not Met
+2026-10-30,SBA63011,Affinity Group,Universidad del Norte,WIE,65,2,Yes,Yes,Not Met,Not Met
+2026-10-30,SBA60211405,Affinity Group,Universidad Pontificia Bolivariana-Monteria,WIE,15,1,Yes,No,Not Met,Not Met
+2026-10-30,SBA60043388,Affinity Group,Universidad Simon Bolivar,WIE,37,2,Yes,Yes,Not Met,Not Met
+2026-10-30,SBA13761,Affinity Group,Universidad Tecnologica De Bolivar,WIE,23,2,Yes,Yes,Not Met,Not Met
+2026-10-30,SBA65981,Affinity Group,Universidad de la Costa,WIE,19,2,Yes,Yes,Not Met,Not Met
+2026-10-30,SBA08871,Affinity Group,Universidad del Magdalena,WIE,8,2,Yes,Yes,Not Met,Not Met
+2026-10-30,SBA63011S,Affinity Group,Universidad del Norte,SIGHT,96,2,Yes,Yes,Not Met,Not Met
+2026-10-30,SBA60239952,Affinity Group,University of Atlántico,WIE,17,1,Yes,No,Not Met,Not Met
+2026-10-30,STB60218366,Student Branch,Antonio de Arevalo University Foundation,,5,2,No,Yes,Met,Not Met
+2026-10-30,STB64289,Student Branch,Fundacion Universitaria Tecnologico Comfenalco,,11,0,No,No,Not Met,Not Met
+2026-10-30,STB66461,Student Branch,Institucion Universitaria de Barranquilla,,28,3,Yes,Yes,Met,Met
+2026-10-30,STB99095,Student Branch,Politecnico de la Costa Atlantica,,0,0,No,No,Not Met,Not Met
+2026-10-30,STB64131,Student Branch,Univ Cooperativa de Colombia Sede Santa Martac,,20,3,Yes,Yes,Met,Met
+2026-10-30,STB09871,Student Branch,Universidad Autonoma del Caribe,,57,3,Yes,Yes,Met,Met
+2026-10-30,STB60231786,Student Branch,Universidad Libre–Barranquilla,,21,3,Yes,Yes,Met,Met
+2026-10-30,STB60227842,Student Branch,Universidad Nacional de Colombia Sede de La Paz,,5,0,No,No,Partial,Not Met
+2026-10-30,STB60211405,Student Branch,Universidad Pontificia Bolivariana-Monteria,,21,2,Yes,No,Met,Not Met
+2026-10-30,STB65351,Student Branch,Universidad Popular Del Cesar,,1,1,No,No,Met,Not Met
+2026-10-30,STB60043388,Student Branch,Universidad Simon Bolivar,,72,3,Yes,Yes,Met,Met
+2026-10-30,STB13761,Student Branch,Universidad Tecnologica De Bolivar,,147,3,Yes,Yes,Met,Met
+2026-10-30,STB20126,Student Branch,Universidad de Cordoba,,11,0,No,No,Partial,Not Met
+2026-10-30,STB60225041,Student Branch,Universidad de Sucre,,9,1,No,Yes,Partial,Not Met
+2026-10-30,STB65981,Student Branch,Universidad de la Costa,,71,3,Yes,Yes,Met,Met
+2026-10-30,STB08871,Student Branch,Universidad del Magdalena,,23,3,Yes,Yes,Met,Met
+2026-10-30,STB63011,Student Branch,Universidad del Norte,,178,3,Yes,Yes,Met,Met
+2026-10-30,STB60239952,Student Branch,University of Atlántico,,31,3,Yes,Yes,Met,Met
+2026-10-30,SBC60218366,Student Branch Chapter,Antonio de Arevalo University Foundation,C16,2,0,No,No,Partial,Not Met
+2026-10-30,SBC60218366A,Student Branch Chapter,Antonio de Arevalo University Foundation,RA24,1,0,No,No,Not Met,Not Met
+2026-10-30,SBC60218366B,Student Branch Chapter,Antonio de Arevalo University Foundation,TEM14,4,1,No,No,Met,Not Met
+2026-10-30,SBC64289B,Student Branch Chapter,Fundacion Universitaria Tecnologico Comfenalco,RA24,7,1,Yes,No,Not Met,Not Met
+2026-10-30,SBC64289A,Student Branch Chapter,Fundacion Universitaria Tecnologico Comfenalco,TEM14,4,0,No,No,Not Met,Not Met
+2026-10-30,SBC66461,Student Branch Chapter,Institucion Universitaria de Barranquilla,CAS04,12,2,Yes,No,Met,Not Met
+2026-10-30,SBC66461A,Student Branch Chapter,Institucion Universitaria de Barranquilla,RA24,6,2,Yes,No,Met,Not Met
+2026-10-30,SBC64131A,Student Branch Chapter,Univ Cooperativa de Colombia Sede Santa Martac,RA24,0,0,No,No,Partial,Not Met
+2026-10-30,SBC64131B,Student Branch Chapter,Univ Cooperativa de Colombia Sede Santa Martac,NPS05,6,3,Yes,Yes,Met,Met
+2026-10-30,SBC64131,Student Branch Chapter,Univ Cooperativa de Colombia Sede Santa Martac,C16,7,3,Yes,Yes,Met,Met
+2026-10-30,SBC63011,Student Branch Chapter,Universidad del Norte,C16 & COM19,50,3,Yes,Yes,Met,Met
+2026-10-30,SBC63011D,Student Branch Chapter,Universidad del Norte,CAS04,16,2,Yes,Yes,Partial,Not Met
+2026-10-30,SBC63011A,Student Branch Chapter,Universidad del Norte,CIS011,26,3,Yes,Yes,Met,Met
+2026-10-30,SBC63011B,Student Branch Chapter,Universidad del Norte,CS23,0,0,No,No,Not Met,Not Met
+2026-10-30,SBC63011E,Student Branch Chapter,Universidad del Norte,EMB18,12,3,Yes,Yes,Met,Met
+2026-10-30,SBC63011C,Student Branch Chapter,Universidad del Norte,PE31,46,3,Yes,Yes,Met,Met
+2026-10-30,SBC63011F,Student Branch Chapter,Universidad del Norte,RA24,15,3,Yes,Yes,Met,Met
+2026-10-30,SBC09871,Student Branch Chapter,Universidad Autonoma del Caribe,C16,13,2,Yes,No,Met,Not Met
+2026-10-30,SBC65981,Student Branch Chapter,Universidad de la Costa,COM19,1,0,No,No,Not Met,Not Met
+2026-10-30,SBC60231786,Student Branch Chapter,Universidad Libre–Barranquilla,CIS11/C16,18,2,Yes,No,Met,Not Met
+2026-10-30,SBC60043388,Student Branch Chapter,Universidad Simon Bolivar,C16,23,2,Yes,Yes,Partial,Not Met
+2026-10-30,SBC60043388B,Student Branch Chapter,Universidad Simon Bolivar,CIS11,16,2,Yes,Yes,Partial,Not Met
+2026-10-30,SBC60043388F,Student Branch Chapter,Universidad Simon Bolivar,ED15,10,3,Yes,Yes,Met,Met
+2026-10-30,SBC60043388E,Student Branch Chapter,Universidad Simon Bolivar,EMB18,10,1,Yes,No,Not Met,Not Met
+2026-10-30,SBC60043388D,Student Branch Chapter,Universidad Simon Bolivar,NPS05,3,1,No,Yes,Partial,Not Met
+2026-10-30,SBC60043388A,Student Branch Chapter,Universidad Simon Bolivar,RA24,5,1,No,Yes,Not Met,Not Met
+2026-10-30,SBC60043388C,Student Branch Chapter,Universidad Simon Bolivar,SIT30,5,0,No,No,Partial,Not Met
+2026-10-30,SBC13761G,Student Branch Chapter,Universidad Tecnologica De Bolivar,AES10,23,2,Yes,No,Met,Not Met
+2026-10-30,SBC13761D,Student Branch Chapter,Universidad Tecnologica De Bolivar,C16/CIS11,35,3,Yes,Yes,Met,Met
+2026-10-30,SBC13761H,Student Branch Chapter,Universidad Tecnologica De Bolivar,CAS04,30,3,Yes,Yes,Met,Met
+2026-10-30,SBC13761A,Student Branch Chapter,Universidad Tecnologica De Bolivar,ED15,2,0,No,No,Not Met,Not Met
+2026-10-30,SBC13761F,Student Branch Chapter,Universidad Tecnologica De Bolivar,EMB18,35,3,Yes,Yes,Met,Met
+2026-10-30,SBC13761C,Student Branch Chapter,Universidad Tecnologica De Bolivar,PE31,12,2,Yes,Yes,Partial,Not Met
+2026-10-30,SBC13761B,Student Branch Chapter,Universidad Tecnologica De Bolivar,RA24,22,2,Yes,Yes,Partial,Not Met
+2026-10-30,SBC13761E,Student Branch Chapter,Universidad Tecnologica De Bolivar,TEM14,23,2,Yes,No,Met,Not Met
+2026-10-30,SBC65981A,Student Branch Chapter,Universidad de la Costa,C16,29,3,Yes,Yes,Met,Met
+2026-10-30,SBC65981C,Student Branch Chapter,Universidad de la Costa,CIS11,23,3,Yes,Yes,Met,Met
+2026-10-30,SBC65981D,Student Branch Chapter,Universidad de la Costa,NPS05,12,2,Yes,No,Met,Not Met
+2026-10-30,SBC65981B,Student Branch Chapter,Universidad de la Costa,PE31,8,2,Yes,No,Met,Not Met
+2026-10-30,SBC65981E,Student Branch Chapter,Universidad de la Costa,RA24,14,2,Yes,No,Met,Not Met
+2026-10-30,SBC08871A,Student Branch Chapter,Universidad del Magdalena,GRS29,0,0,No,No,Not Met,Not Met
+2026-10-30,SBC08871D,Student Branch Chapter,Universidad del Magdalena,C16,11,2,Yes,Yes,Partial,Not Met
+2026-10-30,SBC08871E,Student Branch Chapter,Universidad del Magdalena,OE22,7,2,Yes,No,Met,Not Met
+2026-10-30,SBC08871B,Student Branch Chapter,Universidad del Magdalena,PE31/SYS45,2,0,No,No,Not Met,Not Met
+2026-10-30,SBC08871C,Student Branch Chapter,Universidad del Magdalena,RA24/SEN39/SYS45,0,0,No,No,Not Met,Not Met
+2026-10-30,SBC63011I,Student Branch Chapter,Universidad del Norte,AES010,6,1,Yes,No,Partial,Not Met
+2026-10-30,SBC63011K,Student Branch Chapter,Universidad del Norte,E25,28,3,Yes,Yes,Met,Met
+2026-10-30,SBC63011H,Student Branch Chapter,Universidad del Norte,IA34,44,3,Yes,Yes,Met,Met
+2026-10-30,SBC63011J,Student Branch Chapter,Universidad del Norte,TEM14,11,1,Yes,No,Partial,Not Met
+2026-10-30,SBC63011G,Student Branch Chapter,Universidad del Norte,VT06,22,2,Yes,Yes,Partial,Not Met
+2026-10-30,SBC60239952,Student Branch Chapter,University of Atlántico,NPS05,18,2,Yes,No,Met,Not Met

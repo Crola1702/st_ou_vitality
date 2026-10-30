@@ -43,3 +43,48 @@ Date,SPO ID,Unit Type,University,Society,Member Count,Requirements Met,Members M
 2026-09-21,SBC63211C,Student Branch Chapter,Universidade do Estado do Rio de Janeiro,C16,4,0,No,No,Partial,Not Met
 2026-09-21,SBC63211A,Student Branch Chapter,Universidade do Estado do Rio de Janeiro,PE31/IA34,3,1,No,Yes,Partial,Not Met
 2026-09-21,SBC63211,Student Branch Chapter,Universidade do Estado do Rio de Janeiro,RA24,1,0,No,No,Not Met,Not Met
+2026-10-30,SBA39071,Affinity Group,Catholic University of Petropolis,WIE,0,0,No,No,Not Met,Not Met
+2026-10-30,SBA63491,Affinity Group,Cefet/RJ-Centro Federal De Educ Tec Csf,WIE,25,1,Yes,No,Not Met,Not Met
+2026-10-30,SBA20521S,Affinity Group,Federal Fluminense University,SB SIGHT,57,1,Yes,No,Not Met,Not Met
+2026-10-30,SBA20521,Affinity Group,Federal Fluminense University,WIE,18,1,Yes,No,Not Met,Not Met
+2026-10-30,SBA14010,Affinity Group,Instituto Federal Fluminense-Macae,WIE,13,1,Yes,No,Not Met,Not Met
+2026-10-30,SBA03101,Affinity Group,Universidade Federal do Rio de Janeiro,WIE,4,0,No,No,Not Met,Not Met
+2026-10-30,SBA11750,Affinity Group,Universidade Veiga de Almeida UVA,WIE,2,0,No,No,Not Met,Not Met
+2026-10-30,SBA63211S,Affinity Group,Universidade do Estado do Rio de Janeiro,SIGHT,9,1,Yes,No,Not Met,Not Met
+2026-10-30,SBA63211,Affinity Group,Universidade do Estado do Rio de Janeiro,WIE,7,1,Yes,No,Not Met,Not Met
+2026-10-30,STB39071,Student Branch,Catholic University of Petropolis,,0,0,No,No,Not Met,Not Met
+2026-10-30,STB63491,Student Branch,Cefet/RJ-Centro Federal De Educ Tec Csf,,67,3,Yes,Yes,Met,Met
+2026-10-30,STB20521,Student Branch,Federal Fluminense University,,55,3,Yes,Yes,Met,Met
+2026-10-30,STB14024,Student Branch,Instituto Federal Fluminense-Centro,,24,3,Yes,Yes,Met,Met
+2026-10-30,STB14010,Student Branch,Instituto Federal Fluminense-Macae,,17,3,Yes,Yes,Met,Met
+2026-10-30,STB14071,Student Branch,Pontifical Catholic University of Rio de Janeiro,,8,0,No,No,Not Met,Not Met
+2026-10-30,STB10204,Student Branch,Universidade Federal do Espirito Santo-Sao Mateus,,1,1,No,No,Met,Not Met
+2026-10-30,STB03101,Student Branch,Universidade Federal do Rio de Janeiro,,28,3,Yes,Yes,Met,Met
+2026-10-30,STB11750,Student Branch,Universidade Veiga de Almeida UVA,,14,2,Yes,No,Met,Not Met
+2026-10-30,STB63211,Student Branch,Universidade do Estado do Rio de Janeiro,,19,3,Yes,Yes,Met,Met
+2026-10-30,SBC63491C,Student Branch Chapter,Cefet/RJ-Centro Federal De Educ Tec Csf,C16,35,1,Yes,No,Partial,Not Met
+2026-10-30,SBC63491F,Student Branch Chapter,Cefet/RJ-Centro Federal De Educ Tec Csf,IE13,20,2,Yes,No,Met,Not Met
+2026-10-30,SBC63491B,Student Branch Chapter,Cefet/RJ-Centro Federal De Educ Tec Csf,PE31,11,3,Yes,Yes,Met,Met
+2026-10-30,SBC63491G,Student Branch Chapter,Cefet/RJ-Centro Federal De Educ Tec Csf,PHO36,6,2,Yes,No,Met,Not Met
+2026-10-30,SBC63491A,Student Branch Chapter,Cefet/RJ-Centro Federal De Educ Tec Csf,RA24,8,1,Yes,No,Not Met,Not Met
+2026-10-30,SBC63491E,Student Branch Chapter,Cefet/RJ-Centro Federal De Educ Tec Csf,AES10,5,1,No,No,Met,Not Met
+2026-10-30,SBC63491D,Student Branch Chapter,Cefet/RJ-Centro Federal De Educ Tec Csf,SIT30,1,0,No,No,Not Met,Not Met
+2026-10-30,SBC20521B,Student Branch Chapter,Federal Fluminense University,C16/EP21,16,3,Yes,Yes,Met,Met
+2026-10-30,SBC20521A,Student Branch Chapter,Federal Fluminense University,IA34,3,0,No,No,Not Met,Not Met
+2026-10-30,SBC20521C,Student Branch Chapter,Federal Fluminense University,OE22,5,1,No,No,Met,Not Met
+2026-10-30,SBC20521,Student Branch Chapter,Federal Fluminense University,PE31,14,3,Yes,Yes,Met,Met
+2026-10-30,SBC14024A,Student Branch Chapter,Instituto Federal Fluminense-Centro,C16,14,2,Yes,No,Met,Not Met
+2026-10-30,SBC14024,Student Branch Chapter,Instituto Federal Fluminense-Centro,PE31,9,2,Yes,Yes,Partial,Not Met
+2026-10-30,SBC14024B,Student Branch Chapter,Instituto Federal Fluminense-Centro,RA24,9,2,Yes,No,Met,Not Met
+2026-10-30,SBC14010,Student Branch Chapter,Instituto Federal Fluminense-Macae,E25,6,2,Yes,No,Met,Not Met
+2026-10-30,SBC14010A,Student Branch Chapter,Instituto Federal Fluminense-Macae,IE13,8,2,Yes,No,Met,Not Met
+2026-10-30,SBC10204,Student Branch Chapter,Universidade Federal do Espirito Santo-Sao Mateus,RA024,0,0,No,No,Not Met,Not Met
+2026-10-30,SBC63211D,Student Branch Chapter,Universidade do Estado do Rio de Janeiro,AP03/COM19/SP01,8,3,Yes,Yes,Met,Met
+2026-10-30,SBC03101B,Student Branch Chapter,Universidade Federal do Rio de Janeiro,IA34,6,3,Yes,Yes,Met,Met
+2026-10-30,SBC03101A,Student Branch Chapter,Universidade Federal do Rio de Janeiro,RA24,1,0,No,No,Not Met,Not Met
+2026-10-30,SBC11750A,Student Branch Chapter,Universidade Veiga de Almeida UVA,C16,7,3,Yes,Yes,Met,Met
+2026-10-30,SBC11750,Student Branch Chapter,Universidade Veiga de Almeida UVA,PE31,1,0,No,No,Not Met,Not Met
+2026-10-30,SBC63211C,Student Branch Chapter,Universidade do Estado do Rio de Janeiro,C16,4,0,No,No,Partial,Not Met
+2026-10-30,SBC63211E,Student Branch Chapter,Universidade do Estado do Rio de Janeiro,GRS29,8,2,Yes,No,Met,Not Met
+2026-10-30,SBC63211A,Student Branch Chapter,Universidade do Estado do Rio de Janeiro,PE31/IA34,3,1,No,Yes,Partial,Not Met
+2026-10-30,SBC63211,Student Branch Chapter,Universidade do Estado do Rio de Janeiro,RA24,1,1,No,Yes,Not Met,Not Met

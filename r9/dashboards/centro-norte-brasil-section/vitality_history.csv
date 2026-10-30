@@ -46,3 +46,51 @@ Date,SPO ID,Unit Type,University,Society,Member Count,Requirements Met,Members M
 2026-09-21,SBC12381I,Student Branch Chapter,Universidade de Brasilia,SIT30,3,0,No,No,Partial,Not Met
 2026-09-21,SBC12381M,Student Branch Chapter,Universidade de Brasilia,SP01,5,1,No,Yes,Partial,Not Met
 2026-09-21,SBC12381J,Student Branch Chapter,Universidade de Brasilia,VT06,9,1,Yes,No,Partial,Not Met
+2026-10-30,SBA60236490,Affinity Group,Unifesspa–Federal Univ of South and Southeast-Pará,WIE,6,1,Yes,No,Not Met,Not Met
+2026-10-30,SBA11589,Affinity Group,Universidade Federal de Mato Grosso do Sul,WIE,11,2,Yes,Yes,Not Met,Not Met
+2026-10-30,SBA60096817,Affinity Group,Universidade Federal do Acre,WIE,4,0,No,No,Not Met,Not Met
+2026-10-30,SBA35736S,Affinity Group,Universidade Federal do Amapa,SB SIGHT,0,0,No,No,Not Met,Not Met
+2026-10-30,SBA35736,Affinity Group,Universidade Federal do Amapa,WIE,7,2,Yes,Yes,Not Met,Not Met
+2026-10-30,SBA02271,Affinity Group,Universidade Federal do Para,WIE,6,1,Yes,No,Not Met,Not Met
+2026-10-30,SBA12381,Affinity Group,Universidade de Brasilia,WIE,51,2,Yes,Yes,Not Met,Not Met
+2026-10-30,STB60021833,Student Branch,Federal University of Amazonas,,23,2,Yes,No,Met,Not Met
+2026-10-30,STB08571,Student Branch,Federal University of Goias,,68,3,Yes,Yes,Met,Met
+2026-10-30,STB40192365,Student Branch,Federal University of Mato Grosso,,13,2,Yes,No,Met,Not Met
+2026-10-30,STB60222106,Student Branch,Federal University of Rondônia Foundation,,0,0,No,No,Not Met,Not Met
+2026-10-30,STB18491,Student Branch,Federal University of Tocantins,,19,3,Yes,Yes,Met,Met
+2026-10-30,STB03230,Student Branch,Instituto Federal de Brasilia,,2,0,No,No,Partial,Not Met
+2026-10-30,STB60227687,Student Branch,Instituto de Desenvolvimento e Pesquisa,,27,3,Yes,Yes,Met,Met
+2026-10-30,STB60236490,Student Branch,Unifesspa–Federal Univ of South and Southeast-Pará,,14,2,Yes,No,Met,Not Met
+2026-10-30,STB11589,Student Branch,Universidade Federal de Mato Grosso do Sul,,33,2,Yes,Yes,Partial,Not Met
+2026-10-30,STB60096817,Student Branch,Universidade Federal do Acre,,19,2,Yes,No,Met,Not Met
+2026-10-30,STB35736,Student Branch,Universidade Federal do Amapa,,7,0,No,No,Partial,Not Met
+2026-10-30,STB02271,Student Branch,Universidade Federal do Para,,25,1,Yes,No,Partial,Not Met
+2026-10-30,STB12031,Student Branch,Universidade Federal do Para - Tucurui,,0,0,No,No,Not Met,Not Met
+2026-10-30,STB12381,Student Branch,Universidade de Brasilia,,201,3,Yes,Yes,Met,Met
+2026-10-30,STB16921,Student Branch,Universidade do Estado de Mato Grosso,,3,0,No,No,Partial,Not Met
+2026-10-30,SBC08571,Student Branch Chapter,Federal University of Goias,EMB18,10,2,Yes,No,Met,Not Met
+2026-10-30,SBC40192365,Student Branch Chapter,Federal University of Mato Grosso,IE13,9,1,Yes,No,Partial,Not Met
+2026-10-30,SBC18491A,Student Branch Chapter,Federal University of Tocantins,IE13,18,2,Yes,No,Met,Not Met
+2026-10-30,SBC18491,Student Branch Chapter,Federal University of Tocantins,PE31,11,2,Yes,Yes,Partial,Not Met
+2026-10-30,SBC03230A,Student Branch Chapter,Instituto Federal de Brasilia,C16,2,0,No,No,Partial,Not Met
+2026-10-30,SBC03230,Student Branch Chapter,Instituto Federal de Brasilia,RA24,1,0,No,No,Partial,Not Met
+2026-10-30,SBC60227687,Student Branch Chapter,Instituto de Desenvolvimento e Pesquisa,IE13,17,2,Yes,No,Met,Not Met
+2026-10-30,SBC60236490,Student Branch Chapter,Unifesspa–Federal Univ of South and Southeast-Pará,C16,8,2,Yes,No,Met,Not Met
+2026-10-30,SBC11589,Student Branch Chapter,Universidade Federal de Mato Grosso do Sul,GRS29,9,2,Yes,Yes,Partial,Not Met
+2026-10-30,SBC11589B,Student Branch Chapter,Universidade Federal de Mato Grosso do Sul,IA34,22,3,Yes,Yes,Met,Met
+2026-10-30,SBC11589A,Student Branch Chapter,Universidade Federal de Mato Grosso do Sul,PEL35,15,3,Yes,Yes,Met,Met
+2026-10-30,SBC02271,Student Branch Chapter,Universidade Federal do Para,COM19,10,2,Yes,No,Met,Not Met
+2026-10-30,SBC12381C,Student Branch Chapter,Universidade de Brasilia,AES10,7,1,Yes,No,Partial,Not Met
+2026-10-30,SBC12381E,Student Branch Chapter,Universidade de Brasilia,C16,37,3,Yes,Yes,Met,Met
+2026-10-30,SBC12381H,Student Branch Chapter,Universidade de Brasilia,CAS04,1,0,No,No,Not Met,Not Met
+2026-10-30,SBC12381K,Student Branch Chapter,Universidade de Brasilia,CIS11,15,2,Yes,No,Met,Not Met
+2026-10-30,SBC12381,Student Branch Chapter,Universidade de Brasilia,COM19,22,2,Yes,Yes,Partial,Not Met
+2026-10-30,SBC12381G,Student Branch Chapter,Universidade de Brasilia,CS23/IE13,10,2,Yes,No,Met,Not Met
+2026-10-30,SBC12381D,Student Branch Chapter,Universidade de Brasilia,E25,15,1,Yes,No,Partial,Not Met
+2026-10-30,SBC12381B,Student Branch Chapter,Universidade de Brasilia,EMB18,32,2,Yes,No,Met,Not Met
+2026-10-30,SBC12381L,Student Branch Chapter,Universidade de Brasilia,MTT17,17,3,Yes,Yes,Met,Met
+2026-10-30,SBC12381F,Student Branch Chapter,Universidade de Brasilia,PE31,40,3,Yes,Yes,Met,Met
+2026-10-30,SBC12381A,Student Branch Chapter,Universidade de Brasilia,RA24,9,2,Yes,No,Met,Not Met
+2026-10-30,SBC12381I,Student Branch Chapter,Universidade de Brasilia,SIT30,3,0,No,No,Partial,Not Met
+2026-10-30,SBC12381M,Student Branch Chapter,Universidade de Brasilia,SP01,7,2,Yes,Yes,Partial,Not Met
+2026-10-30,SBC12381J,Student Branch Chapter,Universidade de Brasilia,VT06,13,1,Yes,No,Partial,Not Met

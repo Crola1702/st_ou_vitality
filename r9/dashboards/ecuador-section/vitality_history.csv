@@ -177,3 +177,186 @@ Date,SPO ID,Unit Type,University,Society,Member Count,Requirements Met,Members M
 2026-09-21,SBC11735D,Student Branch Chapter,Yachay Tech University,GRS29,14,2,Yes,No,Met,Not Met
 2026-09-21,SBC11735F,Student Branch Chapter,Yachay Tech University,NANO42,37,2,Yes,No,Met,Not Met
 2026-09-21,SBC11735E,Student Branch Chapter,Yachay Tech University,RA24,6,3,Yes,Yes,Met,Met
+2026-10-30,SBA12801S,Affinity Group,Escuela Politecnica Nacional,SB SIGHT,127,1,Yes,No,Not Met,Not Met
+2026-10-30,SBA12801,Affinity Group,Escuela Politecnica Nacional,WIE,100,2,Yes,Yes,Not Met,Not Met
+2026-10-30,SBA65531S,Affinity Group,Escuela Superior Politecnica de Chimborazo,SIGHT,129,1,Yes,No,Not Met,Not Met
+2026-10-30,SBA19041S,Affinity Group,Escuela Superior Politecnica del Litoral,SIGHT,39,1,Yes,No,Not Met,Not Met
+2026-10-30,SBA19041,Affinity Group,Escuela Superior Politecnica del Litoral,WIE,48,2,Yes,Yes,Not Met,Not Met
+2026-10-30,SBA65531,Affinity Group,Escuela Superior Politecnica de Chimborazo,WIE,125,2,Yes,Yes,Not Met,Not Met
+2026-10-30,SBA11457S,Affinity Group,Universidad de la Fuerzas Armadas ESPE - Latacunga,SIGHT,44,1,Yes,No,Not Met,Not Met
+2026-10-30,SBA11457,Affinity Group,Universidad de la Fuerzas Armadas ESPE - Latacunga,WIE,20,2,Yes,Yes,Not Met,Not Met
+2026-10-30,SBA01211,Affinity Group,Universidad Catolica Santiago de Guayaquil,WIE,2,0,No,No,Not Met,Not Met
+2026-10-30,SBA08441,Affinity Group,Universidad Catolica de Cuenca,WIE,7,2,Yes,Yes,Not Met,Not Met
+2026-10-30,SBA86091,Affinity Group,Universidad de Cuenca,WIE,8,1,Yes,No,Not Met,Not Met
+2026-10-30,SBA11021,Affinity Group,Universidad del Azuay,WIE,10,1,Yes,No,Not Met,Not Met
+2026-10-30,SBA20209,Affinity Group,Universidad Estatal Peninsula de Santa Elena,WIE,33,2,Yes,Yes,Not Met,Not Met
+2026-10-30,SBA15611,Affinity Group,Universidad Internacional del Ecuador,WIE,45,1,Yes,No,Not Met,Not Met
+2026-10-30,SBA10044,Affinity Group,Universidad Laica Eloy Alfaro de Manabi,WIE,5,0,No,No,Not Met,Not Met
+2026-10-30,SBA65231,Affinity Group,Universidad Nacional De Loja,WIE,36,2,Yes,Yes,Not Met,Not Met
+2026-10-30,SBA65241,Affinity Group,Universidad Politecnica Salesiana-Cuenca,WIE,132,2,Yes,Yes,Not Met,Not Met
+2026-10-30,SBA65241S,Affinity Group,Universidad Politecnica Salesiana-Cuenca,SIGHT,230,1,Yes,No,Not Met,Not Met
+2026-10-30,SBA02631,Affinity Group,Universidad Politecnica Salesiana-Guayaquil,WIE,2,0,No,No,Not Met,Not Met
+2026-10-30,SBA00751,Affinity Group,Universidad Politecnica Salesiana - Quito,WIE,12,1,Yes,No,Not Met,Not Met
+2026-10-30,SBA14971,Affinity Group,Universidad San Francisco de Quito,WIE,13,2,Yes,Yes,Not Met,Not Met
+2026-10-30,SBA60226781S,Affinity Group,Universidad Tecnica Estatal de Quevedo,SB SIGHT,14,1,Yes,No,Not Met,Not Met
+2026-10-30,SBA60216631,Affinity Group,Universidad Tecnica Estatal de Quevedo,WIE,25,2,Yes,Yes,Not Met,Not Met
+2026-10-30,SBA63711,Affinity Group,Universidad Tecnica Particular de Loja,WIE,1,0,No,No,Not Met,Not Met
+2026-10-30,SBA65891S,Affinity Group,Universidad Tecnica del Norte,"(UTN),SIGHT",227,2,Yes,Yes,Not Met,Not Met
+2026-10-30,SBA65891,Affinity Group,Universidad Tecnica del Norte,WIE,189,2,Yes,Yes,Not Met,Not Met
+2026-10-30,SBA10045S,Affinity Group,Universidad de las Americas-Quito,SB SIGHT,43,1,Yes,No,Not Met,Not Met
+2026-10-30,SBA10045,Affinity Group,Universidad de las Americas-Quito,WIE,32,1,Yes,No,Not Met,Not Met
+2026-10-30,SBA63741S,Affinity Group,Universidad de las Fuerzas Armadas - ESPE,SB SIGHT,81,2,Yes,Yes,Not Met,Not Met
+2026-10-30,SBA63741,Affinity Group,Universidad de las Fuerzas Armadas - ESPE,WIE,32,2,Yes,Yes,Not Met,Not Met
+2026-10-30,SBA64620,Affinity Group,University of Guayaquil,WIE,0,0,No,No,Not Met,Not Met
+2026-10-30,SBA11735S,Affinity Group,Yachay Tech University,SB SIGHT Group,57,2,Yes,Yes,Not Met,Not Met
+2026-10-30,SBA11735,Affinity Group,Yachay Tech University,WIE,60,2,Yes,Yes,Not Met,Not Met
+2026-10-30,STB12801,Student Branch,Escuela Politecnica Nacional,,246,3,Yes,Yes,Met,Met
+2026-10-30,STB19041,Student Branch,Escuela Superior Politecnica del Litoral,,271,3,Yes,Yes,Met,Met
+2026-10-30,STB65531,Student Branch,Escuela Superior Politecnica de Chimborazo,,260,2,Yes,No,Met,Not Met
+2026-10-30,STB60222645,Student Branch,Inst Superior Tecnologico Martha Bucaram Roldos,,1,0,No,No,Not Met,Not Met
+2026-10-30,STB10178,Student Branch,Instituto Tecnologico Superior Oriente,,0,0,No,No,Not Met,Not Met
+2026-10-30,STB62531,Student Branch,Pontificia Universidad Catolica del Ecuador,,4,0,No,No,Partial,Not Met
+2026-10-30,STB60216295,Student Branch,Universidad Bolivariana del Ecuador,,15,2,Yes,No,Met,Not Met
+2026-10-30,STB08441,Student Branch,Universidad Catolica de Cuenca,,63,2,Yes,No,Met,Not Met
+2026-10-30,STB01211,Student Branch,Universidad Catolica Santiago de Guayaquil,,19,2,Yes,No,Met,Not Met
+2026-10-30,STB10069A,Student Branch,Universidad Central del Ecuador,,36,3,Yes,Yes,Met,Met
+2026-10-30,STB11021,Student Branch,Universidad del Azuay,,10,0,No,No,Not Met,Not Met
+2026-10-30,STB20209,Student Branch,Universidad Estatal Peninsula de Santa Elena,,66,2,Yes,No,Met,Not Met
+2026-10-30,STB60210971,Student Branch,Universidad Indoamerica,,26,2,Yes,No,Met,Not Met
+2026-10-30,STB15611,Student Branch,Universidad Internacional del Ecuador,,93,1,Yes,No,Partial,Not Met
+2026-10-30,STB10044,Student Branch,Universidad Laica Eloy Alfaro de Manabi,,21,3,Yes,Yes,Met,Met
+2026-10-30,STB65231,Student Branch,Universidad Nacional De Loja,,86,3,Yes,Yes,Met,Met
+2026-10-30,STB00141,Student Branch,Universidad Nacional de Chimborazo,,41,2,Yes,No,Met,Not Met
+2026-10-30,STB00751,Student Branch,Universidad Politecnica Salesiana - Quito,,35,2,Yes,No,Met,Not Met
+2026-10-30,STB65241,Student Branch,Universidad Politecnica Salesiana-Cuenca,,161,2,Yes,No,Met,Not Met
+2026-10-30,STB02631,Student Branch,Universidad Politecnica Salesiana-Guayaquil,,38,2,Yes,No,Met,Not Met
+2026-10-30,STB60240563,Student Branch,Universidad Politécnica Estatal del Carchi,,20,2,Yes,No,Met,Not Met
+2026-10-30,STB14971,Student Branch,Universidad San Francisco de Quito,,154,2,Yes,No,Met,Not Met
+2026-10-30,STB65891,Student Branch,Universidad Tecnica del Norte,,211,2,Yes,No,Met,Not Met
+2026-10-30,STB60216631,Student Branch,Universidad Tecnica Estatal de Quevedo,,46,3,Yes,Yes,Met,Met
+2026-10-30,STB63711,Student Branch,Universidad Tecnica Particular de Loja,,12,1,Yes,No,Not Met,Not Met
+2026-10-30,STB65711,Student Branch,Universidad Tecnica de Ambato,,0,0,No,No,Not Met,Not Met
+2026-10-30,STB14005,Student Branch,Universidad Tecnica de Cotopaxi,,0,0,No,No,Not Met,Not Met
+2026-10-30,STB35737,Student Branch,Universidad Tecnica de Manabi,,2,0,No,No,Not Met,Not Met
+2026-10-30,STB60242561,Student Branch,Universidad UTE,,5,0,No,No,Partial,Not Met
+2026-10-30,STB86091,Student Branch,Universidad de Cuenca,,30,1,Yes,No,Partial,Not Met
+2026-10-30,STB11457,Student Branch,Universidad de la Fuerzas Armadas ESPE - Latacunga,,54,3,Yes,Yes,Met,Met
+2026-10-30,STB10045,Student Branch,Universidad de las Americas-Quito,,73,1,Yes,No,Partial,Not Met
+2026-10-30,STB63741,Student Branch,Universidad de las Fuerzas Armadas - ESPE,,136,3,Yes,Yes,Met,Met
+2026-10-30,STB64620,Student Branch,University of Guayaquil,,1,0,No,No,Not Met,Not Met
+2026-10-30,STB11735,Student Branch,Yachay Tech University,,142,3,Yes,Yes,Met,Met
+2026-10-30,SBC1280A,Student Branch Chapter,Escuela Politecnica Nacional,C16,48,3,Yes,Yes,Met,Met
+2026-10-30,SBC1280E,Student Branch Chapter,Escuela Politecnica Nacional,CIS11,11,1,Yes,No,Partial,Not Met
+2026-10-30,SBC12801,Student Branch Chapter,Escuela Politecnica Nacional,COM19,75,2,Yes,No,Met,Not Met
+2026-10-30,SBC1280C,Student Branch Chapter,Escuela Politecnica Nacional,PE31,61,3,Yes,Yes,Met,Met
+2026-10-30,SBC1280B,Student Branch Chapter,Escuela Politecnica Nacional,RA24/CS23,55,2,Yes,No,Met,Not Met
+2026-10-30,SBC1280F,Student Branch Chapter,Escuela Politecnica Nacional,AP03/MTT17/RFID741,42,3,Yes,Yes,Met,Met
+2026-10-30,SBC1280G,Student Branch Chapter,Escuela Politecnica Nacional,EMB18,39,3,Yes,Yes,Met,Met
+2026-10-30,SBC12801F,Student Branch Chapter,Escuela Politecnica Nacional,PHO36,15,3,Yes,Yes,Met,Met
+2026-10-30,SBC1280H,Student Branch Chapter,Escuela Politecnica Nacional,TEC802/ITSS38/VT06,40,2,Yes,No,Met,Not Met
+2026-10-30,SBC19041A,Student Branch Chapter,Escuela Superior Politecnica del Litoral,C16,73,3,Yes,Yes,Met,Met
+2026-10-30,SBC19041B,Student Branch Chapter,Escuela Superior Politecnica del Litoral,COM19,32,2,Yes,No,Met,Not Met
+2026-10-30,SBC19041F,Student Branch Chapter,Escuela Superior Politecnica del Litoral,CS23,23,2,Yes,No,Met,Not Met
+2026-10-30,SBC19041,Student Branch Chapter,Escuela Superior Politecnica del Litoral,IA34,95,3,Yes,Yes,Met,Met
+2026-10-30,SBC19041E,Student Branch Chapter,Escuela Superior Politecnica del Litoral,OE22,6,2,Yes,No,Met,Not Met
+2026-10-30,SBC19041C,Student Branch Chapter,Escuela Superior Politecnica del Litoral,PE31,59,2,Yes,No,Met,Not Met
+2026-10-30,SBC19041D,Student Branch Chapter,Escuela Superior Politecnica del Litoral,RA24,45,2,Yes,No,Met,Not Met
+2026-10-30,SBC65531A,Student Branch Chapter,Escuela Superior Politecnica de Chimborazo,AP03,32,1,Yes,No,Partial,Not Met
+2026-10-30,SBC65531E,Student Branch Chapter,Escuela Superior Politecnica de Chimborazo,C16,62,2,Yes,No,Met,Not Met
+2026-10-30,SBC65531B,Student Branch Chapter,Escuela Superior Politecnica de Chimborazo,COM19,33,2,Yes,No,Met,Not Met
+2026-10-30,SBC65531C,Student Branch Chapter,Escuela Superior Politecnica de Chimborazo,EMB18,26,2,Yes,No,Met,Not Met
+2026-10-30,SBC65531,Student Branch Chapter,Escuela Superior Politecnica de Chimborazo,IE13,11,2,Yes,No,Met,Not Met
+2026-10-30,SBC65531F,Student Branch Chapter,Escuela Superior Politecnica de Chimborazo,NPS05,6,2,Yes,No,Met,Not Met
+2026-10-30,SBC65531D,Student Branch Chapter,Escuela Superior Politecnica de Chimborazo,RA24,71,1,Yes,No,Partial,Not Met
+2026-10-30,SBC19041K,Student Branch Chapter,Escuela Superior Politecnica del Litoral,AES10,21,2,Yes,No,Met,Not Met
+2026-10-30,SBC19041I,Student Branch Chapter,Escuela Superior Politecnica del Litoral,CIS11,47,2,Yes,No,Met,Not Met
+2026-10-30,SBC19041H,Student Branch Chapter,Escuela Superior Politecnica del Litoral,EMB18,68,2,Yes,No,Met,Not Met
+2026-10-30,SBC19041J,Student Branch Chapter,Escuela Superior Politecnica del Litoral,GRS29,14,2,Yes,No,Met,Not Met
+2026-10-30,SBC19041G,Student Branch Chapter,Escuela Superior Politecnica del Litoral,PHO36,5,1,No,No,Met,Not Met
+2026-10-30,SBC11457A,Student Branch Chapter,Universidad de la Fuerzas Armadas ESPE - Latacunga,EMB18,8,3,Yes,Yes,Met,Met
+2026-10-30,SBC11457B,Student Branch Chapter,Universidad de la Fuerzas Armadas ESPE - Latacunga,C16,2,0,No,No,Not Met,Not Met
+2026-10-30,SBC11457,Student Branch Chapter,Universidad de la Fuerzas Armadas ESPE - Latacunga,PE31,16,3,Yes,Yes,Met,Met
+2026-10-30,SBC11457C,Student Branch Chapter,Universidad de la Fuerzas Armadas ESPE - Latacunga,RA24,1,0,No,No,Not Met,Not Met
+2026-10-30,SBC11457D,Student Branch Chapter,Universidad de la Fuerzas Armadas ESPE - Latacunga,VT06,5,1,No,No,Met,Not Met
+2026-10-30,SBC10069A,Student Branch Chapter,Universidad Central del Ecuador,WIE,0,0,No,No,Not Met,Not Met
+2026-10-30,SBC20209,Student Branch Chapter,Universidad Estatal Peninsula de Santa Elena,AP03,49,3,Yes,Yes,Met,Met
+2026-10-30,SBC20209B,Student Branch Chapter,Universidad Estatal Peninsula de Santa Elena,COM19,35,2,Yes,No,Met,Not Met
+2026-10-30,SBC20209A,Student Branch Chapter,Universidad Estatal Peninsula de Santa Elena,.RA24,18,1,Yes,No,Partial,Not Met
+2026-10-30,SBC60210971,Student Branch Chapter,Universidad Indoamerica,TEM14,4,1,No,No,Met,Not Met
+2026-10-30,SBC15611,Student Branch Chapter,Universidad Internacional del Ecuador,C16,78,2,Yes,No,Met,Not Met
+2026-10-30,SBC15611A,Student Branch Chapter,Universidad Internacional del Ecuador,COM19,68,2,Yes,No,Met,Not Met
+2026-10-30,SBC10044C,Student Branch Chapter,Universidad Laica Eloy Alfaro de Manabi,C16,2,0,No,No,Partial,Not Met
+2026-10-30,SBC10044B,Student Branch Chapter,Universidad Laica Eloy Alfaro de Manabi,IA34,0,0,No,No,Not Met,Not Met
+2026-10-30,SBC10044D,Student Branch Chapter,Universidad Laica Eloy Alfaro de Manabi,PE31,0,0,No,No,Not Met,Not Met
+2026-10-30,SBC10044A,Student Branch Chapter,Universidad Laica Eloy Alfaro de Manabi,RA24,2,0,No,No,Not Met,Not Met
+2026-10-30,SBC65231,Student Branch Chapter,Universidad Nacional De Loja,C16,45,2,Yes,No,Met,Not Met
+2026-10-30,SBC65231A,Student Branch Chapter,Universidad Nacional De Loja,E25,24,2,Yes,No,Met,Not Met
+2026-10-30,SBC00141,Student Branch Chapter,Universidad Nacional de Chimborazo,AP03,22,2,Yes,No,Met,Not Met
+2026-10-30,SBC02631B,Student Branch Chapter,Universidad Politecnica Salesiana-Guayaquil,CS23,0,0,No,No,Not Met,Not Met
+2026-10-30,SBC02631,Student Branch Chapter,Universidad Politecnica Salesiana-Guayaquil,C16,12,1,Yes,No,Not Met,Not Met
+2026-10-30,SBC00751E,Student Branch Chapter,Universidad Politecnica Salesiana - Quito,C16,11,1,Yes,No,Partial,Not Met
+2026-10-30,SBC00751C,Student Branch Chapter,Universidad Politecnica Salesiana - Quito,COM19,7,2,Yes,Yes,Partial,Not Met
+2026-10-30,SBC00751D,Student Branch Chapter,Universidad Politecnica Salesiana - Quito,EMB18,1,0,No,No,Not Met,Not Met
+2026-10-30,SBC00751A,Student Branch Chapter,Universidad Politecnica Salesiana - Quito,PE31,5,0,No,No,Partial,Not Met
+2026-10-30,SBC00751B,Student Branch Chapter,Universidad Politecnica Salesiana - Quito,RA24,4,0,No,No,Partial,Not Met
+2026-10-30,SBC65241B,Student Branch Chapter,Universidad Politecnica Salesiana-Cuenca,C16,42,3,Yes,Yes,Met,Met
+2026-10-30,SBC65241D,Student Branch Chapter,Universidad Politecnica Salesiana-Cuenca,COM19,5,0,No,No,Not Met,Not Met
+2026-10-30,SBC65241E,Student Branch Chapter,Universidad Politecnica Salesiana-Cuenca,IE13,15,1,Yes,No,Partial,Not Met
+2026-10-30,SBC65241C,Student Branch Chapter,Universidad Politecnica Salesiana-Cuenca,PE31,34,1,Yes,No,Partial,Not Met
+2026-10-30,SBC65241A,Student Branch Chapter,Universidad Politecnica Salesiana-Cuenca,RA24,17,1,Yes,No,Partial,Not Met
+2026-10-30,SBC65241G,Student Branch Chapter,Universidad Politecnica Salesiana-Cuenca,CAS04,15,1,Yes,No,Not Met,Not Met
+2026-10-30,SBC6524A,Student Branch Chapter,Universidad Politecnica Salesiana-Cuenca,EMB18,26,1,Yes,No,Partial,Not Met
+2026-10-30,SBC65241H,Student Branch Chapter,Universidad Politecnica Salesiana-Cuenca,MTT17,7,2,Yes,No,Met,Not Met
+2026-10-30,SBC65241,Student Branch Chapter,Universidad Politecnica Salesiana-Cuenca,TMC14,8,1,Yes,No,Not Met,Not Met
+2026-10-30,SBC65241F,Student Branch Chapter,Universidad Politecnica Salesiana-Cuenca,VT06,6,2,Yes,No,Met,Not Met
+2026-10-30,SBC02631C,Student Branch Chapter,Universidad Politecnica Salesiana-Guayaquil,COM19,0,0,No,No,Not Met,Not Met
+2026-10-30,SBC02631A,Student Branch Chapter,Universidad Politecnica Salesiana-Guayaquil,EMB18,16,1,Yes,No,Not Met,Not Met
+2026-10-30,SBC14971E,Student Branch Chapter,Universidad San Francisco de Quito,AES10,5,1,No,No,Met,Not Met
+2026-10-30,SBC14971D,Student Branch Chapter,Universidad San Francisco de Quito,C16,64,3,Yes,Yes,Met,Met
+2026-10-30,SBC14971C,Student Branch Chapter,Universidad San Francisco de Quito,CAS04,7,2,Yes,No,Met,Not Met
+2026-10-30,SBC14971G,Student Branch Chapter,Universidad San Francisco de Quito,CIS11,34,3,Yes,Yes,Met,Met
+2026-10-30,SBC14971,Student Branch Chapter,Universidad San Francisco de Quito,ED15,8,1,Yes,No,Partial,Not Met
+2026-10-30,SBC14971A,Student Branch Chapter,Universidad San Francisco de Quito,EMB18,5,1,No,No,Met,Not Met
+2026-10-30,SBC14971F,Student Branch Chapter,Universidad San Francisco de Quito,NPS05,7,2,Yes,Yes,Partial,Not Met
+2026-10-30,SBC14971B,Student Branch Chapter,Universidad San Francisco de Quito,RA24,13,2,Yes,No,Met,Not Met
+2026-10-30,SBC65891A,Student Branch Chapter,Universidad Tecnica del Norte,COM19,94,2,Yes,No,Met,Not Met
+2026-10-30,SBC60216631,Student Branch Chapter,Universidad Tecnica Estatal de Quevedo,PE31,19,2,Yes,No,Met,Not Met
+2026-10-30,SBC60216631A,Student Branch Chapter,Universidad Tecnica Estatal de Quevedo,RA24,15,2,Yes,No,Met,Not Met
+2026-10-30,SBC60216631B,Student Branch Chapter,Universidad Tecnica Estatal de Quevedo,TEM14,11,2,Yes,No,Met,Not Met
+2026-10-30,SBC6371C,Student Branch Chapter,Universidad Tecnica Particular de Loja,PE31,0,0,No,No,Not Met,Not Met
+2026-10-30,SBC63711,Student Branch Chapter,Universidad Tecnica Particular de Loja,C16,7,1,Yes,No,Not Met,Not Met
+2026-10-30,SBC6371A,Student Branch Chapter,Universidad Tecnica Particular de Loja,COM19,0,0,No,No,Not Met,Not Met
+2026-10-30,SBC6371B,Student Branch Chapter,Universidad Tecnica Particular de Loja,RA24,0,0,No,No,Not Met,Not Met
+2026-10-30,SBC65711,Student Branch Chapter,Universidad Tecnica de Ambato,C16,0,0,No,No,Not Met,Not Met
+2026-10-30,SBC14005,Student Branch Chapter,Universidad Tecnica de Cotopaxi,PE31,0,0,No,No,Not Met,Not Met
+2026-10-30,SBC14005A,Student Branch Chapter,Universidad Tecnica de Cotopaxi,RA24,0,0,No,No,Not Met,Not Met
+2026-10-30,SBC65891C,Student Branch Chapter,Universidad Tecnica del Norte,C16,97,3,Yes,Yes,Met,Met
+2026-10-30,SBC65891B,Student Branch Chapter,Universidad Tecnica del Norte,EMB18,76,2,Yes,No,Met,Not Met
+2026-10-30,SBC65891,Student Branch Chapter,Universidad Tecnica del Norte,RA24,11,2,Yes,No,Met,Not Met
+2026-10-30,SBC65891E,Student Branch Chapter,Universidad Tecnica del Norte,GRS29,30,2,Yes,No,Met,Not Met
+2026-10-30,SBC65891D,Student Branch Chapter,Universidad Tecnica del Norte,PE31,12,2,Yes,No,Met,Not Met
+2026-10-30,SBC65891F,Student Branch Chapter,Universidad Tecnica del Norte,VT06,49,2,Yes,No,Met,Not Met
+2026-10-30,SBC86091A,Student Branch Chapter,Universidad de Cuenca,C16,1,0,No,No,Not Met,Not Met
+2026-10-30,SBC86091,Student Branch Chapter,Universidad de Cuenca,PE31,0,0,No,No,Not Met,Not Met
+2026-10-30,SBC10045B,Student Branch Chapter,Universidad de las Americas-Quito,C16,10,1,Yes,No,Partial,Not Met
+2026-10-30,SBC10045,Student Branch Chapter,Universidad de las Americas-Quito,COM19,30,1,Yes,No,Not Met,Not Met
+2026-10-30,SBC10045A,Student Branch Chapter,Universidad de las Americas-Quito,EMB18,11,1,Yes,No,Partial,Not Met
+2026-10-30,SBC63741E,Student Branch Chapter,Universidad de las Fuerzas Armadas - ESPE,AES10,7,2,Yes,Yes,Partial,Not Met
+2026-10-30,SBC63741C,Student Branch Chapter,Universidad de las Fuerzas Armadas - ESPE,CIS11,4,0,No,No,Not Met,Not Met
+2026-10-30,SBC63741B,Student Branch Chapter,Universidad de las Fuerzas Armadas - ESPE,COM19,42,3,Yes,Yes,Met,Met
+2026-10-30,SBC63741D,Student Branch Chapter,Universidad de las Fuerzas Armadas - ESPE,EMB18,17,3,Yes,Yes,Met,Met
+2026-10-30,SBC63741H,Student Branch Chapter,Universidad de las Fuerzas Armadas - ESPE,GRS29,8,2,Yes,No,Met,Not Met
+2026-10-30,SBC63741G,Student Branch Chapter,Universidad de las Fuerzas Armadas - ESPE,MTT17,19,2,Yes,No,Met,Not Met
+2026-10-30,SBC63741A,Student Branch Chapter,Universidad de las Fuerzas Armadas - ESPE,RA24,11,2,Yes,Yes,Partial,Not Met
+2026-10-30,SBC63741F,Student Branch Chapter,Universidad de las Fuerzas Armadas - ESPE,SP01,7,2,Yes,No,Met,Not Met
+2026-10-30,SBC11735H,Student Branch Chapter,Yachay Tech University,MTT17,7,2,Yes,No,Met,Not Met
+2026-10-30,SBC11735A,Student Branch Chapter,Yachay Tech University,C16,28,3,Yes,Yes,Met,Met
+2026-10-30,SBC11735B,Student Branch Chapter,Yachay Tech University,CAS04,29,2,Yes,No,Met,Not Met
+2026-10-30,SBC11735G,Student Branch Chapter,Yachay Tech University,CIS11,11,3,Yes,Yes,Met,Met
+2026-10-30,SBC11735I,Student Branch Chapter,Yachay Tech University,COM19,16,2,Yes,No,Met,Not Met
+2026-10-30,SBC11735,Student Branch Chapter,Yachay Tech University,EMB18,35,3,Yes,Yes,Met,Met
+2026-10-30,SBC11735C,Student Branch Chapter,Yachay Tech University,EP21,27,3,Yes,Yes,Met,Met
+2026-10-30,SBC11735D,Student Branch Chapter,Yachay Tech University,GRS29,14,2,Yes,No,Met,Not Met
+2026-10-30,SBC11735F,Student Branch Chapter,Yachay Tech University,NANO42,7,3,Yes,Yes,Met,Met
+2026-10-30,SBC11735J,Student Branch Chapter,Yachay Tech University,PHO36,7,2,Yes,No,Met,Not Met
+2026-10-30,SBC11735E,Student Branch Chapter,Yachay Tech University,RA24,5,2,No,Yes,Met,Not Met
