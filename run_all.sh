@@ -28,8 +28,8 @@ case "${1:-}" in
   -h|--help)
     sed -n '2,15p' "${BASH_SOURCE[0]}" | sed 's/^# \{0,1\}//'
     echo "  --login    Run the interactive login steps, then exit."
-    echo "  --pdfs     Also save every University/Society/Section report page as its own PDF"
-    echo "             (automations/export_report_pdfs.py, into report_pdfs/<date>/)."
+    echo "  --pdfs     Also save one PDF per Student Branch (automations/export_report_pdfs.py,"
+    echo "             into report_pdfs/<date>/; see its --help for other splits and filters)."
     exit 0
     ;;
   --login)

@@ -8,13 +8,11 @@ pages:
   script:
     - mkdir -p public
     - cp vitality_dashboard.html public/index.html
+    - cp vitality_dashboard.html public/vitality_dashboard.html  # the report builder links back to it
     - '[ -f vitality_report.csv ] && cp vitality_report.csv public/vitality_report.csv || true'
     - '[ -f university_report.html ] && cp university_report.html public/university_report.html || true'
     - '[ -f society_report.html ] && cp society_report.html public/society_report.html || true'
-    - '[ -f vitality_status_report.html ] && cp vitality_status_report.html public/vitality_status_report.html || true'
-    - '[ -f section_report.html ] && cp section_report.html public/section_report.html || true'
-    - '[ -f section_branch_report.html ] && cp section_branch_report.html public/section_branch_report.html || true'
-    - '[ -f branch_report.html ] && cp branch_report.html public/branch_report.html || true'
+    - '[ -f report_builder.html ] && cp report_builder.html public/report_builder.html || true'
     # Region 9 dashboards (beta): served as-is under /beta_r9/, so the
     # section picker's relative links keep working.
     - '[ -d r9/dashboards ] && cp -r r9/dashboards public/beta_r9 || true'
@@ -30,9 +28,6 @@ pages:
         - vitality_dashboard.html
         - university_report.html
         - society_report.html
-        - vitality_status_report.html
-        - section_report.html
-        - section_branch_report.html
-        - branch_report.html
+        - report_builder.html
         - r9/dashboards/**/*
         - .gitlab-ci.yml

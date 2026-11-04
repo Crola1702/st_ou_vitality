@@ -8,61 +8,44 @@ version since this project doesn't cut releases.
 
 ### Added
 
-- **Printable Section reports** (`section_report.html`, `build_section_report()`):
-  one print-ready page per IEEE Section (summary stats, requirements-met
-  bar, unit table), same layout and click-to-print-one-page behavior as the
-  University/Society reports. Written into every `r9/dashboards/` scope (the
-  `region/` copy has all Sections; a Section's copy is its single page) and
-  linked from the R9 Section picker ("Print reports by Section", plus a
-  "Print" link per Section row) and from each dashboard header. The root
-  pipeline writes it only when the exports carry a Section column.
-- **Student Branch reports** (`branch_report.html`, `build_branch_report()`):
-  one printable page per Student Branch (per university) to send to that
-  branch: its own requirements as a checklist (members, reported events,
-  Chair, Counselor, status) and a table of its Chapters and Affinity Groups
-  with what each one is still missing. The table of contents lists every
-  university grouped by Section with its branch result and OUs met, so it
-  doubles as the "which universities' OUs are compliant" overview. Written
-  for the root and every R9 scope; the region-wide copy downloads (ZIP or
-  PDF) into one folder per Section.
-- **Section reports grouped by Student Branch**
-  (`section_branch_report.html`, `build_section_branch_report()`): the
-  Section report aggregated by parent Student Branch, for Section Chairs and
-  SSACs. Per Section: a one-line-per-university summary (branch result,
-  what the branch is missing, Chapters & AGs met) and a detail table with
-  each Student Branch followed by its Chapters and Affinity Groups. Both
-  Section report flavors link to each other with an "All OUs / Grouped by
-  Student Branch" switcher. Chapters and AGs are matched to their branch by
-  university, as in `chapter_outreach/`.
-- **"Reports & export" panel** on every dashboard and on the Region 9
-  Section picker, replacing the row of report links in the header. It groups
-  every option by audience (who meets vitality, send to each Student Branch,
-  send to Section Chairs & SSACs, other views, CSV), each with "View &
-  print" and, for the grouped reports, "All as PDF (.zip)". Section rows on
-  the picker get a compact "Reports" menu with the same options.
-- **Batch PDF download of the printable reports.** Every University,
-  Society, Student Branch and Section report has a "Download all N as PDF
-  (.zip)" button (and "Download PDF" on each page): one PDF per group, named
-  by OU code and name (e.g. `STB12991 - Universidad de los Andes.pdf`),
-  ready to email; a report spanning several Sections zips one folder per
-  Section. The PDFs are built in the browser by a small dependency-free
-  writer (`dashboard_assets/report_export.js`: Helvetica text, tables,
-  bars, colors from the page), so it works on the published site; all 537
-  Region 9 Student Branch PDFs take about 3 seconds. Opening a report with
-  `?download=pdf` starts the download right away (what the panel links
-  use). For Chromium-rendered PDFs, `automations/export_report_pdfs.py`
-  does the same locally (same file names) for the Colombia reports and,
-  with `--r9`, every Region 9 scope, into the git-ignored
-  `report_pdfs/<date>/`; `./run_all.sh --pdfs` runs it after a full
-  refresh.
-- **OUs meeting / not meeting vitality list** (`vitality_status_report.html`,
-  `build_vitality_status_report()`): every OU split into two lists, the
-  non-compliant one showing what is still missing (members, reported
-  events, Chair, Counselor/Advisor) and sorted closest-to-compliance
-  first. Filters for list, OU type, Section (when the scope spans several)
-  and free-text search; printing keeps the current filters. Written by both
-  the root pipeline and every R9 scope, linked from each dashboard header
-  and the R9 Section picker, and deployed to GitHub/GitLab Pages.
+- **Report builder** (`report_builder.html`, `build_report_builder()`): one
+  page for every printable report and export, replacing per-report links.
+  Written for the root and every `r9/dashboards/` scope.
+  1. **Which OUs:** Council, Section, Student Branch / university, Society,
+     OU types (Student Branches, Chapters, Affinity Groups), vitality (all,
+     meeting it, not meeting it, missing one requirement, missing two or
+     more) and search.
+  2. **How to split it:** one report, or one per Student Branch (its
+     checklist plus its Chapters and Affinity Groups), Section, Council or
+     Society. Optionally, Chapters and Affinity Groups are listed under
+     their Student Branch inside each report, with a per-university summary.
+  3. **Export:** one PDF per group in a ZIP, a single PDF when there is one
+     group, a CSV of the selection (with the group as a column), or print.
+     PDFs are named by OU code and name (`STB12991 - Universidad de los
+     Andes.pdf`), with one folder per Section when Student Branch reports
+     span several, and each is labelled with the filters it was made with.
+
+  Presets set the controls for the common jobs: one report per Student
+  Branch (SSACs), Section reports by Student Branch (Section Chairs), Student
+  Branches only by Section (Region SACs), the Chapters of one Society
+  (chapter chairs), OUs meeting vitality (recognition), and quick wins
+  (missing one requirement). Every control is kept in the URL, so a
+  configured report can be bookmarked or shared, and `?download=pdf` starts
+  the export on open.
+
+  PDFs are built in the browser by a small dependency-free writer
+  (`dashboard_assets/report_export.js`: Helvetica text, tables, bars, page
+  colors), so it works on the published site. All 537 Region 9 Student
+  Branch PDFs take about 3 seconds.
+- **Export bar** on every dashboard: "Export reports" opens the builder
+  with the dashboard's current University, Society and search filters, next
+  to "Full data (CSV)". The Region 9 Section picker gets the same for the
+  whole region and an "Export" link per Section.
+- **`automations/export_report_pdfs.py`** (and `./run_all.sh --pdfs`): the
+  same exports from the command line with Chromium rendering. It opens the
+  builder with the given options (`--group`, `--types`, `--status`,
+  `--section`, ...) and saves each report as a PDF, plus a ZIP, under the
+  git-ignored `report_pdfs/<date>/`. `--r9` covers every Region 9 scope.
 
 ### Fixed
 
@@ -70,8 +53,8 @@ version since this project doesn't cut releases.
   contents** (and a trailing blank page). Single-page prints now contain
   only that group, and printed tables are denser with the header repeated
   on each sheet.
-- Report anchors (and the new per-group file names) fold accents
-  (`Bogotá` → `bogota`) and get a numeric suffix if two names collide.
+- University/Society report anchors fold accents (`Bogotá` → `bogota`) and
+  get a numeric suffix if two names collide.
 - `./run_all.sh --help` no longer prints the script's `set -euo pipefail`
   line.
 

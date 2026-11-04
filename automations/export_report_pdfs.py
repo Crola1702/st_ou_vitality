@@ -1,60 +1,49 @@
-"""Batch-export the printable reports as one PDF per group.
+"""Batch-export reports as PDFs from the command line, through the report
+builder.
 
-Opens each generated print report (university_report.html,
-society_report.html, branch_report.html, section_report.html,
-section_branch_report.html, plus the single-page
-vitality_status_report.html) in headless Chromium and saves every group
-page (one University, Society, Student Branch or Section) as its own PDF, then zips
-each set. Replaces clicking every name in a report's table of contents and
-"Save as PDF" by hand.
+The report builder (report_builder.html, written by
+generate_vitality_report.py and r9/generate_r9_vitality.py) already
+downloads one PDF per group from the browser, with nothing to install. This
+script does the same headless and with Chromium's own rendering: it opens
+the builder with the options you pass (the same ones the page keeps in its
+URL), then prints every report page it renders to its own PDF, named the way
+the builder names them, and zips the set.
 
-Run after generate_vitality_report.py (and r9/generate_r9_vitality.py for
---r9), from any directory:
+    # one PDF per Student Branch (with its Chapters and Affinity Groups)
+    automations/.venv/bin/python automations/export_report_pdfs.py --group branch
 
-    automations/.venv/bin/python automations/export_report_pdfs.py
-    automations/.venv/bin/python automations/export_report_pdfs.py --r9 --only university section
+    # Region 9: Student Branches only, one PDF per Section
+    automations/.venv/bin/python automations/export_report_pdfs.py --r9-only --scope region \\
+        --group section --types branch
 
-Output (git-ignored), by default under report_pdfs/<date>/:
+    # quick wins (missing one requirement) for one Section, a single PDF
+    automations/.venv/bin/python automations/export_report_pdfs.py --r9-only --scope region \\
+        --section "Colombia Section" --status one
 
-    colombia/university/<university>.pdf   + colombia/university.zip
-    colombia/society/<society>.pdf         + colombia/society.zip
-    colombia/branch/<SPO ID> - <univ>.pdf  + colombia/branch.zip    (one per Student Branch)
-    colombia/section/<section>.pdf         + colombia/section.zip   (if section_report.html exists)
-    colombia/section_branch/<section>.pdf  + ...                    (Section reports by Student Branch)
-    colombia/vitality_status_report.pdf
-    r9/<scope>/...                                                  (with --r9; region/branch/ has
-                                                                     one subfolder per Section)
-
-Unlike the CSV exporters next to it, this needs no login: it only reads
+Output (git-ignored): report_pdfs/<date>/<scope>/<options>/... plus a .zip
+next to each set. Run after the generators. Needs no login: it only reads
 local HTML files.
 """
 
 from __future__ import annotations
 
 import argparse
+import re
 import sys
 import zipfile
 from datetime import datetime
 from pathlib import Path
+from urllib.parse import urlencode
 
 from playwright.sync_api import sync_playwright
 
 REPO_DIR = Path(__file__).resolve().parent.parent
 R9_DASHBOARDS = REPO_DIR / "r9" / "dashboards"
-
-# kind -> report file name; every one is a build_grouped_print_report() page.
-GROUPED_REPORTS = {
-    "university": "university_report.html",
-    "society": "society_report.html",
-    "section": "section_report.html",
-    "section_branch": "section_branch_report.html",
-    "branch": "branch_report.html",
-}
-STATUS_REPORT = "vitality_status_report.html"
+BUILDER = "report_builder.html"
 
 
 def scopes(include_root: bool, include_r9: bool, r9_scopes: list[str] | None) -> list[tuple[str, Path]]:
-    """(output folder, directory holding the reports) per scope."""
+    """(output folder, directory holding report_builder.html) per scope."""
     found = []
     if include_root:
         found.append(("colombia", REPO_DIR))
@@ -68,27 +57,38 @@ def scopes(include_root: bool, include_r9: bool, r9_scopes: list[str] | None) ->
     return found
 
 
-def export_grouped(page, report: Path, out_dir: Path, paper: str) -> list[Path]:
-    page.goto(report.as_uri())
+def builder_query(args: argparse.Namespace) -> dict[str, str]:
+    """The builder's URL parameters (see report_builder.js stateFromUrl)."""
+    q = {}
+    if args.group != "none":
+        q["group"] = args.group
+    if args.types and set(args.types) != {"branch", "chapter", "ag"}:
+        q["types"] = ",".join(args.types)
+    if args.status != "all":
+        q["status"] = args.status
+    if args.flat:
+        q["nest"] = "0"
+    for key in ("council", "section", "university", "society", "q"):
+        value = getattr(args, key)
+        if value:
+            q[key] = value
+    return q
+
+
+def export(page, builder: Path, query: dict[str, str], out_dir: Path, paper: str) -> list[Path]:
+    page.goto(builder.as_uri() + ("?" + urlencode(query) if query else ""))
     style = page.eval_on_selector("style", "el => el.outerHTML")
-    # [id, data-folder, outerHTML] per group page. data-folder (e.g. the
-    # Section of a Student Branch page in a region-wide report) becomes a
-    # subfolder, so that report lands one folder per Section.
+    # [file name, folder, markup] per rendered report page. A folder (e.g. the
+    # Section of a Student Branch, when the export spans several) becomes a
+    # subfolder.
     groups = page.eval_on_selector_all(
-        ".group-page", "els => els.map(e => [e.dataset.filename || e.id, e.dataset.folder || '', e.outerHTML])"
+        "#pages .group-page", "els => els.map(e => [e.dataset.filename || e.id, e.dataset.folder || '', e.outerHTML])"
     )
     written = []
-    # data-filename is "<OU code> - <name>" (or just the name), the same
-    # name the report's own "Download all as PDF" button uses.
     for filename, folder, section_html in groups:
-        # Print each group from its own small document (same markup and
-        # styles, flagged like the report's printOnly()) rather than the
-        # whole report with the rest hidden: a region-wide report has
-        # hundreds of pages and re-laying it out per PDF is slow.
-        page.set_content(
-            f'<!doctype html><html lang="en"><head><meta charset="utf-8">{style}</head>'
-            f'<body class="print-single">{section_html.replace("group-page", "group-page print-target", 1)}</body></html>'
-        )
+        # Print each page from its own small document (same markup and
+        # styles): re-laying out a several-hundred-page preview per PDF is slow.
+        page.set_content(f'<!doctype html><html lang="en"><head><meta charset="utf-8">{style}</head><body>{section_html}</body></html>')
         target_dir = out_dir / folder if folder else out_dir
         target_dir.mkdir(parents=True, exist_ok=True)
         pdf = target_dir / f"{filename}.pdf"
@@ -97,8 +97,7 @@ def export_grouped(page, report: Path, out_dir: Path, paper: str) -> list[Path]:
     return written
 
 
-def zip_folder(files: list[Path], zip_path: Path) -> None:
-    root = zip_path.with_suffix("")
+def zip_folder(files: list[Path], root: Path, zip_path: Path) -> None:
     with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as zf:
         for f in files:
             zf.write(f, arcname=str(f.relative_to(root)))
@@ -106,47 +105,52 @@ def zip_folder(files: list[Path], zip_path: Path) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
-    parser.add_argument("--r9", action="store_true", help="also export every r9/dashboards/ scope")
-    parser.add_argument("--r9-only", action="store_true", help="export only r9/dashboards/ scopes, not the root (Colombia) reports")
-    parser.add_argument("--scope", nargs="+", metavar="SLUG", help="limit --r9 to these scope folders (e.g. region colombia-section)")
-    parser.add_argument(
-        "--only", nargs="+", choices=[*GROUPED_REPORTS, "status"], help="limit to these reports (default: all that exist)"
-    )
+    where = parser.add_argument_group("which builder(s)")
+    where.add_argument("--r9", action="store_true", help="also every r9/dashboards/ scope")
+    where.add_argument("--r9-only", action="store_true", help="only r9/dashboards/ scopes, not the root (Colombia) one")
+    where.add_argument("--scope", nargs="+", metavar="SLUG", help="limit the r9 scopes (e.g. region colombia-section)")
+    what = parser.add_argument_group("report options (same as the page)")
+    what.add_argument("--group", default="branch", choices=["none", "branch", "section", "council", "society"],
+                      help="one PDF per ... (default: branch; none = a single PDF)")
+    what.add_argument("--types", nargs="+", choices=["branch", "chapter", "ag"], help="OU types to include (default: all)")
+    what.add_argument("--status", default="all", choices=["all", "met", "notmet", "one", "two"],
+                      help="vitality: met, notmet, one (missing one requirement), two (missing two or more)")
+    what.add_argument("--flat", action="store_true", help="don't list Chapters/AGs under their Student Branch")
+    for key in ("council", "section", "university", "society"):
+        what.add_argument(f"--{key}", help=f"only this {key} (exact name; society = code like PE31)")
+    what.add_argument("--q", help="search text")
     parser.add_argument("--paper", default="Letter", help="paper size passed to Chromium (Letter, A4, ...)")
     parser.add_argument("--out", type=Path, help="output folder (default: report_pdfs/<today>/)")
-    parser.add_argument("--no-zip", action="store_true", help="skip writing a .zip per report set")
+    parser.add_argument("--no-zip", action="store_true", help="skip the .zip next to each set")
     args = parser.parse_args()
 
     out_root = args.out or REPO_DIR / "report_pdfs" / datetime.now().strftime("%Y-%m-%d")
-    wanted = set(args.only or [*GROUPED_REPORTS, "status"])
+    query = builder_query(args)
+    label = re.sub(r"[^a-z0-9]+", "-", "_".join(f"{k}-{v}" for k, v in query.items()).lower()).strip("-") or "all"
     targets = scopes(not args.r9_only, args.r9 or args.r9_only or bool(args.scope), args.scope)
 
     total = 0
     with sync_playwright() as p:
         browser = p.chromium.launch()
         page = browser.new_page()
-        for label, src_dir in targets:
-            for kind, filename in GROUPED_REPORTS.items():
-                report = src_dir / filename
-                if kind not in wanted or not report.exists():
-                    continue
-                kind_dir = out_root / label / kind
-                pdfs = export_grouped(page, report, kind_dir, args.paper)
-                if not args.no_zip and pdfs:
-                    zip_folder(pdfs, kind_dir.with_suffix(".zip"))
-                total += len(pdfs)
-                print(f"{label}: {len(pdfs)} {kind} PDFs -> {kind_dir.relative_to(out_root)}")
-            status = src_dir / STATUS_REPORT
-            if "status" in wanted and status.exists():
-                (out_root / label).mkdir(parents=True, exist_ok=True)
-                page.goto(status.as_uri())
-                page.pdf(path=str(out_root / label / "vitality_status_report.pdf"), format=args.paper, print_background=True)
-                total += 1
-                print(f"{label}: vitality_status_report.pdf")
+        for scope_label, src_dir in targets:
+            builder = src_dir / BUILDER
+            if not builder.exists():
+                print(f"{scope_label}: no {BUILDER}, skipped (run the generator first)")
+                continue
+            out_dir = out_root / scope_label / label
+            pdfs = export(page, builder, query, out_dir, args.paper)
+            if not pdfs:
+                print(f"{scope_label}: no OUs match these options")
+                continue
+            if not args.no_zip:
+                zip_folder(pdfs, out_dir, out_dir.with_suffix(".zip"))
+            total += len(pdfs)
+            print(f"{scope_label}: {len(pdfs)} PDFs -> {out_dir.relative_to(out_root)}")
         browser.close()
 
     if not total:
-        sys.exit("No reports found: run generate_vitality_report.py (or r9/generate_r9_vitality.py) first.")
+        sys.exit("No PDFs written: no report_builder.html found, or no OUs matched.")
     print(f"Wrote {total} PDFs under {out_root}")
 
 

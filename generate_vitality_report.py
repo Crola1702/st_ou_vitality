@@ -885,104 +885,46 @@ def render_asset(name: str, **values: object) -> str:
     return text
 
 
-# "Reports & export" panel: one place for every printable report and
-# download, shared by the dashboards and the r9/ Section picker. Uses the
-# pages' own theme tokens (--surface-1, --border, --text-*), so it follows
-# light/dark like the rest of the page.
-EXPORT_PANEL_CSS = """
-  .export-panel { margin: 0 0 20px; border: 1px solid var(--border); border-radius: 10px; background: var(--surface-1); }
-  .export-panel > summary {
-    cursor: pointer; list-style: none; padding: 10px 16px; font-weight: 600; font-size: 0.95rem;
-    display: flex; align-items: center; gap: 10px;
+# Export bar: the one way into every report/export. "Export reports" opens
+# the report builder with the page's current dashboard filters (?q,
+# ?university, ?society: the same names the dashboard keeps in its URL), so
+# what you filtered is what you export. Uses the page's theme tokens.
+EXPORT_BAR_CSS = """
+  .export-bar {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; margin: 0 0 20px;
+    padding: 10px 14px; border: 1px solid var(--border); border-radius: 10px; background: var(--surface-1);
   }
-  .export-panel > summary::-webkit-details-marker { display: none; }
-  .export-panel > summary::after { content: "Show"; margin-left: auto; font-size: 0.78rem; font-weight: 500; color: var(--text-secondary); }
-  .export-panel[open] > summary::after { content: "Hide"; }
-  .export-panel > summary .hint { font-weight: 400; font-size: 0.8rem; color: var(--text-secondary); }
-  .export-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 4px 28px; padding: 4px 16px 14px; border-top: 1px solid var(--gridline); }
-  .export-group h3 { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-secondary); font-weight: 600; margin: 12px 0 4px; }
-  .export-group ul { list-style: none; margin: 0; padding: 0; }
-  .export-group li { padding: 8px 0 10px; border-bottom: 1px solid var(--gridline); }
-  .export-group li:last-child { border-bottom: none; }
-  .export-text strong { display: block; font-size: 0.88rem; font-weight: 600; color: var(--text-primary); }
-  .export-text span { display: block; font-size: 0.78rem; color: var(--text-secondary); margin-top: 2px; }
-  .export-actions { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 7px; }
-  .export-actions a {
-    font-size: 0.78rem; text-decoration: none; white-space: nowrap; color: var(--text-primary);
-    border: 1px solid var(--border); border-radius: 999px; padding: 3px 10px;
+  .export-bar .export-main {
+    font-weight: 600; font-size: 0.9rem; text-decoration: none; color: var(--page-plane); background: var(--text-primary);
+    border-radius: 999px; padding: 6px 14px;
   }
-  .export-actions a:hover { border-color: var(--text-secondary); }
-  .export-actions a.pdf { font-weight: 600; }
-  .row-export > summary { cursor: pointer; font-size: 0.8rem; color: var(--text-secondary); text-decoration: underline; }
-  .row-export ul { list-style: none; margin: 6px 0 2px; padding: 0; font-size: 0.8rem; }
-  .row-export li { margin: 4px 0; line-height: 1.35; }
-  .row-export { min-width: 9.5rem; }
-  .row-export li a { color: var(--text-primary); }
-  .row-export li .sep { color: var(--text-muted); }
+  .export-bar .export-main:hover { opacity: 0.88; }
+  .export-bar .export-text { flex: 1 1 260px; font-size: 0.82rem; color: var(--text-secondary); }
+  .export-bar .export-csv { font-size: 0.82rem; color: var(--text-primary); }
+"""
+
+# Carries the dashboard's current filters into the builder on click.
+EXPORT_BAR_JS = """
+(function () {
+  const link = document.getElementById('open-report-builder');
+  if (!link) return;
+  link.addEventListener('click', () => {
+    const now = new URLSearchParams(location.search), out = new URLSearchParams();
+    ['q', 'university', 'society'].forEach(k => { if (now.get(k)) out.set(k, now.get(k)); });
+    link.href = link.dataset.base + (out.toString() ? '?' + out : '');
+  });
+})();
 """
 
 
-def export_items(sections: bool, csv_href: str | None) -> list[tuple[str, list[tuple[str, str, str, bool]]]]:
-    """(group heading, [(title, description, href, has_pdf_zip)]) for the
-    Reports & export panel. `has_pdf_zip` items are grouped print reports
-    whose "Download all as PDF" button runs on open with ?download=pdf."""
-    groups = [
-        ("Who meets vitality", [
-            ("OUs meeting / not meeting vitality", "Every OU in two lists, with what each one is still missing. Filter and print.", "vitality_status_report.html", False),
-        ]),
-        ("Send to each Student Branch", [
-            ("Student Branch reports", "One page per Student Branch with its Chapters and Affinity Groups. PDFs named by SPO ID and university.", "branch_report.html", True),
-        ]),
-    ]
-    if sections:
-        groups.append(("Send to Section Chairs & SSACs", [
-            ("Section reports by Student Branch", "One page per Section: each Student Branch with its Chapters and Affinity Groups.", "section_branch_report.html", True),
-            ("Section reports, all OUs", "One page per Section with every OU in a single list.", "section_report.html", True),
-        ]))
-    groups.append(("Other printable views", [
-        ("By university", "One page per university with all its OUs.", "university_report.html", True),
-        ("By society", "One page per IEEE Society (chapters across universities).", "society_report.html", True),
-    ]))
-    if csv_href:
-        groups.append(("Data", [("Full report (CSV)", "One row per OU with every requirement, for spreadsheets.", csv_href, False)]))
-    return groups
-
-
-def export_panel_html(prefix: str = "", *, sections: bool, csv_href: str | None = "vitality_report.csv", open_: bool = False) -> str:
-    """The full "Reports & export" panel (a <details>). `prefix` points the
-    links at another directory (the r9/ picker uses "region/")."""
-    blocks = []
-    for heading, items in export_items(sections, csv_href):
-        lis = []
-        for title, desc, href, has_pdf in items:
-            url = html.escape(prefix + href)
-            if href.endswith(".csv"):
-                actions = f'<a href="{url}" download>Download CSV</a>'
-            else:
-                actions = f'<a href="{url}" target="_blank" rel="noopener">View &amp; print</a>'
-                if has_pdf:
-                    actions += f'<a class="pdf" href="{url}?download=pdf" target="_blank" rel="noopener">All as PDF (.zip)</a>'
-            lis.append(
-                f'<li><div class="export-text"><strong>{html.escape(title)}</strong><span>{html.escape(desc)}</span></div>'
-                f'<div class="export-actions">{actions}</div></li>'
-            )
-        blocks.append(f'<section class="export-group"><h3>{html.escape(heading)}</h3><ul>{"".join(lis)}</ul></section>')
+def export_bar_html(builder_href: str = "report_builder.html", csv_href: str = "vitality_report.csv") -> str:
     return (
-        f'<details class="export-panel"{" open" if open_ else ""}>'
-        '<summary>Reports &amp; export <span class="hint">printable reports, PDFs for each Student Branch / Section, CSV</span></summary>'
-        f'<div class="export-grid">{"".join(blocks)}</div></details>'
+        '<div class="export-bar">'
+        f'<a class="export-main" id="open-report-builder" href="{html.escape(builder_href)}" data-base="{html.escape(builder_href)}">Export reports</a>'
+        '<span class="export-text">PDFs per Student Branch, Section or Society, lists of who meets vitality or is one step away, print or CSV. Uses the filters you set below.</span>'
+        f'<a class="export-csv" href="{html.escape(csv_href)}" download>Full data (CSV)</a>'
+        f"</div><script>{EXPORT_BAR_JS}</script>"
     )
-
-
-def export_menu_html(prefix: str, *, sections: bool) -> str:
-    """Compact per-row version of the panel (r9/ Section picker rows)."""
-    lis = []
-    for _, items in export_items(sections, None):
-        for title, _desc, href, has_pdf in items:
-            url = html.escape(prefix + href)
-            pdf = f' <span class="sep">·</span> <a href="{url}?download=pdf" target="_blank" rel="noopener">PDFs</a>' if has_pdf else ""
-            lis.append(f'<li><a href="{url}" target="_blank" rel="noopener">{html.escape(title)}</a>{pdf}</li>')
-    return f'<details class="row-export"><summary>Reports</summary><ul>{"".join(lis)}</ul></details>'
 
 
 def build_dashboard(
@@ -1325,7 +1267,7 @@ def build_dashboard(
         university_to_societies_json=university_to_societies_json,
     )
 
-    export_panel = export_panel_html(sections=has_sections(units))
+    export_bar = export_bar_html()
 
     page = f"""<!doctype html>
 <html lang="en">
@@ -1335,7 +1277,7 @@ def build_dashboard(
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 {dashboard_css}
-{EXPORT_PANEL_CSS}
+{EXPORT_BAR_CSS}
 </style>
 </head>
 <body>
@@ -1345,7 +1287,7 @@ def build_dashboard(
     <h1>{html.escape(title)}</h1>
     <p class="subtitle">Generated from local vTools exports. Events source: {html.escape(events_path.name)}.</p>
 {nav_html}
-    {export_panel}
+    {export_bar}
 
     <details class="resources">
       <summary>Requirements &amp; resources for students</summary>
@@ -1439,48 +1381,6 @@ def build_dashboard(
     path.write_text(page, encoding="utf-8")
 
 
-REPORT_EXPORT_JS = ASSETS_DIR / "report_export.js"  # batch PDF export, inlined into every grouped report
-
-
-def safe_filename(name: str) -> str:
-    """A file name that is safe on Windows/macOS/Linux, keeping accents and
-    spaces (the files are meant to be emailed and read by people)."""
-    cleaned = re.sub(r'[\\/:*?"<>|\x00-\x1f]+', " ", name)
-    return re.sub(r"\s+", " ", cleaned).strip(" .")[:150] or "report"
-
-
-def slugify_name(name: str) -> str:
-    """ASCII, accent-folded slug ("Bogotá D.C." -> "bogota-d-c")."""
-    folded = unicodedata.normalize("NFKD", name).encode("ascii", "ignore").decode().lower()
-    return re.sub(r"[^a-z0-9]+", "-", folded).strip("-")
-
-
-def print_summary(ou_list: list[OU]) -> str:
-    """Stats row (OUs, full vitality, members) and the requirements-met bar
-    shared by every grouped print report page."""
-    results = [evaluate(ou) for ou in ou_list]
-    total = len(ou_list)
-    met = sum(1 for r in results if r["overall"])
-    level_counts = {3: 0, 2: 0, 1: 0, 0: 0}
-    for r in results:
-        level_counts[r["requirements_met"]] += 1
-    max_level_count = max(level_counts.values()) or 1
-    bar_rows = "".join(
-        f'''<div class="bar-row">
-                <div class="bar-label">{REQUIREMENTS_LABEL[level]} ({level}/3)</div>
-                <div class="bar-track"><div class="bar-fill" style="width:{level_counts[level] / max_level_count * 100:.0f}%;background:{REQUIREMENTS_COLOR[level]}"></div></div>
-                <div class="bar-value">{level_counts[level]}</div>
-              </div>'''
-        for level in (3, 2, 1, 0)
-    )
-    return f'''<div class="stat-row">
-            <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">{total}</div></div>
-            <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:{STATUS_GOOD}">{met}/{total}</div></div>
-            <div class="stat"><div class="stat-label">Total Members</div><div class="stat-value">{sum(ou.member_count for ou in ou_list)}</div></div>
-          </div>
-          <div class="bar-chart">{bar_rows}</div>'''
-
-
 def build_grouped_print_report(
     units: list[OU],
     path: Path,
@@ -1489,32 +1389,13 @@ def build_grouped_print_report(
     group_label: str,
     doc_title: str,
     extra_column: tuple[str, Callable[[OU], str]] | None = None,
-    render_body: Callable[[list[OU]], str] | None = None,
-    page_subtitle: Callable[[list[OU]], str] | None = None,
-    toc_section: Callable[[list[OU]], str] | None = None,
-    toc_note: Callable[[list[OU]], str] | None = None,
-    view_links: list[tuple[str, str]] | None = None,
-    file_code: Callable[[list[OU]], str] | None = None,
 ) -> None:
     """A print-friendly, one-page-per-group handout: summary stats, a
     requirements-met breakdown bar, and a unit table. Always light-themed
     (it's meant to be printed / saved as PDF, not viewed as a web app).
     Clicking a name in the table of contents (or the button on a page)
     prints just that group's page via printOnly(), instead of the whole
-    document.
-
-    Optional hooks, all given the group's OUs:
-    - `render_body` replaces everything under a page's title (default:
-      stats, bar, unit table);
-    - `page_subtitle` adds a line under the title (e.g. university/section);
-    - `toc_section` groups the table of contents under headings (e.g. by
-      Section) and also names the folder each page lands in when the
-      "Download all" ZIP or the PDF exporter saves it (`data-folder`);
-    - `toc_note` adds a short status next to each name in the contents.
-    - `file_code` prefixes each page's PDF file name with an identifier
-      (e.g. the Student Branch's SPO ID: "STB12991 - Universidad X.pdf").
-    `view_links` is a list of (label, href) alternatives to this report,
-    rendered as a view switcher at the top; the current file is marked."""
+    document."""
     groups: dict[str, list[OU]] = {}
     for ou in units:
         key = group_key(ou)
@@ -1522,13 +1403,12 @@ def build_grouped_print_report(
             groups.setdefault(key, []).append(ou)
 
     generated_on = datetime.now().strftime("%Y-%m-%d")
-    zip_name = f"{path.stem}_{generated_on}.zip"
 
     # Anchors double as the batch-download file names, so they must be
     # unique: accents are dropped, so two names can slug to the same thing.
     anchors: dict[str, str] = {}
     for name in sorted(groups):
-        slug = slugify_name(name) or "group"
+        slug = re.sub(r"[^a-z0-9]+", "-", unicodedata.normalize("NFKD", name).encode("ascii", "ignore").decode().lower()).strip("-") or "group"
         candidate, n = slug, 2
         while candidate in anchors.values():
             candidate, n = f"{slug}-{n}", n + 1
@@ -1537,69 +1417,10 @@ def build_grouped_print_report(
     def anchor_for(name: str) -> str:
         return anchors[name]
 
-    def toc_link(name: str) -> str:
-        a = html.escape(anchor_for(name))
-        return f'<a href="#{a}" onclick="printOnly(\'{a}\')">{html.escape(name)}</a>'
-
-    # Per-page folders only help when the report spans several (e.g. every
-    # Student Branch of the region, one folder per Section).
-    folders = {name: slugify_name(toc_section(groups[name])) for name in groups} if toc_section else {}
-    if len(set(folders.values())) < 2:
-        folders = {}
-
-    def folder_for(name: str) -> str:
-        return folders.get(name, "")
-
-    # data-filename: what the PDF of each page is called in the ZIP (and by
-    # automations/export_report_pdfs.py). Unique within a folder.
-    filenames: dict[str, str] = {}
-    taken: set[tuple[str, str]] = set()
-    for name in sorted(groups):
-        code = file_code(groups[name]) if file_code else ""
-        base = safe_filename(f"{code} - {name}" if code else name)
-        candidate, n = base, 2
-        while (folder_for(name), candidate.lower()) in taken:
-            candidate, n = f"{base} ({n})", n + 1
-        taken.add((folder_for(name), candidate.lower()))
-        filenames[name] = candidate
-
-    if toc_section:
-        by_heading: dict[str, list[str]] = {}
-        for name in sorted(groups):
-            by_heading.setdefault(toc_section(groups[name]), []).append(name)
-        toc_blocks = []
-        for heading in sorted(by_heading, key=lambda h: (h == "", h)):
-            rows = "".join(
-                f"<tr><td>{toc_link(name)}</td><td class=\"toc-note\">{toc_note(groups[name]) if toc_note else ''}</td></tr>"
-                for name in by_heading[heading]
-            )
-            title = html.escape(heading) if heading else "No Section"
-            toc_blocks.append(
-                f'<h2>{title} <span class="toc-count">{len(by_heading[heading])}</span></h2>'
-                f'<table class="toc-table"><tbody>{rows}</tbody></table>'
-            )
-        toc_body = "".join(toc_blocks) if len(by_heading) > 1 or "" not in by_heading else (
-            f'<table class="toc-table"><tbody>'
-            + "".join(
-                f"<tr><td>{toc_link(name)}</td><td class=\"toc-note\">{toc_note(groups[name]) if toc_note else ''}</td></tr>"
-                for name in sorted(groups)
-            )
-            + "</tbody></table>"
-        )
-    elif toc_note:
-        toc_body = '<table class="toc-table"><tbody>' + "".join(
-            f'<tr><td>{toc_link(name)}</td><td class="toc-note">{toc_note(groups[name])}</td></tr>' for name in sorted(groups)
-        ) + "</tbody></table>"
-    else:
-        toc_body = "<ul>" + "".join(f"<li>{toc_link(name)}</li>" for name in sorted(groups)) + "</ul>"
-
-    view_nav = ""
-    if view_links:
-        view_nav = '<nav class="views no-print"><span>View:</span>' + "".join(
-            f'<a class="current" aria-current="page">{html.escape(label)}</a>' if href == path.name
-            else f'<a href="{html.escape(href)}">{html.escape(label)}</a>'
-            for label, href in view_links
-        ) + "</nav>"
+    toc_items = "".join(
+        f'<li><a href="#{html.escape(anchor_for(name))}" onclick="printOnly(\'{html.escape(anchor_for(name))}\')">{html.escape(name)}</a></li>'
+        for name in sorted(groups)
+    )
 
     extra_th = f"<th>{html.escape(extra_column[0])}</th>" if extra_column else ""
 
@@ -1607,6 +1428,23 @@ def build_grouped_print_report(
     for name in sorted(groups):
         ou_list = sorted(groups[name], key=lambda o: (o.ou_type, o.name))
         results = {ou.spoid: evaluate(ou) for ou in ou_list}
+        total = len(ou_list)
+        met = sum(1 for r in results.values() if r["overall"])
+        total_members = sum(ou.member_count for ou in ou_list)
+
+        level_counts = {3: 0, 2: 0, 1: 0, 0: 0}
+        for r in results.values():
+            level_counts[r["requirements_met"]] += 1
+        max_level_count = max(level_counts.values()) or 1
+
+        bar_rows = "".join(
+            f'''<div class="bar-row">
+                <div class="bar-label">{REQUIREMENTS_LABEL[level]} ({level}/3)</div>
+                <div class="bar-track"><div class="bar-fill" style="width:{level_counts[level] / max_level_count * 100:.0f}%;background:{REQUIREMENTS_COLOR[level]}"></div></div>
+                <div class="bar-value">{level_counts[level]}</div>
+              </div>'''
+            for level in (3, 2, 1, 0)
+        )
 
         table_rows = "".join(
             f'''<tr>
@@ -1622,26 +1460,22 @@ def build_grouped_print_report(
             for ou in ou_list
         )
 
-        if render_body:
-            body = render_body(groups[name])
-        else:
-            body = f'''
-          {print_summary(ou_list)}
+        anchor = anchor_for(name)
+        pages.append(f'''
+        <section class="group-page" id="{html.escape(anchor)}">
+          <div class="page-toolbar no-print"><button onclick="printOnly('{html.escape(anchor)}')">Print this page</button></div>
+          <h1>{html.escape(name)}</h1>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated {generated_on}</p>
+          <div class="stat-row">
+            <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">{total}</div></div>
+            <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:{STATUS_GOOD}">{met}/{total}</div></div>
+            <div class="stat"><div class="stat-label">Total Members</div><div class="stat-value">{total_members}</div></div>
+          </div>
+          <div class="bar-chart">{bar_rows}</div>
           <table>
             <thead><tr><th>Unit</th><th>Type</th><th>SPO ID</th>{extra_th}<th>Members</th><th>Events</th><th>Officers</th><th>Req. Met</th></tr></thead>
             <tbody>{table_rows}</tbody>
-          </table>'''
-        extra_subtitle = f'<p class="context">{page_subtitle(groups[name])}</p>' if page_subtitle else ""
-
-        anchor = anchor_for(name)
-        folder = folder_for(name)
-        pages.append(f'''
-        <section class="group-page" id="{html.escape(anchor)}" data-filename="{html.escape(filenames[name])}"{f' data-folder="{html.escape(folder)}"' if folder else ""}>
-          <div class="page-toolbar no-print"><button onclick="downloadPagePdf('{html.escape(anchor)}')">Download PDF</button> <button onclick="printOnly('{html.escape(anchor)}')">Print this page</button></div>
-          <h1>{html.escape(name)}</h1>
-          {extra_subtitle}
-          <p class="subtitle">IEEE Student OU Vitality Report — generated {generated_on}</p>
-          {body}
+          </table>
         </section>
         ''')
 
@@ -1679,35 +1513,6 @@ def build_grouped_print_report(
   th, td {{ padding: 6px 8px; text-align: left; border-bottom: 1px solid #eee; }}
   th {{ font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.02em; color: #666; }}
   td.mono {{ font-variant-numeric: tabular-nums; color: #555; }}
-  .batch {{ display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin: 0 0 16px; font-size: 0.82rem; color: #555; }}
-  .batch button {{
-    font: inherit; font-weight: 600; cursor: pointer; padding: 8px 14px; border-radius: 6px; border: 1px solid #bbb;
-    background: #fff; color: #111;
-  }}
-  .batch button:hover {{ background: #eee; }}
-  .views {{ display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-bottom: 16px; font-size: 0.82rem; color: #555; }}
-  .views a {{ padding: 5px 12px; border: 1px solid #ccc; border-radius: 999px; color: #111; text-decoration: none; background: #fff; }}
-  .views a:hover {{ background: #eee; }}
-  .views a.current {{ background: #111; border-color: #111; color: #fff; }}
-  .toc {{ max-width: 900px; }}
-  .toc h2 {{ font-size: 1.05rem; margin: 24px 0 6px; }}
-  .toc-count {{ font-weight: 400; font-size: 0.8rem; color: #666; margin-left: 4px; }}
-  .toc-table {{ background: #fff; border: 1px solid #ddd; }}
-  .toc-table td {{ padding: 5px 10px; }}
-  .toc-note {{ text-align: right; white-space: nowrap; font-size: 0.8rem; color: #555; font-variant-numeric: tabular-nums; }}
-  .context {{ color: #333; font-size: 0.95rem; margin: 2px 0 2px; }}
-  h2.block {{ font-size: 1.05rem; margin: 26px 0 8px; }}
-  .checklist {{ display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px; margin-bottom: 8px; }}
-  .check {{ border: 1px solid #e3e3e0; border-radius: 6px; padding: 8px 10px; }}
-  .check-label {{ font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.03em; color: #666; }}
-  .check-value {{ font-size: 1.05rem; font-weight: 700; margin-top: 2px; font-variant-numeric: tabular-nums; }}
-  .ok {{ color: {STATUS_GOOD}; }}
-  .no {{ color: {STATUS_CRITICAL}; }}
-  td.missing {{ color: {STATUS_CRITICAL}; }}
-  td.num, th.num {{ text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }}
-  tr.family th {{ background: #f4f4f1; color: #111; font-size: 0.78rem; text-transform: none; letter-spacing: 0; padding-top: 10px; }}
-  tr.child td:first-child {{ padding-left: 22px; }}
-  .note {{ color: #555; font-size: 0.85rem; }}
   .page-toolbar {{ margin-bottom: 12px; }}
   .page-toolbar button {{
     font: inherit; cursor: pointer; padding: 6px 14px; border-radius: 6px; border: 1px solid #ccc;
@@ -1722,8 +1527,6 @@ def build_grouped_print_report(
     th, td {{ padding: 4px 6px; }}
     thead {{ display: table-header-group; }}
     tr {{ page-break-inside: avoid; }}
-    tr.family {{ page-break-after: avoid; }}
-    .checklist, .stat-row {{ page-break-inside: avoid; }}
     .no-print {{ display: none !important; }}
     body.print-single .toc, body.print-single .group-page:not(.print-target) {{ display: none; }}
     body.print-single .group-page.print-target {{ page-break-after: auto; }}
@@ -1732,14 +1535,9 @@ def build_grouped_print_report(
 </head>
 <body>
   <section class="toc">
-    {view_nav}
     <h1>{html.escape(doc_title)}</h1>
     <p class="subtitle">Generated {generated_on} · one printable page per {html.escape(group_label.lower())} · click a name to print just that page, or print this whole document (Ctrl/Cmd+P → Save as PDF) for all of them.</p>
-    <div class="batch no-print">
-      <button type="button" id="download-all-pdfs" onclick="downloadAllPdfs('{html.escape(zip_name)}', this)">Download all {len(groups)} as PDF (.zip)</button>
-      <span>One PDF per {html.escape(group_label.lower())}{", named by OU code and name" if file_code else ", named after it"}{", in one folder per Section" if folders else ""}, ready to email.</span>
-    </div>
-    {toc_body}
+    <ul>{toc_items}</ul>
   </section>
   {"".join(pages)}
 <script>
@@ -1753,9 +1551,6 @@ def build_grouped_print_report(
   window.addEventListener('afterprint', () => {{
     document.body.classList.remove('print-single');
   }});
-</script>
-<script>
-{REPORT_EXPORT_JS.read_text(encoding="utf-8")}
 </script>
 </body>
 </html>
@@ -1784,244 +1579,6 @@ def build_society_report(units: list[OU], path: Path) -> None:
     )
 
 
-def build_section_report(units: list[OU], path: Path) -> None:
-    """One printable page per IEEE Section. Only meaningful when the
-    exports carry the Section column (r9/ runs); OUs without a section are
-    left out, so callers should skip it when no OU has one."""
-    build_grouped_print_report(
-        units,
-        path,
-        group_key=lambda ou: ou.section,
-        group_label="Section",
-        doc_title="IEEE Student OU Vitality: Section Reports",
-        extra_column=("University", lambda ou: ou.university),
-        view_links=SECTION_REPORT_VIEWS,
-    )
-
-
-SECTION_REPORT_VIEWS = [
-    ("All OUs", "section_report.html"),
-    ("Grouped by Student Branch", "section_branch_report.html"),
-]
-
-
-def _plural(n: int, one: str, many: str) -> str:
-    return f"{n} {one if n == 1 else many}"
-
-
-def _mark(ok: bool) -> str:
-    return '<span class="ok">Yes</span>' if ok else '<span class="no">No</span>'
-
-
-def _ratio(value: int, required: int, ok: bool) -> str:
-    return f'<span class="{"ok" if ok else "no"}">{value}/{required}</span>'
-
-
-def requirement_cells(ou: OU, result: dict | None = None) -> str:
-    """<td>s for one OU: members, events, Chair, Counselor/Advisor,
-    requirements met and what is missing. Shared by the branch-oriented
-    print reports so every table reads the same."""
-    r = result or evaluate(ou)
-    c = CRITERIA[ou.ou_type]
-    missing = "; ".join(missing_requirements(ou, r))
-    return (
-        f'<td class="num">{_ratio(ou.member_count, c["min_members"], r["members_met"])}</td>'
-        f'<td class="num">{_ratio(r["event_count"], c["min_events"], r["events_met"])}</td>'
-        f"<td>{_mark(r['chair_met'])}</td>"
-        f"<td>{_mark(r['counselor_met'])}</td>"
-        f'<td class="num" style="color:{REQUIREMENTS_COLOR[r["requirements_met"]]}">{r["requirements_met"]}/3</td>'
-        f'<td class="missing">{html.escape(missing)}</td>'
-    )
-
-
-REQUIREMENT_HEADERS = (
-    '<th class="num">Members</th><th class="num">Events</th><th>Chair</th>'
-    '<th>Counselor / Advisor</th><th class="num">Req.</th><th>Missing</th>'
-)
-
-
-def split_family(ou_list: list[OU]) -> tuple[list[OU], list[OU]]:
-    """(Student Branches, Chapters + Affinity Groups) of one university,
-    each sorted for display."""
-    branches = sorted((o for o in ou_list if o.ou_type == "Student Branch"), key=lambda o: o.name)
-    children = sorted((o for o in ou_list if o.ou_type != "Student Branch"), key=lambda o: (o.ou_type, o.name))
-    return branches, children
-
-
-def families_by_university(ou_list: list[OU]) -> dict[str, list[OU]]:
-    """Group OUs under their parent Student Branch. Chapters and Affinity
-    Groups are matched to it by exact university (School Name), the same
-    rule chapter_outreach/ uses, since STB/SBC SPOID numbering doesn't
-    align."""
-    families: dict[str, list[OU]] = {}
-    for ou in ou_list:
-        families.setdefault(ou.university or ou.name, []).append(ou)
-    return families
-
-
-def family_section(ou_list: list[OU]) -> str:
-    """The Section a university's OUs belong to (its Student Branch's when
-    it has one; otherwise the most common among its OUs)."""
-    branches, _ = split_family(ou_list)
-    sections = [o.section for o in (branches or ou_list) if o.section]
-    return max(set(sections), key=sections.count) if sections else ""
-
-
-def family_note(ou_list: list[OU]) -> str:
-    """Short status for a contents entry: branch result + OUs met."""
-    branches, _ = split_family(ou_list)
-    met = sum(1 for o in ou_list if evaluate(o)["overall"])
-    if branches:
-        branch_ok = all(evaluate(b)["overall"] for b in branches)
-        branch = f'Branch <span class="{"ok" if branch_ok else "no"}">{"met" if branch_ok else "not met"}</span>'
-    else:
-        branch = '<span class="no">No Student Branch</span>'
-    return f"{branch} · {met}/{len(ou_list)} OUs met"
-
-
-def build_branch_report(units: list[OU], path: Path) -> None:
-    """One printable page per Student Branch (i.e. per university) to send
-    to that branch: its own requirements as a checklist, then each of its
-    Chapters and Affinity Groups with what is still missing. The contents
-    list every university grouped by Section with its met counts, and the
-    "Download all" ZIP / PDF export put each Section in its own folder."""
-
-    def subtitle(ou_list: list[OU]) -> str:
-        branches, _ = split_family(ou_list)
-        bits = [", ".join(f"{html.escape(b.name)} ({html.escape(b.spoid)})" for b in branches) or "No Student Branch on record"]
-        section = family_section(ou_list)
-        if section:
-            bits.append(html.escape(section))
-        return " · ".join(bits)
-
-    def body(ou_list: list[OU]) -> str:
-        branches, children = split_family(ou_list)
-        met = sum(1 for o in ou_list if evaluate(o)["overall"])
-        out = [
-            f'''<div class="stat-row">
-            <div class="stat"><div class="stat-label">OUs at this university</div><div class="stat-value">{len(ou_list)}</div></div>
-            <div class="stat"><div class="stat-label">Meeting full vitality</div><div class="stat-value" style="color:{STATUS_GOOD}">{met}/{len(ou_list)}</div></div>
-            <div class="stat"><div class="stat-label">Total members</div><div class="stat-value">{sum(o.member_count for o in ou_list)}</div></div>
-          </div>'''
-        ]
-        for b in branches:
-            r = evaluate(b)
-            c = CRITERIA[b.ou_type]
-            missing = missing_requirements(b, r)
-            status = (
-                f'<span class="ok">Meets full vitality</span>' if r["overall"]
-                else f'<span class="no">Not met ({r["requirements_met"]}/3)</span>'
-            )
-            out.append(
-                f'''<h2 class="block">Student Branch: {html.escape(b.name)}</h2>
-          <div class="checklist">
-            <div class="check"><div class="check-label">Members (min {c["min_members"]})</div><div class="check-value">{_ratio(b.member_count, c["min_members"], r["members_met"])}</div></div>
-            <div class="check"><div class="check-label">Reported events (min {c["min_events"]})</div><div class="check-value">{_ratio(r["event_count"], c["min_events"], r["events_met"])}</div></div>
-            <div class="check"><div class="check-label">Chair</div><div class="check-value">{_mark(r["chair_met"])}</div></div>
-            <div class="check"><div class="check-label">{html.escape(r["role2"])}</div><div class="check-value">{_mark(r["counselor_met"])}</div></div>
-            <div class="check"><div class="check-label">Status</div><div class="check-value">{status}</div></div>
-          </div>
-          {f'<p class="note">Missing: <span class="no">{html.escape("; ".join(missing))}</span></p>' if missing else ""}'''
-            )
-        if not branches:
-            out.append('<p class="note">No Student Branch on record for this university in the export.</p>')
-
-        child_met = sum(1 for o in children if evaluate(o)["overall"])
-        out.append(f'<h2 class="block">Chapters &amp; Affinity Groups <span class="toc-count">{child_met}/{len(children)} meeting full vitality</span></h2>')
-        if children:
-            rows = "".join(
-                f"<tr><td>{html.escape(o.name)}</td><td>{html.escape(o.ou_type)}</td>"
-                f'<td class="mono">{html.escape(o.spoid)}</td>{requirement_cells(o)}</tr>'
-                for o in children
-            )
-            out.append(
-                f"<table><thead><tr><th>Unit</th><th>Type</th><th>SPO ID</th>{REQUIREMENT_HEADERS}</tr></thead>"
-                f"<tbody>{rows}</tbody></table>"
-            )
-        else:
-            out.append('<p class="note">No Chapters or Affinity Groups on record.</p>')
-        return "".join(out)
-
-    build_grouped_print_report(
-        units,
-        path,
-        group_key=lambda ou: ou.university or ou.name,
-        group_label="Student Branch",
-        doc_title="IEEE Student OU Vitality: Student Branch Reports",
-        render_body=body,
-        page_subtitle=subtitle,
-        toc_section=family_section,
-        toc_note=family_note,
-        file_code=lambda ou_list: "+".join(b.spoid for b in split_family(ou_list)[0]),
-    )
-
-
-def build_section_branch_report(units: list[OU], path: Path) -> None:
-    """The Section report aggregated by parent Student Branch, for Section
-    Chairs / SSACs: per Section, a one-line-per-university summary (branch
-    status, Chapters & Affinity Groups met) followed by the detail table,
-    each university's Student Branch first with its Chapters and Affinity
-    Groups under it and what each is missing."""
-
-    def body(ou_list: list[OU]) -> str:
-        families = families_by_university(ou_list)
-        summary_rows, detail_rows = [], []
-        for uni in sorted(families):
-            branches, children = split_family(families[uni])
-            if branches:
-                branch_results = [evaluate(b) for b in branches]
-                branch_req = min(r["requirements_met"] for r in branch_results)
-                branch_cell = f'<td class="num" style="color:{REQUIREMENTS_COLOR[branch_req]}">{branch_req}/3</td>'
-                branch_missing = "; ".join(m for b, r in zip(branches, branch_results) for m in missing_requirements(b, r))
-            else:
-                branch_cell = '<td class="num no">None</td>'
-                branch_missing = "No Student Branch on record"
-            child_met = sum(1 for o in children if evaluate(o)["overall"])
-            child_ok = child_met == len(children)
-            summary_rows.append(
-                f"<tr><td>{html.escape(uni)}</td>{branch_cell}"
-                f'<td class="missing">{html.escape(branch_missing)}</td>'
-                + (
-                    f'<td class="num"><span class="{"ok" if child_ok else "no"}">{child_met}/{len(children)}</span></td></tr>'
-                    if children
-                    else '<td class="num note">none</td></tr>'
-                )
-            )
-            detail_rows.append(f'<tr class="family"><th colspan="9">{html.escape(uni)}</th></tr>')
-            for o in branches + children:
-                cls = "" if o.ou_type == "Student Branch" else ' class="child"'
-                detail_rows.append(
-                    f"<tr{cls}><td>{html.escape(o.name)}</td><td>{html.escape(o.ou_type)}</td>"
-                    f'<td class="mono">{html.escape(o.spoid)}</td>{requirement_cells(o)}</tr>'
-                )
-        return f'''{print_summary(ou_list)}
-          <h2 class="block">Student Branches <span class="toc-count">{_plural(len(families), "university", "universities")}</span></h2>
-          <table>
-            <thead><tr><th>University</th><th class="num">Branch req.</th><th>Missing at the Student Branch</th><th class="num">Chapters &amp; AGs met</th></tr></thead>
-            <tbody>{"".join(summary_rows)}</tbody>
-          </table>
-          <h2 class="block">Detail by Student Branch</h2>
-          <table>
-            <thead><tr><th>Unit</th><th>Type</th><th>SPO ID</th>{REQUIREMENT_HEADERS}</tr></thead>
-            <tbody>{"".join(detail_rows)}</tbody>
-          </table>'''
-
-    build_grouped_print_report(
-        units,
-        path,
-        group_key=lambda ou: ou.section,
-        group_label="Section",
-        doc_title="IEEE Student OU Vitality: Section Reports by Student Branch",
-        render_body=body,
-        toc_note=lambda ou_list: f"{_plural(len(families_by_university(ou_list)), 'university', 'universities')} · {sum(1 for o in ou_list if evaluate(o)['overall'])}/{len(ou_list)} OUs met",
-        view_links=SECTION_REPORT_VIEWS,
-    )
-
-
-def has_sections(units: list[OU]) -> bool:
-    return any(ou.section for ou in units)
-
-
 def missing_requirements(ou: OU, result: dict | None = None) -> list[str]:
     """Human-readable list of the vitality requirements `ou` still misses
     (empty when it meets full vitality)."""
@@ -2041,192 +1598,148 @@ def missing_requirements(ou: OU, result: dict | None = None) -> list[str]:
     return missing
 
 
-def build_vitality_status_report(
+TYPE_KEYS = {"Student Branch": "branch", "Student Branch Chapter": "chapter", "Affinity Group": "ag"}
+
+REPORT_BUILDER_JS = ASSETS_DIR / "report_builder.js"
+REPORT_BUILDER_CSS = ASSETS_DIR / "report_builder.css"
+REPORT_EXPORT_JS = ASSETS_DIR / "report_export.js"
+
+
+def builder_records(units: list[OU]) -> list[dict]:
+    """One compact record per OU for the report builder: everything a page
+    or CSV row shows, already evaluated (so the page needs no rules of its
+    own)."""
+    records = []
+    for ou in sorted(units, key=lambda o: (o.university, o.ou_type, o.name)):
+        r = evaluate(ou)
+        c = CRITERIA[ou.ou_type]
+        records.append({
+            "n": ou.name, "id": ou.spoid, "t": TYPE_KEYS[ou.ou_type],
+            "u": ou.university, "s": ou.society, "sd": society_display_name(ou.society) if ou.society else "",
+            "se": ou.section, "co": ou.council,
+            "m": ou.member_count, "mm": c["min_members"], "mo": r["members_met"],
+            "e": r["event_count"], "em": c["min_events"], "eo": r["events_met"], "tech": c["technical_only"],
+            "ch": r["chair_met"], "r2": r["role2"], "cn": r["counselor_met"],
+            "rq": r["requirements_met"], "ok": r["overall"], "miss": missing_requirements(ou, r),
+        })
+    return records
+
+
+def build_report_builder(
     units: list[OU],
     path: Path,
     *,
-    title: str = "OUs Meeting / Not Meeting Vitality",
+    scope_label: str,
+    dashboard_href: str = "vitality_dashboard.html",
+    csv_href: str = "vitality_report.csv",
 ) -> None:
-    """A printable list of every OU split into "meeting full vitality" and
-    "not meeting it" (the latter with what is still missing, closest to
-    compliance first). Client-side filters (status, type, section when the
-    OUs span several, free-text search) narrow both lists, and printing
-    keeps the current filter. Always light-themed, like the other print
-    reports."""
-    generated_on = datetime.now().strftime("%Y-%m-%d")
-    multi_section = len({ou.section for ou in units if ou.section}) > 1
-    results = {id(ou): evaluate(ou) for ou in units}
+    """The report builder: one page for every printable report and export.
 
-    met_units = sorted((ou for ou in units if results[id(ou)]["overall"]), key=lambda o: (o.section, o.ou_type, o.name))
-    not_met_units = sorted(
-        (ou for ou in units if not results[id(ou)]["overall"]),
-        key=lambda o: (-results[id(o)]["requirements_met"], o.section, o.ou_type, o.name),
-    )
-
-    def row(ou: OU, with_missing: bool) -> str:
-        r = results[id(ou)]
-        search = " ".join((ou.name, ou.spoid, ou.university, ou.section, ou.society)).lower()
-        section_td = f"<td>{html.escape(ou.section)}</td>" if multi_section else ""
-        missing_td = (
-            f'<td class="missing">{html.escape("; ".join(missing_requirements(ou, r)))}</td>' if with_missing else ""
-        )
-        return (
-            f'<tr data-type="{html.escape(ou.ou_type)}" data-section="{html.escape(ou.section)}" data-search="{html.escape(search)}">'
-            f"<td>{html.escape(ou.name)}</td>"
-            f"<td>{html.escape(ou.ou_type)}</td>"
-            f"<td>{html.escape(ou.university)}</td>"
-            f"{section_td}"
-            f'<td class="mono">{html.escape(ou.spoid)}</td>'
-            f'<td class="num">{ou.member_count}/{CRITERIA[ou.ou_type]["min_members"]}</td>'
-            f'<td class="num">{r["event_count"]}/{CRITERIA[ou.ou_type]["min_events"]}</td>'
-            f"<td>{r['officers_status']}</td>"
-            f'<td class="num" style="color:{REQUIREMENTS_COLOR[r["requirements_met"]]}">{r["requirements_met"]}/3</td>'
-            f"{missing_td}"
-            "</tr>"
-        )
-
-    section_th = "<th>Section</th>" if multi_section else ""
-    head = (
-        f"<th>Unit</th><th>Type</th><th>University</th>{section_th}<th>SPO ID</th>"
-        '<th class="num">Members</th><th class="num">Events</th><th>Officers</th><th class="num">Req.</th>'
-    )
-
-    def block(block_id: str, heading: str, color: str, ou_list: list[OU], with_missing: bool, empty: str) -> str:
-        rows = "".join(row(ou, with_missing) for ou in ou_list)
-        extra_th = "<th>Missing</th>" if with_missing else ""
-        return f"""
-  <section class="status-block" id="{block_id}">
-    <h2><span class="swatch" style="background:{color}"></span>{heading} <span class="count" data-count>{len(ou_list)}</span></h2>
-    <table>
-      <thead><tr>{head}{extra_th}</tr></thead>
-      <tbody>{rows}</tbody>
-    </table>
-    <p class="empty"{"" if not ou_list else " hidden"}>{empty}</p>
-  </section>"""
-
-    type_options = "".join(
-        f'<option value="{html.escape(t)}">{html.escape(t)}</option>'
-        for t in ("Student Branch", "Student Branch Chapter", "Affinity Group")
-        if any(ou.ou_type == t for ou in units)
-    )
-    section_filter = ""
-    if multi_section:
-        section_options = "".join(
-            f'<option value="{html.escape(s)}">{html.escape(s)}</option>'
-            for s in sorted({ou.section for ou in units if ou.section})
-        )
-        section_filter = (
-            '<label>Section <select id="f-section"><option value="">All sections</option>'
-            f"{section_options}</select></label>"
-        )
-
-    total = len(units)
-    pct = (len(met_units) / total * 100) if total else 0
-
+    Pick which OUs (Council, Section, Student Branch/university, Society, OU
+    type, vitality status incl. "missing one requirement", search), how to
+    split them (one report, or one per Student Branch / Section / Council /
+    Society, optionally listing Chapters and Affinity Groups under their
+    Student Branch), then download one PDF per group (ZIP), a CSV, or print.
+    Presets cover the common jobs. All the work happens in the page
+    (dashboard_assets/report_builder.js, which renders `.group-page`s that
+    report_export.js turns into PDFs); every control is mirrored in the URL,
+    so the dashboard's Export link and automations/export_report_pdfs.py
+    can open it pre-filtered. Always light-themed, like the print reports."""
+    data = {
+        "scope": scope_label,
+        "generated": datetime.now().strftime("%Y-%m-%d"),
+        "colors": {str(k): v for k, v in REQUIREMENTS_COLOR.items()},
+        "ous": builder_records(units),
+    }
+    data_json = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     page = f"""<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>{html.escape(title)}</title>
+<title>Report builder: {html.escape(scope_label)}</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-  * {{ box-sizing: border-box; }}
-  body {{ margin: 0; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; background: #f2f2f0; color: #111; }}
-  main {{ max-width: 1200px; margin: 0 auto; padding: 32px 16px; }}
-  h1 {{ font-size: 1.5rem; margin: 0 0 2px; }}
-  .subtitle {{ color: #555; font-size: 0.85rem; margin: 0 0 20px; }}
-  .stat-row {{ display: flex; flex-wrap: wrap; gap: 28px; margin-bottom: 20px; }}
-  .stat-label {{ font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.03em; color: #666; }}
-  .stat-value {{ font-size: 1.4rem; font-weight: 700; font-variant-numeric: tabular-nums; }}
-  .toolbar {{ display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; margin-bottom: 20px; font-size: 0.85rem; }}
-  .toolbar label {{ display: flex; align-items: center; gap: 6px; color: #444; }}
-  .toolbar select, .toolbar input, .toolbar button {{
-    font: inherit; padding: 6px 10px; border-radius: 6px; border: 1px solid #ccc; background: #fff; color: #111;
-  }}
-  .toolbar input {{ min-width: 220px; }}
-  .toolbar button {{ cursor: pointer; background: #fafafa; }}
-  .toolbar button:hover {{ background: #eee; }}
-  .status-block {{ background: #fff; border: 1px solid #ddd; border-radius: 4px; padding: 20px; margin-bottom: 24px; overflow-x: auto; }}
-  .status-block h2 {{ font-size: 1.1rem; margin: 0 0 12px; display: flex; align-items: center; gap: 8px; }}
-  .swatch {{ width: 12px; height: 12px; border-radius: 3px; display: inline-block; }}
-  .count {{ font-weight: 400; color: #666; font-size: 0.9rem; }}
-  table {{ border-collapse: collapse; width: 100%; font-size: 0.8rem; }}
-  th, td {{ padding: 6px 8px; text-align: left; border-bottom: 1px solid #eee; vertical-align: top; }}
-  th {{ font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.02em; color: #666; }}
-  td.num, th.num {{ text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }}
-  td.mono {{ font-variant-numeric: tabular-nums; color: #555; white-space: nowrap; }}
-  td.missing {{ color: {STATUS_CRITICAL}; }}
-  .empty {{ color: #666; font-size: 0.85rem; margin: 8px 0 0; }}
-  [hidden] {{ display: none !important; }}
-  @media print {{
-    body {{ background: #fff; }}
-    main {{ max-width: none; padding: 0; }}
-    .no-print {{ display: none !important; }}
-    .status-block {{ border: none; padding: 0; overflow: visible; }}
-    .status-block + .status-block {{ page-break-before: always; }}
-    thead {{ display: table-header-group; }}
-    tr {{ page-break-inside: avoid; }}
-  }}
+{REPORT_BUILDER_CSS.read_text(encoding="utf-8")}
 </style>
 </head>
 <body>
 <main>
-  <h1>{html.escape(title)}</h1>
-  <p class="subtitle">IEEE Student OU Vitality, generated {generated_on}. Print (or Save as PDF) keeps the current filters.</p>
-  <div class="stat-row">
-    <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">{total}</div></div>
-    <div class="stat"><div class="stat-label">Meeting full vitality</div><div class="stat-value" style="color:{STATUS_GOOD}">{len(met_units)} <small>({pct:.0f}%)</small></div></div>
-    <div class="stat"><div class="stat-label">Not meeting vitality</div><div class="stat-value" style="color:{STATUS_CRITICAL}">{len(not_met_units)}</div></div>
-  </div>
-  <div class="toolbar no-print">
-    <label>Show <select id="f-status">
-      <option value="all">Both lists</option>
-      <option value="met">Meeting vitality</option>
-      <option value="not-met">Not meeting vitality</option>
-    </select></label>
-    <label>Type <select id="f-type"><option value="">All types</option>{type_options}</select></label>
-    {section_filter}
-    <input id="f-search" type="search" placeholder="Search unit, university, SPO ID…" aria-label="Search">
-    <button type="button" onclick="window.print()">Print</button>
-  </div>
-{block("met", "Meeting full vitality", STATUS_GOOD, met_units, False, "No OUs in this list.")}
-{block("not-met", "Not meeting vitality", STATUS_CRITICAL, not_met_units, True, "No OUs in this list.")}
-</main>
-<script>
-  (function () {{
-    const status = document.getElementById('f-status');
-    const type = document.getElementById('f-type');
-    const section = document.getElementById('f-section');
-    const search = document.getElementById('f-search');
-    const params = new URLSearchParams(location.search);
-    if (params.get('status')) status.value = params.get('status');
-    if (section && params.get('section')) section.value = params.get('section');
+  <header class="no-print">
+    <p class="crumbs"><a href="{html.escape(dashboard_href)}">&larr; Dashboard</a></p>
+    <h1>Report builder <span class="scope">{html.escape(scope_label)}</span></h1>
+    <p class="lead">Choose the OUs, how to split them, and export: one PDF per group to send by email, a CSV, or print.</p>
+  </header>
 
-    function apply() {{
-      const q = search.value.trim().toLowerCase();
-      document.querySelectorAll('.status-block').forEach(block => {{
-        block.hidden = status.value !== 'all' && status.value !== block.id;
-        let shown = 0;
-        block.querySelectorAll('tbody tr').forEach(tr => {{
-          const ok = (!type.value || tr.dataset.type === type.value)
-            && (!section || !section.value || tr.dataset.section === section.value)
-            && (!q || tr.dataset.search.includes(q));
-          tr.hidden = !ok;
-          if (ok) shown++;
-        }});
-        block.querySelector('[data-count]').textContent = shown;
-        block.querySelector('.empty').hidden = shown > 0;
-        block.querySelector('table').hidden = shown === 0;
-      }});
-    }}
-    [status, type, section, search].forEach(el => el && el.addEventListener('input', apply));
-    apply();
-  }})();
+  <section class="presets no-print" aria-label="Common reports">
+    <h2>Start from a common report</h2>
+    <div class="preset-list" id="presets"></div>
+  </section>
+
+  <div class="controls no-print">
+    <section class="panel">
+      <h2><span class="step">1</span> Which OUs</h2>
+      <div class="field" id="field-council"><label for="f-council">Council</label><select id="f-council"></select></div>
+      <div class="field" id="field-section"><label for="f-section">Section</label><select id="f-section"></select></div>
+      <div class="field"><label for="f-university">Student Branch / university</label><select id="f-university"></select></div>
+      <div class="field"><label for="f-society">Society</label><select id="f-society"></select></div>
+      <fieldset class="field"><legend>OU types</legend>
+        <label class="opt"><input type="checkbox" name="types" value="branch" checked> Student Branches</label>
+        <label class="opt"><input type="checkbox" name="types" value="chapter" checked> Chapters</label>
+        <label class="opt"><input type="checkbox" name="types" value="ag" checked> Affinity Groups</label>
+      </fieldset>
+      <fieldset class="field"><legend>Vitality</legend>
+        <label class="opt"><input type="radio" name="status" value="all" checked> All</label>
+        <label class="opt"><input type="radio" name="status" value="met"> Meeting full vitality</label>
+        <label class="opt"><input type="radio" name="status" value="notmet"> Not meeting it</label>
+        <label class="opt"><input type="radio" name="status" value="one"> Missing one requirement (quick wins)</label>
+        <label class="opt"><input type="radio" name="status" value="two"> Missing two or more</label>
+      </fieldset>
+      <div class="field"><label for="f-q">Search</label><input id="f-q" type="search" placeholder="Unit, university or SPO ID"></div>
+    </section>
+
+    <section class="panel">
+      <h2><span class="step">2</span> How to split it</h2>
+      <fieldset class="field"><legend>One report per</legend>
+        <label class="opt"><input type="radio" name="group" value="none" checked> Nothing: a single report</label>
+        <label class="opt"><input type="radio" name="group" value="branch"> Student Branch (with its Chapters and Affinity Groups)</label>
+        <label class="opt" id="opt-group-section"><input type="radio" name="group" value="section"> Section</label>
+        <label class="opt" id="opt-group-council"><input type="radio" name="group" value="council"> Council</label>
+        <label class="opt"><input type="radio" name="group" value="society"> Society</label>
+      </fieldset>
+      <label class="opt" id="opt-nest"><input type="checkbox" id="f-nest" checked> Inside each report, list Chapters and Affinity Groups under their Student Branch</label>
+    </section>
+
+    <section class="panel">
+      <h2><span class="step">3</span> Export</h2>
+      <p class="summary" id="summary"></p>
+      <div class="actions">
+        <button type="button" class="primary" id="download-all-pdfs">Download PDFs</button>
+        <button type="button" id="dl-csv">Download CSV</button>
+        <button type="button" id="print">Print</button>
+      </div>
+      <p class="hint" id="pdf-hint"></p>
+      <p class="hint">Full data, every OU and column: <a href="{html.escape(csv_href)}" download>vitality_report.csv</a></p>
+    </section>
+  </div>
+
+  <section class="contents no-print" aria-label="Reports in this export">
+    <h2>Preview</h2>
+    <ol id="toc"></ol>
+  </section>
+  <div id="pages"></div>
+</main>
+<script id="builder-data" type="application/json">{data_json}</script>
+<script>
+{REPORT_EXPORT_JS.read_text(encoding="utf-8")}
+</script>
+<script>
+{REPORT_BUILDER_JS.read_text(encoding="utf-8")}
 </script>
 </body>
 </html>
 """
     path.write_text(page, encoding="utf-8")
+
 
 
 ARCHIVE_DIR = BASE_DIR / "archive"
@@ -2267,10 +1780,7 @@ def main() -> None:
     grade_history_path = BASE_DIR / "membership_type_history.csv"
     university_report_path = BASE_DIR / "university_report.html"
     society_report_path = BASE_DIR / "society_report.html"
-    status_report_path = BASE_DIR / "vitality_status_report.html"
-    section_report_path = BASE_DIR / "section_report.html"
-    section_branch_report_path = BASE_DIR / "section_branch_report.html"
-    branch_report_path = BASE_DIR / "branch_report.html"
+    builder_path = BASE_DIR / "report_builder.html"
 
     member_directory = load_member_directory()
     previous_grade_snapshot = load_grade_snapshot(GRADE_SNAPSHOT_FILE)
@@ -2278,8 +1788,7 @@ def main() -> None:
 
     archive_current_outputs(
         [
-            csv_path, html_path, university_report_path, society_report_path, status_report_path,
-            branch_report_path, section_report_path, section_branch_report_path,
+            csv_path, html_path, university_report_path, society_report_path, builder_path,
         ],
         ARCHIVE_DIR,
     )
@@ -2294,19 +1803,14 @@ def main() -> None:
     build_dashboard(units, html_path, events_path, history_path, society_history_path, grade_history_path, PROMOTIONS_SUMMARY_FILE)
     build_university_report(units, university_report_path)
     build_society_report(units, society_report_path)
-    build_vitality_status_report(units, status_report_path)
-    build_branch_report(units, branch_report_path)
-    if has_sections(units):
-        build_section_report(units, section_report_path)
-        build_section_branch_report(units, section_branch_report_path)
+    build_report_builder(units, builder_path, scope_label=next((ou.section for ou in units if ou.section), "Colombia Section"))
 
     total = len(units)
     met = sum(1 for ou in units if evaluate(ou)["overall"])
     print(f"Processed {total} OUs ({met} meeting full vitality criteria).")
     print(
         f"Wrote {csv_path.name}, {html_path.name}, {university_report_path.name}, "
-        f"{society_report_path.name}, {status_report_path.name}, and {branch_report_path.name}"
-        + (f" (+ {section_report_path.name}, {section_branch_report_path.name})" if has_sections(units) else "")
+        f"{society_report_path.name}, and {builder_path.name}"
     )
 
 

@@ -1,6 +1,6 @@
-// Batch PDF export for the grouped print reports (university, society,
-// Student Branch, Section). Inlined into each report by
-// generate_vitality_report.py; no library, no network.
+// Batch PDF export for the report builder (report_builder.html). Inlined
+// by generate_vitality_report.py before report_builder.js; no library, no
+// network.
 //
 // "Download all as PDF" turns every .group-page into its own PDF and packs
 // them into one ZIP (folders from data-folder, names from data-filename),
@@ -9,8 +9,7 @@
 // WinAnsi text, and a layout engine that knows the handful of blocks these
 // pages are made of (title, stats, bars, checklist, headings, notes,
 // tables). Colors and bold come from the page's computed styles, so the PDF
-// matches what is on screen. Opening a report with ?download=pdf starts the
-// export immediately (the dashboard's "Reports & export" panel links there).
+// matches what is on screen. (?download=pdf is handled by the builder.)
 
 (function () {
   // ---------- fonts: Helvetica / Helvetica-Bold widths, chars 32..126 ----------
@@ -72,7 +71,7 @@
     let node;
     while ((node = walker.nextNode())) {
       const parent = node.parentElement;
-      if (!parent || parent.closest('.no-print')) continue;
+      if (!parent || parent.closest('.no-print') || parent.closest('[hidden]')) continue;
       let text = node.nodeValue.replace(/\s+/g, ' ');
       if (!text) continue;
       const cs = getComputedStyle(parent);
@@ -269,14 +268,15 @@
 
   function drawTable(doc, table) {
     const SIZE = 7.5, LH = 9.5, PAD = 3, HEAD = 6.5;
-    const headCells = [...table.querySelectorAll('thead th')];
+    const shown = el => !el.hidden && getComputedStyle(el).display !== 'none';
+    const headCells = [...table.querySelectorAll('thead th')].filter(shown);
     const head = headCells.map(th => ({
       runs: forceStyle(runsOf(th), { bold: true, color: GREY }),
       right: th.classList.contains('num'),
     }));
     const ncol = Math.max(head.length, 1);
-    const rows = [...table.querySelectorAll('tbody tr')].filter(tr => !tr.hidden && getComputedStyle(tr).display !== 'none').map(tr => {
-      const cells = [...tr.children];
+    const rows = [...table.querySelectorAll('tbody tr')].filter(shown).map(tr => {
+      const cells = [...tr.children].filter(shown);
       if (cells.length === 1 && (cells[0].colSpan || 1) > 1) return { band: forceStyle(runsOf(cells[0]), { bold: true }) };
       return {
         child: tr.classList.contains('child'),
@@ -348,9 +348,10 @@
     const title = (section.querySelector('h1') || section).textContent.trim();
     const doc = new Doc(title);
     for (const el of section.children) {
-      if (el.classList.contains('no-print') || el.classList.contains('page-toolbar')) continue;
+      if (el.classList.contains('no-print') || el.classList.contains('page-toolbar') || el.hidden) continue;
       if (el.tagName === 'H1') doc.para(forceStyle(runsOf(el), { bold: true, color: DARK }), 18, { after: 2 });
       else if (el.tagName === 'H2') { doc.y += 6; doc.ensure(60); doc.para(runsOf(el).map(r => ({ ...r, bold: r.bold })), 11, { after: 4 }); }
+      else if (el.classList.contains('type-note')) { doc.y += 2; doc.para(forceStyle(runsOf(el), { bold: true, color: DARK }), 9, { after: 8 }); }
       else if (el.classList.contains('context')) doc.para(runsOf(el), 10, { after: 1 });
       else if (el.classList.contains('subtitle')) doc.para(forceStyle(runsOf(el), { color: GREY }), 8, { after: 10 });
       else if (el.classList.contains('stat-row')) drawStats(doc, el);
@@ -426,8 +427,10 @@
   };
 
   window.downloadAllPdfs = async function (zipName, button) {
-    const pages = [...document.querySelectorAll('.group-page')];
-    const label = button ? button.textContent : '';
+    // Only pages that are shown.
+    const pages = [...document.querySelectorAll('.group-page')].filter(p => !p.hidden);
+    if (window.reportZipName) zipName = window.reportZipName(zipName);
+    const label = button ? button.innerHTML : '';
     if (button) button.disabled = true;
     try {
       const files = [];
@@ -441,17 +444,11 @@
       }
       saveBlob(makeZip(files), zipName);
     } finally {
-      if (button) { button.textContent = label; button.disabled = false; }
+      if (button) { button.innerHTML = label; button.disabled = false; }
     }
   };
 
   // Exposed for tests / debugging.
   window.__reportExport = { renderGroupPage, makeZip, toWinAnsi, wrap };
 
-  window.addEventListener('load', () => {
-    if (new URLSearchParams(location.search).get('download') === 'pdf') {
-      const button = document.getElementById('download-all-pdfs');
-      if (button) button.click();
-    }
-  });
 })();

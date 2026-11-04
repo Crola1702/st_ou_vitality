@@ -12,13 +12,9 @@ formats as the root pipeline, except the volunteer list is the "with Region
 Every scope directory holds the same set the root pipeline writes next to
 `generate_vitality_report.py` (index.html, vitality_report.csv,
 vitality_history.csv, university_report.html, society_report.html,
-vitality_status_report.html), so the dashboard's relative links to the
-printable reports work unchanged. Every scope also gets section_report.html
-(one printable page per Section; a single page for a Section scope) with its
-section_branch_report.html twin (same pages aggregated by parent Student
-Branch, for Section Chairs / SSACs), and branch_report.html (one page per
-Student Branch with its Chapters and Affinity Groups, to send to each
-branch). The section picker links to all of them directly.
+report_builder.html), so the dashboard's relative links work unchanged. The
+region/ report builder covers every Section and Council (filter or split by
+them); the section picker links to it and to each Section's own builder.
 
 Scope is OU vitality only: `Member Detail View.csv` is not read, so the
 society-membership and membership-grade trends stay in their empty state.
@@ -36,19 +32,13 @@ R9_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(R9_DIR.parent))
 
 from generate_vitality_report import (  # noqa: E402
-    EXPORT_PANEL_CSS,
     OU,
     STATUS_GOOD,
-    build_branch_report,
     build_dashboard,
-    build_section_branch_report,
-    build_section_report,
+    build_report_builder,
     build_society_report,
     build_university_report,
-    build_vitality_status_report,
     evaluate,
-    export_menu_html,
-    export_panel_html,
     find_events_file,
     load_events,
     load_officers,
@@ -153,8 +143,8 @@ def build_section_index(scopes: list[Scope], path: Path) -> None:
                 f'<td class="num">{s["total"]}</td>'
                 f'<td class="num">{s["met"]} <span class="pct">({s["pct"]:.0f}%)</span></td>'
                 + "".join(ratio_cell(*s["per_type"][t]) for t in OU_TYPES)
-                + f'<td class="links"><a class="open" href="{href}">Open</a></td>'
-                f"<td>{export_menu_html(scope.slug + '/', sections=True)}</td>"
+                + f'<td class="links"><a class="open" href="{href}">Open</a>'
+                f'<a class="open" href="{html.escape(scope.slug)}/report_builder.html">Export</a></td>'
                 "</tr>"
             )
         groups_html.append(
@@ -163,7 +153,7 @@ def build_section_index(scopes: list[Scope], path: Path) -> None:
       <h2>{html.escape(council)} <span class="count">{len(by_council[council])} sections</span></h2>
       <table>
         <thead>
-          <tr><th>Section</th><th class="num">OUs</th><th class="num">Full vitality</th><th class="num">Student Branches</th><th class="num">Chapters</th><th class="num">Affinity Groups</th><th></th><th></th></tr>
+          <tr><th>Section</th><th class="num">OUs</th><th class="num">Full vitality</th><th class="num">Student Branches</th><th class="num">Chapters</th><th class="num">Affinity Groups</th><th></th></tr>
         </thead>
         <tbody>
           {''.join(rows)}
@@ -260,13 +250,11 @@ def build_section_index(scopes: list[Scope], path: Path) -> None:
   td a.open {{ font-size: 0.8rem; color: var(--text-secondary); }}
   td.links {{ white-space: nowrap; }}
   td.links a + a {{ margin-left: 10px; }}
-  .region-card {{ margin-bottom: 16px; }}
-  .export-panel {{ margin-bottom: 28px; }}
-{EXPORT_PANEL_CSS}
+  .actions {{ display: flex; flex-wrap: wrap; gap: 8px; }}
+  .btn.primary {{ background: var(--text-primary); color: var(--page-plane); border-color: var(--text-primary); }}
   @media (max-width: 720px) {{
-    th:nth-child(2), td:nth-child(2), th:nth-child(n+4):nth-child(-n+7), td:nth-child(n+4):nth-child(-n+7) {{ display: none; }}  /* the Section name already links to its dashboard */
+    th:nth-child(2), td:nth-child(2), th:nth-child(n+4):nth-child(-n+6), td:nth-child(n+4):nth-child(-n+6) {{ display: none; }}
     .council table {{ display: block; overflow-x: auto; }}
-    .row-export {{ min-width: 0; }}
     th, td {{ padding: 9px 8px; }}
   }}
 </style>
@@ -281,9 +269,12 @@ def build_section_index(scopes: list[Scope], path: Path) -> None:
       <div class="title">{html.escape(REGION_LABEL)}<small>{len(sections)} sections</small></div>
       <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">{region_stats["total"]:,}</div></div>
       <div class="stat"><div class="stat-label">Full vitality</div><div class="stat-value" style="color:{STATUS_GOOD}">{region_stats["met"]:,} <span class="pct">({region_stats["pct"]:.0f}%)</span></div></div>
-      <a class="btn" href="{REGION_SLUG}/index.html">Open whole region</a>
+      <div class="actions">
+        <a class="btn" href="{REGION_SLUG}/index.html">Open whole region</a>
+        <a class="btn primary" href="{REGION_SLUG}/report_builder.html">Export reports</a>
+        <a class="btn" href="{REGION_SLUG}/vitality_report.csv" download>Full data (CSV)</a>
+      </div>
     </div>
-    {export_panel_html(REGION_SLUG + "/", sections=True, csv_href="vitality_report.csv", open_=True)}
 {''.join(groups_html)}
   </div>
 </div>
@@ -325,14 +316,7 @@ def main() -> None:
         )
         build_university_report(scope.units, scope_dir / "university_report.html")
         build_society_report(scope.units, scope_dir / "society_report.html")
-        build_section_report(scope.units, scope_dir / "section_report.html")
-        build_section_branch_report(scope.units, scope_dir / "section_branch_report.html")
-        build_branch_report(scope.units, scope_dir / "branch_report.html")
-        build_vitality_status_report(
-            scope.units,
-            scope_dir / "vitality_status_report.html",
-            title=f"OUs Meeting / Not Meeting Vitality: {scope.label}",
-        )
+        build_report_builder(scope.units, scope_dir / "report_builder.html", scope_label=scope.label, dashboard_href="index.html")
 
         met = sum(1 for ou in scope.units if evaluate(ou)["overall"])
         print(f"{scope.label}: {len(scope.units)} OUs ({met} meeting full vitality) -> {scope.slug}/")

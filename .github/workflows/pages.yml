@@ -7,10 +7,7 @@ on:
       - vitality_dashboard.html
       - university_report.html
       - society_report.html
-      - vitality_status_report.html
-      - section_report.html
-      - section_branch_report.html
-      - branch_report.html
+      - report_builder.html
       - r9/dashboards/**
       - .github/workflows/pages.yml
   workflow_dispatch:
@@ -37,13 +34,15 @@ jobs:
         run: |
           mkdir -p _site
           cp vitality_dashboard.html _site/index.html
+          # Also under its own name: the report builder links back to it.
+          cp vitality_dashboard.html _site/vitality_dashboard.html
           if [ -f vitality_report.csv ]; then
             cp vitality_report.csv _site/vitality_report.csv
           fi
           if [ -f university_report.html ]; then
             cp university_report.html _site/university_report.html
           fi
-          for f in society_report.html vitality_status_report.html branch_report.html section_report.html section_branch_report.html; do
+          for f in society_report.html report_builder.html; do
             if [ -f "$f" ]; then
               cp "$f" "_site/$f"
             fi

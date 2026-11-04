@@ -59,59 +59,50 @@ combination, up to 8 at once (more than that stops being distinguishable
 by color). Skipped entirely if `Member Detail View.csv` isn't present
 that run.
 
-It also writes `university_report.html` and `society_report.html` — print-
-friendly, one-page-per-group handouts (summary stats, a requirements-met
-breakdown bar, and a unit table; the society report also lists each unit's
-university, since a society like WIE spans many), listed in the
-dashboard's **Reports & export** panel (right under the title, together
-with every other report and the CSV). Both are
-always light-themed regardless of the viewer's OS theme, since they're
-meant to be printed.
+### Reports and exports: the report builder
 
-Click a name in either report's table of contents (or the "Print this
-page" button on a page) to print just that one group — it scopes
-`window.print()` to that page via a `print-single` body class instead of
-printing the whole document. Printing the document normally (Ctrl/Cmd+P
-without clicking a name first) still prints every page, useful for
-archiving the full set at once.
+It also writes `report_builder.html`, the one place for every printable
+report and export. Open it from **Export reports** at the top of the
+dashboard: it starts with the University, Society and search filters you
+had set there. Then:
 
-It also writes `branch_report.html` ("Printable Student Branch Reports"):
-one page per Student Branch, meant to be sent to that branch, with the
-branch's own requirements as a checklist and every Chapter and Affinity
-Group of that university with what it is still missing. Its table of
-contents lists each university (grouped by Section) with its branch result
-and how many of its OUs meet full vitality. When the exports carry a
-Section column, `section_branch_report.html` is the Section report
-aggregated by parent Student Branch (a summary line per university, then
-each branch followed by its Chapters and Affinity Groups), meant for Section
-Chairs and SSACs; both Section reports switch between each other with
-"View: All OUs / Grouped by Student Branch". Chapters and Affinity Groups
-are matched to their branch by university.
+1. **Which OUs:** Council, Section, Student Branch / university, Society,
+   OU types (Student Branches, Chapters, Affinity Groups), vitality (all,
+   meeting it, not meeting it, missing one requirement, missing two or
+   more), search.
+2. **How to split it:** a single report, or one per Student Branch,
+   Section, Council or Society. Optionally, list Chapters and Affinity
+   Groups under their Student Branch inside each report (matched by
+   university).
+3. **Export:** **Download PDFs** gives one PDF per group in a ZIP, named
+   by OU code and name (`STB12991 - Universidad de los Andes.pdf`) so each
+   can be emailed on its own, with one folder per Section when Student
+   Branch reports span several. You can also **Download CSV** (the
+   selection, with the group as a column) or **Print**. "Full data (CSV)"
+   is the complete `vitality_report.csv`.
 
-To get every group as a **separate file in one go**, either:
+Presets at the top set everything for the usual jobs:
 
-- click **"All as PDF (.zip)"** next to a report in the Reports & export
-  panel, or **"Download all N as PDF (.zip)"** at the top of the report
-  itself (works on the published site, nothing to install): you get a ZIP
-  with one PDF per University/Society/Student Branch/Section, named by OU
-  code and name (`STB12991 - Universidad de los Andes.pdf`) so each can be
-  emailed on its own; a report covering several Sections zips one folder
-  per Section. Each page also has its own "Download PDF" button; or
-- run `automations/.venv/bin/python automations/export_report_pdfs.py`
-  (add `--r9` for every Region 9 scope) to save one **PDF** per group under
-  `report_pdfs/<date>/`, plus a ZIP per set (a report spanning several
-  Sections, like Region 9's Student Branch reports, gets one folder per
-  Section). See `automations/README.md`;
-  `./run_all.sh --pdfs` does it at the end of a full run.
+| Who | Preset |
+| --- | --- |
+| SSAC sending each Student Branch its status | One report per Student Branch |
+| Section Chair / SSAC | Section reports by Student Branch |
+| Region / Section SAC, branches only | Student Branches only, by Section |
+| Chapter chair | Chapters of one Society (then pick the Society) |
+| Recognition | OUs meeting vitality |
+| Follow-up | Quick wins: missing one requirement |
 
-It also writes `vitality_status_report.html` ("OUs meeting / not meeting
-vitality" in the Reports & export panel): every OU split into two
-lists, those meeting full vitality and those that don't, the latter with
-what each one is still missing and sorted closest-to-compliance first.
-Filter by list, OU type, Section (when there are several) or a search
-term; printing keeps the current filters. When the exports carry a
-Section column it also writes `section_report.html`, one printable page
-per Section in the same format as the University/Society reports.
+Every setting lives in the page URL, so a configured report can be
+bookmarked or shared; adding `&download=pdf` starts the download on open.
+The PDFs are built in the browser (no install, works on the published
+site). For Chromium-rendered PDFs from the command line, see
+`automations/export_report_pdfs.py` (`./run_all.sh --pdfs` runs it after
+a full refresh).
+
+`university_report.html` and `society_report.html` are still written:
+print-friendly, one page per university/society (click a name in the
+table of contents to print just that page). They are always light-themed,
+since they're meant to be printed.
 
 The raw exports contain personal data (officer names, emails, phone
 numbers) and are **git-ignored** — only the generated, aggregated
@@ -224,20 +215,11 @@ This writes `r9/dashboards/index.html` (a Section picker grouped by
 Council), `r9/dashboards/region/` (the whole region) and one
 `r9/dashboards/<section-slug>/` per Section, each with the same
 `index.html` / `vitality_report.csv` / `vitality_history.csv` /
-printable reports the root pipeline produces, plus
-`section_report.html` / `section_branch_report.html` (one printable page
-per Section, flat or grouped by Student Branch), `branch_report.html` (one
-page per Student Branch) and `vitality_status_report.html` (OUs meeting /
-not meeting vitality). The Section picker links to them for the whole
-region in its Reports & export panel, and per Section row in a compact
-"Reports" menu (each grouped report with a "PDFs" link that downloads one
-PDF per Student Branch or Section). Typical use:
-
-- **Section Chairs / SSACs:** region `section_branch_report.html`, one page
-  per Section with every Student Branch and its Chapters/AGs.
-- **Each Student Branch:** a Section's `branch_report.html` (or the
-  region-wide one, which downloads into one folder per Section), one page
-  per university to send to that branch. Every dashboard has a
+printable reports and report builder the root pipeline produces. The
+region's builder (the "Export reports" button on the Section picker)
+filters and splits by Council and Section too, e.g. one PDF per Student
+Branch for the whole region lands in one folder per Section. Each Section
+row also links to that Section's own builder ("Export"). Every dashboard has a
 Section switcher under its title. Member-level trends (society
 memberships, membership grades) are not computed for R9.
 

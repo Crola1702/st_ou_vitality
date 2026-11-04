@@ -1,0 +1,105 @@
+/* Report builder (report_builder.html). Always light, like the other print
+   reports: what is on screen is what gets printed / turned into PDFs.
+   The .group-page blocks (h1, .context, .subtitle, .stat-row, .bar-chart,
+   .checklist, h2, table, .note) are the ones report_export.js knows how to
+   lay out as PDF. */
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; background: #f2f2f0; color: #111; }
+main { max-width: 1120px; margin: 0 auto; padding: 24px 16px 48px; }
+a { color: inherit; }
+
+header h1 { font-size: 1.5rem; margin: 4px 0 4px; }
+header .scope { display: block; font-size: 0.95rem; font-weight: 500; color: #555; margin-top: 2px; }
+.crumbs { margin: 0; font-size: 0.85rem; }
+.lead { color: #444; margin: 6px 0 20px; font-size: 0.92rem; }
+h2 { font-size: 1rem; margin: 0 0 10px; }
+
+.presets { margin-bottom: 18px; }
+.preset-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 8px; }
+.preset {
+  font: inherit; text-align: left; cursor: pointer; padding: 10px 12px; border-radius: 8px;
+  border: 1px solid #d6d6d2; background: #fff; color: #111; display: flex; flex-direction: column; gap: 3px;
+}
+.preset:hover { border-color: #888; }
+.preset strong { font-size: 0.88rem; }
+.preset span { font-size: 0.76rem; color: #555; line-height: 1.35; }
+
+.controls { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; margin-bottom: 18px; }
+.panel { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 14px 16px; }
+.step {
+  display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; margin-right: 6px;
+  border-radius: 50%; background: #111; color: #fff; font-size: 0.72rem; vertical-align: 1px;
+}
+.field { margin: 0 0 12px; border: 0; padding: 0; min-width: 0; }
+.field > label:not(.opt), .field legend { display: block; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; color: #666; margin: 0 0 4px; padding: 0; }
+.field select, .field input[type=search] {
+  width: 100%; font: inherit; font-size: 0.88rem; padding: 6px 8px; border: 1px solid #ccc; border-radius: 6px; background: #fff; color: #111;
+}
+.opt { display: flex; align-items: flex-start; gap: 7px; font-size: 0.88rem; margin: 4px 0; cursor: pointer; line-height: 1.3; }
+.opt input { margin: 2px 0 0; flex-shrink: 0; }
+.summary { font-size: 0.9rem; margin: 0 0 12px; }
+.actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.actions button {
+  font: inherit; font-size: 0.88rem; cursor: pointer; padding: 8px 14px; border-radius: 6px;
+  border: 1px solid #bbb; background: #fff; color: #111;
+}
+.actions button.primary { background: #111; border-color: #111; color: #fff; font-weight: 600; }
+.actions button:disabled { opacity: 0.45; cursor: default; }
+.hint { font-size: 0.78rem; color: #555; margin: 10px 0 0; }
+
+.contents { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 14px 16px; margin-bottom: 24px; }
+.contents ol { margin: 0; padding-left: 22px; columns: 2; column-gap: 28px; font-size: 0.85rem; max-height: 260px; overflow: auto; }
+.contents li { margin: 3px 0; break-inside: avoid; }
+.contents a { text-decoration: none; }
+.contents a:hover { text-decoration: underline; }
+@media (max-width: 640px) { .contents ol { columns: 1; } }
+
+/* ---- report pages (preview, print, PDF) ---- */
+.group-page { background: #fff; border: 1px solid #ddd; border-radius: 4px; padding: 32px; margin: 0 0 28px; overflow-x: auto; }
+.group-page h1 { font-size: 1.5rem; margin: 0 0 2px; }
+.group-page h2 { font-size: 1.02rem; margin: 22px 0 8px; }
+.context { color: #333; font-size: 0.92rem; margin: 2px 0; }
+.subtitle { color: #555; font-size: 0.8rem; margin: 2px 0 14px; }
+.type-note { font-weight: 600; font-size: 0.85rem; margin: -6px 0 14px; }
+.page-toolbar { margin-bottom: 10px; }
+.page-toolbar button { font: inherit; font-size: 0.8rem; cursor: pointer; padding: 5px 12px; border-radius: 6px; border: 1px solid #ccc; background: #fafafa; color: #111; }
+.stat-row { display: flex; flex-wrap: wrap; gap: 28px; margin-bottom: 14px; }
+.stat-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.03em; color: #666; }
+.stat-value { font-size: 1.35rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.stat-value.good { color: #0ca30c; }
+.bar-chart { margin-bottom: 8px; max-width: 640px; }
+.bar-row { display: grid; grid-template-columns: 100px 1fr 32px; align-items: center; gap: 10px; margin: 5px 0; }
+.bar-label { font-size: 0.76rem; color: #333; }
+.bar-track { background: #eee; border-radius: 999px; height: 12px; overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 999px; }
+.bar-value { font-size: 0.78rem; font-weight: 700; text-align: right; font-variant-numeric: tabular-nums; }
+.checklist { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 8px; margin-bottom: 6px; }
+.check { border: 1px solid #e3e3e0; border-radius: 6px; padding: 8px 10px; }
+.check-label { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.03em; color: #666; }
+.check-value { font-size: 1rem; font-weight: 700; margin-top: 2px; }
+.note { color: #555; font-size: 0.85rem; }
+.muted { color: #777; font-weight: 400; font-size: 0.85em; }
+.ok { color: #0ca30c; }
+.no { color: #d03b3b; }
+table { border-collapse: collapse; width: 100%; font-size: 0.8rem; }
+th, td { padding: 5px 7px; text-align: left; border-bottom: 1px solid #eee; vertical-align: top; }
+th { font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.02em; color: #666; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+td.mono { color: #555; white-space: nowrap; font-variant-numeric: tabular-nums; }
+td.missing { color: #d03b3b; }
+tr.family th { background: #f4f4f1; color: #111; font-size: 0.78rem; text-transform: none; letter-spacing: 0; padding-top: 8px; }
+tr.child td:first-child { padding-left: 20px; }
+
+@media print {
+  body { background: #fff; }
+  main { max-width: none; padding: 0; }
+  .no-print { display: none !important; }
+  .group-page { border: none; padding: 0; margin: 0; overflow: visible; page-break-after: always; }
+  .group-page:last-child { page-break-after: auto; }
+  table { font-size: 0.72rem; }
+  th, td { padding: 3px 5px; }
+  thead { display: table-header-group; }
+  tr { page-break-inside: avoid; }
+  tr.family { page-break-after: avoid; }
+}
