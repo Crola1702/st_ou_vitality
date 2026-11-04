@@ -7,6 +7,8 @@ on:
       - vitality_dashboard.html
       - university_report.html
       - society_report.html
+      - vitality_status_report.html
+      - section_report.html
       - r9/dashboards/**
       - .github/workflows/pages.yml
   workflow_dispatch:
@@ -39,9 +41,11 @@ jobs:
           if [ -f university_report.html ]; then
             cp university_report.html _site/university_report.html
           fi
-          if [ -f society_report.html ]; then
-            cp society_report.html _site/society_report.html
-          fi
+          for f in society_report.html vitality_status_report.html section_report.html; do
+            if [ -f "$f" ]; then
+              cp "$f" "_site/$f"
+            fi
+          done
           # Region 9 dashboards (beta): served as-is under /beta_r9/, so the
           # section picker's relative links keep working.
           if [ -d r9/dashboards ]; then

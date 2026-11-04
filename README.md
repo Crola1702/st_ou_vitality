@@ -74,6 +74,26 @@ printing the whole document. Printing the document normally (Ctrl/Cmd+P
 without clicking a name first) still prints every page, useful for
 archiving the full set at once.
 
+To get every group as a **separate file in one go**, either:
+
+- click **"Download all N … pages (.zip)"** at the top of any of these
+  reports (works on the published site too, nothing to install): you get a
+  ZIP with one standalone HTML page per University/Society/Section, each
+  ready to open, print or forward; or
+- run `automations/.venv/bin/python automations/export_report_pdfs.py`
+  (add `--r9` for every Region 9 scope) to save one **PDF** per group under
+  `report_pdfs/<date>/`, plus a ZIP per set. See `automations/README.md`;
+  `./run_all.sh --pdfs` does it at the end of a full run.
+
+It also writes `vitality_status_report.html` (linked from the dashboard
+header as "OUs Meeting / Not Meeting Vitality"): every OU split into two
+lists, those meeting full vitality and those that don't, the latter with
+what each one is still missing and sorted closest-to-compliance first.
+Filter by list, OU type, Section (when there are several) or a search
+term; printing keeps the current filters. When the exports carry a
+Section column it also writes `section_report.html`, one printable page
+per Section in the same format as the University/Society reports.
+
 The raw exports contain personal data (officer names, emails, phone
 numbers) and are **git-ignored** — only the generated, aggregated
 `vitality_report.csv` and `vitality_dashboard.html` are committed and
@@ -185,7 +205,12 @@ This writes `r9/dashboards/index.html` (a Section picker grouped by
 Council), `r9/dashboards/region/` (the whole region) and one
 `r9/dashboards/<section-slug>/` per Section, each with the same
 `index.html` / `vitality_report.csv` / `vitality_history.csv` /
-printable reports the root pipeline produces. Every dashboard has a
+printable reports the root pipeline produces, plus
+`section_report.html` (one printable page per Section) and
+`vitality_status_report.html` (OUs meeting / not meeting vitality). The
+Section picker links to both for the whole region ("Print reports by
+Section", "OUs meeting / not meeting vitality") and per Section row
+("Print", "Met / not met"). Every dashboard has a
 Section switcher under its title. Member-level trends (society
 memberships, membership grades) are not computed for R9.
 

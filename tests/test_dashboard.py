@@ -135,6 +135,78 @@ class OutputsTest(unittest.TestCase):
             builder(self.units, out)
             self.assertIn("Universidad Demo", out.read_text(encoding="utf-8"))
 
+    def sectioned_units(self):
+        a = make_ou()
+        b = make_ou("Student Branch Chapter", officers=())
+        b.name, b.spoid = "Demo Not Met Chapter", "SBC00002"
+        c = make_ou("Affinity Group", members=6, general=2, officers=("Chair", "Advisor"))
+        c.name, c.spoid = "Demo Met WIE", "SBA00003"
+        a.section, b.section, c.section = "Colombia Section", "Colombia Section", "Peru Section"
+        return [a, b, c]
+
+    def test_section_report_one_page_per_section(self):
+        self.units = self.sectioned_units()
+        out = self.tmp / "section.html"
+        gvr.build_section_report(self.units, out)
+        page = out.read_text(encoding="utf-8")
+        self.assertEqual(page.count('class="group-page"'), 2)
+        self.assertIn('id="colombia-section"', page)
+        self.assertIn('id="peru-section"', page)
+        self.assertTrue(gvr.has_sections(self.units))
+
+    def test_status_report_splits_met_and_not_met(self):
+        units = self.sectioned_units()
+        for ou in units:
+            ou.section = ""
+        out = self.tmp / "status.html"
+        gvr.build_vitality_status_report(units, out)
+        page = out.read_text(encoding="utf-8")
+        met_block, not_met_block = page.split('id="not-met"')
+        met_names = [ou.name for ou in units if gvr.evaluate(ou)["overall"]]
+        not_met_names = [ou.name for ou in units if not gvr.evaluate(ou)["overall"]]
+        for name in met_names:
+            self.assertIn(name, met_block.split('id="met"')[1])
+            self.assertNotIn(name, not_met_block)
+        for name in not_met_names:
+            self.assertIn(name, not_met_block)
+        # Single-section scope: no Section column or filter.
+        self.assertNotIn('id="f-section"', page)
+
+    def test_status_report_section_filter_when_multi_section(self):
+        out = self.tmp / "status_r9.html"
+        gvr.build_vitality_status_report(self.sectioned_units(), out)
+        page = out.read_text(encoding="utf-8")
+        self.assertIn('id="f-section"', page)
+        self.assertIn("Demo Met WIE", page.split('id="not-met"')[0])
+        self.assertIn("Demo Not Met Chapter", page.split('id="not-met"')[1])
+
+    def test_print_report_batch_download(self):
+        a, b = make_ou(), make_ou()
+        a.university, b.university = "Universidad de Bogotá", "Universidad de Bogota"
+        a.spoid, b.spoid = "STB1", "STB2"
+        out = self.tmp / "uni.html"
+        gvr.build_university_report([a, b], out)
+        page = out.read_text(encoding="utf-8")
+        self.assertIn("downloadAllPages(", page)
+        self.assertIn("Download all 2 university pages", page)
+        # Accents are folded and colliding anchors (= ZIP file names) get a suffix.
+        ids = re.findall(r'class="group-page" id="([^"]+)"', page)
+        self.assertEqual(sorted(ids), ["universidad-de-bogota", "universidad-de-bogota-2"])
+        node = shutil.which("node")
+        if node:
+            script = page.rsplit("<script>", 1)[1].split("</script>", 1)[0]
+            js = self.tmp / "report.js"
+            js.write_text(script, encoding="utf-8")
+            subprocess.run([node, "--check", str(js)], check=True, capture_output=True)
+
+    def test_missing_requirements(self):
+        ou = gvr.OU("X Chapter", "SBC9", "Student Branch Chapter", "U", 0)
+        missing = gvr.missing_requirements(ou)
+        self.assertIn("Chair", missing)
+        self.assertIn("Advisor", missing)
+        self.assertTrue(any(m.startswith("Members 0/") for m in missing))
+        self.assertTrue(any("technical events" in m for m in missing))
+
 
 class TrendLoadersTest(unittest.TestCase):
     def setUp(self):

@@ -39,6 +39,7 @@ import csv
 import html
 import json
 import re
+import unicodedata
 from collections.abc import Callable
 from datetime import datetime
 from pathlib import Path
@@ -1224,6 +1225,12 @@ def build_dashboard(
         university_to_societies_json=university_to_societies_json,
     )
 
+    section_report_link = (
+        ' <a href="section_report.html" target="_blank" rel="noopener">Printable Section Reports</a>'
+        if has_sections(units)
+        else ""
+    )
+
     page = f"""<!doctype html>
 <html lang="en">
 <head>
@@ -1237,7 +1244,7 @@ def build_dashboard(
 <body>
 <div class="viz-root">
   <div class="container">
-    <p class="byline"><a href="https://www.linkedin.com/in/cristobalarroyo/" target="_blank" rel="noopener">By Cristóbal Arroyo</a> <a href="https://github.com/Crola1702/st_ou_vitality" target="_blank" rel="noopener">See on GitHub</a> <a href="university_report.html" target="_blank" rel="noopener">Printable University Reports</a> <a href="society_report.html" target="_blank" rel="noopener">Printable Society Reports</a></p>
+    <p class="byline"><a href="https://www.linkedin.com/in/cristobalarroyo/" target="_blank" rel="noopener">By Cristóbal Arroyo</a> <a href="https://github.com/Crola1702/st_ou_vitality" target="_blank" rel="noopener">See on GitHub</a> <a href="university_report.html" target="_blank" rel="noopener">Printable University Reports</a> <a href="society_report.html" target="_blank" rel="noopener">Printable Society Reports</a>{section_report_link} <a href="vitality_status_report.html" target="_blank" rel="noopener">OUs Meeting / Not Meeting Vitality</a></p>
     <h1>{html.escape(title)}</h1>
     <p class="subtitle">Generated from local vTools exports. Events source: {html.escape(events_path.name)}.</p>
 {nav_html}
@@ -1334,6 +1341,80 @@ def build_dashboard(
     path.write_text(page, encoding="utf-8")
 
 
+# Client-side batch download for the grouped print reports: packs one
+# standalone HTML file per group page into a ZIP (stored, uncompressed:
+# a minimal writer, no library) so nobody has to save each page by hand.
+# Kept outside the report's f-string to avoid doubling every brace.
+BATCH_DOWNLOAD_JS = r"""
+  const CRC_TABLE = (() => {
+    const t = new Uint32Array(256);
+    for (let n = 0; n < 256; n++) {
+      let c = n;
+      for (let k = 0; k < 8; k++) c = c & 1 ? 0xEDB88320 ^ (c >>> 1) : c >>> 1;
+      t[n] = c >>> 0;
+    }
+    return t;
+  })();
+  function crc32(bytes) {
+    let c = 0xFFFFFFFF;
+    for (let i = 0; i < bytes.length; i++) c = CRC_TABLE[(c ^ bytes[i]) & 0xFF] ^ (c >>> 8);
+    return (c ^ 0xFFFFFFFF) >>> 0;
+  }
+  function makeZip(files) {
+    const enc = new TextEncoder();
+    const chunks = [], central = [];
+    const now = new Date();
+    const dosTime = (now.getHours() << 11) | (now.getMinutes() << 5) | (now.getSeconds() >> 1);
+    const dosDate = ((now.getFullYear() - 1980) << 9) | ((now.getMonth() + 1) << 5) | now.getDate();
+    let offset = 0;
+    for (const f of files) {
+      const name = enc.encode(f.name), data = enc.encode(f.content), crc = crc32(data);
+      const local = new DataView(new ArrayBuffer(30));
+      local.setUint32(0, 0x04034b50, true); local.setUint16(4, 20, true);
+      local.setUint16(6, 0x0800, true);  // UTF-8 file names
+      local.setUint16(10, dosTime, true); local.setUint16(12, dosDate, true);
+      local.setUint32(14, crc, true); local.setUint32(18, data.length, true);
+      local.setUint32(22, data.length, true); local.setUint16(26, name.length, true);
+      chunks.push(local, name, data);
+      const cen = new DataView(new ArrayBuffer(46));
+      cen.setUint32(0, 0x02014b50, true); cen.setUint16(4, 20, true); cen.setUint16(6, 20, true);
+      cen.setUint16(8, 0x0800, true); cen.setUint16(12, dosTime, true); cen.setUint16(14, dosDate, true);
+      cen.setUint32(16, crc, true);
+      cen.setUint32(20, data.length, true); cen.setUint32(24, data.length, true);
+      cen.setUint16(28, name.length, true); cen.setUint32(42, offset, true);
+      central.push(cen, name);
+      offset += 30 + name.length + data.length;
+    }
+    const cenSize = central.reduce((s, c) => s + c.byteLength, 0);
+    const end = new DataView(new ArrayBuffer(22));
+    end.setUint32(0, 0x06054b50, true); end.setUint16(8, files.length, true);
+    end.setUint16(10, files.length, true); end.setUint32(12, cenSize, true); end.setUint32(16, offset, true);
+    return new Blob([...chunks, ...central, end], { type: 'application/zip' });
+  }
+  function downloadAllPages(zipName) {
+    const style = document.querySelector('style').outerHTML;
+    const title = document.title;
+    const files = [...document.querySelectorAll('.group-page')].map(page => {
+      const clone = page.cloneNode(true);
+      clone.querySelectorAll('.no-print').forEach(el => el.remove());
+      const heading = clone.querySelector('h1').textContent;
+      return {
+        name: page.id + '.html',
+        content: '<!doctype html><html lang="en"><head><meta charset="utf-8">'
+          + '<meta name="viewport" content="width=device-width, initial-scale=1">'
+          + '<title>' + heading.replace(/</g, '&lt;') + ' - ' + title.replace(/</g, '&lt;') + '</title>'
+          + style + '</head><body>' + clone.outerHTML + '</body></html>',
+      };
+    });
+    const url = URL.createObjectURL(makeZip(files));
+    const a = document.createElement('a');
+    a.href = url; a.download = zipName;
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }
+"""
+
+
 def build_grouped_print_report(
     units: list[OU],
     path: Path,
@@ -1356,9 +1437,20 @@ def build_grouped_print_report(
             groups.setdefault(key, []).append(ou)
 
     generated_on = datetime.now().strftime("%Y-%m-%d")
+    zip_name = f"{path.stem}_{generated_on}.zip"
+
+    # Anchors double as the batch-download file names, so they must be
+    # unique: accents are dropped, so two names can slug to the same thing.
+    anchors: dict[str, str] = {}
+    for name in sorted(groups):
+        slug = re.sub(r"[^a-z0-9]+", "-", unicodedata.normalize("NFKD", name).encode("ascii", "ignore").decode().lower()).strip("-") or "group"
+        candidate, n = slug, 2
+        while candidate in anchors.values():
+            candidate, n = f"{slug}-{n}", n + 1
+        anchors[name] = candidate
 
     def anchor_for(name: str) -> str:
-        return re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")
+        return anchors[name]
 
     toc_items = "".join(
         f'<li><a href="#{html.escape(anchor_for(name))}" onclick="printOnly(\'{html.escape(anchor_for(name))}\')">{html.escape(name)}</a></li>'
@@ -1456,6 +1548,12 @@ def build_grouped_print_report(
   th, td {{ padding: 6px 8px; text-align: left; border-bottom: 1px solid #eee; }}
   th {{ font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.02em; color: #666; }}
   td.mono {{ font-variant-numeric: tabular-nums; color: #555; }}
+  .batch {{ display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin: 0 0 16px; font-size: 0.82rem; color: #555; }}
+  .batch button {{
+    font: inherit; font-weight: 600; cursor: pointer; padding: 8px 14px; border-radius: 6px; border: 1px solid #bbb;
+    background: #fff; color: #111;
+  }}
+  .batch button:hover {{ background: #eee; }}
   .page-toolbar {{ margin-bottom: 12px; }}
   .page-toolbar button {{
     font: inherit; cursor: pointer; padding: 6px 14px; border-radius: 6px; border: 1px solid #ccc;
@@ -1465,8 +1563,14 @@ def build_grouped_print_report(
   @media print {{
     body {{ background: #fff; }}
     .toc, .group-page {{ page-break-after: always; border: none; box-shadow: none; margin: 0; max-width: none; }}
+    .group-page {{ padding: 0; }}
+    table {{ font-size: 0.74rem; }}
+    th, td {{ padding: 4px 6px; }}
+    thead {{ display: table-header-group; }}
+    tr {{ page-break-inside: avoid; }}
     .no-print {{ display: none !important; }}
-    body.print-single .group-page:not(.print-target) {{ display: none; }}
+    body.print-single .toc, body.print-single .group-page:not(.print-target) {{ display: none; }}
+    body.print-single .group-page.print-target {{ page-break-after: auto; }}
   }}
 </style>
 </head>
@@ -1474,6 +1578,10 @@ def build_grouped_print_report(
   <section class="toc">
     <h1>{html.escape(doc_title)}</h1>
     <p class="subtitle">Generated {generated_on} · one printable page per {html.escape(group_label.lower())} · click a name to print just that page, or print this whole document (Ctrl/Cmd+P → Save as PDF) for all of them.</p>
+    <div class="batch no-print">
+      <button type="button" onclick="downloadAllPages('{html.escape(zip_name)}')">Download all {len(groups)} {html.escape(group_label.lower())} pages (.zip)</button>
+      <span>One standalone file per {html.escape(group_label.lower())}, ready to open, print or send.</span>
+    </div>
     <ul>{toc_items}</ul>
   </section>
   {"".join(pages)}
@@ -1488,6 +1596,7 @@ def build_grouped_print_report(
   window.addEventListener('afterprint', () => {{
     document.body.classList.remove('print-single');
   }});
+{BATCH_DOWNLOAD_JS}
 </script>
 </body>
 </html>
@@ -1514,6 +1623,231 @@ def build_society_report(units: list[OU], path: Path) -> None:
         doc_title="IEEE Student OU Vitality — Society Reports",
         extra_column=("University", lambda ou: ou.university),
     )
+
+
+def build_section_report(units: list[OU], path: Path) -> None:
+    """One printable page per IEEE Section. Only meaningful when the
+    exports carry the Section column (r9/ runs); OUs without a section are
+    left out, so callers should skip it when no OU has one."""
+    build_grouped_print_report(
+        units,
+        path,
+        group_key=lambda ou: ou.section,
+        group_label="Section",
+        doc_title="IEEE Student OU Vitality: Section Reports",
+        extra_column=("University", lambda ou: ou.university),
+    )
+
+
+def has_sections(units: list[OU]) -> bool:
+    return any(ou.section for ou in units)
+
+
+def missing_requirements(ou: OU, result: dict | None = None) -> list[str]:
+    """Human-readable list of the vitality requirements `ou` still misses
+    (empty when it meets full vitality)."""
+    if result is None:
+        result = evaluate(ou)
+    criteria = CRITERIA[ou.ou_type]
+    missing = []
+    if not result["members_met"]:
+        missing.append(f"Members {ou.member_count}/{criteria['min_members']}")
+    if not result["events_met"]:
+        kind = "technical events" if criteria["technical_only"] else "events"
+        missing.append(f"Reported {kind} {result['event_count']}/{criteria['min_events']}")
+    if not result["chair_met"]:
+        missing.append("Chair")
+    if not result["counselor_met"]:
+        missing.append(result["role2"])
+    return missing
+
+
+def build_vitality_status_report(
+    units: list[OU],
+    path: Path,
+    *,
+    title: str = "OUs Meeting / Not Meeting Vitality",
+) -> None:
+    """A printable list of every OU split into "meeting full vitality" and
+    "not meeting it" (the latter with what is still missing, closest to
+    compliance first). Client-side filters (status, type, section when the
+    OUs span several, free-text search) narrow both lists, and printing
+    keeps the current filter. Always light-themed, like the other print
+    reports."""
+    generated_on = datetime.now().strftime("%Y-%m-%d")
+    multi_section = len({ou.section for ou in units if ou.section}) > 1
+    results = {id(ou): evaluate(ou) for ou in units}
+
+    met_units = sorted((ou for ou in units if results[id(ou)]["overall"]), key=lambda o: (o.section, o.ou_type, o.name))
+    not_met_units = sorted(
+        (ou for ou in units if not results[id(ou)]["overall"]),
+        key=lambda o: (-results[id(o)]["requirements_met"], o.section, o.ou_type, o.name),
+    )
+
+    def row(ou: OU, with_missing: bool) -> str:
+        r = results[id(ou)]
+        search = " ".join((ou.name, ou.spoid, ou.university, ou.section, ou.society)).lower()
+        section_td = f"<td>{html.escape(ou.section)}</td>" if multi_section else ""
+        missing_td = (
+            f'<td class="missing">{html.escape("; ".join(missing_requirements(ou, r)))}</td>' if with_missing else ""
+        )
+        return (
+            f'<tr data-type="{html.escape(ou.ou_type)}" data-section="{html.escape(ou.section)}" data-search="{html.escape(search)}">'
+            f"<td>{html.escape(ou.name)}</td>"
+            f"<td>{html.escape(ou.ou_type)}</td>"
+            f"<td>{html.escape(ou.university)}</td>"
+            f"{section_td}"
+            f'<td class="mono">{html.escape(ou.spoid)}</td>'
+            f'<td class="num">{ou.member_count}/{CRITERIA[ou.ou_type]["min_members"]}</td>'
+            f'<td class="num">{r["event_count"]}/{CRITERIA[ou.ou_type]["min_events"]}</td>'
+            f"<td>{r['officers_status']}</td>"
+            f'<td class="num" style="color:{REQUIREMENTS_COLOR[r["requirements_met"]]}">{r["requirements_met"]}/3</td>'
+            f"{missing_td}"
+            "</tr>"
+        )
+
+    section_th = "<th>Section</th>" if multi_section else ""
+    head = (
+        f"<th>Unit</th><th>Type</th><th>University</th>{section_th}<th>SPO ID</th>"
+        '<th class="num">Members</th><th class="num">Events</th><th>Officers</th><th class="num">Req.</th>'
+    )
+
+    def block(block_id: str, heading: str, color: str, ou_list: list[OU], with_missing: bool, empty: str) -> str:
+        rows = "".join(row(ou, with_missing) for ou in ou_list)
+        extra_th = "<th>Missing</th>" if with_missing else ""
+        return f"""
+  <section class="status-block" id="{block_id}">
+    <h2><span class="swatch" style="background:{color}"></span>{heading} <span class="count" data-count>{len(ou_list)}</span></h2>
+    <table>
+      <thead><tr>{head}{extra_th}</tr></thead>
+      <tbody>{rows}</tbody>
+    </table>
+    <p class="empty"{"" if not ou_list else " hidden"}>{empty}</p>
+  </section>"""
+
+    type_options = "".join(
+        f'<option value="{html.escape(t)}">{html.escape(t)}</option>'
+        for t in ("Student Branch", "Student Branch Chapter", "Affinity Group")
+        if any(ou.ou_type == t for ou in units)
+    )
+    section_filter = ""
+    if multi_section:
+        section_options = "".join(
+            f'<option value="{html.escape(s)}">{html.escape(s)}</option>'
+            for s in sorted({ou.section for ou in units if ou.section})
+        )
+        section_filter = (
+            '<label>Section <select id="f-section"><option value="">All sections</option>'
+            f"{section_options}</select></label>"
+        )
+
+    total = len(units)
+    pct = (len(met_units) / total * 100) if total else 0
+
+    page = f"""<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>{html.escape(title)}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  * {{ box-sizing: border-box; }}
+  body {{ margin: 0; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; background: #f2f2f0; color: #111; }}
+  main {{ max-width: 1200px; margin: 0 auto; padding: 32px 16px; }}
+  h1 {{ font-size: 1.5rem; margin: 0 0 2px; }}
+  .subtitle {{ color: #555; font-size: 0.85rem; margin: 0 0 20px; }}
+  .stat-row {{ display: flex; flex-wrap: wrap; gap: 28px; margin-bottom: 20px; }}
+  .stat-label {{ font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.03em; color: #666; }}
+  .stat-value {{ font-size: 1.4rem; font-weight: 700; font-variant-numeric: tabular-nums; }}
+  .toolbar {{ display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; margin-bottom: 20px; font-size: 0.85rem; }}
+  .toolbar label {{ display: flex; align-items: center; gap: 6px; color: #444; }}
+  .toolbar select, .toolbar input, .toolbar button {{
+    font: inherit; padding: 6px 10px; border-radius: 6px; border: 1px solid #ccc; background: #fff; color: #111;
+  }}
+  .toolbar input {{ min-width: 220px; }}
+  .toolbar button {{ cursor: pointer; background: #fafafa; }}
+  .toolbar button:hover {{ background: #eee; }}
+  .status-block {{ background: #fff; border: 1px solid #ddd; border-radius: 4px; padding: 20px; margin-bottom: 24px; overflow-x: auto; }}
+  .status-block h2 {{ font-size: 1.1rem; margin: 0 0 12px; display: flex; align-items: center; gap: 8px; }}
+  .swatch {{ width: 12px; height: 12px; border-radius: 3px; display: inline-block; }}
+  .count {{ font-weight: 400; color: #666; font-size: 0.9rem; }}
+  table {{ border-collapse: collapse; width: 100%; font-size: 0.8rem; }}
+  th, td {{ padding: 6px 8px; text-align: left; border-bottom: 1px solid #eee; vertical-align: top; }}
+  th {{ font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.02em; color: #666; }}
+  td.num, th.num {{ text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }}
+  td.mono {{ font-variant-numeric: tabular-nums; color: #555; white-space: nowrap; }}
+  td.missing {{ color: {STATUS_CRITICAL}; }}
+  .empty {{ color: #666; font-size: 0.85rem; margin: 8px 0 0; }}
+  [hidden] {{ display: none !important; }}
+  @media print {{
+    body {{ background: #fff; }}
+    main {{ max-width: none; padding: 0; }}
+    .no-print {{ display: none !important; }}
+    .status-block {{ border: none; padding: 0; overflow: visible; }}
+    .status-block + .status-block {{ page-break-before: always; }}
+    thead {{ display: table-header-group; }}
+    tr {{ page-break-inside: avoid; }}
+  }}
+</style>
+</head>
+<body>
+<main>
+  <h1>{html.escape(title)}</h1>
+  <p class="subtitle">IEEE Student OU Vitality, generated {generated_on}. Print (or Save as PDF) keeps the current filters.</p>
+  <div class="stat-row">
+    <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">{total}</div></div>
+    <div class="stat"><div class="stat-label">Meeting full vitality</div><div class="stat-value" style="color:{STATUS_GOOD}">{len(met_units)} <small>({pct:.0f}%)</small></div></div>
+    <div class="stat"><div class="stat-label">Not meeting vitality</div><div class="stat-value" style="color:{STATUS_CRITICAL}">{len(not_met_units)}</div></div>
+  </div>
+  <div class="toolbar no-print">
+    <label>Show <select id="f-status">
+      <option value="all">Both lists</option>
+      <option value="met">Meeting vitality</option>
+      <option value="not-met">Not meeting vitality</option>
+    </select></label>
+    <label>Type <select id="f-type"><option value="">All types</option>{type_options}</select></label>
+    {section_filter}
+    <input id="f-search" type="search" placeholder="Search unit, university, SPO ID…" aria-label="Search">
+    <button type="button" onclick="window.print()">Print</button>
+  </div>
+{block("met", "Meeting full vitality", STATUS_GOOD, met_units, False, "No OUs in this list.")}
+{block("not-met", "Not meeting vitality", STATUS_CRITICAL, not_met_units, True, "No OUs in this list.")}
+</main>
+<script>
+  (function () {{
+    const status = document.getElementById('f-status');
+    const type = document.getElementById('f-type');
+    const section = document.getElementById('f-section');
+    const search = document.getElementById('f-search');
+    const params = new URLSearchParams(location.search);
+    if (params.get('status')) status.value = params.get('status');
+    if (section && params.get('section')) section.value = params.get('section');
+
+    function apply() {{
+      const q = search.value.trim().toLowerCase();
+      document.querySelectorAll('.status-block').forEach(block => {{
+        block.hidden = status.value !== 'all' && status.value !== block.id;
+        let shown = 0;
+        block.querySelectorAll('tbody tr').forEach(tr => {{
+          const ok = (!type.value || tr.dataset.type === type.value)
+            && (!section || !section.value || tr.dataset.section === section.value)
+            && (!q || tr.dataset.search.includes(q));
+          tr.hidden = !ok;
+          if (ok) shown++;
+        }});
+        block.querySelector('[data-count]').textContent = shown;
+        block.querySelector('.empty').hidden = shown > 0;
+        block.querySelector('table').hidden = shown === 0;
+      }});
+    }}
+    [status, type, section, search].forEach(el => el && el.addEventListener('input', apply));
+    apply();
+  }})();
+</script>
+</body>
+</html>
+"""
+    path.write_text(page, encoding="utf-8")
 
 
 ARCHIVE_DIR = BASE_DIR / "archive"
@@ -1554,12 +1888,17 @@ def main() -> None:
     grade_history_path = BASE_DIR / "membership_type_history.csv"
     university_report_path = BASE_DIR / "university_report.html"
     society_report_path = BASE_DIR / "society_report.html"
+    status_report_path = BASE_DIR / "vitality_status_report.html"
+    section_report_path = BASE_DIR / "section_report.html"
 
     member_directory = load_member_directory()
     previous_grade_snapshot = load_grade_snapshot(GRADE_SNAPSHOT_FILE)
     promotions = detect_promotions(previous_grade_snapshot, member_directory)
 
-    archive_current_outputs([csv_path, html_path, university_report_path, society_report_path], ARCHIVE_DIR)
+    archive_current_outputs(
+        [csv_path, html_path, university_report_path, society_report_path, status_report_path, section_report_path],
+        ARCHIVE_DIR,
+    )
 
     write_csv(units, csv_path)
     write_history(units, history_path)
@@ -1571,11 +1910,18 @@ def main() -> None:
     build_dashboard(units, html_path, events_path, history_path, society_history_path, grade_history_path, PROMOTIONS_SUMMARY_FILE)
     build_university_report(units, university_report_path)
     build_society_report(units, society_report_path)
+    build_vitality_status_report(units, status_report_path)
+    if has_sections(units):
+        build_section_report(units, section_report_path)
 
     total = len(units)
     met = sum(1 for ou in units if evaluate(ou)["overall"])
     print(f"Processed {total} OUs ({met} meeting full vitality criteria).")
-    print(f"Wrote {csv_path.name}, {html_path.name}, {university_report_path.name}, and {society_report_path.name}")
+    print(
+        f"Wrote {csv_path.name}, {html_path.name}, {university_report_path.name}, "
+        f"{society_report_path.name}, and {status_report_path.name}"
+        + (f" (+ {section_report_path.name})" if has_sections(units) else "")
+    )
 
 
 if __name__ == "__main__":

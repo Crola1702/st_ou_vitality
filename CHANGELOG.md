@@ -4,6 +4,45 @@ Notable changes to this project. Format loosely follows
 [Keep a Changelog](https://keepachangelog.com/), dated by day rather than by
 version since this project doesn't cut releases.
 
+## 2026-11-04
+
+### Added
+
+- **Printable Section reports** (`section_report.html`, `build_section_report()`):
+  one print-ready page per IEEE Section (summary stats, requirements-met
+  bar, unit table), same layout and click-to-print-one-page behavior as the
+  University/Society reports. Written into every `r9/dashboards/` scope (the
+  `region/` copy has all Sections; a Section's copy is its single page) and
+  linked from the R9 Section picker ("Print reports by Section", plus a
+  "Print" link per Section row) and from each dashboard header. The root
+  pipeline writes it only when the exports carry a Section column.
+- **Batch download of the printable reports.** Every University, Society and
+  Section report has a "Download all N pages (.zip)" button that packs one
+  standalone HTML file per group (client-side, no library, works on the
+  published site). For PDFs, `automations/export_report_pdfs.py` saves one
+  PDF per group (plus a ZIP per set and the status list) for the Colombia
+  reports and, with `--r9`, every Region 9 scope, into the git-ignored
+  `report_pdfs/<date>/`; `./run_all.sh --pdfs` runs it after a full refresh.
+- **OUs meeting / not meeting vitality list** (`vitality_status_report.html`,
+  `build_vitality_status_report()`): every OU split into two lists, the
+  non-compliant one showing what is still missing (members, reported
+  events, Chair, Counselor/Advisor) and sorted closest-to-compliance
+  first. Filters for list, OU type, Section (when the scope spans several)
+  and free-text search; printing keeps the current filters. Written by both
+  the root pipeline and every R9 scope, linked from each dashboard header
+  and the R9 Section picker, and deployed to GitHub/GitLab Pages.
+
+### Fixed
+
+- **Printing a single University/Society page also printed the table of
+  contents** (and a trailing blank page). Single-page prints now contain
+  only that group, and printed tables are denser with the header repeated
+  on each sheet.
+- Report anchors (and the new per-group file names) fold accents
+  (`Bogotá` → `bogota`) and get a numeric suffix if two names collide.
+- `./run_all.sh --help` no longer prints the script's `set -euo pipefail`
+  line.
+
 ## 2026-10-26
 
 ### Fixed

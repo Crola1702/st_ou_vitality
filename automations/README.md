@@ -96,6 +96,27 @@ filtering — captured from a real session). If a preset ever starts coming
 back empty or with the wrong rows, the domain order may have shifted —
 re-capture a HAR of applying the filters manually and update the indices.
 
+## Batch PDF export of the printable reports
+
+`export_report_pdfs.py` is the odd one out here: it fetches nothing and
+needs no login. It opens the generated print reports in headless Chromium
+and saves **every group page as its own PDF** (one per University, Society
+and Section), plus a `.zip` per set and a PDF of
+`vitality_status_report.html`, so you don't have to click each name and
+"Save as PDF" by hand. Run it after `generate_vitality_report.py` (and
+`r9/generate_r9_vitality.py` for `--r9`):
+
+```sh
+automations/.venv/bin/python automations/export_report_pdfs.py                 # Colombia reports
+automations/.venv/bin/python automations/export_report_pdfs.py --r9            # + every R9 scope
+automations/.venv/bin/python automations/export_report_pdfs.py --r9-only --scope region --only section
+```
+
+Output goes to `report_pdfs/<date>/<scope>/<report>/<group>.pdf`
+(git-ignored). `--only university society section status` limits which
+reports, `--paper A4` changes the paper size, `--no-zip` skips the zips.
+`./run_all.sh --pdfs` runs it (Colombia only) after regenerating everything.
+
 ## Credentials
 
 `.env` (`TABLEAU_PAT_NAME`/`TABLEAU_PAT`, a Tableau Personal Access Token)

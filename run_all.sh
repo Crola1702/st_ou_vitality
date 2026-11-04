@@ -12,16 +12,24 @@
 # then re-run this:
 #   automations/.venv/bin/python automations/tableau_export.py login
 #
-# Usage: ./run_all.sh [-h|--help] [--login]
+# Usage: ./run_all.sh [-h|--help] [--login] [--pdfs]
 set -euo pipefail
 cd "$(dirname "${BASH_SOURCE[0]}")"
 
 VENV_PY="automations/.venv/bin/python"
 
+EXPORT_PDFS=0
+if [ "${1:-}" = "--pdfs" ]; then
+  EXPORT_PDFS=1
+  shift
+fi
+
 case "${1:-}" in
   -h|--help)
-    sed -n '2,16p' "${BASH_SOURCE[0]}" | sed 's/^# \{0,1\}//'
+    sed -n '2,15p' "${BASH_SOURCE[0]}" | sed 's/^# \{0,1\}//'
     echo "  --login    Run the interactive login steps, then exit."
+    echo "  --pdfs     Also save every University/Society/Section report page as its own PDF"
+    echo "             (automations/export_report_pdfs.py, into report_pdfs/<date>/)."
     exit 0
     ;;
   --login)
@@ -64,5 +72,10 @@ python3 generate_vitality_report.py
 python3 chapter_outreach/generate_chapter_outreach.py
 python3 officer_terms/generate_officer_terms.py
 python3 member_society_lookup/generate_member_society_lookup.py
+
+if [ "$EXPORT_PDFS" = 1 ]; then
+  echo "== Extra: one PDF per University / Society / Section =="
+  "$VENV_PY" automations/export_report_pdfs.py
+fi
 
 echo "== Done =="
