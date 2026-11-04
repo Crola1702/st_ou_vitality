@@ -9,6 +9,8 @@ on:
       - society_report.html
       - vitality_status_report.html
       - section_report.html
+      - section_branch_report.html
+      - branch_report.html
       - r9/dashboards/**
       - .github/workflows/pages.yml
   workflow_dispatch:
@@ -41,7 +43,7 @@ jobs:
           if [ -f university_report.html ]; then
             cp university_report.html _site/university_report.html
           fi
-          for f in society_report.html vitality_status_report.html section_report.html; do
+          for f in society_report.html vitality_status_report.html branch_report.html section_report.html section_branch_report.html; do
             if [ -f "$f" ]; then
               cp "$f" "_site/$f"
             fi

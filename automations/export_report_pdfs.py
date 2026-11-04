@@ -1,9 +1,10 @@
 """Batch-export the printable reports as one PDF per group.
 
 Opens each generated print report (university_report.html,
-society_report.html, section_report.html, plus the single-page
+society_report.html, branch_report.html, section_report.html,
+section_branch_report.html, plus the single-page
 vitality_status_report.html) in headless Chromium and saves every group
-page (one University, one Society, one Section) as its own PDF, then zips
+page (one University, Society, Student Branch or Section) as its own PDF, then zips
 each set. Replaces clicking every name in a report's table of contents and
 "Save as PDF" by hand.
 
@@ -17,9 +18,12 @@ Output (git-ignored), by default under report_pdfs/<date>/:
 
     colombia/university/<university>.pdf   + colombia/university.zip
     colombia/society/<society>.pdf         + colombia/society.zip
+    colombia/branch/<university>.pdf       + colombia/branch.zip    (one per Student Branch)
     colombia/section/<section>.pdf         + colombia/section.zip   (if section_report.html exists)
+    colombia/section_branch/<section>.pdf  + ...                    (Section reports by Student Branch)
     colombia/vitality_status_report.pdf
-    r9/<scope>/...                                                  (with --r9)
+    r9/<scope>/...                                                  (with --r9; region/branch/ has
+                                                                     one subfolder per Section)
 
 Unlike the CSV exporters next to it, this needs no login: it only reads
 local HTML files.
@@ -43,6 +47,8 @@ GROUPED_REPORTS = {
     "university": "university_report.html",
     "society": "society_report.html",
     "section": "section_report.html",
+    "section_branch": "section_branch_report.html",
+    "branch": "branch_report.html",
 }
 STATUS_REPORT = "vitality_status_report.html"
 
@@ -64,29 +70,36 @@ def scopes(include_root: bool, include_r9: bool, r9_scopes: list[str] | None) ->
 
 def export_grouped(page, report: Path, out_dir: Path, paper: str) -> list[Path]:
     page.goto(report.as_uri())
-    ids = page.eval_on_selector_all(".group-page", "els => els.map(e => e.id)")
-    out_dir.mkdir(parents=True, exist_ok=True)
+    style = page.eval_on_selector("style", "el => el.outerHTML")
+    # [id, data-folder, outerHTML] per group page. data-folder (e.g. the
+    # Section of a Student Branch page in a region-wide report) becomes a
+    # subfolder, so that report lands one folder per Section.
+    groups = page.eval_on_selector_all(
+        ".group-page", "els => els.map(e => [e.id, e.dataset.folder || '', e.outerHTML])"
+    )
     written = []
-    for group_id in ids:
-        # Same mechanism as the report's own printOnly(): hide every other
-        # group page under print media, then print.
-        page.evaluate(
-            """id => {
-                document.querySelectorAll('.group-page').forEach(el => el.classList.toggle('print-target', el.id === id));
-                document.body.classList.add('print-single');
-            }""",
-            group_id,
+    for group_id, folder, section_html in groups:
+        # Print each group from its own small document (same markup and
+        # styles, flagged like the report's printOnly()) rather than the
+        # whole report with the rest hidden: a region-wide report has
+        # hundreds of pages and re-laying it out per PDF is slow.
+        page.set_content(
+            f'<!doctype html><html lang="en"><head><meta charset="utf-8">{style}</head>'
+            f'<body class="print-single">{section_html.replace("group-page", "group-page print-target", 1)}</body></html>'
         )
-        pdf = out_dir / f"{group_id}.pdf"
+        target_dir = out_dir / folder if folder else out_dir
+        target_dir.mkdir(parents=True, exist_ok=True)
+        pdf = target_dir / f"{group_id}.pdf"
         page.pdf(path=str(pdf), format=paper, print_background=True, margin={"top": "12mm", "bottom": "12mm", "left": "10mm", "right": "10mm"})
         written.append(pdf)
     return written
 
 
 def zip_folder(files: list[Path], zip_path: Path) -> None:
+    root = zip_path.with_suffix("")
     with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as zf:
         for f in files:
-            zf.write(f, arcname=f.name)
+            zf.write(f, arcname=str(f.relative_to(root)))
 
 
 def main() -> None:

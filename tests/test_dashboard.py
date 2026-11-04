@@ -199,6 +199,52 @@ class OutputsTest(unittest.TestCase):
             js.write_text(script, encoding="utf-8")
             subprocess.run([node, "--check", str(js)], check=True, capture_output=True)
 
+    def branch_family_units(self):
+        """Two universities in two Sections: U1 has a branch + 2 children,
+        U2 has a chapter but no Student Branch."""
+        stb = make_ou()
+        stb.name, stb.spoid, stb.university, stb.section = "U1 Student Branch", "STB1", "U1", "Colombia Section"
+        ok = make_ou("Student Branch Chapter", members=10, general=2, technical=2, officers=("Chair", "Advisor"))
+        ok.name, ok.spoid, ok.university, ok.section = "U1 PE31 Chapter", "SBC1", "U1", "Colombia Section"
+        bad = make_ou("Affinity Group", members=1, general=0, officers=())
+        bad.name, bad.spoid, bad.university, bad.section = "U1 WIE", "SBA1", "U1", "Colombia Section"
+        orphan = make_ou("Student Branch Chapter", members=1, general=0, technical=0, officers=())
+        orphan.name, orphan.spoid, orphan.university, orphan.section = "U2 CS23 Chapter", "SBC2", "U2", "Peru Section"
+        return [stb, ok, bad, orphan]
+
+    def test_branch_report_one_page_per_university_with_section_folders(self):
+        out = self.tmp / "branch_report.html"
+        gvr.build_branch_report(self.branch_family_units(), out)
+        page = out.read_text(encoding="utf-8")
+        self.assertEqual(re.findall(r'class="group-page" id="([^"]+)" data-folder="([^"]+)"', page),
+                         [("u1", "colombia-section"), ("u2", "peru-section")])
+        u1 = page.split('id="u1"')[1].split('id="u2"')[0]
+        self.assertIn("Student Branch: U1 Student Branch", u1)
+        self.assertIn("1/2 meeting full vitality", u1)  # chapters & AGs
+        self.assertIn("Chair; Advisor", u1)            # what the WIE AG misses
+        self.assertIn("No Student Branch on record", page.split('id="u2"')[1])
+        self.assertIn("<h2>Peru Section", page)        # contents grouped by Section
+
+    def test_branch_report_single_section_has_no_folders(self):
+        units = [ou for ou in self.branch_family_units() if ou.section == "Colombia Section"]
+        out = self.tmp / "branch_one.html"
+        gvr.build_branch_report(units, out)
+        self.assertNotIn("data-folder", out.read_text(encoding="utf-8"))
+
+    def test_section_branch_report_groups_by_student_branch(self):
+        out = self.tmp / "section_branch_report.html"
+        gvr.build_section_branch_report(self.branch_family_units(), out)
+        page = out.read_text(encoding="utf-8")
+        self.assertEqual(page.count('class="group-page"'), 2)
+        colombia = page.split('id="colombia-section"')[1].split('id="peru-section"')[0]
+        # Family header, then the branch before its chapters/AGs.
+        self.assertLess(colombia.index('<tr class="family"><th colspan="9">U1</th>'), colombia.index("U1 Student Branch"))
+        self.assertLess(colombia.index("U1 Student Branch</td>"), colombia.index("U1 PE31 Chapter"))
+        self.assertIn("No Student Branch on record", page.split('id="peru-section"')[1])
+        # View switcher between the two Section report flavors.
+        self.assertIn('href="section_report.html"', page)
+        self.assertIn('class="current" aria-current="page">Grouped by Student Branch', page)
+
     def test_missing_requirements(self):
         ou = gvr.OU("X Chapter", "SBC9", "Student Branch Chapter", "U", 0)
         missing = gvr.missing_requirements(ou)

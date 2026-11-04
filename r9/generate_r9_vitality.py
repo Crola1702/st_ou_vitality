@@ -14,8 +14,11 @@ Every scope directory holds the same set the root pipeline writes next to
 vitality_history.csv, university_report.html, society_report.html,
 vitality_status_report.html), so the dashboard's relative links to the
 printable reports work unchanged. Every scope also gets section_report.html
-(one printable page per Section; a single page for a Section scope), which
-the section picker links to directly.
+(one printable page per Section; a single page for a Section scope) with its
+section_branch_report.html twin (same pages aggregated by parent Student
+Branch, for Section Chairs / SSACs), and branch_report.html (one page per
+Student Branch with its Chapters and Affinity Groups, to send to each
+branch). The section picker links to all of them directly.
 
 Scope is OU vitality only: `Member Detail View.csv` is not read, so the
 society-membership and membership-grade trends stay in their empty state.
@@ -35,7 +38,9 @@ sys.path.insert(0, str(R9_DIR.parent))
 from generate_vitality_report import (  # noqa: E402
     OU,
     STATUS_GOOD,
+    build_branch_report,
     build_dashboard,
+    build_section_branch_report,
     build_section_report,
     build_society_report,
     build_university_report,
@@ -146,7 +151,8 @@ def build_section_index(scopes: list[Scope], path: Path) -> None:
                 f'<td class="num">{s["met"]} <span class="pct">({s["pct"]:.0f}%)</span></td>'
                 + "".join(ratio_cell(*s["per_type"][t]) for t in OU_TYPES)
                 + f'<td class="links"><a class="open" href="{href}">Open</a>'
-                f'<a class="open" href="{html.escape(scope.slug)}/section_report.html" target="_blank" rel="noopener">Print</a>'
+                f'<a class="open" href="{html.escape(scope.slug)}/section_branch_report.html" target="_blank" rel="noopener">Print</a>'
+                f'<a class="open" href="{html.escape(scope.slug)}/branch_report.html" target="_blank" rel="noopener">Branches</a>'
                 f'<a class="open" href="{html.escape(scope.slug)}/vitality_status_report.html" target="_blank" rel="noopener">Met / not met</a></td>'
                 "</tr>"
             )
@@ -271,7 +277,8 @@ def build_section_index(scopes: list[Scope], path: Path) -> None:
       <div class="stat"><div class="stat-label">Full vitality</div><div class="stat-value" style="color:{STATUS_GOOD}">{region_stats["met"]:,} <span class="pct">({region_stats["pct"]:.0f}%)</span></div></div>
       <div class="actions">
         <a class="btn" href="{REGION_SLUG}/index.html">Open whole region</a>
-        <a class="btn" href="{REGION_SLUG}/section_report.html" target="_blank" rel="noopener">Print reports by Section</a>
+        <a class="btn" href="{REGION_SLUG}/section_branch_report.html" target="_blank" rel="noopener">Section reports by Student Branch</a>
+        <a class="btn" href="{REGION_SLUG}/branch_report.html" target="_blank" rel="noopener">Reports for every Student Branch</a>
         <a class="btn" href="{REGION_SLUG}/vitality_status_report.html" target="_blank" rel="noopener">OUs meeting / not meeting vitality</a>
       </div>
     </div>
@@ -317,6 +324,8 @@ def main() -> None:
         build_university_report(scope.units, scope_dir / "university_report.html")
         build_society_report(scope.units, scope_dir / "society_report.html")
         build_section_report(scope.units, scope_dir / "section_report.html")
+        build_section_branch_report(scope.units, scope_dir / "section_branch_report.html")
+        build_branch_report(scope.units, scope_dir / "branch_report.html")
         build_vitality_status_report(
             scope.units,
             scope_dir / "vitality_status_report.html",

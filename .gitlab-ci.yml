@@ -13,6 +13,8 @@ pages:
     - '[ -f society_report.html ] && cp society_report.html public/society_report.html || true'
     - '[ -f vitality_status_report.html ] && cp vitality_status_report.html public/vitality_status_report.html || true'
     - '[ -f section_report.html ] && cp section_report.html public/section_report.html || true'
+    - '[ -f section_branch_report.html ] && cp section_branch_report.html public/section_branch_report.html || true'
+    - '[ -f branch_report.html ] && cp branch_report.html public/branch_report.html || true'
     # Region 9 dashboards (beta): served as-is under /beta_r9/, so the
     # section picker's relative links keep working.
     - '[ -d r9/dashboards ] && cp -r r9/dashboards public/beta_r9 || true'
@@ -30,5 +32,7 @@ pages:
         - society_report.html
         - vitality_status_report.html
         - section_report.html
+        - section_branch_report.html
+        - branch_report.html
         - r9/dashboards/**/*
         - .gitlab-ci.yml

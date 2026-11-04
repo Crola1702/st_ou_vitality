@@ -16,6 +16,24 @@ version since this project doesn't cut releases.
   linked from the R9 Section picker ("Print reports by Section", plus a
   "Print" link per Section row) and from each dashboard header. The root
   pipeline writes it only when the exports carry a Section column.
+- **Student Branch reports** (`branch_report.html`, `build_branch_report()`):
+  one printable page per Student Branch (per university) to send to that
+  branch: its own requirements as a checklist (members, reported events,
+  Chair, Counselor, status) and a table of its Chapters and Affinity Groups
+  with what each one is still missing. The table of contents lists every
+  university grouped by Section with its branch result and OUs met, so it
+  doubles as the "which universities' OUs are compliant" overview. Written
+  for the root and every R9 scope; the region-wide copy downloads (ZIP or
+  PDF) into one folder per Section.
+- **Section reports grouped by Student Branch**
+  (`section_branch_report.html`, `build_section_branch_report()`): the
+  Section report aggregated by parent Student Branch, for Section Chairs and
+  SSACs. Per Section: a one-line-per-university summary (branch result,
+  what the branch is missing, Chapters & AGs met) and a detail table with
+  each Student Branch followed by its Chapters and Affinity Groups. Both
+  Section report flavors link to each other with an "All OUs / Grouped by
+  Student Branch" switcher. Chapters and AGs are matched to their branch by
+  university, as in `chapter_outreach/`.
 - **Batch download of the printable reports.** Every University, Society and
   Section report has a "Download all N pages (.zip)" button that packs one
   standalone HTML file per group (client-side, no library, works on the
@@ -23,6 +41,8 @@ version since this project doesn't cut releases.
   PDF per group (plus a ZIP per set and the status list) for the Colombia
   reports and, with `--r9`, every Region 9 scope, into the git-ignored
   `report_pdfs/<date>/`; `./run_all.sh --pdfs` runs it after a full refresh.
+  Each group is printed from its own small document, so all of Region 9
+  (about 600 PDFs) takes about 30 seconds.
 - **OUs meeting / not meeting vitality list** (`vitality_status_report.html`,
   `build_vitality_status_report()`): every OU split into two lists, the
   non-compliant one showing what is still missing (members, reported

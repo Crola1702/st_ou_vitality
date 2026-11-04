@@ -100,8 +100,8 @@ re-capture a HAR of applying the filters manually and update the indices.
 
 `export_report_pdfs.py` is the odd one out here: it fetches nothing and
 needs no login. It opens the generated print reports in headless Chromium
-and saves **every group page as its own PDF** (one per University, Society
-and Section), plus a `.zip` per set and a PDF of
+and saves **every group page as its own PDF** (one per University, Society,
+Student Branch and Section, in both Section report flavors), plus a `.zip` per set and a PDF of
 `vitality_status_report.html`, so you don't have to click each name and
 "Save as PDF" by hand. Run it after `generate_vitality_report.py` (and
 `r9/generate_r9_vitality.py` for `--r9`):
@@ -113,7 +113,9 @@ automations/.venv/bin/python automations/export_report_pdfs.py --r9-only --scope
 ```
 
 Output goes to `report_pdfs/<date>/<scope>/<report>/<group>.pdf`
-(git-ignored). `--only university society section status` limits which
+(git-ignored); a report covering several Sections (Region 9's Student
+Branch reports) gets one subfolder per Section. `--only university society
+branch section section_branch status` limits which
 reports, `--paper A4` changes the paper size, `--no-zip` skips the zips.
 `./run_all.sh --pdfs` runs it (Colombia only) after regenerating everything.
 
