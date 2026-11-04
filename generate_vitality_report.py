@@ -1632,6 +1632,7 @@ def build_report_builder(
     scope_label: str,
     dashboard_href: str = "vitality_dashboard.html",
     csv_href: str = "vitality_report.csv",
+    generated_on: str | None = None,
 ) -> None:
     """The report builder: one page for every printable report and export.
 
@@ -1647,7 +1648,9 @@ def build_report_builder(
     can open it pre-filtered. Always light-themed, like the print reports."""
     data = {
         "scope": scope_label,
-        "generated": datetime.now().strftime("%Y-%m-%d"),
+        # The data's date: today on a normal run; a rebuild from committed
+        # outputs passes the date those were generated.
+        "generated": generated_on or datetime.now().strftime("%Y-%m-%d"),
         "colors": {str(k): v for k, v in REQUIREMENTS_COLOR.items()},
         "ous": builder_records(units),
     }

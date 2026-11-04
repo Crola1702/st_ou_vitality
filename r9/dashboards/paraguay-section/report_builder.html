@@ -1,0 +1,1084 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Report builder: Paraguay Section</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+/* Report builder (report_builder.html). Always light, like the other print
+   reports: what is on screen is what gets printed / turned into PDFs.
+   The .group-page blocks (h1, .context, .subtitle, .stat-row, .bar-chart,
+   .checklist, h2, table, .note) are the ones report_export.js knows how to
+   lay out as PDF. */
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; background: #f2f2f0; color: #111; }
+main { max-width: 1120px; margin: 0 auto; padding: 24px 16px 48px; }
+a { color: inherit; }
+
+header h1 { font-size: 1.5rem; margin: 4px 0 4px; }
+header .scope { display: block; font-size: 0.95rem; font-weight: 500; color: #555; margin-top: 2px; }
+.crumbs { margin: 0; font-size: 0.85rem; }
+.lead { color: #444; margin: 6px 0 20px; font-size: 0.92rem; }
+h2 { font-size: 1rem; margin: 0 0 10px; }
+
+.presets { margin-bottom: 18px; }
+.preset-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 8px; }
+.preset {
+  font: inherit; text-align: left; cursor: pointer; padding: 10px 12px; border-radius: 8px;
+  border: 1px solid #d6d6d2; background: #fff; color: #111; display: flex; flex-direction: column; gap: 3px;
+}
+.preset:hover { border-color: #888; }
+.preset strong { font-size: 0.88rem; }
+.preset span { font-size: 0.76rem; color: #555; line-height: 1.35; }
+
+.controls { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; margin-bottom: 18px; }
+.panel { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 14px 16px; }
+.step {
+  display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; margin-right: 6px;
+  border-radius: 50%; background: #111; color: #fff; font-size: 0.72rem; vertical-align: 1px;
+}
+.field { margin: 0 0 12px; border: 0; padding: 0; min-width: 0; }
+.field > label:not(.opt), .field legend { display: block; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; color: #666; margin: 0 0 4px; padding: 0; }
+.field select, .field input[type=search] {
+  width: 100%; font: inherit; font-size: 0.88rem; padding: 6px 8px; border: 1px solid #ccc; border-radius: 6px; background: #fff; color: #111;
+}
+.opt { display: flex; align-items: flex-start; gap: 7px; font-size: 0.88rem; margin: 4px 0; cursor: pointer; line-height: 1.3; }
+.opt input { margin: 2px 0 0; flex-shrink: 0; }
+.summary { font-size: 0.9rem; margin: 0 0 12px; }
+.actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.actions button {
+  font: inherit; font-size: 0.88rem; cursor: pointer; padding: 8px 14px; border-radius: 6px;
+  border: 1px solid #bbb; background: #fff; color: #111;
+}
+.actions button.primary { background: #111; border-color: #111; color: #fff; font-weight: 600; }
+.actions button:disabled { opacity: 0.45; cursor: default; }
+.hint { font-size: 0.78rem; color: #555; margin: 10px 0 0; }
+
+.contents { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 14px 16px; margin-bottom: 24px; }
+.contents ol { margin: 0; padding-left: 22px; columns: 2; column-gap: 28px; font-size: 0.85rem; max-height: 260px; overflow: auto; }
+.contents li { margin: 3px 0; break-inside: avoid; }
+.contents a { text-decoration: none; }
+.contents a:hover { text-decoration: underline; }
+@media (max-width: 640px) { .contents ol { columns: 1; } }
+
+/* ---- report pages (preview, print, PDF) ---- */
+.group-page { background: #fff; border: 1px solid #ddd; border-radius: 4px; padding: 32px; margin: 0 0 28px; overflow-x: auto; }
+.group-page h1 { font-size: 1.5rem; margin: 0 0 2px; }
+.group-page h2 { font-size: 1.02rem; margin: 22px 0 8px; }
+.context { color: #333; font-size: 0.92rem; margin: 2px 0; }
+.subtitle { color: #555; font-size: 0.8rem; margin: 2px 0 14px; }
+.type-note { font-weight: 600; font-size: 0.85rem; margin: -6px 0 14px; }
+.page-toolbar { margin-bottom: 10px; }
+.page-toolbar button { font: inherit; font-size: 0.8rem; cursor: pointer; padding: 5px 12px; border-radius: 6px; border: 1px solid #ccc; background: #fafafa; color: #111; }
+.stat-row { display: flex; flex-wrap: wrap; gap: 28px; margin-bottom: 14px; }
+.stat-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.03em; color: #666; }
+.stat-value { font-size: 1.35rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.stat-value.good { color: #0ca30c; }
+.bar-chart { margin-bottom: 8px; max-width: 640px; }
+.bar-row { display: grid; grid-template-columns: 100px 1fr 32px; align-items: center; gap: 10px; margin: 5px 0; }
+.bar-label { font-size: 0.76rem; color: #333; }
+.bar-track { background: #eee; border-radius: 999px; height: 12px; overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 999px; }
+.bar-value { font-size: 0.78rem; font-weight: 700; text-align: right; font-variant-numeric: tabular-nums; }
+.checklist { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 8px; margin-bottom: 6px; }
+.check { border: 1px solid #e3e3e0; border-radius: 6px; padding: 8px 10px; }
+.check-label { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.03em; color: #666; }
+.check-value { font-size: 1rem; font-weight: 700; margin-top: 2px; }
+.note { color: #555; font-size: 0.85rem; }
+.muted { color: #777; font-weight: 400; font-size: 0.85em; }
+.ok { color: #0ca30c; }
+.no { color: #d03b3b; }
+table { border-collapse: collapse; width: 100%; font-size: 0.8rem; }
+th, td { padding: 5px 7px; text-align: left; border-bottom: 1px solid #eee; vertical-align: top; }
+th { font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.02em; color: #666; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+td.mono { color: #555; white-space: nowrap; font-variant-numeric: tabular-nums; }
+td.missing { color: #d03b3b; }
+tr.family th { background: #f4f4f1; color: #111; font-size: 0.78rem; text-transform: none; letter-spacing: 0; padding-top: 8px; }
+tr.child td:first-child { padding-left: 20px; }
+
+@media print {
+  body { background: #fff; }
+  main { max-width: none; padding: 0; }
+  .no-print { display: none !important; }
+  .group-page { border: none; padding: 0; margin: 0; overflow: visible; page-break-after: always; }
+  .group-page:last-child { page-break-after: auto; }
+  table { font-size: 0.72rem; }
+  th, td { padding: 3px 5px; }
+  thead { display: table-header-group; }
+  tr { page-break-inside: avoid; }
+  tr.family { page-break-after: avoid; }
+}
+
+</style>
+</head>
+<body>
+<main>
+  <header class="no-print">
+    <p class="crumbs"><a href="index.html">&larr; Dashboard</a></p>
+    <h1>Report builder <span class="scope">Paraguay Section</span></h1>
+    <p class="lead">Choose the OUs, how to split them, and export: one PDF per group to send by email, a CSV, or print.</p>
+  </header>
+
+  <section class="presets no-print" aria-label="Common reports">
+    <h2>Start from a common report</h2>
+    <div class="preset-list" id="presets"></div>
+  </section>
+
+  <div class="controls no-print">
+    <section class="panel">
+      <h2><span class="step">1</span> Which OUs</h2>
+      <div class="field" id="field-council"><label for="f-council">Council</label><select id="f-council"></select></div>
+      <div class="field" id="field-section"><label for="f-section">Section</label><select id="f-section"></select></div>
+      <div class="field"><label for="f-university">Student Branch / university</label><select id="f-university"></select></div>
+      <div class="field"><label for="f-society">Society</label><select id="f-society"></select></div>
+      <fieldset class="field"><legend>OU types</legend>
+        <label class="opt"><input type="checkbox" name="types" value="branch" checked> Student Branches</label>
+        <label class="opt"><input type="checkbox" name="types" value="chapter" checked> Chapters</label>
+        <label class="opt"><input type="checkbox" name="types" value="ag" checked> Affinity Groups</label>
+      </fieldset>
+      <fieldset class="field"><legend>Vitality</legend>
+        <label class="opt"><input type="radio" name="status" value="all" checked> All</label>
+        <label class="opt"><input type="radio" name="status" value="met"> Meeting full vitality</label>
+        <label class="opt"><input type="radio" name="status" value="notmet"> Not meeting it</label>
+        <label class="opt"><input type="radio" name="status" value="one"> Missing one requirement (quick wins)</label>
+        <label class="opt"><input type="radio" name="status" value="two"> Missing two or more</label>
+      </fieldset>
+      <div class="field"><label for="f-q">Search</label><input id="f-q" type="search" placeholder="Unit, university or SPO ID"></div>
+    </section>
+
+    <section class="panel">
+      <h2><span class="step">2</span> How to split it</h2>
+      <fieldset class="field"><legend>One report per</legend>
+        <label class="opt"><input type="radio" name="group" value="none" checked> Nothing: a single report</label>
+        <label class="opt"><input type="radio" name="group" value="branch"> Student Branch (with its Chapters and Affinity Groups)</label>
+        <label class="opt" id="opt-group-section"><input type="radio" name="group" value="section"> Section</label>
+        <label class="opt" id="opt-group-council"><input type="radio" name="group" value="council"> Council</label>
+        <label class="opt"><input type="radio" name="group" value="society"> Society</label>
+      </fieldset>
+      <label class="opt" id="opt-nest"><input type="checkbox" id="f-nest" checked> Inside each report, list Chapters and Affinity Groups under their Student Branch</label>
+    </section>
+
+    <section class="panel">
+      <h2><span class="step">3</span> Export</h2>
+      <p class="summary" id="summary"></p>
+      <div class="actions">
+        <button type="button" class="primary" id="download-all-pdfs">Download PDFs</button>
+        <button type="button" id="dl-csv">Download CSV</button>
+        <button type="button" id="print">Print</button>
+      </div>
+      <p class="hint" id="pdf-hint"></p>
+      <p class="hint">Full data, every OU and column: <a href="vitality_report.csv" download>vitality_report.csv</a></p>
+    </section>
+  </div>
+
+  <section class="contents no-print" aria-label="Reports in this export">
+    <h2>Preview</h2>
+    <ol id="toc"></ol>
+  </section>
+  <div id="pages"></div>
+</main>
+<script id="builder-data" type="application/json">{"scope":"Paraguay Section","generated":"2026-10-30","colors":{"3":"#0ca30c","2":"#fab219","1":"#ec835a","0":"#d03b3b"},"ous":[{"n":"Catholic University of Asuncion","id":"STB40276807","t":"branch","u":"Catholic University of Asuncion","s":"","sd":"","se":"Paraguay Section","co":"Cono Sur Council","m":2,"mm":12,"mo":false,"e":0,"em":4,"eo":false,"tech":false,"ch":false,"r2":"Counselor","cn":false,"rq":0,"ok":false,"miss":["Members 2/12","Reported events 0/4","Chair","Counselor"]},{"n":"Univ Nacional de Villarrica del Espiritu Santo","id":"STB60216316","t":"branch","u":"Univ Nacional de Villarrica del Espiritu Santo","s":"","sd":"","se":"Paraguay Section","co":"Cono Sur Council","m":1,"mm":12,"mo":false,"e":0,"em":4,"eo":false,"tech":false,"ch":false,"r2":"Counselor","cn":false,"rq":0,"ok":false,"miss":["Members 1/12","Reported events 0/4","Chair","Counselor"]},{"n":"Univ Catolica Nuestra Senora de la Asuncion,WIE","id":"SBA11535","t":"ag","u":"Universidad Catolica Nuestra Senora de la Asuncion","s":"WIE","sd":"WIE","se":"Paraguay Section","co":"Cono Sur Council","m":9,"mm":6,"mo":true,"e":1,"em":2,"eo":false,"tech":false,"ch":false,"r2":"Advisor","cn":false,"rq":1,"ok":false,"miss":["Reported events 1/2","Chair","Advisor"]},{"n":"Universidad Catolica Nuestra Senora de la Asuncion","id":"STB11535","t":"branch","u":"Universidad Catolica Nuestra Senora de la Asuncion","s":"","sd":"","se":"Paraguay Section","co":"Cono Sur Council","m":13,"mm":12,"mo":true,"e":3,"em":4,"eo":false,"tech":false,"ch":true,"r2":"Counselor","cn":true,"rq":2,"ok":false,"miss":["Reported events 3/4"]},{"n":"Univ Catolica Nuestra Senora de la Asuncion,PE31","id":"SBC11535","t":"chapter","u":"Universidad Catolica Nuestra Senora de la Asuncion","s":"PE31","sd":"IEEE Power & Energy Society","se":"Paraguay Section","co":"Cono Sur Council","m":6,"mm":6,"mo":true,"e":0,"em":2,"eo":false,"tech":true,"ch":true,"r2":"Advisor","cn":false,"rq":1,"ok":false,"miss":["Reported technical events 0/2","Advisor"]},{"n":"Univ Catolica Nuestra Senora de la Asuncion,RA24","id":"SBC11535A","t":"chapter","u":"Universidad Catolica Nuestra Senora de la Asuncion","s":"RA24","sd":"IEEE Robotics and Automation Society","se":"Paraguay Section","co":"Cono Sur Council","m":7,"mm":6,"mo":true,"e":0,"em":2,"eo":false,"tech":true,"ch":true,"r2":"Advisor","cn":true,"rq":2,"ok":false,"miss":["Reported technical events 0/2"]},{"n":"Universidad Nacional De Asuncion (UNA) SB SIGHT","id":"SBA37161S","t":"ag","u":"Universidad Nacional de Asuncion","s":"(UNA) SB SIGHT","sd":"(UNA) SB SIGHT","se":"Paraguay Section","co":"Cono Sur Council","m":21,"mm":6,"mo":true,"e":4,"em":2,"eo":true,"tech":false,"ch":false,"r2":"Advisor","cn":false,"rq":2,"ok":false,"miss":["Chair","Advisor"]},{"n":"Universidad Nacional de Asuncion,WIE","id":"SBA37161","t":"ag","u":"Universidad Nacional de Asuncion","s":"WIE","sd":"WIE","se":"Paraguay Section","co":"Cono Sur Council","m":18,"mm":6,"mo":true,"e":3,"em":2,"eo":true,"tech":false,"ch":false,"r2":"Advisor","cn":false,"rq":2,"ok":false,"miss":["Chair","Advisor"]},{"n":"Universidad Nacional de Asuncion","id":"STB37161","t":"branch","u":"Universidad Nacional de Asuncion","s":"","sd":"","se":"Paraguay Section","co":"Cono Sur Council","m":51,"mm":12,"mo":true,"e":17,"em":4,"eo":true,"tech":false,"ch":true,"r2":"Counselor","cn":true,"rq":3,"ok":true,"miss":[]},{"n":"Universidad Nacional de Asuncion,AES10","id":"SBC37161F","t":"chapter","u":"Universidad Nacional de Asuncion","s":"AES10","sd":"IEEE Aerospace and Electronic Systems Society","se":"Paraguay Section","co":"Cono Sur Council","m":8,"mm":6,"mo":true,"e":0,"em":2,"eo":false,"tech":true,"ch":true,"r2":"Advisor","cn":true,"rq":2,"ok":false,"miss":["Reported technical events 0/2"]},{"n":"Universidad Nacional de Asuncion,C16","id":"SBC37161E","t":"chapter","u":"Universidad Nacional de Asuncion","s":"C16","sd":"IEEE Computer Society","se":"Paraguay Section","co":"Cono Sur Council","m":15,"mm":6,"mo":true,"e":1,"em":2,"eo":false,"tech":true,"ch":true,"r2":"Advisor","cn":true,"rq":2,"ok":false,"miss":["Reported technical events 1/2"]},{"n":"Universidad Nacional de Asuncion,EMB18","id":"SBC37161A","t":"chapter","u":"Universidad Nacional de Asuncion","s":"EMB18","sd":"IEEE Engineering in Medicine and Biology Society","se":"Paraguay Section","co":"Cono Sur Council","m":6,"mm":6,"mo":true,"e":1,"em":2,"eo":false,"tech":true,"ch":false,"r2":"Advisor","cn":false,"rq":1,"ok":false,"miss":["Reported technical events 1/2","Chair","Advisor"]},{"n":"Universidad Nacional de Asuncion,IA34","id":"SBC37161D","t":"chapter","u":"Universidad Nacional de Asuncion","s":"IA34","sd":"IEEE Industry Applications Society","se":"Paraguay Section","co":"Cono Sur Council","m":6,"mm":6,"mo":true,"e":0,"em":2,"eo":false,"tech":true,"ch":true,"r2":"Advisor","cn":false,"rq":1,"ok":false,"miss":["Reported technical events 0/2","Advisor"]},{"n":"Universidad Nacional de Asuncion,PE31","id":"SBC37161B","t":"chapter","u":"Universidad Nacional de Asuncion","s":"PE31","sd":"IEEE Power & Energy Society","se":"Paraguay Section","co":"Cono Sur Council","m":3,"mm":6,"mo":false,"e":0,"em":2,"eo":false,"tech":true,"ch":true,"r2":"Advisor","cn":true,"rq":1,"ok":false,"miss":["Members 3/6","Reported technical events 0/2"]},{"n":"Universidad Nacional de Asuncion,RA24","id":"SBC37161C","t":"chapter","u":"Universidad Nacional de Asuncion","s":"RA24","sd":"IEEE Robotics and Automation Society","se":"Paraguay Section","co":"Cono Sur Council","m":6,"mm":6,"mo":true,"e":0,"em":2,"eo":false,"tech":true,"ch":true,"r2":"Advisor","cn":true,"rq":2,"ok":false,"miss":["Reported technical events 0/2"]},{"n":"Universidad Nacional de Caaguazu","id":"STB60216313","t":"branch","u":"Universidad Nacional de Caaguazu","s":"","sd":"","se":"Paraguay Section","co":"Cono Sur Council","m":4,"mm":12,"mo":false,"e":1,"em":4,"eo":false,"tech":false,"ch":true,"r2":"Counselor","cn":true,"rq":1,"ok":false,"miss":["Members 4/12","Reported events 1/4"]},{"n":"Universidad Nacional del Este","id":"STB60209263","t":"branch","u":"Universidad Nacional del Este","s":"","sd":"","se":"Paraguay Section","co":"Cono Sur Council","m":3,"mm":12,"mo":false,"e":1,"em":4,"eo":false,"tech":false,"ch":true,"r2":"Counselor","cn":false,"rq":0,"ok":false,"miss":["Members 3/12","Reported events 1/4","Counselor"]},{"n":"Universidad Politecnica Taiwan Paraguay","id":"STB60216319","t":"branch","u":"Universidad Politecnica Taiwan Paraguay","s":"","sd":"","se":"Paraguay Section","co":"Cono Sur Council","m":18,"mm":12,"mo":true,"e":3,"em":4,"eo":false,"tech":false,"ch":true,"r2":"Counselor","cn":true,"rq":2,"ok":false,"miss":["Reported events 3/4"]},{"n":"Universidad Privada del Este,WIE","id":"SBA60216322","t":"ag","u":"Universidad Privada del Este","s":"WIE","sd":"WIE","se":"Paraguay Section","co":"Cono Sur Council","m":8,"mm":6,"mo":true,"e":0,"em":2,"eo":false,"tech":false,"ch":false,"r2":"Advisor","cn":false,"rq":1,"ok":false,"miss":["Reported events 0/2","Chair","Advisor"]},{"n":"Universidad Privada del Este","id":"STB60216322","t":"branch","u":"Universidad Privada del Este","s":"","sd":"","se":"Paraguay Section","co":"Cono Sur Council","m":21,"mm":12,"mo":true,"e":5,"em":4,"eo":true,"tech":false,"ch":true,"r2":"Counselor","cn":true,"rq":3,"ok":true,"miss":[]},{"n":"Universidad Privada del Este,PE31","id":"SBC60216322","t":"chapter","u":"Universidad Privada del Este","s":"PE31","sd":"IEEE Power & Energy Society","se":"Paraguay Section","co":"Cono Sur Council","m":10,"mm":6,"mo":true,"e":0,"em":2,"eo":false,"tech":true,"ch":true,"r2":"Advisor","cn":true,"rq":2,"ok":false,"miss":["Reported technical events 0/2"]},{"n":"Universidad Privada del Este,RA24","id":"SBC60216322A","t":"chapter","u":"Universidad Privada del Este","s":"RA24","sd":"IEEE Robotics and Automation Society","se":"Paraguay Section","co":"Cono Sur Council","m":9,"mm":6,"mo":true,"e":0,"em":2,"eo":false,"tech":true,"ch":true,"r2":"Advisor","cn":true,"rq":2,"ok":false,"miss":["Reported technical events 0/2"]},{"n":"Univ del Cono Sur de las Americas, WIE","id":"SBA04861","t":"ag","u":"Universidad del Cono Sur de Las Americas","s":"WIE","sd":"WIE","se":"Paraguay Section","co":"Cono Sur Council","m":10,"mm":6,"mo":true,"e":0,"em":2,"eo":false,"tech":false,"ch":false,"r2":"Advisor","cn":false,"rq":1,"ok":false,"miss":["Reported events 0/2","Chair","Advisor"]},{"n":"Universidad del Cono Sur de las Americas","id":"STB04861","t":"branch","u":"Universidad del Cono Sur de Las Americas","s":"","sd":"","se":"Paraguay Section","co":"Cono Sur Council","m":16,"mm":12,"mo":true,"e":1,"em":4,"eo":false,"tech":false,"ch":true,"r2":"Counselor","cn":true,"rq":2,"ok":false,"miss":["Reported events 1/4"]},{"n":"Univ del Cono Sur de las Americas,IA34","id":"SBC04861B","t":"chapter","u":"Universidad del Cono Sur de Las Americas","s":"IA34","sd":"IEEE Industry Applications Society","se":"Paraguay Section","co":"Cono Sur Council","m":6,"mm":6,"mo":true,"e":0,"em":2,"eo":false,"tech":true,"ch":true,"r2":"Advisor","cn":true,"rq":2,"ok":false,"miss":["Reported technical events 0/2"]},{"n":"Universidad del Cono Sur de las Americas, C16","id":"SBC04861A","t":"chapter","u":"Universidad del Cono Sur de Las Americas","s":"C16","sd":"IEEE Computer Society","se":"Paraguay Section","co":"Cono Sur Council","m":9,"mm":6,"mo":true,"e":0,"em":2,"eo":false,"tech":true,"ch":true,"r2":"Advisor","cn":true,"rq":2,"ok":false,"miss":["Reported technical events 0/2"]}]}</script>
+<script>
+// Batch PDF export for the report builder (report_builder.html). Inlined
+// by generate_vitality_report.py before report_builder.js; no library, no
+// network.
+//
+// "Download all as PDF" turns every .group-page into its own PDF and packs
+// them into one ZIP (folders from data-folder, names from data-filename),
+// so each Student Branch / Section can be emailed its own file. The PDF
+// writer is minimal on purpose: the base-14 Helvetica fonts (no embedding),
+// WinAnsi text, and a layout engine that knows the handful of blocks these
+// pages are made of (title, stats, bars, checklist, headings, notes,
+// tables). Colors and bold come from the page's computed styles, so the PDF
+// matches what is on screen. (?download=pdf is handled by the builder.)
+
+(function () {
+  // ---------- fonts: Helvetica / Helvetica-Bold widths, chars 32..126 ----------
+  const HELV = [278,278,355,556,556,889,667,191,333,333,389,584,278,333,278,278,556,556,556,556,556,556,556,556,556,556,278,278,584,584,584,556,1015,667,667,722,722,667,611,778,722,278,500,667,556,833,722,778,667,778,722,667,611,722,667,944,667,667,611,278,278,278,469,556,333,556,556,500,556,556,278,556,556,222,222,500,222,833,556,556,556,556,333,500,278,556,500,722,500,500,500,334,260,334,584];
+  const HELV_B = [278,333,474,556,556,889,722,238,333,333,389,584,278,333,278,278,556,556,556,556,556,556,556,556,556,556,333,333,584,584,584,611,975,722,722,722,722,667,611,778,722,278,556,722,611,833,722,778,667,778,722,667,611,722,667,944,667,667,611,333,278,333,584,556,333,556,611,556,611,556,333,611,611,278,278,556,278,889,611,611,611,611,389,556,333,611,556,778,556,556,500,389,280,389,584];
+  // Unicode -> WinAnsi bytes 0x80..0x9F (the rest of Latin-1 maps 1:1).
+  const WINANSI = { 0x20AC: 0x80, 0x2026: 0x85, 0x2018: 0x91, 0x2019: 0x92, 0x201C: 0x93, 0x201D: 0x94, 0x2022: 0x95, 0x2013: 0x96, 0x2014: 0x97 };
+  const SPECIAL_WIDTH = { 0x80: 556, 0x85: 1000, 0x91: 222, 0x92: 222, 0x93: 333, 0x94: 333, 0x95: 350, 0x96: 556, 0x97: 1000, 0xB7: 278, 0xA0: 278 };
+
+  function toWinAnsi(str) {
+    let out = '';
+    for (const ch of str) {
+      const c = ch.codePointAt(0);
+      if ((c >= 32 && c < 127) || (c >= 0xA0 && c <= 0xFF)) out += ch;
+      else if (WINANSI[c]) out += String.fromCharCode(WINANSI[c]);
+      else if (c === 0x2192) out += '->';
+      else if (c === 9 || c === 10 || c === 13) out += ' ';
+      else {
+        const base = ch.normalize('NFD').replace(/[̀-ͯ]/g, '');
+        out += /^[\x20-\x7e]+$/.test(base) ? base : '?';
+      }
+    }
+    return out;
+  }
+
+  function charWidth(code, bold) {
+    if (code >= 32 && code <= 126) return (bold ? HELV_B : HELV)[code - 32];
+    if (SPECIAL_WIDTH[code]) return SPECIAL_WIDTH[code];
+    if (code >= 0xC0) {
+      const base = String.fromCharCode(code).normalize('NFD').charCodeAt(0);
+      if (base >= 32 && base <= 126) return (bold ? HELV_B : HELV)[base - 32];
+    }
+    return 556;
+  }
+
+  function textWidth(s, size, bold) {
+    let w = 0;
+    for (let i = 0; i < s.length; i++) w += charWidth(s.charCodeAt(i), bold);
+    return (w / 1000) * size;
+  }
+
+  // ---------- colors ----------
+  function parseColor(css, fallback) {
+    const m = /rgba?\(([^)]+)\)/.exec(css || '');
+    if (!m) return fallback || [0, 0, 0];
+    const p = m[1].split(',').map(v => parseFloat(v));
+    if (p.length === 4 && p[3] === 0) return fallback || [0, 0, 0];
+    return [p[0] / 255, p[1] / 255, p[2] / 255];
+  }
+  const GREY = [0.4, 0.4, 0.4], DARK = [0.07, 0.07, 0.07], RULE = [0.88, 0.88, 0.87], BAND = [0.955, 0.955, 0.945];
+  const f3 = n => (Math.round(n * 1000) / 1000).toString();
+  const rgb = c => c.map(f3).join(' ');
+
+  // ---------- text runs from the DOM ----------
+  // A run is {text, bold, color}; text is already WinAnsi.
+  function runsOf(el) {
+    const runs = [];
+    const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+    let node;
+    while ((node = walker.nextNode())) {
+      const parent = node.parentElement;
+      if (!parent || parent.closest('.no-print') || parent.closest('[hidden]')) continue;
+      let text = node.nodeValue.replace(/\s+/g, ' ');
+      if (!text) continue;
+      const cs = getComputedStyle(parent);
+      if (cs.textTransform === 'uppercase') text = text.toUpperCase();
+      const run = { text: toWinAnsi(text), bold: parseInt(cs.fontWeight, 10) >= 600, color: parseColor(cs.color, DARK) };
+      const last = runs[runs.length - 1];
+      if (last && last.bold === run.bold && last.color.join() === run.color.join()) last.text += run.text;
+      else runs.push(run);
+    }
+    if (runs.length) {
+      runs[0].text = runs[0].text.replace(/^ +/, '');
+      runs[runs.length - 1].text = runs[runs.length - 1].text.replace(/ +$/, '');
+    }
+    return runs.filter(r => r.text);
+  }
+
+  function forceStyle(runs, opts) {
+    return runs.map(r => ({ text: r.text, bold: opts.bold === undefined ? r.bold : opts.bold, color: opts.color || r.color }));
+  }
+
+  // Word-wrap runs into lines of segments {text, bold, color, w}.
+  function wrap(runs, size, maxWidth) {
+    const lines = [[]];
+    let lineW = 0;
+    const push = (seg) => { lines[lines.length - 1].push(seg); lineW += seg.w; };
+    const newLine = () => { lines.push([]); lineW = 0; };
+    for (const r of runs) {
+      for (const tok of r.text.split(/( +)/)) {
+        if (!tok) continue;
+        const isSpace = /^ +$/.test(tok);
+        let w = textWidth(tok, size, r.bold);
+        if (isSpace) {
+          if (lineW === 0) continue;
+          push({ text: tok, bold: r.bold, color: r.color, w });
+          continue;
+        }
+        if (lineW + w > maxWidth && lineW > 0) {
+          const line = lines[lines.length - 1];
+          while (line.length && /^ +$/.test(line[line.length - 1].text)) line.pop();
+          newLine();
+        }
+        if (w > maxWidth) {
+          // A single word wider than the column: break it by characters.
+          let chunk = '';
+          for (const ch of tok) {
+            const cw = textWidth(chunk + ch, size, r.bold);
+            if (cw > maxWidth - lineW && chunk) {
+              push({ text: chunk, bold: r.bold, color: r.color, w: textWidth(chunk, size, r.bold) });
+              newLine();
+              chunk = ch;
+            } else chunk += ch;
+          }
+          w = textWidth(chunk, size, r.bold);
+          push({ text: chunk, bold: r.bold, color: r.color, w });
+        } else push({ text: tok, bold: r.bold, color: r.color, w });
+      }
+    }
+    for (const line of lines) while (line.length && /^ +$/.test(line[line.length - 1].text)) line.pop();
+    return lines.filter((l, i) => l.length || i === 0);
+  }
+
+  const lineWidth = line => line.reduce((s, seg) => s + seg.w, 0);
+
+  // ---------- PDF document ----------
+  const PAGE_W = 612, PAGE_H = 792, MARGIN = 40, FOOTER = 22;
+  const CONTENT_W = PAGE_W - 2 * MARGIN;
+
+  function esc(s) { return s.replace(/\\/g, '\\\\').replace(/\(/g, '\\(').replace(/\)/g, '\\)'); }
+
+  class Doc {
+    constructor(title) { this.title = toWinAnsi(title); this.pages = []; this.newPage(); }
+    newPage() { this.ops = []; this.pages.push(this.ops); this.y = MARGIN; }
+    room(h) { return this.y + h <= PAGE_H - MARGIN - FOOTER; }
+    // Start a new page unless `h` points still fit (and we're not at the top).
+    ensure(h) { if (!this.room(h) && this.y > MARGIN) { this.newPage(); return true; } return false; }
+    text(x, baseline, s, size, bold, color) {
+      if (!s) return;
+      this.ops.push(`BT /${bold ? 'F2' : 'F1'} ${f3(size)} Tf ${rgb(color)} rg ${f3(x)} ${f3(PAGE_H - baseline)} Td (${esc(s)}) Tj ET`);
+    }
+    line(segs, x, baseline, size) {
+      let cx = x;
+      for (const s of segs) { this.text(cx, baseline, s.text, size, s.bold, s.color); cx += s.w; }
+    }
+    rect(x, y, w, h, color) { this.ops.push(`${rgb(color)} rg ${f3(x)} ${f3(PAGE_H - y - h)} ${f3(w)} ${f3(h)} re f`); }
+    stroke(x, y, w, h, color) { this.ops.push(`0.6 w ${rgb(color)} RG ${f3(x)} ${f3(PAGE_H - y - h)} ${f3(w)} ${f3(h)} re S`); }
+    hline(x1, x2, y, color) { this.ops.push(`0.5 w ${rgb(color)} RG ${f3(x1)} ${f3(PAGE_H - y)} m ${f3(x2)} ${f3(PAGE_H - y)} l S`); }
+
+    // Wrapped paragraph at the cursor.
+    para(runs, size, opts = {}) {
+      const lh = size * 1.25;
+      const lines = wrap(runs, size, opts.width || CONTENT_W);
+      for (const l of lines) {
+        this.ensure(lh);
+        this.line(l, opts.x || MARGIN, this.y + size, size);
+        this.y += lh;
+      }
+      this.y += opts.after || 0;
+    }
+
+    bytes() {
+      const n = this.pages.length;
+      const footerTitle = this.title;
+      this.pages.forEach((ops, i) => {
+        const label = `${footerTitle}  ·  ${i + 1}/${n}`;
+        ops.push(`BT /F1 7 Tf ${rgb(GREY)} rg ${MARGIN} ${MARGIN - 18} Td (${esc(toWinAnsi(label))}) Tj ET`);
+      });
+      const objs = [];
+      objs[1] = '<< /Type /Catalog /Pages 2 0 R >>';
+      const kids = this.pages.map((_, i) => `${6 + i * 2} 0 R`).join(' ');
+      objs[2] = `<< /Type /Pages /Kids [${kids}] /Count ${n} >>`;
+      objs[3] = '<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>';
+      objs[4] = '<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>';
+      objs[5] = `<< /Title (${esc(this.title)}) /Producer (IEEE Student OU Vitality) >>`;
+      this.pages.forEach((ops, i) => {
+        const content = ops.join('\n');
+        objs[6 + i * 2] = `<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ${PAGE_W} ${PAGE_H}] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents ${7 + i * 2} 0 R >>`;
+        objs[7 + i * 2] = `<< /Length ${content.length} >>\nstream\n${content}\nendstream`;
+      });
+      let out = '%PDF-1.4\n%âãÏÓ\n';
+      const offsets = [];
+      for (let i = 1; i < objs.length; i++) {
+        offsets[i] = out.length;
+        out += `${i} 0 obj\n${objs[i]}\nendobj\n`;
+      }
+      const xref = out.length;
+      out += `xref\n0 ${objs.length}\n0000000000 65535 f \n`;
+      for (let i = 1; i < objs.length; i++) out += `${String(offsets[i]).padStart(10, '0')} 00000 n \n`;
+      out += `trailer\n<< /Size ${objs.length} /Root 1 0 R /Info 5 0 R >>\nstartxref\n${xref}\n%%EOF\n`;
+      const bytes = new Uint8Array(out.length);
+      for (let i = 0; i < out.length; i++) bytes[i] = out.charCodeAt(i) & 0xFF;
+      return bytes;
+    }
+  }
+
+  // ---------- blocks ----------
+  function drawStats(doc, el) {
+    const stats = [...el.querySelectorAll('.stat')];
+    const colW = Math.min(170, CONTENT_W / Math.max(stats.length, 1));
+    doc.ensure(34);
+    stats.forEach((s, i) => {
+      const x = MARGIN + i * colW;
+      const label = s.querySelector('.stat-label'), value = s.querySelector('.stat-value');
+      if (label) doc.line(wrap(forceStyle(runsOf(label), { color: GREY }), 6.5, colW - 8)[0], x, doc.y + 7, 6.5);
+      if (value) doc.line(wrap(forceStyle(runsOf(value), { bold: true }), 14, colW - 8)[0], x, doc.y + 24, 14);
+    });
+    doc.y += 34;
+  }
+
+  function drawBars(doc, el) {
+    const rows = [...el.querySelectorAll('.bar-row')];
+    doc.ensure(rows.length * 13 + 6);
+    const labelW = 80, valueW = 26, trackX = MARGIN + labelW, trackW = CONTENT_W - labelW - valueW;
+    for (const row of rows) {
+      const label = row.querySelector('.bar-label'), fill = row.querySelector('.bar-fill'), value = row.querySelector('.bar-value');
+      if (label) doc.line(wrap(runsOf(label), 7.5, labelW - 6)[0], MARGIN, doc.y + 8, 7.5);
+      doc.rect(trackX, doc.y + 2, trackW, 7, BAND);
+      if (fill) {
+        const pct = parseFloat(fill.style.width) || 0;
+        doc.rect(trackX, doc.y + 2, (trackW * pct) / 100, 7, parseColor(getComputedStyle(fill).backgroundColor, GREY));
+      }
+      if (value) {
+        const segs = wrap(forceStyle(runsOf(value), { bold: true }), 7.5, valueW)[0];
+        doc.line(segs, MARGIN + CONTENT_W - lineWidth(segs), doc.y + 8, 7.5);
+      }
+      doc.y += 13;
+    }
+    doc.y += 8;
+  }
+
+  function drawChecklist(doc, el) {
+    const boxes = [...el.querySelectorAll('.check')];
+    const perRow = Math.max(1, Math.min(boxes.length, Math.floor(CONTENT_W / 95)));
+    const gap = 6, boxW = (CONTENT_W - gap * (perRow - 1)) / perRow;
+    for (let i = 0; i < boxes.length; i += perRow) {
+      const row = boxes.slice(i, i + perRow).map(b => {
+        const label = wrap(forceStyle(runsOf(b.querySelector('.check-label') || b), { color: GREY }), 6.5, boxW - 12);
+        const value = wrap(forceStyle(runsOf(b.querySelector('.check-value') || b), { bold: true }), 10.5, boxW - 12);
+        return { label, value, h: 10 + label.length * 8.5 + value.length * 13 };
+      });
+      const h = Math.max(...row.map(b => b.h));
+      doc.ensure(h + gap);
+      row.forEach((b, j) => {
+        const x = MARGIN + j * (boxW + gap);
+        doc.stroke(x, doc.y, boxW, h, RULE);
+        let y = doc.y + 4;
+        for (const l of b.label) { doc.line(l, x + 6, y + 6.5, 6.5); y += 8.5; }
+        y += 1;
+        for (const l of b.value) { doc.line(l, x + 6, y + 10.5, 10.5); y += 13; }
+      });
+      doc.y += h + gap;
+    }
+    doc.y += 2;
+  }
+
+  function drawTable(doc, table) {
+    const SIZE = 7.5, LH = 9.5, PAD = 3, HEAD = 6.5;
+    const shown = el => !el.hidden && getComputedStyle(el).display !== 'none';
+    const headCells = [...table.querySelectorAll('thead th')].filter(shown);
+    const head = headCells.map(th => ({
+      runs: forceStyle(runsOf(th), { bold: true, color: GREY }),
+      right: th.classList.contains('num'),
+    }));
+    const ncol = Math.max(head.length, 1);
+    const rows = [...table.querySelectorAll('tbody tr')].filter(shown).map(tr => {
+      const cells = [...tr.children].filter(shown);
+      if (cells.length === 1 && (cells[0].colSpan || 1) > 1) return { band: forceStyle(runsOf(cells[0]), { bold: true }) };
+      return {
+        child: tr.classList.contains('child'),
+        cells: cells.map(td => ({ runs: runsOf(td), right: td.classList.contains('num') })),
+      };
+    });
+
+    // Column widths: natural (one-line) width, but never below the longest
+    // word; squeeze the wrap-friendly columns first when it doesn't fit.
+    const nat = new Array(ncol).fill(20), minw = new Array(ncol).fill(18);
+    const consider = (i, runs, size) => {
+      if (i >= ncol) return;
+      const text = runs.map(r => r.text).join('');
+      const bold = runs.some(r => r.bold);
+      nat[i] = Math.max(nat[i], Math.min(textWidth(text, size, bold) + 2 * PAD, 260));
+      for (const word of text.split(' ')) minw[i] = Math.max(minw[i], Math.min(textWidth(word, size, bold) + 2 * PAD, 110));
+    };
+    head.forEach((h, i) => consider(i, h.runs, HEAD));
+    rows.forEach(r => r.cells && r.cells.forEach((c, i) => consider(i, c.runs, SIZE)));
+    let widths;
+    const sumNat = nat.reduce((a, b) => a + b, 0), sumMin = minw.reduce((a, b) => a + b, 0);
+    if (sumNat <= CONTENT_W) widths = nat.map(w => w + (CONTENT_W - sumNat) * (w / sumNat));
+    else if (sumMin >= CONTENT_W) widths = minw.map(w => (w * CONTENT_W) / sumMin);
+    else {
+      const slack = CONTENT_W - sumMin, want = nat.map((w, i) => w - minw[i]), sumWant = want.reduce((a, b) => a + b, 0) || 1;
+      widths = minw.map((w, i) => w + (slack * want[i]) / sumWant);
+    }
+    const xs = widths.reduce((acc, w, i) => (acc.push(i ? acc[i - 1] + widths[i - 1] : MARGIN), acc), []);
+
+    const drawHead = () => {
+      if (!head.length) return;
+      const lines = head.map((h, i) => wrap(h.runs, HEAD, widths[i] - 2 * PAD));
+      const h = Math.max(...lines.map(l => l.length)) * 8 + 5;
+      lines.forEach((ls, i) => ls.forEach((l, k) => {
+        const x = head[i].right ? xs[i] + widths[i] - PAD - lineWidth(l) : xs[i] + PAD;
+        doc.line(l, x, doc.y + 7 + k * 8, HEAD);
+      }));
+      doc.y += h;
+      doc.hline(MARGIN, MARGIN + CONTENT_W, doc.y, RULE);
+    };
+
+    doc.ensure(40);
+    drawHead();
+    for (const r of rows) {
+      if (r.band) {
+        const lines = wrap(r.band, 8, CONTENT_W - 2 * PAD);
+        const h = lines.length * 10 + 6;
+        if (doc.ensure(h + 2 * (LH + 5))) drawHead();  // keep a family header with its first rows
+        doc.rect(MARGIN, doc.y, CONTENT_W, h, BAND);
+        lines.forEach((l, k) => doc.line(l, MARGIN + PAD, doc.y + 10 + k * 10, 8));
+        doc.y += h;
+        continue;
+      }
+      const cellLines = r.cells.slice(0, ncol).map((c, i) => wrap(c.runs, SIZE, widths[i] - 2 * PAD - (i === 0 && r.child ? 10 : 0)));
+      const h = Math.max(1, ...cellLines.map(l => l.length)) * LH + 5;
+      if (doc.ensure(h)) drawHead();
+      cellLines.forEach((ls, i) => ls.forEach((l, k) => {
+        const indent = i === 0 && r.child ? 10 : 0;
+        const x = r.cells[i].right ? xs[i] + widths[i] - PAD - lineWidth(l) : xs[i] + PAD + indent;
+        doc.line(l, x, doc.y + 3 + SIZE + k * LH, SIZE);
+      }));
+      doc.y += h;
+      doc.hline(MARGIN, MARGIN + CONTENT_W, doc.y, RULE);
+    }
+    doc.y += 10;
+  }
+
+  function renderGroupPage(section) {
+    const title = (section.querySelector('h1') || section).textContent.trim();
+    const doc = new Doc(title);
+    for (const el of section.children) {
+      if (el.classList.contains('no-print') || el.classList.contains('page-toolbar') || el.hidden) continue;
+      if (el.tagName === 'H1') doc.para(forceStyle(runsOf(el), { bold: true, color: DARK }), 18, { after: 2 });
+      else if (el.tagName === 'H2') { doc.y += 6; doc.ensure(60); doc.para(runsOf(el).map(r => ({ ...r, bold: r.bold })), 11, { after: 4 }); }
+      else if (el.classList.contains('type-note')) { doc.y += 2; doc.para(forceStyle(runsOf(el), { bold: true, color: DARK }), 9, { after: 8 }); }
+      else if (el.classList.contains('context')) doc.para(runsOf(el), 10, { after: 1 });
+      else if (el.classList.contains('subtitle')) doc.para(forceStyle(runsOf(el), { color: GREY }), 8, { after: 10 });
+      else if (el.classList.contains('stat-row')) drawStats(doc, el);
+      else if (el.classList.contains('bar-chart')) drawBars(doc, el);
+      else if (el.classList.contains('checklist')) drawChecklist(doc, el);
+      else if (el.tagName === 'TABLE') drawTable(doc, el);
+      else { const runs = runsOf(el); if (runs.length) doc.para(runs, 9, { after: 6 }); }
+    }
+    return doc.bytes();
+  }
+
+  // ---------- ZIP (stored; PDFs here are small) ----------
+  const CRC_TABLE = (() => {
+    const t = new Uint32Array(256);
+    for (let n = 0; n < 256; n++) {
+      let c = n;
+      for (let k = 0; k < 8; k++) c = c & 1 ? 0xEDB88320 ^ (c >>> 1) : c >>> 1;
+      t[n] = c >>> 0;
+    }
+    return t;
+  })();
+  function crc32(bytes) {
+    let c = 0xFFFFFFFF;
+    for (let i = 0; i < bytes.length; i++) c = CRC_TABLE[(c ^ bytes[i]) & 0xFF] ^ (c >>> 8);
+    return (c ^ 0xFFFFFFFF) >>> 0;
+  }
+  function makeZip(files) {
+    const enc = new TextEncoder();
+    const chunks = [], central = [];
+    const now = new Date();
+    const dosTime = (now.getHours() << 11) | (now.getMinutes() << 5) | (now.getSeconds() >> 1);
+    const dosDate = ((now.getFullYear() - 1980) << 9) | ((now.getMonth() + 1) << 5) | now.getDate();
+    let offset = 0;
+    for (const f of files) {
+      const name = enc.encode(f.name), data = f.data, crc = crc32(data);
+      const local = new DataView(new ArrayBuffer(30));
+      local.setUint32(0, 0x04034b50, true); local.setUint16(4, 20, true);
+      local.setUint16(6, 0x0800, true);  // UTF-8 file names
+      local.setUint16(10, dosTime, true); local.setUint16(12, dosDate, true);
+      local.setUint32(14, crc, true); local.setUint32(18, data.length, true);
+      local.setUint32(22, data.length, true); local.setUint16(26, name.length, true);
+      chunks.push(local, name, data);
+      const cen = new DataView(new ArrayBuffer(46));
+      cen.setUint32(0, 0x02014b50, true); cen.setUint16(4, 20, true); cen.setUint16(6, 20, true);
+      cen.setUint16(8, 0x0800, true); cen.setUint16(12, dosTime, true); cen.setUint16(14, dosDate, true);
+      cen.setUint32(16, crc, true);
+      cen.setUint32(20, data.length, true); cen.setUint32(24, data.length, true);
+      cen.setUint16(28, name.length, true); cen.setUint32(42, offset, true);
+      central.push(cen, name);
+      offset += 30 + name.length + data.length;
+    }
+    const cenSize = central.reduce((s, c) => s + c.byteLength, 0);
+    const end = new DataView(new ArrayBuffer(22));
+    end.setUint32(0, 0x06054b50, true); end.setUint16(8, files.length, true);
+    end.setUint16(10, files.length, true); end.setUint32(12, cenSize, true); end.setUint32(16, offset, true);
+    return new Blob([...chunks, ...central, end], { type: 'application/zip' });
+  }
+
+  function saveBlob(blob, filename) {
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = filename;
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 2000);
+  }
+
+  const pdfName = page => (page.dataset.filename || page.id) + '.pdf';
+
+  // ---------- public entry points ----------
+  window.downloadPagePdf = function (id) {
+    const page = document.getElementById(id);
+    if (page) saveBlob(new Blob([renderGroupPage(page)], { type: 'application/pdf' }), pdfName(page));
+  };
+
+  window.downloadAllPdfs = async function (zipName, button) {
+    // Only pages that are shown.
+    const pages = [...document.querySelectorAll('.group-page')].filter(p => !p.hidden);
+    if (window.reportZipName) zipName = window.reportZipName(zipName);
+    const label = button ? button.innerHTML : '';
+    if (button) button.disabled = true;
+    try {
+      const files = [];
+      for (let i = 0; i < pages.length; i++) {
+        const page = pages[i];
+        files.push({ name: (page.dataset.folder ? page.dataset.folder + '/' : '') + pdfName(page), data: renderGroupPage(page) });
+        if (button && i % 5 === 0) {
+          button.textContent = `Building PDFs ${i + 1}/${pages.length}…`;
+          await new Promise(r => setTimeout(r));  // let the label repaint
+        }
+      }
+      saveBlob(makeZip(files), zipName);
+    } finally {
+      if (button) { button.innerHTML = label; button.disabled = false; }
+    }
+  };
+
+  // Exposed for tests / debugging.
+  window.__reportExport = { renderGroupPage, makeZip, toWinAnsi, wrap };
+
+})();
+
+</script>
+<script>
+// Report builder: one page for every printable report and export.
+// Inlined into report_builder.html by generate_vitality_report.py
+// (build_report_builder), after report_export.js, which turns the
+// `.group-page`s rendered here into PDFs (downloadAllPdfs/downloadPagePdf).
+//
+// Flow: controls -> state (mirrored in the URL) -> filter OUs -> split into
+// groups -> render one .group-page per group (preview, print and PDF all use
+// the same markup) -> export. Data is the #builder-data JSON: one record per
+// OU, already evaluated in Python (n name, id SPO ID, t type key, u
+// university, s/sd society code/name, se section, co council, m/mm members
+// and minimum, e/em counted events and minimum, mo/eo met flags, ch chair,
+// r2 second role, cn second role filled, rq requirements met 0-3, ok full
+// vitality, miss [missing requirements]).
+
+(function () {
+  const DATA = JSON.parse(document.getElementById('builder-data').textContent);
+  const OUS = DATA.ous;
+  const TYPES = { branch: 'Student Branches', chapter: 'Chapters', ag: 'Affinity Groups' };
+  const TYPE_NAME = { branch: 'Student Branch', chapter: 'Student Branch Chapter', ag: 'Affinity Group' };
+  const TYPE_ORDER = { branch: 0, chapter: 1, ag: 2 };
+  const STATUS = {
+    all: '', met: 'Meeting full vitality', notmet: 'Not meeting full vitality',
+    one: 'Missing one requirement', two: 'Missing two or more requirements',
+  };
+  const GROUP = { none: 'Single report', branch: 'Student Branch', section: 'Section', council: 'Council', society: 'Society' };
+  const NO = { section: 'No Section', council: 'No Council', society: 'No Society (Student Branches)' };
+
+  const $ = id => document.getElementById(id);
+  const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const uniq = list => [...new Set(list.filter(Boolean))].sort((a, b) => a.localeCompare(b));
+  const famKey = o => o.u || o.n;
+  const slug = s => s.normalize('NFKD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  const fileSafe = s => s.replace(/[\\/:*?"<>|\x00-\x1f]+/g, ' ').replace(/\s+/g, ' ').trim().replace(/\.+$/, '').slice(0, 150) || 'report';
+  const plural = (n, one, many) => `${n} ${n === 1 ? one : many}`;
+
+  const ALL_COUNCILS = uniq(OUS.map(o => o.co));
+  const ALL_SECTIONS = uniq(OUS.map(o => o.se));
+  const SOCIETY_NAMES = {};
+  OUS.forEach(o => { if (o.s) SOCIETY_NAMES[o.s] = o.sd || o.s; });
+
+  // ---------- state <-> controls <-> URL ----------
+  const radios = name => [...document.querySelectorAll(`input[name=${name}]`)];
+  const checked = name => (radios(name).find(r => r.checked) || {}).value;
+
+  function readControls() {
+    return {
+      council: $('f-council').value,
+      section: $('f-section').value,
+      university: $('f-university').value,
+      society: $('f-society').value,
+      q: $('f-q').value.trim(),
+      types: radios('types').filter(b => b.checked).map(b => b.value),
+      status: checked('status') || 'all',
+      group: checked('group') || 'none',
+      nest: $('f-nest').checked,
+    };
+  }
+
+  function writeControls(st) {
+    // Selects are re-filled by cascade() before their value is set.
+    radios('types').forEach(b => { b.checked = st.types.includes(b.value); });
+    radios('status').forEach(r => { r.checked = r.value === st.status; });
+    radios('group').forEach(r => { r.checked = r.value === st.group; });
+    $('f-nest').checked = st.nest;
+    $('f-q').value = st.q || '';
+    cascade(st);
+  }
+
+  function stateFromUrl() {
+    const p = new URLSearchParams(location.search);
+    const types = (p.get('types') || '').split(',').filter(t => TYPES[t]);
+    return {
+      council: p.get('council') || '', section: p.get('section') || '',
+      university: p.get('university') || '', society: p.get('society') || '', q: p.get('q') || '',
+      types: types.length ? types : Object.keys(TYPES),
+      status: STATUS[p.get('status')] !== undefined ? p.get('status') : 'all',
+      group: GROUP[p.get('group')] ? p.get('group') : 'none',
+      nest: p.get('nest') !== '0',
+    };
+  }
+
+  function syncUrl(st) {
+    const p = new URLSearchParams();
+    ['council', 'section', 'university', 'society', 'q'].forEach(k => { if (st[k]) p.set(k, st[k]); });
+    if (st.types.length !== 3) p.set('types', st.types.join(','));
+    if (st.status !== 'all') p.set('status', st.status);
+    if (st.group !== 'none') p.set('group', st.group);
+    if (!st.nest) p.set('nest', '0');
+    try { history.replaceState(null, '', location.pathname + (p.toString() ? '?' + p : '')); } catch (e) { /* file:// */ }
+  }
+
+  // Council -> Section -> university options narrow to what the level above allows.
+  function fillSelect(id, values, allLabel, current, labelOf) {
+    const sel = $(id);
+    sel.innerHTML = `<option value="">${esc(allLabel)}</option>` +
+      values.map(v => `<option value="${esc(v)}">${esc(labelOf ? labelOf(v) : v)}</option>`).join('');
+    // Exact match, else case/accent-insensitive: the dashboard passes its
+    // own (lowercased) filter values, e.g. ?university=universidad de los andes.
+    const norm = v => (v || '').normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
+    sel.value = values.includes(current) ? current : (values.find(v => norm(v) === norm(current)) || '');
+  }
+  function cascade(st) {
+    fillSelect('f-council', ALL_COUNCILS, 'All councils', st.council);
+    const inCouncil = OUS.filter(o => !$('f-council').value || o.co === $('f-council').value);
+    fillSelect('f-section', uniq(inCouncil.map(o => o.se)), 'All sections', st.section);
+    const inSection = inCouncil.filter(o => !$('f-section').value || o.se === $('f-section').value);
+    fillSelect('f-university', uniq(inSection.map(famKey)), 'All Student Branches', st.university);
+    const inUni = inSection.filter(o => !$('f-university').value || famKey(o) === $('f-university').value);
+    fillSelect('f-society', uniq(inUni.map(o => o.s)), 'All societies', st.society,
+      code => (SOCIETY_NAMES[code] && SOCIETY_NAMES[code] !== code ? `${code}: ${SOCIETY_NAMES[code]}` : code));
+  }
+
+  // ---------- selection ----------
+  function matches(o, st) {
+    if (st.council && o.co !== st.council) return false;
+    if (st.section && o.se !== st.section) return false;
+    if (st.university && famKey(o) !== st.university) return false;
+    if (st.society && o.s !== st.society) return false;
+    if (!st.types.includes(o.t)) return false;
+    if (st.status === 'met' && !o.ok) return false;
+    if (st.status === 'notmet' && o.ok) return false;
+    if (st.status === 'one' && o.rq !== 2) return false;
+    if (st.status === 'two' && o.rq > 1) return false;
+    if (st.q) {
+      const q = st.q.toLowerCase();
+      if (![o.n, o.id, o.u, o.se, o.s].some(v => (v || '').toLowerCase().includes(q))) return false;
+    }
+    return true;
+  }
+
+  const byFamily = (a, b) => famKey(a).localeCompare(famKey(b)) || TYPE_ORDER[a.t] - TYPE_ORDER[b.t] || a.n.localeCompare(b.n);
+
+  function groupKey(o, group) {
+    if (group === 'branch') return famKey(o);
+    if (group === 'section') return o.se || NO.section;
+    if (group === 'council') return o.co || NO.council;
+    if (group === 'society') return o.s || NO.society;
+    return 'all';
+  }
+
+  function makeGroups(list, st) {
+    const map = new Map();
+    list.slice().sort(byFamily).forEach(o => {
+      const k = groupKey(o, st.group);
+      if (!map.has(k)) map.set(k, []);
+      map.get(k).push(o);
+    });
+    const isNo = k => Object.values(NO).includes(k);
+    const keys = [...map.keys()].sort((a, b) => (isNo(a) - isNo(b)) || a.localeCompare(b));
+    const groups = keys.map((k, i) => ({ key: k, ous: map.get(k), id: `g${i}` }));
+
+    // Titles, subtitles, file names (unique per folder) and folders.
+    const sectionsSpanned = uniq(groups.map(g => mostCommon(g.ous.map(o => o.se))));
+    const taken = new Set();
+    groups.forEach(g => {
+      const branches = g.ous.filter(o => o.t === 'branch');
+      if (st.group === 'branch') {
+        g.title = g.key;
+        g.section = mostCommon((branches.length ? branches : g.ous).map(o => o.se));
+        const named = OUS.filter(o => o.t === 'branch' && famKey(o) === g.key);  // even if branches are filtered out
+        g.subtitle = [named.map(b => `${b.n} (${b.id})`).join(', ') || 'No Student Branch on record', g.section].filter(Boolean).join(' · ');
+        g.file = (named.length ? named.map(b => b.id).join('+') + ' - ' : '') + g.key;
+        g.folder = sectionsSpanned.length > 1 ? slug(g.section || 'no-section') : '';
+      } else if (st.group === 'society') {
+        g.title = g.key === NO.society ? g.key : (SOCIETY_NAMES[g.key] || g.key);
+        g.subtitle = g.key !== NO.society && SOCIETY_NAMES[g.key] !== g.key ? `${g.key} · ${DATA.scope}` : DATA.scope;
+        g.file = g.key === NO.society ? 'No Society' : (SOCIETY_NAMES[g.key] !== g.key ? `${g.key} - ${SOCIETY_NAMES[g.key]}` : g.key);
+        g.folder = '';
+      } else if (st.group === 'section' || st.group === 'council') {
+        g.title = g.key;
+        g.subtitle = st.group === 'section' ? (mostCommon(g.ous.map(o => o.co)) || '') : '';
+        g.file = g.key;
+        g.folder = '';
+      } else {
+        g.title = st.section || st.council || DATA.scope;
+        g.subtitle = st.university ? st.university : '';
+        g.file = `Vitality report - ${g.title}`;
+        g.folder = '';
+      }
+      let name = fileSafe(g.file), n = 2;
+      while (taken.has(g.folder + '/' + name.toLowerCase())) name = `${fileSafe(g.file)} (${n++})`;
+      taken.add(g.folder + '/' + name.toLowerCase());
+      g.file = name;
+    });
+    return groups;
+  }
+
+  function mostCommon(values) {
+    const counts = {};
+    values.filter(Boolean).forEach(v => { counts[v] = (counts[v] || 0) + 1; });
+    return Object.keys(counts).sort((a, b) => counts[b] - counts[a] || a.localeCompare(b))[0] || '';
+  }
+
+  function filterLine(st) {
+    const bits = [];
+    if (st.types.length !== 3) bits.push(st.types.map(t => TYPES[t]).join(', '));
+    if (STATUS[st.status]) bits.push(STATUS[st.status]);
+    if (st.council && st.group !== 'council') bits.push(`Council: ${st.council}`);
+    // The Section is already in a Student Branch page's subtitle / a single report's title.
+    if (st.section && !['section', 'none', 'branch'].includes(st.group)) bits.push(`Section: ${st.section}`);
+    if (st.university && st.group !== 'branch' && st.group !== 'none') bits.push(`University: ${st.university}`);
+    if (st.society && st.group !== 'society') bits.push(`Society: ${SOCIETY_NAMES[st.society] || st.society}`);
+    if (st.q) bits.push(`Search: "${st.q}"`);
+    return bits.length ? `Includes only: ${bits.join(' · ')}` : '';
+  }
+
+  // ---------- page rendering ----------
+  const ratio = (v, min, ok) => `<span class="${ok ? 'ok' : 'no'}">${v}/${min}</span>`;
+  const yesNo = ok => `<span class="${ok ? 'ok' : 'no'}">${ok ? 'Yes' : 'No'}</span>`;
+  const reqCell = o => `<td class="num" style="color:${DATA.colors[o.rq]}">${o.rq}/3</td>`;
+
+  function stats(ous) {
+    const met = ous.filter(o => o.ok).length;
+    const levels = [3, 2, 1, 0].map(l => [l, ous.filter(o => o.rq === l).length]);
+    const max = Math.max(1, ...levels.map(x => x[1]));
+    const LABEL = { 3: 'Full', 2: 'Partial', 1: 'Minimal', 0: 'None' };
+    return `<div class="stat-row">
+        <div class="stat"><div class="stat-label">OUs</div><div class="stat-value">${ous.length}</div></div>
+        <div class="stat"><div class="stat-label">Meeting full vitality</div><div class="stat-value good">${met}/${ous.length}</div></div>
+        <div class="stat"><div class="stat-label">Total members</div><div class="stat-value">${ous.reduce((s, o) => s + o.m, 0)}</div></div>
+      </div>
+      <div class="bar-chart">${levels.map(([l, n]) => `<div class="bar-row"><div class="bar-label">${LABEL[l]} (${l}/3)</div>
+        <div class="bar-track"><div class="bar-fill" style="width:${Math.round((n / max) * 100)}%;background:${DATA.colors[l]}"></div></div>
+        <div class="bar-value">${n}</div></div>`).join('')}</div>`;
+  }
+
+  function secondRoleHeader(ous) {
+    const hasB = ous.some(o => o.t === 'branch'), hasOther = ous.some(o => o.t !== 'branch');
+    return hasB && hasOther ? 'Counselor / Advisor' : hasB ? 'Counselor' : 'Advisor';
+  }
+
+  // cols: which optional columns to show.
+  function ouTable(ous, { nest, showUniversity, showSection }) {
+    const showType = new Set(ous.map(o => o.t)).size > 1;
+    const head = ['<th>Unit</th>', showType ? '<th>Type</th>' : '', showUniversity ? '<th>University</th>' : '',
+      showSection ? '<th>Section</th>' : '', '<th>SPO ID</th>', '<th class="num">Members</th>', '<th class="num">Events</th>',
+      '<th>Chair</th>', `<th>${secondRoleHeader(ous)}</th>`, '<th class="num">Req.</th>', '<th>Missing</th>'].join('');
+    const ncol = (head.match(/<th/g) || []).length;
+    const row = (o, child) => `<tr${child ? ' class="child"' : ''}><td>${esc(o.n)}</td>` +
+      (showType ? `<td>${TYPE_NAME[o.t]}</td>` : '') + (showUniversity ? `<td>${esc(o.u)}</td>` : '') +
+      (showSection ? `<td>${esc(o.se)}</td>` : '') + `<td class="mono">${esc(o.id)}</td>` +
+      `<td class="num">${ratio(o.m, o.mm, o.mo)}</td><td class="num">${ratio(o.e, o.em, o.eo)}</td>` +
+      `<td>${yesNo(o.ch)}</td><td>${yesNo(o.cn)}</td>${reqCell(o)}<td class="missing">${esc(o.miss.join('; '))}</td></tr>`;
+    let body = '';
+    if (nest) {
+      let fam = null;
+      ous.forEach(o => {
+        if (famKey(o) !== fam) { fam = famKey(o); body += `<tr class="family"><th colspan="${ncol}">${esc(fam)}</th></tr>`; }
+        body += row(o, o.t !== 'branch');
+      });
+    } else body = ous.map(o => row(o, false)).join('');
+    return `<table><thead><tr>${head}</tr></thead><tbody>${body}</tbody></table>`;
+  }
+
+  // One line per university: the branch's result and how its Chapters / AGs do.
+  function branchSummary(ous, st) {
+    const fams = new Map();
+    ous.forEach(o => { if (!fams.has(famKey(o))) fams.set(famKey(o), []); fams.get(famKey(o)).push(o); });
+    if (fams.size < 2) return '';
+    const show = t => st.types.includes(t) && ous.some(o => o.t === t);
+    const metCell = list => (list.length
+      ? `<td class="num"><span class="${list.every(o => o.ok) ? 'ok' : 'no'}">${list.filter(o => o.ok).length}/${list.length}</span></td>`
+      : '<td class="num muted">none</td>');
+    const rows = [...fams].map(([uni, list]) => {
+      const b = list.filter(o => o.t === 'branch');
+      let cells = `<td>${esc(uni)}</td>`;
+      if (show('branch')) {
+        cells += b.length ? `<td class="num" style="color:${DATA.colors[Math.min(...b.map(x => x.rq))]}">${Math.min(...b.map(x => x.rq))}/3</td>`
+          + `<td class="missing">${esc(b.flatMap(x => x.miss).join('; '))}</td>`
+          : '<td class="num muted">none</td><td></td>';
+      }
+      if (show('chapter')) cells += metCell(list.filter(o => o.t === 'chapter'));
+      if (show('ag')) cells += metCell(list.filter(o => o.t === 'ag'));
+      return `<tr>${cells}</tr>`;
+    }).join('');
+    const head = '<th>University</th>' + (show('branch') ? '<th class="num">Branch req.</th><th>Missing at the Student Branch</th>' : '')
+      + (show('chapter') ? '<th class="num">Chapters met</th>' : '') + (show('ag') ? '<th class="num">Affinity Groups met</th>' : '');
+    return `<h2>Student Branches <span class="muted">${plural(fams.size, 'university', 'universities')}</span></h2>
+      <table><thead><tr>${head}</tr></thead><tbody>${rows}</tbody></table>`;
+  }
+
+  function branchPage(g) {
+    const branches = g.ous.filter(o => o.t === 'branch');
+    const children = g.ous.filter(o => o.t !== 'branch');
+    let html = '';
+    branches.forEach(b => {
+      html += `<h2>Student Branch: ${esc(b.n)}</h2><div class="checklist">
+        <div class="check"><div class="check-label">Members (min ${b.mm})</div><div class="check-value">${ratio(b.m, b.mm, b.mo)}</div></div>
+        <div class="check"><div class="check-label">Reported events (min ${b.em})</div><div class="check-value">${ratio(b.e, b.em, b.eo)}</div></div>
+        <div class="check"><div class="check-label">Chair</div><div class="check-value">${yesNo(b.ch)}</div></div>
+        <div class="check"><div class="check-label">${esc(b.r2)}</div><div class="check-value">${yesNo(b.cn)}</div></div>
+        <div class="check"><div class="check-label">Status</div><div class="check-value">${b.ok ? '<span class="ok">Meets full vitality</span>' : `<span class="no">Not met (${b.rq}/3)</span>`}</div></div>
+      </div>${b.miss.length ? `<p class="note">Missing: <span class="no">${esc(b.miss.join('; '))}</span></p>` : ''}`;
+    });
+    if (children.length) {
+      const label = [...new Set(children.map(o => o.t))].map(t => TYPES[t]).join(' & ');
+      html += `<h2>${label} <span class="muted">${children.filter(o => o.ok).length}/${children.length} meeting full vitality</span></h2>`
+        + ouTable(children, { nest: false, showUniversity: false, showSection: false });
+    }
+    return html;
+  }
+
+  function renderPage(g, st) {
+    const multiSection = new Set(g.ous.map(o => o.se).filter(Boolean)).size > 1;
+    let body;
+    if (st.group === 'branch') body = branchPage(g);
+    else {
+      body = (st.nest ? branchSummary(g.ous, st) : '') + `<h2>${st.nest ? 'Detail by Student Branch' : 'OUs'}</h2>`
+        // A Student Branch's name already says its university.
+        + ouTable(g.ous, { nest: st.nest, showUniversity: !st.nest && g.ous.some(o => o.t !== 'branch'), showSection: multiSection && st.group !== 'section' });
+    }
+    const filters = filterLine(st);
+    return `<section class="group-page" id="${g.id}" data-filename="${esc(g.file)}"${g.folder ? ` data-folder="${esc(g.folder)}"` : ''}>
+      <div class="page-toolbar no-print"><button type="button" data-pdf="${g.id}">Download this PDF</button></div>
+      <h1>${esc(g.title)}</h1>
+      ${g.subtitle ? `<p class="context">${esc(g.subtitle)}</p>` : ''}
+      <p class="subtitle">IEEE Student OU Vitality Report, generated ${esc(DATA.generated)}</p>
+      ${filters ? `<p class="context type-note">${esc(filters)}</p>` : ''}
+      ${stats(g.ous)}
+      ${body}
+    </section>`;
+  }
+
+  // ---------- update ----------
+  let current = { groups: [], st: null, list: [] };
+
+  function update() {
+    const st = readControls();
+    if (!st.types.length) { radios('types')[0].checked = true; return update(); }
+    cascade(st);
+    Object.assign(st, readControls());  // cascade may have cleared an option that no longer applies
+    syncUrl(st);
+
+    $('opt-nest').hidden = st.group === 'branch';
+    const list = OUS.filter(o => matches(o, st));
+    const groups = list.length ? makeGroups(list, st) : [];
+    current = { groups, st, list };
+
+    const met = list.filter(o => o.ok).length;
+    $('summary').innerHTML = list.length
+      ? `<strong>${plural(groups.length, 'report', 'reports')}</strong> · ${plural(list.length, 'OU', 'OUs')}, ${met} meeting full vitality`
+      : '<strong>No OUs match these filters.</strong>';
+    const pdf = $('download-all-pdfs');
+    pdf.disabled = !groups.length;
+    pdf.textContent = groups.length > 1 ? `Download ${groups.length} PDFs (.zip)` : 'Download PDF';
+    $('dl-csv').disabled = !list.length;
+    $('print').disabled = !groups.length;
+    $('pdf-hint').textContent = groups.length > 1
+      ? `One PDF per ${GROUP[st.group].toLowerCase()}, named ${st.group === 'branch' ? 'by SPO ID and university' : 'after it'}${groups.some(g => g.folder) ? ', in one folder per Section' : ''}.`
+      : '';
+
+    $('toc').innerHTML = groups.map(g => `<li><a href="#${g.id}">${esc(g.title)}</a> <span class="muted">${g.ous.filter(o => o.ok).length}/${g.ous.length} met</span></li>`).join('');
+    $('pages').innerHTML = groups.map(g => renderPage(g, st)).join('');
+  }
+
+  // ---------- exports ----------
+  function zipBase(st) {
+    const bits = ['vitality', st.group === 'none' ? 'report' : `by-${st.group}`];
+    if (st.types.length !== 3) bits.push(st.types.join('-'));
+    if (st.status !== 'all') bits.push(st.status);
+    if (st.section) bits.push(slug(st.section));
+    if (st.society) bits.push(slug(st.society));
+    return bits.join('_') + '_' + DATA.generated;
+  }
+
+  $('download-all-pdfs').addEventListener('click', e => {
+    const { groups, st } = current;
+    if (groups.length === 1) window.downloadPagePdf(groups[0].id);
+    else if (groups.length) window.downloadAllPdfs(zipBase(st) + '.zip', e.currentTarget);
+  });
+
+  $('dl-csv').addEventListener('click', () => {
+    const { list, st, groups } = current;
+    const grouped = st.group !== 'none';
+    const cols = [...(grouped ? [GROUP[st.group]] : []), 'Unit Name', 'SPO ID', 'Unit Type', 'University', 'Society', 'Section', 'Council',
+      'Member Count', 'Members Required', 'Events (Reported)', 'Events Required', 'Chair', 'Counselor / Advisor',
+      'Requirements Met', 'Overall Vitality', 'Missing'];
+    const cell = v => { const s = String(v == null ? '' : v); return /[",\n;]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s; };
+    const lines = [cols.map(cell).join(',')];
+    (grouped ? groups.flatMap(g => g.ous.map(o => [g.title, o])) : list.map(o => [null, o])).forEach(([gt, o]) => {
+      lines.push([...(grouped ? [gt] : []), o.n, o.id, TYPE_NAME[o.t], o.u, o.s, o.se, o.co, o.m, o.mm, o.e, o.em,
+        o.ch ? 'Yes' : 'No', o.cn ? 'Yes' : 'No', `${o.rq}/3`, o.ok ? 'Met' : 'Not Met', o.miss.join('; ')].map(cell).join(','));
+    });
+    const blob = new Blob(['﻿' + lines.join('\r\n') + '\r\n'], { type: 'text/csv;charset=utf-8' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob); a.download = zipBase(st) + '.csv';
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+  });
+
+  $('print').addEventListener('click', () => window.print());
+  $('pages').addEventListener('click', e => {
+    const id = e.target && e.target.dataset && e.target.dataset.pdf;
+    if (id) window.downloadPagePdf(id);
+  });
+
+  // ---------- presets: the common jobs, as starting points ----------
+  const multiSection = ALL_SECTIONS.length > 1;
+  const PRESETS = [
+    { label: 'One report per Student Branch', who: 'SSACs: send each Student Branch its own report, with its Chapters and Affinity Groups',
+      st: { group: 'branch' } },
+    { label: multiSection ? 'Section reports by Student Branch' : 'Full report by Student Branch', who: 'Section Chairs and SSACs: every Student Branch with its Chapters and Affinity Groups',
+      st: { group: multiSection ? 'section' : 'none', nest: true } },
+    { label: multiSection ? 'Student Branches only, by Section' : 'Student Branches only', who: 'Region / Section SACs: the branches without their Chapters',
+      st: { group: multiSection ? 'section' : 'none', types: ['branch'], nest: false } },
+    { label: 'Chapters of one Society', who: 'Chapter chairs: then pick the Society in "Which OUs"',
+      st: { group: 'society', types: ['chapter'], nest: false } },
+    { label: 'OUs meeting vitality', who: 'Recognition: everyone with full vitality',
+      st: { group: multiSection ? 'section' : 'none', status: 'met', nest: true } },
+    { label: 'Quick wins: missing one requirement', who: 'Follow-up: OUs one step away, with what is missing',
+      st: { group: multiSection ? 'section' : 'none', status: 'one', nest: true } },
+  ];
+  $('presets').innerHTML = PRESETS.map((p, i) => `<button type="button" class="preset" data-preset="${i}"><strong>${esc(p.label)}</strong><span>${esc(p.who)}</span></button>`).join('');
+  $('presets').addEventListener('click', e => {
+    const btn = e.target.closest('[data-preset]');
+    if (!btn) return;
+    const base = { council: '', section: '', university: '', society: '', q: '', types: Object.keys(TYPES), status: 'all', group: 'none', nest: true };
+    // Keep the place the user narrowed to (council/section): presets change the "what" and "how".
+    const keep = readControls();
+    writeControls(Object.assign(base, { council: keep.council, section: keep.section }, PRESETS[btn.dataset.preset].st));
+    update();
+  });
+
+  // ---------- wire up ----------
+  if (ALL_COUNCILS.length < 2) { $('field-council').hidden = true; $('opt-group-council').hidden = true; }
+  if (ALL_SECTIONS.length < 2) { $('field-section').hidden = true; $('opt-group-section').hidden = true; }
+
+  const autoDownload = new URLSearchParams(location.search).get('download') === 'pdf';
+  writeControls(stateFromUrl());
+  update();
+
+  let timer;
+  document.querySelector('.controls').addEventListener('input', e => {
+    clearTimeout(timer);
+    timer = setTimeout(update, e.target.id === 'f-q' ? 250 : 0);
+  });
+  // ?download=pdf (from links / automations): export right away. Handled
+  // here, not by report_export.js, because syncUrl() already dropped it.
+  if (autoDownload) window.addEventListener('load', () => $('download-all-pdfs').click());
+})();
+
+</script>
+</body>
+</html>

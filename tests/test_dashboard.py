@@ -183,6 +183,12 @@ class OutputsTest(unittest.TestCase):
         self.assertEqual(by_id["SBC1"]["rq"], 3)
         self.assertEqual(by_id["SBC2"]["u"], "U2</script>")
         self.assertEqual(by_id["STB1"]["se"], "Colombia Section")
+        self.assertRegex(data["generated"], r"^\d{4}-\d{2}-\d{2}$")
+
+    def test_report_builder_generated_on_override(self):
+        out = self.tmp / "rb_dated.html"
+        gvr.build_report_builder(self.branch_family_units(), out, scope_label="X", generated_on="2026-10-30")
+        self.assertIn('"generated":"2026-10-30"', out.read_text(encoding="utf-8"))
 
     def test_report_builder_controls_and_scripts(self):
         page = self.build_builder()
