@@ -98,6 +98,10 @@ re-capture a HAR of applying the filters manually and update the indices.
 
 ## Batch PDF export of the printable reports
 
+The reports' own **"Download all N as PDF (.zip)"** button already builds one
+PDF per group in the browser, with no setup. This script is the local
+alternative with Chromium's own rendering (same file names).
+
 `export_report_pdfs.py` is the odd one out here: it fetches nothing and
 needs no login. It opens the generated print reports in headless Chromium
 and saves **every group page as its own PDF** (one per University, Society,

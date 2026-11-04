@@ -34,15 +34,27 @@ version since this project doesn't cut releases.
   Section report flavors link to each other with an "All OUs / Grouped by
   Student Branch" switcher. Chapters and AGs are matched to their branch by
   university, as in `chapter_outreach/`.
-- **Batch download of the printable reports.** Every University, Society and
-  Section report has a "Download all N pages (.zip)" button that packs one
-  standalone HTML file per group (client-side, no library, works on the
-  published site). For PDFs, `automations/export_report_pdfs.py` saves one
-  PDF per group (plus a ZIP per set and the status list) for the Colombia
-  reports and, with `--r9`, every Region 9 scope, into the git-ignored
-  `report_pdfs/<date>/`; `./run_all.sh --pdfs` runs it after a full refresh.
-  Each group is printed from its own small document, so all of Region 9
-  (about 600 PDFs) takes about 30 seconds.
+- **"Reports & export" panel** on every dashboard and on the Region 9
+  Section picker, replacing the row of report links in the header. It groups
+  every option by audience (who meets vitality, send to each Student Branch,
+  send to Section Chairs & SSACs, other views, CSV), each with "View &
+  print" and, for the grouped reports, "All as PDF (.zip)". Section rows on
+  the picker get a compact "Reports" menu with the same options.
+- **Batch PDF download of the printable reports.** Every University,
+  Society, Student Branch and Section report has a "Download all N as PDF
+  (.zip)" button (and "Download PDF" on each page): one PDF per group, named
+  by OU code and name (e.g. `STB12991 - Universidad de los Andes.pdf`),
+  ready to email; a report spanning several Sections zips one folder per
+  Section. The PDFs are built in the browser by a small dependency-free
+  writer (`dashboard_assets/report_export.js`: Helvetica text, tables,
+  bars, colors from the page), so it works on the published site; all 537
+  Region 9 Student Branch PDFs take about 3 seconds. Opening a report with
+  `?download=pdf` starts the download right away (what the panel links
+  use). For Chromium-rendered PDFs, `automations/export_report_pdfs.py`
+  does the same locally (same file names) for the Colombia reports and,
+  with `--r9`, every Region 9 scope, into the git-ignored
+  `report_pdfs/<date>/`; `./run_all.sh --pdfs` runs it after a full
+  refresh.
 - **OUs meeting / not meeting vitality list** (`vitality_status_report.html`,
   `build_vitality_status_report()`): every OU split into two lists, the
   non-compliant one showing what is still missing (members, reported

@@ -41,6 +41,22 @@ class DashboardTest(unittest.TestCase):
     def tearDownClass(cls):
         shutil.rmtree(cls.tmp)
 
+    def test_reports_and_export_panel(self):
+        # One panel replaces the row of report links in the header.
+        self.assertIn('<details class="export-panel">', self.page)
+        self.assertIn('href="branch_report.html?download=pdf"', self.page)
+        self.assertIn('href="vitality_status_report.html"', self.page)
+        self.assertNotIn("Printable University Reports", self.page)
+        # The synthetic OUs have no Section, so no Section reports are offered.
+        self.assertNotIn("section_branch_report.html", self.page)
+
+    def test_export_panel_with_sections_and_prefix(self):
+        panel = gvr.export_panel_html("region/", sections=True)
+        self.assertIn('href="region/section_branch_report.html?download=pdf"', panel)
+        self.assertIn('href="region/vitality_report.csv" download', panel)
+        menu = gvr.export_menu_html("peru-section/", sections=True)
+        self.assertIn('href="peru-section/branch_report.html?download=pdf"', menu)
+
     def test_no_unfilled_placeholders(self):
         self.assertNotIn("@@", self.page)
 
@@ -187,8 +203,11 @@ class OutputsTest(unittest.TestCase):
         out = self.tmp / "uni.html"
         gvr.build_university_report([a, b], out)
         page = out.read_text(encoding="utf-8")
-        self.assertIn("downloadAllPages(", page)
-        self.assertIn("Download all 2 university pages", page)
+        self.assertIn("downloadAllPdfs(", page)
+        self.assertIn("Download all 2 as PDF (.zip)", page)
+        # PDF names keep accents; same-named groups get a suffix.
+        self.assertEqual(sorted(re.findall(r'data-filename="([^"]+)"', page)),
+                         ["Universidad de Bogota", "Universidad de Bogotá"])
         # Accents are folded and colliding anchors (= ZIP file names) get a suffix.
         ids = re.findall(r'class="group-page" id="([^"]+)"', page)
         self.assertEqual(sorted(ids), ["universidad-de-bogota", "universidad-de-bogota-2"])
@@ -216,8 +235,8 @@ class OutputsTest(unittest.TestCase):
         out = self.tmp / "branch_report.html"
         gvr.build_branch_report(self.branch_family_units(), out)
         page = out.read_text(encoding="utf-8")
-        self.assertEqual(re.findall(r'class="group-page" id="([^"]+)" data-folder="([^"]+)"', page),
-                         [("u1", "colombia-section"), ("u2", "peru-section")])
+        self.assertEqual(re.findall(r'class="group-page" id="([^"]+)" data-filename="([^"]+)" data-folder="([^"]+)"', page),
+                         [("u1", "STB1 - U1", "colombia-section"), ("u2", "U2", "peru-section")])
         u1 = page.split('id="u1"')[1].split('id="u2"')[0]
         self.assertIn("Student Branch: U1 Student Branch", u1)
         self.assertIn("1/2 meeting full vitality", u1)  # chapters & AGs
@@ -229,7 +248,7 @@ class OutputsTest(unittest.TestCase):
         units = [ou for ou in self.branch_family_units() if ou.section == "Colombia Section"]
         out = self.tmp / "branch_one.html"
         gvr.build_branch_report(units, out)
-        self.assertNotIn("data-folder", out.read_text(encoding="utf-8"))
+        self.assertNotIn(' data-folder="', out.read_text(encoding="utf-8"))
 
     def test_section_branch_report_groups_by_student_branch(self):
         out = self.tmp / "section_branch_report.html"

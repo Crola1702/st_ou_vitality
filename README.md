@@ -62,8 +62,9 @@ that run.
 It also writes `university_report.html` and `society_report.html` — print-
 friendly, one-page-per-group handouts (summary stats, a requirements-met
 breakdown bar, and a unit table; the society report also lists each unit's
-university, since a society like WIE spans many), linked from the
-dashboard header as "Printable University/Society Reports". Both are
+university, since a society like WIE spans many), listed in the
+dashboard's **Reports & export** panel (right under the title, together
+with every other report and the CSV). Both are
 always light-themed regardless of the viewer's OS theme, since they're
 meant to be printed.
 
@@ -89,10 +90,13 @@ are matched to their branch by university.
 
 To get every group as a **separate file in one go**, either:
 
-- click **"Download all N … pages (.zip)"** at the top of any of these
-  reports (works on the published site too, nothing to install): you get a
-  ZIP with one standalone HTML page per University/Society/Section, each
-  ready to open, print or forward; or
+- click **"All as PDF (.zip)"** next to a report in the Reports & export
+  panel, or **"Download all N as PDF (.zip)"** at the top of the report
+  itself (works on the published site, nothing to install): you get a ZIP
+  with one PDF per University/Society/Student Branch/Section, named by OU
+  code and name (`STB12991 - Universidad de los Andes.pdf`) so each can be
+  emailed on its own; a report covering several Sections zips one folder
+  per Section. Each page also has its own "Download PDF" button; or
 - run `automations/.venv/bin/python automations/export_report_pdfs.py`
   (add `--r9` for every Region 9 scope) to save one **PDF** per group under
   `report_pdfs/<date>/`, plus a ZIP per set (a report spanning several
@@ -100,8 +104,8 @@ To get every group as a **separate file in one go**, either:
   Section). See `automations/README.md`;
   `./run_all.sh --pdfs` does it at the end of a full run.
 
-It also writes `vitality_status_report.html` (linked from the dashboard
-header as "OUs Meeting / Not Meeting Vitality"): every OU split into two
+It also writes `vitality_status_report.html` ("OUs meeting / not meeting
+vitality" in the Reports & export panel): every OU split into two
 lists, those meeting full vitality and those that don't, the latter with
 what each one is still missing and sorted closest-to-compliance first.
 Filter by list, OU type, Section (when there are several) or a search
@@ -225,9 +229,9 @@ printable reports the root pipeline produces, plus
 per Section, flat or grouped by Student Branch), `branch_report.html` (one
 page per Student Branch) and `vitality_status_report.html` (OUs meeting /
 not meeting vitality). The Section picker links to them for the whole
-region ("Section reports by Student Branch", "Reports for every Student
-Branch", "OUs meeting / not meeting vitality") and per Section row
-("Print", "Branches", "Met / not met"). Typical use:
+region in its Reports & export panel, and per Section row in a compact
+"Reports" menu (each grouped report with a "PDFs" link that downloads one
+PDF per Student Branch or Section). Typical use:
 
 - **Section Chairs / SSACs:** region `section_branch_report.html`, one page
   per Section with every Student Branch and its Chapters/AGs.

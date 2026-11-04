@@ -18,7 +18,7 @@ Output (git-ignored), by default under report_pdfs/<date>/:
 
     colombia/university/<university>.pdf   + colombia/university.zip
     colombia/society/<society>.pdf         + colombia/society.zip
-    colombia/branch/<university>.pdf       + colombia/branch.zip    (one per Student Branch)
+    colombia/branch/<SPO ID> - <univ>.pdf  + colombia/branch.zip    (one per Student Branch)
     colombia/section/<section>.pdf         + colombia/section.zip   (if section_report.html exists)
     colombia/section_branch/<section>.pdf  + ...                    (Section reports by Student Branch)
     colombia/vitality_status_report.pdf
@@ -75,10 +75,12 @@ def export_grouped(page, report: Path, out_dir: Path, paper: str) -> list[Path]:
     # Section of a Student Branch page in a region-wide report) becomes a
     # subfolder, so that report lands one folder per Section.
     groups = page.eval_on_selector_all(
-        ".group-page", "els => els.map(e => [e.id, e.dataset.folder || '', e.outerHTML])"
+        ".group-page", "els => els.map(e => [e.dataset.filename || e.id, e.dataset.folder || '', e.outerHTML])"
     )
     written = []
-    for group_id, folder, section_html in groups:
+    # data-filename is "<OU code> - <name>" (or just the name), the same
+    # name the report's own "Download all as PDF" button uses.
+    for filename, folder, section_html in groups:
         # Print each group from its own small document (same markup and
         # styles, flagged like the report's printOnly()) rather than the
         # whole report with the rest hidden: a region-wide report has
@@ -89,7 +91,7 @@ def export_grouped(page, report: Path, out_dir: Path, paper: str) -> list[Path]:
         )
         target_dir = out_dir / folder if folder else out_dir
         target_dir.mkdir(parents=True, exist_ok=True)
-        pdf = target_dir / f"{group_id}.pdf"
+        pdf = target_dir / f"{filename}.pdf"
         page.pdf(path=str(pdf), format=paper, print_background=True, margin={"top": "12mm", "bottom": "12mm", "left": "10mm", "right": "10mm"})
         written.append(pdf)
     return written

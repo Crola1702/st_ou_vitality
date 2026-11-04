@@ -885,6 +885,106 @@ def render_asset(name: str, **values: object) -> str:
     return text
 
 
+# "Reports & export" panel: one place for every printable report and
+# download, shared by the dashboards and the r9/ Section picker. Uses the
+# pages' own theme tokens (--surface-1, --border, --text-*), so it follows
+# light/dark like the rest of the page.
+EXPORT_PANEL_CSS = """
+  .export-panel { margin: 0 0 20px; border: 1px solid var(--border); border-radius: 10px; background: var(--surface-1); }
+  .export-panel > summary {
+    cursor: pointer; list-style: none; padding: 10px 16px; font-weight: 600; font-size: 0.95rem;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .export-panel > summary::-webkit-details-marker { display: none; }
+  .export-panel > summary::after { content: "Show"; margin-left: auto; font-size: 0.78rem; font-weight: 500; color: var(--text-secondary); }
+  .export-panel[open] > summary::after { content: "Hide"; }
+  .export-panel > summary .hint { font-weight: 400; font-size: 0.8rem; color: var(--text-secondary); }
+  .export-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 4px 28px; padding: 4px 16px 14px; border-top: 1px solid var(--gridline); }
+  .export-group h3 { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-secondary); font-weight: 600; margin: 12px 0 4px; }
+  .export-group ul { list-style: none; margin: 0; padding: 0; }
+  .export-group li { padding: 8px 0 10px; border-bottom: 1px solid var(--gridline); }
+  .export-group li:last-child { border-bottom: none; }
+  .export-text strong { display: block; font-size: 0.88rem; font-weight: 600; color: var(--text-primary); }
+  .export-text span { display: block; font-size: 0.78rem; color: var(--text-secondary); margin-top: 2px; }
+  .export-actions { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 7px; }
+  .export-actions a {
+    font-size: 0.78rem; text-decoration: none; white-space: nowrap; color: var(--text-primary);
+    border: 1px solid var(--border); border-radius: 999px; padding: 3px 10px;
+  }
+  .export-actions a:hover { border-color: var(--text-secondary); }
+  .export-actions a.pdf { font-weight: 600; }
+  .row-export > summary { cursor: pointer; font-size: 0.8rem; color: var(--text-secondary); text-decoration: underline; }
+  .row-export ul { list-style: none; margin: 6px 0 2px; padding: 0; font-size: 0.8rem; }
+  .row-export li { margin: 4px 0; line-height: 1.35; }
+  .row-export { min-width: 9.5rem; }
+  .row-export li a { color: var(--text-primary); }
+  .row-export li .sep { color: var(--text-muted); }
+"""
+
+
+def export_items(sections: bool, csv_href: str | None) -> list[tuple[str, list[tuple[str, str, str, bool]]]]:
+    """(group heading, [(title, description, href, has_pdf_zip)]) for the
+    Reports & export panel. `has_pdf_zip` items are grouped print reports
+    whose "Download all as PDF" button runs on open with ?download=pdf."""
+    groups = [
+        ("Who meets vitality", [
+            ("OUs meeting / not meeting vitality", "Every OU in two lists, with what each one is still missing. Filter and print.", "vitality_status_report.html", False),
+        ]),
+        ("Send to each Student Branch", [
+            ("Student Branch reports", "One page per Student Branch with its Chapters and Affinity Groups. PDFs named by SPO ID and university.", "branch_report.html", True),
+        ]),
+    ]
+    if sections:
+        groups.append(("Send to Section Chairs & SSACs", [
+            ("Section reports by Student Branch", "One page per Section: each Student Branch with its Chapters and Affinity Groups.", "section_branch_report.html", True),
+            ("Section reports, all OUs", "One page per Section with every OU in a single list.", "section_report.html", True),
+        ]))
+    groups.append(("Other printable views", [
+        ("By university", "One page per university with all its OUs.", "university_report.html", True),
+        ("By society", "One page per IEEE Society (chapters across universities).", "society_report.html", True),
+    ]))
+    if csv_href:
+        groups.append(("Data", [("Full report (CSV)", "One row per OU with every requirement, for spreadsheets.", csv_href, False)]))
+    return groups
+
+
+def export_panel_html(prefix: str = "", *, sections: bool, csv_href: str | None = "vitality_report.csv", open_: bool = False) -> str:
+    """The full "Reports & export" panel (a <details>). `prefix` points the
+    links at another directory (the r9/ picker uses "region/")."""
+    blocks = []
+    for heading, items in export_items(sections, csv_href):
+        lis = []
+        for title, desc, href, has_pdf in items:
+            url = html.escape(prefix + href)
+            if href.endswith(".csv"):
+                actions = f'<a href="{url}" download>Download CSV</a>'
+            else:
+                actions = f'<a href="{url}" target="_blank" rel="noopener">View &amp; print</a>'
+                if has_pdf:
+                    actions += f'<a class="pdf" href="{url}?download=pdf" target="_blank" rel="noopener">All as PDF (.zip)</a>'
+            lis.append(
+                f'<li><div class="export-text"><strong>{html.escape(title)}</strong><span>{html.escape(desc)}</span></div>'
+                f'<div class="export-actions">{actions}</div></li>'
+            )
+        blocks.append(f'<section class="export-group"><h3>{html.escape(heading)}</h3><ul>{"".join(lis)}</ul></section>')
+    return (
+        f'<details class="export-panel"{" open" if open_ else ""}>'
+        '<summary>Reports &amp; export <span class="hint">printable reports, PDFs for each Student Branch / Section, CSV</span></summary>'
+        f'<div class="export-grid">{"".join(blocks)}</div></details>'
+    )
+
+
+def export_menu_html(prefix: str, *, sections: bool) -> str:
+    """Compact per-row version of the panel (r9/ Section picker rows)."""
+    lis = []
+    for _, items in export_items(sections, None):
+        for title, _desc, href, has_pdf in items:
+            url = html.escape(prefix + href)
+            pdf = f' <span class="sep">·</span> <a href="{url}?download=pdf" target="_blank" rel="noopener">PDFs</a>' if has_pdf else ""
+            lis.append(f'<li><a href="{url}" target="_blank" rel="noopener">{html.escape(title)}</a>{pdf}</li>')
+    return f'<details class="row-export"><summary>Reports</summary><ul>{"".join(lis)}</ul></details>'
+
+
 def build_dashboard(
     units: list[OU],
     path: Path,
@@ -1225,12 +1325,7 @@ def build_dashboard(
         university_to_societies_json=university_to_societies_json,
     )
 
-    section_report_link = (
-        ' <a href="section_report.html" target="_blank" rel="noopener">Printable Section Reports</a>'
-        ' <a href="section_branch_report.html" target="_blank" rel="noopener">Section Reports by Student Branch</a>'
-        if has_sections(units)
-        else ""
-    )
+    export_panel = export_panel_html(sections=has_sections(units))
 
     page = f"""<!doctype html>
 <html lang="en">
@@ -1240,15 +1335,17 @@ def build_dashboard(
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 {dashboard_css}
+{EXPORT_PANEL_CSS}
 </style>
 </head>
 <body>
 <div class="viz-root">
   <div class="container">
-    <p class="byline"><a href="https://www.linkedin.com/in/cristobalarroyo/" target="_blank" rel="noopener">By Cristóbal Arroyo</a> <a href="https://github.com/Crola1702/st_ou_vitality" target="_blank" rel="noopener">See on GitHub</a> <a href="university_report.html" target="_blank" rel="noopener">Printable University Reports</a> <a href="society_report.html" target="_blank" rel="noopener">Printable Society Reports</a> <a href="branch_report.html" target="_blank" rel="noopener">Printable Student Branch Reports</a>{section_report_link} <a href="vitality_status_report.html" target="_blank" rel="noopener">OUs Meeting / Not Meeting Vitality</a></p>
+    <p class="byline"><a href="https://www.linkedin.com/in/cristobalarroyo/" target="_blank" rel="noopener">By Cristóbal Arroyo</a> <a href="https://github.com/Crola1702/st_ou_vitality" target="_blank" rel="noopener">See on GitHub</a></p>
     <h1>{html.escape(title)}</h1>
     <p class="subtitle">Generated from local vTools exports. Events source: {html.escape(events_path.name)}.</p>
 {nav_html}
+    {export_panel}
 
     <details class="resources">
       <summary>Requirements &amp; resources for students</summary>
@@ -1342,78 +1439,14 @@ def build_dashboard(
     path.write_text(page, encoding="utf-8")
 
 
-# Client-side batch download for the grouped print reports: packs one
-# standalone HTML file per group page into a ZIP (stored, uncompressed:
-# a minimal writer, no library) so nobody has to save each page by hand.
-# Kept outside the report's f-string to avoid doubling every brace.
-BATCH_DOWNLOAD_JS = r"""
-  const CRC_TABLE = (() => {
-    const t = new Uint32Array(256);
-    for (let n = 0; n < 256; n++) {
-      let c = n;
-      for (let k = 0; k < 8; k++) c = c & 1 ? 0xEDB88320 ^ (c >>> 1) : c >>> 1;
-      t[n] = c >>> 0;
-    }
-    return t;
-  })();
-  function crc32(bytes) {
-    let c = 0xFFFFFFFF;
-    for (let i = 0; i < bytes.length; i++) c = CRC_TABLE[(c ^ bytes[i]) & 0xFF] ^ (c >>> 8);
-    return (c ^ 0xFFFFFFFF) >>> 0;
-  }
-  function makeZip(files) {
-    const enc = new TextEncoder();
-    const chunks = [], central = [];
-    const now = new Date();
-    const dosTime = (now.getHours() << 11) | (now.getMinutes() << 5) | (now.getSeconds() >> 1);
-    const dosDate = ((now.getFullYear() - 1980) << 9) | ((now.getMonth() + 1) << 5) | now.getDate();
-    let offset = 0;
-    for (const f of files) {
-      const name = enc.encode(f.name), data = enc.encode(f.content), crc = crc32(data);
-      const local = new DataView(new ArrayBuffer(30));
-      local.setUint32(0, 0x04034b50, true); local.setUint16(4, 20, true);
-      local.setUint16(6, 0x0800, true);  // UTF-8 file names
-      local.setUint16(10, dosTime, true); local.setUint16(12, dosDate, true);
-      local.setUint32(14, crc, true); local.setUint32(18, data.length, true);
-      local.setUint32(22, data.length, true); local.setUint16(26, name.length, true);
-      chunks.push(local, name, data);
-      const cen = new DataView(new ArrayBuffer(46));
-      cen.setUint32(0, 0x02014b50, true); cen.setUint16(4, 20, true); cen.setUint16(6, 20, true);
-      cen.setUint16(8, 0x0800, true); cen.setUint16(12, dosTime, true); cen.setUint16(14, dosDate, true);
-      cen.setUint32(16, crc, true);
-      cen.setUint32(20, data.length, true); cen.setUint32(24, data.length, true);
-      cen.setUint16(28, name.length, true); cen.setUint32(42, offset, true);
-      central.push(cen, name);
-      offset += 30 + name.length + data.length;
-    }
-    const cenSize = central.reduce((s, c) => s + c.byteLength, 0);
-    const end = new DataView(new ArrayBuffer(22));
-    end.setUint32(0, 0x06054b50, true); end.setUint16(8, files.length, true);
-    end.setUint16(10, files.length, true); end.setUint32(12, cenSize, true); end.setUint32(16, offset, true);
-    return new Blob([...chunks, ...central, end], { type: 'application/zip' });
-  }
-  function downloadAllPages(zipName) {
-    const style = document.querySelector('style').outerHTML;
-    const title = document.title;
-    const files = [...document.querySelectorAll('.group-page')].map(page => {
-      const clone = page.cloneNode(true);
-      clone.querySelectorAll('.no-print').forEach(el => el.remove());
-      const heading = clone.querySelector('h1').textContent;
-      return {
-        name: (page.dataset.folder ? page.dataset.folder + '/' : '') + page.id + '.html',
-        content: '<!doctype html><html lang="en"><head><meta charset="utf-8">'
-          + '<meta name="viewport" content="width=device-width, initial-scale=1">'
-          + '<title>' + heading.replace(/</g, '&lt;') + ' - ' + title.replace(/</g, '&lt;') + '</title>'
-          + style + '</head><body>' + clone.outerHTML + '</body></html>',
-      };
-    });
-    const url = URL.createObjectURL(makeZip(files));
-    const a = document.createElement('a');
-    a.href = url; a.download = zipName;
-    document.body.appendChild(a); a.click(); a.remove();
-    setTimeout(() => URL.revokeObjectURL(url), 1000);
-  }
-"""
+REPORT_EXPORT_JS = ASSETS_DIR / "report_export.js"  # batch PDF export, inlined into every grouped report
+
+
+def safe_filename(name: str) -> str:
+    """A file name that is safe on Windows/macOS/Linux, keeping accents and
+    spaces (the files are meant to be emailed and read by people)."""
+    cleaned = re.sub(r'[\\/:*?"<>|\x00-\x1f]+', " ", name)
+    return re.sub(r"\s+", " ", cleaned).strip(" .")[:150] or "report"
 
 
 def slugify_name(name: str) -> str:
@@ -1461,6 +1494,7 @@ def build_grouped_print_report(
     toc_section: Callable[[list[OU]], str] | None = None,
     toc_note: Callable[[list[OU]], str] | None = None,
     view_links: list[tuple[str, str]] | None = None,
+    file_code: Callable[[list[OU]], str] | None = None,
 ) -> None:
     """A print-friendly, one-page-per-group handout: summary stats, a
     requirements-met breakdown bar, and a unit table. Always light-themed
@@ -1477,6 +1511,8 @@ def build_grouped_print_report(
       Section) and also names the folder each page lands in when the
       "Download all" ZIP or the PDF exporter saves it (`data-folder`);
     - `toc_note` adds a short status next to each name in the contents.
+    - `file_code` prefixes each page's PDF file name with an identifier
+      (e.g. the Student Branch's SPO ID: "STB12991 - Universidad X.pdf").
     `view_links` is a list of (label, href) alternatives to this report,
     rendered as a view switcher at the top; the current file is marked."""
     groups: dict[str, list[OU]] = {}
@@ -1513,6 +1549,19 @@ def build_grouped_print_report(
 
     def folder_for(name: str) -> str:
         return folders.get(name, "")
+
+    # data-filename: what the PDF of each page is called in the ZIP (and by
+    # automations/export_report_pdfs.py). Unique within a folder.
+    filenames: dict[str, str] = {}
+    taken: set[tuple[str, str]] = set()
+    for name in sorted(groups):
+        code = file_code(groups[name]) if file_code else ""
+        base = safe_filename(f"{code} - {name}" if code else name)
+        candidate, n = base, 2
+        while (folder_for(name), candidate.lower()) in taken:
+            candidate, n = f"{base} ({n})", n + 1
+        taken.add((folder_for(name), candidate.lower()))
+        filenames[name] = candidate
 
     if toc_section:
         by_heading: dict[str, list[str]] = {}
@@ -1587,8 +1636,8 @@ def build_grouped_print_report(
         anchor = anchor_for(name)
         folder = folder_for(name)
         pages.append(f'''
-        <section class="group-page" id="{html.escape(anchor)}"{f' data-folder="{html.escape(folder)}"' if folder else ""}>
-          <div class="page-toolbar no-print"><button onclick="printOnly('{html.escape(anchor)}')">Print this page</button></div>
+        <section class="group-page" id="{html.escape(anchor)}" data-filename="{html.escape(filenames[name])}"{f' data-folder="{html.escape(folder)}"' if folder else ""}>
+          <div class="page-toolbar no-print"><button onclick="downloadPagePdf('{html.escape(anchor)}')">Download PDF</button> <button onclick="printOnly('{html.escape(anchor)}')">Print this page</button></div>
           <h1>{html.escape(name)}</h1>
           {extra_subtitle}
           <p class="subtitle">IEEE Student OU Vitality Report — generated {generated_on}</p>
@@ -1687,8 +1736,8 @@ def build_grouped_print_report(
     <h1>{html.escape(doc_title)}</h1>
     <p class="subtitle">Generated {generated_on} · one printable page per {html.escape(group_label.lower())} · click a name to print just that page, or print this whole document (Ctrl/Cmd+P → Save as PDF) for all of them.</p>
     <div class="batch no-print">
-      <button type="button" onclick="downloadAllPages('{html.escape(zip_name)}')">Download all {len(groups)} {html.escape(group_label.lower())} pages (.zip)</button>
-      <span>One standalone file per {html.escape(group_label.lower())}, ready to open, print or send.</span>
+      <button type="button" id="download-all-pdfs" onclick="downloadAllPdfs('{html.escape(zip_name)}', this)">Download all {len(groups)} as PDF (.zip)</button>
+      <span>One PDF per {html.escape(group_label.lower())}{", named by OU code and name" if file_code else ", named after it"}{", in one folder per Section" if folders else ""}, ready to email.</span>
     </div>
     {toc_body}
   </section>
@@ -1704,7 +1753,9 @@ def build_grouped_print_report(
   window.addEventListener('afterprint', () => {{
     document.body.classList.remove('print-single');
   }});
-{BATCH_DOWNLOAD_JS}
+</script>
+<script>
+{REPORT_EXPORT_JS.read_text(encoding="utf-8")}
 </script>
 </body>
 </html>
@@ -1901,6 +1952,7 @@ def build_branch_report(units: list[OU], path: Path) -> None:
         page_subtitle=subtitle,
         toc_section=family_section,
         toc_note=family_note,
+        file_code=lambda ou_list: "+".join(b.spoid for b in split_family(ou_list)[0]),
     )
 
 

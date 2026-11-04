@@ -36,6 +36,7 @@ R9_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(R9_DIR.parent))
 
 from generate_vitality_report import (  # noqa: E402
+    EXPORT_PANEL_CSS,
     OU,
     STATUS_GOOD,
     build_branch_report,
@@ -46,6 +47,8 @@ from generate_vitality_report import (  # noqa: E402
     build_university_report,
     build_vitality_status_report,
     evaluate,
+    export_menu_html,
+    export_panel_html,
     find_events_file,
     load_events,
     load_officers,
@@ -150,10 +153,8 @@ def build_section_index(scopes: list[Scope], path: Path) -> None:
                 f'<td class="num">{s["total"]}</td>'
                 f'<td class="num">{s["met"]} <span class="pct">({s["pct"]:.0f}%)</span></td>'
                 + "".join(ratio_cell(*s["per_type"][t]) for t in OU_TYPES)
-                + f'<td class="links"><a class="open" href="{href}">Open</a>'
-                f'<a class="open" href="{html.escape(scope.slug)}/section_branch_report.html" target="_blank" rel="noopener">Print</a>'
-                f'<a class="open" href="{html.escape(scope.slug)}/branch_report.html" target="_blank" rel="noopener">Branches</a>'
-                f'<a class="open" href="{html.escape(scope.slug)}/vitality_status_report.html" target="_blank" rel="noopener">Met / not met</a></td>'
+                + f'<td class="links"><a class="open" href="{href}">Open</a></td>'
+                f"<td>{export_menu_html(scope.slug + '/', sections=True)}</td>"
                 "</tr>"
             )
         groups_html.append(
@@ -162,7 +163,7 @@ def build_section_index(scopes: list[Scope], path: Path) -> None:
       <h2>{html.escape(council)} <span class="count">{len(by_council[council])} sections</span></h2>
       <table>
         <thead>
-          <tr><th>Section</th><th class="num">OUs</th><th class="num">Full vitality</th><th class="num">Student Branches</th><th class="num">Chapters</th><th class="num">Affinity Groups</th><th></th></tr>
+          <tr><th>Section</th><th class="num">OUs</th><th class="num">Full vitality</th><th class="num">Student Branches</th><th class="num">Chapters</th><th class="num">Affinity Groups</th><th></th><th></th></tr>
         </thead>
         <tbody>
           {''.join(rows)}
@@ -259,9 +260,14 @@ def build_section_index(scopes: list[Scope], path: Path) -> None:
   td a.open {{ font-size: 0.8rem; color: var(--text-secondary); }}
   td.links {{ white-space: nowrap; }}
   td.links a + a {{ margin-left: 10px; }}
-  .actions {{ display: flex; flex-wrap: wrap; gap: 8px; }}
+  .region-card {{ margin-bottom: 16px; }}
+  .export-panel {{ margin-bottom: 28px; }}
+{EXPORT_PANEL_CSS}
   @media (max-width: 720px) {{
-    th:nth-child(n+4):not(:last-child), td:nth-child(n+4):not(:last-child) {{ display: none; }}
+    th:nth-child(2), td:nth-child(2), th:nth-child(n+4):nth-child(-n+7), td:nth-child(n+4):nth-child(-n+7) {{ display: none; }}  /* the Section name already links to its dashboard */
+    .council table {{ display: block; overflow-x: auto; }}
+    .row-export {{ min-width: 0; }}
+    th, td {{ padding: 9px 8px; }}
   }}
 </style>
 </head>
@@ -275,13 +281,9 @@ def build_section_index(scopes: list[Scope], path: Path) -> None:
       <div class="title">{html.escape(REGION_LABEL)}<small>{len(sections)} sections</small></div>
       <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">{region_stats["total"]:,}</div></div>
       <div class="stat"><div class="stat-label">Full vitality</div><div class="stat-value" style="color:{STATUS_GOOD}">{region_stats["met"]:,} <span class="pct">({region_stats["pct"]:.0f}%)</span></div></div>
-      <div class="actions">
-        <a class="btn" href="{REGION_SLUG}/index.html">Open whole region</a>
-        <a class="btn" href="{REGION_SLUG}/section_branch_report.html" target="_blank" rel="noopener">Section reports by Student Branch</a>
-        <a class="btn" href="{REGION_SLUG}/branch_report.html" target="_blank" rel="noopener">Reports for every Student Branch</a>
-        <a class="btn" href="{REGION_SLUG}/vitality_status_report.html" target="_blank" rel="noopener">OUs meeting / not meeting vitality</a>
-      </div>
+      <a class="btn" href="{REGION_SLUG}/index.html">Open whole region</a>
     </div>
+    {export_panel_html(REGION_SLUG + "/", sections=True, csv_href="vitality_report.csv", open_=True)}
 {''.join(groups_html)}
   </div>
 </div>
