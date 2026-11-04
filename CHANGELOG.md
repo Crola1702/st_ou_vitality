@@ -41,6 +41,18 @@ version since this project doesn't cut releases.
   with the dashboard's current University, Society and search filters, next
   to "Full data (CSV)". The Region 9 Section picker gets the same for the
   whole region and an "Export" link per Section.
+- **One-click exports** on every dashboard's Export bar and on the Region 9
+  Section picker ("Download for the whole region"): one PDF per Student
+  Branch, Section reports by Student Branch, Student Branches only, OUs
+  meeting vitality, and quick wins. Each opens the report builder with that
+  setup (plus the dashboard's current filters) and downloads straight away.
+  The splits are by Section where a page covers several.
+- **`./run_all.sh` also rebuilds Region 9** when the three region-wide
+  Tableau exports are in `r9/R9 Data/`. It refreshes the region's vTools
+  events from the public feed (no login, about 4 minutes) and runs
+  `r9/generate_r9_vitality.py`; otherwise it says which files are missing
+  and skips it. With `--pdfs` it also exports one PDF per Student Branch
+  for the whole region.
 - **`automations/export_report_pdfs.py`** (and `./run_all.sh --pdfs`): the
   same exports from the command line with Chromium rendering. It opens the
   builder with the given options (`--group`, `--types`, `--status`,

@@ -81,7 +81,10 @@ had set there. Then:
    selection, with the group as a column) or **Print**. "Full data (CSV)"
    is the complete `vitality_report.csv`.
 
-Presets at the top set everything for the usual jobs:
+The Export bar also has **one-click exports** (one PDF per Student Branch,
+Section reports by Student Branch, Student Branches only, OUs meeting
+vitality, quick wins) that download straight away, with the dashboard's
+filters applied. The same presets are at the top of the builder:
 
 | Who | Preset |
 | --- | --- |
@@ -222,6 +225,12 @@ Branch for the whole region lands in one folder per Section. Each Section
 row also links to that Section's own builder ("Export"). Every dashboard has a
 Section switcher under its title. Member-level trends (society
 memberships, membership grades) are not computed for R9.
+
+`./run_all.sh` does this too when the three Tableau files above are in
+`r9/R9 Data/`: it fetches the region's events from the public vTools feed
+(no login, about 4 minutes) and runs `r9/generate_r9_vitality.py`. The
+Tableau exports themselves are still exported by hand. The Section picker
+has the same one-click exports for the whole region.
 
 The Pages workflow publishes `r9/dashboards/` as-is under `/beta_r9/`
 (so `<pages-url>/beta_r9/` is the Section picker), on every push to

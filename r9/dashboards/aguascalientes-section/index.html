@@ -242,23 +242,31 @@
   .export-bar .export-main:hover { opacity: 0.88; }
   .export-bar .export-text { flex: 1 1 260px; font-size: 0.82rem; color: var(--text-secondary); }
   .export-bar .export-csv { font-size: 0.82rem; color: var(--text-primary); }
+  .quick-exports { flex-basis: 100%; display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-size: 0.8rem; }
+  .quick-exports > span { color: var(--text-secondary); margin-right: 2px; }
+  .quick-exports a {
+    color: var(--text-primary); text-decoration: none; border: 1px solid var(--border); border-radius: 999px; padding: 3px 10px;
+  }
+  .quick-exports a:hover { border-color: var(--text-secondary); }
 </style>
 </head>
 <body>
 <div class="viz-root">
   <div class="container">
-    <p class="byline"><a href="https://www.linkedin.com/in/cristobalarroyo/" target="_blank" rel="noopener">By Cristóbal Arroyo</a> <a href="https://github.com/Crola1702/st_ou_vitality" target="_blank" rel="noopener">See on GitHub</a> <a href="university_report.html" target="_blank" rel="noopener">Printable University Reports</a> <a href="society_report.html" target="_blank" rel="noopener">Printable Society Reports</a></p>
+    <p class="byline"><a href="https://www.linkedin.com/in/cristobalarroyo/" target="_blank" rel="noopener">By Cristóbal Arroyo</a> <a href="https://github.com/Crola1702/st_ou_vitality" target="_blank" rel="noopener">See on GitHub</a></p>
     <h1>IEEE Student OU Vitality: Aguascalientes Section</h1>
     <p class="subtitle">Generated from local vTools exports. Events source: IEEE_vTools_Events_20261029184443.csv.</p>
     <div class="scope-nav"><a href="../index.html">&larr; All sections</a><select id="scope-select" aria-label="Section" onchange="location.href=this.value"><option value="../region/index.html">Latin America - Region 9</option><option value="../aguascalientes-section/index.html" selected>Aguascalientes Section</option><option value="../argentina-section/index.html">Argentina Section</option><option value="../bolivia-section/index.html">Bolivia Section</option><option value="../centro-occidente-section/index.html">Centro Occidente Section</option><option value="../centro-norte-brasil-section/index.html">Centro-Norte Brasil Section</option><option value="../chile-section/index.html">Chile Section</option><option value="../chile-sur-section/index.html">Chile Sur Section</option><option value="../colombia-section/index.html">Colombia Section</option><option value="../colombian-caribbean-section/index.html">Colombian Caribbean Section</option><option value="../costa-rica-section/index.html">Costa Rica Section</option><option value="../dominican-republic-section/index.html">Dominican Republic Section</option><option value="../ecuador-section/index.html">Ecuador Section</option><option value="../el-salvador-section/index.html">El Salvador Section</option><option value="../guadalajara-section/index.html">Guadalajara Section</option><option value="../guanajuato-section/index.html">Guanajuato Section</option><option value="../guatemala-section/index.html">Guatemala Section</option><option value="../honduras-section/index.html">Honduras Section</option><option value="../mexico-section/index.html">Mexico Section</option><option value="../minas-gerais-section/index.html">Minas Gerais Section</option><option value="../monterrey-section/index.html">Monterrey Section</option><option value="../morelos-section/index.html">Morelos Section</option><option value="../nicaragua-section/index.html">Nicaragua Section</option><option value="../northeast-brazil-section/index.html">Northeast Brazil Section</option><option value="../panama-section/index.html">Panama Section</option><option value="../paraguay-section/index.html">Paraguay Section</option><option value="../peru-section/index.html">Peru Section</option><option value="../puebla-section/index.html">Puebla Section</option><option value="../puerto-rico-caribbean-section/index.html">Puerto Rico &amp; Caribbean Section</option><option value="../queretaro-section/index.html">Queretaro Section</option><option value="../rio-de-janeiro-section/index.html">Rio De Janeiro Section</option><option value="../south-brazil-section/index.html">South Brazil Section</option><option value="../trinidad-and-tobago-section/index.html">Trinidad And Tobago Section</option><option value="../uruguay-section/index.html">Uruguay Section</option><option value="../venezuela-section/index.html">Venezuela Section</option><option value="../veracruz-section/index.html">Veracruz Section</option><option value="../western-puerto-rico-section/index.html">Western Puerto Rico Section</option></select></div>
-    <div class="export-bar"><a class="export-main" id="open-report-builder" href="report_builder.html" data-base="report_builder.html">Export reports</a><span class="export-text">PDFs per Student Branch, Section or Society, lists of who meets vitality or is one step away, print or CSV. Uses the filters you set below.</span><a class="export-csv" href="vitality_report.csv" download>Full data (CSV)</a></div><script>
+    <div class="export-bar"><a class="export-main" id="open-report-builder" href="report_builder.html" data-builder="report_builder.html">Export reports</a><span class="export-text">Choose any Section, Student Branch, Society, OU type or vitality status, then download PDFs, a CSV or print. Uses the filters you set below.</span><a class="export-csv" href="vitality_report.csv" download>Full data (CSV)</a><div class="quick-exports"><span>Download now:</span><a href="report_builder.html?group=branch&amp;download=pdf" data-builder="report_builder.html" data-params="group=branch" data-download="1" target="_blank" rel="noopener" title="Opens the report builder with this setup and downloads the PDFs">One PDF per Student Branch</a><a href="report_builder.html?download=pdf" data-builder="report_builder.html" data-params="" data-download="1" target="_blank" rel="noopener" title="Opens the report builder with this setup and downloads the PDFs">Report by Student Branch</a><a href="report_builder.html?types=branch&amp;nest=0&amp;download=pdf" data-builder="report_builder.html" data-params="types=branch&amp;nest=0" data-download="1" target="_blank" rel="noopener" title="Opens the report builder with this setup and downloads the PDFs">Student Branches only</a><a href="report_builder.html?status=met&amp;download=pdf" data-builder="report_builder.html" data-params="status=met" data-download="1" target="_blank" rel="noopener" title="Opens the report builder with this setup and downloads the PDFs">OUs meeting vitality</a><a href="report_builder.html?status=one&amp;download=pdf" data-builder="report_builder.html" data-params="status=one" data-download="1" target="_blank" rel="noopener" title="Opens the report builder with this setup and downloads the PDFs">Quick wins: missing one requirement</a></div></div><script>
 (function () {
-  const link = document.getElementById('open-report-builder');
-  if (!link) return;
-  link.addEventListener('click', () => {
-    const now = new URLSearchParams(location.search), out = new URLSearchParams();
-    ['q', 'university', 'society'].forEach(k => { if (now.get(k)) out.set(k, now.get(k)); });
-    link.href = link.dataset.base + (out.toString() ? '?' + out : '');
+  document.querySelectorAll('a[data-builder]').forEach(link => {
+    link.addEventListener('click', () => {
+      const now = new URLSearchParams(location.search);
+      const out = new URLSearchParams(link.dataset.params || '');
+      ['q', 'university', 'society'].forEach(k => { if (now.get(k)) out.set(k, now.get(k)); });
+      if (link.dataset.download) out.set('download', 'pdf');
+      link.href = link.dataset.builder + (out.toString() ? '?' + out : '');
+    });
   });
 })();
 </script>

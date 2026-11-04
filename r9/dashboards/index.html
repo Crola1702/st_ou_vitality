@@ -88,6 +88,26 @@
   td.links a + a { margin-left: 10px; }
   .actions { display: flex; flex-wrap: wrap; gap: 8px; }
   .btn.primary { background: var(--text-primary); color: var(--page-plane); border-color: var(--text-primary); }
+
+  .export-bar {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; margin: 0 0 20px;
+    padding: 10px 14px; border: 1px solid var(--border); border-radius: 10px; background: var(--surface-1);
+  }
+  .export-bar .export-main {
+    font-weight: 600; font-size: 0.9rem; text-decoration: none; color: var(--page-plane); background: var(--text-primary);
+    border-radius: 999px; padding: 6px 14px;
+  }
+  .export-bar .export-main:hover { opacity: 0.88; }
+  .export-bar .export-text { flex: 1 1 260px; font-size: 0.82rem; color: var(--text-secondary); }
+  .export-bar .export-csv { font-size: 0.82rem; color: var(--text-primary); }
+  .quick-exports { flex-basis: 100%; display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-size: 0.8rem; }
+  .quick-exports > span { color: var(--text-secondary); margin-right: 2px; }
+  .quick-exports a {
+    color: var(--text-primary); text-decoration: none; border: 1px solid var(--border); border-radius: 999px; padding: 3px 10px;
+  }
+  .quick-exports a:hover { border-color: var(--text-secondary); }
+
+  .region-card .quick-exports { padding-top: 4px; border-top: 1px solid var(--gridline); }
   @media (max-width: 720px) {
     th:nth-child(2), td:nth-child(2), th:nth-child(n+4):nth-child(-n+6), td:nth-child(n+4):nth-child(-n+6) { display: none; }
     .council table { display: block; overflow-x: auto; }
@@ -110,6 +130,7 @@
         <a class="btn primary" href="region/report_builder.html">Export reports</a>
         <a class="btn" href="region/vitality_report.csv" download>Full data (CSV)</a>
       </div>
+      <div class="quick-exports"><span>Download for the whole region:</span><a href="region/report_builder.html?group=branch&amp;download=pdf" data-builder="region/report_builder.html" data-params="group=branch" data-download="1" target="_blank" rel="noopener" title="Opens the report builder with this setup and downloads the PDFs">One PDF per Student Branch</a><a href="region/report_builder.html?group=section&amp;download=pdf" data-builder="region/report_builder.html" data-params="group=section" data-download="1" target="_blank" rel="noopener" title="Opens the report builder with this setup and downloads the PDFs">Section reports by Student Branch</a><a href="region/report_builder.html?group=section&amp;types=branch&amp;nest=0&amp;download=pdf" data-builder="region/report_builder.html" data-params="group=section&amp;types=branch&amp;nest=0" data-download="1" target="_blank" rel="noopener" title="Opens the report builder with this setup and downloads the PDFs">Student Branches only, by Section</a><a href="region/report_builder.html?group=section&amp;status=met&amp;download=pdf" data-builder="region/report_builder.html" data-params="group=section&amp;status=met" data-download="1" target="_blank" rel="noopener" title="Opens the report builder with this setup and downloads the PDFs">OUs meeting vitality</a><a href="region/report_builder.html?group=section&amp;status=one&amp;download=pdf" data-builder="region/report_builder.html" data-params="group=section&amp;status=one" data-download="1" target="_blank" rel="noopener" title="Opens the report builder with this setup and downloads the PDFs">Quick wins: missing one requirement</a></div>
     </div>
 
     <section class="council">

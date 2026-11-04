@@ -48,6 +48,14 @@ class DashboardTest(unittest.TestCase):
         self.assertIn('href="vitality_report.csv" download', self.page)
         self.assertNotIn("Printable University Reports", self.page)
 
+    def test_quick_exports(self):
+        # Single-Section dashboards don't split by Section; the region picker does.
+        self.assertIn('href="report_builder.html?group=branch&amp;download=pdf"', self.page)
+        self.assertIn('href="report_builder.html?status=one&amp;download=pdf"', self.page)
+        self.assertNotIn("group=section", self.page)
+        region = gvr.quick_exports_html("region/", True)
+        self.assertIn('href="region/report_builder.html?group=section&amp;types=branch&amp;nest=0&amp;download=pdf"', region)
+
     def test_no_unfilled_placeholders(self):
         self.assertNotIn("@@", self.page)
 

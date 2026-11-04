@@ -901,28 +901,64 @@ EXPORT_BAR_CSS = """
   .export-bar .export-main:hover { opacity: 0.88; }
   .export-bar .export-text { flex: 1 1 260px; font-size: 0.82rem; color: var(--text-secondary); }
   .export-bar .export-csv { font-size: 0.82rem; color: var(--text-primary); }
+  .quick-exports { flex-basis: 100%; display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-size: 0.8rem; }
+  .quick-exports > span { color: var(--text-secondary); margin-right: 2px; }
+  .quick-exports a {
+    color: var(--text-primary); text-decoration: none; border: 1px solid var(--border); border-radius: 999px; padding: 3px 10px;
+  }
+  .quick-exports a:hover { border-color: var(--text-secondary); }
 """
 
-# Carries the dashboard's current filters into the builder on click.
+# Carries the dashboard's current filters into every builder link on click:
+# the main "Export reports" link and the one-click quick exports.
 EXPORT_BAR_JS = """
 (function () {
-  const link = document.getElementById('open-report-builder');
-  if (!link) return;
-  link.addEventListener('click', () => {
-    const now = new URLSearchParams(location.search), out = new URLSearchParams();
-    ['q', 'university', 'society'].forEach(k => { if (now.get(k)) out.set(k, now.get(k)); });
-    link.href = link.dataset.base + (out.toString() ? '?' + out : '');
+  document.querySelectorAll('a[data-builder]').forEach(link => {
+    link.addEventListener('click', () => {
+      const now = new URLSearchParams(location.search);
+      const out = new URLSearchParams(link.dataset.params || '');
+      ['q', 'university', 'society'].forEach(k => { if (now.get(k)) out.set(k, now.get(k)); });
+      if (link.dataset.download) out.set('download', 'pdf');
+      link.href = link.dataset.builder + (out.toString() ? '?' + out : '');
+    });
   });
 })();
 """
 
 
-def export_bar_html(builder_href: str = "report_builder.html", csv_href: str = "vitality_report.csv") -> str:
+def quick_exports(multi_section: bool) -> list[tuple[str, str]]:
+    """(label, report builder URL params) for the one-click exports: the
+    builder's presets that need no further choice, downloading straight
+    away. Split by Section only where there are several Sections."""
+    by_section = "group=section&" if multi_section else ""
+    return [
+        ("One PDF per Student Branch", "group=branch"),
+        ("Section reports by Student Branch" if multi_section else "Report by Student Branch", by_section.rstrip("&")),
+        ("Student Branches only" + (", by Section" if multi_section else ""), by_section + "types=branch&nest=0"),
+        ("OUs meeting vitality", by_section + "status=met"),
+        ("Quick wins: missing one requirement", by_section + "status=one"),
+    ]
+
+
+def quick_exports_html(prefix: str, multi_section: bool, label: str = "Download now:") -> str:
+    links = "".join(
+        f'<a href="{html.escape(prefix)}report_builder.html?{html.escape(params + ("&" if params else "") + "download=pdf")}" '
+        f'data-builder="{html.escape(prefix)}report_builder.html" data-params="{html.escape(params)}" data-download="1" '
+        f'target="_blank" rel="noopener" title="Opens the report builder with this setup and downloads the PDFs">{html.escape(text)}</a>'
+        for text, params in quick_exports(multi_section)
+    )
+    return f'<div class="quick-exports"><span>{html.escape(label)}</span>{links}</div>'
+
+
+def export_bar_html(
+    builder_href: str = "report_builder.html", csv_href: str = "vitality_report.csv", *, multi_section: bool = False
+) -> str:
     return (
         '<div class="export-bar">'
-        f'<a class="export-main" id="open-report-builder" href="{html.escape(builder_href)}" data-base="{html.escape(builder_href)}">Export reports</a>'
-        '<span class="export-text">PDFs per Student Branch, Section or Society, lists of who meets vitality or is one step away, print or CSV. Uses the filters you set below.</span>'
+        f'<a class="export-main" id="open-report-builder" href="{html.escape(builder_href)}" data-builder="{html.escape(builder_href)}">Export reports</a>'
+        '<span class="export-text">Choose any Section, Student Branch, Society, OU type or vitality status, then download PDFs, a CSV or print. Uses the filters you set below.</span>'
         f'<a class="export-csv" href="{html.escape(csv_href)}" download>Full data (CSV)</a>'
+        f"{quick_exports_html('', multi_section)}"
         f"</div><script>{EXPORT_BAR_JS}</script>"
     )
 
@@ -1267,7 +1303,7 @@ def build_dashboard(
         university_to_societies_json=university_to_societies_json,
     )
 
-    export_bar = export_bar_html()
+    export_bar = export_bar_html(multi_section=len({ou.section for ou in units if ou.section}) > 1)
 
     page = f"""<!doctype html>
 <html lang="en">

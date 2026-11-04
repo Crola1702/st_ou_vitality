@@ -32,6 +32,7 @@ R9_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(R9_DIR.parent))
 
 from generate_vitality_report import (  # noqa: E402
+    EXPORT_BAR_CSS,
     OU,
     STATUS_GOOD,
     build_dashboard,
@@ -40,6 +41,7 @@ from generate_vitality_report import (  # noqa: E402
     build_university_report,
     evaluate,
     find_events_file,
+    quick_exports_html,
     load_events,
     load_officers,
     load_ou_universe,
@@ -252,6 +254,8 @@ def build_section_index(scopes: list[Scope], path: Path) -> None:
   td.links a + a {{ margin-left: 10px; }}
   .actions {{ display: flex; flex-wrap: wrap; gap: 8px; }}
   .btn.primary {{ background: var(--text-primary); color: var(--page-plane); border-color: var(--text-primary); }}
+{EXPORT_BAR_CSS}
+  .region-card .quick-exports {{ padding-top: 4px; border-top: 1px solid var(--gridline); }}
   @media (max-width: 720px) {{
     th:nth-child(2), td:nth-child(2), th:nth-child(n+4):nth-child(-n+6), td:nth-child(n+4):nth-child(-n+6) {{ display: none; }}
     .council table {{ display: block; overflow-x: auto; }}
@@ -274,6 +278,7 @@ def build_section_index(scopes: list[Scope], path: Path) -> None:
         <a class="btn primary" href="{REGION_SLUG}/report_builder.html">Export reports</a>
         <a class="btn" href="{REGION_SLUG}/vitality_report.csv" download>Full data (CSV)</a>
       </div>
+      {quick_exports_html(REGION_SLUG + "/", True, "Download for the whole region:")}
     </div>
 {''.join(groups_html)}
   </div>
