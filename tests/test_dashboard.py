@@ -3,6 +3,7 @@
 Run from the repo root: python3 -m unittest discover tests
 Uses only synthetic OUs in a temp dir, so it needs none of the vTools exports.
 """
+import json
 import re
 import shutil
 import subprocess
@@ -40,6 +41,20 @@ class DashboardTest(unittest.TestCase):
     @classmethod
     def tearDownClass(cls):
         shutil.rmtree(cls.tmp)
+
+    def test_export_bar_opens_report_builder(self):
+        # One Export entry replaces the row of report links in the header.
+        self.assertIn('id="open-report-builder" href="report_builder.html"', self.page)
+        self.assertIn('href="vitality_report.csv" download', self.page)
+        self.assertNotIn("Printable University Reports", self.page)
+
+    def test_quick_exports(self):
+        # Single-Section dashboards don't split by Section; the region picker does.
+        self.assertIn('href="report_builder.html?group=branch&amp;download=pdf"', self.page)
+        self.assertIn('href="report_builder.html?status=one&amp;download=pdf"', self.page)
+        self.assertNotIn("group=section", self.page)
+        region = gvr.quick_exports_html("region/", True)
+        self.assertIn('href="region/report_builder.html?group=section&amp;types=branch&amp;nest=0&amp;download=pdf"', region)
 
     def test_no_unfilled_placeholders(self):
         self.assertNotIn("@@", self.page)
@@ -134,6 +149,78 @@ class OutputsTest(unittest.TestCase):
             out = self.tmp / (builder.__name__ + ".html")
             builder(self.units, out)
             self.assertIn("Universidad Demo", out.read_text(encoding="utf-8"))
+
+    def test_print_report_anchors_unique_and_accent_folded(self):
+        a, b = make_ou(), make_ou()
+        a.university, b.university = "Universidad de Bogotá", "Universidad de Bogota"
+        a.spoid, b.spoid = "STB1", "STB2"
+        out = self.tmp / "uni.html"
+        gvr.build_university_report([a, b], out)
+        ids = re.findall(r'class="group-page" id="([^"]+)"', out.read_text(encoding="utf-8"))
+        self.assertEqual(sorted(ids), ["universidad-de-bogota", "universidad-de-bogota-2"])
+
+    def branch_family_units(self):
+        """Two universities in two Sections: U1 has a branch + 2 children,
+        U2 has a chapter but no Student Branch."""
+        stb = make_ou()
+        stb.name, stb.spoid, stb.university, stb.section = "U1 Student Branch", "STB1", "U1", "Colombia Section"
+        ok = make_ou("Student Branch Chapter", members=10, general=2, technical=2, officers=("Chair", "Advisor"))
+        ok.name, ok.spoid, ok.university, ok.section = "U1 PE31 Chapter", "SBC1", "U1", "Colombia Section"
+        bad = make_ou("Affinity Group", members=1, general=0, officers=())
+        bad.name, bad.spoid, bad.university, bad.section = "U1 WIE", "SBA1", "U1", "Colombia Section"
+        orphan = make_ou("Student Branch Chapter", members=1, general=0, technical=0, officers=())
+        orphan.name, orphan.spoid, orphan.university, orphan.section = "U2 CS23 Chapter", "SBC2", "U2</script>", "Peru Section"
+        return [stb, ok, bad, orphan]
+
+    def build_builder(self):
+        out = self.tmp / "report_builder.html"
+        gvr.build_report_builder(self.branch_family_units(), out, scope_label="Latin America - Region 9", dashboard_href="index.html")
+        return out.read_text(encoding="utf-8")
+
+    def test_report_builder_embeds_evaluated_records(self):
+        page = self.build_builder()
+        raw = page.split('<script id="builder-data" type="application/json">', 1)[1].split("</script>", 1)[0]
+        self.assertNotIn("</script>", raw)  # a name containing it can't end the data block early
+        data = json.loads(raw.replace("<\\/", "</"))
+        self.assertEqual(data["scope"], "Latin America - Region 9")
+        by_id = {r["id"]: r for r in data["ous"]}
+        self.assertEqual(set(by_id), {"STB1", "SBC1", "SBA1", "SBC2"})
+        wie = by_id["SBA1"]
+        self.assertEqual((wie["t"], wie["ok"], wie["rq"], wie["r2"]), ("ag", False, 0, "Advisor"))
+        self.assertIn("Chair", wie["miss"])
+        self.assertEqual(by_id["SBC1"]["rq"], 3)
+        self.assertEqual(by_id["SBC2"]["u"], "U2</script>")
+        self.assertEqual(by_id["STB1"]["se"], "Colombia Section")
+        self.assertRegex(data["generated"], r"^\d{4}-\d{2}-\d{2}$")
+
+    def test_report_builder_generated_on_override(self):
+        out = self.tmp / "rb_dated.html"
+        gvr.build_report_builder(self.branch_family_units(), out, scope_label="X", generated_on="2026-10-30")
+        self.assertIn('"generated":"2026-10-30"', out.read_text(encoding="utf-8"))
+
+    def test_report_builder_controls_and_scripts(self):
+        page = self.build_builder()
+        for needle in ('id="presets"', 'name="group" value="branch"', 'name="status" value="one"',
+                       'name="types" value="chapter"', 'id="download-all-pdfs"', 'id="dl-csv"',
+                       'href="index.html">&larr; Dashboard', 'href="vitality_report.csv" download'):
+            self.assertIn(needle, page)
+        self.assertIn("downloadAllPdfs", page)  # report_export.js is inlined
+        node = shutil.which("node")
+        if node:
+            scripts = re.findall(r"<script>(.*?)</script>", page, re.S)
+            self.assertEqual(len(scripts), 2)
+            for k, script in enumerate(scripts):
+                js = self.tmp / f"builder_{k}.js"
+                js.write_text(script, encoding="utf-8")
+                subprocess.run([node, "--check", str(js)], check=True, capture_output=True)
+
+    def test_missing_requirements(self):
+        ou = gvr.OU("X Chapter", "SBC9", "Student Branch Chapter", "U", 0)
+        missing = gvr.missing_requirements(ou)
+        self.assertIn("Chair", missing)
+        self.assertIn("Advisor", missing)
+        self.assertTrue(any(m.startswith("Members 0/") for m in missing))
+        self.assertTrue(any("technical events" in m for m in missing))
 
 
 class TrendLoadersTest(unittest.TestCase):

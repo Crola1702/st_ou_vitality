@@ -35,6 +35,10 @@ old/
 # full HTML page per day.
 archive/
 
+# Batch PDF exports of the printable reports (automations/export_report_pdfs.py):
+# no PII, but one binary per group per run, regenerated on demand.
+report_pdfs/
+
 # automations/: browser session cookies and secrets — never commit.
 automations/storage_state.json
 automations/vtools_storage_state.json

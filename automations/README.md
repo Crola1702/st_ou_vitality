@@ -96,6 +96,34 @@ filtering — captured from a real session). If a preset ever starts coming
 back empty or with the wrong rows, the domain order may have shifted —
 re-capture a HAR of applying the filters manually and update the indices.
 
+## Batch PDF export from the command line
+
+The report builder page (`report_builder.html`) already downloads one PDF
+per group from the browser, with no setup. `export_report_pdfs.py` does the
+same headless, with Chromium's own rendering. It fetches nothing and needs
+no login: it opens the generated builder with the options you pass (the
+same ones the page keeps in its URL) and saves each report it renders as a
+PDF, with the builder's file names, plus a `.zip` of the set. Run it after
+`generate_vitality_report.py` (and `r9/generate_r9_vitality.py` for
+`--r9`):
+
+```sh
+# one PDF per Student Branch (the default), Colombia
+automations/.venv/bin/python automations/export_report_pdfs.py
+# Region 9: Student Branches only, one PDF per Section
+automations/.venv/bin/python automations/export_report_pdfs.py --r9-only --scope region --group section --types branch
+# quick wins in one Section, as a single PDF
+automations/.venv/bin/python automations/export_report_pdfs.py --r9-only --scope region --group none \
+    --section "Colombia Section" --status one
+```
+
+Options: `--group none|branch|section|council|society`, `--types branch
+chapter ag`, `--status all|met|notmet|one|two`, `--council/--section/
+--university/--society/--q`, `--flat` (don't nest Chapters/AGs under their
+branch), `--paper A4`, `--no-zip`. Output goes to
+`report_pdfs/<date>/<scope>/<options>/` (git-ignored). `./run_all.sh
+--pdfs` runs the default after regenerating everything.
+
 ## Credentials
 
 `.env` (`TABLEAU_PAT_NAME`/`TABLEAU_PAT`, a Tableau Personal Access Token)

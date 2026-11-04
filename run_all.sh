@@ -12,16 +12,29 @@
 # then re-run this:
 #   automations/.venv/bin/python automations/tableau_export.py login
 #
-# Usage: ./run_all.sh [-h|--help] [--login]
+# Region 9: if the three region-wide Tableau exports are in r9/R9 Data/
+# (exported by hand, see README "Region 9 dashboards"), it also refreshes the
+# region's vTools events (public feed, no login) and rebuilds r9/dashboards/.
+#
+# Usage: ./run_all.sh [-h|--help] [--login] [--pdfs]
 set -euo pipefail
 cd "$(dirname "${BASH_SOURCE[0]}")"
 
 VENV_PY="automations/.venv/bin/python"
 
+EXPORT_PDFS=0
+if [ "${1:-}" = "--pdfs" ]; then
+  EXPORT_PDFS=1
+  shift
+fi
+
 case "${1:-}" in
   -h|--help)
-    sed -n '2,16p' "${BASH_SOURCE[0]}" | sed 's/^# \{0,1\}//'
+    sed -n '2,19p' "${BASH_SOURCE[0]}" | sed 's/^# \{0,1\}//'
     echo "  --login    Run the interactive login steps, then exit."
+    echo "  --pdfs     Also save one PDF per Student Branch (automations/export_report_pdfs.py,"
+    echo "             into report_pdfs/<date>/, for Colombia and, when it ran, all of Region 9;"
+    echo "             see its --help for other splits and filters)."
     exit 0
     ;;
   --login)
@@ -64,5 +77,31 @@ python3 generate_vitality_report.py
 python3 chapter_outreach/generate_chapter_outreach.py
 python3 officer_terms/generate_officer_terms.py
 python3 member_society_lookup/generate_member_society_lookup.py
+
+R9_DATA="r9/R9 Data"
+R9_FILES=("Student Branch and Member Count.csv" "Student Branch Chapters and Affinity Group Member Count.csv" "Volunteer List by OU with Region & Section.csv")
+R9_RAN=0
+R9_MISSING=()
+for f in "${R9_FILES[@]}"; do
+  [ -f "$R9_DATA/$f" ] || R9_MISSING+=("$f")
+done
+if [ ${#R9_MISSING[@]} -eq 0 ]; then
+  echo "== Region 9: vTools Events (public feed, all of R9, ~4 min) =="
+  python3 automations/vtools_feed_export.py --out "$R9_DATA/IEEE_vTools_Events_R9.csv"
+  echo "== Region 9: dashboards and report builders =="
+  python3 r9/generate_r9_vitality.py
+  R9_RAN=1
+else
+  echo "== Region 9: skipped, missing in $R9_DATA/: ${R9_MISSING[*]} =="
+fi
+
+if [ "$EXPORT_PDFS" = 1 ]; then
+  echo "== Extra: one PDF per Student Branch =="
+  if [ "$R9_RAN" = 1 ]; then
+    "$VENV_PY" automations/export_report_pdfs.py --r9 --scope region
+  else
+    "$VENV_PY" automations/export_report_pdfs.py
+  fi
+fi
 
 echo "== Done =="
