@@ -79,7 +79,7 @@ python3 officer_terms/generate_officer_terms.py
 python3 member_society_lookup/generate_member_society_lookup.py
 
 R9_DATA="r9/R9 Data"
-R9_FILES=("Student Branch and Member Count.csv" "Student Branch Chapters and Affinity Group Member Count.csv" "Volunteer List by OU with Region & Section.csv")
+R9_FILES=("Student Branch and Member Count.csv" "Student Branch Chapters and Affinity Group Member Count.csv" "Volunteer List by OU.csv")
 R9_RAN=0
 R9_MISSING=()
 for f in "${R9_FILES[@]}"; do
@@ -88,7 +88,7 @@ done
 if [ ${#R9_MISSING[@]} -eq 0 ]; then
   echo "== Region 9: vTools Events (public feed, all of R9, ~4 min) =="
   python3 automations/vtools_feed_export.py --out "$R9_DATA/IEEE_vTools_Events_R9.csv"
-  echo "== Region 9: dashboards and report builders =="
+  echo "== Region 9: dashboards =="
   python3 r9/generate_r9_vitality.py
   R9_RAN=1
 else

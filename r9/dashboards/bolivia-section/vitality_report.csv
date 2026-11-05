@@ -1,8 +1,8 @@
 Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
 "Universidad Catolica Boliviana - Cochabamba,WIE",SBA03232,Affinity Group,Universidad Catolica Boliviana - Cochabamba,WIE,0,6,No,0,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad Catolica Boliviana La Paz,WIE",SBA60821,Affinity Group,Universidad Catolica Boliviana La Paz,WIE,7,6,Yes,0,,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
-"Universidad Mayor de San Andres,WIE",SBA13441,Affinity Group,Universidad Mayor de San Andres,WIE,38,6,Yes,12,,2,2,Yes,No,,No,No,No,No,No,Not Met,2/3,Not Met
-"Universidad Privada Boliviana La Paz,WIE",SBA10066,Affinity Group,Universidad Privada Boliviana La Paz,WIE,34,6,Yes,0,,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Universidad Mayor de San Andres,WIE",SBA13441,Affinity Group,Universidad Mayor de San Andres,WIE,38,6,Yes,12,,2,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Universidad Privada Boliviana La Paz,WIE",SBA10066,Affinity Group,Universidad Privada Boliviana La Paz,WIE,34,6,Yes,0,,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
 Escuela Militar de Ingenieria-La Paz,STB60961,Student Branch,Escuela Militar de Ingenieria-La Paz,,23,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 Escuela Militar de Ingenieria-Santa Cruz,STB11681,Student Branch,Escuela Militar de Ingenieria-Santa Cruz,,0,12,No,0,,0,4,No,No,Yes,,No,No,No,No,Partial,0/3,Not Met
 Santa Cruz Univ Privada de la Sierra,STB09401,Student Branch,Santa Cruz Univ Privada de la Sierra,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
@@ -11,8 +11,8 @@ Universidad Catolica Boliviana - Cochabamba,STB03232,Student Branch,Universidad 
 Universidad Catolica Boliviana La Paz,STB60821,Student Branch,Universidad Catolica Boliviana La Paz,,67,12,Yes,2,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 Universidad Catolica Boliviana Santa Cruz,STB10179,Student Branch,Universidad Catolica Boliviana - Santa Cruz,,1,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Universidad Loyola,STB00081,Student Branch,Universidad Loyola,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
-Universidad Mayor de San Andres,STB13441,Student Branch,Universidad Mayor de San Andres,,128,12,Yes,16,,5,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
-Universidad Mayor de San Simon,STB09361,Student Branch,Universidad Mayor de San Simon,,33,12,Yes,5,,1,4,Yes,Yes,Yes,,Yes,Yes,Yes,No,Met,3/3,Met
+Universidad Mayor de San Andres,STB13441,Student Branch,Universidad Mayor de San Andres,,128,12,Yes,16,,4,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Universidad Mayor de San Simon,STB09361,Student Branch,Universidad Mayor de San Simon,,33,12,Yes,6,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,No,Met,3/3,Met
 Universidad Nacional Siglo XX Potosi,STB60222590,Student Branch,Universidad Nacional Siglo XX Potosi,,25,12,Yes,0,,1,4,No,Yes,Yes,,Yes,Yes,Yes,No,Met,2/3,Not Met
 Universidad Privada Boliviana,STB06721,Student Branch,Universidad Privada Boliviana,,22,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
 Universidad Privada Boliviana La Paz,STB10066,Student Branch,Universidad Privada Boliviana La Paz,,59,12,Yes,3,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
@@ -37,7 +37,7 @@ University of Saint Francis Xavier,STB03108,Student Branch,University of Saint F
 "Universidad Catolica Boliviana - Cochabamba,CS23",SBC03232A,Student Branch Chapter,Universidad Catolica Boliviana - Cochabamba,CS23,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad Catolica Boliviana - Cochabamba,EMB18",SBC03232E,Student Branch Chapter,Universidad Catolica Boliviana - Cochabamba,EMB18,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad Catolica Boliviana - Cochabamba,RA24",SBC03232C,Student Branch Chapter,Universidad Catolica Boliviana - Cochabamba,RA24,1,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
-"Universidad Catolica Boliviana La Paz,AES10",SBC60821H,Student Branch Chapter,Universidad Catolica Boliviana La Paz,AES10,10,6,Yes,0,0,4,2,No,Yes,,No,No,No,No,No,Partial,1/3,Not Met
+"Universidad Catolica Boliviana La Paz,AES10",SBC60821H,Student Branch Chapter,Universidad Catolica Boliviana La Paz,AES10,10,6,Yes,0,0,3,2,No,Yes,,No,No,No,No,No,Partial,1/3,Not Met
 "Universidad Catolica Boliviana La Paz,AP03",SBC60821J,Student Branch Chapter,Universidad Catolica Boliviana La Paz,AP03,9,6,Yes,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
 "Universidad Catolica Boliviana La Paz,C16",SBC60821B,Student Branch Chapter,Universidad Catolica Boliviana La Paz,C16,3,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad Catolica Boliviana La Paz,COM19",SBC60821A,Student Branch Chapter,Universidad Catolica Boliviana La Paz,COM19,8,6,Yes,2,2,1,2,Yes,Yes,,Yes,No,No,No,Yes,Met,3/3,Met
@@ -45,15 +45,15 @@ University of Saint Francis Xavier,STB03108,Student Branch,University of Saint F
 "Universidad Catolica Boliviana La Paz,EMB18",SBC60821,Student Branch Chapter,Universidad Catolica Boliviana La Paz,EMB18,10,6,Yes,0,0,0,2,No,No,,No,No,Yes,No,No,Not Met,1/3,Not Met
 "Universidad Mayor de San Andres,AP03",SBC1344H,Student Branch Chapter,Universidad Mayor de San Andres,AP03,38,6,Yes,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
 "Universidad Mayor de San Andres,C16",SBC1344E,Student Branch Chapter,Universidad Mayor de San Andres,C16,20,6,Yes,1,0,2,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
-"Universidad Mayor de San Andres,CAS04",SBC1344C,Student Branch Chapter,Universidad Mayor de San Andres,CAS04,38,6,Yes,26,13,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Universidad Mayor de San Andres,CAS04",SBC1344C,Student Branch Chapter,Universidad Mayor de San Andres,CAS04,38,6,Yes,26,13,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Universidad Mayor de San Andres,COM19",SBC1344A,Student Branch Chapter,Universidad Mayor de San Andres,COM19,41,6,Yes,12,6,4,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Universidad Mayor de San Andres,CS23",SBC1344B,Student Branch Chapter,Universidad Mayor de San Andres,CS23,4,6,No,2,1,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad Mayor de San Andres,EMB18",SBC1344F,Student Branch Chapter,Universidad Mayor de San Andres,EMB18,31,6,Yes,4,1,1,2,No,No,,Yes,Yes,Yes,Yes,Yes,Partial,1/3,Not Met
 "Universidad Mayor de San Andres,NANO42",SBC1344D,Student Branch Chapter,Universidad Mayor de San Andres,NANO42,3,6,No,1,1,0,2,No,Yes,,No,Yes,No,No,No,Partial,0/3,Not Met
 "Universidad Mayor de San Andres,PE31",SBC13441,Student Branch Chapter,Universidad Mayor de San Andres,PE31,5,6,No,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,1/3,Not Met
-"Universidad Mayor de San Andres,RA24",SBC13441C,Student Branch Chapter,Universidad Mayor de San Andres,RA24,19,6,Yes,6,2,3,2,Yes,Yes,,Yes,No,Yes,Yes,Yes,Met,3/3,Met
+"Universidad Mayor de San Andres,RA24",SBC13441C,Student Branch Chapter,Universidad Mayor de San Andres,RA24,19,6,Yes,6,2,2,2,Yes,Yes,,Yes,No,Yes,Yes,Yes,Met,3/3,Met
 "Universidad Mayor de San Andres,TEM14",SBC1344G,Student Branch Chapter,Universidad Mayor de San Andres,TEM14,10,6,Yes,4,0,0,2,No,Yes,,Yes,Yes,Yes,No,Yes,Met,2/3,Not Met
-"Universidad Mayor de San Simon,PE31",SBC09361,Student Branch Chapter,Universidad Mayor de San Simon,PE31,12,6,Yes,16,5,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
+"Universidad Mayor de San Simon,PE31",SBC09361,Student Branch Chapter,Universidad Mayor de San Simon,PE31,12,6,Yes,17,5,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
 "Universidad Nacional Siglo XX Potosi,EMB18",SBC60222590,Student Branch Chapter,Universidad Nacional Siglo XX Potosi,EMB18,18,6,Yes,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
 "Universidad Privada Boliviana La Paz,C16",SBC10066,Student Branch Chapter,Universidad Privada Boliviana La Paz,C16,12,6,Yes,12,1,0,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
 "Universidad Privada Boliviana La Paz,CIS11",SBC10066B,Student Branch Chapter,Universidad Privada Boliviana La Paz,CIS11,9,6,Yes,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met

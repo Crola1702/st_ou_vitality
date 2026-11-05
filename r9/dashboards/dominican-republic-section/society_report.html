@@ -41,15 +41,21 @@
   @media print {
     body { background: #fff; }
     .toc, .group-page { page-break-after: always; border: none; box-shadow: none; margin: 0; max-width: none; }
+    .group-page { padding: 0; }
+    table { font-size: 0.74rem; }
+    th, td { padding: 4px 6px; }
+    thead { display: table-header-group; }
+    tr { page-break-inside: avoid; }
     .no-print { display: none !important; }
-    body.print-single .group-page:not(.print-target) { display: none; }
+    body.print-single .toc, body.print-single .group-page:not(.print-target) { display: none; }
+    body.print-single .group-page.print-target { page-break-after: auto; }
   }
 </style>
 </head>
 <body>
   <section class="toc">
     <h1>IEEE Student OU Vitality — Society Reports</h1>
-    <p class="subtitle">Generated 2026-10-30 · one printable page per society · click a name to print just that page, or print this whole document (Ctrl/Cmd+P → Save as PDF) for all of them.</p>
+    <p class="subtitle">Generated 2026-11-05 · one printable page per society · click a name to print just that page, or print this whole document (Ctrl/Cmd+P → Save as PDF) for all of them.</p>
     <ul></ul>
   </section>
   

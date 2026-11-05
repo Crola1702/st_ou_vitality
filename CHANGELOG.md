@@ -4,6 +4,50 @@ Notable changes to this project. Format loosely follows
 [Keep a Changelog](https://keepachangelog.com/), dated by day rather than by
 version since this project doesn't cut releases.
 
+## 2026-11-05
+
+### Added
+
+- **Export current view** on every dashboard: one button in the filter bar
+  that exports exactly the rows on screen, in the order shown (e.g. after
+  sorting by members). A dialog splits it into one report, or one per
+  Student Branch, Section, Council or Society, optionally with Chapters and
+  Affinity Groups listed under their Student Branch, then downloads one PDF
+  per group (ZIP, named by OU code and name, folders per Section), a CSV of
+  the view, or prints it. Each PDF lists the filters it was made with.
+- **New dashboard filters:** Vitality (meeting it, not meeting it, missing
+  one requirement, missing two or more), OU types (Student Branches,
+  Chapters, Affinity Groups) and, on the R9 whole-region dashboard, Council
+  and Section. Like University/Society/search they filter the tables and
+  are kept in the URL; the summary tiles and the Quick Wins count now follow
+  every filter too.
+
+### Changed
+
+- `automations/export_report_pdfs.py` drives a dashboard's export instead of
+  the report builder (same `--group`/`--types`/`--status`/`--section` ...
+  options; `--nest` replaces `--flat`, since exports now keep the
+  dashboard's order by default).
+
+### Removed
+
+- The report builder page (`report_builder.html`), the dashboards' Export
+  bar with its one-click exports, and the export links on the R9 Section
+  picker: all replaced by **Export current view**.
+
+### Fixed
+
+- **R9 Affinity Group officers**: the Region 9 dashboards now read
+  `Volunteer List by OU.csv`, which includes Affinity Group officers. The
+  previous export had none, so every Affinity Group reported a missing Chair
+  and Advisor.
+- `normalize_position()` folds `SIGHT Group Chair` to `Chair`, so SIGHT groups
+  whose only chair title is that one no longer report a missing Chair.
+- **R9 Affinity Group trend**: removed the 2026-10-30 and 2026-11-04 Affinity
+  Group history rows, which reported 0% only because that export had no
+  Affinity Group officers (the chart now shows no value for those dates), and
+  recomputed the 2026-09-21 rows from their source exports with the fix above.
+
 ## 2026-11-04
 
 ### Added

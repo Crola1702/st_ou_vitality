@@ -1,7 +1,13 @@
   const searchInput = document.getElementById('search');
   const universitySelect = document.getElementById('university-filter');
   const societySelect = document.getElementById('society-filter');
+  // Only on multi-Section pages (the R9 whole-region dashboard).
+  const councilSelect = document.getElementById('council-filter');
+  const sectionSelect = document.getElementById('section-filter');
+  const statusSelect = document.getElementById('status-filter');
+  const typeBoxes = Array.from(document.querySelectorAll('#type-filter input'));
   const memberSlugByTable = { 'table-stb': 'stb', 'table-sbc': 'sbc', 'table-sba': 'sba' };
+  const typeOfTable = { 'table-stb': 'branch', 'table-sbc': 'chapter', 'table-sba': 'ag' };
   const universityToSocieties = @@university_to_societies_json@@;
   const societyToUniversities = @@society_to_universities_json@@;
 
@@ -26,23 +32,57 @@
       opt.disabled = !visible;
     });
     if (uni && validUniversities && !validUniversities.has(uni)) universitySelect.value = '';
+
+    // Council narrows the Section list.
+    if (councilSelect && sectionSelect) {
+      const council = councilSelect.value;
+      Array.from(sectionSelect.options).forEach(opt => {
+        if (!opt.value) return;
+        const visible = !council || opt.dataset.council === council;
+        opt.hidden = !visible;
+        opt.disabled = !visible;
+      });
+      const chosen = sectionSelect.selectedOptions[0];
+      if (chosen && chosen.value && chosen.disabled) sectionSelect.value = '';
+    }
+  }
+
+  const selectedTypes = () => typeBoxes.filter(b => b.checked).map(b => b.value);
+
+  // The single test for "is this OU in the current view": the tables, tiles
+  // and "Export current view" all go through it.
+  function rowMatches(row) {
+    const q = searchInput.value.trim().toLowerCase();
+    const req = parseInt(row.dataset.req, 10);
+    const status = statusSelect.value;
+    return (!q || row.dataset.name.includes(q) || row.dataset.spoid.includes(q))
+      && (!universitySelect.value || row.dataset.university === universitySelect.value)
+      && (!societySelect.value || row.dataset.society === societySelect.value)
+      && (!councilSelect || !councilSelect.value || row.dataset.council === councilSelect.value)
+      && (!sectionSelect || !sectionSelect.value || row.dataset.section === sectionSelect.value)
+      && selectedTypes().includes(row.dataset.type)
+      && (!status || (status === 'met' && req === 3) || (status === 'notmet' && req < 3)
+          || (status === 'one' && req === 2) || (status === 'two' && req <= 1));
   }
 
   function applyFilters() {
-    const q = searchInput.value.trim().toLowerCase();
-    const uni = universitySelect.value;
-    const soc = societySelect.value;
-
     const sums = { stb: 0, sbc: 0, sba: 0 };
+    const counts = { branch: [0, 0], chapter: [0, 0], ag: [0, 0] };  // [met, total]
 
     document.querySelectorAll('table').forEach(table => {
       const slug = memberSlugByTable[table.id];
+      let shown = 0;
       table.querySelectorAll('.ou-row').forEach(row => {
-        const match = (!q || row.dataset.name.includes(q) || row.dataset.spoid.includes(q))
-          && (!uni || row.dataset.university === uni)
-          && (!soc || row.dataset.society === soc);
+        const match = rowMatches(row);
         row.style.display = match ? '' : 'none';
-        if (match && slug) sums[slug] += parseInt(row.dataset.members, 10) || 0;
+        if (match) {
+          shown++;
+          if (slug) sums[slug] += parseInt(row.dataset.members, 10) || 0;
+          if (typeOfTable[table.id]) {
+            counts[row.dataset.type][1]++;
+            if (row.dataset.req === '3') counts[row.dataset.type][0]++;
+          }
+        }
 
         let next = row.nextElementSibling;
         while (next && next.classList.contains('detail-row')) {
@@ -50,6 +90,17 @@
           next = next.nextElementSibling;
         }
       });
+      const empty = table.querySelector('.filtered-empty');
+      if (empty) empty.hidden = shown > 0 || !table.querySelector('.ou-row');
+      if (table.id === 'table-quick-wins') {
+        const badge = document.querySelector('.tab-btn[data-tab="quick-wins"] .tab-badge');
+        if (badge) badge.textContent = shown;
+      }
+    });
+
+    // A type that is switched off disappears with its section.
+    document.querySelectorAll('.ou-section[data-type]').forEach(sec => {
+      sec.hidden = !selectedTypes().includes(sec.dataset.type);
     });
 
     Object.keys(sums).forEach(slug => {
@@ -57,14 +108,26 @@
       if (el) el.textContent = sums[slug];
     });
 
+    const pct = (m, n) => (n ? Math.round((m / n) * 100) : 0);
+    const met = counts.branch[0] + counts.chapter[0] + counts.ag[0];
+    const total = counts.branch[1] + counts.chapter[1] + counts.ag[1];
+    const setTile = (key, text) => { const el = document.querySelector(`.tile[data-tile="${key}"] .tile-value`); if (el) el.textContent = text; };
+    setTile('total', String(total));
+    setTile('met', `${met} (${pct(met, total)}%)`);
+    Object.keys(counts).forEach(t => setTile(t, `${counts[t][0]}/${counts[t][1]} (${pct(counts[t][0], counts[t][1])}%)`));
+
     updateURLParams();
   }
 
   function updateURLParams() {
     const params = new URLSearchParams();
     if (searchInput.value.trim()) params.set('q', searchInput.value.trim());
+    if (councilSelect && councilSelect.value) params.set('council', councilSelect.value);
+    if (sectionSelect && sectionSelect.value) params.set('section', sectionSelect.value);
     if (universitySelect.value) params.set('university', universitySelect.value);
     if (societySelect.value) params.set('society', societySelect.value);
+    if (statusSelect.value) params.set('status', statusSelect.value);
+    if (selectedTypes().length !== typeBoxes.length) params.set('types', selectedTypes().join(','));
     const qs = params.toString();
     history.replaceState(null, '', qs ? `?${qs}` : window.location.pathname);
   }
@@ -72,13 +135,26 @@
   function loadFiltersFromURL() {
     const params = new URLSearchParams(window.location.search);
     if (params.has('q')) searchInput.value = params.get('q');
+    if (councilSelect && params.has('council')) councilSelect.value = params.get('council');
+    if (sectionSelect && params.has('section')) sectionSelect.value = params.get('section');
     if (params.has('university')) universitySelect.value = params.get('university');
     if (params.has('society')) societySelect.value = params.get('society');
+    if (params.has('status')) statusSelect.value = params.get('status');
+    if (params.has('types')) {
+      const want = params.get('types').split(',');
+      if (typeBoxes.some(b => want.includes(b.value))) typeBoxes.forEach(b => { b.checked = want.includes(b.value); });
+    }
   }
 
   searchInput.addEventListener('input', applyFilters);
   universitySelect.addEventListener('change', () => { refineFilterOptions(); applyFilters(); });
   societySelect.addEventListener('change', () => { refineFilterOptions(); applyFilters(); });
+  [councilSelect, sectionSelect].forEach(sel => sel && sel.addEventListener('change', () => { refineFilterOptions(); applyFilters(); }));
+  statusSelect.addEventListener('change', applyFilters);
+  typeBoxes.forEach(b => b.addEventListener('change', () => {
+    if (!typeBoxes.some(x => x.checked)) b.checked = true;  // keep at least one type
+    applyFilters();
+  }));
 
   loadFiltersFromURL();
   refineFilterOptions();

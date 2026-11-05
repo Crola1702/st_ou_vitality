@@ -42,19 +42,22 @@ class DashboardTest(unittest.TestCase):
     def tearDownClass(cls):
         shutil.rmtree(cls.tmp)
 
-    def test_export_bar_opens_report_builder(self):
-        # One Export entry replaces the row of report links in the header.
-        self.assertIn('id="open-report-builder" href="report_builder.html"', self.page)
-        self.assertIn('href="vitality_report.csv" download', self.page)
-        self.assertNotIn("Printable University Reports", self.page)
+    def test_export_current_view_controls(self):
+        page = self.page
+        for needle in ('id="status-filter"', '<input type="checkbox" value="chapter" checked>', 'id="export-view-btn"',
+                       '<dialog class="export-dialog" id="export-dialog"', 'name="export-group" value="branch"',
+                       'id="download-all-pdfs"', 'id="export-csv"', 'id="export-print"', 'href="vitality_report.csv" download',
+                       '<div id="export-pages" class="export-pages"', 'window.__exportView'):
+            self.assertIn(needle, page)
+        # Single-Section page: no Council/Section filters or splits; no builder page any more.
+        for absent in ('id="council-filter"', 'id="section-filter"', 'value="section"', "report_builder"):
+            self.assertNotIn(absent, page)
 
-    def test_quick_exports(self):
-        # Single-Section dashboards don't split by Section; the region picker does.
-        self.assertIn('href="report_builder.html?group=branch&amp;download=pdf"', self.page)
-        self.assertIn('href="report_builder.html?status=one&amp;download=pdf"', self.page)
-        self.assertNotIn("group=section", self.page)
-        region = gvr.quick_exports_html("region/", True)
-        self.assertIn('href="region/report_builder.html?group=section&amp;types=branch&amp;nest=0&amp;download=pdf"', region)
+    def test_rows_carry_filter_data(self):
+        self.assertIn('data-type="branch" data-req="2"', self.page)  # demo branch: 2 of 4 events
+        self.assertIn('data-type="chapter" data-req="', self.page)
+        self.assertIn('<tr class="filtered-empty" hidden>', self.page)
+        self.assertIn('data-tile="met"', self.page)
 
     def test_no_unfilled_placeholders(self):
         self.assertNotIn("@@", self.page)
@@ -98,6 +101,18 @@ def make_ou(ou_type="Student Branch", members=30, general=4, technical=4, office
     ou.events_general, ou.events_technical = general, technical
     ou.officers = set(officers)
     return ou
+
+
+class NormalizePositionTest(unittest.TestCase):
+    def test_folds_affinity_and_sight_titles(self):
+        for raw, expected in [
+            ("Affinity Group Chair", "Chair"),
+            ("SIGHT Chair", "Chair"),
+            ("SIGHT Group Chair", "Chair"),
+            ("SIGHT Vice-Chair", "Vice Chair"),
+            ("SIGHT Member", "SIGHT Member"),
+        ]:
+            self.assertEqual(gvr.normalize_position(raw), expected)
 
 
 class EvaluateTest(unittest.TestCase):
@@ -172,47 +187,36 @@ class OutputsTest(unittest.TestCase):
         orphan.name, orphan.spoid, orphan.university, orphan.section = "U2 CS23 Chapter", "SBC2", "U2</script>", "Peru Section"
         return [stb, ok, bad, orphan]
 
-    def build_builder(self):
-        out = self.tmp / "report_builder.html"
-        gvr.build_report_builder(self.branch_family_units(), out, scope_label="Latin America - Region 9", dashboard_href="index.html")
+    def build_multi(self, **kw):
+        units = self.branch_family_units()
+        for ou in units:
+            ou.council = "Andean Council" if ou.section == "Colombia Section" else "Other Council"
+        out = self.tmp / "multi.html"
+        gvr.build_dashboard(units, out, self.tmp / "events.csv", self.tmp / "h.csv", self.tmp / "s.csv",
+                            self.tmp / "g.csv", self.tmp / "p.csv", **kw)
         return out.read_text(encoding="utf-8")
 
-    def test_report_builder_embeds_evaluated_records(self):
-        page = self.build_builder()
-        raw = page.split('<script id="builder-data" type="application/json">', 1)[1].split("</script>", 1)[0]
+    def test_export_data_embeds_evaluated_records(self):
+        page = self.build_multi(scope_label="Latin America - Region 9", generated_on="2026-10-30")
+        raw = page.split('<script id="export-data" type="application/json">', 1)[1].split("</script>", 1)[0]
         self.assertNotIn("</script>", raw)  # a name containing it can't end the data block early
-        data = json.loads(raw.replace("<\\/", "</"))
-        self.assertEqual(data["scope"], "Latin America - Region 9")
+        data = json.loads(raw)
+        self.assertEqual((data["scope"], data["generated"]), ("Latin America - Region 9", "2026-10-30"))
         by_id = {r["id"]: r for r in data["ous"]}
         self.assertEqual(set(by_id), {"STB1", "SBC1", "SBA1", "SBC2"})
         wie = by_id["SBA1"]
         self.assertEqual((wie["t"], wie["ok"], wie["rq"], wie["r2"]), ("ag", False, 0, "Advisor"))
         self.assertIn("Chair", wie["miss"])
-        self.assertEqual(by_id["SBC1"]["rq"], 3)
         self.assertEqual(by_id["SBC2"]["u"], "U2</script>")
-        self.assertEqual(by_id["STB1"]["se"], "Colombia Section")
-        self.assertRegex(data["generated"], r"^\d{4}-\d{2}-\d{2}$")
+        self.assertEqual((by_id["STB1"]["se"], by_id["STB1"]["co"]), ("Colombia Section", "Andean Council"))
 
-    def test_report_builder_generated_on_override(self):
-        out = self.tmp / "rb_dated.html"
-        gvr.build_report_builder(self.branch_family_units(), out, scope_label="X", generated_on="2026-10-30")
-        self.assertIn('"generated":"2026-10-30"', out.read_text(encoding="utf-8"))
-
-    def test_report_builder_controls_and_scripts(self):
-        page = self.build_builder()
-        for needle in ('id="presets"', 'name="group" value="branch"', 'name="status" value="one"',
-                       'name="types" value="chapter"', 'id="download-all-pdfs"', 'id="dl-csv"',
-                       'href="index.html">&larr; Dashboard', 'href="vitality_report.csv" download'):
-            self.assertIn(needle, page)
-        self.assertIn("downloadAllPdfs", page)  # report_export.js is inlined
-        node = shutil.which("node")
-        if node:
-            scripts = re.findall(r"<script>(.*?)</script>", page, re.S)
-            self.assertEqual(len(scripts), 2)
-            for k, script in enumerate(scripts):
-                js = self.tmp / f"builder_{k}.js"
-                js.write_text(script, encoding="utf-8")
-                subprocess.run([node, "--check", str(js)], check=True, capture_output=True)
+    def test_multi_section_dashboard_filters_and_splits(self):
+        page = self.build_multi()
+        self.assertIn('id="council-filter"', page)
+        self.assertIn('<option value="Colombia Section" data-council="Andean Council">', page)
+        self.assertIn('name="export-group" value="section"', page)
+        self.assertIn('name="export-group" value="council"', page)
+        self.assertIn('data-section="Peru Section" data-council="Other Council"', page)
 
     def test_missing_requirements(self):
         ou = gvr.OU("X Chapter", "SBC9", "Student Branch Chapter", "U", 0)
