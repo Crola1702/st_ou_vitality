@@ -41,22 +41,28 @@
   @media print {
     body { background: #fff; }
     .toc, .group-page { page-break-after: always; border: none; box-shadow: none; margin: 0; max-width: none; }
+    .group-page { padding: 0; }
+    table { font-size: 0.74rem; }
+    th, td { padding: 4px 6px; }
+    thead { display: table-header-group; }
+    tr { page-break-inside: avoid; }
     .no-print { display: none !important; }
-    body.print-single .group-page:not(.print-target) { display: none; }
+    body.print-single .toc, body.print-single .group-page:not(.print-target) { display: none; }
+    body.print-single .group-page.print-target { page-break-after: auto; }
   }
 </style>
 </head>
 <body>
   <section class="toc">
     <h1>IEEE Student OU Vitality — Society Reports</h1>
-    <p class="subtitle">Generated 2026-10-30 · one printable page per society · click a name to print just that page, or print this whole document (Ctrl/Cmd+P → Save as PDF) for all of them.</p>
-    <ul><li><a href="#una-sb-sight" onclick="printOnly('una-sb-sight')">(UNA) SB SIGHT</a></li><li><a href="#utn-sight" onclick="printOnly('utn-sight')">(UTN),SIGHT</a></li><li><a href="#wie" onclick="printOnly('wie')">(WIE)</a></li><li><a href="#ra24" onclick="printOnly('ra24')">.RA24</a></li><li><a href="#aes010" onclick="printOnly('aes010')">AES010</a></li><li><a href="#aes10" onclick="printOnly('aes10')">AES10</a></li><li><a href="#ap03" onclick="printOnly('ap03')">AP03</a></li><li><a href="#ap03-com19-sp01" onclick="printOnly('ap03-com19-sp01')">AP03/COM19/SP01</a></li><li><a href="#ap03-mtt17-rfid741" onclick="printOnly('ap03-mtt17-rfid741')">AP03/MTT17/RFID741</a></li><li><a href="#bio46" onclick="printOnly('bio46')">BIO46</a></li><li><a href="#c16" onclick="printOnly('c16')">C16</a></li><li><a href="#c16-com19" onclick="printOnly('c16-com19')">C16 &amp; COM19</a></li><li><a href="#c16-cis11" onclick="printOnly('c16-cis11')">C16/CIS11</a></li><li><a href="#c16-com19" onclick="printOnly('c16-com19')">C16/COM19</a></li><li><a href="#c16-com19-ed15" onclick="printOnly('c16-com19-ed15')">C16/COM19/ED15</a></li><li><a href="#c16-ep21" onclick="printOnly('c16-ep21')">C16/EP21</a></li><li><a href="#cas04" onclick="printOnly('cas04')">CAS04</a></li><li><a href="#cas04-ssc37-ed15" onclick="printOnly('cas04-ssc37-ed15')">CAS04/SSC37/ED15</a></li><li><a href="#cas4" onclick="printOnly('cas4')">CAS4</a></li><li><a href="#cis011" onclick="printOnly('cis011')">CIS011</a></li><li><a href="#cis11" onclick="printOnly('cis11')">CIS11</a></li><li><a href="#cis11-c16" onclick="printOnly('cis11-c16')">CIS11/C16</a></li><li><a href="#com19" onclick="printOnly('com19')">COM19</a></li><li><a href="#com19-c16" onclick="printOnly('com19-c16')">COM19,C16</a></li><li><a href="#com19-sp01" onclick="printOnly('com19-sp01')">COM19,SP01</a></li><li><a href="#com19-c16" onclick="printOnly('com19-c16')">COM19/C16</a></li><li><a href="#cs-nano-sys-tec" onclick="printOnly('cs-nano-sys-tec')">CS/NANO/SYS/TEC</a></li><li><a href="#cs23" onclick="printOnly('cs23')">CS23</a></li><li><a href="#cs23-ie13" onclick="printOnly('cs23-ie13')">CS23/IE13</a></li><li><a href="#cs23-sen39-csc41" onclick="printOnly('cs23-sen39-csc41')">CS23/SEN39/CSC41</a></li><li><a href="#ct08" onclick="printOnly('ct08')">CT08</a></li><li><a href="#e25" onclick="printOnly('e25')">E25</a></li><li><a href="#ed15" onclick="printOnly('ed15')">ED15</a></li><li><a href="#ed15-nano42" onclick="printOnly('ed15-nano42')">ED15/NANO42</a></li><li><a href="#emb018" onclick="printOnly('emb018')">EMB018</a></li><li><a href="#emb18" onclick="printOnly('emb18')">EMB18</a></li><li><a href="#emb18-ra24" onclick="printOnly('emb18-ra24')">EMB18/RA24</a></li><li><a href="#emc27-nano42-sen39" onclick="printOnly('emc27-nano42-sen39')">EMC27/NANO42/SEN39</a></li><li><a href="#ep21" onclick="printOnly('ep21')">EP21</a></li><li><a href="#grs29" onclick="printOnly('grs29')">GRS29</a></li><li><a href="#ia34" onclick="printOnly('ia34')">IA34</a></li><li><a href="#ie13" onclick="printOnly('ie13')">IE13</a></li><li><a href="#ieee-sight" onclick="printOnly('ieee-sight')">IEEE SIGHT</a></li><li><a href="#im09" onclick="printOnly('im09')">IM09</a></li><li><a href="#itss38" onclick="printOnly('itss38')">ITSS38</a></li><li><a href="#mag33" onclick="printOnly('mag33')">MAG33</a></li><li><a href="#mtt17" onclick="printOnly('mtt17')">MTT17</a></li><li><a href="#nano42" onclick="printOnly('nano42')">NANO42</a></li><li><a href="#nano42-ed15" onclick="printOnly('nano42-ed15')">NANO42/ED15</a></li><li><a href="#nps05" onclick="printOnly('nps05')">NPS05</a></li><li><a href="#oe22" onclick="printOnly('oe22')">OE22</a></li><li><a href="#pe31" onclick="printOnly('pe31')">PE31</a></li><li><a href="#pe31-c16" onclick="printOnly('pe31-c16')">PE31/C16</a></li><li><a href="#pe31-ia34" onclick="printOnly('pe31-ia34')">PE31/IA34</a></li><li><a href="#pe31-pel35" onclick="printOnly('pe31-pel35')">PE31/PEL35</a></li><li><a href="#pe31-sys45" onclick="printOnly('pe31-sys45')">PE31/SYS45</a></li><li><a href="#pel35" onclick="printOnly('pel35')">PEL35</a></li><li><a href="#pel35-ia34" onclick="printOnly('pel35-ia34')">PEL35/IA34</a></li><li><a href="#pho36" onclick="printOnly('pho36')">PHO36</a></li><li><a href="#ra" onclick="printOnly('ra')">RA</a></li><li><a href="#ra024" onclick="printOnly('ra024')">RA024</a></li><li><a href="#ra24" onclick="printOnly('ra24')">RA24</a></li><li><a href="#ra24-cis11-c16" onclick="printOnly('ra24-cis11-c16')">RA24,CIS11,C16</a></li><li><a href="#ra24-cs23" onclick="printOnly('ra24-cs23')">RA24/CS23</a></li><li><a href="#ra24-sen39-sys45" onclick="printOnly('ra24-sen39-sys45')">RA24/SEN39/SYS45</a></li><li><a href="#rl07" onclick="printOnly('rl07')">RL07</a></li><li><a href="#sb-sight" onclick="printOnly('sb-sight')">SB SIGHT</a></li><li><a href="#sb-sight-group" onclick="printOnly('sb-sight-group')">SB SIGHT Group</a></li><li><a href="#sight" onclick="printOnly('sight')">SIGHT</a></li><li><a href="#sit30" onclick="printOnly('sit30')">SIT30</a></li><li><a href="#smc27" onclick="printOnly('smc27')">SMC27</a></li><li><a href="#smc28" onclick="printOnly('smc28')">SMC28</a></li><li><a href="#smc28-c16" onclick="printOnly('smc28-c16')">SMC28/C16</a></li><li><a href="#sp01" onclick="printOnly('sp01')">SP01</a></li><li><a href="#ssc37" onclick="printOnly('ssc37')">SSC37</a></li><li><a href="#ssc37-ed15" onclick="printOnly('ssc37-ed15')">SSC37/ED15</a></li><li><a href="#tec802-itss38-vt06" onclick="printOnly('tec802-itss38-vt06')">TEC802/ITSS38/VT06</a></li><li><a href="#tec802-pel35-ia34" onclick="printOnly('tec802-pel35-ia34')">TEC802/PEL35/IA34</a></li><li><a href="#tem014" onclick="printOnly('tem014')">TEM014</a></li><li><a href="#tem14" onclick="printOnly('tem14')">TEM14</a></li><li><a href="#tmc14" onclick="printOnly('tmc14')">TMC14</a></li><li><a href="#uffc20" onclick="printOnly('uffc20')">UFFC20</a></li><li><a href="#vt06" onclick="printOnly('vt06')">VT06</a></li><li><a href="#wie" onclick="printOnly('wie')">WIE</a></li></ul>
+    <p class="subtitle">Generated 2026-11-05 · one printable page per society · click a name to print just that page, or print this whole document (Ctrl/Cmd+P → Save as PDF) for all of them.</p>
+    <ul><li><a href="#una-sb-sight" onclick="printOnly('una-sb-sight')">(UNA) SB SIGHT</a></li><li><a href="#utn-sight" onclick="printOnly('utn-sight')">(UTN),SIGHT</a></li><li><a href="#wie" onclick="printOnly('wie')">(WIE)</a></li><li><a href="#ra24" onclick="printOnly('ra24')">.RA24</a></li><li><a href="#aes010" onclick="printOnly('aes010')">AES010</a></li><li><a href="#aes10" onclick="printOnly('aes10')">AES10</a></li><li><a href="#ap03" onclick="printOnly('ap03')">AP03</a></li><li><a href="#ap03-com19-sp01" onclick="printOnly('ap03-com19-sp01')">AP03/COM19/SP01</a></li><li><a href="#ap03-mtt17-rfid741" onclick="printOnly('ap03-mtt17-rfid741')">AP03/MTT17/RFID741</a></li><li><a href="#bio46" onclick="printOnly('bio46')">BIO46</a></li><li><a href="#c16" onclick="printOnly('c16')">C16</a></li><li><a href="#c16-com19" onclick="printOnly('c16-com19')">C16 &amp; COM19</a></li><li><a href="#c16-cis11" onclick="printOnly('c16-cis11')">C16/CIS11</a></li><li><a href="#c16-com19-2" onclick="printOnly('c16-com19-2')">C16/COM19</a></li><li><a href="#c16-com19-ed15" onclick="printOnly('c16-com19-ed15')">C16/COM19/ED15</a></li><li><a href="#c16-ep21" onclick="printOnly('c16-ep21')">C16/EP21</a></li><li><a href="#cas04" onclick="printOnly('cas04')">CAS04</a></li><li><a href="#cas04-ssc37-ed15" onclick="printOnly('cas04-ssc37-ed15')">CAS04/SSC37/ED15</a></li><li><a href="#cas4" onclick="printOnly('cas4')">CAS4</a></li><li><a href="#cis011" onclick="printOnly('cis011')">CIS011</a></li><li><a href="#cis11" onclick="printOnly('cis11')">CIS11</a></li><li><a href="#cis11-c16" onclick="printOnly('cis11-c16')">CIS11/C16</a></li><li><a href="#com19" onclick="printOnly('com19')">COM19</a></li><li><a href="#com19-c16" onclick="printOnly('com19-c16')">COM19,C16</a></li><li><a href="#com19-sp01" onclick="printOnly('com19-sp01')">COM19,SP01</a></li><li><a href="#com19-c16-2" onclick="printOnly('com19-c16-2')">COM19/C16</a></li><li><a href="#cs-nano-sys-tec" onclick="printOnly('cs-nano-sys-tec')">CS/NANO/SYS/TEC</a></li><li><a href="#cs23" onclick="printOnly('cs23')">CS23</a></li><li><a href="#cs23-ie13" onclick="printOnly('cs23-ie13')">CS23/IE13</a></li><li><a href="#cs23-sen39-csc41" onclick="printOnly('cs23-sen39-csc41')">CS23/SEN39/CSC41</a></li><li><a href="#ct08" onclick="printOnly('ct08')">CT08</a></li><li><a href="#e25" onclick="printOnly('e25')">E25</a></li><li><a href="#ed15" onclick="printOnly('ed15')">ED15</a></li><li><a href="#ed15-nano42" onclick="printOnly('ed15-nano42')">ED15/NANO42</a></li><li><a href="#emb018" onclick="printOnly('emb018')">EMB018</a></li><li><a href="#emb18" onclick="printOnly('emb18')">EMB18</a></li><li><a href="#emb18-ra24" onclick="printOnly('emb18-ra24')">EMB18/RA24</a></li><li><a href="#emc27-nano42-sen39" onclick="printOnly('emc27-nano42-sen39')">EMC27/NANO42/SEN39</a></li><li><a href="#ep21" onclick="printOnly('ep21')">EP21</a></li><li><a href="#grs29" onclick="printOnly('grs29')">GRS29</a></li><li><a href="#ia34" onclick="printOnly('ia34')">IA34</a></li><li><a href="#ie13" onclick="printOnly('ie13')">IE13</a></li><li><a href="#ieee-sight" onclick="printOnly('ieee-sight')">IEEE SIGHT</a></li><li><a href="#im09" onclick="printOnly('im09')">IM09</a></li><li><a href="#itss38" onclick="printOnly('itss38')">ITSS38</a></li><li><a href="#mag33" onclick="printOnly('mag33')">MAG33</a></li><li><a href="#mtt17" onclick="printOnly('mtt17')">MTT17</a></li><li><a href="#nano42" onclick="printOnly('nano42')">NANO42</a></li><li><a href="#nano42-ed15" onclick="printOnly('nano42-ed15')">NANO42/ED15</a></li><li><a href="#nps05" onclick="printOnly('nps05')">NPS05</a></li><li><a href="#oe22" onclick="printOnly('oe22')">OE22</a></li><li><a href="#pe31" onclick="printOnly('pe31')">PE31</a></li><li><a href="#pe31-c16" onclick="printOnly('pe31-c16')">PE31/C16</a></li><li><a href="#pe31-ia34" onclick="printOnly('pe31-ia34')">PE31/IA34</a></li><li><a href="#pe31-pel35" onclick="printOnly('pe31-pel35')">PE31/PEL35</a></li><li><a href="#pe31-sys45" onclick="printOnly('pe31-sys45')">PE31/SYS45</a></li><li><a href="#pel35" onclick="printOnly('pel35')">PEL35</a></li><li><a href="#pel35-ia34" onclick="printOnly('pel35-ia34')">PEL35/IA34</a></li><li><a href="#pho36" onclick="printOnly('pho36')">PHO36</a></li><li><a href="#ra" onclick="printOnly('ra')">RA</a></li><li><a href="#ra024" onclick="printOnly('ra024')">RA024</a></li><li><a href="#ra24-2" onclick="printOnly('ra24-2')">RA24</a></li><li><a href="#ra24-cis11-c16" onclick="printOnly('ra24-cis11-c16')">RA24,CIS11,C16</a></li><li><a href="#ra24-cs23" onclick="printOnly('ra24-cs23')">RA24/CS23</a></li><li><a href="#ra24-sen39-sys45" onclick="printOnly('ra24-sen39-sys45')">RA24/SEN39/SYS45</a></li><li><a href="#rl07" onclick="printOnly('rl07')">RL07</a></li><li><a href="#sb-sight" onclick="printOnly('sb-sight')">SB SIGHT</a></li><li><a href="#sb-sight-group" onclick="printOnly('sb-sight-group')">SB SIGHT Group</a></li><li><a href="#sight" onclick="printOnly('sight')">SIGHT</a></li><li><a href="#sit30" onclick="printOnly('sit30')">SIT30</a></li><li><a href="#smc27" onclick="printOnly('smc27')">SMC27</a></li><li><a href="#smc28" onclick="printOnly('smc28')">SMC28</a></li><li><a href="#smc28-c16" onclick="printOnly('smc28-c16')">SMC28/C16</a></li><li><a href="#sp01" onclick="printOnly('sp01')">SP01</a></li><li><a href="#ssc37" onclick="printOnly('ssc37')">SSC37</a></li><li><a href="#ssc37-ed15" onclick="printOnly('ssc37-ed15')">SSC37/ED15</a></li><li><a href="#tec802-itss38-vt06" onclick="printOnly('tec802-itss38-vt06')">TEC802/ITSS38/VT06</a></li><li><a href="#tec802-pel35-ia34" onclick="printOnly('tec802-pel35-ia34')">TEC802/PEL35/IA34</a></li><li><a href="#tem014" onclick="printOnly('tem014')">TEM014</a></li><li><a href="#tem14" onclick="printOnly('tem14')">TEM14</a></li><li><a href="#tmc14" onclick="printOnly('tmc14')">TMC14</a></li><li><a href="#uffc20" onclick="printOnly('uffc20')">UFFC20</a></li><li><a href="#vt06" onclick="printOnly('vt06')">VT06</a></li><li><a href="#wie-2" onclick="printOnly('wie-2')">WIE</a></li></ul>
   </section>
   
         <section class="group-page" id="una-sb-sight">
           <div class="page-toolbar no-print"><button onclick="printOnly('una-sb-sight')">Print this page</button></div>
           <h1>(UNA) SB SIGHT</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">1</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">0/1</div></div>
@@ -88,7 +94,7 @@
                 <td>Universidad Nacional de Asuncion</td>
                 <td>21</td>
                 <td>4/2</td>
-                <td>Not Met</td>
+                <td>Partial</td>
                 <td style="color:#fab219">2/3</td>
               </tr></tbody>
           </table>
@@ -97,20 +103,20 @@
         <section class="group-page" id="utn-sight">
           <div class="page-toolbar no-print"><button onclick="printOnly('utn-sight')">Print this page</button></div>
           <h1>(UTN),SIGHT</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">1</div></div>
-            <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">0/1</div></div>
+            <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">1/1</div></div>
             <div class="stat"><div class="stat-label">Total Members</div><div class="stat-value">227</div></div>
           </div>
           <div class="bar-chart"><div class="bar-row">
                 <div class="bar-label">Full (3/3)</div>
-                <div class="bar-track"><div class="bar-fill" style="width:0%;background:#0ca30c"></div></div>
-                <div class="bar-value">0</div>
+                <div class="bar-track"><div class="bar-fill" style="width:100%;background:#0ca30c"></div></div>
+                <div class="bar-value">1</div>
               </div><div class="bar-row">
                 <div class="bar-label">Partial (2/3)</div>
-                <div class="bar-track"><div class="bar-fill" style="width:100%;background:#fab219"></div></div>
-                <div class="bar-value">1</div>
+                <div class="bar-track"><div class="bar-fill" style="width:0%;background:#fab219"></div></div>
+                <div class="bar-value">0</div>
               </div><div class="bar-row">
                 <div class="bar-label">Minimal (1/3)</div>
                 <div class="bar-track"><div class="bar-fill" style="width:0%;background:#ec835a"></div></div>
@@ -129,8 +135,8 @@
                 <td>Universidad Tecnica del Norte</td>
                 <td>227</td>
                 <td>7/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr></tbody>
           </table>
         </section>
@@ -138,7 +144,7 @@
         <section class="group-page" id="wie">
           <div class="page-toolbar no-print"><button onclick="printOnly('wie')">Print this page</button></div>
           <h1>(WIE)</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">1</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">0/1</div></div>
@@ -179,7 +185,7 @@
         <section class="group-page" id="ra24">
           <div class="page-toolbar no-print"><button onclick="printOnly('ra24')">Print this page</button></div>
           <h1>.RA24</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">1</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">0/1</div></div>
@@ -220,7 +226,7 @@
         <section class="group-page" id="aes010">
           <div class="page-toolbar no-print"><button onclick="printOnly('aes010')">Print this page</button></div>
           <h1>AES010</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">1</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">0/1</div></div>
@@ -232,12 +238,12 @@
                 <div class="bar-value">0</div>
               </div><div class="bar-row">
                 <div class="bar-label">Partial (2/3)</div>
-                <div class="bar-track"><div class="bar-fill" style="width:0%;background:#fab219"></div></div>
-                <div class="bar-value">0</div>
+                <div class="bar-track"><div class="bar-fill" style="width:100%;background:#fab219"></div></div>
+                <div class="bar-value">1</div>
               </div><div class="bar-row">
                 <div class="bar-label">Minimal (1/3)</div>
-                <div class="bar-track"><div class="bar-fill" style="width:100%;background:#ec835a"></div></div>
-                <div class="bar-value">1</div>
+                <div class="bar-track"><div class="bar-fill" style="width:0%;background:#ec835a"></div></div>
+                <div class="bar-value">0</div>
               </div><div class="bar-row">
                 <div class="bar-label">None (0/3)</div>
                 <div class="bar-track"><div class="bar-fill" style="width:0%;background:#d03b3b"></div></div>
@@ -251,9 +257,9 @@
                 <td class="mono">SBC63011I</td>
                 <td>Universidad del Norte</td>
                 <td>6</td>
-                <td>0/2</td>
+                <td>2/2</td>
                 <td>Partial</td>
-                <td style="color:#ec835a">1/3</td>
+                <td style="color:#fab219">2/3</td>
               </tr></tbody>
           </table>
         </section>
@@ -261,7 +267,7 @@
         <section class="group-page" id="aes10">
           <div class="page-toolbar no-print"><button onclick="printOnly('aes10')">Print this page</button></div>
           <h1>AES10</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">47</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">6/47</div></div>
@@ -716,7 +722,7 @@
         <section class="group-page" id="ap03">
           <div class="page-toolbar no-print"><button onclick="printOnly('ap03')">Print this page</button></div>
           <h1>AP03</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">19</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">4/19</div></div>
@@ -919,7 +925,7 @@
         <section class="group-page" id="ap03-com19-sp01">
           <div class="page-toolbar no-print"><button onclick="printOnly('ap03-com19-sp01')">Print this page</button></div>
           <h1>AP03/COM19/SP01</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">1</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">1/1</div></div>
@@ -960,7 +966,7 @@
         <section class="group-page" id="ap03-mtt17-rfid741">
           <div class="page-toolbar no-print"><button onclick="printOnly('ap03-mtt17-rfid741')">Print this page</button></div>
           <h1>AP03/MTT17/RFID741</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">1</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">1/1</div></div>
@@ -991,7 +997,7 @@
                 <td class="mono">SBC1280F</td>
                 <td>Escuela Politecnica Nacional</td>
                 <td>42</td>
-                <td>4/2</td>
+                <td>5/2</td>
                 <td>Met</td>
                 <td style="color:#0ca30c">3/3</td>
               </tr></tbody>
@@ -1001,7 +1007,7 @@
         <section class="group-page" id="bio46">
           <div class="page-toolbar no-print"><button onclick="printOnly('bio46')">Print this page</button></div>
           <h1>BIO46</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">1</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">0/1</div></div>
@@ -1042,7 +1048,7 @@
         <section class="group-page" id="c16">
           <div class="page-toolbar no-print"><button onclick="printOnly('c16')">Print this page</button></div>
           <h1>C16</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">160</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">29/160</div></div>
@@ -1054,12 +1060,12 @@
                 <div class="bar-value">29</div>
               </div><div class="bar-row">
                 <div class="bar-label">Partial (2/3)</div>
-                <div class="bar-track"><div class="bar-fill" style="width:54%;background:#fab219"></div></div>
-                <div class="bar-value">37</div>
+                <div class="bar-track"><div class="bar-fill" style="width:52%;background:#fab219"></div></div>
+                <div class="bar-value">36</div>
               </div><div class="bar-row">
                 <div class="bar-label">Minimal (1/3)</div>
-                <div class="bar-track"><div class="bar-fill" style="width:36%;background:#ec835a"></div></div>
-                <div class="bar-value">25</div>
+                <div class="bar-track"><div class="bar-fill" style="width:38%;background:#ec835a"></div></div>
+                <div class="bar-value">26</div>
               </div><div class="bar-row">
                 <div class="bar-label">None (0/3)</div>
                 <div class="bar-track"><div class="bar-fill" style="width:100%;background:#d03b3b"></div></div>
@@ -1199,7 +1205,7 @@
                 <td class="mono">SBC19041A</td>
                 <td>Escuela Superior Politecnica del Litoral</td>
                 <td>73</td>
-                <td>2/2</td>
+                <td>3/2</td>
                 <td>Met</td>
                 <td style="color:#0ca30c">3/3</td>
               </tr><tr>
@@ -1397,7 +1403,7 @@
                 <td class="mono">SBC11479</td>
                 <td>Instituto Tecnologico Superior de Atlixco</td>
                 <td>14</td>
-                <td>2/2</td>
+                <td>3/2</td>
                 <td>Met</td>
                 <td style="color:#0ca30c">3/3</td>
               </tr><tr>
@@ -1632,7 +1638,7 @@
                 <td>Universidad Autonoma del Estado de Mexico</td>
                 <td>2</td>
                 <td>0/2</td>
-                <td>Not Met</td>
+                <td>Partial</td>
                 <td style="color:#d03b3b">0/3</td>
               </tr><tr>
                 <td>Universidad Autonoma del Estado de Morelos,C16</td>
@@ -2172,8 +2178,8 @@
                 <td>Universidad Veracruzana-LSCA</td>
                 <td>6</td>
                 <td>0/2</td>
-                <td>Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>Partial</td>
+                <td style="color:#ec835a">1/3</td>
               </tr><tr>
                 <td>Universidad de Buenos Aires,C16</td>
                 <td>Student Branch Chapter</td>
@@ -2306,7 +2312,7 @@
                 <td class="mono">SBC99671F</td>
                 <td>Universidad de el Salvador</td>
                 <td>21</td>
-                <td>4/2</td>
+                <td>12/2</td>
                 <td>Partial</td>
                 <td style="color:#fab219">2/3</td>
               </tr><tr>
@@ -2514,7 +2520,7 @@
         <section class="group-page" id="c16-com19">
           <div class="page-toolbar no-print"><button onclick="printOnly('c16-com19')">Print this page</button></div>
           <h1>C16 &amp; COM19</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">1</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">1/1</div></div>
@@ -2545,7 +2551,7 @@
                 <td class="mono">SBC63011</td>
                 <td>Universidad del Norte</td>
                 <td>50</td>
-                <td>17/2</td>
+                <td>21/2</td>
                 <td>Met</td>
                 <td style="color:#0ca30c">3/3</td>
               </tr></tbody>
@@ -2555,7 +2561,7 @@
         <section class="group-page" id="c16-cis11">
           <div class="page-toolbar no-print"><button onclick="printOnly('c16-cis11')">Print this page</button></div>
           <h1>C16/CIS11</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">2</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">1/2</div></div>
@@ -2602,10 +2608,10 @@
           </table>
         </section>
         
-        <section class="group-page" id="c16-com19">
-          <div class="page-toolbar no-print"><button onclick="printOnly('c16-com19')">Print this page</button></div>
+        <section class="group-page" id="c16-com19-2">
+          <div class="page-toolbar no-print"><button onclick="printOnly('c16-com19-2')">Print this page</button></div>
           <h1>C16/COM19</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">2</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">0/2</div></div>
@@ -2655,7 +2661,7 @@
         <section class="group-page" id="c16-com19-ed15">
           <div class="page-toolbar no-print"><button onclick="printOnly('c16-com19-ed15')">Print this page</button></div>
           <h1>C16/COM19/ED15</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">1</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">0/1</div></div>
@@ -2696,7 +2702,7 @@
         <section class="group-page" id="c16-ep21">
           <div class="page-toolbar no-print"><button onclick="printOnly('c16-ep21')">Print this page</button></div>
           <h1>C16/EP21</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">1</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">1/1</div></div>
@@ -2737,7 +2743,7 @@
         <section class="group-page" id="cas04">
           <div class="page-toolbar no-print"><button onclick="printOnly('cas04')">Print this page</button></div>
           <h1>CAS04</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">50</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">9/50</div></div>
@@ -3219,7 +3225,7 @@
         <section class="group-page" id="cas04-ssc37-ed15">
           <div class="page-toolbar no-print"><button onclick="printOnly('cas04-ssc37-ed15')">Print this page</button></div>
           <h1>CAS04/SSC37/ED15</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">1</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">0/1</div></div>
@@ -3260,7 +3266,7 @@
         <section class="group-page" id="cas4">
           <div class="page-toolbar no-print"><button onclick="printOnly('cas4')">Print this page</button></div>
           <h1>CAS4</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">1</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">0/1</div></div>
@@ -3301,7 +3307,7 @@
         <section class="group-page" id="cis011">
           <div class="page-toolbar no-print"><button onclick="printOnly('cis011')">Print this page</button></div>
           <h1>CIS011</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">1</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">1/1</div></div>
@@ -3342,7 +3348,7 @@
         <section class="group-page" id="cis11">
           <div class="page-toolbar no-print"><button onclick="printOnly('cis11')">Print this page</button></div>
           <h1>CIS11</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">32</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">6/32</div></div>
@@ -3571,7 +3577,7 @@
                 <td class="mono">SBC65981C</td>
                 <td>Universidad de la Costa</td>
                 <td>23</td>
-                <td>2/2</td>
+                <td>3/2</td>
                 <td>Met</td>
                 <td style="color:#0ca30c">3/3</td>
               </tr><tr>
@@ -3662,7 +3668,7 @@
         <section class="group-page" id="cis11-c16">
           <div class="page-toolbar no-print"><button onclick="printOnly('cis11-c16')">Print this page</button></div>
           <h1>CIS11/C16</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">1</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">0/1</div></div>
@@ -3703,7 +3709,7 @@
         <section class="group-page" id="com19">
           <div class="page-toolbar no-print"><button onclick="printOnly('com19')">Print this page</button></div>
           <h1>COM19</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">91</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">14/91</div></div>
@@ -3715,12 +3721,12 @@
                 <div class="bar-value">14</div>
               </div><div class="bar-row">
                 <div class="bar-label">Partial (2/3)</div>
-                <div class="bar-track"><div class="bar-fill" style="width:78%;background:#fab219"></div></div>
-                <div class="bar-value">28</div>
+                <div class="bar-track"><div class="bar-fill" style="width:81%;background:#fab219"></div></div>
+                <div class="bar-value">29</div>
               </div><div class="bar-row">
                 <div class="bar-label">Minimal (1/3)</div>
-                <div class="bar-track"><div class="bar-fill" style="width:36%;background:#ec835a"></div></div>
-                <div class="bar-value">13</div>
+                <div class="bar-track"><div class="bar-fill" style="width:33%;background:#ec835a"></div></div>
+                <div class="bar-value">12</div>
               </div><div class="bar-row">
                 <div class="bar-label">None (0/3)</div>
                 <div class="bar-track"><div class="bar-fill" style="width:100%;background:#d03b3b"></div></div>
@@ -4454,9 +4460,9 @@
                 <td class="mono">SBC99671B</td>
                 <td>Universidad de el Salvador</td>
                 <td>5</td>
-                <td>1/2</td>
+                <td>2/2</td>
                 <td>Met</td>
-                <td style="color:#ec835a">1/3</td>
+                <td style="color:#fab219">2/3</td>
               </tr><tr>
                 <td>Universidad de las Americas-Quito,COM19</td>
                 <td>Student Branch Chapter</td>
@@ -4554,7 +4560,7 @@
         <section class="group-page" id="com19-c16">
           <div class="page-toolbar no-print"><button onclick="printOnly('com19-c16')">Print this page</button></div>
           <h1>COM19,C16</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">1</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">0/1</div></div>
@@ -4595,7 +4601,7 @@
         <section class="group-page" id="com19-sp01">
           <div class="page-toolbar no-print"><button onclick="printOnly('com19-sp01')">Print this page</button></div>
           <h1>COM19,SP01</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">1</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">0/1</div></div>
@@ -4633,10 +4639,10 @@
           </table>
         </section>
         
-        <section class="group-page" id="com19-c16">
-          <div class="page-toolbar no-print"><button onclick="printOnly('com19-c16')">Print this page</button></div>
+        <section class="group-page" id="com19-c16-2">
+          <div class="page-toolbar no-print"><button onclick="printOnly('com19-c16-2')">Print this page</button></div>
           <h1>COM19/C16</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">2</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">0/2</div></div>
@@ -4686,7 +4692,7 @@
         <section class="group-page" id="cs-nano-sys-tec">
           <div class="page-toolbar no-print"><button onclick="printOnly('cs-nano-sys-tec')">Print this page</button></div>
           <h1>CS/NANO/SYS/TEC</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">1</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">0/1</div></div>
@@ -4727,20 +4733,20 @@
         <section class="group-page" id="cs23">
           <div class="page-toolbar no-print"><button onclick="printOnly('cs23')">Print this page</button></div>
           <h1>CS23</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">26</div></div>
-            <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">3/26</div></div>
+            <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">4/26</div></div>
             <div class="stat"><div class="stat-label">Total Members</div><div class="stat-value">123</div></div>
           </div>
           <div class="bar-chart"><div class="bar-row">
                 <div class="bar-label">Full (3/3)</div>
-                <div class="bar-track"><div class="bar-fill" style="width:20%;background:#0ca30c"></div></div>
-                <div class="bar-value">3</div>
+                <div class="bar-track"><div class="bar-fill" style="width:27%;background:#0ca30c"></div></div>
+                <div class="bar-value">4</div>
               </div><div class="bar-row">
                 <div class="bar-label">Partial (2/3)</div>
-                <div class="bar-track"><div class="bar-fill" style="width:40%;background:#fab219"></div></div>
-                <div class="bar-value">6</div>
+                <div class="bar-track"><div class="bar-fill" style="width:33%;background:#fab219"></div></div>
+                <div class="bar-value">5</div>
               </div><div class="bar-row">
                 <div class="bar-label">Minimal (1/3)</div>
                 <div class="bar-track"><div class="bar-fill" style="width:13%;background:#ec835a"></div></div>
@@ -4758,7 +4764,7 @@
                 <td class="mono">SBC60521G</td>
                 <td>Cinvestav Zacatenco</td>
                 <td>11</td>
-                <td>9/2</td>
+                <td>11/2</td>
                 <td>Met</td>
                 <td style="color:#0ca30c">3/3</td>
               </tr><tr>
@@ -4956,7 +4962,7 @@
                 <td class="mono">SBC12991A</td>
                 <td>Universidad de los Andes</td>
                 <td>7</td>
-                <td>3/2</td>
+                <td>2/2</td>
                 <td>Met</td>
                 <td style="color:#0ca30c">3/3</td>
               </tr><tr>
@@ -4983,9 +4989,9 @@
                 <td class="mono">SBC04831E</td>
                 <td>University of Concepcion</td>
                 <td>17</td>
-                <td>1/2</td>
+                <td>2/2</td>
                 <td>Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr></tbody>
           </table>
         </section>
@@ -4993,7 +4999,7 @@
         <section class="group-page" id="cs23-ie13">
           <div class="page-toolbar no-print"><button onclick="printOnly('cs23-ie13')">Print this page</button></div>
           <h1>CS23/IE13</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">1</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">0/1</div></div>
@@ -5034,7 +5040,7 @@
         <section class="group-page" id="cs23-sen39-csc41">
           <div class="page-toolbar no-print"><button onclick="printOnly('cs23-sen39-csc41')">Print this page</button></div>
           <h1>CS23/SEN39/CSC41</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">1</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">0/1</div></div>
@@ -5075,7 +5081,7 @@
         <section class="group-page" id="ct08">
           <div class="page-toolbar no-print"><button onclick="printOnly('ct08')">Print this page</button></div>
           <h1>CT08</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">2</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">0/2</div></div>
@@ -5125,7 +5131,7 @@
         <section class="group-page" id="e25">
           <div class="page-toolbar no-print"><button onclick="printOnly('e25')">Print this page</button></div>
           <h1>E25</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">11</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">5/11</div></div>
@@ -5256,7 +5262,7 @@
         <section class="group-page" id="ed15">
           <div class="page-toolbar no-print"><button onclick="printOnly('ed15')">Print this page</button></div>
           <h1>ED15</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">44</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">7/44</div></div>
@@ -5314,7 +5320,7 @@
                 <td class="mono">SBC60521</td>
                 <td>Cinvestav Zacatenco</td>
                 <td>21</td>
-                <td>10/2</td>
+                <td>11/2</td>
                 <td>Met</td>
                 <td style="color:#0ca30c">3/3</td>
               </tr><tr>
@@ -5620,7 +5626,7 @@
                 <td class="mono">SBC99671G</td>
                 <td>Universidad de el Salvador</td>
                 <td>16</td>
-                <td>0/2</td>
+                <td>1/2</td>
                 <td>Partial</td>
                 <td style="color:#ec835a">1/3</td>
               </tr><tr>
@@ -5684,7 +5690,7 @@
         <section class="group-page" id="ed15-nano42">
           <div class="page-toolbar no-print"><button onclick="printOnly('ed15-nano42')">Print this page</button></div>
           <h1>ED15/NANO42</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">1</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">0/1</div></div>
@@ -5725,7 +5731,7 @@
         <section class="group-page" id="emb018">
           <div class="page-toolbar no-print"><button onclick="printOnly('emb018')">Print this page</button></div>
           <h1>EMB018</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">1</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">0/1</div></div>
@@ -5766,27 +5772,27 @@
         <section class="group-page" id="emb18">
           <div class="page-toolbar no-print"><button onclick="printOnly('emb18')">Print this page</button></div>
           <h1>EMB18</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">97</div></div>
-            <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">18/97</div></div>
+            <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">19/97</div></div>
             <div class="stat"><div class="stat-label">Total Members</div><div class="stat-value">1318</div></div>
           </div>
           <div class="bar-chart"><div class="bar-row">
                 <div class="bar-label">Full (3/3)</div>
-                <div class="bar-track"><div class="bar-fill" style="width:60%;background:#0ca30c"></div></div>
-                <div class="bar-value">18</div>
+                <div class="bar-track"><div class="bar-fill" style="width:66%;background:#0ca30c"></div></div>
+                <div class="bar-value">19</div>
               </div><div class="bar-row">
                 <div class="bar-label">Partial (2/3)</div>
-                <div class="bar-track"><div class="bar-fill" style="width:73%;background:#fab219"></div></div>
+                <div class="bar-track"><div class="bar-fill" style="width:76%;background:#fab219"></div></div>
                 <div class="bar-value">22</div>
               </div><div class="bar-row">
                 <div class="bar-label">Minimal (1/3)</div>
                 <div class="bar-track"><div class="bar-fill" style="width:100%;background:#ec835a"></div></div>
-                <div class="bar-value">30</div>
+                <div class="bar-value">29</div>
               </div><div class="bar-row">
                 <div class="bar-label">None (0/3)</div>
-                <div class="bar-track"><div class="bar-fill" style="width:90%;background:#d03b3b"></div></div>
+                <div class="bar-track"><div class="bar-fill" style="width:93%;background:#d03b3b"></div></div>
                 <div class="bar-value">27</div>
               </div></div>
           <table>
@@ -5851,7 +5857,7 @@
                 <td class="mono">SBC1280G</td>
                 <td>Escuela Politecnica Nacional</td>
                 <td>39</td>
-                <td>4/2</td>
+                <td>5/2</td>
                 <td>Met</td>
                 <td style="color:#0ca30c">3/3</td>
               </tr><tr>
@@ -5860,7 +5866,7 @@
                 <td class="mono">SBC65531C</td>
                 <td>Escuela Superior Politecnica de Chimborazo</td>
                 <td>26</td>
-                <td>0/2</td>
+                <td>1/2</td>
                 <td>Met</td>
                 <td style="color:#fab219">2/3</td>
               </tr><tr>
@@ -6004,7 +6010,7 @@
                 <td class="mono">SBC03241G</td>
                 <td>Pontificia Universidad Catolica del Peru</td>
                 <td>33</td>
-                <td>4/2</td>
+                <td>6/2</td>
                 <td>Met</td>
                 <td style="color:#0ca30c">3/3</td>
               </tr><tr>
@@ -6040,9 +6046,9 @@
                 <td class="mono">SBC62811</td>
                 <td>Unidad Prof Interdiscip En Ing Tec Avanzadas-IPN</td>
                 <td>12</td>
-                <td>1/2</td>
+                <td>2/2</td>
                 <td>Partial</td>
-                <td style="color:#ec835a">1/3</td>
+                <td style="color:#fab219">2/3</td>
               </tr><tr>
                 <td>UTN-Facultad Regional San Nicolas,EMB18</td>
                 <td>Student Branch Chapter</td>
@@ -6184,7 +6190,7 @@
                 <td class="mono">SBC60431E</td>
                 <td>Universidad Don Bosco</td>
                 <td>39</td>
-                <td>3/2</td>
+                <td>4/2</td>
                 <td>Met</td>
                 <td style="color:#0ca30c">3/3</td>
               </tr><tr>
@@ -6355,7 +6361,7 @@
                 <td class="mono">SBC60381D</td>
                 <td>Universidad Peruana de Ciencias Aplicadas</td>
                 <td>41</td>
-                <td>2/2</td>
+                <td>6/2</td>
                 <td>Met</td>
                 <td style="color:#0ca30c">3/3</td>
               </tr><tr>
@@ -6373,7 +6379,7 @@
                 <td class="mono">SBC6524A</td>
                 <td>Universidad Politecnica Salesiana-Cuenca</td>
                 <td>26</td>
-                <td>0/2</td>
+                <td>1/2</td>
                 <td>Partial</td>
                 <td style="color:#ec835a">1/3</td>
               </tr><tr>
@@ -6445,9 +6451,9 @@
                 <td class="mono">SBC65891B</td>
                 <td>Universidad Tecnica del Norte</td>
                 <td>76</td>
-                <td>1/2</td>
+                <td>2/2</td>
                 <td>Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Universidad Tecnologica De Bolivar,EMB18</td>
                 <td>Student Branch Chapter</td>
@@ -6472,7 +6478,7 @@
                 <td class="mono">SBC63761E</td>
                 <td>Universidad Tecnologica del Peru</td>
                 <td>22</td>
-                <td>11/2</td>
+                <td>12/2</td>
                 <td>Met</td>
                 <td style="color:#0ca30c">3/3</td>
               </tr><tr>
@@ -6589,7 +6595,7 @@
                 <td class="mono">SBC63741D</td>
                 <td>Universidad de las Fuerzas Armadas - ESPE</td>
                 <td>17</td>
-                <td>2/2</td>
+                <td>3/2</td>
                 <td>Met</td>
                 <td style="color:#0ca30c">3/3</td>
               </tr><tr>
@@ -6634,7 +6640,7 @@
                 <td class="mono">SBC66301D</td>
                 <td>Universidade Federal do Rio Grande do Norte</td>
                 <td>40</td>
-                <td>0/2</td>
+                <td>1/2</td>
                 <td>Met</td>
                 <td style="color:#fab219">2/3</td>
               </tr><tr>
@@ -6652,7 +6658,7 @@
                 <td class="mono">SBC04831A</td>
                 <td>University of Concepcion</td>
                 <td>31</td>
-                <td>2/2</td>
+                <td>3/2</td>
                 <td>Met</td>
                 <td style="color:#0ca30c">3/3</td>
               </tr><tr>
@@ -6671,7 +6677,7 @@
         <section class="group-page" id="emb18-ra24">
           <div class="page-toolbar no-print"><button onclick="printOnly('emb18-ra24')">Print this page</button></div>
           <h1>EMB18/RA24</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">1</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">0/1</div></div>
@@ -6712,7 +6718,7 @@
         <section class="group-page" id="emc27-nano42-sen39">
           <div class="page-toolbar no-print"><button onclick="printOnly('emc27-nano42-sen39')">Print this page</button></div>
           <h1>EMC27/NANO42/SEN39</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">1</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">0/1</div></div>
@@ -6753,7 +6759,7 @@
         <section class="group-page" id="ep21">
           <div class="page-toolbar no-print"><button onclick="printOnly('ep21')">Print this page</button></div>
           <h1>EP21</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">3</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">1/3</div></div>
@@ -6812,7 +6818,7 @@
         <section class="group-page" id="grs29">
           <div class="page-toolbar no-print"><button onclick="printOnly('grs29')">Print this page</button></div>
           <h1>GRS29</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">12</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">1/12</div></div>
@@ -6952,20 +6958,20 @@
         <section class="group-page" id="ia34">
           <div class="page-toolbar no-print"><button onclick="printOnly('ia34')">Print this page</button></div>
           <h1>IA34</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">71</div></div>
-            <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">10/71</div></div>
+            <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">11/71</div></div>
             <div class="stat"><div class="stat-label">Total Members</div><div class="stat-value">618</div></div>
           </div>
           <div class="bar-chart"><div class="bar-row">
                 <div class="bar-label">Full (3/3)</div>
-                <div class="bar-track"><div class="bar-fill" style="width:25%;background:#0ca30c"></div></div>
-                <div class="bar-value">10</div>
+                <div class="bar-track"><div class="bar-fill" style="width:28%;background:#0ca30c"></div></div>
+                <div class="bar-value">11</div>
               </div><div class="bar-row">
                 <div class="bar-label">Partial (2/3)</div>
-                <div class="bar-track"><div class="bar-fill" style="width:25%;background:#fab219"></div></div>
-                <div class="bar-value">10</div>
+                <div class="bar-track"><div class="bar-fill" style="width:22%;background:#fab219"></div></div>
+                <div class="bar-value">9</div>
               </div><div class="bar-row">
                 <div class="bar-label">Minimal (1/3)</div>
                 <div class="bar-track"><div class="bar-fill" style="width:28%;background:#ec835a"></div></div>
@@ -7199,9 +7205,9 @@
                 <td class="mono">SBC66301B</td>
                 <td>Universidade Federal do Rio Grande do Norte</td>
                 <td>55</td>
-                <td>0/2</td>
+                <td>3/2</td>
                 <td>Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Univ Michoacana De San Nicolas De Hidalgo,IA34</td>
                 <td>Student Branch Chapter</td>
@@ -7623,7 +7629,7 @@
         <section class="group-page" id="ie13">
           <div class="page-toolbar no-print"><button onclick="printOnly('ie13')">Print this page</button></div>
           <h1>IE13</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">18</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">2/18</div></div>
@@ -7817,7 +7823,7 @@
         <section class="group-page" id="ieee-sight">
           <div class="page-toolbar no-print"><button onclick="printOnly('ieee-sight')">Print this page</button></div>
           <h1>IEEE SIGHT</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">1</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">0/1</div></div>
@@ -7858,7 +7864,7 @@
         <section class="group-page" id="im09">
           <div class="page-toolbar no-print"><button onclick="printOnly('im09')">Print this page</button></div>
           <h1>IM09</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">5</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">0/5</div></div>
@@ -7935,7 +7941,7 @@
         <section class="group-page" id="itss38">
           <div class="page-toolbar no-print"><button onclick="printOnly('itss38')">Print this page</button></div>
           <h1>ITSS38</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">1</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">0/1</div></div>
@@ -7976,7 +7982,7 @@
         <section class="group-page" id="mag33">
           <div class="page-toolbar no-print"><button onclick="printOnly('mag33')">Print this page</button></div>
           <h1>MAG33</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">2</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">0/2</div></div>
@@ -8026,27 +8032,27 @@
         <section class="group-page" id="mtt17">
           <div class="page-toolbar no-print"><button onclick="printOnly('mtt17')">Print this page</button></div>
           <h1>MTT17</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">15</div></div>
-            <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">2/15</div></div>
+            <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">3/15</div></div>
             <div class="stat"><div class="stat-label">Total Members</div><div class="stat-value">146</div></div>
           </div>
           <div class="bar-chart"><div class="bar-row">
                 <div class="bar-label">Full (3/3)</div>
-                <div class="bar-track"><div class="bar-fill" style="width:22%;background:#0ca30c"></div></div>
-                <div class="bar-value">2</div>
+                <div class="bar-track"><div class="bar-fill" style="width:38%;background:#0ca30c"></div></div>
+                <div class="bar-value">3</div>
               </div><div class="bar-row">
                 <div class="bar-label">Partial (2/3)</div>
                 <div class="bar-track"><div class="bar-fill" style="width:100%;background:#fab219"></div></div>
-                <div class="bar-value">9</div>
+                <div class="bar-value">8</div>
               </div><div class="bar-row">
                 <div class="bar-label">Minimal (1/3)</div>
-                <div class="bar-track"><div class="bar-fill" style="width:33%;background:#ec835a"></div></div>
+                <div class="bar-track"><div class="bar-fill" style="width:38%;background:#ec835a"></div></div>
                 <div class="bar-value">3</div>
               </div><div class="bar-row">
                 <div class="bar-label">None (0/3)</div>
-                <div class="bar-track"><div class="bar-fill" style="width:11%;background:#d03b3b"></div></div>
+                <div class="bar-track"><div class="bar-fill" style="width:12%;background:#d03b3b"></div></div>
                 <div class="bar-value">1</div>
               </div></div>
           <table>
@@ -8102,7 +8108,7 @@
                 <td class="mono">SBC03241L</td>
                 <td>Pontificia Universidad Catolica del Peru</td>
                 <td>8</td>
-                <td>0/2</td>
+                <td>1/2</td>
                 <td>Met</td>
                 <td style="color:#fab219">2/3</td>
               </tr><tr>
@@ -8111,7 +8117,7 @@
                 <td class="mono">SBC66271B</td>
                 <td>Universidad Catolica San Pablo</td>
                 <td>10</td>
-                <td>0/2</td>
+                <td>1/2</td>
                 <td>Met</td>
                 <td style="color:#fab219">2/3</td>
               </tr><tr>
@@ -8120,9 +8126,9 @@
                 <td class="mono">SBC37031B</td>
                 <td>Universidad Nacional de San Agustin</td>
                 <td>9</td>
-                <td>1/2</td>
+                <td>2/2</td>
                 <td>Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Universidad Politecnica Salesiana-Cuenca,MTT17</td>
                 <td>Student Branch Chapter</td>
@@ -8193,7 +8199,7 @@
         <section class="group-page" id="nano42">
           <div class="page-toolbar no-print"><button onclick="printOnly('nano42')">Print this page</button></div>
           <h1>NANO42</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">3</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">1/3</div></div>
@@ -8224,7 +8230,7 @@
                 <td class="mono">SBC60521E</td>
                 <td>Cinvestav Zacatenco</td>
                 <td>2</td>
-                <td>3/2</td>
+                <td>4/2</td>
                 <td>Met</td>
                 <td style="color:#fab219">2/3</td>
               </tr><tr>
@@ -8252,7 +8258,7 @@
         <section class="group-page" id="nano42-ed15">
           <div class="page-toolbar no-print"><button onclick="printOnly('nano42-ed15')">Print this page</button></div>
           <h1>NANO42/ED15</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">1</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">1/1</div></div>
@@ -8293,7 +8299,7 @@
         <section class="group-page" id="nps05">
           <div class="page-toolbar no-print"><button onclick="printOnly('nps05')">Print this page</button></div>
           <h1>NPS05</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">9</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">1/9</div></div>
@@ -8406,7 +8412,7 @@
         <section class="group-page" id="oe22">
           <div class="page-toolbar no-print"><button onclick="printOnly('oe22')">Print this page</button></div>
           <h1>OE22</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">7</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">0/7</div></div>
@@ -8501,20 +8507,20 @@
         <section class="group-page" id="pe31">
           <div class="page-toolbar no-print"><button onclick="printOnly('pe31')">Print this page</button></div>
           <h1>PE31</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">138</div></div>
-            <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">20/138</div></div>
+            <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">22/138</div></div>
             <div class="stat"><div class="stat-label">Total Members</div><div class="stat-value">1507</div></div>
           </div>
           <div class="bar-chart"><div class="bar-row">
                 <div class="bar-label">Full (3/3)</div>
-                <div class="bar-track"><div class="bar-fill" style="width:32%;background:#0ca30c"></div></div>
-                <div class="bar-value">20</div>
+                <div class="bar-track"><div class="bar-fill" style="width:35%;background:#0ca30c"></div></div>
+                <div class="bar-value">22</div>
               </div><div class="bar-row">
                 <div class="bar-label">Partial (2/3)</div>
-                <div class="bar-track"><div class="bar-fill" style="width:58%;background:#fab219"></div></div>
-                <div class="bar-value">36</div>
+                <div class="bar-track"><div class="bar-fill" style="width:55%;background:#fab219"></div></div>
+                <div class="bar-value">34</div>
               </div><div class="bar-row">
                 <div class="bar-label">Minimal (1/3)</div>
                 <div class="bar-track"><div class="bar-fill" style="width:32%;background:#ec835a"></div></div>
@@ -8622,9 +8628,9 @@
                 <td class="mono">SBC19041C</td>
                 <td>Escuela Superior Politecnica del Litoral</td>
                 <td>59</td>
-                <td>0/2</td>
+                <td>2/2</td>
                 <td>Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Faculdade de Tecnologia Senai Cimatec,PE31</td>
                 <td>Student Branch Chapter</td>
@@ -9612,7 +9618,7 @@
                 <td class="mono">SBC12991F</td>
                 <td>Universidad de los Andes</td>
                 <td>23</td>
-                <td>5/2</td>
+                <td>4/2</td>
                 <td>Met</td>
                 <td style="color:#0ca30c">3/3</td>
               </tr><tr>
@@ -9657,7 +9663,7 @@
                 <td class="mono">SBC13491</td>
                 <td>Universidade Federal De Juiz De Fora</td>
                 <td>60</td>
-                <td>26/2</td>
+                <td>27/2</td>
                 <td>Met</td>
                 <td style="color:#0ca30c">3/3</td>
               </tr><tr>
@@ -9711,9 +9717,9 @@
                 <td class="mono">SBC66301</td>
                 <td>Universidade Federal do Rio Grande do Norte</td>
                 <td>88</td>
-                <td>0/2</td>
+                <td>6/2</td>
                 <td>Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Universidade Federal do Vale do Sao Francisco,PE31</td>
                 <td>Student Branch Chapter</td>
@@ -9747,7 +9753,7 @@
                 <td class="mono">SBC04831C</td>
                 <td>University of Concepcion</td>
                 <td>32</td>
-                <td>3/2</td>
+                <td>4/2</td>
                 <td>Met</td>
                 <td style="color:#0ca30c">3/3</td>
               </tr><tr>
@@ -9775,7 +9781,7 @@
         <section class="group-page" id="pe31-c16">
           <div class="page-toolbar no-print"><button onclick="printOnly('pe31-c16')">Print this page</button></div>
           <h1>PE31/C16</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">1</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">0/1</div></div>
@@ -9816,7 +9822,7 @@
         <section class="group-page" id="pe31-ia34">
           <div class="page-toolbar no-print"><button onclick="printOnly('pe31-ia34')">Print this page</button></div>
           <h1>PE31/IA34</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">2</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">0/2</div></div>
@@ -9866,7 +9872,7 @@
         <section class="group-page" id="pe31-pel35">
           <div class="page-toolbar no-print"><button onclick="printOnly('pe31-pel35')">Print this page</button></div>
           <h1>PE31/PEL35</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">1</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">0/1</div></div>
@@ -9907,7 +9913,7 @@
         <section class="group-page" id="pe31-sys45">
           <div class="page-toolbar no-print"><button onclick="printOnly('pe31-sys45')">Print this page</button></div>
           <h1>PE31/SYS45</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">1</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">0/1</div></div>
@@ -9948,7 +9954,7 @@
         <section class="group-page" id="pel35">
           <div class="page-toolbar no-print"><button onclick="printOnly('pel35')">Print this page</button></div>
           <h1>PEL35</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">13</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">3/13</div></div>
@@ -10060,7 +10066,7 @@
                 <td class="mono">SBC12991O</td>
                 <td>Universidad de los Andes</td>
                 <td>17</td>
-                <td>6/2</td>
+                <td>5/2</td>
                 <td>Met</td>
                 <td style="color:#0ca30c">3/3</td>
               </tr><tr>
@@ -10097,7 +10103,7 @@
         <section class="group-page" id="pel35-ia34">
           <div class="page-toolbar no-print"><button onclick="printOnly('pel35-ia34')">Print this page</button></div>
           <h1>PEL35/IA34</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">2</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">0/2</div></div>
@@ -10147,7 +10153,7 @@
         <section class="group-page" id="pho36">
           <div class="page-toolbar no-print"><button onclick="printOnly('pho36')">Print this page</button></div>
           <h1>PHO36</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">20</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">3/20</div></div>
@@ -10359,7 +10365,7 @@
         <section class="group-page" id="ra">
           <div class="page-toolbar no-print"><button onclick="printOnly('ra')">Print this page</button></div>
           <h1>RA</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">1</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">0/1</div></div>
@@ -10400,7 +10406,7 @@
         <section class="group-page" id="ra024">
           <div class="page-toolbar no-print"><button onclick="printOnly('ra024')">Print this page</button></div>
           <h1>RA024</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">2</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">0/2</div></div>
@@ -10447,27 +10453,27 @@
           </table>
         </section>
         
-        <section class="group-page" id="ra24">
-          <div class="page-toolbar no-print"><button onclick="printOnly('ra24')">Print this page</button></div>
+        <section class="group-page" id="ra24-2">
+          <div class="page-toolbar no-print"><button onclick="printOnly('ra24-2')">Print this page</button></div>
           <h1>RA24</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">172</div></div>
-            <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">19/172</div></div>
+            <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">21/172</div></div>
             <div class="stat"><div class="stat-label">Total Members</div><div class="stat-value">1544</div></div>
           </div>
           <div class="bar-chart"><div class="bar-row">
                 <div class="bar-label">Full (3/3)</div>
-                <div class="bar-track"><div class="bar-fill" style="width:27%;background:#0ca30c"></div></div>
-                <div class="bar-value">19</div>
+                <div class="bar-track"><div class="bar-fill" style="width:30%;background:#0ca30c"></div></div>
+                <div class="bar-value">21</div>
               </div><div class="bar-row">
                 <div class="bar-label">Partial (2/3)</div>
-                <div class="bar-track"><div class="bar-fill" style="width:80%;background:#fab219"></div></div>
-                <div class="bar-value">57</div>
+                <div class="bar-track"><div class="bar-fill" style="width:76%;background:#fab219"></div></div>
+                <div class="bar-value">54</div>
               </div><div class="bar-row">
                 <div class="bar-label">Minimal (1/3)</div>
-                <div class="bar-track"><div class="bar-fill" style="width:35%;background:#ec835a"></div></div>
-                <div class="bar-value">25</div>
+                <div class="bar-track"><div class="bar-fill" style="width:37%;background:#ec835a"></div></div>
+                <div class="bar-value">26</div>
               </div><div class="bar-row">
                 <div class="bar-label">None (0/3)</div>
                 <div class="bar-track"><div class="bar-fill" style="width:100%;background:#d03b3b"></div></div>
@@ -10707,8 +10713,8 @@
                 <td>IFBA-Campus Vitoria da Conquista</td>
                 <td>6</td>
                 <td>1/2</td>
-                <td>Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>Partial</td>
+                <td style="color:#ec835a">1/3</td>
               </tr><tr>
                 <td>Ins Fed de Educacao Ciencia e Tec da Paraiba,RA24</td>
                 <td>Student Branch Chapter</td>
@@ -10733,9 +10739,9 @@
                 <td class="mono">SBC03571A</td>
                 <td>Instituto Tecnologico Superior de Coatzacoalcos</td>
                 <td>27</td>
-                <td>1/2</td>
+                <td>2/2</td>
                 <td>Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Inst Tecno de Costa Rica - Sede San Carlos, RA24</td>
                 <td>Student Branch Chapter</td>
@@ -10967,7 +10973,7 @@
                 <td class="mono">SBC04591G</td>
                 <td>Pontificia Univ Javeriana Sede Bogota</td>
                 <td>9</td>
-                <td>21/2</td>
+                <td>22/2</td>
                 <td>Met</td>
                 <td style="color:#0ca30c">3/3</td>
               </tr><tr>
@@ -11040,7 +11046,7 @@
                 <td>Univ Cooperativa de Colombia Sede Santa Martac</td>
                 <td>0</td>
                 <td>0/2</td>
-                <td>Partial</td>
+                <td>Not Met</td>
                 <td style="color:#d03b3b">0/3</td>
               </tr><tr>
                 <td>Univ Del Norte, RA24</td>
@@ -11282,7 +11288,7 @@
                 <td class="mono">SBC646311A</td>
                 <td>Universidad Latina de Panama</td>
                 <td>24</td>
-                <td>3/2</td>
+                <td>7/2</td>
                 <td>Partial</td>
                 <td style="color:#fab219">2/3</td>
               </tr><tr>
@@ -11624,9 +11630,9 @@
                 <td class="mono">SBC18881A</td>
                 <td>Universidad Tecnologica de Campeche</td>
                 <td>23</td>
-                <td>0/2</td>
+                <td>2/2</td>
                 <td>Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Universidad Tecnologica de Pereira,RA24</td>
                 <td>Student Branch Chapter</td>
@@ -12030,7 +12036,7 @@
         <section class="group-page" id="ra24-cis11-c16">
           <div class="page-toolbar no-print"><button onclick="printOnly('ra24-cis11-c16')">Print this page</button></div>
           <h1>RA24,CIS11,C16</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">1</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">0/1</div></div>
@@ -12071,7 +12077,7 @@
         <section class="group-page" id="ra24-cs23">
           <div class="page-toolbar no-print"><button onclick="printOnly('ra24-cs23')">Print this page</button></div>
           <h1>RA24/CS23</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">1</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">0/1</div></div>
@@ -12112,7 +12118,7 @@
         <section class="group-page" id="ra24-sen39-sys45">
           <div class="page-toolbar no-print"><button onclick="printOnly('ra24-sen39-sys45')">Print this page</button></div>
           <h1>RA24/SEN39/SYS45</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">1</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">0/1</div></div>
@@ -12153,7 +12159,7 @@
         <section class="group-page" id="rl07">
           <div class="page-toolbar no-print"><button onclick="printOnly('rl07')">Print this page</button></div>
           <h1>RL07</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">1</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">0/1</div></div>
@@ -12194,27 +12200,27 @@
         <section class="group-page" id="sb-sight">
           <div class="page-toolbar no-print"><button onclick="printOnly('sb-sight')">Print this page</button></div>
           <h1>SB SIGHT</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">12</div></div>
-            <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">0/12</div></div>
+            <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">2/12</div></div>
             <div class="stat"><div class="stat-label">Total Members</div><div class="stat-value">469</div></div>
           </div>
           <div class="bar-chart"><div class="bar-row">
                 <div class="bar-label">Full (3/3)</div>
-                <div class="bar-track"><div class="bar-fill" style="width:0%;background:#0ca30c"></div></div>
-                <div class="bar-value">0</div>
+                <div class="bar-track"><div class="bar-fill" style="width:40%;background:#0ca30c"></div></div>
+                <div class="bar-value">2</div>
               </div><div class="bar-row">
                 <div class="bar-label">Partial (2/3)</div>
-                <div class="bar-track"><div class="bar-fill" style="width:11%;background:#fab219"></div></div>
-                <div class="bar-value">1</div>
+                <div class="bar-track"><div class="bar-fill" style="width:100%;background:#fab219"></div></div>
+                <div class="bar-value">5</div>
               </div><div class="bar-row">
                 <div class="bar-label">Minimal (1/3)</div>
-                <div class="bar-track"><div class="bar-fill" style="width:100%;background:#ec835a"></div></div>
-                <div class="bar-value">9</div>
+                <div class="bar-track"><div class="bar-fill" style="width:60%;background:#ec835a"></div></div>
+                <div class="bar-value">3</div>
               </div><div class="bar-row">
                 <div class="bar-label">None (0/3)</div>
-                <div class="bar-track"><div class="bar-fill" style="width:22%;background:#d03b3b"></div></div>
+                <div class="bar-track"><div class="bar-fill" style="width:40%;background:#d03b3b"></div></div>
                 <div class="bar-value">2</div>
               </div></div>
           <table>
@@ -12234,9 +12240,9 @@
                 <td class="mono">SBA12801S</td>
                 <td>Escuela Politecnica Nacional</td>
                 <td>127</td>
-                <td>1/2</td>
-                <td>Not Met</td>
-                <td style="color:#ec835a">1/3</td>
+                <td>3/2</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Federal Fluminense University SB SIGHT</td>
                 <td>Affinity Group</td>
@@ -12244,8 +12250,8 @@
                 <td>Federal Fluminense University</td>
                 <td>57</td>
                 <td>0/2</td>
-                <td>Not Met</td>
-                <td style="color:#ec835a">1/3</td>
+                <td>Met</td>
+                <td style="color:#fab219">2/3</td>
               </tr><tr>
                 <td>Federal University of Ceara SB SIGHT</td>
                 <td>Affinity Group</td>
@@ -12253,8 +12259,8 @@
                 <td>Federal University of Ceara</td>
                 <td>36</td>
                 <td>1/2</td>
-                <td>Not Met</td>
-                <td style="color:#ec835a">1/3</td>
+                <td>Met</td>
+                <td style="color:#fab219">2/3</td>
               </tr><tr>
                 <td>Institucion Universitaria de Barranquilla SB SIGHT</td>
                 <td>Affinity Group</td>
@@ -12262,8 +12268,8 @@
                 <td>Institucion Universitaria de Barranquilla</td>
                 <td>23</td>
                 <td>1/2</td>
-                <td>Not Met</td>
-                <td style="color:#ec835a">1/3</td>
+                <td>Met</td>
+                <td style="color:#fab219">2/3</td>
               </tr><tr>
                 <td>Universidad Nacional Mayor de San Marcos SB SIGHT</td>
                 <td>Affinity Group</td>
@@ -12289,8 +12295,8 @@
                 <td>Universidad Tecnica Estatal de Quevedo</td>
                 <td>14</td>
                 <td>1/2</td>
-                <td>Not Met</td>
-                <td style="color:#ec835a">1/3</td>
+                <td>Met</td>
+                <td style="color:#fab219">2/3</td>
               </tr><tr>
                 <td>Universidad de Sonsonate SB SIGHT</td>
                 <td>Affinity Group</td>
@@ -12307,8 +12313,8 @@
                 <td>Universidad de las Americas-Quito</td>
                 <td>43</td>
                 <td>0/2</td>
-                <td>Not Met</td>
-                <td style="color:#ec835a">1/3</td>
+                <td>Met</td>
+                <td style="color:#fab219">2/3</td>
               </tr><tr>
                 <td>Universidad de las Fuerzas Armadas - ESPE SB SIGHT</td>
                 <td>Affinity Group</td>
@@ -12316,8 +12322,8 @@
                 <td>Universidad de las Fuerzas Armadas - ESPE</td>
                 <td>81</td>
                 <td>5/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Universidade Federal do Amapa SB SIGHT</td>
                 <td>Affinity Group</td>
@@ -12334,20 +12340,20 @@
         <section class="group-page" id="sb-sight-group">
           <div class="page-toolbar no-print"><button onclick="printOnly('sb-sight-group')">Print this page</button></div>
           <h1>SB SIGHT Group</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">2</div></div>
-            <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">0/2</div></div>
+            <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">1/2</div></div>
             <div class="stat"><div class="stat-label">Total Members</div><div class="stat-value">139</div></div>
           </div>
           <div class="bar-chart"><div class="bar-row">
                 <div class="bar-label">Full (3/3)</div>
-                <div class="bar-track"><div class="bar-fill" style="width:0%;background:#0ca30c"></div></div>
-                <div class="bar-value">0</div>
+                <div class="bar-track"><div class="bar-fill" style="width:100%;background:#0ca30c"></div></div>
+                <div class="bar-value">1</div>
               </div><div class="bar-row">
                 <div class="bar-label">Partial (2/3)</div>
                 <div class="bar-track"><div class="bar-fill" style="width:100%;background:#fab219"></div></div>
-                <div class="bar-value">2</div>
+                <div class="bar-value">1</div>
               </div><div class="bar-row">
                 <div class="bar-label">Minimal (1/3)</div>
                 <div class="bar-track"><div class="bar-fill" style="width:0%;background:#ec835a"></div></div>
@@ -12365,8 +12371,8 @@
                 <td class="mono">SBA60431S</td>
                 <td>Universidad Don Bosco</td>
                 <td>82</td>
-                <td>5/2</td>
-                <td>Not Met</td>
+                <td>6/2</td>
+                <td>Partial</td>
                 <td style="color:#fab219">2/3</td>
               </tr><tr>
                 <td>Yachay Tech University SB SIGHT Group</td>
@@ -12375,8 +12381,8 @@
                 <td>Yachay Tech University</td>
                 <td>57</td>
                 <td>3/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr></tbody>
           </table>
         </section>
@@ -12384,27 +12390,27 @@
         <section class="group-page" id="sight">
           <div class="page-toolbar no-print"><button onclick="printOnly('sight')">Print this page</button></div>
           <h1>SIGHT</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">29</div></div>
-            <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">0/29</div></div>
+            <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">4/29</div></div>
             <div class="stat"><div class="stat-label">Total Members</div><div class="stat-value">1144</div></div>
           </div>
           <div class="bar-chart"><div class="bar-row">
                 <div class="bar-label">Full (3/3)</div>
-                <div class="bar-track"><div class="bar-fill" style="width:0%;background:#0ca30c"></div></div>
-                <div class="bar-value">0</div>
+                <div class="bar-track"><div class="bar-fill" style="width:36%;background:#0ca30c"></div></div>
+                <div class="bar-value">4</div>
               </div><div class="bar-row">
                 <div class="bar-label">Partial (2/3)</div>
-                <div class="bar-track"><div class="bar-fill" style="width:44%;background:#fab219"></div></div>
-                <div class="bar-value">7</div>
+                <div class="bar-track"><div class="bar-fill" style="width:73%;background:#fab219"></div></div>
+                <div class="bar-value">8</div>
               </div><div class="bar-row">
                 <div class="bar-label">Minimal (1/3)</div>
                 <div class="bar-track"><div class="bar-fill" style="width:100%;background:#ec835a"></div></div>
-                <div class="bar-value">16</div>
+                <div class="bar-value">11</div>
               </div><div class="bar-row">
                 <div class="bar-label">None (0/3)</div>
-                <div class="bar-track"><div class="bar-fill" style="width:38%;background:#d03b3b"></div></div>
+                <div class="bar-track"><div class="bar-fill" style="width:55%;background:#d03b3b"></div></div>
                 <div class="bar-value">6</div>
               </div></div>
           <table>
@@ -12416,7 +12422,7 @@
                 <td>Centroamericana Univ Jose Simeon Canas</td>
                 <td>16</td>
                 <td>1/2</td>
-                <td>Not Met</td>
+                <td>Partial</td>
                 <td style="color:#ec835a">1/3</td>
               </tr><tr>
                 <td>Escuela Superior Politecnica Chimborazo SB SIGHT</td>
@@ -12425,8 +12431,8 @@
                 <td>Escuela Superior Politecnica de Chimborazo</td>
                 <td>129</td>
                 <td>0/2</td>
-                <td>Not Met</td>
-                <td style="color:#ec835a">1/3</td>
+                <td>Met</td>
+                <td style="color:#fab219">2/3</td>
               </tr><tr>
                 <td>Escuela Superior Politecnica Del Litoral,SIGHT</td>
                 <td>Affinity Group</td>
@@ -12434,8 +12440,8 @@
                 <td>Escuela Superior Politecnica del Litoral</td>
                 <td>39</td>
                 <td>1/2</td>
-                <td>Not Met</td>
-                <td style="color:#ec835a">1/3</td>
+                <td>Met</td>
+                <td style="color:#fab219">2/3</td>
               </tr><tr>
                 <td>Federal University of Campina Grande,SIGHT</td>
                 <td>Affinity Group</td>
@@ -12443,8 +12449,8 @@
                 <td>Universidade Federal de Campina Grande</td>
                 <td>51</td>
                 <td>9/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Pontificia Univ Catolica de Valparaiso,SIGHT</td>
                 <td>Affinity Group</td>
@@ -12497,8 +12503,8 @@
                 <td>Unidad Prof Interdiscip En Ing Tec Avanzadas-IPN</td>
                 <td>120</td>
                 <td>8/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Univ Federal do Reconcavo da Bahia-UFRB SIGHT</td>
                 <td>Affinity Group</td>
@@ -12506,8 +12512,8 @@
                 <td>Universidade Federal do Reconcavo da Bahia</td>
                 <td>14</td>
                 <td>3/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Univ Fuerzas Armadas ESPE - Latacunga SB SIGHT</td>
                 <td>Affinity Group</td>
@@ -12515,8 +12521,8 @@
                 <td>Universidad de la Fuerzas Armadas ESPE - Latacunga</td>
                 <td>44</td>
                 <td>0/2</td>
-                <td>Not Met</td>
-                <td style="color:#ec835a">1/3</td>
+                <td>Met</td>
+                <td style="color:#fab219">2/3</td>
               </tr><tr>
                 <td>Univ Nacional San Antonio Abad del Cusco,SIGHT</td>
                 <td>Affinity Group</td>
@@ -12524,7 +12530,7 @@
                 <td>Universidad Nacional San Antonio Abad del Cusco</td>
                 <td>28</td>
                 <td>0/2</td>
-                <td>Not Met</td>
+                <td>Partial</td>
                 <td style="color:#ec835a">1/3</td>
               </tr><tr>
                 <td>Univ. Distrital Francisco Jose de Caldas SB SIGHT</td>
@@ -12542,7 +12548,7 @@
                 <td>Universidad Andina del Cusco</td>
                 <td>2</td>
                 <td>0/2</td>
-                <td>Not Met</td>
+                <td>Partial</td>
                 <td style="color:#d03b3b">0/3</td>
               </tr><tr>
                 <td>Universidad Catolica de Colombia,SIGHT</td>
@@ -12560,8 +12566,8 @@
                 <td>Universidad Politecnica Salesiana-Cuenca</td>
                 <td>230</td>
                 <td>1/2</td>
-                <td>Not Met</td>
-                <td style="color:#ec835a">1/3</td>
+                <td>Met</td>
+                <td style="color:#fab219">2/3</td>
               </tr><tr>
                 <td>Universidad Santo Tomas - Tunja, SIGHT</td>
                 <td>Affinity Group</td>
@@ -12569,7 +12575,7 @@
                 <td>Universidad Santo Tomas - Tunja</td>
                 <td>28</td>
                 <td>0/2</td>
-                <td>Not Met</td>
+                <td>Partial</td>
                 <td style="color:#ec835a">1/3</td>
               </tr><tr>
                 <td>Universidad Tecnologica de Panama,SIGHT</td>
@@ -12578,7 +12584,7 @@
                 <td>Universidad Tecnologica de Panama</td>
                 <td>33</td>
                 <td>8/2</td>
-                <td>Not Met</td>
+                <td>Partial</td>
                 <td style="color:#fab219">2/3</td>
               </tr><tr>
                 <td>Universidad de Chile,SIGHT</td>
@@ -12587,7 +12593,7 @@
                 <td>Universidad De Chile</td>
                 <td>21</td>
                 <td>4/2</td>
-                <td>Not Met</td>
+                <td>Partial</td>
                 <td style="color:#fab219">2/3</td>
               </tr><tr>
                 <td>Universidad de El Salvador,SIGHT</td>
@@ -12596,7 +12602,7 @@
                 <td>Universidad de el Salvador</td>
                 <td>14</td>
                 <td>0/2</td>
-                <td>Not Met</td>
+                <td>Partial</td>
                 <td style="color:#ec835a">1/3</td>
               </tr><tr>
                 <td>Universidad de San Carlos de Guatemala,SIGHT</td>
@@ -12605,7 +12611,7 @@
                 <td>Universidad de San Carlos de Guatemala</td>
                 <td>24</td>
                 <td>0/2</td>
-                <td>Not Met</td>
+                <td>Partial</td>
                 <td style="color:#ec835a">1/3</td>
               </tr><tr>
                 <td>Universidad de Santiago de Chile,SIGHT</td>
@@ -12622,8 +12628,8 @@
                 <td class="mono">SBA63011S</td>
                 <td>Universidad del Norte</td>
                 <td>96</td>
-                <td>2/2</td>
-                <td>Not Met</td>
+                <td>3/2</td>
+                <td>Partial</td>
                 <td style="color:#fab219">2/3</td>
               </tr><tr>
                 <td>Universidad del Pacifico,SIGHT</td>
@@ -12650,8 +12656,8 @@
                 <td>Universidade Federal De Juiz De Fora</td>
                 <td>98</td>
                 <td>2/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Universidade do Estado do Rio de Janeiro,SIGHT</td>
                 <td>Affinity Group</td>
@@ -12668,8 +12674,8 @@
                 <td>University of Concepcion</td>
                 <td>19</td>
                 <td>0/2</td>
-                <td>Not Met</td>
-                <td style="color:#ec835a">1/3</td>
+                <td>Met</td>
+                <td style="color:#fab219">2/3</td>
               </tr></tbody>
           </table>
         </section>
@@ -12677,7 +12683,7 @@
         <section class="group-page" id="sit30">
           <div class="page-toolbar no-print"><button onclick="printOnly('sit30')">Print this page</button></div>
           <h1>SIT30</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">4</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">0/4</div></div>
@@ -12745,7 +12751,7 @@
         <section class="group-page" id="smc27">
           <div class="page-toolbar no-print"><button onclick="printOnly('smc27')">Print this page</button></div>
           <h1>SMC27</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">1</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">1/1</div></div>
@@ -12786,7 +12792,7 @@
         <section class="group-page" id="smc28">
           <div class="page-toolbar no-print"><button onclick="printOnly('smc28')">Print this page</button></div>
           <h1>SMC28</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">4</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">0/4</div></div>
@@ -12854,7 +12860,7 @@
         <section class="group-page" id="smc28-c16">
           <div class="page-toolbar no-print"><button onclick="printOnly('smc28-c16')">Print this page</button></div>
           <h1>SMC28/C16</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">1</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">0/1</div></div>
@@ -12895,7 +12901,7 @@
         <section class="group-page" id="sp01">
           <div class="page-toolbar no-print"><button onclick="printOnly('sp01')">Print this page</button></div>
           <h1>SP01</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">17</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">2/17</div></div>
@@ -13080,27 +13086,27 @@
         <section class="group-page" id="ssc37">
           <div class="page-toolbar no-print"><button onclick="printOnly('ssc37')">Print this page</button></div>
           <h1>SSC37</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">6</div></div>
-            <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">2/6</div></div>
+            <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">3/6</div></div>
             <div class="stat"><div class="stat-label">Total Members</div><div class="stat-value">77</div></div>
           </div>
           <div class="bar-chart"><div class="bar-row">
                 <div class="bar-label">Full (3/3)</div>
                 <div class="bar-track"><div class="bar-fill" style="width:100%;background:#0ca30c"></div></div>
-                <div class="bar-value">2</div>
+                <div class="bar-value">3</div>
               </div><div class="bar-row">
                 <div class="bar-label">Partial (2/3)</div>
-                <div class="bar-track"><div class="bar-fill" style="width:100%;background:#fab219"></div></div>
-                <div class="bar-value">2</div>
+                <div class="bar-track"><div class="bar-fill" style="width:33%;background:#fab219"></div></div>
+                <div class="bar-value">1</div>
               </div><div class="bar-row">
                 <div class="bar-label">Minimal (1/3)</div>
-                <div class="bar-track"><div class="bar-fill" style="width:50%;background:#ec835a"></div></div>
+                <div class="bar-track"><div class="bar-fill" style="width:33%;background:#ec835a"></div></div>
                 <div class="bar-value">1</div>
               </div><div class="bar-row">
                 <div class="bar-label">None (0/3)</div>
-                <div class="bar-track"><div class="bar-fill" style="width:50%;background:#d03b3b"></div></div>
+                <div class="bar-track"><div class="bar-fill" style="width:33%;background:#d03b3b"></div></div>
                 <div class="bar-value">1</div>
               </div></div>
           <table>
@@ -13120,9 +13126,9 @@
                 <td class="mono">SBC60521B</td>
                 <td>Cinvestav Zacatenco</td>
                 <td>26</td>
-                <td>0/2</td>
+                <td>3/2</td>
                 <td>Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Escola Politecnica Universidade de Sao Paulo,SSC37</td>
                 <td>Student Branch Chapter</td>
@@ -13166,7 +13172,7 @@
         <section class="group-page" id="ssc37-ed15">
           <div class="page-toolbar no-print"><button onclick="printOnly('ssc37-ed15')">Print this page</button></div>
           <h1>SSC37/ED15</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">1</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">0/1</div></div>
@@ -13207,7 +13213,7 @@
         <section class="group-page" id="tec802-itss38-vt06">
           <div class="page-toolbar no-print"><button onclick="printOnly('tec802-itss38-vt06')">Print this page</button></div>
           <h1>TEC802/ITSS38/VT06</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">1</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">0/1</div></div>
@@ -13248,7 +13254,7 @@
         <section class="group-page" id="tec802-pel35-ia34">
           <div class="page-toolbar no-print"><button onclick="printOnly('tec802-pel35-ia34')">Print this page</button></div>
           <h1>TEC802/PEL35/IA34</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">1</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">0/1</div></div>
@@ -13289,7 +13295,7 @@
         <section class="group-page" id="tem014">
           <div class="page-toolbar no-print"><button onclick="printOnly('tem014')">Print this page</button></div>
           <h1>TEM014</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">1</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">0/1</div></div>
@@ -13330,7 +13336,7 @@
         <section class="group-page" id="tem14">
           <div class="page-toolbar no-print"><button onclick="printOnly('tem14')">Print this page</button></div>
           <h1>TEM14</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">24</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">1/24</div></div>
@@ -13550,7 +13556,7 @@
                 <td class="mono">SBC63011J</td>
                 <td>Universidad del Norte</td>
                 <td>11</td>
-                <td>0/2</td>
+                <td>1/2</td>
                 <td>Partial</td>
                 <td style="color:#ec835a">1/3</td>
               </tr><tr>
@@ -13578,7 +13584,7 @@
         <section class="group-page" id="tmc14">
           <div class="page-toolbar no-print"><button onclick="printOnly('tmc14')">Print this page</button></div>
           <h1>TMC14</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">1</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">0/1</div></div>
@@ -13619,7 +13625,7 @@
         <section class="group-page" id="uffc20">
           <div class="page-toolbar no-print"><button onclick="printOnly('uffc20')">Print this page</button></div>
           <h1>UFFC20</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">1</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">0/1</div></div>
@@ -13660,7 +13666,7 @@
         <section class="group-page" id="vt06">
           <div class="page-toolbar no-print"><button onclick="printOnly('vt06')">Print this page</button></div>
           <h1>VT06</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">13</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">1/13</div></div>
@@ -13700,7 +13706,7 @@
                 <td class="mono">SBC62811F</td>
                 <td>Unidad Prof Interdiscip En Ing Tec Avanzadas-IPN</td>
                 <td>19</td>
-                <td>2/2</td>
+                <td>3/2</td>
                 <td>Met</td>
                 <td style="color:#0ca30c">3/3</td>
               </tr><tr>
@@ -13781,7 +13787,7 @@
                 <td class="mono">SBC63011G</td>
                 <td>Universidad del Norte</td>
                 <td>22</td>
-                <td>5/2</td>
+                <td>6/2</td>
                 <td>Partial</td>
                 <td style="color:#fab219">2/3</td>
               </tr><tr>
@@ -13806,31 +13812,31 @@
           </table>
         </section>
         
-        <section class="group-page" id="wie">
-          <div class="page-toolbar no-print"><button onclick="printOnly('wie')">Print this page</button></div>
+        <section class="group-page" id="wie-2">
+          <div class="page-toolbar no-print"><button onclick="printOnly('wie-2')">Print this page</button></div>
           <h1>WIE</h1>
-          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-10-30</p>
+          <p class="subtitle">IEEE Student OU Vitality Report — generated 2026-11-05</p>
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">220</div></div>
-            <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">0/220</div></div>
+            <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:#0ca30c">60/220</div></div>
             <div class="stat"><div class="stat-label">Total Members</div><div class="stat-value">3508</div></div>
           </div>
           <div class="bar-chart"><div class="bar-row">
                 <div class="bar-label">Full (3/3)</div>
-                <div class="bar-track"><div class="bar-fill" style="width:0%;background:#0ca30c"></div></div>
-                <div class="bar-value">0</div>
+                <div class="bar-track"><div class="bar-fill" style="width:94%;background:#0ca30c"></div></div>
+                <div class="bar-value">60</div>
               </div><div class="bar-row">
                 <div class="bar-label">Partial (2/3)</div>
-                <div class="bar-track"><div class="bar-fill" style="width:100%;background:#fab219"></div></div>
-                <div class="bar-value">84</div>
+                <div class="bar-track"><div class="bar-fill" style="width:81%;background:#fab219"></div></div>
+                <div class="bar-value">52</div>
               </div><div class="bar-row">
                 <div class="bar-label">Minimal (1/3)</div>
-                <div class="bar-track"><div class="bar-fill" style="width:79%;background:#ec835a"></div></div>
-                <div class="bar-value">66</div>
+                <div class="bar-track"><div class="bar-fill" style="width:69%;background:#ec835a"></div></div>
+                <div class="bar-value">44</div>
               </div><div class="bar-row">
                 <div class="bar-label">None (0/3)</div>
-                <div class="bar-track"><div class="bar-fill" style="width:83%;background:#d03b3b"></div></div>
-                <div class="bar-value">70</div>
+                <div class="bar-track"><div class="bar-fill" style="width:100%;background:#d03b3b"></div></div>
+                <div class="bar-value">64</div>
               </div></div>
           <table>
             <thead><tr><th>Unit</th><th>Type</th><th>SPO ID</th><th>University</th><th>Members</th><th>Events</th><th>Officers</th><th>Req. Met</th></tr></thead>
@@ -13841,8 +13847,8 @@
                 <td>Antonio Narino University</td>
                 <td>45</td>
                 <td>1/2</td>
-                <td>Not Met</td>
-                <td style="color:#ec835a">1/3</td>
+                <td>Met</td>
+                <td style="color:#fab219">2/3</td>
               </tr><tr>
                 <td>Benemerita Univ Autonoma De Puebla, WIE</td>
                 <td>Affinity Group</td>
@@ -13850,7 +13856,7 @@
                 <td>Benemerita Universidad Autonoma De Puebla</td>
                 <td>7</td>
                 <td>1/2</td>
-                <td>Not Met</td>
+                <td>Partial</td>
                 <td style="color:#ec835a">1/3</td>
               </tr><tr>
                 <td>Catholic University of Petropolis,WIE</td>
@@ -13877,7 +13883,7 @@
                 <td>Centroamericana Univ Jose Simeon Canas</td>
                 <td>11</td>
                 <td>2/2</td>
-                <td>Not Met</td>
+                <td>Partial</td>
                 <td style="color:#fab219">2/3</td>
               </tr><tr>
                 <td>Chapingo Autonomous University,WIE</td>
@@ -13886,7 +13892,7 @@
                 <td>Chapingo Autonomous University</td>
                 <td>15</td>
                 <td>1/2</td>
-                <td>Not Met</td>
+                <td>Partial</td>
                 <td style="color:#ec835a">1/3</td>
               </tr><tr>
                 <td>Cinvestav Guadalajara, WIE</td>
@@ -13904,8 +13910,8 @@
                 <td>Cinvestav Zacatenco</td>
                 <td>18</td>
                 <td>4/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Corporación Universitaria del Huila – CORHUILA,WIE</td>
                 <td>Affinity Group</td>
@@ -13913,8 +13919,8 @@
                 <td>Corporación Universitaria del Huila – CORHUILA</td>
                 <td>8</td>
                 <td>1/2</td>
-                <td>Not Met</td>
-                <td style="color:#ec835a">1/3</td>
+                <td>Met</td>
+                <td style="color:#fab219">2/3</td>
               </tr><tr>
                 <td>Costa Rica Institute of Technology,WIE</td>
                 <td>Affinity Group</td>
@@ -13922,8 +13928,8 @@
                 <td>Costa Rica Institute of Technology</td>
                 <td>36</td>
                 <td>11/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Escola Politecnica Universidade de Sao Paulo,WIE</td>
                 <td>Affinity Group</td>
@@ -13939,9 +13945,9 @@
                 <td class="mono">SBA03151</td>
                 <td>Escola de Engenharia de Sao Carlos</td>
                 <td>14</td>
-                <td>1/2</td>
-                <td>Not Met</td>
-                <td style="color:#ec835a">1/3</td>
+                <td>2/2</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Escuela Colombiana De Ing Julio Garavito, WIE</td>
                 <td>Affinity Group</td>
@@ -13949,7 +13955,7 @@
                 <td>Escuela Colombiana De Ingenieria Julio Garavito</td>
                 <td>3</td>
                 <td>0/2</td>
-                <td>Not Met</td>
+                <td>Partial</td>
                 <td style="color:#d03b3b">0/3</td>
               </tr><tr>
                 <td>Escuela Colombiana de Carreras Industriales,WIE</td>
@@ -13958,8 +13964,8 @@
                 <td>Escuela Colombiana de Carreras Industriales</td>
                 <td>19</td>
                 <td>3/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Escuela Especializada Ingenieria ITCA-FEPADE,WIE</td>
                 <td>Affinity Group</td>
@@ -13967,8 +13973,8 @@
                 <td>Escuela Especializada Ingenieria ITCA-FEPADE</td>
                 <td>10</td>
                 <td>4/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Escuela Politecnica Nacional, WIE</td>
                 <td>Affinity Group</td>
@@ -13976,8 +13982,8 @@
                 <td>Escuela Politecnica Nacional</td>
                 <td>100</td>
                 <td>11/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Escuela Superior Politecnica Del Litoral,WIE</td>
                 <td>Affinity Group</td>
@@ -13985,8 +13991,8 @@
                 <td>Escuela Superior Politecnica del Litoral</td>
                 <td>48</td>
                 <td>13/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Escuela Superior Politecnica de Chimborazo, WIE</td>
                 <td>Affinity Group</td>
@@ -13994,7 +14000,7 @@
                 <td>Escuela Superior Politecnica de Chimborazo</td>
                 <td>125</td>
                 <td>3/2</td>
-                <td>Not Met</td>
+                <td>Partial</td>
                 <td style="color:#fab219">2/3</td>
               </tr><tr>
                 <td>Escuela Tecnologica Instituto Tecnico Central, WIE</td>
@@ -14021,7 +14027,7 @@
                 <td>Federal Fluminense University</td>
                 <td>18</td>
                 <td>0/2</td>
-                <td>Not Met</td>
+                <td>Partial</td>
                 <td style="color:#ec835a">1/3</td>
               </tr><tr>
                 <td>Federal Institute of Paraiba-Campina Grande,WIE</td>
@@ -14039,17 +14045,17 @@
                 <td>Federal Institute of Rio Grande do Norte</td>
                 <td>21</td>
                 <td>3/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Federal University of Bahia,WIE</td>
                 <td>Affinity Group</td>
                 <td class="mono">SBA93051</td>
                 <td>Federal University of Bahia</td>
                 <td>27</td>
-                <td>18/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>19/2</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Federal University of Campina Grande,WIE</td>
                 <td>Affinity Group</td>
@@ -14057,8 +14063,8 @@
                 <td>Universidade Federal de Campina Grande</td>
                 <td>34</td>
                 <td>10/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Federal University of Ceara,WIE</td>
                 <td>Affinity Group</td>
@@ -14066,8 +14072,8 @@
                 <td>Federal University of Ceara</td>
                 <td>20</td>
                 <td>9/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Federal University of Rio Grande do Sul,WIE</td>
                 <td>Affinity Group</td>
@@ -14084,7 +14090,7 @@
                 <td>Federal University of Sao Joao del-Rei</td>
                 <td>5</td>
                 <td>10/2</td>
-                <td>Not Met</td>
+                <td>Partial</td>
                 <td style="color:#ec835a">1/3</td>
               </tr><tr>
                 <td>Federico Santa Maria Technical University,WIE</td>
@@ -14093,8 +14099,8 @@
                 <td>Federico Santa Maria Technical University</td>
                 <td>6</td>
                 <td>4/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Granada Univ Militar Nueva, WIE</td>
                 <td>Affinity Group</td>
@@ -14120,8 +14126,8 @@
                 <td>IFBA-Campus Vitoria da Conquista</td>
                 <td>1</td>
                 <td>0/2</td>
-                <td>Not Met</td>
-                <td style="color:#d03b3b">0/3</td>
+                <td>Met</td>
+                <td style="color:#ec835a">1/3</td>
               </tr><tr>
                 <td>Icesi University, WIE</td>
                 <td>Affinity Group</td>
@@ -14129,8 +14135,8 @@
                 <td>Icesi University</td>
                 <td>17</td>
                 <td>10/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Inst Fed de Ed Ciencia e Tecn da Paraiba,WIE</td>
                 <td>Affinity Group</td>
@@ -14165,8 +14171,8 @@
                 <td>Inst Politecnico Nacional Micro y Nanotecnologias</td>
                 <td>15</td>
                 <td>16/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Inst Superior Tec Privado TECSUP,WIE</td>
                 <td>Affinity Group</td>
@@ -14174,8 +14180,8 @@
                 <td>Inst Superior Tec Privado TECSUP</td>
                 <td>73</td>
                 <td>3/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Inst Tec Sup De Coatzacoalcos, WIE</td>
                 <td>Affinity Group</td>
@@ -14183,8 +14189,8 @@
                 <td>Instituto Tecnologico Superior de Coatzacoalcos</td>
                 <td>12</td>
                 <td>0/2</td>
-                <td>Not Met</td>
-                <td style="color:#ec835a">1/3</td>
+                <td>Met</td>
+                <td style="color:#fab219">2/3</td>
               </tr><tr>
                 <td>Institucion Universitaria CESMAG,WIE</td>
                 <td>Affinity Group</td>
@@ -14201,8 +14207,8 @@
                 <td>Institucion Universitaria de Barranquilla</td>
                 <td>10</td>
                 <td>1/2</td>
-                <td>Not Met</td>
-                <td style="color:#ec835a">1/3</td>
+                <td>Met</td>
+                <td style="color:#fab219">2/3</td>
               </tr><tr>
                 <td>Instituto Federal Fluminense-Macae,WIE</td>
                 <td>Affinity Group</td>
@@ -14210,8 +14216,8 @@
                 <td>Instituto Federal Fluminense-Macae</td>
                 <td>13</td>
                 <td>0/2</td>
-                <td>Not Met</td>
-                <td style="color:#ec835a">1/3</td>
+                <td>Met</td>
+                <td style="color:#fab219">2/3</td>
               </tr><tr>
                 <td>Instituto Federal da Bahia-Paulo Afonso,WIE</td>
                 <td>Affinity Group</td>
@@ -14219,8 +14225,8 @@
                 <td>Instituto Federal da Bahia-Paulo Afonso</td>
                 <td>18</td>
                 <td>8/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Instituto Politecnico Nacional-ESIME Zacatenco,WIE</td>
                 <td>Affinity Group</td>
@@ -14228,7 +14234,7 @@
                 <td>Instituto Politecnico Nacional-ESIME Zacatenco</td>
                 <td>8</td>
                 <td>0/2</td>
-                <td>Not Met</td>
+                <td>Partial</td>
                 <td style="color:#ec835a">1/3</td>
               </tr><tr>
                 <td>Instituto Tec De Aguascalientes,WIE</td>
@@ -14246,8 +14252,8 @@
                 <td>Instituto Tec Estudios-Monterrey</td>
                 <td>0</td>
                 <td>0/2</td>
-                <td>Not Met</td>
-                <td style="color:#d03b3b">0/3</td>
+                <td>Met</td>
+                <td style="color:#ec835a">1/3</td>
               </tr><tr>
                 <td>Instituto Tecnologico De Acapulco,WIE</td>
                 <td>Affinity Group</td>
@@ -14273,8 +14279,8 @@
                 <td>Instituto Tecnologico de Morelia</td>
                 <td>16</td>
                 <td>3/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Instituto Tecnologico De Veracruz, WIE</td>
                 <td>Affinity Group</td>
@@ -14300,8 +14306,8 @@
                 <td>Instituto Tecnologico de Buenos Aires</td>
                 <td>2</td>
                 <td>2/2</td>
-                <td>Not Met</td>
-                <td style="color:#ec835a">1/3</td>
+                <td>Met</td>
+                <td style="color:#fab219">2/3</td>
               </tr><tr>
                 <td>Instituto Tecnologico de La Laguna,WIE</td>
                 <td>Affinity Group</td>
@@ -14309,8 +14315,8 @@
                 <td>Instituto Tecnologico de La Laguna</td>
                 <td>18</td>
                 <td>0/2</td>
-                <td>Not Met</td>
-                <td style="color:#ec835a">1/3</td>
+                <td>Met</td>
+                <td style="color:#fab219">2/3</td>
               </tr><tr>
                 <td>Nicaragua Univ Nacional De Ingenieria,WIE</td>
                 <td>Affinity Group</td>
@@ -14354,7 +14360,7 @@
                 <td>Pontificia Univ Javeriana Sede Bogota</td>
                 <td>9</td>
                 <td>2/2</td>
-                <td>Not Met</td>
+                <td>Partial</td>
                 <td style="color:#fab219">2/3</td>
               </tr><tr>
                 <td>Pontificia Universidad Catolica de Valparaiso,WIE</td>
@@ -14371,9 +14377,9 @@
                 <td class="mono">SBA03241</td>
                 <td>Pontificia Universidad Catolica del Peru</td>
                 <td>11</td>
-                <td>0/2</td>
-                <td>Not Met</td>
-                <td style="color:#ec835a">1/3</td>
+                <td>1/2</td>
+                <td>Met</td>
+                <td style="color:#fab219">2/3</td>
               </tr><tr>
                 <td>Puerto Rico Univ Of-Mayaguez, WIE</td>
                 <td>Affinity Group</td>
@@ -14381,8 +14387,8 @@
                 <td>Puerto Rico Univ Of-Mayaguez</td>
                 <td>28</td>
                 <td>4/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Simon Bolivar University,WIE</td>
                 <td>Affinity Group</td>
@@ -14399,7 +14405,7 @@
                 <td>State University of Londrina</td>
                 <td>1</td>
                 <td>0/2</td>
-                <td>Not Met</td>
+                <td>Partial</td>
                 <td style="color:#d03b3b">0/3</td>
               </tr><tr>
                 <td>Tecnologico de Software,WIE</td>
@@ -14408,8 +14414,8 @@
                 <td>Tecnologico de Software</td>
                 <td>6</td>
                 <td>0/2</td>
-                <td>Not Met</td>
-                <td style="color:#ec835a">1/3</td>
+                <td>Met</td>
+                <td style="color:#fab219">2/3</td>
               </tr><tr>
                 <td>U Prof Interdiscip En Ing Tec Avanzadas-IPN,WIE</td>
                 <td>Affinity Group</td>
@@ -14417,8 +14423,8 @@
                 <td>Unidad Prof Interdiscip En Ing Tec Avanzadas-IPN</td>
                 <td>46</td>
                 <td>7/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>UDG-Centro Universitario de Tonala,WIE</td>
                 <td>Affinity Group</td>
@@ -14435,7 +14441,7 @@
                 <td>Universidad Tec. Centroamericana-San Pedro Sula</td>
                 <td>3</td>
                 <td>0/2</td>
-                <td>Not Met</td>
+                <td>Partial</td>
                 <td style="color:#d03b3b">0/3</td>
               </tr><tr>
                 <td>Unifesspa–Federal Univ of South&amp;Southeast-Pará,WIE</td>
@@ -14444,8 +14450,8 @@
                 <td>Unifesspa–Federal Univ of South and Southeast-Pará</td>
                 <td>6</td>
                 <td>0/2</td>
-                <td>Not Met</td>
-                <td style="color:#ec835a">1/3</td>
+                <td>Met</td>
+                <td style="color:#fab219">2/3</td>
               </tr><tr>
                 <td>Univ Autonoma Metropolitana-Iztapalapa,WIE</td>
                 <td>Affinity Group</td>
@@ -14453,7 +14459,7 @@
                 <td>Univ Autonoma Metropolitana-Iztapalapa</td>
                 <td>6</td>
                 <td>0/2</td>
-                <td>Not Met</td>
+                <td>Partial</td>
                 <td style="color:#ec835a">1/3</td>
               </tr><tr>
                 <td>Univ Catolica Nuestra Senora de la Asuncion,WIE</td>
@@ -14462,8 +14468,8 @@
                 <td>Universidad Catolica Nuestra Senora de la Asuncion</td>
                 <td>9</td>
                 <td>1/2</td>
-                <td>Not Met</td>
-                <td style="color:#ec835a">1/3</td>
+                <td>Met</td>
+                <td style="color:#fab219">2/3</td>
               </tr><tr>
                 <td>Univ Catolica Santo Toribio de Mogrovejo, WIE</td>
                 <td>Affinity Group</td>
@@ -14489,8 +14495,8 @@
                 <td>Univ Cooperativa de Colombia Sede Santa Martac</td>
                 <td>12</td>
                 <td>4/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Univ Del Norte, WIE</td>
                 <td>Affinity Group</td>
@@ -14498,8 +14504,8 @@
                 <td>Universidad del Norte</td>
                 <td>65</td>
                 <td>21/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Univ Dist Francisco Jose de Caldas - Bolivar,WIE</td>
                 <td>Affinity Group</td>
@@ -14543,8 +14549,8 @@
                 <td>Universidad Nacional San Antonio Abad del Cusco</td>
                 <td>26</td>
                 <td>0/2</td>
-                <td>Not Met</td>
-                <td style="color:#ec835a">1/3</td>
+                <td>Met</td>
+                <td style="color:#fab219">2/3</td>
               </tr><tr>
                 <td>Univ Nacional Sede Manizales, WIE</td>
                 <td>Affinity Group</td>
@@ -14579,7 +14585,7 @@
                 <td>Universidad Tecnologica Centroamericana</td>
                 <td>21</td>
                 <td>3/2</td>
-                <td>Not Met</td>
+                <td>Partial</td>
                 <td style="color:#fab219">2/3</td>
               </tr><tr>
                 <td>Univ de la Fuerzas Armadas ESPE - Latacunga,WIE</td>
@@ -14587,9 +14593,9 @@
                 <td class="mono">SBA11457</td>
                 <td>Universidad de la Fuerzas Armadas ESPE - Latacunga</td>
                 <td>20</td>
-                <td>20/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>21/2</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Univ del Cono Sur de las Americas, WIE</td>
                 <td>Affinity Group</td>
@@ -14597,8 +14603,8 @@
                 <td>Universidad del Cono Sur de Las Americas</td>
                 <td>10</td>
                 <td>0/2</td>
-                <td>Not Met</td>
-                <td style="color:#ec835a">1/3</td>
+                <td>Met</td>
+                <td style="color:#fab219">2/3</td>
               </tr><tr>
                 <td>Universidad Andina del Cusco,WIE</td>
                 <td>Affinity Group</td>
@@ -14615,8 +14621,8 @@
                 <td>Universidad Austral De Chile</td>
                 <td>7</td>
                 <td>1/2</td>
-                <td>Not Met</td>
-                <td style="color:#ec835a">1/3</td>
+                <td>Met</td>
+                <td style="color:#fab219">2/3</td>
               </tr><tr>
                 <td>Universidad Autonoma de Guadalajara, WIE</td>
                 <td>Affinity Group</td>
@@ -14678,8 +14684,8 @@
                 <td>Universidad Catolica San Pablo</td>
                 <td>17</td>
                 <td>0/2</td>
-                <td>Not Met</td>
-                <td style="color:#ec835a">1/3</td>
+                <td>Met</td>
+                <td style="color:#fab219">2/3</td>
               </tr><tr>
                 <td>Universidad Catolica Santiago de Guayaquil, WIE</td>
                 <td>Affinity Group</td>
@@ -14705,7 +14711,7 @@
                 <td>Universidad Catolica de Cuenca</td>
                 <td>7</td>
                 <td>4/2</td>
-                <td>Not Met</td>
+                <td>Partial</td>
                 <td style="color:#fab219">2/3</td>
               </tr><tr>
                 <td>Universidad Catolica de Santa Maria, WIE</td>
@@ -14723,7 +14729,7 @@
                 <td>Universidad De Chile</td>
                 <td>18</td>
                 <td>18/2</td>
-                <td>Not Met</td>
+                <td>Partial</td>
                 <td style="color:#fab219">2/3</td>
               </tr><tr>
                 <td>Universidad De Cuenca, WIE</td>
@@ -14759,7 +14765,7 @@
                 <td>Universidad Diego Portales</td>
                 <td>4</td>
                 <td>7/2</td>
-                <td>Not Met</td>
+                <td>Partial</td>
                 <td style="color:#ec835a">1/3</td>
               </tr><tr>
                 <td>Universidad Don Bosco,WIE</td>
@@ -14768,8 +14774,8 @@
                 <td>Universidad Don Bosco</td>
                 <td>63</td>
                 <td>8/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Universidad Dr Jose Matias Delgado,WIE</td>
                 <td>Affinity Group</td>
@@ -14777,7 +14783,7 @@
                 <td>Universidad Dr Jose Matias Delgado</td>
                 <td>37</td>
                 <td>8/2</td>
-                <td>Not Met</td>
+                <td>Partial</td>
                 <td style="color:#fab219">2/3</td>
               </tr><tr>
                 <td>Universidad Estadual Paulista,WIE</td>
@@ -14795,7 +14801,7 @@
                 <td>Universidad Estadual Paulista-Guaratingueta</td>
                 <td>6</td>
                 <td>0/2</td>
-                <td>Not Met</td>
+                <td>Partial</td>
                 <td style="color:#ec835a">1/3</td>
               </tr><tr>
                 <td>Universidad Estadual Paulista-Ilha Solteira,WIE</td>
@@ -14813,8 +14819,8 @@
                 <td>Universidad Estatal Peninsula de Santa Elena</td>
                 <td>33</td>
                 <td>4/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Universidad Evangélica de El Salvador,WIE</td>
                 <td>Affinity Group</td>
@@ -14822,8 +14828,8 @@
                 <td>Universidad Evangélica de El Salvador</td>
                 <td>18</td>
                 <td>3/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Universidad Francisco De Paula Santander,WIE</td>
                 <td>Affinity Group</td>
@@ -14840,7 +14846,7 @@
                 <td>Universidad Galileo</td>
                 <td>1</td>
                 <td>0/2</td>
-                <td>Not Met</td>
+                <td>Partial</td>
                 <td style="color:#d03b3b">0/3</td>
               </tr><tr>
                 <td>Universidad Industrial de Santander, WIE</td>
@@ -14858,8 +14864,8 @@
                 <td>Universidad Internacional del Ecuador</td>
                 <td>45</td>
                 <td>1/2</td>
-                <td>Not Met</td>
-                <td style="color:#ec835a">1/3</td>
+                <td>Met</td>
+                <td style="color:#fab219">2/3</td>
               </tr><tr>
                 <td>Universidad Laica Eloy Alfaro de Manabi, WIE</td>
                 <td>Affinity Group</td>
@@ -14867,16 +14873,16 @@
                 <td>Universidad Laica Eloy Alfaro de Manabi</td>
                 <td>5</td>
                 <td>0/2</td>
-                <td>Not Met</td>
-                <td style="color:#d03b3b">0/3</td>
+                <td>Met</td>
+                <td style="color:#ec835a">1/3</td>
               </tr><tr>
                 <td>Universidad Latina de Panama,WIE</td>
                 <td>Affinity Group</td>
                 <td class="mono">SBA64631</td>
                 <td>Universidad Latina de Panama</td>
                 <td>22</td>
-                <td>7/2</td>
-                <td>Not Met</td>
+                <td>8/2</td>
+                <td>Partial</td>
                 <td style="color:#fab219">2/3</td>
               </tr><tr>
                 <td>Universidad Mayor de San Andres,WIE</td>
@@ -14885,8 +14891,8 @@
                 <td>Universidad Mayor de San Andres</td>
                 <td>38</td>
                 <td>12/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Universidad Nacional Abierta y a Distancia,WIE</td>
                 <td>Affinity Group</td>
@@ -14894,8 +14900,8 @@
                 <td>Universidad Nacional Abierta y a Distancia</td>
                 <td>10</td>
                 <td>4/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Universidad Nacional Autonoma De Mexico, WIE</td>
                 <td>Affinity Group</td>
@@ -14903,7 +14909,7 @@
                 <td>Universidad Nacional Autonoma De Mexico</td>
                 <td>6</td>
                 <td>7/2</td>
-                <td>Not Met</td>
+                <td>Partial</td>
                 <td style="color:#fab219">2/3</td>
               </tr><tr>
                 <td>Universidad Nacional De Colombia Sede-Bogota,WIE</td>
@@ -14912,8 +14918,8 @@
                 <td>Universidad Nacional De Colombia Sede Bogota</td>
                 <td>21</td>
                 <td>5/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Universidad Nacional De Loja, WIE</td>
                 <td>Affinity Group</td>
@@ -14921,8 +14927,8 @@
                 <td>Universidad Nacional De Loja</td>
                 <td>36</td>
                 <td>6/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Universidad Nacional Federico Villarreal WIE</td>
                 <td>Affinity Group</td>
@@ -14930,7 +14936,7 @@
                 <td>Universidad Nacional Federico Villarreal</td>
                 <td>24</td>
                 <td>0/2</td>
-                <td>Not Met</td>
+                <td>Partial</td>
                 <td style="color:#ec835a">1/3</td>
               </tr><tr>
                 <td>Universidad Nacional Mayor de San Marcos, WIE</td>
@@ -14939,7 +14945,7 @@
                 <td>Universidad Nacional Mayor de San Marcos</td>
                 <td>30</td>
                 <td>4/2</td>
-                <td>Not Met</td>
+                <td>Partial</td>
                 <td style="color:#fab219">2/3</td>
               </tr><tr>
                 <td>Universidad Nacional Tecnologica de Lima Sur, WIE</td>
@@ -14948,8 +14954,8 @@
                 <td>Universidad Nacional Tecnologica de Lima Sur</td>
                 <td>6</td>
                 <td>1/2</td>
-                <td>Not Met</td>
-                <td style="color:#ec835a">1/3</td>
+                <td>Met</td>
+                <td style="color:#fab219">2/3</td>
               </tr><tr>
                 <td>Universidad Nacional de Asuncion,WIE</td>
                 <td>Affinity Group</td>
@@ -14957,7 +14963,7 @@
                 <td>Universidad Nacional de Asuncion</td>
                 <td>18</td>
                 <td>3/2</td>
-                <td>Not Met</td>
+                <td>Partial</td>
                 <td style="color:#fab219">2/3</td>
               </tr><tr>
                 <td>Universidad Nacional de General San Martin,WIE</td>
@@ -14975,7 +14981,7 @@
                 <td>Universidad Nacional de Ingenieria Lima</td>
                 <td>12</td>
                 <td>3/2</td>
-                <td>Not Met</td>
+                <td>Partial</td>
                 <td style="color:#fab219">2/3</td>
               </tr><tr>
                 <td>Universidad Nacional de Juliaca,WIE</td>
@@ -14984,17 +14990,17 @@
                 <td>Universidad Nacional de Juliaca</td>
                 <td>7</td>
                 <td>1/2</td>
-                <td>Not Met</td>
-                <td style="color:#ec835a">1/3</td>
+                <td>Met</td>
+                <td style="color:#fab219">2/3</td>
               </tr><tr>
                 <td>Universidad Nacional de Mar del Plata,WIE</td>
                 <td>Affinity Group</td>
                 <td class="mono">SBA2528204</td>
                 <td>Universidad Nacional de Mar del Plata</td>
                 <td>14</td>
-                <td>2/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>3/2</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Universidad Nacional de Piura, WIE</td>
                 <td>Affinity Group</td>
@@ -15011,7 +15017,7 @@
                 <td>Universidad Nacional de San Agustin</td>
                 <td>11</td>
                 <td>1/2</td>
-                <td>Not Met</td>
+                <td>Partial</td>
                 <td style="color:#ec835a">1/3</td>
               </tr><tr>
                 <td>Universidad Nacional de San Juan,WIE</td>
@@ -15019,7 +15025,7 @@
                 <td class="mono">SBA13291</td>
                 <td>Universidad Nacional de San Juan</td>
                 <td>2</td>
-                <td>3/2</td>
+                <td>4/2</td>
                 <td>Not Met</td>
                 <td style="color:#ec835a">1/3</td>
               </tr><tr>
@@ -15029,7 +15035,7 @@
                 <td>Universidad Nacional de Tucuman</td>
                 <td>2</td>
                 <td>0/2</td>
-                <td>Not Met</td>
+                <td>Partial</td>
                 <td style="color:#d03b3b">0/3</td>
               </tr><tr>
                 <td>Universidad Nacional del Altiplano,WIE</td>
@@ -15038,7 +15044,7 @@
                 <td>Universidad Nacional del Altiplano</td>
                 <td>20</td>
                 <td>2/2</td>
-                <td>Not Met</td>
+                <td>Partial</td>
                 <td style="color:#fab219">2/3</td>
               </tr><tr>
                 <td>Universidad Nacional del Callao, WIE</td>
@@ -15047,8 +15053,8 @@
                 <td>Universidad Nacional del Callao</td>
                 <td>21</td>
                 <td>8/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Universidad Nacional del Sur,WIE</td>
                 <td>Affinity Group</td>
@@ -15056,8 +15062,8 @@
                 <td>Universidad Nacional del Sur</td>
                 <td>2</td>
                 <td>0/2</td>
-                <td>Not Met</td>
-                <td style="color:#d03b3b">0/3</td>
+                <td>Met</td>
+                <td style="color:#ec835a">1/3</td>
               </tr><tr>
                 <td>Universidad Particular Ricardo Palma, WIE</td>
                 <td>Affinity Group</td>
@@ -15065,8 +15071,8 @@
                 <td>Universidad Particular Ricardo Palma</td>
                 <td>13</td>
                 <td>0/2</td>
-                <td>Not Met</td>
-                <td style="color:#ec835a">1/3</td>
+                <td>Met</td>
+                <td style="color:#fab219">2/3</td>
               </tr><tr>
                 <td>Universidad Peruana Cayetano Heredia,WIE</td>
                 <td>Affinity Group</td>
@@ -15083,8 +15089,8 @@
                 <td>Universidad Peruana de Ciencias Aplicadas</td>
                 <td>56</td>
                 <td>15/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Universidad Piloto de Colombia,WIE</td>
                 <td>Affinity Group</td>
@@ -15101,8 +15107,8 @@
                 <td>Universidad Politecnica Salesiana-Cuenca</td>
                 <td>132</td>
                 <td>6/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Universidad Politecnica Salesiana-Guayaquil, WIE</td>
                 <td>Affinity Group</td>
@@ -15128,7 +15134,7 @@
                 <td>Universidad Pontificia Bolivariana-Monteria</td>
                 <td>15</td>
                 <td>1/2</td>
-                <td>Not Met</td>
+                <td>Partial</td>
                 <td style="color:#ec835a">1/3</td>
               </tr><tr>
                 <td>Universidad Privada Antenor Orrego, WIE</td>
@@ -15146,8 +15152,8 @@
                 <td>Universidad Privada Boliviana La Paz</td>
                 <td>34</td>
                 <td>0/2</td>
-                <td>Not Met</td>
-                <td style="color:#ec835a">1/3</td>
+                <td>Met</td>
+                <td style="color:#fab219">2/3</td>
               </tr><tr>
                 <td>Universidad Privada del Este,WIE</td>
                 <td>Affinity Group</td>
@@ -15155,8 +15161,8 @@
                 <td>Universidad Privada del Este</td>
                 <td>8</td>
                 <td>0/2</td>
-                <td>Not Met</td>
-                <td style="color:#ec835a">1/3</td>
+                <td>Met</td>
+                <td style="color:#fab219">2/3</td>
               </tr><tr>
                 <td>Universidad Privada del Norte-Lima Norte,WIE</td>
                 <td>Affinity Group</td>
@@ -15173,8 +15179,8 @@
                 <td>Universidad San Francisco de Quito</td>
                 <td>13</td>
                 <td>3/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Universidad San Ignacio De Loyola,WIE</td>
                 <td>Affinity Group</td>
@@ -15182,8 +15188,8 @@
                 <td>Universidad San Ignacio De Loyola</td>
                 <td>7</td>
                 <td>3/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Universidad Santiago de Cali,WIE</td>
                 <td>Affinity Group</td>
@@ -15191,7 +15197,7 @@
                 <td>Universidad Santiago de Cali</td>
                 <td>14</td>
                 <td>11/2</td>
-                <td>Not Met</td>
+                <td>Partial</td>
                 <td style="color:#fab219">2/3</td>
               </tr><tr>
                 <td>Universidad Santo Tomas - Tunja, WIE</td>
@@ -15200,7 +15206,7 @@
                 <td>Universidad Santo Tomas - Tunja</td>
                 <td>22</td>
                 <td>0/2</td>
-                <td>Not Met</td>
+                <td>Partial</td>
                 <td style="color:#ec835a">1/3</td>
               </tr><tr>
                 <td>Universidad Sergio Arboleda,WIE</td>
@@ -15218,8 +15224,8 @@
                 <td>Universidad Simon Bolivar</td>
                 <td>37</td>
                 <td>6/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Universidad Surcolombiana, WIE</td>
                 <td>Affinity Group</td>
@@ -15227,7 +15233,7 @@
                 <td>Universidad Surcolombiana</td>
                 <td>19</td>
                 <td>0/2</td>
-                <td>Not Met</td>
+                <td>Partial</td>
                 <td style="color:#ec835a">1/3</td>
               </tr><tr>
                 <td>Universidad Tecnica Estatal de Quevedo,WIE</td>
@@ -15236,8 +15242,8 @@
                 <td>Universidad Tecnica Estatal de Quevedo</td>
                 <td>25</td>
                 <td>3/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Universidad Tecnica Particular De Loja, WIE</td>
                 <td>Affinity Group</td>
@@ -15254,16 +15260,16 @@
                 <td>Universidad Tecnica del Norte</td>
                 <td>189</td>
                 <td>5/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Universidad Tecnologica De Bolivar,WIE</td>
                 <td>Affinity Group</td>
                 <td class="mono">SBA13761</td>
                 <td>Universidad Tecnologica De Bolivar</td>
                 <td>23</td>
-                <td>2/2</td>
-                <td>Not Met</td>
+                <td>3/2</td>
+                <td>Partial</td>
                 <td style="color:#fab219">2/3</td>
               </tr><tr>
                 <td>Universidad Tecnologica Nacional-Buenos Aires,WIE</td>
@@ -15298,9 +15304,9 @@
                 <td class="mono">SBA91021</td>
                 <td>Universidad Tecnologica de Panama</td>
                 <td>28</td>
-                <td>6/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>7/2</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Universidad Tecnologica de Pereira, WIE</td>
                 <td>Affinity Group</td>
@@ -15308,7 +15314,7 @@
                 <td>Universidad Tecnologica de Pereira</td>
                 <td>3</td>
                 <td>1/2</td>
-                <td>Not Met</td>
+                <td>Partial</td>
                 <td style="color:#d03b3b">0/3</td>
               </tr><tr>
                 <td>Universidad Tecnologica del Peru, WIE</td>
@@ -15317,8 +15323,8 @@
                 <td>Universidad Tecnologica del Peru</td>
                 <td>18</td>
                 <td>2/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Universidad Veracruzana - FIME,WIE</td>
                 <td>Affinity Group</td>
@@ -15326,8 +15332,8 @@
                 <td>Universidad Veracruzana - FIME</td>
                 <td>40</td>
                 <td>2/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Universidad Veracruzana Sede Coatzacoalcos,WIE</td>
                 <td>Affinity Group</td>
@@ -15344,7 +15350,7 @@
                 <td>Universidad de Costa Rica</td>
                 <td>8</td>
                 <td>4/2</td>
-                <td>Not Met</td>
+                <td>Partial</td>
                 <td style="color:#fab219">2/3</td>
               </tr><tr>
                 <td>Universidad de Guadalajara,WIE</td>
@@ -15353,8 +15359,8 @@
                 <td>Universidad de Guadalajara</td>
                 <td>23</td>
                 <td>2/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Universidad de Guadalajara-Valles,WIE</td>
                 <td>Affinity Group</td>
@@ -15380,7 +15386,7 @@
                 <td>Universidad de Monterrey</td>
                 <td>26</td>
                 <td>0/2</td>
-                <td>Not Met</td>
+                <td>Partial</td>
                 <td style="color:#ec835a">1/3</td>
               </tr><tr>
                 <td>Universidad de Narino, WIE</td>
@@ -15397,9 +15403,9 @@
                 <td class="mono">SBA60171</td>
                 <td>Universidad de Panama</td>
                 <td>24</td>
-                <td>4/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>5/2</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Universidad de Piura - Sede Lima, WIE</td>
                 <td>Affinity Group</td>
@@ -15434,8 +15440,8 @@
                 <td>Universidad de San Carlos de Guatemala</td>
                 <td>17</td>
                 <td>3/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Universidad de Santiago de Chile,WIE</td>
                 <td>Affinity Group</td>
@@ -15443,8 +15449,8 @@
                 <td>Universidad de Santiago de Chile</td>
                 <td>8</td>
                 <td>3/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Universidad de Sonsonate, WIE</td>
                 <td>Affinity Group</td>
@@ -15460,9 +15466,9 @@
                 <td class="mono">SBA99671</td>
                 <td>Universidad de el Salvador</td>
                 <td>31</td>
-                <td>4/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>5/2</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Universidad de la Costa WIE</td>
                 <td>Affinity Group</td>
@@ -15470,8 +15476,8 @@
                 <td>Universidad de la Costa</td>
                 <td>19</td>
                 <td>7/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Universidad de las Americas-Quito,WIE</td>
                 <td>Affinity Group</td>
@@ -15488,8 +15494,8 @@
                 <td>Universidad de las Fuerzas Armadas - ESPE</td>
                 <td>32</td>
                 <td>13/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Universidad de los Andes, WIE</td>
                 <td>Affinity Group</td>
@@ -15497,8 +15503,8 @@
                 <td>Universidad de los Andes</td>
                 <td>39</td>
                 <td>9/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Universidad del Cauca,WIE</td>
                 <td>Affinity Group</td>
@@ -15515,7 +15521,7 @@
                 <td>Universidad del Magdalena</td>
                 <td>8</td>
                 <td>2/2</td>
-                <td>Not Met</td>
+                <td>Partial</td>
                 <td style="color:#fab219">2/3</td>
               </tr><tr>
                 <td>Universidad del Pacifico,WIE</td>
@@ -15524,8 +15530,8 @@
                 <td>Universidad del Pacifico</td>
                 <td>6</td>
                 <td>2/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Universidad del Quindio,WIE</td>
                 <td>Affinity Group</td>
@@ -15533,7 +15539,7 @@
                 <td>Universidad del Quindio</td>
                 <td>7</td>
                 <td>5/2</td>
-                <td>Not Met</td>
+                <td>Partial</td>
                 <td style="color:#fab219">2/3</td>
               </tr><tr>
                 <td>Universidad del Salvador,WIE</td>
@@ -15551,8 +15557,8 @@
                 <td>Universidad del Valle</td>
                 <td>32</td>
                 <td>2/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Universidade Estadual de Campinas,WIE</td>
                 <td>Affinity Group</td>
@@ -15560,8 +15566,8 @@
                 <td>Universidade Estadual de Campinas</td>
                 <td>7</td>
                 <td>1/2</td>
-                <td>Not Met</td>
-                <td style="color:#ec835a">1/3</td>
+                <td>Met</td>
+                <td style="color:#fab219">2/3</td>
               </tr><tr>
                 <td>Universidade Estadual de Feira de Santana,WIE</td>
                 <td>Affinity Group</td>
@@ -15569,8 +15575,8 @@
                 <td>Universidade Estadual de Feira de Santana</td>
                 <td>13</td>
                 <td>6/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Universidade Estadual de Maringa,WIE</td>
                 <td>Affinity Group</td>
@@ -15595,9 +15601,9 @@
                 <td class="mono">SBA13491</td>
                 <td>Universidade Federal De Juiz De Fora</td>
                 <td>83</td>
-                <td>14/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>15/2</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Universidade Federal Rural do Semi-Arido,WIE</td>
                 <td>Affinity Group</td>
@@ -15605,16 +15611,16 @@
                 <td>Universidade Federal Rural do Semi-Arido</td>
                 <td>16</td>
                 <td>7/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Universidade Federal da Paraiba,WIE</td>
                 <td>Affinity Group</td>
                 <td class="mono">SBA14711</td>
                 <td>Universidade Federal da Paraiba</td>
                 <td>9</td>
-                <td>1/2</td>
-                <td>Not Met</td>
+                <td>0/2</td>
+                <td>Partial</td>
                 <td style="color:#ec835a">1/3</td>
               </tr><tr>
                 <td>Universidade Federal de Alagoas,WIE</td>
@@ -15623,8 +15629,8 @@
                 <td>Universidade Federal de Alagoas</td>
                 <td>9</td>
                 <td>0/2</td>
-                <td>Not Met</td>
-                <td style="color:#ec835a">1/3</td>
+                <td>Met</td>
+                <td style="color:#fab219">2/3</td>
               </tr><tr>
                 <td>Universidade Federal de Mato Grosso do Sul,WIE</td>
                 <td>Affinity Group</td>
@@ -15632,17 +15638,17 @@
                 <td>Universidade Federal de Mato Grosso do Sul</td>
                 <td>11</td>
                 <td>12/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Universidade Federal de Pernambuco,WIE</td>
                 <td>Affinity Group</td>
                 <td class="mono">SBA99374</td>
                 <td>Universidade Federal de Pernambuco</td>
                 <td>6</td>
-                <td>0/2</td>
-                <td>Not Met</td>
-                <td style="color:#ec835a">1/3</td>
+                <td>5/2</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Universidade Federal de Santa Maria, WIE</td>
                 <td>Affinity Group</td>
@@ -15650,8 +15656,8 @@
                 <td>Universidade Federal de Santa Maria</td>
                 <td>28</td>
                 <td>2/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Universidade Federal do ABC, WIE</td>
                 <td>Affinity Group</td>
@@ -15668,8 +15674,8 @@
                 <td>Universidade Federal do Acre</td>
                 <td>4</td>
                 <td>0/2</td>
-                <td>Not Met</td>
-                <td style="color:#d03b3b">0/3</td>
+                <td>Met</td>
+                <td style="color:#ec835a">1/3</td>
               </tr><tr>
                 <td>Universidade Federal do Amapa,WIE</td>
                 <td>Affinity Group</td>
@@ -15677,7 +15683,7 @@
                 <td>Universidade Federal do Amapa</td>
                 <td>7</td>
                 <td>2/2</td>
-                <td>Not Met</td>
+                <td>Partial</td>
                 <td style="color:#fab219">2/3</td>
               </tr><tr>
                 <td>Universidade Federal do Para, WIE</td>
@@ -15686,8 +15692,8 @@
                 <td>Universidade Federal do Para</td>
                 <td>6</td>
                 <td>0/2</td>
-                <td>Not Met</td>
-                <td style="color:#ec835a">1/3</td>
+                <td>Met</td>
+                <td style="color:#fab219">2/3</td>
               </tr><tr>
                 <td>Universidade Federal do Reconcavo da Bahia,WIE</td>
                 <td>Affinity Group</td>
@@ -15704,8 +15710,8 @@
                 <td>Universidade Federal do Rio Grande do Norte</td>
                 <td>77</td>
                 <td>4/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Universidade Federal do Rio de Janeiro,WIE</td>
                 <td>Affinity Group</td>
@@ -15740,8 +15746,8 @@
                 <td>Universidade de Brasilia</td>
                 <td>51</td>
                 <td>10/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Universidade do Estado do Rio de Janeiro,WIE</td>
                 <td>Affinity Group</td>
@@ -15758,8 +15764,8 @@
                 <td>University of Atlántico</td>
                 <td>17</td>
                 <td>1/2</td>
-                <td>Not Met</td>
-                <td style="color:#ec835a">1/3</td>
+                <td>Met</td>
+                <td style="color:#fab219">2/3</td>
               </tr><tr>
                 <td>University of Concepcion,WIE</td>
                 <td>Affinity Group</td>
@@ -15767,7 +15773,7 @@
                 <td>University of Concepcion</td>
                 <td>37</td>
                 <td>7/2</td>
-                <td>Not Met</td>
+                <td>Partial</td>
                 <td style="color:#fab219">2/3</td>
               </tr><tr>
                 <td>University of Guayaquil, WIE</td>
@@ -15794,8 +15800,8 @@
                 <td>West Indies Univ Of The-St Augustine</td>
                 <td>18</td>
                 <td>1/2</td>
-                <td>Not Met</td>
-                <td style="color:#ec835a">1/3</td>
+                <td>Met</td>
+                <td style="color:#fab219">2/3</td>
               </tr><tr>
                 <td>Yachay Tech University,WIE</td>
                 <td>Affinity Group</td>
@@ -15803,8 +15809,8 @@
                 <td>Yachay Tech University</td>
                 <td>60</td>
                 <td>11/2</td>
-                <td>Not Met</td>
-                <td style="color:#fab219">2/3</td>
+                <td>Met</td>
+                <td style="color:#0ca30c">3/3</td>
               </tr><tr>
                 <td>Universidad Central del Ecuador,WIE</td>
                 <td>Student Branch Chapter</td>
@@ -15812,8 +15818,8 @@
                 <td>Universidad Central del Ecuador</td>
                 <td>0</td>
                 <td>0/2</td>
-                <td>Not Met</td>
-                <td style="color:#d03b3b">0/3</td>
+                <td>Met</td>
+                <td style="color:#ec835a">1/3</td>
               </tr></tbody>
           </table>
         </section>

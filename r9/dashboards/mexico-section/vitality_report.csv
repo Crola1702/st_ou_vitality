@@ -1,15 +1,15 @@
 Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
-"Chapingo Autonomous University,WIE",SBA60226280,Affinity Group,Chapingo Autonomous University,WIE,15,6,Yes,1,,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
-"Cinvestav Zacatenco,WIE",SBA60521,Affinity Group,Cinvestav Zacatenco,WIE,18,6,Yes,4,,1,2,Yes,No,,No,No,No,No,No,Not Met,2/3,Not Met
-"Inst Poli Nacional Micro y Nano,WIE",SBA60233006,Affinity Group,Inst Politecnico Nacional Micro y Nanotecnologias,WIE,15,6,Yes,16,,1,2,Yes,No,,No,No,No,No,No,Not Met,2/3,Not Met
-"Instituto Politecnico Nacional-ESIME Zacatenco,WIE",SBA00571,Affinity Group,Instituto Politecnico Nacional-ESIME Zacatenco,WIE,8,6,Yes,0,,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
-"Tecnologico de Software,WIE",SBA60239883,Affinity Group,Tecnologico de Software,WIE,6,6,Yes,0,,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
-"U Prof Interdiscip En Ing Tec Avanzadas-IPN,SIGHT",SBA62811S,Affinity Group,Unidad Prof Interdiscip En Ing Tec Avanzadas-IPN,SIGHT,120,6,Yes,8,,0,2,Yes,No,,No,No,No,No,No,Not Met,2/3,Not Met
-"U Prof Interdiscip En Ing Tec Avanzadas-IPN,WIE",SBA62811,Affinity Group,Unidad Prof Interdiscip En Ing Tec Avanzadas-IPN,WIE,46,6,Yes,7,,5,2,Yes,No,,No,No,No,No,No,Not Met,2/3,Not Met
-"Univ Autonoma Metropolitana-Iztapalapa,WIE",SBA39941,Affinity Group,Univ Autonoma Metropolitana-Iztapalapa,WIE,6,6,Yes,0,,1,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Chapingo Autonomous University,WIE",SBA60226280,Affinity Group,Chapingo Autonomous University,WIE,15,6,Yes,1,,0,2,No,Yes,,No,No,No,Yes,Yes,Partial,1/3,Not Met
+"Cinvestav Zacatenco,WIE",SBA60521,Affinity Group,Cinvestav Zacatenco,WIE,18,6,Yes,4,,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Inst Poli Nacional Micro y Nano,WIE",SBA60233006,Affinity Group,Inst Politecnico Nacional Micro y Nanotecnologias,WIE,15,6,Yes,16,,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Instituto Politecnico Nacional-ESIME Zacatenco,WIE",SBA00571,Affinity Group,Instituto Politecnico Nacional-ESIME Zacatenco,WIE,8,6,Yes,0,,0,2,No,Yes,,No,No,Yes,No,Yes,Partial,1/3,Not Met
+"Tecnologico de Software,WIE",SBA60239883,Affinity Group,Tecnologico de Software,WIE,6,6,Yes,0,,0,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
+"U Prof Interdiscip En Ing Tec Avanzadas-IPN,SIGHT",SBA62811S,Affinity Group,Unidad Prof Interdiscip En Ing Tec Avanzadas-IPN,SIGHT,120,6,Yes,8,,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
+"U Prof Interdiscip En Ing Tec Avanzadas-IPN,WIE",SBA62811,Affinity Group,Unidad Prof Interdiscip En Ing Tec Avanzadas-IPN,WIE,46,6,Yes,7,,5,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Univ Autonoma Metropolitana-Iztapalapa,WIE",SBA39941,Affinity Group,Univ Autonoma Metropolitana-Iztapalapa,WIE,6,6,Yes,0,,1,2,No,Yes,,No,Yes,No,No,No,Partial,1/3,Not Met
 "Universidad Autonoma de Yucatan,WIE",SBA03105,Affinity Group,Universidad Autonoma de Yucatan,WIE,17,6,Yes,6,,1,2,Yes,No,,No,No,No,No,No,Not Met,2/3,Not Met
 "Universidad Autonoma del Estado de Mexico,WIE",SBA11766,Affinity Group,Universidad Autonoma del Estado de Mexico,WIE,0,6,No,0,,1,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
-"Universidad Nacional Autonoma De Mexico, WIE",SBA05681,Affinity Group,Universidad Nacional Autonoma De Mexico,WIE,6,6,Yes,7,,0,2,Yes,No,,No,No,No,No,No,Not Met,2/3,Not Met
+"Universidad Nacional Autonoma De Mexico, WIE",SBA05681,Affinity Group,Universidad Nacional Autonoma De Mexico,WIE,6,6,Yes,7,,0,2,Yes,No,,Yes,No,No,No,No,Partial,2/3,Not Met
 "Universidad Tecnologica de Campeche,WIE",SBA18881,Affinity Group,Universidad Tecnologica de Campeche,WIE,19,6,Yes,0,,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
 Autonomous Metropolitan Univ-Azcapotzalco,STB20221,Student Branch,Autonomous Metropolitan Univ-Azcapotzalco,,23,12,Yes,0,,0,4,No,No,No,,Yes,Yes,No,Yes,Not Met,1/3,Not Met
 Autonomous University of Baja California,STB2516633,Student Branch,Autonomous University of Baja California,,25,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
@@ -24,7 +24,7 @@ Inst Politecnico Nacional Micro y Nanotecnologias,STB60233006,Student Branch,Ins
 Inst Tec Sup de Calkini en el Estado de Campeche,STB11512,Student Branch,Inst Tec Sup de Calkini en el Estado de Campeche,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Instituto Politecnico Nacional Culhuacan-Esime,STB29441,Student Branch,Instituto Politecnico Nacional Culhuacan-Esime,,40,12,Yes,1,,0,4,No,Yes,Yes,,Yes,Yes,Yes,No,Met,2/3,Not Met
 Instituto Politecnico Nacional-Azcapotzalco,STB40111287,Student Branch,Instituto Politecnico Nacional-Azcapotzalco,,6,12,No,2,,0,4,No,No,No,,No,No,No,Yes,Not Met,0/3,Not Met
-Instituto Politecnico Nacional-ESIME Zacatenco,STB00571,Student Branch,Instituto Politecnico Nacional-ESIME Zacatenco,,55,12,Yes,15,,1,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Instituto Politecnico Nacional-ESIME Zacatenco,STB00571,Student Branch,Instituto Politecnico Nacional-ESIME Zacatenco,,55,12,Yes,15,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Instituto Tec de Estudios Superior de Los Cabos,STB07171,Student Branch,Instituto Tec de Estudios Superior de Los Cabos,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Instituto Tecnologico Autonomo De Mexico,STB39981,Student Branch,Instituto Tecnologico Autonomo De Mexico,,1,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Instituto Tecnologico De Apizaco,STB63701,Student Branch,Instituto Tecnologico de Apizaco,,3,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
@@ -50,7 +50,7 @@ Tecnologico de Monterrey,STB39211,Student Branch,Tecnologico de Monterrey,,32,12
 Tecnologico de Monterrey - Santa Fe,STB16131,Student Branch,Tecnologico de Monterrey - Santa Fe,,1,12,No,0,,0,4,No,No,Yes,,No,No,No,No,Partial,0/3,Not Met
 Tecnologico de Software,STB60239883,Student Branch,Tecnologico de Software,,39,12,Yes,0,,1,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 UPIBI - IPN,STB65511,Student Branch,UPIBI - IPN,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
-Unidad Prof Interdiscip En Ing Tec Avanzadas-IPN,STB62811,Student Branch,Unidad Prof Interdiscip En Ing Tec Avanzadas-IPN,,88,12,Yes,19,,12,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Unidad Prof Interdiscip En Ing Tec Avanzadas-IPN,STB62811,Student Branch,Unidad Prof Interdiscip En Ing Tec Avanzadas-IPN,,88,12,Yes,20,,11,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Univ Autonoma Metropolitana-Iztapalapa,STB39941,Student Branch,Univ Autonoma Metropolitana-Iztapalapa,,9,12,No,1,,1,4,No,Yes,Yes,,No,Yes,No,No,Met,1/3,Not Met
 Univ Autonoma del Estado de Hidalgo - Tlahuelilpan,STB60217858,Student Branch,Univ Autonoma del Estado de Hidalgo - Tlahuelilpan,,0,12,No,2,,0,4,No,Yes,Yes,,No,Yes,Yes,No,Met,1/3,Not Met
 Universidad Autonoma Metropolitana Lerma Campus,STB60214183,Student Branch,Universidad Autonoma Metropolitana Lerma Campus,,41,12,Yes,3,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
@@ -69,14 +69,14 @@ Universidad Nacional Autonoma De Mexico,STB05681,Student Branch,Universidad Naci
 Universidad Politecnica de Pachuca,STB13261,Student Branch,Universidad Politecnica de Pachuca,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Universidad Politecnica de Tulancingo,STB15311,Student Branch,Universidad Politecnica de Tulancingo,,12,12,Yes,5,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Universidad Politecnica de Yucatan,STB11403,Student Branch,Universidad Politecnica de Yucatan,,9,12,No,2,,0,4,No,Yes,Yes,,Yes,Yes,No,Yes,Met,1/3,Not Met
-Universidad Tecnologica de Campeche,STB18881,Student Branch,Universidad Tecnologica de Campeche,,34,12,Yes,4,,1,4,Yes,Yes,Yes,,Yes,Yes,No,Yes,Met,3/3,Met
+Universidad Tecnologica de Campeche,STB18881,Student Branch,Universidad Tecnologica de Campeche,,34,12,Yes,6,,1,4,Yes,Yes,Yes,,Yes,Yes,No,Yes,Met,3/3,Met
 Universidad Tecnologica de Mexico-Atizapan,STB03181,Student Branch,Universidad Tecnologica de Mexico-Atizapan,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Universidad Tecnologica de Nezahualcoyotl,STB65521,Student Branch,Universidad Tecnologica de Nezahualcoyotl,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Universidad Tecnologica de Tula-Tepeji,STB60201,Student Branch,Universidad Tecnologica de Tula-Tepeji,,1,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Universidad de Ciencias y Artes de Chiapas UNICACH,STB10062,Student Branch,Universidad de Ciencias y Artes de Chiapas,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Universidad de Sonora,STB20222,Student Branch,Universidad de Sonora,,2,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 "Autonomous University of Baja California,IE13",SBC2516633A,Student Branch Chapter,Autonomous University of Baja California,IE13,7,6,Yes,6,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
-"Autonomous University of Baja California,PE31",SBC2516633,Student Branch Chapter,Autonomous University of Baja California,PE31,14,6,Yes,9,1,4,2,No,Yes,,Yes,Yes,No,No,Yes,Met,2/3,Not Met
+"Autonomous University of Baja California,PE31",SBC2516633,Student Branch Chapter,Autonomous University of Baja California,PE31,14,6,Yes,9,1,5,2,No,Yes,,Yes,Yes,No,No,Yes,Met,2/3,Not Met
 "Centro de Investigacion en Computacion,CIS11",SBC41492028A,Student Branch Chapter,Centro de Investigacion en Computacion,CIS11,16,6,Yes,0,0,0,2,No,No,,No,Yes,Yes,Yes,Yes,Not Met,1/3,Not Met
 "Centro de Investigacion en Computacion,SMC28",SBC41492028,Student Branch Chapter,Centro de Investigacion en Computacion,SMC28,16,6,Yes,1,1,0,2,No,Yes,,Yes,Yes,Yes,No,No,Met,2/3,Not Met
 "Centro de Investigacion en Computacion,SSC37",SBC41492028B,Student Branch Chapter,Centro de Investigacion en Computacion,SSC37,10,6,Yes,5,3,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
@@ -87,15 +87,15 @@ Universidad de Sonora,STB20222,Student Branch,Universidad de Sonora,,2,12,No,0,,
 "Cicese Research Center,PHO36",SBC2598933,Student Branch Chapter,Cicese Research Center,PHO36,5,6,No,0,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,1/3,Not Met
 "Cinvestav Zacatenco,AP03",SBC60521D,Student Branch Chapter,Cinvestav Zacatenco,AP03,9,6,Yes,3,3,4,2,Yes,Yes,,Yes,No,No,No,No,Met,3/3,Met
 "Cinvestav Zacatenco,C16",SBC60521F,Student Branch Chapter,Cinvestav Zacatenco,C16,17,6,Yes,4,2,2,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
-"Cinvestav Zacatenco,CS23",SBC60521G,Student Branch Chapter,Cinvestav Zacatenco,CS23,11,6,Yes,9,9,3,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
-"Cinvestav Zacatenco,ED15",SBC60521,Student Branch Chapter,Cinvestav Zacatenco,ED15,21,6,Yes,11,10,2,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Cinvestav Zacatenco,CS23",SBC60521G,Student Branch Chapter,Cinvestav Zacatenco,CS23,11,6,Yes,11,11,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Cinvestav Zacatenco,ED15",SBC60521,Student Branch Chapter,Cinvestav Zacatenco,ED15,21,6,Yes,12,11,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Cinvestav Zacatenco,EMB18",SBC60521A,Student Branch Chapter,Cinvestav Zacatenco,EMB18,10,6,Yes,8,2,5,2,Yes,Yes,,Yes,Yes,Yes,No,Yes,Met,3/3,Met
-"Cinvestav Zacatenco,NANO42",SBC60521E,Student Branch Chapter,Cinvestav Zacatenco,NANO42,2,6,No,15,3,4,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
-"Cinvestav Zacatenco,RA24",SBC60521C,Student Branch Chapter,Cinvestav Zacatenco,RA24,10,6,Yes,0,0,3,2,No,Yes,,Yes,Yes,No,Yes,No,Met,2/3,Not Met
-"Cinvestav Zacatenco,SSC37",SBC60521B,Student Branch Chapter,Cinvestav Zacatenco,SSC37,26,6,Yes,6,0,5,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Cinvestav Zacatenco,NANO42",SBC60521E,Student Branch Chapter,Cinvestav Zacatenco,NANO42,2,6,No,16,4,3,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Cinvestav Zacatenco,RA24",SBC60521C,Student Branch Chapter,Cinvestav Zacatenco,RA24,10,6,Yes,0,0,3,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+"Cinvestav Zacatenco,SSC37",SBC60521B,Student Branch Chapter,Cinvestav Zacatenco,SSC37,26,6,Yes,9,3,2,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Escuela Superior de Computo del IPN,C16",SBC660611,Student Branch Chapter,Escuela Superior de Computo del IPN,C16,1,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Inst Poli Nacional Micro y Nano,NANO42/ED15",SBC60233006,Student Branch Chapter,Inst Politecnico Nacional Micro y Nanotecnologias,NANO42/ED15,17,6,Yes,20,13,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
-"Inst Politecnico Nacional Culhuacan-Esime,AES10",SBC29441,Student Branch Chapter,Instituto Politecnico Nacional Culhuacan-Esime,AES10,3,6,No,2,1,1,2,No,Yes,,Yes,Yes,No,No,No,Met,1/3,Not Met
+"Inst Politecnico Nacional Culhuacan-Esime,AES10",SBC29441,Student Branch Chapter,Instituto Politecnico Nacional Culhuacan-Esime,AES10,3,6,No,1,1,1,2,No,Yes,,Yes,Yes,No,No,No,Met,1/3,Not Met
 "Inst Politecnico Nacional-ESIME Zacatenco,PE31",SBC00571,Student Branch Chapter,Instituto Politecnico Nacional-ESIME Zacatenco,PE31,5,6,No,1,1,0,2,No,Yes,,Yes,Yes,No,Yes,Yes,Met,1/3,Not Met
 "Instituto Politecnico Nacional-Azcapotzalco,RA24",SBC40111287,Student Branch Chapter,Instituto Politecnico Nacional-Azcapotzalco,RA24,3,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Instituto Tecnologico De Durango,PE31",SBC39201,Student Branch Chapter,Instituto Tecnologico De Durango,PE31,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
@@ -109,21 +109,21 @@ Universidad de Sonora,STB20222,Student Branch,Universidad de Sonora,,2,12,No,0,,
 "La Salle Universidad La Salle-Mexico City, C16",SBC98811,Student Branch Chapter,Universidad La Salle-Mexico City,C16,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Tecno de Estudios Superiores de Ixtapaluca,EMB18",SBC10001,Student Branch Chapter,Tecnologico de Estudios Superiores de Ixtapaluca,EMB18,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Tecnologico de Monterrey,EMB18",SBC39211,Student Branch Chapter,Tecnologico de Monterrey,EMB18,8,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
-"U Prof Interdiscip En Ing Tec Avanzadas-IPN,AES10",SBC62811A,Student Branch Chapter,Unidad Prof Interdiscip En Ing Tec Avanzadas-IPN,AES10,13,6,Yes,6,0,1,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
+"U Prof Interdiscip En Ing Tec Avanzadas-IPN,AES10",SBC62811A,Student Branch Chapter,Unidad Prof Interdiscip En Ing Tec Avanzadas-IPN,AES10,13,6,Yes,6,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
 "U Prof Interdiscip En Ing Tec Avanzadas-IPN,CIS11",SBC62811E,Student Branch Chapter,Unidad Prof Interdiscip En Ing Tec Avanzadas-IPN,CIS11,10,6,Yes,2,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
 "U Prof Interdiscip En Ing Tec Avanzadas-IPN,COM19",SBC62811B,Student Branch Chapter,Unidad Prof Interdiscip En Ing Tec Avanzadas-IPN,COM19,14,6,Yes,3,1,0,2,No,Yes,,No,Yes,Yes,Yes,No,Partial,1/3,Not Met
-"U Prof Interdiscip En Ing Tec Avanzadas-IPN,EMB18",SBC62811,Student Branch Chapter,Unidad Prof Interdiscip En Ing Tec Avanzadas-IPN,EMB18,12,6,Yes,11,1,4,2,No,Yes,,No,No,Yes,Yes,Yes,Partial,1/3,Not Met
+"U Prof Interdiscip En Ing Tec Avanzadas-IPN,EMB18",SBC62811,Student Branch Chapter,Unidad Prof Interdiscip En Ing Tec Avanzadas-IPN,EMB18,12,6,Yes,12,2,3,2,Yes,Yes,,No,No,Yes,Yes,Yes,Partial,2/3,Not Met
 "U Prof Interdiscip En Ing Tec Avanzadas-IPN,PE31",SBC62811D,Student Branch Chapter,Unidad Prof Interdiscip En Ing Tec Avanzadas-IPN,PE31,20,6,Yes,3,1,1,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
 "U Prof Interdiscip En Ing Tec Avanzadas-IPN,RA24",SBC62811C,Student Branch Chapter,Unidad Prof Interdiscip En Ing Tec Avanzadas-IPN,RA24,10,6,Yes,2,0,1,2,No,Yes,,No,Yes,Yes,Yes,No,Partial,1/3,Not Met
-"U Prof Interdiscip En Ing Tec Avanzadas-IPN,VT06",SBC62811F,Student Branch Chapter,Unidad Prof Interdiscip En Ing Tec Avanzadas-IPN,VT06,19,6,Yes,7,2,6,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"U Prof Interdiscip En Ing Tec Avanzadas-IPN,VT06",SBC62811F,Student Branch Chapter,Unidad Prof Interdiscip En Ing Tec Avanzadas-IPN,VT06,19,6,Yes,8,3,6,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "UPIBI - IPN, RA24",SBC65511A,Student Branch Chapter,UPIBI - IPN,RA24,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Univ Autonoma Metropolitana-Iztapalapa,COM19",SBC39941A,Student Branch Chapter,Univ Autonoma Metropolitana-Iztapalapa,COM19,3,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Univ Autonoma Metropolitana-Iztapalapa,PE31",SBC39941,Student Branch Chapter,Univ Autonoma Metropolitana-Iztapalapa,PE31,3,6,No,0,0,0,2,No,Yes,,No,Yes,Yes,No,No,Partial,0/3,Not Met
 "Universidad Autonoma de Chihuahua,EMB18",SBC11592,Student Branch Chapter,Universidad Autonoma de Chihuahua,EMB18,24,6,Yes,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
-"Universidad Autonoma de Yucatan,RA24",SBC03105,Student Branch Chapter,Universidad Autonoma de Yucatan,RA24,15,6,Yes,2,0,1,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Universidad Autonoma de Yucatan,RA24",SBC03105,Student Branch Chapter,Universidad Autonoma de Yucatan,RA24,15,6,Yes,2,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 "Universidad Autonoma de la Ciudad de Mexico, C16",SBC040511,Student Branch Chapter,Universidad Autonoma de la Ciudad de Mexico,C16,1,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad Autonoma del Estado de Mexico,AES10",SBC11766B,Student Branch Chapter,Universidad Autonoma del Estado de Mexico,AES10,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
-"Universidad Autonoma del Estado de Mexico,C16",SBC11766A,Student Branch Chapter,Universidad Autonoma del Estado de Mexico,C16,2,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Universidad Autonoma del Estado de Mexico,C16",SBC11766A,Student Branch Chapter,Universidad Autonoma del Estado de Mexico,C16,2,6,No,0,0,0,2,No,Yes,,No,No,No,No,No,Partial,0/3,Not Met
 "Universidad Autonoma del Estado de Mexico,RA24",SBC11766,Student Branch Chapter,Universidad Autonoma del Estado de Mexico,RA24,1,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad Iberoamericana Ciudad de Mexico,C16",SBC06121A,Student Branch Chapter,Universidad Iberoamericana Ciudad de Mexico,C16,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad Iberoamericana Ciudad de Mexico,COM19",SBC06121,Student Branch Chapter,Universidad Iberoamericana Ciudad de Mexico,COM19,2,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
@@ -137,4 +137,4 @@ Universidad de Sonora,STB20222,Student Branch,Universidad de Sonora,,2,12,No,0,,
 "Universidad Nacional Autonoma De Mexico,C16",SBC05681F,Student Branch Chapter,Universidad Nacional Autonoma De Mexico,C16,13,6,Yes,1,1,3,2,No,No,,Yes,No,No,No,No,Partial,1/3,Not Met
 "Universidad Nacional Autonoma De Mexico,CAS04",SBC05681E,Student Branch Chapter,Universidad Nacional Autonoma De Mexico,CAS04,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad Tecnologica de Campeche,PE31",SBC18881,Student Branch Chapter,Universidad Tecnologica de Campeche,PE31,12,6,Yes,0,0,0,2,No,Yes,,No,Yes,No,No,No,Partial,1/3,Not Met
-"Universidad Tecnologica de Campeche,RA24",SBC18881A,Student Branch Chapter,Universidad Tecnologica de Campeche,RA24,23,6,Yes,0,0,1,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Universidad Tecnologica de Campeche,RA24",SBC18881A,Student Branch Chapter,Universidad Tecnologica de Campeche,RA24,23,6,Yes,2,2,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met

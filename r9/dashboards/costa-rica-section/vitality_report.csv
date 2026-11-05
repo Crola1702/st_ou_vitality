@@ -1,11 +1,11 @@
 Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
 "Costa Rica Institute of Technology,SB SIGHT",SBA39461S,Affinity Group,Costa Rica Institute of Technology,SB SIGHT,34,6,Yes,0,,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
-"Costa Rica Institute of Technology,WIE",SBA39461,Affinity Group,Costa Rica Institute of Technology,WIE,36,6,Yes,11,,2,2,Yes,No,,No,No,No,No,No,Not Met,2/3,Not Met
-"Universidad de Costa Rica,WIE",SBA11121,Affinity Group,Universidad de Costa Rica,WIE,8,6,Yes,4,,2,2,Yes,No,,No,No,No,No,No,Not Met,2/3,Not Met
+"Costa Rica Institute of Technology,WIE",SBA39461,Affinity Group,Costa Rica Institute of Technology,WIE,36,6,Yes,11,,2,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Universidad de Costa Rica,WIE",SBA11121,Affinity Group,Universidad de Costa Rica,WIE,8,6,Yes,4,,2,2,Yes,Yes,,No,Yes,Yes,Yes,No,Partial,2/3,Not Met
 Costa Rica Institute of Technology,STB39461,Student Branch,Costa Rica Institute of Technology,,143,12,Yes,15,,0,4,Yes,Yes,Yes,,Yes,No,Yes,Yes,Met,3/3,Met
 Fidelitas Univ,STB62171,Student Branch,Fidelitas Univ,,5,12,No,1,,0,4,No,Yes,No,,No,No,No,No,Partial,0/3,Not Met
 Inst Tecnologico de Costa Rica - Sede San Carlos,STB11587,Student Branch,Inst Tecnologico de Costa Rica - Sede San Carlos,,13,12,Yes,19,,5,4,Yes,Yes,No,,Yes,Yes,Yes,Yes,Partial,2/3,Not Met
-National University of Costa Rica,STB40239987,Student Branch,National University of Costa Rica,,42,12,Yes,9,,2,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+National University of Costa Rica,STB40239987,Student Branch,National University of Costa Rica,,42,12,Yes,9,,3,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Univ LatinoAmericana De Ciencia Y Tec ULACIT,STB20225,Student Branch,Universidad Latinoamericana de Ciencia y Tec,,1,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Universidad Invenio,STB60104734,Student Branch,Universidad Invenio,,27,12,Yes,21,,2,4,Yes,Yes,Yes,,Yes,Yes,Yes,No,Met,3/3,Met
 Universidad Latina de Costa Rica,STB65071,Student Branch,Universidad Latina de Costa Rica,,1,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
