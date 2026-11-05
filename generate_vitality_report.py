@@ -885,84 +885,6 @@ def render_asset(name: str, **values: object) -> str:
     return text
 
 
-# Export bar: the one way into every report/export. "Export reports" opens
-# the report builder with the page's current dashboard filters (?q,
-# ?university, ?society: the same names the dashboard keeps in its URL), so
-# what you filtered is what you export. Uses the page's theme tokens.
-EXPORT_BAR_CSS = """
-  .export-bar {
-    display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; margin: 0 0 20px;
-    padding: 10px 14px; border: 1px solid var(--border); border-radius: 10px; background: var(--surface-1);
-  }
-  .export-bar .export-main {
-    font-weight: 600; font-size: 0.9rem; text-decoration: none; color: var(--page-plane); background: var(--text-primary);
-    border-radius: 999px; padding: 6px 14px;
-  }
-  .export-bar .export-main:hover { opacity: 0.88; }
-  .export-bar .export-text { flex: 1 1 260px; font-size: 0.82rem; color: var(--text-secondary); }
-  .export-bar .export-csv { font-size: 0.82rem; color: var(--text-primary); }
-  .quick-exports { flex-basis: 100%; display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-size: 0.8rem; }
-  .quick-exports > span { color: var(--text-secondary); margin-right: 2px; }
-  .quick-exports a {
-    color: var(--text-primary); text-decoration: none; border: 1px solid var(--border); border-radius: 999px; padding: 3px 10px;
-  }
-  .quick-exports a:hover { border-color: var(--text-secondary); }
-"""
-
-# Carries the dashboard's current filters into every builder link on click:
-# the main "Export reports" link and the one-click quick exports.
-EXPORT_BAR_JS = """
-(function () {
-  document.querySelectorAll('a[data-builder]').forEach(link => {
-    link.addEventListener('click', () => {
-      const now = new URLSearchParams(location.search);
-      const out = new URLSearchParams(link.dataset.params || '');
-      ['q', 'university', 'society'].forEach(k => { if (now.get(k)) out.set(k, now.get(k)); });
-      if (link.dataset.download) out.set('download', 'pdf');
-      link.href = link.dataset.builder + (out.toString() ? '?' + out : '');
-    });
-  });
-})();
-"""
-
-
-def quick_exports(multi_section: bool) -> list[tuple[str, str]]:
-    """(label, report builder URL params) for the one-click exports: the
-    builder's presets that need no further choice, downloading straight
-    away. Split by Section only where there are several Sections."""
-    by_section = "group=section&" if multi_section else ""
-    return [
-        ("One PDF per Student Branch", "group=branch"),
-        ("Section reports by Student Branch" if multi_section else "Report by Student Branch", by_section.rstrip("&")),
-        ("Student Branches only" + (", by Section" if multi_section else ""), by_section + "types=branch&nest=0"),
-        ("OUs meeting vitality", by_section + "status=met"),
-        ("Quick wins: missing one requirement", by_section + "status=one"),
-    ]
-
-
-def quick_exports_html(prefix: str, multi_section: bool, label: str = "Download now:") -> str:
-    links = "".join(
-        f'<a href="{html.escape(prefix)}report_builder.html?{html.escape(params + ("&" if params else "") + "download=pdf")}" '
-        f'data-builder="{html.escape(prefix)}report_builder.html" data-params="{html.escape(params)}" data-download="1" '
-        f'target="_blank" rel="noopener" title="Opens the report builder with this setup and downloads the PDFs">{html.escape(text)}</a>'
-        for text, params in quick_exports(multi_section)
-    )
-    return f'<div class="quick-exports"><span>{html.escape(label)}</span>{links}</div>'
-
-
-def export_bar_html(
-    builder_href: str = "report_builder.html", csv_href: str = "vitality_report.csv", *, multi_section: bool = False
-) -> str:
-    return (
-        '<div class="export-bar">'
-        f'<a class="export-main" id="open-report-builder" href="{html.escape(builder_href)}" data-builder="{html.escape(builder_href)}">Export reports</a>'
-        '<span class="export-text">Choose any Section, Student Branch, Society, OU type or vitality status, then download PDFs, a CSV or print. Uses the filters you set below.</span>'
-        f'<a class="export-csv" href="{html.escape(csv_href)}" download>Full data (CSV)</a>'
-        f"{quick_exports_html('', multi_section)}"
-        f"</div><script>{EXPORT_BAR_JS}</script>"
-    )
-
-
 def build_dashboard(
     units: list[OU],
     path: Path,
@@ -974,11 +896,16 @@ def build_dashboard(
     *,
     title: str = "IEEE Student OU Vitality Dashboard",
     nav_html: str = "",
+    scope_label: str | None = None,
+    generated_on: str | None = None,
 ) -> None:
     """Write the self-contained dashboard page. `title` is the page/H1
     title; `nav_html` is raw HTML inserted under the subtitle (multi-section
     runs put their scope switcher there) — both default to the single
-    Colombia dashboard's output."""
+    Colombia dashboard's output. `scope_label` names the whole view in
+    exports (default: the OUs' Section, else "IEEE Student OUs");
+    `generated_on` is the date printed on exported reports (default: today;
+    a rebuild from committed outputs passes the data's date)."""
     by_type: dict[str, list[OU]] = {"Student Branch": [], "Student Branch Chapter": [], "Affinity Group": []}
     for ou in units:
         by_type[ou.ou_type].append(ou)
@@ -989,22 +916,23 @@ def build_dashboard(
     met_count = sum(1 for ou in units if evaluate(ou)["overall"])
     pct = (met_count / total * 100) if total else 0
 
+    # data-tile: which count the dashboard's filters recompute into it.
     tiles = []
-    tiles.append(("Total OUs", str(total), None))
-    tiles.append(("Meeting Full Vitality (3/3)", f"{met_count} ({pct:.0f}%)", STATUS_GOOD))
+    tiles.append(("Total OUs", str(total), None, "total"))
+    tiles.append(("Meeting Full Vitality (3/3)", f"{met_count} ({pct:.0f}%)", STATUS_GOOD, "met"))
     for ou_type in ["Student Branch", "Student Branch Chapter", "Affinity Group"]:
         ou_list = by_type[ou_type]
         n = len(ou_list)
         m = sum(1 for ou in ou_list if evaluate(ou)["overall"])
         p = (m / n * 100) if n else 0
-        tiles.append((ou_type, f"{m}/{n} ({p:.0f}%)", None))
+        tiles.append((ou_type, f"{m}/{n} ({p:.0f}%)", None, TYPE_KEYS[ou_type]))
 
     tiles_html = "\n".join(
-        f'''<div class="tile">
+        f'''<div class="tile" data-tile="{key}">
           <div class="tile-label">{html.escape(label)}</div>
           <div class="tile-value"{f' style="color:{color}"' if color else ''}>{html.escape(value)}</div>
         </div>'''
-        for label, value, color in tiles
+        for label, value, color, key in tiles
     )
 
     member_summary_slug = {"Student Branch": "stb", "Student Branch Chapter": "sbc", "Affinity Group": "sba"}
@@ -1019,6 +947,26 @@ def build_dashboard(
     universities = sorted({ou.university for ou in units if ou.university})
     societies = sorted({ou.society for ou in units if ou.society})
 
+    councils = sorted({ou.council for ou in units if ou.council})
+    sections = sorted({ou.section for ou in units if ou.section})
+    multi_section = len(sections) > 1
+    council_of_section = {ou.section: ou.council for ou in units if ou.section}
+    council_filter = (
+        '<select id="council-filter" aria-label="Council"><option value="">All Councils</option>'
+        + "".join(f'<option value="{html.escape(c)}">{html.escape(c)}</option>' for c in councils)
+        + "</select>"
+        if len(councils) > 1 else ""
+    )
+    section_filter = (
+        '<select id="section-filter" aria-label="Section"><option value="">All Sections</option>'
+        + "".join(
+            f'<option value="{html.escape(sec)}" data-council="{html.escape(council_of_section.get(sec, ""))}">{html.escape(sec)}</option>'
+            for sec in sections
+        )
+        + "</select>"
+        if multi_section else ""
+    )
+
     university_options = "".join(f'<option value="{html.escape(u.lower())}">{html.escape(u)}</option>' for u in universities)
     society_options = "".join(f'<option value="{html.escape(s.lower())}">{html.escape(society_display_name(s))}</option>' for s in societies)
 
@@ -1032,6 +980,16 @@ def build_dashboard(
         society_to_universities.setdefault(s_key, set()).add(u_key)
     university_to_societies_json = json.dumps({k: sorted(v) for k, v in university_to_societies.items()})
     society_to_universities_json = json.dumps({k: sorted(v) for k, v in society_to_universities.items()})
+
+    def ou_row_attrs(ou: OU) -> str:
+        """What the dashboard's filters (and "Export current view") read."""
+        return (
+            f'data-name="{html.escape(ou.name.lower())}" data-spoid="{html.escape(ou.spoid.lower())}" '
+            f'data-university="{html.escape(ou.university.lower())}" data-society="{html.escape(ou.society.lower())}" '
+            f'data-members="{ou.member_count}" data-type="{TYPE_KEYS[ou.ou_type]}" '
+            f'data-req="{evaluate(ou)["requirements_met"]}" data-section="{html.escape(ou.section)}" '
+            f'data-council="{html.escape(ou.council)}"'
+        )
 
     row_counter = 0
 
@@ -1091,7 +1049,7 @@ def build_dashboard(
             )
 
             rows_html.append(
-                f"""<tr class="ou-row" data-name="{html.escape(ou.name.lower())}" data-spoid="{html.escape(ou.spoid.lower())}" data-university="{html.escape(ou.university.lower())}" data-society="{html.escape(ou.society.lower())}" data-members="{ou.member_count}">
+                f"""<tr class="ou-row" {ou_row_attrs(ou)}>
                   <td class="name-cell">{html.escape(ou.name)}</td>
                   <td class="mono">{html.escape(ou.spoid)}</td>
                   <td>{member_cell}</td>
@@ -1111,13 +1069,14 @@ def build_dashboard(
         )
 
         return f"""
-        <section class="ou-section">
+        <section class="ou-section" data-type="{TYPE_KEYS[ou_type]}">
           <h2>{html.escape(ou_type)} <span class="req-note">({req_text})</span></h2>
           <div class="table-wrap">
           <table id="{table_id}">
             <thead><tr>{header_html}</tr></thead>
             <tbody>
               {''.join(rows_html) if rows_html else '<tr><td colspan="6" class="empty">No units found</td></tr>'}
+              <tr class="filtered-empty" hidden><td colspan="6" class="empty">No units match the current filters.</td></tr>
             </tbody>
           </table>
           </div>
@@ -1160,7 +1119,7 @@ def build_dashboard(
 
         missing_color = {"Members": STATUS_WARNING, "Events": STATUS_WARNING, "Officers": STATUS_SERIOUS}
         rows_html = "".join(
-            f"""<tr class="ou-row" data-name="{html.escape(ou.name.lower())}" data-spoid="{html.escape(ou.spoid.lower())}" data-university="{html.escape(ou.university.lower())}" data-society="{html.escape(ou.society.lower())}" data-members="{ou.member_count}">
+            f"""<tr class="ou-row" {ou_row_attrs(ou)}>
               <td class="name-cell">{html.escape(ou.name)}</td>
               <td>{html.escape(ou.ou_type)}</td>
               <td class="mono">{html.escape(ou.spoid)}</td>
@@ -1303,7 +1262,29 @@ def build_dashboard(
         university_to_societies_json=university_to_societies_json,
     )
 
-    export_bar = export_bar_html(multi_section=len({ou.section for ou in units if ou.section}) > 1)
+    if scope_label is None:
+        scope_label = sections[0] if len(sections) == 1 else "IEEE Student OUs"
+    export_data = json.dumps(
+        {
+            "scope": scope_label,
+            "generated": generated_on or datetime.now().strftime("%Y-%m-%d"),
+            "colors": {str(k): v for k, v in REQUIREMENTS_COLOR.items()},
+            "ous": export_records(units),
+        },
+        ensure_ascii=False,
+        separators=(",", ":"),
+    ).replace("</", "<\\/")
+    split_options = "".join(
+        f'<label class="opt"><input type="radio" name="export-group" value="{value}"{" checked" if value == "none" else ""}> {label}</label>'
+        for value, label, show in (
+            ("none", "Nothing: a single report", True),
+            ("branch", "Student Branch (with its Chapters and Affinity Groups)", True),
+            ("section", "Section", multi_section),
+            ("council", "Council", len(councils) > 1),
+            ("society", "Society", True),
+        )
+        if show
+    )
 
     page = f"""<!doctype html>
 <html lang="en">
@@ -1313,7 +1294,9 @@ def build_dashboard(
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 {dashboard_css}
-{EXPORT_BAR_CSS}
+</style>
+<style id="export-pages-css">
+{EXPORT_PAGES_CSS.read_text(encoding="utf-8")}
 </style>
 </head>
 <body>
@@ -1323,7 +1306,6 @@ def build_dashboard(
     <h1>{html.escape(title)}</h1>
     <p class="subtitle">Generated from local vTools exports. Events source: {html.escape(events_path.name)}.</p>
 {nav_html}
-    {export_bar}
 
     <details class="resources">
       <summary>Requirements &amp; resources for students</summary>
@@ -1349,15 +1331,51 @@ def build_dashboard(
 
     <div class="filter-row">
       <input id="search" type="text" placeholder="Filter by unit name or SPO ID…">
-      <select id="university-filter">
+      {council_filter}
+      {section_filter}
+      <select id="university-filter" aria-label="University">
         <option value="">All Universities</option>
         {university_options}
       </select>
-      <select id="society-filter">
+      <select id="society-filter" aria-label="Society">
         <option value="">All Societies</option>
         {society_options}
       </select>
+      <select id="status-filter" aria-label="Vitality">
+        <option value="">Any vitality</option>
+        <option value="met">Meeting full vitality</option>
+        <option value="notmet">Not meeting it</option>
+        <option value="one">Missing one requirement</option>
+        <option value="two">Missing two or more</option>
+      </select>
+      <span class="type-filter" id="type-filter" role="group" aria-label="OU types">
+        <label><input type="checkbox" value="branch" checked> Student Branches</label>
+        <label><input type="checkbox" value="chapter" checked> Chapters</label>
+        <label><input type="checkbox" value="ag" checked> Affinity Groups</label>
+      </span>
+      <button type="button" class="export-view-btn" id="export-view-btn">Export current view</button>
     </div>
+
+    <dialog class="export-dialog" id="export-dialog" aria-labelledby="export-dialog-title">
+      <form method="dialog">
+        <h2 id="export-dialog-title">Export current view</h2>
+        <p class="export-summary" id="export-summary"></p>
+        <fieldset>
+          <legend>One report per</legend>
+          {split_options}
+        </fieldset>
+        <label class="opt" id="export-nest-opt"><input type="checkbox" id="export-nest"> Inside each report, list Chapters and Affinity Groups under their Student Branch (instead of the order shown)</label>
+        <p class="export-count" id="export-count"></p>
+        <div class="export-actions">
+          <button type="button" class="primary" id="download-all-pdfs">Download PDFs</button>
+          <button type="button" id="export-csv">Download CSV</button>
+          <button type="button" id="export-print">Print</button>
+        </div>
+        <p class="export-hint" id="export-hint"></p>
+        <p class="export-hint">Everything, every column: <a href="vitality_report.csv" download>Full data (CSV)</a></p>
+        <button type="submit" class="export-close" aria-label="Close">Close</button>
+      </form>
+    </dialog>
 
     <div class="member-summary">
       {member_summary_html}
@@ -1410,6 +1428,15 @@ def build_dashboard(
 </div>
 <script>
 {dashboard_js}
+</script>
+<!-- "Export current view": the visible rows, in their on-screen order, as PDFs / CSV / print. -->
+<script id="export-data" type="application/json">{export_data}</script>
+<div id="export-pages" class="export-pages" aria-hidden="true"></div>
+<script>
+{REPORT_EXPORT_JS.read_text(encoding="utf-8")}
+</script>
+<script>
+{EXPORT_VIEW_JS.read_text(encoding="utf-8")}
 </script>
 </body>
 </html>
@@ -1636,15 +1663,15 @@ def missing_requirements(ou: OU, result: dict | None = None) -> list[str]:
 
 TYPE_KEYS = {"Student Branch": "branch", "Student Branch Chapter": "chapter", "Affinity Group": "ag"}
 
-REPORT_BUILDER_JS = ASSETS_DIR / "report_builder.js"
-REPORT_BUILDER_CSS = ASSETS_DIR / "report_builder.css"
-REPORT_EXPORT_JS = ASSETS_DIR / "report_export.js"
+EXPORT_VIEW_JS = ASSETS_DIR / "export_view.js"  # "Export current view": grouping, page layout, CSV, print
+EXPORT_PAGES_CSS = ASSETS_DIR / "export_pages.css"  # light, print-oriented styles for the exported pages
+REPORT_EXPORT_JS = ASSETS_DIR / "report_export.js"  # dependency-free PDF + ZIP writer used by the export
 
 
-def builder_records(units: list[OU]) -> list[dict]:
-    """One compact record per OU for the report builder: everything a page
-    or CSV row shows, already evaluated (so the page needs no rules of its
-    own)."""
+def export_records(units: list[OU]) -> list[dict]:
+    """One compact record per OU for "Export current view": everything an
+    exported page or CSV row shows, already evaluated (so the page needs no
+    rules of its own). Embedded in the dashboard as #export-data."""
     records = []
     for ou in sorted(units, key=lambda o: (o.university, o.ou_type, o.name)):
         r = evaluate(ou)
@@ -1659,126 +1686,6 @@ def builder_records(units: list[OU]) -> list[dict]:
             "rq": r["requirements_met"], "ok": r["overall"], "miss": missing_requirements(ou, r),
         })
     return records
-
-
-def build_report_builder(
-    units: list[OU],
-    path: Path,
-    *,
-    scope_label: str,
-    dashboard_href: str = "vitality_dashboard.html",
-    csv_href: str = "vitality_report.csv",
-    generated_on: str | None = None,
-) -> None:
-    """The report builder: one page for every printable report and export.
-
-    Pick which OUs (Council, Section, Student Branch/university, Society, OU
-    type, vitality status incl. "missing one requirement", search), how to
-    split them (one report, or one per Student Branch / Section / Council /
-    Society, optionally listing Chapters and Affinity Groups under their
-    Student Branch), then download one PDF per group (ZIP), a CSV, or print.
-    Presets cover the common jobs. All the work happens in the page
-    (dashboard_assets/report_builder.js, which renders `.group-page`s that
-    report_export.js turns into PDFs); every control is mirrored in the URL,
-    so the dashboard's Export link and automations/export_report_pdfs.py
-    can open it pre-filtered. Always light-themed, like the print reports."""
-    data = {
-        "scope": scope_label,
-        # The data's date: today on a normal run; a rebuild from committed
-        # outputs passes the date those were generated.
-        "generated": generated_on or datetime.now().strftime("%Y-%m-%d"),
-        "colors": {str(k): v for k, v in REQUIREMENTS_COLOR.items()},
-        "ous": builder_records(units),
-    }
-    data_json = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
-    page = f"""<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<title>Report builder: {html.escape(scope_label)}</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-{REPORT_BUILDER_CSS.read_text(encoding="utf-8")}
-</style>
-</head>
-<body>
-<main>
-  <header class="no-print">
-    <p class="crumbs"><a href="{html.escape(dashboard_href)}">&larr; Dashboard</a></p>
-    <h1>Report builder <span class="scope">{html.escape(scope_label)}</span></h1>
-    <p class="lead">Choose the OUs, how to split them, and export: one PDF per group to send by email, a CSV, or print.</p>
-  </header>
-
-  <section class="presets no-print" aria-label="Common reports">
-    <h2>Start from a common report</h2>
-    <div class="preset-list" id="presets"></div>
-  </section>
-
-  <div class="controls no-print">
-    <section class="panel">
-      <h2><span class="step">1</span> Which OUs</h2>
-      <div class="field" id="field-council"><label for="f-council">Council</label><select id="f-council"></select></div>
-      <div class="field" id="field-section"><label for="f-section">Section</label><select id="f-section"></select></div>
-      <div class="field"><label for="f-university">Student Branch / university</label><select id="f-university"></select></div>
-      <div class="field"><label for="f-society">Society</label><select id="f-society"></select></div>
-      <fieldset class="field"><legend>OU types</legend>
-        <label class="opt"><input type="checkbox" name="types" value="branch" checked> Student Branches</label>
-        <label class="opt"><input type="checkbox" name="types" value="chapter" checked> Chapters</label>
-        <label class="opt"><input type="checkbox" name="types" value="ag" checked> Affinity Groups</label>
-      </fieldset>
-      <fieldset class="field"><legend>Vitality</legend>
-        <label class="opt"><input type="radio" name="status" value="all" checked> All</label>
-        <label class="opt"><input type="radio" name="status" value="met"> Meeting full vitality</label>
-        <label class="opt"><input type="radio" name="status" value="notmet"> Not meeting it</label>
-        <label class="opt"><input type="radio" name="status" value="one"> Missing one requirement (quick wins)</label>
-        <label class="opt"><input type="radio" name="status" value="two"> Missing two or more</label>
-      </fieldset>
-      <div class="field"><label for="f-q">Search</label><input id="f-q" type="search" placeholder="Unit, university or SPO ID"></div>
-    </section>
-
-    <section class="panel">
-      <h2><span class="step">2</span> How to split it</h2>
-      <fieldset class="field"><legend>One report per</legend>
-        <label class="opt"><input type="radio" name="group" value="none" checked> Nothing: a single report</label>
-        <label class="opt"><input type="radio" name="group" value="branch"> Student Branch (with its Chapters and Affinity Groups)</label>
-        <label class="opt" id="opt-group-section"><input type="radio" name="group" value="section"> Section</label>
-        <label class="opt" id="opt-group-council"><input type="radio" name="group" value="council"> Council</label>
-        <label class="opt"><input type="radio" name="group" value="society"> Society</label>
-      </fieldset>
-      <label class="opt" id="opt-nest"><input type="checkbox" id="f-nest" checked> Inside each report, list Chapters and Affinity Groups under their Student Branch</label>
-    </section>
-
-    <section class="panel">
-      <h2><span class="step">3</span> Export</h2>
-      <p class="summary" id="summary"></p>
-      <div class="actions">
-        <button type="button" class="primary" id="download-all-pdfs">Download PDFs</button>
-        <button type="button" id="dl-csv">Download CSV</button>
-        <button type="button" id="print">Print</button>
-      </div>
-      <p class="hint" id="pdf-hint"></p>
-      <p class="hint">Full data, every OU and column: <a href="{html.escape(csv_href)}" download>vitality_report.csv</a></p>
-    </section>
-  </div>
-
-  <section class="contents no-print" aria-label="Reports in this export">
-    <h2>Preview</h2>
-    <ol id="toc"></ol>
-  </section>
-  <div id="pages"></div>
-</main>
-<script id="builder-data" type="application/json">{data_json}</script>
-<script>
-{REPORT_EXPORT_JS.read_text(encoding="utf-8")}
-</script>
-<script>
-{REPORT_BUILDER_JS.read_text(encoding="utf-8")}
-</script>
-</body>
-</html>
-"""
-    path.write_text(page, encoding="utf-8")
-
 
 
 ARCHIVE_DIR = BASE_DIR / "archive"
@@ -1819,7 +1726,6 @@ def main() -> None:
     grade_history_path = BASE_DIR / "membership_type_history.csv"
     university_report_path = BASE_DIR / "university_report.html"
     society_report_path = BASE_DIR / "society_report.html"
-    builder_path = BASE_DIR / "report_builder.html"
 
     member_directory = load_member_directory()
     previous_grade_snapshot = load_grade_snapshot(GRADE_SNAPSHOT_FILE)
@@ -1827,7 +1733,7 @@ def main() -> None:
 
     archive_current_outputs(
         [
-            csv_path, html_path, university_report_path, society_report_path, builder_path,
+            csv_path, html_path, university_report_path, society_report_path,
         ],
         ARCHIVE_DIR,
     )
@@ -1839,17 +1745,19 @@ def main() -> None:
     write_promotions_log(promotions, PROMOTIONS_LOG_FILE)
     write_promotions_summary(promotions, PROMOTIONS_SUMMARY_FILE)
     write_grade_snapshot(member_directory, GRADE_SNAPSHOT_FILE)
-    build_dashboard(units, html_path, events_path, history_path, society_history_path, grade_history_path, PROMOTIONS_SUMMARY_FILE)
+    build_dashboard(
+        units, html_path, events_path, history_path, society_history_path, grade_history_path, PROMOTIONS_SUMMARY_FILE,
+        scope_label="Colombia Section",  # the root pipeline is the Colombia Section's exports
+    )
     build_university_report(units, university_report_path)
     build_society_report(units, society_report_path)
-    build_report_builder(units, builder_path, scope_label=next((ou.section for ou in units if ou.section), "Colombia Section"))
 
     total = len(units)
     met = sum(1 for ou in units if evaluate(ou)["overall"])
     print(f"Processed {total} OUs ({met} meeting full vitality criteria).")
     print(
         f"Wrote {csv_path.name}, {html_path.name}, {university_report_path.name}, "
-        f"{society_report_path.name}, and {builder_path.name}"
+        f"and {society_report_path.name}"
     )
 
 

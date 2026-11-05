@@ -1,5 +1,5 @@
-// Batch PDF export for the report builder (report_builder.html). Inlined
-// by generate_vitality_report.py before report_builder.js; no library, no
+// Batch PDF export for the dashboard's "Export current view". Inlined by
+// generate_vitality_report.py before export_view.js; no library, no
 // network.
 //
 // "Download all as PDF" turns every .group-page into its own PDF and packs
@@ -9,7 +9,7 @@
 // WinAnsi text, and a layout engine that knows the handful of blocks these
 // pages are made of (title, stats, bars, checklist, headings, notes,
 // tables). Colors and bold come from the page's computed styles, so the PDF
-// matches what is on screen. (?download=pdf is handled by the builder.)
+// matches what is on screen.
 
 (function () {
   // ---------- fonts: Helvetica / Helvetica-Bold widths, chars 32..126 ----------

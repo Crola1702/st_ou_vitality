@@ -89,6 +89,45 @@
   }
   #search { width: 100%; max-width: 320px; }
   .filter-row select { max-width: 260px; }
+  .filter-row { align-items: center; }
+  .type-filter { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; font-size: 0.88rem; color: var(--text-primary); }
+  .type-filter label { display: inline-flex; align-items: center; gap: 5px; cursor: pointer; }
+  .export-view-btn {
+    margin-left: auto; padding: 8px 16px; border-radius: 999px; border: 1px solid var(--text-primary);
+    background: var(--text-primary); color: var(--page-plane); font: inherit; font-size: 0.9rem; font-weight: 600; cursor: pointer;
+  }
+  .export-view-btn:hover { opacity: 0.88; }
+  @media (max-width: 720px) { .export-view-btn { margin-left: 0; } }
+
+  /* "Export current view" dialog: themed like the rest of the dashboard. */
+  .export-dialog {
+    width: min(560px, calc(100vw - 32px)); padding: 0; border: 1px solid var(--border); border-radius: 12px;
+    background: var(--surface-1); color: var(--text-primary);
+  }
+  .export-dialog [hidden] { display: none !important; }
+  .export-dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
+  .export-dialog form { padding: 20px 22px; position: relative; }
+  .export-dialog h2 { font-size: 1.1rem; margin: 0 0 8px; }
+  .export-dialog .muted { color: var(--text-secondary); font-size: 0.85rem; }
+  .export-summary { margin: 0 0 14px; font-size: 0.92rem; line-height: 1.45; }
+  .export-dialog fieldset { border: 0; padding: 0; margin: 0 0 10px; }
+  .export-dialog legend { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-secondary); margin-bottom: 4px; padding: 0; }
+  .export-dialog .opt { display: flex; align-items: flex-start; gap: 8px; margin: 5px 0; font-size: 0.9rem; cursor: pointer; line-height: 1.3; }
+  .export-dialog .opt input { margin: 2px 0 0; flex-shrink: 0; }
+  .export-count { font-weight: 600; font-size: 0.9rem; margin: 12px 0 10px; }
+  .export-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+  .export-actions button {
+    font: inherit; font-size: 0.88rem; cursor: pointer; padding: 8px 14px; border-radius: 8px;
+    border: 1px solid var(--border); background: var(--page-plane); color: var(--text-primary);
+  }
+  .export-actions button.primary { background: var(--text-primary); color: var(--page-plane); border-color: var(--text-primary); font-weight: 600; }
+  .export-actions button:disabled { opacity: 0.45; cursor: default; }
+  .export-hint { font-size: 0.8rem; color: var(--text-secondary); margin: 10px 0 0; }
+  .export-hint a { color: var(--text-primary); }
+  .export-close {
+    position: absolute; top: 14px; right: 16px; font: inherit; font-size: 0.8rem; cursor: pointer;
+    background: none; border: 1px solid var(--border); border-radius: 6px; padding: 3px 10px; color: var(--text-secondary);
+  }
 
   .member-summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-bottom: 24px; max-width: 600px; }
 

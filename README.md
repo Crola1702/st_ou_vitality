@@ -59,44 +59,47 @@ combination, up to 8 at once (more than that stops being distinguishable
 by color). Skipped entirely if `Member Detail View.csv` isn't present
 that run.
 
-### Reports and exports: the report builder
+### Filtering and exporting: "Export current view"
 
-It also writes `report_builder.html`, the one place for every printable
-report and export. Open it from **Export reports** at the top of the
-dashboard: it starts with the University, Society and search filters you
-had set there. Then:
+The dashboard's filter bar is the one place to choose what you look at and
+what you export:
 
-1. **Which OUs:** Council, Section, Student Branch / university, Society,
-   OU types (Student Branches, Chapters, Affinity Groups), vitality (all,
-   meeting it, not meeting it, missing one requirement, missing two or
-   more), search.
-2. **How to split it:** a single report, or one per Student Branch,
-   Section, Council or Society. Optionally, list Chapters and Affinity
-   Groups under their Student Branch inside each report (matched by
-   university).
-3. **Export:** **Download PDFs** gives one PDF per group in a ZIP, named
-   by OU code and name (`STB12991 - Universidad de los Andes.pdf`) so each
-   can be emailed on its own, with one folder per Section when Student
-   Branch reports span several. You can also **Download CSV** (the
-   selection, with the group as a column) or **Print**. "Full data (CSV)"
-   is the complete `vitality_report.csv`.
+- search, **University**, **Society**;
+- **Vitality**: any, meeting full vitality, not meeting it, missing one
+  requirement, missing two or more;
+- **OU types**: Student Branches, Chapters, Affinity Groups;
+- **Council** and **Section**, on the Region 9 whole-region dashboard.
 
-The Export bar also has **one-click exports** (one PDF per Student Branch,
-Section reports by Student Branch, Student Branches only, OUs meeting
-vitality, quick wins) that download straight away, with the dashboard's
-filters applied. The same presets are at the top of the builder:
+The tables, the tiles at the top and the member counts all follow the
+filters, and sorting a table by **Members** reorders it. The filters are
+kept in the page address, so a filtered view can be bookmarked or shared.
 
-| Who | Preset |
-| --- | --- |
-| SSAC sending each Student Branch its status | One report per Student Branch |
-| Section Chair / SSAC | Section reports by Student Branch |
-| Region / Section SAC, branches only | Student Branches only, by Section |
-| Chapter chair | Chapters of one Society (then pick the Society) |
-| Recognition | OUs meeting vitality |
-| Follow-up | Quick wins: missing one requirement |
+**Export current view** then exports exactly the rows on screen, in the
+order shown:
 
-Every setting lives in the page URL, so a configured report can be
-bookmarked or shared; adding `&download=pdf` starts the download on open.
+1. **One report per:** nothing (a single report), Student Branch (its
+   checklist plus its Chapters and Affinity Groups), Section, Council or
+   Society. Optionally, list Chapters and Affinity Groups under their
+   Student Branch inside each report (matched by university; this regroups
+   rows instead of keeping the on-screen order).
+2. **Download PDFs:** one PDF per group in a ZIP, named by OU code and
+   name (`STB12991 - Universidad de los Andes.pdf`) so each can be emailed
+   on its own, with one folder per Section when Student Branch reports
+   span several. Each PDF says which filters it was made with. Or
+   **Download CSV** (the view, with the group as a column) or **Print**.
+   "Full data (CSV)" is the complete `vitality_report.csv`.
+
+Typical uses:
+
+| Who | Filters | One report per |
+| --- | --- | --- |
+| SSAC sending each Student Branch its status | none | Student Branch |
+| Section Chair / SSAC | Section | Nothing, with Chapters/AGs under their branch |
+| Region / Section SAC, branches only | OU types: Student Branches | Section |
+| Chapter chair | Society, OU types: Chapters | Nothing |
+| Recognition | Vitality: meeting full vitality | Nothing or Section |
+| Follow-up | Vitality: missing one requirement | Nothing or Section |
+
 The PDFs are built in the browser (no install, works on the published
 site). For Chromium-rendered PDFs from the command line, see
 `automations/export_report_pdfs.py` (`./run_all.sh --pdfs` runs it after
@@ -218,19 +221,17 @@ This writes `r9/dashboards/index.html` (a Section picker grouped by
 Council), `r9/dashboards/region/` (the whole region) and one
 `r9/dashboards/<section-slug>/` per Section, each with the same
 `index.html` / `vitality_report.csv` / `vitality_history.csv` /
-printable reports and report builder the root pipeline produces. The
-region's builder (the "Export reports" button on the Section picker)
-filters and splits by Council and Section too, e.g. one PDF per Student
-Branch for the whole region lands in one folder per Section. Each Section
-row also links to that Section's own builder ("Export"). Every dashboard has a
+printable reports the root pipeline produces. The whole-region dashboard
+("Open whole region") also filters by Council and Section and can split an
+export by them, e.g. one PDF per Student Branch for the whole region lands
+in one folder per Section. Every dashboard has a
 Section switcher under its title. Member-level trends (society
 memberships, membership grades) are not computed for R9.
 
 `./run_all.sh` does this too when the three Tableau files above are in
 `r9/R9 Data/`: it fetches the region's events from the public vTools feed
 (no login, about 4 minutes) and runs `r9/generate_r9_vitality.py`. The
-Tableau exports themselves are still exported by hand. The Section picker
-has the same one-click exports for the whole region.
+Tableau exports themselves are still exported by hand.
 
 The Pages workflow publishes `r9/dashboards/` as-is under `/beta_r9/`
 (so `<pages-url>/beta_r9/` is the Section picker), on every push to

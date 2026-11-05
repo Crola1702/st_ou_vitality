@@ -88,7 +88,7 @@ done
 if [ ${#R9_MISSING[@]} -eq 0 ]; then
   echo "== Region 9: vTools Events (public feed, all of R9, ~4 min) =="
   python3 automations/vtools_feed_export.py --out "$R9_DATA/IEEE_vTools_Events_R9.csv"
-  echo "== Region 9: dashboards and report builders =="
+  echo "== Region 9: dashboards =="
   python3 r9/generate_r9_vitality.py
   R9_RAN=1
 else

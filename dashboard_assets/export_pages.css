@@ -1,0 +1,54 @@
+/* Pages made by "Export current view" (export_view.js) for PDF / print.
+   Always light, like the print reports, whatever the dashboard theme: the
+   PDF writer (report_export.js) takes its colors from these styles. Scoped
+   to .export-pages so nothing here touches the dashboard itself.
+   #export-pages lives off-screen and only appears when printing an export;
+   automations/export_report_pdfs.py wraps a page in a bare .export-pages. */
+#export-pages { position: fixed; left: -10000px; top: 0; width: 900px; }
+.export-pages { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; color: #111; background: #fff; }
+.export-pages * { box-sizing: border-box; }
+.export-pages .group-page h1 { font-size: 1.5rem; margin: 0 0 2px; }
+.export-pages .group-page { background: #fff; border: 1px solid #ddd; border-radius: 4px; padding: 32px; margin: 0 0 28px; overflow-x: auto; }
+.export-pages .group-page h2 { font-size: 1.02rem; margin: 22px 0 8px; }
+.export-pages .context { color: #333; font-size: 0.92rem; margin: 2px 0; }
+.export-pages .subtitle { color: #555; font-size: 0.8rem; margin: 2px 0 14px; }
+.export-pages .type-note { font-weight: 600; font-size: 0.85rem; margin: -6px 0 14px; }
+.export-pages .stat-row { display: flex; flex-wrap: wrap; gap: 28px; margin-bottom: 14px; }
+.export-pages .stat-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.03em; color: #666; }
+.export-pages .stat-value { font-size: 1.35rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.export-pages .stat-value.good { color: #0ca30c; }
+.export-pages .bar-chart { margin-bottom: 8px; max-width: 640px; }
+.export-pages .bar-row { display: grid; grid-template-columns: 100px 1fr 32px; align-items: center; gap: 10px; margin: 5px 0; }
+.export-pages .bar-label { font-size: 0.76rem; color: #333; }
+.export-pages .bar-track { background: #eee; border-radius: 999px; height: 12px; overflow: hidden; }
+.export-pages .bar-fill { height: 100%; border-radius: 999px; }
+.export-pages .bar-value { font-size: 0.78rem; font-weight: 700; text-align: right; font-variant-numeric: tabular-nums; }
+.export-pages .checklist { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 8px; margin-bottom: 6px; }
+.export-pages .check { border: 1px solid #e3e3e0; border-radius: 6px; padding: 8px 10px; }
+.export-pages .check-label { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.03em; color: #666; }
+.export-pages .check-value { font-size: 1rem; font-weight: 700; margin-top: 2px; }
+.export-pages .note { color: #555; font-size: 0.85rem; }
+.export-pages .muted { color: #777; font-weight: 400; font-size: 0.85em; }
+.export-pages .ok { color: #0ca30c; }
+.export-pages .no { color: #d03b3b; }
+.export-pages table { border-collapse: collapse; width: 100%; font-size: 0.8rem; }
+.export-pages th, .export-pages td { padding: 5px 7px; text-align: left; border-bottom: 1px solid #eee; vertical-align: top; }
+.export-pages th { font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.02em; color: #666; }
+.export-pages td.num, .export-pages th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.export-pages td.mono { color: #555; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.export-pages td.missing { color: #d03b3b; }
+.export-pages tr.family th { background: #f4f4f1; color: #111; font-size: 0.78rem; text-transform: none; letter-spacing: 0; padding-top: 8px; }
+.export-pages tr.child td:first-child { padding-left: 20px; }
+
+@media print {
+  body.printing-export > * { display: none !important; }
+  body.printing-export > #export-pages { display: block !important; position: static; width: auto; }
+  body.printing-export { background: #fff; }
+  .export-pages .group-page { border: none; padding: 0; margin: 0; overflow: visible; page-break-after: always; }
+  .export-pages .group-page:last-child { page-break-after: auto; }
+  .export-pages table { font-size: 0.72rem; }
+  .export-pages th, .export-pages td { padding: 3px 5px; }
+  .export-pages thead { display: table-header-group; }
+  .export-pages tr { page-break-inside: avoid; }
+  .export-pages tr.family { page-break-after: avoid; }
+}

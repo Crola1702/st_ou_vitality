@@ -98,12 +98,13 @@ re-capture a HAR of applying the filters manually and update the indices.
 
 ## Batch PDF export from the command line
 
-The report builder page (`report_builder.html`) already downloads one PDF
-per group from the browser, with no setup. `export_report_pdfs.py` does the
+Every dashboard's **Export current view** already downloads one PDF per
+group from the browser, with no setup. `export_report_pdfs.py` does the
 same headless, with Chromium's own rendering. It fetches nothing and needs
-no login: it opens the generated builder with the options you pass (the
-same ones the page keeps in its URL) and saves each report it renders as a
-PDF, with the builder's file names, plus a `.zip` of the set. Run it after
+no login: it opens the generated dashboard with the filters you pass (the
+same ones the dashboard keeps in its URL), lays out the reports split the
+way you choose, and saves each as a PDF with the dashboard's file names,
+plus a `.zip` of the set. Run it after
 `generate_vitality_report.py` (and `r9/generate_r9_vitality.py` for
 `--r9`):
 
@@ -119,8 +120,8 @@ automations/.venv/bin/python automations/export_report_pdfs.py --r9-only --scope
 
 Options: `--group none|branch|section|council|society`, `--types branch
 chapter ag`, `--status all|met|notmet|one|two`, `--council/--section/
---university/--society/--q`, `--flat` (don't nest Chapters/AGs under their
-branch), `--paper A4`, `--no-zip`. Output goes to
+--university/--society/--q`, `--nest` (list Chapters/AGs under their
+branch instead of the dashboard's order), `--paper A4`, `--no-zip`. Output goes to
 `report_pdfs/<date>/<scope>/<options>/` (git-ignored). `./run_all.sh
 --pdfs` runs the default after regenerating everything.
 
