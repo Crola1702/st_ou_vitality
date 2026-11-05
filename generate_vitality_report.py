@@ -72,7 +72,7 @@ def counselor_role(ou_type: str) -> str:
 
 
 STANDARD_POSITIONS = {"Chair", "Vice Chair", "Secretary", "Treasurer", "Webmaster", "Advisor", "Counselor"}
-POSITION_PREFIXES = ("Affinity Group ", "SIGHT ")
+POSITION_PREFIXES = ("Affinity Group ", "SIGHT Group ", "SIGHT ")
 
 
 def normalize_position(position: str) -> str:

@@ -2,8 +2,7 @@
 region.
 
 Reads the region-wide vTools exports in `r9/R9 Data/` (same files and
-formats as the root pipeline, except the volunteer list is the "with Region
-& Section" variant) and writes, under `r9/dashboards/`:
+formats as the root pipeline) and writes, under `r9/dashboards/`:
 
     index.html                 section picker (landing page)
     region/                    the whole region in one dashboard
@@ -51,7 +50,7 @@ OUT_DIR = R9_DIR / "dashboards"
 
 BRANCH_MEMBER_FILE = DATA_DIR / "Student Branch and Member Count.csv"
 CHAPTER_MEMBER_FILE = DATA_DIR / "Student Branch Chapters and Affinity Group Member Count.csv"
-VOLUNTEER_FILE = DATA_DIR / "Volunteer List by OU with Region & Section.csv"
+VOLUNTEER_FILE = DATA_DIR / "Volunteer List by OU.csv"
 
 REGION_SLUG = "region"
 REGION_LABEL = "Latin America - Region 9"

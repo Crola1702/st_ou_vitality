@@ -208,9 +208,10 @@ whole region (about 2,000 OUs) unless they want to. Put these in
 
 - `Student Branch and Member Count.csv`
 - `Student Branch Chapters and Affinity Group Member Count.csv`
-- `Volunteer List by OU with Region & Section.csv` (the Tableau variant
-  that adds `OU Region`/`OU Section`; it also lists past officers, which
-  the loader ignores)
+- `Volunteer List by OU.csv` (region-wide, including Affinity Group
+  officers; the older "with Region & Section" variant omits them, so every
+  Affinity Group reads as having no officers. Past officers, if listed, are
+  ignored by the loader)
 - Any `*Events*.csv`
 
 ```sh

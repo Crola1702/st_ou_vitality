@@ -103,6 +103,18 @@ def make_ou(ou_type="Student Branch", members=30, general=4, technical=4, office
     return ou
 
 
+class NormalizePositionTest(unittest.TestCase):
+    def test_folds_affinity_and_sight_titles(self):
+        for raw, expected in [
+            ("Affinity Group Chair", "Chair"),
+            ("SIGHT Chair", "Chair"),
+            ("SIGHT Group Chair", "Chair"),
+            ("SIGHT Vice-Chair", "Vice Chair"),
+            ("SIGHT Member", "SIGHT Member"),
+        ]:
+            self.assertEqual(gvr.normalize_position(raw), expected)
+
+
 class EvaluateTest(unittest.TestCase):
     def test_student_branch_full(self):
         r = gvr.evaluate(make_ou())

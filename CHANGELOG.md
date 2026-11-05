@@ -35,6 +35,19 @@ version since this project doesn't cut releases.
   bar with its one-click exports, and the export links on the R9 Section
   picker: all replaced by **Export current view**.
 
+### Fixed
+
+- **R9 Affinity Group officers**: the Region 9 dashboards now read
+  `Volunteer List by OU.csv`, which includes Affinity Group officers. The
+  previous export had none, so every Affinity Group reported a missing Chair
+  and Advisor.
+- `normalize_position()` folds `SIGHT Group Chair` to `Chair`, so SIGHT groups
+  whose only chair title is that one no longer report a missing Chair.
+- **R9 Affinity Group trend**: removed the 2026-10-30 and 2026-11-04 Affinity
+  Group history rows, which reported 0% only because that export had no
+  Affinity Group officers (the chart now shows no value for those dates), and
+  recomputed the 2026-09-21 rows from their source exports with the fix above.
+
 ## 2026-11-04
 
 ### Added

@@ -79,7 +79,7 @@ python3 officer_terms/generate_officer_terms.py
 python3 member_society_lookup/generate_member_society_lookup.py
 
 R9_DATA="r9/R9 Data"
-R9_FILES=("Student Branch and Member Count.csv" "Student Branch Chapters and Affinity Group Member Count.csv" "Volunteer List by OU with Region & Section.csv")
+R9_FILES=("Student Branch and Member Count.csv" "Student Branch Chapters and Affinity Group Member Count.csv" "Volunteer List by OU.csv")
 R9_RAN=0
 R9_MISSING=()
 for f in "${R9_FILES[@]}"; do
