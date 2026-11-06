@@ -4,6 +4,16 @@ Notable changes to this project. Format loosely follows
 [Keep a Changelog](https://keepachangelog.com/), dated by day rather than by
 version since this project doesn't cut releases.
 
+## 2026-11-06
+
+### Changed
+
+- **Student Branch Members** replaces "Total Members" in exported reports and
+  the printed University and Society reports. It adds up Student Branch counts
+  only (these include professional members, not just students), since summing
+  Chapters and Affinity Groups too counted the same people more than once. A report without Student Branches shows that OU's "Members"
+  if it covers a single OU, and no member total otherwise.
+
 ## 2026-11-05
 
 ### Added

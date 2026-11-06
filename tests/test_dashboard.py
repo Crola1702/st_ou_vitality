@@ -165,6 +165,23 @@ class OutputsTest(unittest.TestCase):
             builder(self.units, out)
             self.assertIn("Universidad Demo", out.read_text(encoding="utf-8"))
 
+    def test_print_report_members_stat_counts_branches_only(self):
+        def page(*units):
+            out = self.tmp / "members.html"
+            gvr.build_university_report(list(units), out)
+            return out.read_text(encoding="utf-8")
+
+        def stat(label):
+            return f'<div class="stat-label">{label}</div>'
+
+        branch, ch1, ch2 = make_ou(members=30), make_ou("Student Branch Chapter", members=7), make_ou("Student Branch Chapter", members=9)
+        branch.spoid, ch1.spoid, ch2.spoid = "STB1", "SBC1", "SBC2"
+        self.assertIn(stat("Student Branch Members") + '<div class="stat-value">30</div>', page(branch, ch1, ch2))
+        self.assertIn(stat("Members") + '<div class="stat-value">7</div>', page(ch1))
+        several_chapters = page(ch1, ch2)
+        self.assertNotIn(stat("Members"), several_chapters)
+        self.assertNotIn(stat("Student Branch Members"), several_chapters)
+
     def test_print_report_anchors_unique_and_accent_folded(self):
         a, b = make_ou(), make_ou()
         a.university, b.university = "Universidad de Bogotá", "Universidad de Bogota"

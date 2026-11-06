@@ -148,10 +148,14 @@
     const levels = [3, 2, 1, 0].map(l => [l, ous.filter(o => o.rq === l).length]);
     const max = Math.max(1, ...levels.map(x => x[1]));
     const LABEL = { 3: 'Full', 2: 'Partial', 1: 'Minimal', 0: 'None' };
+    // Chapter and Affinity Group members are also Branch members, so summing every OU would double count.
+    const branches = ous.filter(o => o.t === 'branch');
+    const membersStat = branches.length ? ['Student Branch Members', branches.reduce((s, o) => s + o.m, 0)]
+      : ous.length === 1 ? ['Members', ous[0].m] : null;
     return `<div class="stat-row">
         <div class="stat"><div class="stat-label">OUs</div><div class="stat-value">${ous.length}</div></div>
         <div class="stat"><div class="stat-label">Meeting full vitality</div><div class="stat-value good">${met}/${ous.length}</div></div>
-        <div class="stat"><div class="stat-label">Total members</div><div class="stat-value">${ous.reduce((s, o) => s + o.m, 0)}</div></div>
+        ${membersStat ? `<div class="stat"><div class="stat-label">${membersStat[0]}</div><div class="stat-value">${membersStat[1]}</div></div>` : ''}
       </div>
       <div class="bar-chart">${levels.map(([l, n]) => `<div class="bar-row"><div class="bar-label">${LABEL[l]} (${l}/3)</div>
         <div class="bar-track"><div class="bar-fill" style="width:${Math.round((n / max) * 100)}%;background:${DATA.colors[l]}"></div></div>

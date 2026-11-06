@@ -1493,7 +1493,16 @@ def build_grouped_print_report(
         results = {ou.spoid: evaluate(ou) for ou in ou_list}
         total = len(ou_list)
         met = sum(1 for r in results.values() if r["overall"])
-        total_members = sum(ou.member_count for ou in ou_list)
+        # Chapter and Affinity Group members are also Branch members, so summing every OU would double count.
+        branch_counts = [ou.member_count for ou in ou_list if ou.ou_type == "Student Branch"]
+        if branch_counts:
+            members_stat = ("Student Branch Members", sum(branch_counts))
+        else:
+            members_stat = ("Members", ou_list[0].member_count) if total == 1 else None
+        members_stat_html = (
+            f'<div class="stat"><div class="stat-label">{members_stat[0]}</div><div class="stat-value">{members_stat[1]}</div></div>'
+            if members_stat else ""
+        )
 
         level_counts = {3: 0, 2: 0, 1: 0, 0: 0}
         for r in results.values():
@@ -1532,7 +1541,7 @@ def build_grouped_print_report(
           <div class="stat-row">
             <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">{total}</div></div>
             <div class="stat"><div class="stat-label">Meeting Full Vitality</div><div class="stat-value" style="color:{STATUS_GOOD}">{met}/{total}</div></div>
-            <div class="stat"><div class="stat-label">Total Members</div><div class="stat-value">{total_members}</div></div>
+            {members_stat_html}
           </div>
           <div class="bar-chart">{bar_rows}</div>
           <table>
