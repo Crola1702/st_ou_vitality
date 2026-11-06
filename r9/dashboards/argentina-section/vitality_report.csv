@@ -21,20 +21,20 @@ Universidad Argentina de la Empresa,STB36321,Student Branch,Universidad Argentin
 Universidad Catolica de Santiago del Estero,STB14004,Student Branch,Universidad Catolica de Santiago del Estero,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Universidad Nacional Arturo Jauretche,STB15791,Student Branch,Universidad Nacional Arturo Jauretche,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Universidad Nacional de Catamarca,STB65051,Student Branch,Universidad Nacional de Catamarca,,1,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
-Universidad Nacional de Cordoba,STB28491,Student Branch,Universidad Nacional de Cordoba,,33,12,Yes,0,,2,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
-Universidad Nacional de General San Martin,STB64623,Student Branch,Universidad Nacional de General San Martin,,3,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
-Universidad Nacional de La Plata,STB02551,Student Branch,Universidad Nacional de La Plata,,11,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
-Universidad Nacional de Mar del Plata,STB2528204,Student Branch,Universidad Nacional de Mar del Plata,,25,12,Yes,10,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Universidad Nacional de Cordoba,STB28491,Student Branch,Universidad Nacional de Cordoba,,32,12,Yes,0,,2,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+Universidad Nacional de General San Martin,STB64623,Student Branch,Universidad Nacional de General San Martin,,2,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Universidad Nacional de La Plata,STB02551,Student Branch,Universidad Nacional de La Plata,,10,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Universidad Nacional de Mar del Plata,STB2528204,Student Branch,Universidad Nacional de Mar del Plata,,26,12,Yes,10,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Universidad Nacional de Rosario,STB11691,Student Branch,Universidad Nacional de Rosario,,3,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Universidad Nacional de San Juan,STB13291,Student Branch,Universidad Nacional de San Juan,,20,12,Yes,15,,0,4,Yes,Yes,Yes,,Yes,No,Yes,Yes,Met,3/3,Met
 Universidad Nacional de San Luis-FCFMyN,STB13311,Student Branch,Universidad Nacional de San Luis-FCFMyN,,6,12,No,1,,1,4,No,Yes,No,,Yes,No,No,No,Partial,0/3,Not Met
 Universidad Nacional de San Luis-FICA,STB16911,Student Branch,Universidad Nacional de San Luis-FICA,,2,12,No,0,,0,4,No,Yes,Yes,,No,No,No,No,Met,1/3,Not Met
-Universidad Nacional de Tucuman,STB04881,Student Branch,Universidad Nacional de Tucuman,,18,12,Yes,4,,1,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Universidad Nacional de Tucuman,STB04881,Student Branch,Universidad Nacional de Tucuman,,19,12,Yes,4,,1,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Universidad Nacional del Sur,STB06361,Student Branch,Universidad Nacional del Sur,,22,12,Yes,2,,3,4,No,Yes,Yes,,Yes,No,Yes,No,Met,2/3,Not Met
 Universidad Tecnologica Naciona-Resistencia,STB60160804,Student Branch,Universidad Tecnologica Naciona-Resistencia,,24,12,Yes,0,,0,4,No,Yes,Yes,,No,Yes,Yes,No,Met,2/3,Not Met
-Universidad Tecnologica Nacional-Buenos Aires,STB05911,Student Branch,Universidad Tecnologica Nacional-Buenos Aires,,14,12,Yes,1,,0,4,No,Yes,Yes,,No,No,No,No,Met,2/3,Not Met
+Universidad Tecnologica Nacional-Buenos Aires,STB05911,Student Branch,Universidad Tecnologica Nacional-Buenos Aires,,19,12,Yes,1,,0,4,No,Yes,Yes,,No,No,No,No,Met,2/3,Not Met
 Universidad Tecnologica Nacional-Tucuman,STB64626,Student Branch,Universidad Tecnologica Nacional-Tucuman,,1,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
-Universidad de Buenos Aires,STB00231,Student Branch,Universidad de Buenos Aires,,53,12,Yes,3,,2,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+Universidad de Buenos Aires,STB00231,Student Branch,Universidad de Buenos Aires,,54,12,Yes,3,,2,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 University of Palermo,STB08261,Student Branch,University of Palermo,,7,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 "Cordoba Univ Tec Facultad Regional,RA24",SBC60021,Student Branch Chapter,Cordoba Univ Tec Facultad Regional,RA24,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Favaloro University,EMB18",SBC66011,Student Branch Chapter,Favaloro University,EMB18,1,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
@@ -44,7 +44,7 @@ University of Palermo,STB08261,Student Branch,University of Palermo,,7,12,No,0,,
 "National University of Entre Rios,EMB18",SBC13251,Student Branch Chapter,National University of Entre Rios,EMB18,1,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "UTN-Facultad Regional San Nicolas,EMB18",SBC64294,Student Branch Chapter,Universidad Tecnologica Nacional-San Nicolas,EMB18,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Univ Tecnologica Nacional-Buenos Aires,COM19",SBC05911C,Student Branch Chapter,Universidad Tecnologica Nacional-Buenos Aires,COM19,1,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
-"Univ Tecnologica Nacional-Buenos Aires,EMB18",SBC05911B,Student Branch Chapter,Universidad Tecnologica Nacional-Buenos Aires,EMB18,2,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Univ Tecnologica Nacional-Buenos Aires,EMB18",SBC05911B,Student Branch Chapter,Universidad Tecnologica Nacional-Buenos Aires,EMB18,3,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Univ Tecnologica Nacional-Frba, PE31",SBC05911D,Student Branch Chapter,Universidad Tecnologica Nacional-Buenos Aires,PE31,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Univ Tecnologica Nacional-Frba,RA24",SBC05911E,Student Branch Chapter,Universidad Tecnologica Nacional-Buenos Aires,RA24,2,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad Argentina de la Empresa,CAS04",SBC36321,Student Branch Chapter,Universidad Argentina de la Empresa,CAS04,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
@@ -67,9 +67,9 @@ University of Palermo,STB08261,Student Branch,University of Palermo,,7,12,No,0,,
 "Universidad Tecnologica Nacional-Buenos Aires,C16",SBC059111,Student Branch Chapter,Universidad Tecnologica Nacional-Buenos Aires,C16,1,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad Tecnologica Nacional-Buenos Aires,IA34",SBC05911A,Student Branch Chapter,Universidad Tecnologica Nacional-Buenos Aires,IA34,2,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad Tecnologica Nacional-Tucuman,RA24",SBC64626,Student Branch Chapter,Universidad Tecnologica Nacional-Tucuman,RA24,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
-"Universidad de Buenos Aires,C16",SBC00231A,Student Branch Chapter,Universidad de Buenos Aires,C16,6,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
-"Universidad de Buenos Aires,CAS04",SBC00321B,Student Branch Chapter,Universidad de Buenos Aires,CAS04,1,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
-"Universidad de Buenos Aires,COM19",SBC00321D,Student Branch Chapter,Universidad de Buenos Aires,COM19,9,6,Yes,5,4,2,2,Yes,Yes,,Yes,Yes,Yes,No,Yes,Met,3/3,Met
+"Universidad de Buenos Aires,C16",SBC00231A,Student Branch Chapter,Universidad de Buenos Aires,C16,9,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Universidad de Buenos Aires,CAS04",SBC00321B,Student Branch Chapter,Universidad de Buenos Aires,CAS04,2,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Universidad de Buenos Aires,COM19",SBC00321D,Student Branch Chapter,Universidad de Buenos Aires,COM19,12,6,Yes,5,4,2,2,Yes,Yes,,Yes,Yes,Yes,No,Yes,Met,3/3,Met
 "Universidad de Buenos Aires,CS23",SBC00231,Student Branch Chapter,Universidad de Buenos Aires,CS23,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad de Buenos Aires,PHO36",SBC00321C,Student Branch Chapter,Universidad de Buenos Aires,PHO36,8,6,Yes,7,6,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
 "Universidad de Buenos Aires,RA24",SBC00321E,Student Branch Chapter,Universidad de Buenos Aires,RA24,8,6,Yes,1,1,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met

@@ -285,3 +285,78 @@ Date,SPO ID,Unit Type,University,Society,Member Count,Requirements Met,Members M
 2026-11-05,SBC00321C,Student Branch Chapter,Universidad de Buenos Aires,PHO36,8,3,Yes,Yes,Met,Met
 2026-11-05,SBC00321E,Student Branch Chapter,Universidad de Buenos Aires,RA24,8,2,Yes,No,Met,Not Met
 2026-11-05,SBC08261A,Student Branch Chapter,University of Palermo,CIS11,0,0,No,No,Not Met,Not Met
+2026-11-06,SBA06421,Affinity Group,Instituto Tecnologico de Buenos Aires,WIE,2,2,No,Yes,Met,Not Met
+2026-11-06,SBA64623,Affinity Group,Universidad Nacional de General San Martin,WIE,0,0,No,No,Not Met,Not Met
+2026-11-06,SBA2528204,Affinity Group,Universidad Nacional de Mar del Plata,WIE,14,3,Yes,Yes,Met,Met
+2026-11-06,SBA13291,Affinity Group,Universidad Nacional de San Juan,WIE,2,1,No,Yes,Not Met,Not Met
+2026-11-06,SBA04881B,Affinity Group,Universidad Nacional de Tucuman,WIE,2,0,No,No,Partial,Not Met
+2026-11-06,SBA06361,Affinity Group,Universidad Nacional del Sur,WIE,2,1,No,No,Met,Not Met
+2026-11-06,SBA05911,Affinity Group,Universidad Tecnologica Nacional-Buenos Aires,WIE,2,0,No,No,Not Met,Not Met
+2026-11-06,STB60021,Student Branch,Cordoba Univ Tec Facultad Regional,,7,1,No,No,Met,Not Met
+2026-11-06,STB66011,Student Branch,Favaloro University,,1,0,No,No,Not Met,Not Met
+2026-11-06,STB10223,Student Branch,IES 9012 San Rafael en Informatica,,0,0,No,No,Not Met,Not Met
+2026-11-06,STB06421,Student Branch,Instituto Tecnologico de Buenos Aires,,67,2,Yes,No,Met,Not Met
+2026-11-06,STB61851,Student Branch,National University of Central Buenos Aires,,1,0,No,No,Not Met,Not Met
+2026-11-06,STB13251,Student Branch,National University of Entre Rios,,1,0,No,No,Not Met,Not Met
+2026-11-06,STB63731,Student Branch,National University of Rio Cuarto,,7,0,No,No,Not Met,Not Met
+2026-11-06,STB11528,Student Branch,UADER Faculty of Science and Technology,,0,0,No,No,Partial,Not Met
+2026-11-06,STB64294,Student Branch,Universidad Tecnologica Nacional-San Nicolas,,2,0,No,No,Not Met,Not Met
+2026-11-06,STB07391,Student Branch,Univ Nac del Noroeste de Provincia de Buenos Aires,,0,0,No,No,Not Met,Not Met
+2026-11-06,STB60091,Student Branch,Univ Nacional de la Patagonia San Juan Bosco,,0,0,No,No,Not Met,Not Met
+2026-11-06,STB36321,Student Branch,Universidad Argentina de la Empresa,,4,0,No,No,Not Met,Not Met
+2026-11-06,STB14004,Student Branch,Universidad Catolica de Santiago del Estero,,0,0,No,No,Not Met,Not Met
+2026-11-06,STB15791,Student Branch,Universidad Nacional Arturo Jauretche,,0,0,No,No,Not Met,Not Met
+2026-11-06,STB65051,Student Branch,Universidad Nacional de Catamarca,,1,0,No,No,Not Met,Not Met
+2026-11-06,STB28491,Student Branch,Universidad Nacional de Cordoba,,32,2,Yes,No,Met,Not Met
+2026-11-06,STB64623,Student Branch,Universidad Nacional de General San Martin,,2,0,No,No,Not Met,Not Met
+2026-11-06,STB02551,Student Branch,Universidad Nacional de La Plata,,10,0,No,No,Not Met,Not Met
+2026-11-06,STB2528204,Student Branch,Universidad Nacional de Mar del Plata,,26,3,Yes,Yes,Met,Met
+2026-11-06,STB11691,Student Branch,Universidad Nacional de Rosario,,3,0,No,No,Not Met,Not Met
+2026-11-06,STB13291,Student Branch,Universidad Nacional de San Juan,,20,3,Yes,Yes,Met,Met
+2026-11-06,STB13311,Student Branch,Universidad Nacional de San Luis-FCFMyN,,6,0,No,No,Partial,Not Met
+2026-11-06,STB16911,Student Branch,Universidad Nacional de San Luis-FICA,,2,1,No,No,Met,Not Met
+2026-11-06,STB04881,Student Branch,Universidad Nacional de Tucuman,,19,3,Yes,Yes,Met,Met
+2026-11-06,STB06361,Student Branch,Universidad Nacional del Sur,,22,2,Yes,No,Met,Not Met
+2026-11-06,STB60160804,Student Branch,Universidad Tecnologica Naciona-Resistencia,,24,2,Yes,No,Met,Not Met
+2026-11-06,STB05911,Student Branch,Universidad Tecnologica Nacional-Buenos Aires,,19,2,Yes,No,Met,Not Met
+2026-11-06,STB64626,Student Branch,Universidad Tecnologica Nacional-Tucuman,,1,0,No,No,Not Met,Not Met
+2026-11-06,STB00231,Student Branch,Universidad de Buenos Aires,,54,2,Yes,No,Met,Not Met
+2026-11-06,STB08261,Student Branch,University of Palermo,,7,0,No,No,Not Met,Not Met
+2026-11-06,SBC60021,Student Branch Chapter,Cordoba Univ Tec Facultad Regional,RA24,0,0,No,No,Not Met,Not Met
+2026-11-06,SBC66011,Student Branch Chapter,Favaloro University,EMB18,1,0,No,No,Not Met,Not Met
+2026-11-06,SBC06421A,Student Branch Chapter,Instituto Tecnologico de Buenos Aires,C16,0,0,No,No,Not Met,Not Met
+2026-11-06,SBC06421,Student Branch Chapter,Instituto Tecnologico de Buenos Aires,EMB18,1,0,No,No,Not Met,Not Met
+2026-11-06,SBC06421B,Student Branch Chapter,Instituto Tecnologico de Buenos Aires,RA24,0,0,No,No,Not Met,Not Met
+2026-11-06,SBC13251,Student Branch Chapter,National University of Entre Rios,EMB18,1,0,No,No,Not Met,Not Met
+2026-11-06,SBC64294,Student Branch Chapter,Universidad Tecnologica Nacional-San Nicolas,EMB18,0,0,No,No,Not Met,Not Met
+2026-11-06,SBC05911C,Student Branch Chapter,Universidad Tecnologica Nacional-Buenos Aires,COM19,1,0,No,No,Not Met,Not Met
+2026-11-06,SBC05911B,Student Branch Chapter,Universidad Tecnologica Nacional-Buenos Aires,EMB18,3,0,No,No,Not Met,Not Met
+2026-11-06,SBC05911D,Student Branch Chapter,Universidad Tecnologica Nacional-Buenos Aires,PE31,0,0,No,No,Not Met,Not Met
+2026-11-06,SBC05911E,Student Branch Chapter,Universidad Tecnologica Nacional-Buenos Aires,RA24,2,0,No,No,Not Met,Not Met
+2026-11-06,SBC36321,Student Branch Chapter,Universidad Argentina de la Empresa,CAS04,0,0,No,No,Not Met,Not Met
+2026-11-06,SBC28491,Student Branch Chapter,Universidad Nacional de Cordoba,C16,1,0,No,No,Not Met,Not Met
+2026-11-06,SBC64623,Student Branch Chapter,Universidad Nacional de General San Martin,C16,0,0,No,No,Not Met,Not Met
+2026-11-06,SBC64623A,Student Branch Chapter,Universidad Nacional de General San Martin,COM19,0,0,No,No,Not Met,Not Met
+2026-11-06,SBC2528204,Student Branch Chapter,Universidad Nacional de Mar del Plata,CAS04,17,2,Yes,No,Met,Not Met
+2026-11-06,SBC11691,Student Branch Chapter,Universidad Nacional de Rosario,C16,0,0,No,No,Not Met,Not Met
+2026-11-06,SBC13291,Student Branch Chapter,Universidad Nacional de San Juan,EMB18,11,2,Yes,Yes,Not Met,Not Met
+2026-11-06,SBC13291A,Student Branch Chapter,Universidad Nacional de San Juan,PE31,3,0,No,No,Partial,Not Met
+2026-11-06,SBC13311,Student Branch Chapter,Universidad Nacional de San Luis-FCFMyN,IA34,3,0,No,No,Not Met,Not Met
+2026-11-06,SBC13311A,Student Branch Chapter,Universidad Nacional de San Luis-FCFMyN,PE31,1,0,No,No,Not Met,Not Met
+2026-11-06,SBC04881A,Student Branch Chapter,Universidad Nacional de Tucuman,C16,4,0,No,No,Not Met,Not Met
+2026-11-06,SBC04881,Student Branch Chapter,Universidad Nacional de Tucuman,IA34,0,0,No,No,Not Met,Not Met
+2026-11-06,SBC04881C,Student Branch Chapter,Universidad Nacional de Tucuman,PE31,1,0,No,No,Not Met,Not Met
+2026-11-06,SBC063611,Student Branch Chapter,Universidad Nacional del Sur,CAS04,16,2,Yes,No,Met,Not Met
+2026-11-06,SBC06361C,Student Branch Chapter,Universidad Nacional del Sur,IA34,1,1,No,No,Met,Not Met
+2026-11-06,SBC06361B,Student Branch Chapter,Universidad Nacional del Sur,PE31,0,0,No,No,Partial,Not Met
+2026-11-06,SBC06361A,Student Branch Chapter,Universidad Nacional del Sur,SP01,0,0,No,No,Partial,Not Met
+2026-11-06,SBC059111,Student Branch Chapter,Universidad Tecnologica Nacional-Buenos Aires,C16,1,0,No,No,Not Met,Not Met
+2026-11-06,SBC05911A,Student Branch Chapter,Universidad Tecnologica Nacional-Buenos Aires,IA34,2,0,No,No,Not Met,Not Met
+2026-11-06,SBC64626,Student Branch Chapter,Universidad Tecnologica Nacional-Tucuman,RA24,0,0,No,No,Not Met,Not Met
+2026-11-06,SBC00231A,Student Branch Chapter,Universidad de Buenos Aires,C16,9,1,Yes,No,Not Met,Not Met
+2026-11-06,SBC00321B,Student Branch Chapter,Universidad de Buenos Aires,CAS04,2,0,No,No,Not Met,Not Met
+2026-11-06,SBC00321D,Student Branch Chapter,Universidad de Buenos Aires,COM19,12,3,Yes,Yes,Met,Met
+2026-11-06,SBC00231,Student Branch Chapter,Universidad de Buenos Aires,CS23,0,0,No,No,Not Met,Not Met
+2026-11-06,SBC00321C,Student Branch Chapter,Universidad de Buenos Aires,PHO36,8,3,Yes,Yes,Met,Met
+2026-11-06,SBC00321E,Student Branch Chapter,Universidad de Buenos Aires,RA24,8,2,Yes,No,Met,Not Met
+2026-11-06,SBC08261A,Student Branch Chapter,University of Palermo,CIS11,0,0,No,No,Not Met,Not Met

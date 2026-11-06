@@ -5,15 +5,15 @@ Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Memb
 "Universidad Autonoma de Guadalajara, WIE",SBA99961,Affinity Group,Universidad Autonoma de Guadalajara,WIE,0,6,No,0,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad de Guadalajara,WIE",SBA05521,Affinity Group,Universidad de Guadalajara,WIE,23,6,Yes,2,,0,2,Yes,Yes,,Yes,No,No,Yes,No,Met,3/3,Met
 "Universidad de Guadalajara-Valles,WIE",SBA11553,Affinity Group,Universidad de Guadalajara-Valles,WIE,1,6,No,0,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
-Cinvestav Guadalajara,STB60361,Student Branch,Cinvestav Guadalajara,,29,12,Yes,5,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Cinvestav Guadalajara,STB60361,Student Branch,Cinvestav Guadalajara,,28,12,Yes,5,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Instituto Politécnico Nacional-UPIIZ,STB60240676,Student Branch,Instituto Politécnico Nacional-UPIIZ,,21,12,Yes,0,,0,4,No,Yes,Yes,,No,No,No,No,Met,2/3,Not Met
-Instituto Tec de Estudio Sup Monterrey-Guadalajara,STB39931,Student Branch,Insitutto Tec de Estudio Sup Monterrey-Guadalajara,,11,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Instituto Tec de Estudio Sup Monterrey-Guadalajara,STB39931,Student Branch,Insitutto Tec de Estudio Sup Monterrey-Guadalajara,,12,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
 Instituto Tecnologico de Ciudad Guzman,STB60371,Student Branch,Instituto Tecnologico de Ciudad Guzman,,3,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Instituto Tecnologico de Estudios Sup de Occidente,STB26071,Student Branch,Instituto Tecnologico de Estudios Sup De Occidente,,3,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
-Iteso University,STB64629,Student Branch,Iteso University,,13,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
+Iteso University,STB64629,Student Branch,Iteso University,,14,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
 UDG-Centro Universitario de Tonala,STB10203,Student Branch,Universidad de Guadalajara-Centro Univ de Tonala,,10,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 UVM Guadalajara Sur,STB11758,Student Branch,Universidad del Valle de Mexico-Guadalajara Sur,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
-Universidad Autonoma de Guadalajara,STB99961,Student Branch,Universidad Autonoma de Guadalajara,,3,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Universidad Autonoma de Guadalajara,STB99961,Student Branch,Universidad Autonoma de Guadalajara,,4,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Universidad Panamericana,STB37101,Student Branch,Universidad Panamericana,,4,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Universidad Panamericana Campus Guadalajara,STB60209096,Student Branch,Universidad Panamericana Campus Guadalajara,,1,12,No,1,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Universidad de Guadalajara,STB05521,Student Branch,Universidad de Guadalajara,,84,12,Yes,8,,1,4,Yes,Yes,Yes,,Yes,Yes,Yes,No,Met,3/3,Met
@@ -32,7 +32,7 @@ Universidad del Valle de Atemajac,STB63131,Student Branch,Universidad del Valle 
 "Instituto Tecnologico De Guzman, RA24",SBC60371B,Student Branch Chapter,Instituto Tecnologico de Ciudad Guzman,RA24,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Iteso University, RL07",SBC64629,Student Branch Chapter,Iteso University,RL07,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "UDG-Centro Universitario de Tonala,PE31",SBC10203,Student Branch Chapter,Universidad de Guadalajara-Centro Univ de Tonala,PE31,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
-"Universidad Autonoma de Guadalajara, C16",SBC999611,Student Branch Chapter,Universidad Autonoma de Guadalajara,C16,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Universidad Autonoma de Guadalajara, C16",SBC999611,Student Branch Chapter,Universidad Autonoma de Guadalajara,C16,1,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad Autonoma de Guadalajara, PE31",SBC99961A,Student Branch Chapter,Universidad Autonoma de Guadalajara,PE31,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad Autonoma de Guadalajara, RA24",SBC99961,Student Branch Chapter,Universidad Autonoma de Guadalajara,RA24,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad Autonoma de Guadalajara, TEM14",SBC99961C,Student Branch Chapter,Universidad Autonoma de Guadalajara,TEM14,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
