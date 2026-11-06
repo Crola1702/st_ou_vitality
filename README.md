@@ -203,8 +203,9 @@ commit and push it — the GitHub Actions workflow in
 
 `r9/generate_r9_vitality.py` runs the same evaluation over region-wide
 exports and splits the result per Section, so nobody has to open the
-whole region (about 2,000 OUs) unless they want to. Put these in
-`r9/R9 Data/` (same formats as above, exported for the whole region):
+whole region (about 2,000 OUs) unless they want to. It reads these from
+`r9/R9 Data/` (same formats as above, exported for the whole region),
+which `./run_all.sh` fetches for you:
 
 - `Student Branch and Member Count.csv`
 - `Student Branch Chapters and Affinity Group Member Count.csv`
@@ -229,10 +230,9 @@ in one folder per Section. Every dashboard has a
 Section switcher under its title. Member-level trends (society
 memberships, membership grades) are not computed for R9.
 
-`./run_all.sh` does this too when the three Tableau files above are in
-`r9/R9 Data/`: it fetches the region's events from the public vTools feed
-(no login, about 4 minutes) and runs `r9/generate_r9_vitality.py`. The
-Tableau exports themselves are still exported by hand.
+`./run_all.sh` does this too: it fetches the three Tableau files above
+(saved login required) and the region's events from the public vTools feed
+(no login, about 4 minutes), then runs `r9/generate_r9_vitality.py`.
 
 The Pages workflow publishes `r9/dashboards/` as-is under `/beta_r9/`
 (so `<pages-url>/beta_r9/` is the Section picker), on every push to

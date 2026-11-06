@@ -12,9 +12,8 @@
 # then re-run this:
 #   automations/.venv/bin/python automations/tableau_export.py login
 #
-# Region 9: if the three region-wide Tableau exports are in r9/R9 Data/
-# (exported by hand, see README "Region 9 dashboards"), it also refreshes the
-# region's vTools events (public feed, no login) and rebuilds r9/dashboards/.
+# Region 9: it then fetches the region-wide Tableau exports and vTools events
+# (public feed, no login) into r9/R9 Data/ and rebuilds r9/dashboards/.
 #
 # Usage: ./run_all.sh [-h|--help] [--login] [--pdfs]
 set -euo pipefail
@@ -79,29 +78,22 @@ python3 officer_terms/generate_officer_terms.py
 python3 member_society_lookup/generate_member_society_lookup.py
 
 R9_DATA="r9/R9 Data"
-R9_FILES=("Student Branch and Member Count.csv" "Student Branch Chapters and Affinity Group Member Count.csv" "Volunteer List by OU.csv")
-R9_RAN=0
-R9_MISSING=()
-for f in "${R9_FILES[@]}"; do
-  [ -f "$R9_DATA/$f" ] || R9_MISSING+=("$f")
-done
-if [ ${#R9_MISSING[@]} -eq 0 ]; then
-  echo "== Region 9: vTools Events (public feed, all of R9, ~4 min) =="
-  python3 automations/vtools_feed_export.py --out "$R9_DATA/IEEE_vTools_Events_R9.csv"
-  echo "== Region 9: dashboards =="
-  python3 r9/generate_r9_vitality.py
-  R9_RAN=1
-else
-  echo "== Region 9: skipped, missing in $R9_DATA/: ${R9_MISSING[*]} =="
-fi
+mkdir -p "$R9_DATA"
+echo "== Region 9: Student Branch Summary (both crosstabs) =="
+"$VENV_PY" automations/tableau_export.py export --headed --filters student_branch_summary_r9 \
+  --workbook GeoOUAnalysis --view StudentBranchSummary --sheet "Student Branch Summary" \
+  --sheetdoc-id "{9F37FD96-C0CB-44E2-B6C0-4AD55CC98A4A}" --out "$R9_DATA/Student Branch and Member Count.csv" \
+  --sheetdoc-id "{CED8B60A-2103-44CD-9018-C8E76B42E9BA}" --out "$R9_DATA/Student Branch Chapters and Affinity Group Member Count.csv"
+echo "== Region 9: Volunteer List by OU =="
+"$VENV_PY" automations/tableau_export.py export-preset volunteer_positions_r9 --out "$R9_DATA/Volunteer List by OU.csv" --headed
+echo "== Region 9: vTools Events (public feed, all of R9, ~4 min) =="
+python3 automations/vtools_feed_export.py --out "$R9_DATA/IEEE_vTools_Events_R9.csv"
+echo "== Region 9: dashboards =="
+python3 r9/generate_r9_vitality.py
 
 if [ "$EXPORT_PDFS" = 1 ]; then
   echo "== Extra: one PDF per Student Branch =="
-  if [ "$R9_RAN" = 1 ]; then
-    "$VENV_PY" automations/export_report_pdfs.py --r9 --scope region
-  else
-    "$VENV_PY" automations/export_report_pdfs.py
-  fi
+  "$VENV_PY" automations/export_report_pdfs.py --r9 --scope region
 fi
 
 echo "== Done =="

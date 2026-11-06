@@ -95,6 +95,9 @@ until filters are applied, and use Tableau's index-based categorical
 filtering — captured from a real session). If a preset ever starts coming
 back empty or with the wrong rows, the domain order may have shifted —
 re-capture a HAR of applying the filters manually and update the indices.
+`student_branch_summary_r9` and `volunteer_positions_r9` are the same exports
+for all of Region 9. HAR captures contain session cookies and the downloaded
+personal data, so keep them out of the repo.
 
 ## Batch PDF export from the command line
 

@@ -31,7 +31,7 @@ python3 r9/generate_r9_vitality.py                      # independent: Region 9 
 source CSV via `automations/` (assumes its one-time setup/login is already
 done — see `automations/README.md`), then runs all of the above plus
 `member_society_lookup/generate_member_society_lookup.py`, in dependency
-order. If the three region-wide Tableau exports are in `r9/R9 Data/` (still exported by hand), it also fetches the R9 events from the public feed (`vtools_feed_export.py`, all of R9 by default) and runs `r9/generate_r9_vitality.py`; otherwise that step is skipped with a note. `chapter_outreach/`/`officer_terms/` writing officer names/emails to
+order. It then fetches the three region-wide Tableau exports (`student_branch_summary_r9` and `volunteer_positions_r9` presets) and the R9 events from the public feed (`vtools_feed_export.py`, all of R9 by default) into `r9/R9 Data/` and runs `r9/generate_r9_vitality.py`. `chapter_outreach/`/`officer_terms/` writing officer names/emails to
 a local CSV each run is no different from running them by hand — those
 outputs stay git-ignored either way. Does not log in itself — a fetch step
 failing with an auth error means the saved session expired; re-run login

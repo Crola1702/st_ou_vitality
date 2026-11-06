@@ -101,6 +101,39 @@ FILTER_PRESETS = {
              "op": "remove", "indices": [1]},
         ],
     },
+    # Region 9 variants, captured from manual_exports/GeoOUAnalysis_R9.har and
+    # VolunteerPositions_R9.har. Output goes to r9/R9 Data/.
+    "student_branch_summary_r9": {
+        "workbook": "GeoOUAnalysis",
+        "view": "StudentBranchSummary",
+        "landing_sheet": "Student Branch Summary",
+        "export_sheet": "Student Branch Summary",
+        "sheetdoc_id": "{9F37FD96-C0CB-44E2-B6C0-4AD55CC98A4A}",
+        "parameters": [],
+        "filters": [
+            # Region: R9 only (R1..R10, index 8)
+            {"worksheet": "Analysis by Section (Student Branch Summary)",
+             "globalFieldName": "[federated.0p2ukz61by12sj15vbbz30g00k6c].[none:Calculation_1129840590165643272:nk]",
+             "op": "replace", "indices": [8]},
+        ],
+    },
+    "volunteer_positions_r9": {
+        "workbook": "VolunteerPositionsHistory",
+        "view": "VolunteerPositions",
+        "landing_sheet": "Volunteer Positions",
+        "export_sheet": "Volunteer Positions",
+        "sheetdoc_id": "{FA0693F8-5689-4A7B-9DFD-189274863BF1}",
+        "parameters": [
+            {"parameterName": "[Parameters].[Region Parameter]", "idx": 9},  # R9
+        ],
+        "filters": [
+            # OU Type, as captured: comes back as Affinity, Student Branch, Student Branch
+            # Chapter. This view is already Active-only without a status filter.
+            {"worksheet": "Volunteer List by OU",
+             "globalFieldName": "[federated.1mu7cjv1nedkgb1dz2df1055aoo0].[none:officer spo account type:nk]",
+             "op": "add", "indices": [1, 21, 24, 25]},
+        ],
+    },
     "members_detail": {
         "workbook": "MembersandAffiliates",
         "view": "Dashboard",       # filters only exist on the Dashboard tab, not Detail directly

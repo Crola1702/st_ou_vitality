@@ -6,6 +6,13 @@ version since this project doesn't cut releases.
 
 ## 2026-11-06
 
+### Added
+
+- `./run_all.sh` now fetches the Region 9 Tableau exports (members per OU and
+  volunteer positions) itself, through two new `tableau_export.py` presets,
+  instead of relying on files exported by hand. R9 member counts now stay in
+  step with the Colombia export.
+
 ### Changed
 
 - **Student Branch Members** replaces "Total Members" in exported reports and
