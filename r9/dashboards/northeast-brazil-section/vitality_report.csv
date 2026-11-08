@@ -1,12 +1,12 @@
 Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
 "Faculdade de Tecnologia Senai Cimatec,WIE",SBA06891,Affinity Group,Faculdade de Tecnologia Senai Cimatec,WIE,0,6,No,0,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Federal Institute of Paraiba-Campina Grande,WIE",SBA13561,Affinity Group,Federal Institute of Paraiba-Campina Grande,WIE,2,6,No,0,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
-"Federal Institute of Rio Grande do Norte,WIE",SBA60229023,Affinity Group,Federal Institute of Rio Grande do Norte,WIE,21,6,Yes,3,,0,2,Yes,Yes,,Yes,Yes,No,Yes,No,Met,3/3,Met
+"Federal Institute of Rio Grande do Norte,WIE",SBA60229023,Affinity Group,Federal Institute of Rio Grande do Norte,WIE,22,6,Yes,3,,0,2,Yes,Yes,,Yes,Yes,No,Yes,No,Met,3/3,Met
 "Federal University of Bahia,WIE",SBA93051,Affinity Group,Federal University of Bahia,WIE,27,6,Yes,19,,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Federal University of Campina Grande,SIGHT",SBA05141S,Affinity Group,Universidade Federal de Campina Grande,SIGHT,51,6,Yes,9,,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
 "Federal University of Campina Grande,WIE",SBA05141,Affinity Group,Universidade Federal de Campina Grande,WIE,34,6,Yes,10,,7,2,Yes,Yes,,Yes,Yes,No,Yes,No,Met,3/3,Met
-Federal University of Ceara SB SIGHT,SBA62081S,Affinity Group,Federal University of Ceara,SB SIGHT,38,6,Yes,1,,3,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
-"Federal University of Ceara,WIE",SBA62081,Affinity Group,Federal University of Ceara,WIE,22,6,Yes,9,,9,2,Yes,Yes,,Yes,Yes,Yes,No,No,Met,3/3,Met
+Federal University of Ceara SB SIGHT,SBA62081S,Affinity Group,Federal University of Ceara,SB SIGHT,38,6,Yes,2,,3,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
+"Federal University of Ceara,WIE",SBA62081,Affinity Group,Federal University of Ceara,WIE,22,6,Yes,9,,11,2,Yes,Yes,,Yes,Yes,Yes,No,No,Met,3/3,Met
 "IFBA-Campus Vitoria da Conquista,WIE",SBA39666,Affinity Group,IFBA-Campus Vitoria da Conquista,WIE,1,6,No,0,,0,2,No,Yes,,Yes,No,No,No,No,Met,1/3,Not Met
 "Inst Fed de Ed Ciencia e Tecn da Paraiba,WIE",SBA04261,Affinity Group,Inst Fed de Educacao Ciencia e Tecn da Paraiba,WIE,4,6,No,0,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Inst Fed de Educacao Ciencia e Tec-Bahia,WIE",SBA64651,Affinity Group,Instituto Federal de Educacao Ciencia e Tec-Bahia,WIE,2,6,No,0,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
@@ -19,13 +19,13 @@ Univ Federal do Reconcavo da Bahia-UFRB SIGHT,SBA20150S,Affinity Group,Universid
 "Universidade Federal de Alagoas,WIE",SBA10043,Affinity Group,Universidade Federal de Alagoas,WIE,9,6,Yes,0,,0,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
 "Universidade Federal de Pernambuco,WIE",SBA99374,Affinity Group,Universidade Federal de Pernambuco,WIE,6,6,Yes,5,,2,2,Yes,Yes,,Yes,No,Yes,No,No,Met,3/3,Met
 "Universidade Federal do Reconcavo da Bahia,WIE",SBA20150,Affinity Group,Universidade Federal do Reconcavo da Bahia,WIE,22,6,Yes,3,,4,2,Yes,No,,No,No,No,No,No,Not Met,2/3,Not Met
-"Universidade Federal do Rio Grande do Norte,WIE",SBA66301,Affinity Group,Universidade Federal do Rio Grande do Norte,WIE,79,6,Yes,4,,2,2,Yes,Yes,,Yes,No,Yes,No,No,Met,3/3,Met
+"Universidade Federal do Rio Grande do Norte,WIE",SBA66301,Affinity Group,Universidade Federal do Rio Grande do Norte,WIE,81,6,Yes,4,,2,2,Yes,Yes,,Yes,No,Yes,No,No,Met,3/3,Met
 "Universidade Federal do Vale do Sao Francisco,WIE",SBA13801,Affinity Group,Universidade Federal do Vale do Sao Francisco,WIE,0,6,No,0,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 Faculdade de Tecnologia Senai Cimatec,STB06891,Student Branch,Faculdade de Tecnologia Senai Cimatec,,4,12,No,1,,0,4,No,No,No,,Yes,No,No,No,Not Met,0/3,Not Met
 Faculdade de Tecnologia e Ciencias-Bahia,STB63441,Student Branch,Faculdade de Tecnologia e Ciencias-Bahia,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Faculdades Jorge Amado,STB11449,Student Branch,Faculdades Jorge Amado,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Federal Institute of Paraiba-Campina Grande,STB13561,Student Branch,Federal Institute of Paraiba-Campina Grande,,20,12,Yes,0,,3,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
-Federal Institute of Rio Grande do Norte,STB60229023,Student Branch,Federal Institute of Rio Grande do Norte,,23,12,Yes,0,,2,4,No,Yes,Yes,,Yes,Yes,No,Yes,Met,2/3,Not Met
+Federal Institute of Rio Grande do Norte,STB60229023,Student Branch,Federal Institute of Rio Grande do Norte,,24,12,Yes,0,,2,4,No,Yes,Yes,,Yes,Yes,No,Yes,Met,2/3,Not Met
 Federal University of Bahia,STB93051,Student Branch,Federal University of Bahia,,62,12,Yes,7,,27,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Federal University of Ceara,STB62081,Student Branch,Federal University of Ceara,,90,12,Yes,0,,6,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 Federal University of Sergipe,STB60020518,Student Branch,Federal University of Sergipe,,52,12,Yes,10,,1,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
@@ -44,7 +44,7 @@ Universidade Federal de Campina Grande,STB05141,Student Branch,Universidade Fede
 Universidade Federal de Pernambuco,STB99374,Student Branch,Universidade Federal de Pernambuco,,31,12,Yes,0,,0,4,No,No,No,,Yes,Yes,Yes,Yes,Not Met,1/3,Not Met
 Universidade Federal do Ceara - Sobral,STB99072,Student Branch,Universidade Federal do Ceara - Sobral,,3,12,No,0,,0,4,No,Yes,No,,No,No,No,No,Partial,0/3,Not Met
 Universidade Federal do Reconcavo da Bahia,STB20150,Student Branch,Universidade Federal do Reconcavo da Bahia,,42,12,Yes,15,,3,4,Yes,Yes,Yes,,Yes,No,Yes,Yes,Met,3/3,Met
-Universidade Federal do Rio Grande do Norte,STB66301,Student Branch,Universidade Federal do Rio Grande do Norte,,179,12,Yes,17,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Universidade Federal do Rio Grande do Norte,STB66301,Student Branch,Universidade Federal do Rio Grande do Norte,,186,12,Yes,17,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Universidade Federal do Vale do Sao Francisco,STB13801,Student Branch,Universidade Federal do Vale do Sao Francisco,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 University of Pernambuco,STB60060452,Student Branch,University of Pernambuco,,20,12,Yes,0,,0,4,No,Yes,Yes,,No,No,No,No,Met,2/3,Not Met
 "Faculdade de Tecnologia Senai Cimatec,CAS04",SBC06891D,Student Branch Chapter,Faculdade de Tecnologia Senai Cimatec,CAS04,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
@@ -52,9 +52,9 @@ University of Pernambuco,STB60060452,Student Branch,University of Pernambuco,,20
 "Faculdade de Tecnologia Senai Cimatec,PE31",SBC06891,Student Branch Chapter,Faculdade de Tecnologia Senai Cimatec,PE31,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Faculdade de Tecnologia Senai Cimatec,RA24",SBC06891A,Student Branch Chapter,Faculdade de Tecnologia Senai Cimatec,RA24,2,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Federal Institute of Paraiba-Campina Grande,COM19",SBC13561,Student Branch Chapter,Federal Institute of Paraiba-Campina Grande,COM19,5,6,No,0,0,0,2,No,Yes,,No,Yes,Yes,Yes,Yes,Partial,0/3,Not Met
-"Federal Institute of Rio Grande do Norte,IE13",SBC60229023,Student Branch Chapter,Federal Institute of Rio Grande do Norte,IE13,21,6,Yes,1,1,0,2,No,Yes,,Yes,No,Yes,No,No,Met,2/3,Not Met
+"Federal Institute of Rio Grande do Norte,IE13",SBC60229023,Student Branch Chapter,Federal Institute of Rio Grande do Norte,IE13,22,6,Yes,1,1,0,2,No,Yes,,Yes,No,Yes,No,No,Met,2/3,Not Met
 "Federal University of Bahia,C16",SBC93051,Student Branch Chapter,Federal University of Bahia,C16,27,6,Yes,25,8,8,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
-"Federal University of Bahia,ED15",SBC93051A,Student Branch Chapter,Federal University of Bahia,ED15,25,6,Yes,6,1,2,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Federal University of Bahia,ED15",SBC93051A,Student Branch Chapter,Federal University of Bahia,ED15,25,6,Yes,8,1,1,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 "Federal University of Bahia,PE31",SBC93051B,Student Branch Chapter,Federal University of Bahia,PE31,23,6,Yes,17,0,1,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 "Federal University of Campina Grande,AP03",SBC05141B,Student Branch Chapter,Universidade Federal de Campina Grande,AP03,37,6,Yes,6,1,3,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 "Federal University of Campina Grande,MTT17",SBC05141D,Student Branch Chapter,Universidade Federal de Campina Grande,MTT17,12,6,Yes,5,0,4,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
@@ -62,7 +62,7 @@ University of Pernambuco,STB60060452,Student Branch,University of Pernambuco,,20
 "Federal University of Campina Grande,PEL35/IA34",SBC05141A,Student Branch Chapter,Universidade Federal de Campina Grande,PEL35/IA34,7,6,Yes,2,0,0,2,No,Yes,,No,Yes,Yes,Yes,Yes,Partial,1/3,Not Met
 "Federal University of Campina Grande,RA24",SBC05141C,Student Branch Chapter,Universidade Federal de Campina Grande,RA24,9,6,Yes,6,1,1,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 "Federal University of Ceara,CAS04",SBC62081,Student Branch Chapter,Federal University of Ceara,CAS04,9,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
-"Federal University of Ceara,COM19/SP01",SBC62081C,Student Branch Chapter,Federal University of Ceara,COM19/SP01,38,6,Yes,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+"Federal University of Ceara,COM19/SP01",SBC62081C,Student Branch Chapter,Federal University of Ceara,COM19/SP01,38,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 "Federal University of Ceara,RA24",SBC62081A,Student Branch Chapter,Federal University of Ceara,RA24,25,6,Yes,1,0,10,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 "Federal University of Ceara,TEC802/PEL35/IA34",SBC62081B,Student Branch Chapter,Federal University of Ceara,TEC802/PEL35/IA34,28,6,Yes,0,0,1,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
 "Federal University of Sergipe,CAS04",SBC60020518A,Student Branch Chapter,Federal University of Sergipe,CAS04,18,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
@@ -76,7 +76,7 @@ University of Pernambuco,STB60060452,Student Branch,University of Pernambuco,,20
 "Inst Fed de Educacao Ciencia e Tec da Paraiba,PE31",SBC04261B,Student Branch Chapter,Inst Fed de Educacao Ciencia e Tecn da Paraiba,PE31,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Univ Federal Da Bahia,AES10",SBC93051C,Student Branch Chapter,Federal University of Bahia,AES10,0,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
 "Univ Federal do Reconcavo da Bahia-UFRB,SMC28/C16",SBC20150C,Student Branch Chapter,Universidade Federal do Reconcavo da Bahia,SMC28/C16,22,6,Yes,8,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
-"Univ Federal do Rio Grande do Norte,PEL35,IA34",SBC66301B,Student Branch Chapter,Universidade Federal do Rio Grande do Norte,IA34,56,6,Yes,5,3,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
+"Univ Federal do Rio Grande do Norte,PEL35,IA34",SBC66301B,Student Branch Chapter,Universidade Federal do Rio Grande do Norte,IA34,57,6,Yes,5,3,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
 "Universidad del Salvador,PE31",SBC63451,Student Branch Chapter,Universidad del Salvador,PE31,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad del Salvador,RA24",SBC63451A,Student Branch Chapter,Universidad del Salvador,RA24,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidade Estadual de Feira de Santana,RA24",SBC11151,Student Branch Chapter,Universidade Estadual de Feira de Santana,RA24,6,6,Yes,1,0,0,2,No,Yes,,No,Yes,No,Yes,Yes,Partial,1/3,Not Met
@@ -100,11 +100,11 @@ University of Pernambuco,STB60060452,Student Branch,University of Pernambuco,,20
 "Universidade Federal do Reconcavo da Bahia,IA34",SBC20150B,Student Branch Chapter,Universidade Federal do Reconcavo da Bahia,IA34,2,6,No,1,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidade Federal do Reconcavo da Bahia,PE31",SBC20150,Student Branch Chapter,Universidade Federal do Reconcavo da Bahia,PE31,25,6,Yes,24,6,4,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Universidade Federal do Reconcavo da Bahia,RA24",SBC20150A,Student Branch Chapter,Universidade Federal do Reconcavo da Bahia,RA24,14,6,Yes,8,1,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
-"Universidade Federal do Rio Grande do Norte,C16",SBC66301A,Student Branch Chapter,Universidade Federal do Rio Grande do Norte,C16,82,6,Yes,29,2,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Universidade Federal do Rio Grande do Norte,C16",SBC66301A,Student Branch Chapter,Universidade Federal do Rio Grande do Norte,C16,83,6,Yes,29,2,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Universidade Federal do Rio Grande do Norte,EMB18",SBC66301D,Student Branch Chapter,Universidade Federal do Rio Grande do Norte,EMB18,41,6,Yes,3,1,6,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
-"Universidade Federal do Rio Grande do Norte,IE13",SBC66301E,Student Branch Chapter,Universidade Federal do Rio Grande do Norte,IE13,72,6,Yes,11,4,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
-"Universidade Federal do Rio Grande do Norte,PE31",SBC66301,Student Branch Chapter,Universidade Federal do Rio Grande do Norte,PE31,88,6,Yes,16,6,2,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
-"Universidade Federal do Rio Grande do Norte,RA24",SBC66301C,Student Branch Chapter,Universidade Federal do Rio Grande do Norte,RA24,21,6,Yes,17,4,8,2,Yes,Yes,,No,Yes,Yes,Yes,Yes,Partial,2/3,Not Met
+"Universidade Federal do Rio Grande do Norte,IE13",SBC66301E,Student Branch Chapter,Universidade Federal do Rio Grande do Norte,IE13,73,6,Yes,11,4,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Universidade Federal do Rio Grande do Norte,PE31",SBC66301,Student Branch Chapter,Universidade Federal do Rio Grande do Norte,PE31,90,6,Yes,16,6,2,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Universidade Federal do Rio Grande do Norte,RA24",SBC66301C,Student Branch Chapter,Universidade Federal do Rio Grande do Norte,RA24,22,6,Yes,17,4,8,2,Yes,Yes,,No,Yes,Yes,Yes,Yes,Partial,2/3,Not Met
 "Universidade Federal do Vale do Sao Francisco,ED15",SBC13801A,Student Branch Chapter,Universidade Federal do Vale do Sao Francisco,ED15,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidade Federal do Vale do Sao Francisco,PE31",SBC13801B,Student Branch Chapter,Universidade Federal do Vale do Sao Francisco,PE31,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidade Federal do Vale do Sao Francisco,RA24",SBC13801,Student Branch Chapter,Universidade Federal do Vale do Sao Francisco,RA24,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met

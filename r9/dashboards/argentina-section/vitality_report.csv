@@ -32,7 +32,7 @@ Universidad Nacional de San Luis-FICA,STB16911,Student Branch,Universidad Nacion
 Universidad Nacional de Tucuman,STB04881,Student Branch,Universidad Nacional de Tucuman,,19,12,Yes,4,,1,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Universidad Nacional del Sur,STB06361,Student Branch,Universidad Nacional del Sur,,22,12,Yes,2,,3,4,No,Yes,Yes,,Yes,No,Yes,No,Met,2/3,Not Met
 Universidad Tecnologica Naciona-Resistencia,STB60160804,Student Branch,Universidad Tecnologica Naciona-Resistencia,,24,12,Yes,0,,0,4,No,Yes,Yes,,No,Yes,Yes,No,Met,2/3,Not Met
-Universidad Tecnologica Nacional-Buenos Aires,STB05911,Student Branch,Universidad Tecnologica Nacional-Buenos Aires,,19,12,Yes,1,,0,4,No,Yes,Yes,,No,No,No,No,Met,2/3,Not Met
+Universidad Tecnologica Nacional-Buenos Aires,STB05911,Student Branch,Universidad Tecnologica Nacional-Buenos Aires,,20,12,Yes,1,,0,4,No,Yes,Yes,,No,No,No,No,Met,2/3,Not Met
 Universidad Tecnologica Nacional-Tucuman,STB64626,Student Branch,Universidad Tecnologica Nacional-Tucuman,,1,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Universidad de Buenos Aires,STB00231,Student Branch,Universidad de Buenos Aires,,54,12,Yes,3,,2,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 University of Palermo,STB08261,Student Branch,University of Palermo,,7,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
@@ -67,7 +67,7 @@ University of Palermo,STB08261,Student Branch,University of Palermo,,7,12,No,0,,
 "Universidad Tecnologica Nacional-Buenos Aires,C16",SBC059111,Student Branch Chapter,Universidad Tecnologica Nacional-Buenos Aires,C16,1,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad Tecnologica Nacional-Buenos Aires,IA34",SBC05911A,Student Branch Chapter,Universidad Tecnologica Nacional-Buenos Aires,IA34,2,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad Tecnologica Nacional-Tucuman,RA24",SBC64626,Student Branch Chapter,Universidad Tecnologica Nacional-Tucuman,RA24,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
-"Universidad de Buenos Aires,C16",SBC00231A,Student Branch Chapter,Universidad de Buenos Aires,C16,9,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Universidad de Buenos Aires,C16",SBC00231A,Student Branch Chapter,Universidad de Buenos Aires,C16,9,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
 "Universidad de Buenos Aires,CAS04",SBC00321B,Student Branch Chapter,Universidad de Buenos Aires,CAS04,2,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad de Buenos Aires,COM19",SBC00321D,Student Branch Chapter,Universidad de Buenos Aires,COM19,12,6,Yes,5,4,2,2,Yes,Yes,,Yes,Yes,Yes,No,Yes,Met,3/3,Met
 "Universidad de Buenos Aires,CS23",SBC00231,Student Branch Chapter,Universidad de Buenos Aires,CS23,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
