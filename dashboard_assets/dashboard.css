@@ -147,6 +147,13 @@
   }
   .tab-panel[hidden] { display: none; }
 
+  .group-by { display: inline-block; margin: 8px 0 12px; font-size: 0.85rem; }
+  .group-bar-row { display: grid; grid-template-columns: minmax(90px, 220px) 1fr minmax(110px, auto); gap: 10px; align-items: center; padding: 3px 0; font-size: 0.85rem; }
+  .group-bar-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .group-bar-track { background: var(--surface-1); border: 1px solid var(--border); border-radius: 4px; height: 16px; overflow: hidden; }
+  .group-bar-fill { display: block; height: 100%; background: var(--series-1); }
+  .group-bar-value { font-variant-numeric: tabular-nums; text-align: right; }
+
   .trend-heading { font-size: 1rem; margin: 20px 0 4px; }
   .trend-heading:first-of-type { margin-top: 0; }
   .trend-card { background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px; padding: 16px; }

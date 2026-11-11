@@ -4,6 +4,15 @@ Notable changes to this project. Format loosely follows
 [Keep a Changelog](https://keepachangelog.com/), dated by day rather than by
 version since this project doesn't cut releases.
 
+## 2026-11-11
+
+### Added
+
+- Dashboard "By Group" tab: bar chart of the share of units at full vitality
+  per Council, Section (R9 pages), Society, University or OU type, with a JPG
+  download. It follows
+  the active filters.
+
 ## 2026-11-06
 
 ### Added

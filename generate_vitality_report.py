@@ -1384,6 +1384,7 @@ def build_dashboard(
     <div class="tabs">
       <button class="tab-btn active" data-tab="overview" onclick="showTab('overview')">Overview</button>
       <button class="tab-btn" data-tab="quick-wins" onclick="showTab('quick-wins')">Quick Wins <span class="tab-badge">{quick_wins_count}</span></button>
+      <button class="tab-btn" data-tab="by-group" onclick="showTab('by-group')">By Group</button>
       <button class="tab-btn" data-tab="trends" onclick="showTab('trends')">Trends</button>
     </div>
 
@@ -1394,6 +1395,13 @@ def build_dashboard(
     <div id="tab-quick-wins" class="tab-panel" hidden>
       <p class="req-note">Units missing exactly one requirement (Members, Events, or Officers) — the fastest path to full vitality, sorted by smallest gap first.</p>
       {quick_wins_html}
+    </div>
+
+    <div id="tab-by-group" class="tab-panel" hidden>
+      <p class="req-note">Share of units at full vitality (all 3 requirements), grouped by the chosen filter. Follows the filters above.</p>
+      <label class="group-by">Group by <select id="group-by-select"></select></label>
+      <button type="button" id="group-bars-jpg">Download JPG</button>
+      <div id="group-bars" class="group-bars"></div>
     </div>
 
     <div id="tab-trends" class="tab-panel" hidden>

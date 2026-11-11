@@ -116,6 +116,9 @@
     setTile('met', `${met} (${pct(met, total)}%)`);
     Object.keys(counts).forEach(t => setTile(t, `${counts[t][0]}/${counts[t][1]} (${pct(counts[t][0], counts[t][1])}%)`));
 
+    const groupTab = document.getElementById('tab-by-group');
+    if (groupTab && !groupTab.hidden) renderGroupBars();
+
     updateURLParams();
   }
 
@@ -165,9 +168,86 @@
     row.style.display = row.style.display === 'none' ? 'table-row' : 'none';
   }
 
+  // "By Group" tab: % of OUs at full vitality per value of one filter dimension.
+  const optionLabels = sel => Object.fromEntries(Array.from(sel.options).map(o => [o.value, o.textContent]));
+  const groupDims = [
+    ...(councilSelect ? [{ id: 'council', label: 'Council', attr: 'council' }] : []),
+    ...(sectionSelect ? [{ id: 'section', label: 'Section', attr: 'section' }] : []),
+    { id: 'society', label: 'Society', attr: 'society', labels: optionLabels(societySelect) },
+    { id: 'university', label: 'University', attr: 'university', labels: optionLabels(universitySelect) },
+    { id: 'type', label: 'OU type', attr: 'type', labels: { branch: 'Student Branch', chapter: 'Chapter', ag: 'Affinity Group' } },
+  ];
+  const groupSelect = document.getElementById('group-by-select');
+  groupSelect.innerHTML = groupDims.map(d => `<option value="${d.id}">${d.label}</option>`).join('');
+  groupSelect.addEventListener('change', renderGroupBars);
+
+  function renderGroupBars() {
+    const dim = groupDims.find(d => d.id === groupSelect.value);
+    const groups = {};
+    document.querySelectorAll('#tab-overview .ou-row').forEach(row => {
+      if (!rowMatches(row)) return;
+      const key = row.dataset[dim.attr];
+      if (!key) return;  // OUs without this attribute (e.g. no society) are left out
+      const g = groups[key] || (groups[key] = [0, 0]);
+      g[1]++;
+      if (row.dataset.req === '3') g[0]++;
+    });
+    const esc = s => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+    const rows = Object.entries(groups)
+      .map(([key, [met, total]]) => ({ name: (dim.labels && dim.labels[key]) || key, met, total, pct: Math.round((met / total) * 100) }))
+      .sort((a, b) => b.pct - a.pct || b.total - a.total);
+    groupBarsView = { title: `Units at full vitality by ${dim.label}`, rows };
+    document.getElementById('group-bars').innerHTML = rows.length
+      ? rows.map(r => `<div class="group-bar-row"><span class="group-bar-name" title="${esc(r.name)}">${esc(r.name)}</span>`
+          + `<span class="group-bar-track"><span class="group-bar-fill" style="width:${r.pct}%"></span></span>`
+          + `<span class="group-bar-value">${r.pct}% (${r.met}/${r.total})</span></div>`).join('')
+      : '<p class="req-note">No units match the current filters.</p>';
+  }
+
+  let groupBarsView = { title: '', rows: [] };
+
+  // Always light-themed, like the other exports, whatever the dashboard theme.
+  document.getElementById('group-bars-jpg').addEventListener('click', () => {
+    const { title, rows } = groupBarsView;
+    if (!rows.length) return;
+    const W = 1000, rowH = 28, top = 56, nameW = 260, valueW = 130, pad = 20;
+    const barX = pad + nameW, barW = W - barX - valueW - pad;
+    const canvas = document.createElement('canvas');
+    canvas.width = W;
+    canvas.height = top + rows.length * rowH + pad;
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.textBaseline = 'middle';
+    ctx.fillStyle = '#1a1a1a';
+    ctx.font = 'bold 18px sans-serif';
+    ctx.fillText(title, pad, 26);
+    ctx.font = '13px sans-serif';
+    rows.forEach((r, i) => {
+      const y = top + i * rowH;
+      let name = r.name;
+      while (name.length > 1 && ctx.measureText(name).width > nameW - 10) name = name.slice(0, -1);
+      ctx.fillStyle = '#1a1a1a';
+      ctx.textAlign = 'left';
+      ctx.fillText(name === r.name ? name : name + '…', pad, y + rowH / 2);
+      ctx.fillStyle = '#e8e8e8';
+      ctx.fillRect(barX, y + 5, barW, rowH - 10);
+      ctx.fillStyle = '#2a78d6';
+      ctx.fillRect(barX, y + 5, barW * r.pct / 100, rowH - 10);
+      ctx.fillStyle = '#1a1a1a';
+      ctx.textAlign = 'right';
+      ctx.fillText(`${r.pct}% (${r.met}/${r.total})`, W - pad, y + rowH / 2);
+    });
+    const a = document.createElement('a');
+    a.href = canvas.toDataURL('image/jpeg', 0.92);
+    a.download = `vitality_${title.replace(/\W+/g, '_').toLowerCase()}.jpg`;
+    a.click();
+  });
+
   function showTab(name) {
     document.querySelectorAll('.tab-panel').forEach(p => { p.hidden = p.id !== `tab-${name}`; });
     document.querySelectorAll('.tab-btn').forEach(b => { b.classList.toggle('active', b.dataset.tab === name); });
+    if (name === 'by-group') renderGroupBars();
     if (name === 'trends') { renderTrendChart(); renderSocietyTrendChart(); renderGradeBarChart(); }
   }
 
