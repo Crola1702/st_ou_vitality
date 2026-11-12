@@ -134,6 +134,30 @@ FILTER_PRESETS = {
              "op": "add", "indices": [1, 21, 24, 25]},
         ],
     },
+    # Section-level officers for all of R9 (Section Chair, SSAC = "Student Activities",
+    # SSR = "Student Representative"; the export also carries Council rows), captured from
+    # manual_exports/VolunteerPositions_R9_SecChair_SSACs_SSRs.har. Feeds
+    # r9/generate_section_sheet.py.
+    "volunteer_positions_r9_section_officers": {
+        "workbook": "VolunteerPositionsHistory",
+        "view": "VolunteerPositions",
+        "landing_sheet": "Volunteer Positions",
+        "export_sheet": "Volunteer Positions",
+        "sheetdoc_id": "{FA0693F8-5689-4A7B-9DFD-189274863BF1}",
+        "parameters": [
+            {"parameterName": "[Parameters].[Region Parameter]", "idx": 9},  # R9
+        ],
+        "filters": [
+            # OU Type: adds Section and Council to the default selection
+            {"worksheet": "Volunteer List by OU",
+             "globalFieldName": "[federated.1mu7cjv1nedkgb1dz2df1055aoo0].[none:officer spo account type:nk]",
+             "op": "add", "indices": [9, 20]},
+            # Position: Chair, Student Activities, Student Representative (+ one SAC role)
+            {"worksheet": "Volunteer List by OU",
+             "globalFieldName": "[federated.1mu7cjv1nedkgb1dz2df1055aoo0].[none:position:nk]",
+             "op": "replace", "indices": [2, 21, 26, 27]},
+        ],
+    },
     "members_detail": {
         "workbook": "MembersandAffiliates",
         "view": "Dashboard",       # filters only exist on the Dashboard tab, not Detail directly

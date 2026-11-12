@@ -78,10 +78,17 @@ def dashboard_query(args: argparse.Namespace) -> dict[str, str]:
     return q
 
 
-def export(page, dashboard: Path, query: dict[str, str], group: str, nest: bool, out_dir: Path, paper: str) -> list[Path]:
+def export(page, dashboard: Path, query: dict[str, str], group: str, nest: bool, out_dir: Path, paper: str,
+           sort_members: bool = False) -> list[Path]:
     page.goto(dashboard.as_uri() + ("?" + urlencode(query) if query else ""))
     if not page.evaluate("() => !!window.__exportView"):
         sys.exit(f"{dashboard} has no 'Export current view': regenerate it with the current generator.")
+    if sort_members:  # the export reads rows in DOM order, so reorder them (stable: ties keep dashboard order)
+        page.evaluate("""() => document.querySelectorAll('#tab-overview tbody').forEach(tb => {
+            [...tb.querySelectorAll('.ou-row')]
+                .sort((a, b) => (+b.dataset.members || 0) - (+a.dataset.members || 0))
+                .forEach(r => tb.appendChild(r));
+        })""")
     page.evaluate("opts => window.__exportView.render(opts)", {"group": group, "nest": nest})
     style = page.eval_on_selector("#export-pages-css", "el => el.outerHTML")
     # [file name, folder, markup] per report page. A folder (e.g. the Section
@@ -126,6 +133,7 @@ def main() -> None:
     what.add_argument("--nest", action="store_true", help="list Chapters/AGs under their Student Branch (default: the dashboard's order)")
     for key in ("council", "section", "university", "society"):
         what.add_argument(f"--{key}", help=f"only this {key} (exact name; society = code like PE31)")
+    what.add_argument("--sort-members", action="store_true", help="order rows by members, most first (default: the dashboard's order)")
     what.add_argument("--q", help="search text")
     parser.add_argument("--paper", default="Letter", help="paper size passed to Chromium (Letter, A4, ...)")
     parser.add_argument("--out", type=Path, help="output folder (default: report_pdfs/<today>/)")
@@ -147,7 +155,7 @@ def main() -> None:
                 print(f"{scope_label}: no {dashboard.name}, skipped (run the generator first)")
                 continue
             out_dir = out_root / scope_label / label
-            pdfs = export(page, dashboard, query, args.group, args.nest, out_dir, args.paper)
+            pdfs = export(page, dashboard, query, args.group, args.nest, out_dir, args.paper, args.sort_members)
             if not pdfs:
                 print(f"{scope_label}: no OUs match these options")
                 continue

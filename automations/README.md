@@ -96,7 +96,8 @@ filtering — captured from a real session). If a preset ever starts coming
 back empty or with the wrong rows, the domain order may have shifted —
 re-capture a HAR of applying the filters manually and update the indices.
 `student_branch_summary_r9` and `volunteer_positions_r9` are the same exports
-for all of Region 9. HAR captures contain session cookies and the downloaded
+for all of Region 9; `volunteer_positions_r9_section_officers` exports the
+Section and Council Chair/SSAC/SSR. HAR captures contain session cookies and the downloaded
 personal data, so keep them out of the repo.
 
 ## Batch PDF export from the command line
@@ -124,9 +125,37 @@ automations/.venv/bin/python automations/export_report_pdfs.py --r9-only --scope
 Options: `--group none|branch|section|council|society`, `--types branch
 chapter ag`, `--status all|met|notmet|one|two`, `--council/--section/
 --university/--society/--q`, `--nest` (list Chapters/AGs under their
-branch instead of the dashboard's order), `--paper A4`, `--no-zip`. Output goes to
+branch instead of the dashboard's order), `--sort-members` (rows by
+members, most first, instead of the dashboard's order), `--paper A4`, `--no-zip`. Output goes to
 `report_pdfs/<date>/<scope>/<options>/` (git-ignored). `./run_all.sh
 --pdfs` runs the default after regenerating everything.
+
+## Upload reports to Google Drive
+
+`upload_reports.py` uploads the per-Section PDFs to a Drive folder and
+prints `Section<TAB>link` lines to paste into the sheet's "Report Link"
+column (the links are also saved to `report_pdfs/section_report_links.csv`,
+which `r9/generate_section_sheet.py` reads). One-time setup: in Google
+Cloud, enable the Drive API and create an OAuth client of type "Desktop
+app", then save its JSON as `automations/client_secret*.json`; install the
+requirements (`pip install -r requirements.txt`) and log in once.
+
+```sh
+automations/.venv/bin/python automations/upload_reports.py login
+automations/.venv/bin/python automations/export_report_pdfs.py --r9-only --scope region --group section --types branch --sort-members
+automations/.venv/bin/python automations/export_report_pdfs.py --r9-only --scope region --group council --types branch --sort-members
+automations/.venv/bin/python automations/upload_reports.py upload      # --dir, --folder, --anyone-with-link
+python3 r9/generate_section_sheet.py                                  # fills the Report Link column
+```
+
+Files land in `R9 Vitality Reports/<date>/<Section>.pdf`, or in
+`<your folder>/<date>/<Section>.pdf` with `--folder-url <Drive folder link>`
+(needs the full `drive` scope: re-run `login` after upgrading from an older
+token). One command for everything:
+`./run_all.sh --drive-folder <Drive folder link>`. Re-running updates the same
+files, so links stay stable. They are private to your account; pass
+`--anyone-with-link` if recipients without access need to open them.
+`client_secret*.json` and the saved `drive_token.json` are git-ignored.
 
 ## Credentials
 

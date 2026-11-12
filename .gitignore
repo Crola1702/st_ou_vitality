@@ -55,3 +55,10 @@ colombia_counselors_advisors.csv
 .codegraph/
 events_intelligence/
 manual_exports/
+
+# R9 SAC outreach sheet rows (Section officer emails, PII), made by r9/generate_section_sheet.py
+r9/section_sheet.csv
+
+# automations/upload_reports.py: Google OAuth client secret and the saved Drive token.
+automations/client_secret*.json
+automations/drive_token.json

@@ -8,6 +8,22 @@ version since this project doesn't cut releases.
 
 ### Added
 
+- `export_report_pdfs.py --sort-members` orders the rows of each exported PDF by
+  members, most first (default stays the dashboard's order). README gains a
+  quick guide to which export command to run.
+- R9 SAC outreach sheet automation. `r9/generate_section_sheet.py` writes
+  `r9/section_sheet.csv` (git-ignored, it holds emails): one row per Section
+  and Council, ordered by Student Branch members (most first), with the Chair/SSAC/SSR emails, Student Branches met and total,
+  % vitality and the report link, ready to import into the Google Sheet.
+  `automations/upload_reports.py` uploads the per-Section PDFs to a Google
+  Drive folder (OAuth, `drive` scope; also one PDF per Council, in `Sections/` and `Councils/`
+  subfolders, and a Council row's Report Link lists its own report plus its
+  Sections' reports; `--folder-url` targets an existing folder, and
+  `./run_all.sh --drive-folder <url>` does the whole flow) and prints/saves the links for the
+  "Report Link" column. New Tableau preset
+  `volunteer_positions_r9_section_officers` and a `./run_all.sh` step fetch
+  the Section officers; `./run_all.sh --pdfs` also exports the per-Section
+  PDFs.
 - Dashboard "By Group" tab: bar chart of the share of units at full vitality
   per Council, Section (R9 pages), Society, University or OU type, with a JPG
   download. It follows

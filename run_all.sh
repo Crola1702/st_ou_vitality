@@ -15,17 +15,24 @@
 # Region 9: it then fetches the region-wide Tableau exports and vTools events
 # (public feed, no login) into r9/R9 Data/ and rebuilds r9/dashboards/.
 #
-# Usage: ./run_all.sh [-h|--help] [--login] [--pdfs]
+# Usage: ./run_all.sh [-h|--help] [--login] [--pdfs] [--drive-folder <url>]
 set -euo pipefail
 cd "$(dirname "${BASH_SOURCE[0]}")"
 
 VENV_PY="automations/.venv/bin/python"
 
 EXPORT_PDFS=0
-if [ "${1:-}" = "--pdfs" ]; then
-  EXPORT_PDFS=1
-  shift
-fi
+DRIVE_FOLDER=""
+while [ "${1:-}" = "--pdfs" ] || [ "${1:-}" = "--drive-folder" ]; do
+  if [ "$1" = "--pdfs" ]; then
+    EXPORT_PDFS=1
+    shift
+  else
+    DRIVE_FOLDER="${2:?--drive-folder needs a Drive folder link or id}"
+    EXPORT_PDFS=1 # the upload needs the per-Section PDFs
+    shift 2
+  fi
+done
 
 case "${1:-}" in
   -h|--help)
@@ -34,6 +41,9 @@ case "${1:-}" in
     echo "  --pdfs     Also save one PDF per Student Branch (automations/export_report_pdfs.py,"
     echo "             into report_pdfs/<date>/, for Colombia and, when it ran, all of Region 9;"
     echo "             see its --help for other splits and filters)."
+    echo "  --drive-folder <url>  Implies --pdfs; also uploads the per-Section PDFs into that"
+    echo "             Drive folder (automations/upload_reports.py login first) and refills"
+    echo "             the Report Link column of r9/section_sheet.csv."
     exit 0
     ;;
   --login)
@@ -86,14 +96,28 @@ echo "== Region 9: Student Branch Summary (both crosstabs) =="
   --sheetdoc-id "{CED8B60A-2103-44CD-9018-C8E76B42E9BA}" --out "$R9_DATA/Student Branch Chapters and Affinity Group Member Count.csv"
 echo "== Region 9: Volunteer List by OU =="
 "$VENV_PY" automations/tableau_export.py export-preset volunteer_positions_r9 --out "$R9_DATA/Volunteer List by OU.csv" --headed
+echo "== Region 9: Section officers (Chair, SSAC, SSR) =="
+"$VENV_PY" automations/tableau_export.py export-preset volunteer_positions_r9_section_officers --out "$R9_DATA/Section Officers.csv" --headed
 echo "== Region 9: vTools Events (public feed, all of R9, ~4 min) =="
 python3 automations/vtools_feed_export.py --out "$R9_DATA/IEEE_vTools_Events_R9.csv"
 echo "== Region 9: dashboards =="
 python3 r9/generate_r9_vitality.py
+echo "== Region 9: SAC outreach sheet rows =="
+python3 r9/generate_section_sheet.py
 
 if [ "$EXPORT_PDFS" = 1 ]; then
   echo "== Extra: one PDF per Student Branch =="
   "$VENV_PY" automations/export_report_pdfs.py --r9 --scope region
+  # per-Section PDFs for the SAC sheet
+  "$VENV_PY" automations/export_report_pdfs.py --r9-only --scope region --group section --types branch --sort-members
+  # and one per Council (the sheet's Council rows link these plus their Sections' reports)
+  "$VENV_PY" automations/export_report_pdfs.py --r9-only --scope region --group council --types branch --sort-members
+fi
+
+if [ -n "$DRIVE_FOLDER" ]; then
+  echo "== Region 9: upload Section PDFs to Drive, then refill Report Link =="
+  "$VENV_PY" automations/upload_reports.py upload --folder-url "$DRIVE_FOLDER"
+  python3 r9/generate_section_sheet.py
 fi
 
 echo "== Done =="

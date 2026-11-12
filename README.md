@@ -234,9 +234,39 @@ memberships, membership grades) are not computed for R9.
 (saved login required) and the region's events from the public vTools feed
 (no login, about 4 minutes), then runs `r9/generate_r9_vitality.py`.
 
+#### R9 SAC outreach sheet
+
+One row per Section and Council for the R9 SAC spreadsheet (OU Name, Chair/
+SSAC/SSR emails, Student Branches met/total, % vitality, report link):
+
+```sh
+python3 r9/generate_section_sheet.py        # writes r9/section_sheet.csv (emails: git-ignored)
+```
+
+It needs `r9/R9 Data/Section Officers.csv` (fetched by `./run_all.sh`, preset
+`volunteer_positions_r9_section_officers`) and only lists OK-to-Contact
+volunteers. For the Report Link column, export and upload the per-Section
+PDFs (see `automations/README.md`, "Upload reports to Google Drive"), then
+re-run the command above and import `r9/section_sheet.csv` into a new tab.
+
 The Pages workflow publishes `r9/dashboards/` as-is under `/beta_r9/`
 (so `<pages-url>/beta_r9/` is the Section picker), on every push to
 `main` that touches that folder.
+
+### Quick guide: which export to run
+
+Run `python3 generate_vitality_report.py` and `python3 r9/generate_r9_vitality.py`
+first (or `./run_all.sh`), then pick one. PDF commands use
+`automations/.venv/bin/python` (one-time setup in `automations/README.md`).
+
+| I want | Command |
+|--------|---------|
+| One PDF per Student Branch, Colombia | `python automations/export_report_pdfs.py` |
+| One PDF per R9 Section, biggest branches first | `python automations/export_report_pdfs.py --r9-only --scope region --group section --types branch --sort-members` |
+| One PDF per R9 Council, biggest branches first | `python automations/export_report_pdfs.py --r9-only --scope region --group council --types branch --sort-members` |
+| Upload those PDFs to Drive (needs the Section and Council exports above) | `python automations/upload_reports.py upload` |
+| R9 SAC sheet CSV (emails, % vitality, report links) | `python3 r9/generate_section_sheet.py` (after the upload, to fill Report Link) |
+| Everything, fetched fresh | `./run_all.sh` (add `--pdfs` for the PDFs) |
 
 ## Chapter revitalization outreach
 
