@@ -8,10 +8,10 @@ Instituto Tecnologico Superior de Lerdo,STB60631,Student Branch,Instituto Tecnol
 Instituto Tecnologico de La Laguna,STB21581,Student Branch,Instituto Tecnologico de La Laguna,,29,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 Instituto Tecnologico de Nuevo Leon,STB66521,Student Branch,Instituto Tecnologico de Nuevo Leon,,6,12,No,0,,0,4,No,Yes,No,,No,No,Yes,No,Partial,0/3,Not Met
 Universidad Autonoma de Ciudad Juarez,STB65721,Student Branch,Universidad Autonoma de Ciudad Juarez,,8,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
-Universidad Autonoma de Nuevo Leon,STB59501,Student Branch,Universidad Autonoma de Nuevo Leon,,89,12,Yes,10,,6,4,Yes,Yes,Yes,,No,No,No,No,Met,3/3,Met
+Universidad Autonoma de Nuevo Leon,STB59501,Student Branch,Universidad Autonoma de Nuevo Leon,,90,12,Yes,10,,6,4,Yes,Yes,Yes,,No,No,No,No,Met,3/3,Met
 Universidad Regiomontana,STB16731,Student Branch,Universidad Regiomontana,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Universidad Tec Milenio Campus Las Torres,STB10021,Student Branch,Universidad Tec Milenio Campus Las Torres,,1,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
-Universidad de Monterrey,STB14941,Student Branch,Universidad de Monterrey,,58,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+Universidad de Monterrey,STB14941,Student Branch,Universidad de Monterrey,,60,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 "IInstituto Tec Estudios-Monterrey, PE31",SBC0517A,Student Branch Chapter,Instituto Tec Estudios-Monterrey,PE31,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Instituto Tec Estudios Monterrey, RA24",SBC0517C,Student Branch Chapter,Instituto Tec Estudios-Monterrey,RA24,0,6,No,3,2,0,2,Yes,Yes,,Yes,Yes,No,Yes,No,Met,2/3,Not Met
 "Instituto Tec Estudios-Monterrey, C16",SBC05171,Student Branch Chapter,Instituto Tec Estudios-Monterrey,C16,1,6,No,0,0,0,2,No,Yes,,No,No,No,No,No,Partial,0/3,Not Met
@@ -23,7 +23,7 @@ Universidad de Monterrey,STB14941,Student Branch,Universidad de Monterrey,,58,12
 "Instituto Tecnologico de La Laguna,PE31",SBC21581,Student Branch Chapter,Instituto Tecnologico de La Laguna,PE31,10,6,Yes,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
 "Instituto Tecnologico de Nuevo Leon,EMB18",SBC66521A,Student Branch Chapter,Instituto Tecnologico de Nuevo Leon,EMB18,1,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad Autonoma de Nuevo Leon,C16",SBC59501A,Student Branch Chapter,Universidad Autonoma de Nuevo Leon,C16,9,6,Yes,13,8,5,2,Yes,Yes,,No,Yes,Yes,Yes,Yes,Partial,2/3,Not Met
-"Universidad Autonoma de Nuevo Leon,COM19",SBC59501F,Student Branch Chapter,Universidad Autonoma de Nuevo Leon,COM19,15,6,Yes,3,1,6,2,No,Yes,,Yes,Yes,Yes,No,No,Met,2/3,Not Met
+"Universidad Autonoma de Nuevo Leon,COM19",SBC59501F,Student Branch Chapter,Universidad Autonoma de Nuevo Leon,COM19,15,6,Yes,3,1,6,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 "Universidad Autonoma de Nuevo Leon,CS23",SBC59501D,Student Branch Chapter,Universidad Autonoma de Nuevo Leon,CS23,8,6,Yes,1,0,1,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
 "Universidad Autonoma de Nuevo Leon,EMB18",SBC59501C,Student Branch Chapter,Universidad Autonoma de Nuevo Leon,EMB18,5,6,No,2,0,1,2,No,Yes,,No,Yes,No,No,No,Partial,0/3,Not Met
 "Universidad Autonoma de Nuevo Leon,PHO36",SBC59501,Student Branch Chapter,Universidad Autonoma de Nuevo Leon,PHO36,2,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met

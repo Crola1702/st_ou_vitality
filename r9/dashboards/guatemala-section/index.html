@@ -154,6 +154,13 @@
   }
   .tab-panel[hidden] { display: none; }
 
+  .group-by { display: inline-block; margin: 8px 0 12px; font-size: 0.85rem; }
+  .group-bar-row { display: grid; grid-template-columns: minmax(90px, 220px) 1fr minmax(110px, auto); gap: 10px; align-items: center; padding: 3px 0; font-size: 0.85rem; }
+  .group-bar-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .group-bar-track { background: var(--surface-1); border: 1px solid var(--border); border-radius: 4px; height: 16px; overflow: hidden; }
+  .group-bar-fill { display: block; height: 100%; background: var(--series-1); }
+  .group-bar-value { font-variant-numeric: tabular-nums; text-align: right; }
+
   .trend-heading { font-size: 1rem; margin: 20px 0 4px; }
   .trend-heading:first-of-type { margin-top: 0; }
   .trend-card { background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px; padding: 16px; }
@@ -428,7 +435,7 @@
     <div class="member-summary">
       <div class="tile" id="members-stb">
           <div class="tile-label">Student Branch Members</div>
-          <div class="tile-value" data-sum="127">127</div>
+          <div class="tile-value" data-sum="128">128</div>
         </div>
 <div class="tile" id="members-sbc">
           <div class="tile-label">Student Branch Chapter Members</div>
@@ -443,6 +450,7 @@
     <div class="tabs">
       <button class="tab-btn active" data-tab="overview" onclick="showTab('overview')">Overview</button>
       <button class="tab-btn" data-tab="quick-wins" onclick="showTab('quick-wins')">Quick Wins <span class="tab-badge">5</span></button>
+      <button class="tab-btn" data-tab="by-group" onclick="showTab('by-group')">By Group</button>
       <button class="tab-btn" data-tab="trends" onclick="showTab('trends')">Trends</button>
     </div>
 
@@ -481,10 +489,10 @@
                   <td><span class="stat" style="color:#d03b3b"><span class="dot" style="background:#d03b3b"></span>0/3 · None</span></td>
                 </tr>
                 <tr class="detail-row" id="ev-3" style="display:none"><td colspan="6"><div class="detail-panel">Reported general events: <strong>0</strong> &nbsp;&middot;&nbsp; Reported technical events (informational): <strong>0</strong> &nbsp;&middot;&nbsp; Required: &ge; 4 reported events, any category</div></td></tr>
-                <tr class="detail-row" id="of-3" style="display:none"><td colspan="6"><div class="detail-panel"><div class="chip-row"><span class="chip"><span class="stat" style="color:#d03b3b"><span class="dot" style="background:#d03b3b"></span>Chair</span><span class="chip-tag">required</span></span><span class="chip"><span class="stat" style="color:#d03b3b"><span class="dot" style="background:#d03b3b"></span>Counselor</span><span class="chip-tag">required</span></span><span class="chip"><span class="stat" style="color:#fab219"><span class="dot" style="background:#fab219"></span>Vice Chair</span><span class="chip-tag">optional</span></span><span class="chip"><span class="stat" style="color:#fab219"><span class="dot" style="background:#fab219"></span>Secretary</span><span class="chip-tag">optional</span></span><span class="chip"><span class="stat" style="color:#fab219"><span class="dot" style="background:#fab219"></span>Treasurer</span><span class="chip-tag">optional</span></span><span class="chip"><span class="stat" style="color:#fab219"><span class="dot" style="background:#fab219"></span>Webmaster</span><span class="chip-tag">optional</span></span></div></div></td></tr><tr class="ou-row" data-name="universidad de san carlos de guatemala" data-spoid="stb17091" data-university="universidad de san carlos de guatemala" data-society="" data-members="61" data-type="branch" data-req="3" data-section="Guatemala Section" data-council="Central Amer.&amp; Panama Council">
+                <tr class="detail-row" id="of-3" style="display:none"><td colspan="6"><div class="detail-panel"><div class="chip-row"><span class="chip"><span class="stat" style="color:#d03b3b"><span class="dot" style="background:#d03b3b"></span>Chair</span><span class="chip-tag">required</span></span><span class="chip"><span class="stat" style="color:#d03b3b"><span class="dot" style="background:#d03b3b"></span>Counselor</span><span class="chip-tag">required</span></span><span class="chip"><span class="stat" style="color:#fab219"><span class="dot" style="background:#fab219"></span>Vice Chair</span><span class="chip-tag">optional</span></span><span class="chip"><span class="stat" style="color:#fab219"><span class="dot" style="background:#fab219"></span>Secretary</span><span class="chip-tag">optional</span></span><span class="chip"><span class="stat" style="color:#fab219"><span class="dot" style="background:#fab219"></span>Treasurer</span><span class="chip-tag">optional</span></span><span class="chip"><span class="stat" style="color:#fab219"><span class="dot" style="background:#fab219"></span>Webmaster</span><span class="chip-tag">optional</span></span></div></div></td></tr><tr class="ou-row" data-name="universidad de san carlos de guatemala" data-spoid="stb17091" data-university="universidad de san carlos de guatemala" data-society="" data-members="62" data-type="branch" data-req="3" data-section="Guatemala Section" data-council="Central Amer.&amp; Panama Council">
                   <td class="name-cell">Universidad de San Carlos de Guatemala</td>
                   <td class="mono">STB17091</td>
-                  <td><span class="stat" style="color:#0ca30c"><span class="dot" style="background:#0ca30c"></span>61</span></td>
+                  <td><span class="stat" style="color:#0ca30c"><span class="dot" style="background:#0ca30c"></span>62</span></td>
                   <td class="clickable" onclick="toggleRow('ev-4')"><span class="stat" style="color:#0ca30c"><span class="dot" style="background:#0ca30c"></span>5 ▸</span><span class="sub-note">+1 unreported</span></td>
                   <td class="clickable" onclick="toggleRow('of-4')"><span class="stat" style="color:#0ca30c"><span class="dot" style="background:#0ca30c"></span>Met ▸</span></td>
                   <td><span class="stat" style="color:#0ca30c"><span class="dot" style="background:#0ca30c"></span>3/3 · Full</span></td>
@@ -675,13 +683,20 @@
         
     </div>
 
+    <div id="tab-by-group" class="tab-panel" hidden>
+      <p class="req-note">Share of units at full vitality (all 3 requirements), grouped by the chosen filter. Follows the filters above.</p>
+      <label class="group-by">Group by <select id="group-by-select"></select></label>
+      <button type="button" id="group-bars-jpg">Download JPG</button>
+      <div id="group-bars" class="group-bars"></div>
+    </div>
+
     <div id="tab-trends" class="tab-panel" hidden>
       <h3 class="trend-heading">Membership Grades (Student → Professional)</h3>
       <p class="req-note">Member count over time for Student Member, Graduate Student Member, and Member, from Member Detail View.csv. Builds up as you re-run the script — currently 0 dates recorded. Click a bar group to see how many were promoted to a higher grade since the previous snapshot. A dashed, lighter bar (≈) is a back-estimated value for a grade a snapshot didn't capture — the next dated value minus promotions recorded flowing into it since, not a real recorded count.</p>
       <p class="empty">No history yet — place Member Detail View.csv in the project directory and re-run the script on a later date to start building this trend.</p>
 
       <h3 class="trend-heading">OU Vitality</h3>
-      <p class="req-note">% of OUs meeting full vitality (3/3) over time, by type. Builds up as you re-run the script — currently 6 dates recorded.</p>
+      <p class="req-note">% of OUs meeting full vitality (3/3) over time, by type. Builds up as you re-run the script — currently 7 dates recorded.</p>
       
         <div class="trend-card">
           <div class="trend-legend"><span class="legend-item"><span class="legend-swatch" style="background:var(--series-1)"></span>Student Branch</span><span class="legend-item"><span class="legend-swatch" style="background:var(--series-2)"></span>Chapter</span><span class="legend-item"><span class="legend-swatch" style="background:var(--series-3)"></span>Affinity Group</span></div>
@@ -832,6 +847,9 @@
     setTile('met', `${met} (${pct(met, total)}%)`);
     Object.keys(counts).forEach(t => setTile(t, `${counts[t][0]}/${counts[t][1]} (${pct(counts[t][0], counts[t][1])}%)`));
 
+    const groupTab = document.getElementById('tab-by-group');
+    if (groupTab && !groupTab.hidden) renderGroupBars();
+
     updateURLParams();
   }
 
@@ -881,13 +899,90 @@
     row.style.display = row.style.display === 'none' ? 'table-row' : 'none';
   }
 
+  // "By Group" tab: % of OUs at full vitality per value of one filter dimension.
+  const optionLabels = sel => Object.fromEntries(Array.from(sel.options).map(o => [o.value, o.textContent]));
+  const groupDims = [
+    ...(councilSelect ? [{ id: 'council', label: 'Council', attr: 'council' }] : []),
+    ...(sectionSelect ? [{ id: 'section', label: 'Section', attr: 'section' }] : []),
+    { id: 'society', label: 'Society', attr: 'society', labels: optionLabels(societySelect) },
+    { id: 'university', label: 'University', attr: 'university', labels: optionLabels(universitySelect) },
+    { id: 'type', label: 'OU type', attr: 'type', labels: { branch: 'Student Branch', chapter: 'Chapter', ag: 'Affinity Group' } },
+  ];
+  const groupSelect = document.getElementById('group-by-select');
+  groupSelect.innerHTML = groupDims.map(d => `<option value="${d.id}">${d.label}</option>`).join('');
+  groupSelect.addEventListener('change', renderGroupBars);
+
+  function renderGroupBars() {
+    const dim = groupDims.find(d => d.id === groupSelect.value);
+    const groups = {};
+    document.querySelectorAll('#tab-overview .ou-row').forEach(row => {
+      if (!rowMatches(row)) return;
+      const key = row.dataset[dim.attr];
+      if (!key) return;  // OUs without this attribute (e.g. no society) are left out
+      const g = groups[key] || (groups[key] = [0, 0]);
+      g[1]++;
+      if (row.dataset.req === '3') g[0]++;
+    });
+    const esc = s => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+    const rows = Object.entries(groups)
+      .map(([key, [met, total]]) => ({ name: (dim.labels && dim.labels[key]) || key, met, total, pct: Math.round((met / total) * 100) }))
+      .sort((a, b) => b.pct - a.pct || b.total - a.total);
+    groupBarsView = { title: `Units at full vitality by ${dim.label}`, rows };
+    document.getElementById('group-bars').innerHTML = rows.length
+      ? rows.map(r => `<div class="group-bar-row"><span class="group-bar-name" title="${esc(r.name)}">${esc(r.name)}</span>`
+          + `<span class="group-bar-track"><span class="group-bar-fill" style="width:${r.pct}%"></span></span>`
+          + `<span class="group-bar-value">${r.pct}% (${r.met}/${r.total})</span></div>`).join('')
+      : '<p class="req-note">No units match the current filters.</p>';
+  }
+
+  let groupBarsView = { title: '', rows: [] };
+
+  // Always light-themed, like the other exports, whatever the dashboard theme.
+  document.getElementById('group-bars-jpg').addEventListener('click', () => {
+    const { title, rows } = groupBarsView;
+    if (!rows.length) return;
+    const W = 1000, rowH = 28, top = 56, nameW = 260, valueW = 130, pad = 20;
+    const barX = pad + nameW, barW = W - barX - valueW - pad;
+    const canvas = document.createElement('canvas');
+    canvas.width = W;
+    canvas.height = top + rows.length * rowH + pad;
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.textBaseline = 'middle';
+    ctx.fillStyle = '#1a1a1a';
+    ctx.font = 'bold 18px sans-serif';
+    ctx.fillText(title, pad, 26);
+    ctx.font = '13px sans-serif';
+    rows.forEach((r, i) => {
+      const y = top + i * rowH;
+      let name = r.name;
+      while (name.length > 1 && ctx.measureText(name).width > nameW - 10) name = name.slice(0, -1);
+      ctx.fillStyle = '#1a1a1a';
+      ctx.textAlign = 'left';
+      ctx.fillText(name === r.name ? name : name + '…', pad, y + rowH / 2);
+      ctx.fillStyle = '#e8e8e8';
+      ctx.fillRect(barX, y + 5, barW, rowH - 10);
+      ctx.fillStyle = '#2a78d6';
+      ctx.fillRect(barX, y + 5, barW * r.pct / 100, rowH - 10);
+      ctx.fillStyle = '#1a1a1a';
+      ctx.textAlign = 'right';
+      ctx.fillText(`${r.pct}% (${r.met}/${r.total})`, W - pad, y + rowH / 2);
+    });
+    const a = document.createElement('a');
+    a.href = canvas.toDataURL('image/jpeg', 0.92);
+    a.download = `vitality_${title.replace(/\W+/g, '_').toLowerCase()}.jpg`;
+    a.click();
+  });
+
   function showTab(name) {
     document.querySelectorAll('.tab-panel').forEach(p => { p.hidden = p.id !== `tab-${name}`; });
     document.querySelectorAll('.tab-btn').forEach(b => { b.classList.toggle('active', b.dataset.tab === name); });
+    if (name === 'by-group') renderGroupBars();
     if (name === 'trends') { renderTrendChart(); renderSocietyTrendChart(); renderGradeBarChart(); }
   }
 
-  const trendData = {"dates": ["2026-09-21", "2026-10-30", "2026-11-04", "2026-11-05", "2026-11-06", "2026-11-08"], "series": {"Student Branch": [0.0, 16.7, 16.7, 16.7, 16.7, 16.7], "Student Branch Chapter": [0.0, 28.6, 28.6, 28.6, 28.6, 28.6], "Affinity Group": [33.3, null, null, 33.3, 33.3, 33.3]}};
+  const trendData = {"dates": ["2026-09-21", "2026-10-30", "2026-11-04", "2026-11-05", "2026-11-06", "2026-11-08", "2026-11-11"], "series": {"Student Branch": [0.0, 16.7, 16.7, 16.7, 16.7, 16.7, 16.7], "Student Branch Chapter": [0.0, 28.6, 28.6, 28.6, 28.6, 28.6, 28.6], "Affinity Group": [33.3, null, null, 33.3, 33.3, 33.3, 33.3]}};
   const trendSeriesDefs = [["Student Branch", "var(--series-1)", "Student Branch"], ["Student Branch Chapter", "var(--series-2)", "Chapter"], ["Affinity Group", "var(--series-3)", "Affinity Group"]];
   const societyTrendData = {"dates": [], "series": {}, "labels": {}, "default_codes": []};
   const societyAllDefs = [];
@@ -1314,7 +1409,7 @@
   }
 </script>
 <!-- "Export current view": the visible rows, in their on-screen order, as PDFs / CSV / print. -->
-<script id="export-data" type="application/json">{"scope":"Guatemala Section","generated":"2026-11-08","colors":{"3":"#0ca30c","2":"#fab219","1":"#ec835a","0":"#d03b3b"},"ous":[{"n":"Rafael Landivar University","id":"STB97041","t":"branch","u":"Rafael Landivar University","s":"","sd":"","se":"Guatemala Section","co":"Central Amer.& Panama Council","m":17,"mm":12,"mo":true,"e":0,"em":4,"eo":false,"tech":false,"ch":true,"r2":"Counselor","cn":true,"rq":2,"ok":false,"miss":["Reported events 0/4"]},{"n":"Universidad Galileo,WIE","id":"SBA39511","t":"ag","u":"Universidad Galileo","s":"WIE","sd":"WIE","se":"Guatemala Section","co":"Central Amer.& Panama Council","m":1,"mm":6,"mo":false,"e":0,"em":2,"eo":false,"tech":false,"ch":true,"r2":"Advisor","cn":false,"rq":0,"ok":false,"miss":["Members 1/6","Reported events 0/2","Advisor"]},{"n":"Universidad Galileo","id":"STB39511","t":"branch","u":"Universidad Galileo","s":"","sd":"","se":"Guatemala Section","co":"Central Amer.& Panama Council","m":18,"mm":12,"mo":true,"e":1,"em":4,"eo":false,"tech":false,"ch":true,"r2":"Counselor","cn":true,"rq":2,"ok":false,"miss":["Reported events 1/4"]},{"n":"Universidad Mesoamericana","id":"STB20235","t":"branch","u":"Universidad Mesoamericana","s":"","sd":"","se":"Guatemala Section","co":"Central Amer.& Panama Council","m":0,"mm":12,"mo":false,"e":0,"em":4,"eo":false,"tech":false,"ch":false,"r2":"Counselor","cn":false,"rq":0,"ok":false,"miss":["Members 0/12","Reported events 0/4","Chair","Counselor"]},{"n":"Universidad de San Carlos de Guatemala,SIGHT","id":"SBA17091S","t":"ag","u":"Universidad de San Carlos de Guatemala","s":"SIGHT","sd":"SIGHT","se":"Guatemala Section","co":"Central Amer.& Panama Council","m":22,"mm":6,"mo":true,"e":0,"em":2,"eo":false,"tech":false,"ch":true,"r2":"Advisor","cn":false,"rq":1,"ok":false,"miss":["Reported events 0/2","Advisor"]},{"n":"Universidad de San Carlos de Guatemala,WIE","id":"SBA17091","t":"ag","u":"Universidad de San Carlos de Guatemala","s":"WIE","sd":"WIE","se":"Guatemala Section","co":"Central Amer.& Panama Council","m":17,"mm":6,"mo":true,"e":3,"em":2,"eo":true,"tech":false,"ch":true,"r2":"Advisor","cn":true,"rq":3,"ok":true,"miss":[]},{"n":"Universidad de San Carlos de Guatemala","id":"STB17091","t":"branch","u":"Universidad de San Carlos de Guatemala","s":"","sd":"","se":"Guatemala Section","co":"Central Amer.& Panama Council","m":61,"mm":12,"mo":true,"e":5,"em":4,"eo":true,"tech":false,"ch":true,"r2":"Counselor","cn":true,"rq":3,"ok":true,"miss":[]},{"n":"Universidad de San Carlos de Guatemala,AES10","id":"SBC17091G","t":"chapter","u":"Universidad de San Carlos de Guatemala","s":"AES10","sd":"IEEE Aerospace and Electronic Systems Society","se":"Guatemala Section","co":"Central Amer.& Panama Council","m":8,"mm":6,"mo":true,"e":2,"em":2,"eo":true,"tech":true,"ch":true,"r2":"Advisor","cn":true,"rq":3,"ok":true,"miss":[]},{"n":"Universidad de San Carlos de Guatemala,C16","id":"SBC17091","t":"chapter","u":"Universidad de San Carlos de Guatemala","s":"C16","sd":"IEEE Computer Society","se":"Guatemala Section","co":"Central Amer.& Panama Council","m":20,"mm":6,"mo":true,"e":0,"em":2,"eo":false,"tech":true,"ch":true,"r2":"Advisor","cn":true,"rq":2,"ok":false,"miss":["Reported technical events 0/2"]},{"n":"Universidad de San Carlos de Guatemala,COM19","id":"SBC17091D","t":"chapter","u":"Universidad de San Carlos de Guatemala","s":"COM19","sd":"IEEE Communications Society","se":"Guatemala Section","co":"Central Amer.& Panama Council","m":8,"mm":6,"mo":true,"e":0,"em":2,"eo":false,"tech":true,"ch":false,"r2":"Advisor","cn":false,"rq":1,"ok":false,"miss":["Reported technical events 0/2","Chair","Advisor"]},{"n":"Universidad de San Carlos de Guatemala,ED15","id":"SBC17091F","t":"chapter","u":"Universidad de San Carlos de Guatemala","s":"ED15","sd":"IEEE Electron Devices Society","se":"Guatemala Section","co":"Central Amer.& Panama Council","m":14,"mm":6,"mo":true,"e":0,"em":2,"eo":false,"tech":true,"ch":false,"r2":"Advisor","cn":true,"rq":1,"ok":false,"miss":["Reported technical events 0/2","Chair"]},{"n":"Universidad de San Carlos de Guatemala,IA34","id":"SBC17091E","t":"chapter","u":"Universidad de San Carlos de Guatemala","s":"IA34","sd":"IEEE Industry Applications Society","se":"Guatemala Section","co":"Central Amer.& Panama Council","m":9,"mm":6,"mo":true,"e":4,"em":2,"eo":true,"tech":true,"ch":true,"r2":"Advisor","cn":true,"rq":3,"ok":true,"miss":[]},{"n":"Universidad de San Carlos de Guatemala,PE31","id":"SBC17091C","t":"chapter","u":"Universidad de San Carlos de Guatemala","s":"PE31","sd":"IEEE Power & Energy Society","se":"Guatemala Section","co":"Central Amer.& Panama Council","m":13,"mm":6,"mo":true,"e":0,"em":2,"eo":false,"tech":true,"ch":true,"r2":"Advisor","cn":true,"rq":2,"ok":false,"miss":["Reported technical events 0/2"]},{"n":"Universidad de San Carlos de Guatemala,RA24","id":"SBC17091B","t":"chapter","u":"Universidad de San Carlos de Guatemala","s":"RA24","sd":"IEEE Robotics and Automation Society","se":"Guatemala Section","co":"Central Amer.& Panama Council","m":6,"mm":6,"mo":true,"e":0,"em":2,"eo":false,"tech":true,"ch":false,"r2":"Advisor","cn":false,"rq":1,"ok":false,"miss":["Reported technical events 0/2","Chair","Advisor"]},{"n":"Universidad del Istmo","id":"STB60226380","t":"branch","u":"Universidad del Istmo","s":"","sd":"","se":"Guatemala Section","co":"Central Amer.& Panama Council","m":12,"mm":12,"mo":true,"e":0,"em":4,"eo":false,"tech":false,"ch":true,"r2":"Counselor","cn":true,"rq":2,"ok":false,"miss":["Reported events 0/4"]},{"n":"Universidad del Valle de Guatemala","id":"STB28211","t":"branch","u":"Universidad del Valle de Guatemala","s":"","sd":"","se":"Guatemala Section","co":"Central Amer.& Panama Council","m":19,"mm":12,"mo":true,"e":1,"em":4,"eo":false,"tech":false,"ch":false,"r2":"Counselor","cn":true,"rq":1,"ok":false,"miss":["Reported events 1/4","Chair"]}]}</script>
+<script id="export-data" type="application/json">{"scope":"Guatemala Section","generated":"2026-11-11","colors":{"3":"#0ca30c","2":"#fab219","1":"#ec835a","0":"#d03b3b"},"ous":[{"n":"Rafael Landivar University","id":"STB97041","t":"branch","u":"Rafael Landivar University","s":"","sd":"","se":"Guatemala Section","co":"Central Amer.& Panama Council","m":17,"mm":12,"mo":true,"e":0,"em":4,"eo":false,"tech":false,"ch":true,"r2":"Counselor","cn":true,"rq":2,"ok":false,"miss":["Reported events 0/4"]},{"n":"Universidad Galileo,WIE","id":"SBA39511","t":"ag","u":"Universidad Galileo","s":"WIE","sd":"WIE","se":"Guatemala Section","co":"Central Amer.& Panama Council","m":1,"mm":6,"mo":false,"e":0,"em":2,"eo":false,"tech":false,"ch":true,"r2":"Advisor","cn":false,"rq":0,"ok":false,"miss":["Members 1/6","Reported events 0/2","Advisor"]},{"n":"Universidad Galileo","id":"STB39511","t":"branch","u":"Universidad Galileo","s":"","sd":"","se":"Guatemala Section","co":"Central Amer.& Panama Council","m":18,"mm":12,"mo":true,"e":1,"em":4,"eo":false,"tech":false,"ch":true,"r2":"Counselor","cn":true,"rq":2,"ok":false,"miss":["Reported events 1/4"]},{"n":"Universidad Mesoamericana","id":"STB20235","t":"branch","u":"Universidad Mesoamericana","s":"","sd":"","se":"Guatemala Section","co":"Central Amer.& Panama Council","m":0,"mm":12,"mo":false,"e":0,"em":4,"eo":false,"tech":false,"ch":false,"r2":"Counselor","cn":false,"rq":0,"ok":false,"miss":["Members 0/12","Reported events 0/4","Chair","Counselor"]},{"n":"Universidad de San Carlos de Guatemala,SIGHT","id":"SBA17091S","t":"ag","u":"Universidad de San Carlos de Guatemala","s":"SIGHT","sd":"SIGHT","se":"Guatemala Section","co":"Central Amer.& Panama Council","m":22,"mm":6,"mo":true,"e":0,"em":2,"eo":false,"tech":false,"ch":true,"r2":"Advisor","cn":false,"rq":1,"ok":false,"miss":["Reported events 0/2","Advisor"]},{"n":"Universidad de San Carlos de Guatemala,WIE","id":"SBA17091","t":"ag","u":"Universidad de San Carlos de Guatemala","s":"WIE","sd":"WIE","se":"Guatemala Section","co":"Central Amer.& Panama Council","m":17,"mm":6,"mo":true,"e":3,"em":2,"eo":true,"tech":false,"ch":true,"r2":"Advisor","cn":true,"rq":3,"ok":true,"miss":[]},{"n":"Universidad de San Carlos de Guatemala","id":"STB17091","t":"branch","u":"Universidad de San Carlos de Guatemala","s":"","sd":"","se":"Guatemala Section","co":"Central Amer.& Panama Council","m":62,"mm":12,"mo":true,"e":5,"em":4,"eo":true,"tech":false,"ch":true,"r2":"Counselor","cn":true,"rq":3,"ok":true,"miss":[]},{"n":"Universidad de San Carlos de Guatemala,AES10","id":"SBC17091G","t":"chapter","u":"Universidad de San Carlos de Guatemala","s":"AES10","sd":"IEEE Aerospace and Electronic Systems Society","se":"Guatemala Section","co":"Central Amer.& Panama Council","m":8,"mm":6,"mo":true,"e":2,"em":2,"eo":true,"tech":true,"ch":true,"r2":"Advisor","cn":true,"rq":3,"ok":true,"miss":[]},{"n":"Universidad de San Carlos de Guatemala,C16","id":"SBC17091","t":"chapter","u":"Universidad de San Carlos de Guatemala","s":"C16","sd":"IEEE Computer Society","se":"Guatemala Section","co":"Central Amer.& Panama Council","m":20,"mm":6,"mo":true,"e":0,"em":2,"eo":false,"tech":true,"ch":true,"r2":"Advisor","cn":true,"rq":2,"ok":false,"miss":["Reported technical events 0/2"]},{"n":"Universidad de San Carlos de Guatemala,COM19","id":"SBC17091D","t":"chapter","u":"Universidad de San Carlos de Guatemala","s":"COM19","sd":"IEEE Communications Society","se":"Guatemala Section","co":"Central Amer.& Panama Council","m":8,"mm":6,"mo":true,"e":0,"em":2,"eo":false,"tech":true,"ch":false,"r2":"Advisor","cn":false,"rq":1,"ok":false,"miss":["Reported technical events 0/2","Chair","Advisor"]},{"n":"Universidad de San Carlos de Guatemala,ED15","id":"SBC17091F","t":"chapter","u":"Universidad de San Carlos de Guatemala","s":"ED15","sd":"IEEE Electron Devices Society","se":"Guatemala Section","co":"Central Amer.& Panama Council","m":14,"mm":6,"mo":true,"e":0,"em":2,"eo":false,"tech":true,"ch":false,"r2":"Advisor","cn":true,"rq":1,"ok":false,"miss":["Reported technical events 0/2","Chair"]},{"n":"Universidad de San Carlos de Guatemala,IA34","id":"SBC17091E","t":"chapter","u":"Universidad de San Carlos de Guatemala","s":"IA34","sd":"IEEE Industry Applications Society","se":"Guatemala Section","co":"Central Amer.& Panama Council","m":9,"mm":6,"mo":true,"e":4,"em":2,"eo":true,"tech":true,"ch":true,"r2":"Advisor","cn":true,"rq":3,"ok":true,"miss":[]},{"n":"Universidad de San Carlos de Guatemala,PE31","id":"SBC17091C","t":"chapter","u":"Universidad de San Carlos de Guatemala","s":"PE31","sd":"IEEE Power & Energy Society","se":"Guatemala Section","co":"Central Amer.& Panama Council","m":13,"mm":6,"mo":true,"e":0,"em":2,"eo":false,"tech":true,"ch":true,"r2":"Advisor","cn":true,"rq":2,"ok":false,"miss":["Reported technical events 0/2"]},{"n":"Universidad de San Carlos de Guatemala,RA24","id":"SBC17091B","t":"chapter","u":"Universidad de San Carlos de Guatemala","s":"RA24","sd":"IEEE Robotics and Automation Society","se":"Guatemala Section","co":"Central Amer.& Panama Council","m":6,"mm":6,"mo":true,"e":0,"em":2,"eo":false,"tech":true,"ch":false,"r2":"Advisor","cn":false,"rq":1,"ok":false,"miss":["Reported technical events 0/2","Chair","Advisor"]},{"n":"Universidad del Istmo","id":"STB60226380","t":"branch","u":"Universidad del Istmo","s":"","sd":"","se":"Guatemala Section","co":"Central Amer.& Panama Council","m":12,"mm":12,"mo":true,"e":0,"em":4,"eo":false,"tech":false,"ch":true,"r2":"Counselor","cn":true,"rq":2,"ok":false,"miss":["Reported events 0/4"]},{"n":"Universidad del Valle de Guatemala","id":"STB28211","t":"branch","u":"Universidad del Valle de Guatemala","s":"","sd":"","se":"Guatemala Section","co":"Central Amer.& Panama Council","m":19,"mm":12,"mo":true,"e":1,"em":4,"eo":false,"tech":false,"ch":false,"r2":"Counselor","cn":true,"rq":1,"ok":false,"miss":["Reported events 1/4","Chair"]}]}</script>
 <div id="export-pages" class="export-pages" aria-hidden="true"></div>
 <script>
 // Batch PDF export for the dashboard's "Export current view". Inlined by

@@ -3,7 +3,7 @@ Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Memb
 "Universidad Tecnologica de Panama, WIE",SBA91021,Affinity Group,Universidad Tecnologica de Panama,WIE,28,6,Yes,7,,12,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Universidad Tecnologica de Panama,SIGHT",SBA91021S,Affinity Group,Universidad Tecnologica de Panama,SIGHT,32,6,Yes,8,,0,2,Yes,Yes,,No,Yes,Yes,No,No,Partial,2/3,Not Met
 "Universidad de Panama,WIE",SBA60171,Affinity Group,Universidad de Panama,WIE,24,6,Yes,5,,0,2,Yes,Yes,,Yes,No,Yes,Yes,No,Met,3/3,Met
-Interamerican University of Panama,STB41234873,Student Branch,Interamerican University of Panama,,15,12,Yes,1,,0,4,No,Yes,Yes,,Yes,Yes,Yes,No,Met,2/3,Not Met
+Interamerican University of Panama,STB41234873,Student Branch,Interamerican University of Panama,,15,12,Yes,2,,0,4,No,Yes,Yes,,Yes,Yes,Yes,No,Met,2/3,Not Met
 Santa Maria La Antigua Univ,STB11661,Student Branch,Santa Maria La Antigua Univ,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Universidad Especializada de las Americas (UDELAS),STB60205673,Student Branch,Universidad Especializada de las Americas (UDELAS),,38,12,Yes,1,,0,4,No,Yes,Yes,,No,Yes,No,Yes,Met,2/3,Not Met
 Universidad Latina de Panama,STB64631,Student Branch,Universidad Latina de Panama,,65,12,Yes,10,,4,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
@@ -16,7 +16,7 @@ Universidad de Panama,STB60171,Student Branch,Universidad de Panama,,38,12,Yes,6
 "Universidad Latina de Panama,RA24",SBC646311A,Student Branch Chapter,Universidad Latina de Panama,RA24,24,6,Yes,9,7,4,2,Yes,Yes,,No,Yes,Yes,Yes,Yes,Partial,2/3,Not Met
 "Universidad Tecnologica de Panama,CAS04",SBC91021H,Student Branch Chapter,Universidad Tecnologica de Panama,CAS04,21,6,Yes,4,1,3,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 "Universidad Tecnologica de Panama,CIS11",SBC91021E,Student Branch Chapter,Universidad Tecnologica de Panama,CIS11,9,6,Yes,2,0,0,2,No,Yes,,Yes,No,No,Yes,No,Met,2/3,Not Met
-"Universidad Tecnologica de Panama,COM19",SBC91021A,Student Branch Chapter,Universidad Tecnologica de Panama,COM19,37,6,Yes,16,4,2,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Universidad Tecnologica de Panama,COM19",SBC91021A,Student Branch Chapter,Universidad Tecnologica de Panama,COM19,37,6,Yes,21,9,2,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Universidad Tecnologica de Panama,EMB18",SBC91021G,Student Branch Chapter,Universidad Tecnologica de Panama,EMB18,10,6,Yes,2,0,1,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
 "Universidad Tecnologica de Panama,IA34",SBC91021B,Student Branch Chapter,Universidad Tecnologica de Panama,IA34,38,6,Yes,6,2,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Universidad Tecnologica de Panama,PE31",SBC91021,Student Branch Chapter,Universidad Tecnologica de Panama,PE31,60,6,Yes,2,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
