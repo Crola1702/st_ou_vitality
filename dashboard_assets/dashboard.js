@@ -133,6 +133,18 @@
     if (selectedTypes().length !== typeBoxes.length) params.set('types', selectedTypes().join(','));
     const qs = params.toString();
     history.replaceState(null, '', qs ? `?${qs}` : window.location.pathname);
+
+    // "Open Section dashboard": the picked Section's own, lighter page, keeping the other filters.
+    const sectionLink = document.getElementById('section-link');
+    if (sectionLink) {
+      const href = sectionSelect.value && sectionSelect.selectedOptions[0].dataset.href;
+      sectionLink.hidden = !href;
+      if (href) {
+        params.delete('council');
+        params.delete('section');
+        sectionLink.href = href + (params.toString() ? `?${params}` : '');
+      }
+    }
   }
 
   function loadFiltersFromURL() {
@@ -674,5 +686,8 @@
       }
     }
     groups.sort((a, b) => dir === 'asc' ? a.members - b.members : b.members - a.members);
-    groups.forEach(g => g.group.forEach(el => tbody.appendChild(el)));
+    // One DOM write: moving thousands of rows one by one froze the Region pages.
+    const frag = document.createDocumentFragment();
+    groups.forEach(g => frag.append(...g.group));
+    tbody.prepend(frag);  // keeps the "no units match" row last
   }

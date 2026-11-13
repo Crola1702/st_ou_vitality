@@ -216,6 +216,7 @@ class OU:
         "officers",
         "section",
         "council",
+        "region",
     )
 
     def __init__(
@@ -227,6 +228,7 @@ class OU:
         member_count: int,
         section: str = "",
         council: str = "",
+        region: str = "",
     ):
         self.name = name
         self.spoid = spoid
@@ -239,6 +241,7 @@ class OU:
         # export doesn't carry them.
         self.section = section
         self.council = council
+        self.region = region  # e.g. "Latin America - Region 9"; only global/ groups by it
         self.events_general = 0
         self.events_technical = 0
         self.events_unreported_general = 0
@@ -269,6 +272,7 @@ def load_ou_universe(
             member_count=clean_number(row["Count of SB Attendees"]),
             section=row.get("Section Name   ", "").strip(),
             council=row.get("Council Name     ", "").strip(),
+            region=row.get("Region Name     ", "").strip(),
         )
 
     for row in read_vtools_tsv(chapter_file):
@@ -287,6 +291,7 @@ def load_ou_universe(
             member_count=clean_number(row[member_col]),
             section=row.get("Section Name   ", "").strip(),
             council=row.get("Council Name     ", "").strip(),
+            region=row.get("Region Name     ", "").strip(),
         )
 
     return units
@@ -300,6 +305,10 @@ def load_officers(units: dict[str, OU], volunteer_file: Path = VOLUNTEER_FILE) -
     for row in read_vtools_tsv(volunteer_file):
         status = row.get("Volunteer Position Status", "").strip()
         if status and status != "Active":
+            continue
+        # The worldwide export also lists every empty seat as a row
+        # ("Vacant", still "Active"); the Colombia/R9 ones are Filled-only.
+        if row.get("OU Position Status", "").strip() == "Vacant":
             continue
         spoid = row["OU SPO ID"].strip()
         ou = units.get(spoid)
@@ -898,6 +907,7 @@ def build_dashboard(
     nav_html: str = "",
     scope_label: str | None = None,
     generated_on: str | None = None,
+    section_links: dict[str, str] | None = None,
 ) -> None:
     """Write the self-contained dashboard page. `title` is the page/H1
     title; `nav_html` is raw HTML inserted under the subtitle (multi-section
@@ -905,7 +915,11 @@ def build_dashboard(
     Colombia dashboard's output. `scope_label` names the whole view in
     exports (default: the OUs' Section, else "IEEE Student OUs");
     `generated_on` is the date printed on exported reports (default: today;
-    a rebuild from committed outputs passes the data's date)."""
+    a rebuild from committed outputs passes the data's date).
+    `section_links` maps a Section name to its own dashboard's href, for the
+    "Open Section dashboard" link next to the Section filter."""
+    section_links = section_links or {}
+    generated_at = datetime.now().astimezone().strftime("%Y-%m-%d %H:%M %Z")
     by_type: dict[str, list[OU]] = {"Student Branch": [], "Student Branch Chapter": [], "Affinity Group": []}
     for ou in units:
         by_type[ou.ou_type].append(ou)
@@ -960,10 +974,14 @@ def build_dashboard(
     section_filter = (
         '<select id="section-filter" aria-label="Section"><option value="">All Sections</option>'
         + "".join(
-            f'<option value="{html.escape(sec)}" data-council="{html.escape(council_of_section.get(sec, ""))}">{html.escape(sec)}</option>'
+            f'<option value="{html.escape(sec)}" data-council="{html.escape(council_of_section.get(sec, ""))}"'
+            + (f' data-href="{html.escape(section_links[sec])}"' if sec in section_links else "")
+            + f">{html.escape(sec)}</option>"
             for sec in sections
         )
         + "</select>"
+        # shown by dashboard.js once a Section with its own dashboard is picked
+        + ('<a id="section-link" class="section-link" hidden>Open Section dashboard &rarr;</a>' if section_links else "")
         if multi_section else ""
     )
 
@@ -1004,7 +1022,9 @@ def build_dashboard(
         header_cols = ["Unit Name", "SPO ID", "Members", "Events", "Officers", "Requirements Met"]
 
         rows_html = []
-        for ou in ou_list:
+        # Most members first by default (stable, so ties keep name order): sorting
+        # in the page is slow on the big Region dashboards.
+        for ou in sorted(ou_list, key=lambda o: -o.member_count):
             result = evaluate(ou)
             row_counter += 1
             ev_id = f"ev-{row_counter}"
@@ -1062,7 +1082,7 @@ def build_dashboard(
             )
 
         header_html = "".join(
-            f'<th class="sortable" onclick="sortByMembers(\'{table_id}\', this)" data-dir="">{html.escape(c)} <span class="sort-arrow"></span></th>'
+            f'<th class="sortable" onclick="sortByMembers(\'{table_id}\', this)" data-dir="desc">{html.escape(c)} <span class="sort-arrow">▼</span></th>'
             if c == "Members"
             else f"<th>{html.escape(c)}</th>"
             for c in header_cols
@@ -1302,7 +1322,7 @@ def build_dashboard(
 <body>
 <div class="viz-root">
   <div class="container">
-    <p class="byline"><a href="https://www.linkedin.com/in/cristobalarroyo/" target="_blank" rel="noopener">By Cristóbal Arroyo</a> <a href="https://github.com/Crola1702/st_ou_vitality" target="_blank" rel="noopener">See on GitHub</a></p>
+    <p class="byline"><a href="https://www.linkedin.com/in/cristobalarroyo/" target="_blank" rel="noopener">By Cristóbal Arroyo</a> <a href="https://github.com/Crola1702/st_ou_vitality" target="_blank" rel="noopener">See on GitHub</a> <span class="generated-at">Generated at {generated_at}</span></p>
     <h1>{html.escape(title)}</h1>
     <p class="subtitle">Generated from local vTools exports. Events source: {html.escape(events_path.name)}.</p>
 {nav_html}

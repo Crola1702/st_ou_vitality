@@ -227,6 +227,22 @@ class OutputsTest(unittest.TestCase):
         self.assertEqual(by_id["SBC2"]["u"], "U2</script>")
         self.assertEqual((by_id["STB1"]["se"], by_id["STB1"]["co"]), ("Colombia Section", "Andean Council"))
 
+    def test_section_link_and_generated_at(self):
+        page = self.build_multi(section_links={"Peru Section": "../peru-section/index.html"})
+        self.assertIn('data-href="../peru-section/index.html">Peru Section</option>', page)
+        self.assertIn('id="section-link"', page)
+        self.assertRegex(page, r'<span class="generated-at">Generated at \d{4}-\d\d-\d\d \d\d:\d\d')
+
+    def test_rows_default_to_most_members_first(self):
+        units = self.branch_family_units()
+        units[1], units[3] = units[3], units[1]  # the 1-member chapter listed before the 10-member one
+        out = self.tmp / "sorted.html"
+        gvr.build_dashboard(units, out, self.tmp / "events.csv", self.tmp / "h.csv", self.tmp / "s.csv",
+                            self.tmp / "g.csv", self.tmp / "p.csv")
+        table = out.read_text(encoding="utf-8").split('<table id="table-sbc">', 1)[1].split("</table>", 1)[0]
+        self.assertLess(table.index("U1 PE31 Chapter"), table.index("U2 CS23 Chapter"))
+        self.assertIn('data-dir="desc"', table)
+
     def test_multi_section_dashboard_filters_and_splits(self):
         page = self.build_multi()
         self.assertIn('id="council-filter"', page)

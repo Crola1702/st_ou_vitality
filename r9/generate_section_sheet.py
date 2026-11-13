@@ -28,6 +28,8 @@ R9_DIR = Path(__file__).resolve().parent
 REPO_DIR = R9_DIR.parent
 sys.path.insert(0, str(REPO_DIR))
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from generate_r9_vitality import volunteer_file  # noqa: E402
 from generate_vitality_report import (  # noqa: E402
     evaluate,
     find_events_file,
@@ -117,7 +119,7 @@ def main() -> None:
                  "volunteer_positions_r9_section_officers preset (automations/README.md) first.")
     units_map = load_ou_universe(DATA_DIR / "Student Branch and Member Count.csv",
                                  DATA_DIR / "Student Branch Chapters and Affinity Group Member Count.csv")
-    load_officers(units_map, DATA_DIR / "Volunteer List by OU.csv")
+    load_officers(units_map, volunteer_file())  # same source as the dashboards
     load_events(units_map, find_events_file(DATA_DIR))
 
     emails = ou_emails(read_vtools_tsv(OFFICERS_FILE))

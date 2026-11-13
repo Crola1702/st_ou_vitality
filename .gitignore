@@ -9,6 +9,8 @@ Member Detail View.csv
 # Region-wide raw exports for r9/ — the whole folder, since some of the
 # member-level files there don't match the filenames above.
 r9/R9 Data/
+# Same for the worldwide exports that feed global/.
+global/data/
 
 # Generated outreach lists contain officer names/emails — also PII, never commit.
 chapter_outreach/chapter_outreach.csv

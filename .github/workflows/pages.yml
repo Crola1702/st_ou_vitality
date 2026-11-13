@@ -8,6 +8,7 @@ on:
       - university_report.html
       - society_report.html
       - r9/dashboards/**
+      - global/dashboards/**
       - .github/workflows/pages.yml
   workflow_dispatch:
 
@@ -46,6 +47,10 @@ jobs:
           # section picker's relative links keep working.
           if [ -d r9/dashboards ]; then
             cp -r r9/dashboards _site/beta_r9
+          fi
+          # Worldwide dashboards (beta), same idea, under /beta_global/.
+          if [ -d global/dashboards ]; then
+            cp -r global/dashboards _site/beta_global
           fi
 
       - uses: actions/upload-pages-artifact@v3

@@ -17,6 +17,8 @@ Differences from the advanced-search download that this script bridges:
 
 By default it fetches all of Region 9; --spoids / --ou-universe narrow it to
 the events those OUs host or co-host (co-hosts in other sections included).
+--all fetches every event worldwide from the Events List API instead (same
+CSV columns, paginated the same way; ~43k events / ~5 min for 2026).
 
 The feed only covers events up to the end of --span ("now" by default), so
 future events are absent; they never count toward vitality anyway.
@@ -36,6 +38,9 @@ from datetime import datetime
 from pathlib import Path
 
 FEED = "https://events.vtools.ieee.org/feeds/v8/c/R9_desc.csv"
+# Unscoped Events List API. The per-region feeds are no substitute: only some
+# regions have one (R8, R10, R3 and R7 answer "No feed identified").
+ALL_FEED = "https://events.vtools.ieee.org/RST/events/api/public/v8/events/list.csv"
 PAGE_SIZE = 500  # ~21 s per page; 5000-row CSV pages time out
 PARALLEL = 8
 
@@ -64,8 +69,8 @@ def drop_unknown_spoids(spoids: list[str]) -> list[str]:
         return [s for s in spoids if s not in bad]
 
 
-def fetch_page(span: str, page: int, spoids: list[str]) -> list[dict]:
-    url = f"{FEED}?span={span}&limit={PAGE_SIZE}&page={page}"
+def fetch_page(span: str, page: int, spoids: list[str], feed: str = FEED) -> list[dict]:
+    url = f"{feed}?span={span}&limit={PAGE_SIZE}&page={page}"
     if spoids:
         url += "&spoid=" + ",".join(spoids)
     with urllib.request.urlopen(url, timeout=300) as resp:
@@ -104,6 +109,7 @@ def main() -> None:
     scope.add_argument("--spoids", help="comma-separated SPOIDs; events they host or co-host")
     scope.add_argument("--ou-universe", action="store_true",
                        help="only the OUs in the Student Branch / Chapter member-count exports")
+    scope.add_argument("--all", action="store_true", help="every event worldwide, not just Region 9")
     args = ap.parse_args()
 
     spoids = args.spoids.split(",") if args.spoids else []
@@ -114,16 +120,18 @@ def main() -> None:
     if spoids:
         spoids = drop_unknown_spoids(spoids)
 
+    feed = ALL_FEED if args.all else FEED
     rows: list[dict] = []
     page = 1
     with ThreadPoolExecutor(PARALLEL) as pool:
         # past the last page the feed returns a header-only CSV, not an error
         while True:
-            batch = list(pool.map(lambda p: fetch_page(args.span, p, spoids), range(page, page + PARALLEL)))
+            batch = list(pool.map(lambda p: fetch_page(args.span, p, spoids, feed), range(page, page + PARALLEL)))
             for chunk in batch:
                 rows.extend(chunk)
             if not all(batch):
                 break
+            print(f"  fetched pages {page}-{page + PARALLEL - 1} ({len(rows)} rows)", file=sys.stderr)
             page += PARALLEL
 
     seen: set[str] = set()

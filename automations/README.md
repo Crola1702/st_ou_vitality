@@ -97,7 +97,9 @@ back empty or with the wrong rows, the domain order may have shifted —
 re-capture a HAR of applying the filters manually and update the indices.
 `student_branch_summary_r9` and `volunteer_positions_r9` are the same exports
 for all of Region 9; `volunteer_positions_r9_section_officers` exports the
-Section and Council Chair/SSAC/SSR. HAR captures contain session cookies and the downloaded
+Section and Council Chair/SSAC/SSR. `volunteer_positions_all` is the same
+volunteer export for every Region (for `global/`); the worldwide member counts
+need no preset, a plain `export` of GeoOUAnalysis is unfiltered. HAR captures contain session cookies and the downloaded
 personal data, so keep them out of the repo.
 
 ## Batch PDF export from the command line
@@ -126,7 +128,8 @@ Options: `--group none|branch|section|council|society`, `--types branch
 chapter ag`, `--status all|met|notmet|one|two`, `--council/--section/
 --university/--society/--q`, `--nest` (list Chapters/AGs under their
 branch instead of the dashboard's order), `--sort-members` (rows by
-members, most first, instead of the dashboard's order), `--paper A4`, `--no-zip`. Output goes to
+members, most first; the dashboards are generated in that order already, so
+this only matters for older pages), `--paper A4`, `--no-zip`. Output goes to
 `report_pdfs/<date>/<scope>/<options>/` (git-ignored). `./run_all.sh
 --pdfs` runs the default after regenerating everything.
 

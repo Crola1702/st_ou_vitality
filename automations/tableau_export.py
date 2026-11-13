@@ -134,6 +134,23 @@ FILTER_PRESETS = {
              "op": "add", "indices": [1, 21, 24, 25]},
         ],
     },
+    # Every Region, captured from manual_exports/VolunteerPositions_Branches_All.har:
+    # the R9 preset minus the Region parameter. Unlike the scoped exports it also
+    # lists Vacant seats (load_officers() skips them). Feeds global/. The worldwide
+    # member counts need no preset: a plain `export` of GeoOUAnalysis is unfiltered.
+    "volunteer_positions_all": {
+        "workbook": "VolunteerPositionsHistory",
+        "view": "VolunteerPositions",
+        "landing_sheet": "Volunteer Positions",
+        "export_sheet": "Volunteer Positions",
+        "sheetdoc_id": "{FA0693F8-5689-4A7B-9DFD-189274863BF1}",
+        "parameters": [],
+        "filters": [
+            {"worksheet": "Volunteer List by OU",
+             "globalFieldName": "[federated.1mu7cjv1nedkgb1dz2df1055aoo0].[none:officer spo account type:nk]",
+             "op": "add", "indices": [1, 21, 24, 25]},
+        ],
+    },
     # Section-level officers for all of R9 (Section Chair, SSAC = "Student Activities",
     # SSR = "Student Representative"; the export also carries Council rows), captured from
     # manual_exports/VolunteerPositions_R9_SecChair_SSACs_SSRs.har. Feeds

@@ -4,6 +4,45 @@ Notable changes to this project. Format loosely follows
 [Keep a Changelog](https://keepachangelog.com/), dated by day rather than by
 version since this project doesn't cut releases.
 
+## 2026-11-13
+
+### Added
+
+- Worldwide dashboards (beta). `global/generate_global_vitality.py` reads the
+  unfiltered exports in `global/data/` and writes `global/dashboards/`: a
+  picker of every Region, its Councils and Sections, one dashboard per Region
+  and one per Section. A Council opens its Region dashboard with the Council
+  filter preselected. Published under `/beta_global/`; `./run_all.sh --global`
+  fetches the data and builds it.
+- `vtools_feed_export.py --all` fetches every vTools event worldwide from the
+  Events List API (paginated), and the new Tableau preset
+  `volunteer_positions_all` exports the officers of every Region.
+
+### Changed
+
+- Region dashboards (R9 and worldwide) show an "Open Section dashboard" link
+  next to the Section filter once a Section is picked. It opens that
+  Section's own, lighter page and carries the other filters over.
+- Every dashboard shows "Generated at <date time>" in its top right corner.
+- Every dashboard lists OUs with the most members first by default (it was
+  alphabetical), so exports and PDFs follow that order too. Clicking the
+  Members header still flips the order, and that in-page sort now moves the
+  rows in one step instead of one by one, which froze the Region pages.
+
+### Fixed
+
+- `load_officers()` skips rows whose `OU Position Status` is `Vacant`. The
+  worldwide volunteer export lists every empty seat that way, which would
+  have counted vacant Chair/Counselor/Advisor seats as filled. No effect on
+  the Colombia and Region 9 exports (Filled-only).
+- Region 9 dashboards and the SAC sheet no longer miss officers whose own
+  membership is outside Region 9. The R9 volunteer preset filters on the
+  officer's Region, not the OU's (15 officer rows and 7 wrong verdicts on
+  2026-11-13), so `r9/` now reads the worldwide volunteer export
+  (`global/data/Volunteer List by OU.csv`) when it exists and is at least as
+  fresh as the R9 one. `./run_all.sh --global` fetches it before building the
+  R9 dashboards; without `--global` the R9 export is still used.
+
 ## 2026-11-11
 
 ### Added

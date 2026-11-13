@@ -68,11 +68,16 @@ what you export:
 - **Vitality**: any, meeting full vitality, not meeting it, missing one
   requirement, missing two or more;
 - **OU types**: Student Branches, Chapters, Affinity Groups;
-- **Council** and **Section**, on the Region 9 whole-region dashboard.
+- **Council** and **Section**, on the whole-Region dashboards (Region 9
+  and the worldwide ones). Once a Section is picked, an **Open Section
+  dashboard** link next to the filter opens that Section's own, lighter
+  page with the other filters carried over.
 
 The tables, the tiles at the top and the member counts all follow the
-filters, and sorting a table by **Members** reorders it. The filters are
-kept in the page address, so a filtered view can be bookmarked or shared.
+filters. Tables list the OUs with the most members first; clicking the
+**Members** header flips the order. The filters are kept in the page
+address, so a filtered view can be bookmarked or shared. The top right
+corner shows when the page was generated (local time of the run).
 
 **Export current view** then exports exactly the rows on screen, in the
 order shown:
@@ -212,7 +217,9 @@ which `./run_all.sh` fetches for you:
 - `Volunteer List by OU.csv` (region-wide, including Affinity Group
   officers; the older "with Region & Section" variant omits them, so every
   Affinity Group reads as having no officers. Past officers, if listed, are
-  ignored by the loader)
+  ignored by the loader). This export misses officers whose own membership
+  is outside Region 9, so when `global/data/Volunteer List by OU.csv` exists
+  and is at least as fresh (`./run_all.sh --global`), it is read instead
 - Any `*Events*.csv`
 
 ```sh
@@ -252,6 +259,44 @@ re-run the command above and import `r9/section_sheet.csv` into a new tab.
 The Pages workflow publishes `r9/dashboards/` as-is under `/beta_r9/`
 (so `<pages-url>/beta_r9/` is the Section picker), on every push to
 `main` that touches that folder.
+
+### Worldwide dashboards: Region, Council, Section
+
+`global/generate_global_vitality.py` runs the same evaluation over every
+Student Branch, Chapter and Affinity Group in IEEE (about 12,000 OUs, 10
+Regions, 340 Sections). It reads `global/data/` (git-ignored), which
+`./run_all.sh --global` fetches for you:
+
+- `Student Branch and Member Count.csv` and `Student Branch Chapters and
+  Affinity Group Member Count.csv`: the GeoOUAnalysis crosstabs with no
+  filter applied
+- `Volunteer List by OU.csv` (Tableau preset `volunteer_positions_all`; a
+  manual download named `Volunteer List by OU with Region & Section.csv` is
+  also accepted). The worldwide export lists empty seats as `Vacant` rows;
+  the loader skips them
+- Any `*Events*.csv`: every vTools event since January 1st, from the Events
+  List API (`python3 automations/vtools_feed_export.py --all --out ...`, no
+  login, paginated, about 43,000 events in about 5 minutes)
+
+```sh
+./run_all.sh --global                      # fetch + build (after the usual steps)
+python3 global/generate_global_vitality.py  # build only, from global/data/
+```
+
+This writes `global/dashboards/index.html` (a picker: each Region, its
+Councils and their Sections), one dashboard per Region in
+`global/dashboards/r1/` .. `r10/` and one per Section in
+`global/dashboards/<region>/<section-slug>/`, each with the same files as
+the R9 ones. A Council has no directory of its own: its name in the picker
+opens the Region dashboard with the Council filter preselected
+(`r9/index.html?council=Andean+Council`), so filters and "Export current
+view" work on it. There is no single whole-world dashboard (it would be a
+page of about 40 MB). PDFs, the Drive upload and the SAC sheet remain
+R9-only. The Pages workflow publishes the folder under `/beta_global/`.
+
+Each run rewrites about 160 MB of generated files and appends about 24,000
+history rows, so commit a worldwide refresh only when you want it
+published.
 
 ### Quick guide: which export to run
 

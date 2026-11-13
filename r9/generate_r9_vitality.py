@@ -24,6 +24,7 @@ from __future__ import annotations
 import html
 import re
 import sys
+import urllib.parse
 from collections import Counter
 from pathlib import Path
 
@@ -51,10 +52,10 @@ OUT_DIR = R9_DIR / "dashboards"
 BRANCH_MEMBER_FILE = DATA_DIR / "Student Branch and Member Count.csv"
 CHAPTER_MEMBER_FILE = DATA_DIR / "Student Branch Chapters and Affinity Group Member Count.csv"
 VOLUNTEER_FILE = DATA_DIR / "Volunteer List by OU.csv"
+WORLDWIDE_VOLUNTEER_FILE = R9_DIR.parent / "global" / "data" / "Volunteer List by OU.csv"
 
 REGION_SLUG = "region"
 REGION_LABEL = "Latin America - Region 9"
-NO_COUNCIL = "Region 9 - No Council"  # vTools's placeholder for sections outside every council
 
 OU_TYPES = ["Student Branch", "Student Branch Chapter", "Affinity Group"]
 
@@ -103,26 +104,40 @@ def nav_html_for(scopes: list[Scope], current: Scope) -> str:
     )
 
 
-def build_section_index(scopes: list[Scope], path: Path) -> None:
-    region = scopes[0]
-    sections = scopes[1:]
+def volunteer_file() -> Path:
+    """The R9 preset filters on the officer's own Region, so it drops officers
+    of R9 OUs whose membership sits elsewhere (15 rows, 7 wrong verdicts on
+    2026-11-13). The worldwide export (./run_all.sh --global) has them all;
+    use it unless the R9 one is fresher."""
+    w = WORLDWIDE_VOLUNTEER_FILE
+    if w.exists() and (not VOLUNTEER_FILE.exists() or w.stat().st_mtime >= VOLUNTEER_FILE.stat().st_mtime):
+        return w
+    return VOLUNTEER_FILE
 
-    def stats(units: list[OU]) -> dict:
-        total = len(units)
-        met = sum(1 for ou in units if evaluate(ou)["overall"])
-        per_type = {}
-        for ou_type in OU_TYPES:
-            typed = [ou for ou in units if ou.ou_type == ou_type]
-            per_type[ou_type] = (sum(1 for ou in typed if evaluate(ou)["overall"]), len(typed))
-        return {"total": total, "met": met, "pct": (met / total * 100) if total else 0, "per_type": per_type}
 
-    region_stats = stats(region.units)
+def scope_stats(units: list[OU]) -> dict:
+    total = len(units)
+    met = sum(1 for ou in units if evaluate(ou)["overall"])
+    per_type = {}
+    for ou_type in OU_TYPES:
+        typed = [ou for ou in units if ou.ou_type == ou_type]
+        per_type[ou_type] = (sum(1 for ou in typed if evaluate(ou)["overall"]), len(typed))
+    return {"total": total, "met": met, "pct": (met / total * 100) if total else 0, "per_type": per_type}
+
+
+def render_region(region: Scope, sections: list[Scope], council_links: bool = False) -> str:
+    """The picker's block for one region: its summary card, then one table
+    of Sections per Council. Hrefs are `<scope.slug>/index.html`, relative
+    to the picker page. `council_links` (global/) turns each Council heading
+    into a link to the region dashboard with that Council pre-filtered."""
+    region_stats = scope_stats(region.units)
 
     by_council: dict[str, list[Scope]] = {}
     for scope in sections:
         by_council.setdefault(scope.council, []).append(scope)
-    # Alphabetical, with the "no council" bucket last.
-    councils = sorted(by_council, key=lambda c: (c == NO_COUNCIL, c))
+    # Alphabetical, with vTools's "Region N - No Council" placeholder (sections
+    # outside every council) last.
+    councils = sorted(by_council, key=lambda c: (c.endswith(" - No Council"), c))
 
     def ratio_cell(met: int, total: int) -> str:
         if not total:
@@ -133,7 +148,7 @@ def build_section_index(scopes: list[Scope], path: Path) -> None:
     for council in councils:
         rows = []
         for scope in by_council[council]:
-            s = stats(scope.units)
+            s = scope_stats(scope.units)
             href = f"{html.escape(scope.slug)}/index.html"
             rows.append(
                 "<tr>"
@@ -144,10 +159,14 @@ def build_section_index(scopes: list[Scope], path: Path) -> None:
                 + f'<td class="links"><a class="open" href="{href}">Open</a></td>'
                 "</tr>"
             )
+        council_html = html.escape(council)
+        if council_links:
+            query = urllib.parse.urlencode({"council": council})
+            council_html = f'<a href="{html.escape(region.slug)}/index.html?{query}">{council_html}</a>'
         groups_html.append(
             f"""
     <section class="council">
-      <h2>{html.escape(council)} <span class="count">{len(by_council[council])} sections</span></h2>
+      <h2>{council_html} <span class="count">{len(by_council[council])} sections</span></h2>
       <table>
         <thead>
           <tr><th>Section</th><th class="num">OUs</th><th class="num">Full vitality</th><th class="num">Student Branches</th><th class="num">Chapters</th><th class="num">Affinity Groups</th><th></th></tr>
@@ -159,11 +178,26 @@ def build_section_index(scopes: list[Scope], path: Path) -> None:
     </section>"""
         )
 
-    page = f"""<!doctype html>
+    return f"""
+    <div class="region-card" id="{html.escape(region.slug)}">
+      <div class="title">{html.escape(region.label)}<small>{len(sections)} sections</small></div>
+      <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">{region_stats["total"]:,}</div></div>
+      <div class="stat"><div class="stat-label">Full vitality</div><div class="stat-value" style="color:{STATUS_GOOD}">{region_stats["met"]:,} <span class="pct">({region_stats["pct"]:.0f}%)</span></div></div>
+      <div class="actions">
+        <a class="btn" href="{html.escape(region.slug)}/index.html">Open whole region</a>
+        <a class="btn" href="{html.escape(region.slug)}/vitality_report.csv" download>Full data (CSV)</a>
+      </div>
+    </div>
+{''.join(groups_html)}"""
+
+
+def render_index_page(title: str, subtitle: str, body: str) -> str:
+    """The picker page around one or more render_region() blocks."""
+    return f"""<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>IEEE Region 9 Student OU Vitality</title>
+<title>{html.escape(title)}</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
   .viz-root {{
@@ -259,30 +293,60 @@ def build_section_index(scopes: list[Scope], path: Path) -> None:
 <body>
 <div class="viz-root">
   <div class="container">
-    <h1>IEEE Region 9 Student OU Vitality</h1>
-    <p class="subtitle">Pick a Section to open its dashboard, or open the whole region at once (about {region_stats["total"]:,} OUs, a heavier page). On any dashboard, filter what you need and use "Export current view" for PDFs, a CSV or print.</p>
-
-    <div class="region-card">
-      <div class="title">{html.escape(REGION_LABEL)}<small>{len(sections)} sections</small></div>
-      <div class="stat"><div class="stat-label">Total OUs</div><div class="stat-value">{region_stats["total"]:,}</div></div>
-      <div class="stat"><div class="stat-label">Full vitality</div><div class="stat-value" style="color:{STATUS_GOOD}">{region_stats["met"]:,} <span class="pct">({region_stats["pct"]:.0f}%)</span></div></div>
-      <div class="actions">
-        <a class="btn" href="{REGION_SLUG}/index.html">Open whole region</a>
-        <a class="btn" href="{REGION_SLUG}/vitality_report.csv" download>Full data (CSV)</a>
-      </div>
-    </div>
-{''.join(groups_html)}
+    <h1>{html.escape(title)}</h1>
+    <p class="subtitle">{html.escape(subtitle)}</p>
+{body}
   </div>
 </div>
 </body>
 </html>
 """
+
+
+def build_section_index(scopes: list[Scope], path: Path) -> None:
+    region = scopes[0]
+    subtitle = (
+        "Pick a Section to open its dashboard, or open the whole region at once "
+        f"(about {len(region.units):,} OUs, a heavier page). On any dashboard, filter what you need "
+        'and use "Export current view" for PDFs, a CSV or print.'
+    )
+    page = render_index_page("IEEE Region 9 Student OU Vitality", subtitle, render_region(region, scopes[1:]))
     path.write_text(page, encoding="utf-8")
+
+
+def write_scope(
+    scope: Scope, scope_dir: Path, events_path: Path, nav_html: str, section_links: dict[str, str] | None = None
+) -> None:
+    """Everything one scope directory holds: CSV, history, dashboard and both
+    printable reports. Shared with global/generate_global_vitality.py."""
+    scope_dir.mkdir(parents=True, exist_ok=True)
+    history_path = scope_dir / "vitality_history.csv"
+
+    write_csv(scope.units, scope_dir / "vitality_report.csv")
+    write_history(scope.units, history_path)  # before build_dashboard, so the trend includes today
+    build_dashboard(
+        scope.units,
+        scope_dir / "index.html",
+        events_path,
+        history_path,
+        scope_dir / "society_membership_history.csv",  # never written: OU vitality only
+        scope_dir / "membership_type_history.csv",
+        scope_dir / "membership_promotions_summary.csv",
+        title=f"IEEE Student OU Vitality: {scope.label}",
+        nav_html=nav_html,
+        scope_label=scope.label,
+        section_links=section_links,
+    )
+    build_university_report(scope.units, scope_dir / "university_report.html")
+    build_society_report(scope.units, scope_dir / "society_report.html")
+
+    met = sum(1 for ou in scope.units if evaluate(ou)["overall"])
+    print(f"{scope.label}: {len(scope.units)} OUs ({met} meeting full vitality) -> {scope.slug}/")
 
 
 def main() -> None:
     units_map = load_ou_universe(BRANCH_MEMBER_FILE, CHAPTER_MEMBER_FILE)
-    load_officers(units_map, VOLUNTEER_FILE)
+    load_officers(units_map, volunteer_file())
     events_path = find_events_file(DATA_DIR)
     load_events(units_map, events_path)
 
@@ -292,30 +356,10 @@ def main() -> None:
     scopes = build_scopes(units)
     OUT_DIR.mkdir(exist_ok=True)
 
+    section_links = {s.label: f"../{s.slug}/index.html" for s in scopes[1:]}
     for scope in scopes:
-        scope_dir = OUT_DIR / scope.slug
-        scope_dir.mkdir(exist_ok=True)
-        history_path = scope_dir / "vitality_history.csv"
-
-        write_csv(scope.units, scope_dir / "vitality_report.csv")
-        write_history(scope.units, history_path)  # before build_dashboard, so the trend includes today
-        build_dashboard(
-            scope.units,
-            scope_dir / "index.html",
-            events_path,
-            history_path,
-            scope_dir / "society_membership_history.csv",  # never written: OU vitality only
-            scope_dir / "membership_type_history.csv",
-            scope_dir / "membership_promotions_summary.csv",
-            title=f"IEEE Student OU Vitality: {scope.label}",
-            nav_html=nav_html_for(scopes, scope),
-            scope_label=scope.label,
-        )
-        build_university_report(scope.units, scope_dir / "university_report.html")
-        build_society_report(scope.units, scope_dir / "society_report.html")
-
-        met = sum(1 for ou in scope.units if evaluate(ou)["overall"])
-        print(f"{scope.label}: {len(scope.units)} OUs ({met} meeting full vitality) -> {scope.slug}/")
+        write_scope(scope, OUT_DIR / scope.slug, events_path, nav_html_for(scopes, scope),
+                    section_links if scope is scopes[0] else None)
 
     build_section_index(scopes, OUT_DIR / "index.html")
     print(f"Wrote {len(scopes)} dashboards and the section index under {OUT_DIR}")
