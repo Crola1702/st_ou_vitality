@@ -1,0 +1,149 @@
+Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
+"Al al-Bayt University,WIE",SBA60202186,Affinity Group,Al al-Bayt University,WIE,2,6,No,0,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Al-Balqa Applied University - Center,WIE",SBA10087,Affinity Group,Al-Balqa Applied University - Center,WIE,41,6,Yes,25,,0,2,Yes,No,,Yes,Yes,Yes,Yes,No,Partial,2/3,Not Met
+"Al-Balqa Applied University,  WIE",SBA63021,Affinity Group,Al-Balqa Applied University,WIE,62,6,Yes,13,,0,2,Yes,Yes,,No,Yes,Yes,Yes,Yes,Partial,2/3,Not Met
+"Al-Balqa Applied University, SIGHT",SBA63021S,Affinity Group,Al-Balqa Applied University,SIGHT,64,6,Yes,25,,3,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
+"Al-Huson University College, SIGHT",SBA01039S,Affinity Group,Al-Huson University College,SIGHT,85,6,Yes,1,,0,2,No,Yes,,Yes,No,Yes,No,No,Met,2/3,Not Met
+"Al-Huson University College,WIE",SBA01039,Affinity Group,Al-Huson University College,WIE,87,6,Yes,7,,11,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
+"Al-Zaytoonah University of Jordan,WIE",SBA10006,Affinity Group,Al-Zaytoonah University of Jordan,WIE,50,6,Yes,2,,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Amman Arab University - Jordan,WIE",SBA60208871,Affinity Group,Amman Arab University - Jordan,WIE,100,6,Yes,1,,9,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+Applied Science University SB SIGHT,SBA05011S,Affinity Group,Applied Science University,SB SIGHT,109,6,Yes,0,,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Applied Science University,WIE",SBA05011,Affinity Group,Applied Science University,WIE,166,6,Yes,8,,2,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"German Jordanian University, WIE",SBA04651,Affinity Group,German Jordanian University,WIE,29,6,Yes,4,,2,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
+Hashemite University SB SIGHT,SBA61971S,Affinity Group,Hashemite University,SB SIGHT,310,6,Yes,22,,2,2,Yes,Yes,,Yes,Yes,Yes,No,No,Met,3/3,Met
+"Hashemite University, WIE",SBA61971,Affinity Group,Hashemite University,WIE,226,6,Yes,0,,11,2,No,Yes,,Yes,Yes,Yes,No,No,Met,2/3,Not Met
+"Jadara University,WIE",SBA60227427,Affinity Group,Jadara University,WIE,52,6,Yes,25,,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+Jordan University of Science & Technology SB SIGHT,SBA60251S,Affinity Group,Jordan University of Science & Technology,SB SIGHT,48,6,Yes,0,,1,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
+"Jordan University of Science And Tech, WIE",SBA60251,Affinity Group,Jordan University of Science & Technology,WIE,29,6,Yes,0,,15,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Mutah University,WIE",SBA00901,Affinity Group,Mutah University,WIE,150,6,Yes,12,,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
+"Princess Sumaya University for Technology, WIE",SBA61291,Affinity Group,Princess Sumaya University for Technology,WIE,8,6,Yes,2,,3,2,Yes,Yes,,No,No,Yes,Yes,No,Partial,2/3,Not Met
+Tafila Technical University SB SIGHT,SBA10119S,Affinity Group,Tafila Technical University,SB SIGHT,68,6,Yes,0,,1,2,No,Yes,,Yes,Yes,Yes,No,No,Met,2/3,Not Met
+"Tafila Technical University,WIE",SBA10119,Affinity Group,Tafila Technical University,WIE,38,6,Yes,0,,0,2,No,Yes,,No,Yes,Yes,Yes,Yes,Partial,1/3,Not Met
+"The University of Jordan-Aqaba,WIE",SBA60236108,Affinity Group,The University of Jordan-Aqaba,WIE,18,6,Yes,5,,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
+"University of Jordan, WIE",SBA81681,Affinity Group,University of Jordan,WIE,27,6,Yes,20,,0,2,Yes,Yes,,Yes,Yes,Yes,No,Yes,Met,3/3,Met
+"Yarmouk University, WIE",SBA25091,Affinity Group,Yarmouk University,WIE,122,6,Yes,41,,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Zarqa University,WIE",SBA60173704,Affinity Group,Zarqa University,WIE,31,6,Yes,7,,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+Ajloun University College-Balqa Applied University,STB60242176,Student Branch,Ajloun University College-Balqa Applied University,,31,12,Yes,4,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Al al-Bayt University,STB60202186,Student Branch,Al al-Bayt University,,80,12,Yes,18,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,No,Met,3/3,Met
+Al-Ahliyya Amman University,STB63951,Student Branch,Al-Ahliyya Amman University,,82,12,Yes,10,,0,4,Yes,Yes,No,,Yes,Yes,No,Yes,Partial,2/3,Not Met
+Al-Balqa Applied University,STB63021,Student Branch,Al-Balqa Applied University,,235,12,Yes,16,,1,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Al-Balqa Applied University - Center,STB10087,Student Branch,Al-Balqa Applied University - Center,,110,12,Yes,0,,9,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+Al-Huson University College,STB01039,Student Branch,Al-Huson University College,,132,12,Yes,8,,10,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Al-Hussein Bin Talal University,STB16739,Student Branch,Al-Hussein Bin Talal University,,104,12,Yes,8,,1,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Al-Hussein Technical University,STB11439,Student Branch,Al-Hussein Technical University,,92,12,Yes,13,,1,4,Yes,Yes,Yes,,No,Yes,No,No,Met,3/3,Met
+Al-Zaytoonah Univ Of Jordan,STB10006,Student Branch,Al-Zaytoonah University of Jordan,,157,12,Yes,3,,2,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+American University of Madaba,STB60098460,Student Branch,American University of Madaba,,27,12,Yes,4,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Amman Arab University - Jordan,STB60208871,Student Branch,Amman Arab University - Jordan,,347,12,Yes,9,,10,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Applied Science University,STB05011,Student Branch,Applied Science University,,394,12,Yes,11,,2,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Aqaba University of Technology,STB60235393,Student Branch,Aqaba University of Technology,,13,12,Yes,4,,0,4,Yes,Yes,Yes,,No,No,No,No,Met,3/3,Met
+German Jordanian University,STB04651,Student Branch,German Jordanian University,,137,12,Yes,7,,1,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Hashemite University,STB61971,Student Branch,Hashemite University,,261,12,Yes,6,,20,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Irbid National University,STB60235654,Student Branch,Irbid National University,,72,12,Yes,39,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Isra University,STB40000247,Student Branch,Isra University,,67,12,Yes,7,,28,4,Yes,Yes,Yes,,Yes,Yes,Yes,No,Met,3/3,Met
+Jadara University,STB60227427,Student Branch,Jadara University,,131,12,Yes,87,,1,4,Yes,Yes,Yes,,Yes,Yes,Yes,No,Met,3/3,Met
+Jerash University,STB60234124,Student Branch,Jerash University,,50,12,Yes,13,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,No,Met,3/3,Met
+Jordan University of Science & Technology,STB60251,Student Branch,Jordan University of Science & Technology,,272,12,Yes,2,,5,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+Middle East University,STB60225930,Student Branch,Middle East University,,47,12,Yes,5,,2,4,Yes,Yes,Yes,,Yes,Yes,Yes,No,Met,3/3,Met
+Mutah University,STB00901,Student Branch,Mutah University,,184,12,Yes,10,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,No,Met,3/3,Met
+National University College of Technology,STB60241954,Student Branch,National University College of Technology,,28,12,Yes,6,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,No,Met,3/3,Met
+Philadelphia Univ,STB20223,Student Branch,Philadelphia Univ,,76,12,Yes,6,,2,4,Yes,Yes,Yes,,Yes,Yes,Yes,No,Met,3/3,Met
+Princess Sumaya University for Technology,STB61291,Student Branch,Princess Sumaya University for Technology,,183,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,Yes,No,Met,2/3,Not Met
+Tafila Technical University,STB10119,Student Branch,Tafila Technical University,,86,12,Yes,10,,2,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+The University of Jordan-Aqaba,STB60236108,Student Branch,The University of Jordan-Aqaba,,75,12,Yes,33,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,No,Met,3/3,Met
+University of Jordan,STB81681,Student Branch,University of Jordan,,286,12,Yes,6,,2,4,Yes,Yes,Yes,,Yes,Yes,Yes,No,Met,3/3,Met
+University of Petra,STB10115,Student Branch,University of Petra,,28,12,Yes,0,,13,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+World Islamic Sciences & Education University,STB60226281,Student Branch,World Islamic Sciences & Education University,,87,12,Yes,1,,3,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+Yarmouk University,STB25091,Student Branch,Yarmouk University,,260,12,Yes,40,,15,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Zarqa University,STB60173704,Student Branch,Zarqa University,,141,12,Yes,14,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Al al-Bayt University,C16",SBC60202186,Student Branch Chapter,Al al-Bayt University,C16,16,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
+"Al-Ahliyya Amman University,C16",SBC63951,Student Branch Chapter,Al-Ahliyya Amman University,C16,39,6,Yes,25,8,0,2,Yes,Yes,,Yes,Yes,Yes,No,Yes,Met,3/3,Met
+"Al-Balqa Applied Univ, PE31/IA34",SBC63021A,Student Branch Chapter,Al-Balqa Applied University,PE31/IA34,16,6,Yes,6,1,1,2,No,Yes,,No,Yes,Yes,Yes,Yes,Partial,1/3,Not Met
+"Al-Balqa Applied University - Center,C16",SBC10087,Student Branch Chapter,Al-Balqa Applied University - Center,C16,49,6,Yes,15,8,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Al-Balqa Applied University - Center,RA24",SBC10087A,Student Branch Chapter,Al-Balqa Applied University - Center,RA24,23,6,Yes,8,2,0,2,Yes,No,,No,No,No,No,No,Not Met,2/3,Not Met
+"Al-Balqa Applied University, C16",SBC63021B,Student Branch Chapter,Al-Balqa Applied University,C16,85,6,Yes,69,27,5,2,Yes,Yes,,No,Yes,Yes,Yes,Yes,Partial,2/3,Not Met
+"Al-Balqa Applied University, RA24",SBC63021C,Student Branch Chapter,Al-Balqa Applied University,RA24,69,6,Yes,139,97,1,2,Yes,Yes,,No,Yes,Yes,Yes,Yes,Partial,2/3,Not Met
+"Al-Balqa Applied University,AES10",SBC63021F,Student Branch Chapter,Al-Balqa Applied University,AES10,24,6,Yes,10,8,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Al-Balqa Applied University,COM19",SBC63021D,Student Branch Chapter,Al-Balqa Applied University,COM19,14,6,Yes,0,0,1,2,No,Yes,,Yes,No,Yes,No,Yes,Met,2/3,Not Met
+"Al-Balqa Applied University,SP01",SBC63021E,Student Branch Chapter,Al-Balqa Applied University,SP01,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Al-Huson University College,AP03",SBC01039A,Student Branch Chapter,Al-Huson University College,AP03,34,6,Yes,3,1,2,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
+"Al-Huson University College,C16",SBC01039,Student Branch Chapter,Al-Huson University College,C16,40,6,Yes,1,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
+"Al-Hussein Bin Talal University,C16",SBC16739,Student Branch Chapter,Al-Hussein Bin Talal University,C16,24,6,Yes,4,1,7,2,No,Yes,,No,Yes,Yes,Yes,No,Partial,1/3,Not Met
+"Al-Hussein Bin Talal University,RA24",SBC16739A,Student Branch Chapter,Al-Hussein Bin Talal University,RA24,47,6,Yes,1,0,5,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
+"Al-Hussein Technical University,RA24",SBC11439,Student Branch Chapter,Al-Hussein Technical University,RA24,14,6,Yes,3,3,0,2,Yes,Yes,,Yes,Yes,No,Yes,Yes,Met,3/3,Met
+"Al-Zaytoonah Univ Of Jordan,SP01/COM19",SBC10006,Student Branch Chapter,Al-Zaytoonah University of Jordan,SP01/COM19,31,6,Yes,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,1/3,Not Met
+"Al-Zaytoonah University of Jordan,C16",SBC10006A,Student Branch Chapter,Al-Zaytoonah University of Jordan,C16,32,6,Yes,0,0,1,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+"Al-Zaytoonah University of Jordan,RA24",SBC10006B,Student Branch Chapter,Al-Zaytoonah University of Jordan,RA24,32,6,Yes,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+"Amman Arab University - Jordan,AES10",SBC60208871A,Student Branch Chapter,Amman Arab University - Jordan,AES10,56,6,Yes,17,5,16,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
+"Amman Arab University - Jordan,C16",SBC60208871,Student Branch Chapter,Amman Arab University - Jordan,C16,32,6,Yes,1,1,7,2,No,Yes,,No,Yes,Yes,Yes,Yes,Partial,1/3,Not Met
+"Amman Arab University - Jordan,CIS11",SBC60208871C,Student Branch Chapter,Amman Arab University - Jordan,CIS11,20,6,Yes,0,0,1,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Amman Arab University - Jordan,EMB18",SBC60208871E,Student Branch Chapter,Amman Arab University - Jordan,EMB18,41,6,Yes,2,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Amman Arab University - Jordan,PE31",SBC60208871D,Student Branch Chapter,Amman Arab University - Jordan,PE31,15,6,Yes,18,3,1,2,Yes,Yes,,No,Yes,Yes,Yes,Yes,Partial,2/3,Not Met
+"Amman Arab University - Jordan,RA24",SBC60208871B,Student Branch Chapter,Amman Arab University - Jordan,RA24,29,6,Yes,0,0,3,2,No,Yes,,No,Yes,Yes,Yes,No,Partial,1/3,Not Met
+"Amman Arab University - Jordan,TEM14",SBC60208871F,Student Branch Chapter,Amman Arab University - Jordan,TEM14,51,6,Yes,0,0,1,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
+"Applied Science University,C16",SBC05011B,Student Branch Chapter,Applied Science University,C16,53,6,Yes,10,3,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Applied Science University,CIS11",SBC05011C,Student Branch Chapter,Applied Science University,CIS11,30,6,Yes,1,1,0,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
+"Applied Science University,COM19",SBC05011,Student Branch Chapter,Applied Science University,COM19,131,6,Yes,17,7,3,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Applied Science University,RA24",SBC05011A,Student Branch Chapter,Applied Science University,RA24,128,6,Yes,10,3,6,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"German Jordanian University,AES10",SBC04651H,Student Branch Chapter,German Jordanian University,AES10,10,6,Yes,11,7,2,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"German Jordanian University,C16",SBC04651A,Student Branch Chapter,German Jordanian University,C16,36,6,Yes,1,0,1,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"German Jordanian University,CT08",SBC04651C,Student Branch Chapter,German Jordanian University,CT08,6,6,Yes,1,0,1,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"German Jordanian University,EMB18",SBC04651B,Student Branch Chapter,German Jordanian University,EMB18,17,6,Yes,5,2,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"German Jordanian University,IA34",SBC04651D,Student Branch Chapter,German Jordanian University,IA34,24,6,Yes,1,0,1,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
+"German Jordanian University,IE13",SBC04651,Student Branch Chapter,German Jordanian University,IE13,13,6,Yes,11,8,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"German Jordanian University,PE31",SBC04651G,Student Branch Chapter,German Jordanian University,PE31,8,6,Yes,1,0,1,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
+"German Jordanian University,RA24",SBC04651F,Student Branch Chapter,German Jordanian University,RA24,19,6,Yes,3,2,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"German Jordanian University,TEM14",SBC04651E,Student Branch Chapter,German Jordanian University,TEM14,7,6,Yes,1,0,1,2,No,No,,Yes,Yes,No,No,No,Partial,1/3,Not Met
+"Hashemite University, C16/CIS11",SBC61971C,Student Branch Chapter,Hashemite University,C16/CIS11,105,6,Yes,16,3,4,2,Yes,Yes,,Yes,Yes,Yes,No,Yes,Met,3/3,Met
+"Hashemite University, EMB18",SBC61971A,Student Branch Chapter,Hashemite University,EMB18,66,6,Yes,1,0,1,2,No,Yes,,No,Yes,Yes,No,No,Partial,1/3,Not Met
+"Hashemite University, PE31/IA34",SBC61971D,Student Branch Chapter,Hashemite University,PE31/IA34,61,6,Yes,11,8,4,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
+"Hashemite University, RA24",SBC61971B,Student Branch Chapter,Hashemite University,RA24,76,6,Yes,3,1,1,2,No,Yes,,Yes,Yes,No,Yes,No,Met,2/3,Not Met
+"Hashemite University,IE13",SBC61971E,Student Branch Chapter,Hashemite University,IE13,27,6,Yes,4,2,1,2,Yes,Yes,,Yes,Yes,Yes,No,No,Met,3/3,Met
+"Jadara University,C16",SBC60227427A,Student Branch Chapter,Jadara University,C16,33,6,Yes,40,8,1,2,Yes,Yes,,Yes,No,No,Yes,Yes,Met,3/3,Met
+"Jadara University,CIS11",SBC60227427,Student Branch Chapter,Jadara University,CIS11,21,6,Yes,47,5,0,2,Yes,No,,Yes,No,No,No,No,Partial,2/3,Not Met
+"Jadara University,RA24",SBC60227427B,Student Branch Chapter,Jadara University,RA24,23,6,Yes,55,6,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
+"Jordan University of Science & Technology,AES10",SBC60251G,Student Branch Chapter,Jordan University of Science & Technology,AES10,41,6,Yes,1,1,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Jordan University of Science & Technology,C16",SBC60251,Student Branch Chapter,Jordan University of Science & Technology,C16,62,6,Yes,0,0,0,2,No,Yes,,No,Yes,Yes,Yes,Yes,Partial,1/3,Not Met
+"Jordan University of Science & Technology,CIS11",SBC60251F,Student Branch Chapter,Jordan University of Science & Technology,CIS11,7,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Jordan University of Science & Technology,COM19",SBC60251I,Student Branch Chapter,Jordan University of Science & Technology,COM19,30,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Jordan University of Science & Technology,EMB18",SBC60251A,Student Branch Chapter,Jordan University of Science & Technology,EMB18,35,6,Yes,8,2,3,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Jordan University of Science & Technology,IA34",SBC60251C,Student Branch Chapter,Jordan University of Science & Technology,IA34,25,6,Yes,0,0,1,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Jordan University of Science & Technology,IE13",SBC60251H,Student Branch Chapter,Jordan University of Science & Technology,IE13,16,6,Yes,4,3,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Jordan University of Science & Technology,PE31",SBC60251D,Student Branch Chapter,Jordan University of Science & Technology,PE31,4,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Jordan University of Science & Technology,RA24",SBC60251E,Student Branch Chapter,Jordan University of Science & Technology,RA24,38,6,Yes,21,20,2,2,Yes,Yes,,No,Yes,Yes,Yes,Yes,Partial,2/3,Not Met
+"Middle East University,RA24",SBC60225930,Student Branch Chapter,Middle East University,RA24,18,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
+"Mutah University,C16",SBC00901A,Student Branch Chapter,Mutah University,C16,88,6,Yes,4,1,0,2,No,Yes,,No,Yes,No,No,No,Partial,1/3,Not Met
+"Mutah University,EMB18",SBC00901B,Student Branch Chapter,Mutah University,EMB18,37,6,Yes,0,0,0,2,No,Yes,,No,Yes,Yes,Yes,No,Partial,1/3,Not Met
+"Mutah University,PE31/IA34",SBC00901,Student Branch Chapter,Mutah University,PE31/IA34,21,6,Yes,13,6,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
+"Philadelphia Univ,AES10",SBC20223C,Student Branch Chapter,Philadelphia Univ,AES10,9,6,Yes,0,0,2,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Philadelphia Univ,C16",SBC20223B,Student Branch Chapter,Philadelphia Univ,C16,33,6,Yes,8,3,2,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
+"Philadelphia Univ,PE31",SBC20223,Student Branch Chapter,Philadelphia Univ,PE31,4,6,No,0,0,2,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,1/3,Not Met
+"Philadelphia Univ,RA24",SBC20223A,Student Branch Chapter,Philadelphia Univ,RA24,6,6,Yes,4,1,2,2,No,Yes,,No,No,No,No,No,Partial,1/3,Not Met
+"Princess Sumaya University for Technology,AES10",SBC61291D,Student Branch Chapter,Princess Sumaya University for Technology,AES10,9,6,Yes,9,1,1,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
+"Princess Sumaya University for Technology,C16",SBC61291C,Student Branch Chapter,Princess Sumaya University for Technology,C16,11,6,Yes,0,0,6,2,No,Yes,,No,No,Yes,No,No,Partial,1/3,Not Met
+"Princess Sumaya University for Technology,COM19",SBC61291B,Student Branch Chapter,Princess Sumaya University for Technology,COM19,10,6,Yes,0,0,8,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
+"Princess Sumaya University for Technology,PE31",SBC61291,Student Branch Chapter,Princess Sumaya University for Technology,PE31,8,6,Yes,20,13,0,2,Yes,Yes,,No,No,No,Yes,Yes,Partial,2/3,Not Met
+"Princess Sumaya University for Technology,RA24",SBC61291A,Student Branch Chapter,Princess Sumaya University for Technology,RA24,8,6,Yes,7,7,0,2,Yes,Yes,,No,No,Yes,No,No,Partial,2/3,Not Met
+"Tafila Technical University,C16",SBC10119B,Student Branch Chapter,Tafila Technical University,C16,26,6,Yes,3,2,0,2,Yes,Yes,,No,Yes,Yes,Yes,No,Partial,2/3,Not Met
+"Tafila Technical University,PE31",SBC10119,Student Branch Chapter,Tafila Technical University,PE31,2,6,No,0,0,0,2,No,Yes,,No,No,No,No,No,Partial,0/3,Not Met
+"Tafila Technical University,RA24",SBC10119A,Student Branch Chapter,Tafila Technical University,RA24,19,6,Yes,1,1,0,2,No,Yes,,Yes,No,No,No,Yes,Met,2/3,Not Met
+"Tafila Technical University,SMC28",SBC10119C,Student Branch Chapter,Tafila Technical University,SMC28,15,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"The University of Jordan-Aqaba,C16",SBC60236108,Student Branch Chapter,The University of Jordan-Aqaba,C16,18,6,Yes,4,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
+"University of Jordan, AES10",SBC81681D,Student Branch Chapter,University of Jordan,AES10,22,6,Yes,9,8,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"University of Jordan, AP03",SBC81681E,Student Branch Chapter,University of Jordan,AP03,15,6,Yes,3,3,2,2,Yes,Yes,,Yes,Yes,No,No,No,Met,3/3,Met
+"University of Jordan, C16",SBC81681A,Student Branch Chapter,University of Jordan,C16,110,6,Yes,13,10,14,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"University of Jordan, CIS11",SBC81681F,Student Branch Chapter,University of Jordan,CIS11,28,6,Yes,84,16,1,2,Yes,Yes,,Yes,No,No,No,No,Met,3/3,Met
+"University of Jordan, COM19",SBC81681C,Student Branch Chapter,University of Jordan,COM19,10,6,Yes,3,3,0,2,Yes,Yes,,Yes,Yes,No,No,No,Met,3/3,Met
+"University of Jordan, PE31",SBC81681B,Student Branch Chapter,University of Jordan,PE31,7,6,Yes,0,0,0,2,No,Yes,,No,Yes,No,No,No,Partial,1/3,Not Met
+"University of Jordan, RA24",SBC81681,Student Branch Chapter,University of Jordan,RA24,43,6,Yes,2,2,4,2,Yes,Yes,,Yes,Yes,No,No,No,Met,3/3,Met
+"University of Jordan,CS23",SBC81681G,Student Branch Chapter,University of Jordan,CS23,12,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
+"University of Petra,CIS11",SBC10115,Student Branch Chapter,University of Petra,CIS11,8,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Yarmouk Univ, COM19",SBC25091D,Student Branch Chapter,Yarmouk University,COM19,33,6,Yes,5,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
+"Yarmouk Univ, PE31",SBC25091E,Student Branch Chapter,Yarmouk University,PE31,11,6,Yes,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+"Yarmouk Univ, RA24",SBC25091C,Student Branch Chapter,Yarmouk University,RA24,27,6,Yes,12,4,4,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Yarmouk University, C16",SBC25091A,Student Branch Chapter,Yarmouk University,C16,58,6,Yes,2,0,22,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Yarmouk University, EMB18",SBC25091,Student Branch Chapter,Yarmouk University,EMB18,77,6,Yes,10,3,5,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Yarmouk University, IA34",SBC25091B,Student Branch Chapter,Yarmouk University,IA34,35,6,Yes,4,1,17,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Yarmouk University,AES10",SBC25091F,Student Branch Chapter,Yarmouk University,AES10,18,6,Yes,12,3,8,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
+"Yarmouk University,CIS11",SBC25091G,Student Branch Chapter,Yarmouk University,CIS11,24,6,Yes,3,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Zarqa University,C16",SBC60173704A,Student Branch Chapter,Zarqa University,C16,34,6,Yes,3,2,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Zarqa University,RA24",SBC60173704,Student Branch Chapter,Zarqa University,RA24,40,6,Yes,4,1,1,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met

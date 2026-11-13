@@ -1,0 +1,14 @@
+Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
+"West Virginia Univ,WIE",SBA02281,Affinity Group,West Virginia Univ,WIE,8,6,Yes,0,,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+California Univ of Pennsylvania,STB12891,Student Branch,California Univ Of Pennsylvania,,1,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Carnegie Mellon University,STB00311,Student Branch,Carnegie Mellon University,,272,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+Fairmont State Univ,STB10292,Student Branch,Fairmont State University,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Geneva College,STB88601,Student Branch,Geneva College,,0,12,No,0,,0,4,No,No,Yes,,No,No,No,No,Partial,0/3,Not Met
+Point Park University,STB96081,Student Branch,Point Park University,,1,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+University of Pittsburgh,STB01521,Student Branch,University of Pittsburgh,,126,12,Yes,1,,0,4,No,Yes,Yes,,No,No,Yes,No,Met,2/3,Not Met
+West Virginia University,STB02281,Student Branch,West Virginia Univ,,63,12,Yes,7,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+"University of Pittsburgh,C16",SBC01521,Student Branch Chapter,University of Pittsburgh,C16,10,6,Yes,0,0,4,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"University of Pittsburgh,PE31,PEL35",SBC01521B,Student Branch Chapter,University of Pittsburgh,"PE31,PEL35",6,6,Yes,0,0,0,2,No,Yes,,No,No,No,No,No,Partial,1/3,Not Met
+"University of Pittsburgh,RA24",SBC01521A,Student Branch Chapter,University of Pittsburgh,RA24,4,6,No,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,1/3,Not Met
+"West Virginia Univ, PE31",SBC02281A,Student Branch Chapter,West Virginia Univ,PE31,3,6,No,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,1/3,Not Met
+"West Virginia Univ,C16",SBC02281,Student Branch Chapter,West Virginia Univ,C16,14,6,Yes,6,1,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met

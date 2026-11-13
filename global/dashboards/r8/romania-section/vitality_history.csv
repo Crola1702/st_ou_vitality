@@ -1,0 +1,15 @@
+Date,SPO ID,Unit Type,University,Society,Member Count,Requirements Met,Members Met,Events Met,Officers Status,Overall Vitality
+2026-11-13,STB99065,Student Branch,Gheorghe Asachi Technical University,,20,2,Yes,No,Met,Not Met
+2026-11-13,STB63061,Student Branch,Politehnica University of Bucharest,,77,1,Yes,No,Partial,Not Met
+2026-11-13,STB10127,Student Branch,Politehnica University of Timisoara,,9,0,No,No,Not Met,Not Met
+2026-11-13,STB10228,Student Branch,Technical University of Cluj-Napoca,,31,2,Yes,No,Met,Not Met
+2026-11-13,STB64721,Student Branch,Universitatea Alexandru Ioan Cuza,,8,1,No,No,Met,Not Met
+2026-11-13,STB60049289,Student Branch,Universitatea Valahia din Targoviste,,15,2,Yes,No,Met,Not Met
+2026-11-13,STB60031668,Student Branch,University Lucian Blaga Sibiu,,15,2,Yes,No,Met,Not Met
+2026-11-13,SBC99065,Student Branch Chapter,Gheorghe Asachi Technical University,EP21,4,1,No,No,Met,Not Met
+2026-11-13,SBC63061,Student Branch Chapter,Politehnica University of Bucharest,EP21,8,3,Yes,Yes,Met,Met
+2026-11-13,SBC63061A,Student Branch Chapter,Politehnica University of Bucharest,NANO42,6,3,Yes,Yes,Met,Met
+2026-11-13,SBC63061B,Student Branch Chapter,Politehnica University of Bucharest,RA24,3,1,No,No,Met,Not Met
+2026-11-13,SBC10127,Student Branch Chapter,Politehnica University of Timisoara,EP21,1,1,No,Yes,Partial,Not Met
+2026-11-13,SBC10228,Student Branch Chapter,Technical University of Cluj-Napoca,EP21,4,2,No,Yes,Met,Not Met
+2026-11-13,SBC60031668,Student Branch Chapter,University Lucian Blaga Sibiu,EP21,12,2,Yes,Yes,Not Met,Not Met

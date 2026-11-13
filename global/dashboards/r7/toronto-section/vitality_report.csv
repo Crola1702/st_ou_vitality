@@ -1,0 +1,23 @@
+Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
+"Humber Polytechnic,WIE",SBA01721,Affinity Group,Humber Polytechnic,WIE,7,6,Yes,4,,2,2,Yes,Yes,,Yes,No,No,No,No,Met,3/3,Met
+"Lakehead University-Barrie Hub,WIE",SBA60221728,Affinity Group,Lakehead University - Barrie Hub,WIE,7,6,Yes,1,,0,2,No,Yes,,No,No,No,No,No,Partial,1/3,Not Met
+"University of Toronto, WIE",SBA02021,Affinity Group,University of Toronto,WIE,9,6,Yes,0,,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"York University, WIE",SBA18641,Affinity Group,York University,WIE,3,6,No,0,,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+Centennial College of Applied Arts and Technology,STB10251,Student Branch,Centennial College of Applied Arts and Technology,,27,12,Yes,5,,3,4,Yes,Yes,Yes,,Yes,No,No,No,Met,3/3,Met
+George Brown Polytechnic,STB29592,Student Branch,George Brown Polytechnic,,22,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
+Humber Polytechnic,STB01721,Student Branch,Humber Polytechnic,,27,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,No,No,Met,2/3,Not Met
+Lakehead University-Barrie Hub,STB60221728,Student Branch,Lakehead University - Barrie Hub,,13,12,Yes,1,,0,4,No,No,No,,Yes,Yes,No,Yes,Not Met,1/3,Not Met
+Seneca Polytechnic,STB09232,Student Branch,Seneca Polytechnic,,8,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Toronto Metropolitan University,STB01691,Student Branch,Toronto Metropolitan University,,62,12,Yes,7,,0,4,Yes,Yes,No,,Yes,No,Yes,No,Partial,2/3,Not Met
+University of Ontario Institute of Technology,STB65021,Student Branch,University of Ontario Institute of Technology,,66,12,Yes,2,,1,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+University of Toronto,STB02021,Student Branch,University of Toronto,,279,12,Yes,4,,4,4,Yes,Yes,Yes,,No,No,No,No,Met,3/3,Met
+York University,STB18641,Student Branch,York University,,81,12,Yes,0,,1,4,No,Yes,Yes,,Yes,No,No,No,Met,2/3,Not Met
+"Lakehead University-Barrie Hub,IA34",SBC60221728,Student Branch Chapter,Lakehead University - Barrie Hub,IA34,8,6,Yes,1,1,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+"Toronto Metropolitan University,C16",SBC01691,Student Branch Chapter,Toronto Metropolitan University,C16,5,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Toronto Metropolitan University,CIS11",SBC01691E,Student Branch Chapter,Toronto Metropolitan University,CIS11,1,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Toronto Metropolitan University,EMB18",SBC01691D,Student Branch Chapter,Toronto Metropolitan University,EMB18,10,6,Yes,1,0,0,2,No,Yes,,No,Yes,Yes,Yes,No,Partial,1/3,Not Met
+"Toronto Metropolitan University,IA34",SBC01691A,Student Branch Chapter,Toronto Metropolitan University,IA34,0,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"Toronto Metropolitan University,PE31",SBC01691B,Student Branch Chapter,Toronto Metropolitan University,PE31,3,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"University of Toronto,AP03",SBC02021,Student Branch Chapter,University of Toronto,AP03,7,6,Yes,5,5,0,2,Yes,Yes,,Yes,Yes,Yes,No,Yes,Met,3/3,Met
+"University of Toronto,SSC37",SBC02021A,Student Branch Chapter,University of Toronto,SSC37,16,6,Yes,6,5,0,2,Yes,Yes,,Yes,Yes,No,No,No,Met,3/3,Met
+"York University, IA34",SBC18641A,Student Branch Chapter,York University,IA34,2,6,No,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,1/3,Not Met

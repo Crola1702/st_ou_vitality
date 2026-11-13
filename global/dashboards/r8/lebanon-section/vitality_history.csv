@@ -1,0 +1,49 @@
+Date,SPO ID,Unit Type,University,Society,Member Count,Requirements Met,Members Met,Events Met,Officers Status,Overall Vitality
+2026-11-13,SBA05101S,Affinity Group,American University of Beirut,SIGHT,0,0,No,No,Not Met,Not Met
+2026-11-13,SBA05101,Affinity Group,American University of Beirut,WIE,272,2,Yes,Yes,Not Met,Not Met
+2026-11-13,SBA60219658,Affinity Group,American University of Technology,WIE,12,2,Yes,No,Met,Not Met
+2026-11-13,SBA16581S,Affinity Group,Beirut Arab University,SB SIGHT,2,0,No,No,Not Met,Not Met
+2026-11-13,SBA16581,Affinity Group,Beirut Arab University,WIE,38,3,Yes,Yes,Met,Met
+2026-11-13,SBA60231,Affinity Group,Lebanese American University,WIE,38,2,Yes,No,Met,Not Met
+2026-11-13,SBA61091,Affinity Group,Notre Dame University-Lebanon,WIE,3,0,No,No,Not Met,Not Met
+2026-11-13,SBA06091,Affinity Group,Rafik Hariri University,WIE,24,2,Yes,Yes,Not Met,Not Met
+2026-11-13,SBA17831,Affinity Group,University of Balamand,WIE,4,0,No,No,Not Met,Not Met
+2026-11-13,STB60114049,Student Branch,Al Maaref University,,27,3,Yes,Yes,Met,Met
+2026-11-13,STB05101,Student Branch,American University of Beirut,,296,2,Yes,No,Met,Not Met
+2026-11-13,STB07191,Student Branch,American University of Science and Technology,,264,3,Yes,Yes,Met,Met
+2026-11-13,STB60219658,Student Branch,American University of Technology,,38,3,Yes,Yes,Met,Met
+2026-11-13,STB10149,Student Branch,Antonine University,,59,3,Yes,Yes,Met,Met
+2026-11-13,STB60034401,Student Branch,Arab Open University - Lebanon,,0,0,No,No,Not Met,Not Met
+2026-11-13,STB19001,Student Branch,"Arts, Sciences and Technology Univ. in Lebanon",,2,0,No,No,Not Met,Not Met
+2026-11-13,STB16581,Student Branch,Beirut Arab University,,218,3,Yes,Yes,Met,Met
+2026-11-13,STB14007,Student Branch,Beirut Arab University - Tripoli,,74,3,Yes,Yes,Met,Met
+2026-11-13,STB20128,Student Branch,City University,,68,3,Yes,Yes,Met,Met
+2026-11-13,STB16941,Student Branch,Holy Spirit University of Kaslik,,119,3,Yes,Yes,Met,Met
+2026-11-13,STB18521,Student Branch,Islamic University of Lebanon,,67,2,Yes,No,Met,Not Met
+2026-11-13,STB60231,Student Branch,Lebanese American University,,118,2,Yes,No,Met,Not Met
+2026-11-13,STB17891,Student Branch,Lebanese International University,,24,2,Yes,No,Met,Not Met
+2026-11-13,STB64288,Student Branch,Lebanese University - Faculty of Sciences,,24,3,Yes,Yes,Met,Met
+2026-11-13,STB17911,Student Branch,Lebanese University - Tripoli,,64,3,Yes,Yes,Met,Met
+2026-11-13,STB13851,Student Branch,Lebanese University Faculty of Engineering-Hadath,,15,2,Yes,No,Met,Not Met
+2026-11-13,STB05361,Student Branch,Lebanese University Faculty of Engineering-Roumieh,,28,3,Yes,Yes,Met,Met
+2026-11-13,STB60235669,Student Branch,Lebanese University-Faculty of Technology,,17,2,Yes,No,Met,Not Met
+2026-11-13,STB61091,Student Branch,Notre Dame University-Lebanon,,25,2,Yes,No,Met,Not Met
+2026-11-13,STB60209966,Student Branch,Phoenicia University,,22,2,Yes,Yes,Not Met,Not Met
+2026-11-13,STB06091,Student Branch,Rafik Hariri University,,45,2,Yes,Yes,Partial,Not Met
+2026-11-13,STB00251,Student Branch,Saint Joseph University School of Engineering,,59,2,Yes,No,Met,Not Met
+2026-11-13,STB17831,Student Branch,University of Balamand,,89,3,Yes,Yes,Met,Met
+2026-11-13,STB60217957,Student Branch,University La Sagessee,,82,3,Yes,Yes,Met,Met
+2026-11-13,SBC05101B,Student Branch Chapter,American University of Beirut,EMB18,2,0,No,No,Not Met,Not Met
+2026-11-13,SBC05101A,Student Branch Chapter,American University of Beirut,RA24,0,0,No,No,Partial,Not Met
+2026-11-13,SBC071911,Student Branch Chapter,American University of Science and Technology,EMB018,4,0,No,No,Not Met,Not Met
+2026-11-13,SBC16941A,Student Branch Chapter,Holy Spirit University of Kaslik,EMB18,34,1,Yes,No,Partial,Not Met
+2026-11-13,SBC16941,Student Branch Chapter,Holy Spirit University of Kaslik,PE31,29,3,Yes,Yes,Met,Met
+2026-11-13,SBC16941B,Student Branch Chapter,Holy Spirit University of Kaslik,COM19,26,3,Yes,Yes,Met,Met
+2026-11-13,SBC17891,Student Branch Chapter,Lebanese International University,EMB18,6,1,Yes,No,Partial,Not Met
+2026-11-13,SBC13851,Student Branch Chapter,Lebanese University Faculty of Engineering-Hadath,COM19,0,0,No,No,Partial,Not Met
+2026-11-13,SBC60209966,Student Branch Chapter,Phoenicia University,C16,12,2,Yes,No,Met,Not Met
+2026-11-13,SBC06091,Student Branch Chapter,Rafik Hariri University,EMB18,31,1,Yes,No,Not Met,Not Met
+2026-11-13,SBC06091A,Student Branch Chapter,Rafik Hariri University,CIS11,4,1,No,No,Met,Not Met
+2026-11-13,SBC00251A,Student Branch Chapter,Saint Joseph University School of Engineering,C16,4,1,No,Yes,Not Met,Not Met
+2026-11-13,SBC17831A,Student Branch Chapter,University of Balamand,C16,5,2,No,Yes,Met,Not Met
+2026-11-13,SBC17831,Student Branch Chapter,University of Balamand,PE31,1,1,No,Yes,Partial,Not Met

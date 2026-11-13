@@ -1,0 +1,16 @@
+Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
+"New Jersey Institute of Technology,WIE",SBA01241,Affinity Group,New Jersey Institute of Technology,WIE,8,6,Yes,0,,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+County College of Morris,STB12852,Student Branch,County College of Morris,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Fairleigh Dickinson University,STB00591,Student Branch,Fairleigh Dickinson University,,17,12,Yes,1,,1,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+Montclair State Univ,STB21201,Student Branch,Montclair State Univ,,40,12,Yes,11,,1,4,Yes,Yes,Yes,,No,Yes,No,No,Met,3/3,Met
+New Jersey Institute of Technology,STB01241,Student Branch,New Jersey Institute of Technology,,201,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+Seton Hall Univ,STB2503293,Student Branch,Seton Hall Univ,,6,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Stevens Institute of Tech,STB01881,Student Branch,Stevens Institute of Tech,,80,12,Yes,0,,0,4,No,No,Yes,,Yes,Yes,No,Yes,Partial,1/3,Not Met
+"Fairleigh Dickinson University,SYSC45/AP03/CIS11",SBC00591,Student Branch Chapter,Fairleigh Dickinson University,SYSC45/AP03/CIS11,7,6,Yes,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+"Montclair State Univ,AP03",SBC21201,Student Branch Chapter,Montclair State Univ,AP03,27,6,Yes,10,4,1,2,Yes,Yes,,Yes,Yes,Yes,No,No,Met,3/3,Met
+"New Jersey Institute of Technology, C16",SBC01241,Student Branch Chapter,New Jersey Institute of Technology,C16,9,6,Yes,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,1/3,Not Met
+"New Jersey Institute of Technology, EMB18",SBC01241A,Student Branch Chapter,New Jersey Institute of Technology,EMB18,5,6,No,0,0,0,2,No,Yes,,No,No,No,No,No,Partial,0/3,Not Met
+"New Jersey Institute of Technology, GRS29",SBC01241C,Student Branch Chapter,New Jersey Institute of Technology,GRS29,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"New Jersey Institute of Technology, RA24",SBC01241B,Student Branch Chapter,New Jersey Institute of Technology,RA24,7,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"New Jersey Institute of Technology,AP03",SBC01241D,Student Branch Chapter,New Jersey Institute of Technology,AP03,100,6,Yes,2,1,1,2,No,Yes,,Yes,No,Yes,No,Yes,Met,2/3,Not Met
+"Stevens Institute of Tech,AP03",SBC01881,Student Branch Chapter,Stevens Institute of Tech,AP03,3,6,No,3,1,0,2,No,Yes,,Yes,Yes,No,No,No,Met,1/3,Not Met

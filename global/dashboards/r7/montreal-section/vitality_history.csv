@@ -1,0 +1,21 @@
+Date,SPO ID,Unit Type,University,Society,Member Count,Requirements Met,Members Met,Events Met,Officers Status,Overall Vitality
+2026-11-13,SBA08671,Affinity Group,Ecole De Technologie Superieure,WIE,6,1,Yes,No,Not Met,Not Met
+2026-11-13,SBA01051,Affinity Group,McGill University,WIE,7,1,Yes,No,Partial,Not Met
+2026-11-13,STB01791,Student Branch,Concordia University,,113,3,Yes,Yes,Met,Met
+2026-11-13,STB08671,Student Branch,Ecole De Technologie Superieure,,65,2,Yes,Yes,Not Met,Not Met
+2026-11-13,STB19011,Student Branch,Institut Natl de la Recherche Scientifique,,41,3,Yes,Yes,Met,Met
+2026-11-13,STB01051,Student Branch,McGill University,,140,1,Yes,No,Not Met,Not Met
+2026-11-13,STB03681,Student Branch,Polytechnique Montreal,,54,2,Yes,Yes,Partial,Not Met
+2026-11-13,STB03661,Student Branch,Sherbrooke Univ De,,24,1,Yes,No,Not Met,Not Met
+2026-11-13,STB23081,Student Branch,University of Quebec at Montreal,,5,0,No,No,Partial,Not Met
+2026-11-13,SBC01791,Student Branch Chapter,Concordia University,C16,7,1,Yes,No,Not Met,Not Met
+2026-11-13,SBC01791A,Student Branch Chapter,Concordia University,IA34,9,1,Yes,No,Partial,Not Met
+2026-11-13,SBC08671A,Student Branch Chapter,Ecole De Technologie Superieure,MTT17,7,3,Yes,Yes,Met,Met
+2026-11-13,SBC08671,Student Branch Chapter,Ecole De Technologie Superieure,PE31,1,0,No,No,Partial,Not Met
+2026-11-13,SBC19011,Student Branch Chapter,Institut Natl de la Recherche Scientifique,NANO42,4,0,No,No,Not Met,Not Met
+2026-11-13,SBC19011B,Student Branch Chapter,Institut Natl de la Recherche Scientifique,MTT17,7,2,Yes,No,Met,Not Met
+2026-11-13,SBC19011A,Student Branch Chapter,Institut Natl de la Recherche Scientifique,PHO36,8,2,Yes,Yes,Not Met,Not Met
+2026-11-13,SBC01051,Student Branch Chapter,McGill University,C16,5,0,No,No,Partial,Not Met
+2026-11-13,SBC01051A,Student Branch Chapter,McGill University,PE31,15,2,Yes,No,Met,Not Met
+2026-11-13,SBC0368A,Student Branch Chapter,Polytechnique Montreal,C16,1,0,No,No,Not Met,Not Met
+2026-11-13,SBC03681,Student Branch Chapter,Polytechnique Montreal,MTT17,2,1,No,No,Met,Not Met

@@ -1,0 +1,27 @@
+Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
+"Columbia Univ, WIE",SBA00441,Affinity Group,Columbia Univ,WIE,5,6,No,0,,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"New York City College of Tech, WIE",SBA03892,Affinity Group,New York City College Of Tech,WIE,22,6,Yes,0,,0,2,No,No,,Yes,No,No,No,No,Partial,1/3,Not Met
+Borough of Manhattan Comm College,STB62321,Student Branch,Borough of Manhattan Comm College,,1,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Columbia Univ,STB00441,Student Branch,Columbia Univ,,133,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
+Cooper Union,STB00461,Student Branch,Cooper Union,,20,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
+Cuny-College of Staten Island,STB10801,Student Branch,Cuny-College Of Staten Island,,0,12,No,0,,0,4,No,No,Yes,,No,No,No,No,Partial,0/3,Not Met
+Long Island University-Brooklyn Campus,STB10451,Student Branch,Long Island University-Brooklyn Campus,,11,12,No,0,,0,4,No,No,Yes,,No,No,No,No,Partial,0/3,Not Met
+Manhattan College,STB00981,Student Branch,Manhattan College,,28,12,Yes,2,,2,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+New York City College of Tech,STB03892,Student Branch,New York City College Of Tech,,46,12,Yes,3,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+New York Inst of Tech-Manhattan,STB04341,Student Branch,New York Institute of Tech-Manhattan,,15,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
+New York University Tandon School of Eng,STB00201,Student Branch,New York University Tandon School of Eng,,44,12,Yes,1,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
+Queens College of CUNY,STB03121,Student Branch,Queens College of CUNY,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+State University of New York-Maritime College,STB06711,Student Branch,State University of New York-Maritime College,,2,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Technical Career Institutes (TCI),STB01602,Student Branch,Technical Career Institutes (TCI),,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+The City College of New York,STB01291,Student Branch,The City College of New York,,101,12,Yes,2,,0,4,No,Yes,Yes,,Yes,No,Yes,No,Met,2/3,Not Met
+Vaughn College of Aeronautics & Tech,STB02922,Student Branch,Vaughn College of Aeronautics & Tech,,4,12,No,0,,0,4,No,No,Yes,,No,No,No,No,Partial,0/3,Not Met
+"Columbia Univ,C16",SBC00441,Student Branch Chapter,Columbia Univ,C16,8,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Columbia Univ,EMB18",SBC00441B,Student Branch Chapter,Columbia Univ,EMB18,7,6,Yes,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,1/3,Not Met
+"Cooper Union,C16",SBC00461,Student Branch Chapter,Cooper Union,C16,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Long Island Univ-Brooklyn, SMC28/C16",SBC10451A,Student Branch Chapter,Long Island University-Brooklyn Campus,SMC28/C16,8,6,Yes,3,2,0,2,Yes,No,,Yes,No,No,No,No,Partial,2/3,Not Met
+"New York City College of Tech, RA24",SBC03892,Student Branch Chapter,New York City College Of Tech,RA24,19,6,Yes,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,1/3,Not Met
+"New York University Tandon School of Eng,C16",SBC00201,Student Branch Chapter,New York University Tandon School of Eng,C16,4,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Technical Career Institutes (TCI),C16",SBC01602,Student Branch Chapter,Technical Career Institutes (TCI),C16,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"The City College of New York,Com19",SBC01291,Student Branch Chapter,The City College of New York,Com19,3,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"The City College of New York,IA34,PE31,PEL35",SBC01291A,Student Branch Chapter,The City College of New York,"IA34,PE31,PEL35",12,6,Yes,3,0,1,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
+"Vaughn College of Aeronautics & Tech, C16",SBC02922,Student Branch Chapter,Vaughn College of Aeronautics & Tech,C16,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met

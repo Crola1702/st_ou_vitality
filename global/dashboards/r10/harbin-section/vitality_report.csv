@@ -1,0 +1,17 @@
+Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
+"Changchun Inst of Optics, Fine Mechanics & Physics",STB60132633,Student Branch,"Changchun Inst of Optics, Fine Mechanics & Physics",,20,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+Changchun University of Science and Technology,STB11742,Student Branch,Changchun University of Science and Technology,,15,12,Yes,0,,0,4,No,Yes,No,,No,No,No,No,Partial,1/3,Not Met
+Harbin Engineering University,STB41665412,Student Branch,Harbin Engineering University,,209,12,Yes,0,,0,4,No,Yes,Yes,,No,No,No,No,Met,2/3,Not Met
+Harbin Institute of Technology-Main Campus,STB66231,Student Branch,Harbin Institute of Technology-Main Campus,,363,12,Yes,0,,0,4,No,Yes,Yes,,No,No,No,No,Met,2/3,Not Met
+Northeast Electric Power University,STB60063024,Student Branch,Northeast Electric Power University,,32,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,Yes,No,Met,2/3,Not Met
+"Changchun Inst of Optics Fine Mech & Physics,PHO36",SBC60132633,Student Branch Chapter,"Changchun Inst of Optics, Fine Mechanics & Physics",PHO36,7,6,Yes,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+"Changchun Inst of Optics Fine Mech & Physics,SEN39",SBC60132633A,Student Branch Chapter,"Changchun Inst of Optics, Fine Mechanics & Physics",SEN39,0,6,No,0,0,1,2,No,Yes,,Yes,No,No,No,No,Met,1/3,Not Met
+"Changchun University of Science and Tech,PHO36",SBC11742,Student Branch Chapter,Changchun University of Science and Technology,PHO36,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Harbin Institute of Tech-Main Campus,IM09/SEN39",SBC66231B,Student Branch Chapter,Harbin Institute of Technology-Main Campus,IM09/SEN39,5,6,No,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,1/3,Not Met
+"Harbin Institute of Technology-Main Campus,EP21",SBC66231C,Student Branch Chapter,Harbin Institute of Technology-Main Campus,EP21,0,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"Harbin Institute of Technology-Main Campus,GRS29",SBC66231A,Student Branch Chapter,Harbin Institute of Technology-Main Campus,GRS29,11,6,Yes,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,1/3,Not Met
+"Harbin Institute of Technology-Main Campus,IA34",SBC66231,Student Branch Chapter,Harbin Institute of Technology-Main Campus,IA34,1,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Harbin Institute of Technology-Main Campus,MTT17",SBC66231E,Student Branch Chapter,Harbin Institute of Technology-Main Campus,MTT17,11,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Harbin Institute of Technology-Main Campus,PEL35",SBC66231D,Student Branch Chapter,Harbin Institute of Technology-Main Campus,PEL35,3,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Northeast Electric Power University,PE31",SBC60063024,Student Branch Chapter,Northeast Electric Power University,PE31,10,6,Yes,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+"Northeast Electric Power University,SYS45",SBC60063024A,Student Branch Chapter,Northeast Electric Power University,SYS45,9,6,Yes,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met

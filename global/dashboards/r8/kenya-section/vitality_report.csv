@@ -1,0 +1,104 @@
+Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
+"Dedan Kimathi University of Technology,WIE",SBA60210474,Affinity Group,Dedan Kimathi University of Technology,WIE,40,6,Yes,14,,4,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+Jomo Kenyatta Univ of Agriculture & Tech SIGHT,SBA10128S,Affinity Group,Jomo Kenyatta University of Agriculture & Tech,SIGHT,32,6,Yes,2,,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
+"Jomo Kenyatta Univ of Agriculture & Tech,WIE",SBA10128,Affinity Group,Jomo Kenyatta University of Agriculture & Tech,WIE,20,6,Yes,6,,2,2,Yes,Yes,,No,Yes,No,No,No,Partial,2/3,Not Met
+Kenyatta University SB SIGHT,SBA11560S,Affinity Group,Kenyatta University,SB SIGHT,54,6,Yes,6,,1,2,Yes,Yes,,No,No,Yes,No,No,Partial,2/3,Not Met
+"Kenyatta University,WIE",SBA11560,Affinity Group,Kenyatta University,WIE,40,6,Yes,9,,1,2,Yes,Yes,,No,No,No,No,No,Partial,2/3,Not Met
+"Masinde Muliro University of Science & Tech, WIE",SBA10163,Affinity Group,Masinde Muliro University of Science & Technology,WIE,9,6,Yes,0,,0,2,No,Yes,,No,No,No,No,No,Partial,1/3,Not Met
+"Meru University of Science and Technology,WIE",SBA60226496,Affinity Group,Meru University of Science and Technology,WIE,10,6,Yes,3,,0,2,Yes,No,,No,No,No,No,No,Not Met,2/3,Not Met
+"Moi University,WIE",SBA10102,Affinity Group,Moi University,WIE,12,6,Yes,8,,2,2,Yes,Yes,,No,No,Yes,Yes,No,Partial,2/3,Not Met
+"Multimedia University of Kenya,WIE",SBA60052951,Affinity Group,Multimedia University of Kenya,WIE,19,6,Yes,7,,1,2,Yes,Yes,,No,No,No,Yes,No,Partial,2/3,Not Met
+South Eastern Kenya University SB SIGHT,SBA60221106S,Affinity Group,South Eastern Kenya University,SB SIGHT,45,6,Yes,7,,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
+"Strathmore University,WIE",SBA11733,Affinity Group,Strathmore University,WIE,51,6,Yes,2,,2,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
+Technical University of Kenya SB SIGHT,SBA99364S,Affinity Group,Technical University of Kenya,SB SIGHT,42,6,Yes,2,,0,2,Yes,No,,No,No,No,No,No,Not Met,2/3,Not Met
+"Technical University of Kenya,WIE",SBA99364,Affinity Group,Technical University of Kenya,WIE,20,6,Yes,1,,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+Technical University of Mombasa SB SIGHT,SBA60101803S,Affinity Group,Technical University of Mombasa,SB SIGHT,13,6,Yes,5,,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
+"Technical University of Mombasa,WIE",SBA60101803,Affinity Group,Technical University of Mombasa,WIE,12,6,Yes,6,,0,2,Yes,Yes,,Yes,No,No,No,No,Met,3/3,Met
+University of Eldoret SB SIGHT,SBA60104095S,Affinity Group,University of Eldoret,SB SIGHT,21,6,Yes,1,,0,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
+"University of Eldoret,WIE",SBA60104095,Affinity Group,University of Eldoret,WIE,19,6,Yes,1,,1,2,No,Yes,,No,Yes,Yes,Yes,Yes,Partial,1/3,Not Met
+"University of Nairobi,WIE",SBA10110,Affinity Group,University of Nairobi,WIE,14,6,Yes,0,,0,2,No,No,,Yes,No,No,No,No,Partial,1/3,Not Met
+Co-operative University of Kenya,STB60225827,Student Branch,Co-operative University of Kenya,,29,12,Yes,13,,2,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Dedan Kimathi University of Technology,STB60210474,Student Branch,Dedan Kimathi University of Technology,,109,12,Yes,34,,14,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Jomo Kenyatta Univ of Agriculture & Tech,STB10128,Student Branch,Jomo Kenyatta University of Agriculture & Tech,,73,12,Yes,13,,5,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Kenyatta University,STB11560,Student Branch,Kenyatta University,,141,12,Yes,10,,11,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Masinde Muliro University of Science & Technology,STB10163,Student Branch,Masinde Muliro University of Science & Technology,,19,12,Yes,10,,4,4,Yes,Yes,No,,Yes,Yes,Yes,Yes,Partial,2/3,Not Met
+Meru University of Science and Technology,STB60226496,Student Branch,Meru University of Science and Technology,,19,12,Yes,4,,1,4,Yes,Yes,No,,Yes,Yes,Yes,Yes,Partial,2/3,Not Met
+Moi University,STB10102,Student Branch,Moi University,,21,12,Yes,11,,4,4,Yes,Yes,Yes,,Yes,No,Yes,Yes,Met,3/3,Met
+Multimedia University of Kenya,STB60052951,Student Branch,Multimedia University of Kenya,,50,12,Yes,5,,1,4,Yes,Yes,Yes,,Yes,No,Yes,Yes,Met,3/3,Met
+Muranga University of Technology,STB60212517,Student Branch,Muranga University of Technology,,7,12,No,3,,3,4,No,Yes,No,,Yes,Yes,Yes,No,Partial,0/3,Not Met
+South Eastern Kenya University,STB60221106,Student Branch,South Eastern Kenya University,,60,12,Yes,12,,6,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Strathmore University,STB11733,Student Branch,Strathmore University,,111,12,Yes,0,,2,4,No,Yes,Yes,,Yes,Yes,Yes,No,Met,2/3,Not Met
+Technical University of Kenya,STB99364,Student Branch,Technical University of Kenya,,80,12,Yes,12,,7,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Technical University of Mombasa,STB60101803,Student Branch,Technical University of Mombasa,,32,12,Yes,5,,4,4,Yes,Yes,Yes,,No,No,No,No,Met,3/3,Met
+Tharaka University,STB60240569,Student Branch,Tharaka University,,22,12,Yes,1,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+United States International University Africa,STB45894110,Student Branch,United States International University Africa,,7,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+University of Eldoret,STB60104095,Student Branch,University of Eldoret,,25,12,Yes,4,,1,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+University of Nairobi,STB10110,Student Branch,University of Nairobi,,74,12,Yes,0,,2,4,No,Yes,Yes,,Yes,No,No,Yes,Met,2/3,Not Met
+"Co-operative University of Kenya,IE13",SBC60225827,Student Branch Chapter,Co-operative University of Kenya,IE13,0,6,No,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,1/3,Not Met
+"Dedan Kimathi University of Tech,PH036",SBC60210474A,Student Branch Chapter,Dedan Kimathi University of Technology,PH036,4,6,No,8,1,2,2,No,Yes,,No,Yes,Yes,Yes,Yes,Partial,0/3,Not Met
+"Dedan Kimathi University of Technology,AP03",SBC60210474C,Student Branch Chapter,Dedan Kimathi University of Technology,AP03,32,6,Yes,23,6,4,2,Yes,Yes,,No,Yes,Yes,No,Yes,Partial,2/3,Not Met
+"Dedan Kimathi University of Technology,C16",SBC60210474E,Student Branch Chapter,Dedan Kimathi University of Technology,C16,30,6,Yes,12,3,5,2,Yes,No,,No,No,No,No,No,Not Met,2/3,Not Met
+"Dedan Kimathi University of Technology,CAS04",SBC60210474B,Student Branch Chapter,Dedan Kimathi University of Technology,CAS04,19,6,Yes,14,6,3,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Dedan Kimathi University of Technology,PE31",SBC60210474,Student Branch Chapter,Dedan Kimathi University of Technology,PE31,15,6,Yes,35,22,6,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Dedan Kimathi University of Technology,RA24",SBC60210474D,Student Branch Chapter,Dedan Kimathi University of Technology,RA24,22,6,Yes,11,3,5,2,Yes,No,,No,No,No,No,No,Not Met,2/3,Not Met
+"Dedan Kimathi University of Technology,SP01",SBC60210474F,Student Branch Chapter,Dedan Kimathi University of Technology,SP01,11,6,Yes,12,3,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Jomo Kenyatta Univ of Agriculture & Tech,C16",SBC10128B,Student Branch Chapter,Jomo Kenyatta University of Agriculture & Tech,C16,11,6,Yes,8,3,1,2,Yes,Yes,,Yes,Yes,No,No,Yes,Met,3/3,Met
+"Jomo Kenyatta Univ of Agriculture & Tech,CAS04",SBC10128C,Student Branch Chapter,Jomo Kenyatta University of Agriculture & Tech,CAS04,11,6,Yes,5,2,0,2,Yes,Yes,,No,No,No,No,No,Partial,2/3,Not Met
+"Jomo Kenyatta Univ of Agriculture & Tech,PE31",SBC10128,Student Branch Chapter,Jomo Kenyatta University of Agriculture & Tech,PE31,6,6,Yes,15,7,3,2,Yes,Yes,,No,Yes,Yes,No,No,Partial,2/3,Not Met
+"Jomo Kenyatta Univ of Agriculture & Tech,PHO36",SBC10128A,Student Branch Chapter,Jomo Kenyatta University of Agriculture & Tech,PHO36,0,6,No,1,0,0,2,No,No,,Yes,No,No,No,Yes,Partial,0/3,Not Met
+"Kenyatta University,AES10",SBC11560H,Student Branch Chapter,Kenyatta University,AES10,12,6,Yes,1,1,0,2,No,No,,Yes,Yes,Yes,No,Yes,Partial,1/3,Not Met
+"Kenyatta University,AP03",SBC11560N,Student Branch Chapter,Kenyatta University,AP03,40,6,Yes,5,4,2,2,Yes,Yes,,Yes,No,Yes,Yes,Yes,Met,3/3,Met
+"Kenyatta University,C16",SBC11560E,Student Branch Chapter,Kenyatta University,C16,26,6,Yes,3,2,3,2,Yes,Yes,,No,Yes,Yes,Yes,Yes,Partial,2/3,Not Met
+"Kenyatta University,CAS04",SBC11560D,Student Branch Chapter,Kenyatta University,CAS04,11,6,Yes,4,4,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Kenyatta University,COM19",SBC11560A,Student Branch Chapter,Kenyatta University,COM19,29,6,Yes,6,6,0,2,Yes,Yes,,No,Yes,No,No,Yes,Partial,2/3,Not Met
+"Kenyatta University,EMB18",SBC11560C,Student Branch Chapter,Kenyatta University,EMB18,34,6,Yes,3,2,0,2,Yes,Yes,,No,Yes,Yes,No,Yes,Partial,2/3,Not Met
+"Kenyatta University,EMC27",SBC11560O,Student Branch Chapter,Kenyatta University,EMC27,9,6,Yes,3,3,0,2,Yes,Yes,,Yes,Yes,No,No,Yes,Met,3/3,Met
+"Kenyatta University,GRS29",SBC11560J,Student Branch Chapter,Kenyatta University,GRS29,17,6,Yes,2,2,1,2,Yes,Yes,,No,Yes,No,Yes,Yes,Partial,2/3,Not Met
+"Kenyatta University,IA34",SBC11560I,Student Branch Chapter,Kenyatta University,IA34,34,6,Yes,20,17,0,2,Yes,Yes,,Yes,Yes,No,No,No,Met,3/3,Met
+"Kenyatta University,IE13",SBC11560G,Student Branch Chapter,Kenyatta University,IE13,35,6,Yes,4,4,2,2,Yes,No,,Yes,Yes,Yes,Yes,Yes,Partial,2/3,Not Met
+"Kenyatta University,MTT17",SBC11560K,Student Branch Chapter,Kenyatta University,MTT17,22,6,Yes,2,1,1,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Kenyatta University,PE31",SBC11560B,Student Branch Chapter,Kenyatta University,PE31,21,6,Yes,28,21,2,2,Yes,Yes,,No,Yes,Yes,Yes,No,Partial,2/3,Not Met
+"Kenyatta University,PHO36",SBC11560,Student Branch Chapter,Kenyatta University,PHO36,4,6,No,1,1,2,2,No,Yes,,No,No,No,No,No,Partial,0/3,Not Met
+"Kenyatta University,RA24",SBC11560L,Student Branch Chapter,Kenyatta University,RA24,13,6,Yes,1,1,4,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Kenyatta University,SEN39",SBC11560F,Student Branch Chapter,Kenyatta University,SEN39,58,6,Yes,1,1,0,2,No,Yes,,Yes,No,No,No,Yes,Met,2/3,Not Met
+"Kenyatta University,SP01",SBC11560M,Student Branch Chapter,Kenyatta University,SP01,3,6,No,0,0,1,2,No,Yes,,Yes,No,No,No,No,Met,1/3,Not Met
+"Masinde Muliro University of Science & Tech,COM19",SBC10163,Student Branch Chapter,Masinde Muliro University of Science & Technology,COM19,8,6,Yes,1,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Meru University of Science and Technology,CAS04",SBC60226496,Student Branch Chapter,Meru University of Science and Technology,CAS04,4,6,No,2,2,0,2,Yes,Yes,,Yes,Yes,Yes,No,No,Met,2/3,Not Met
+"Moi University,C16",SBC10102A,Student Branch Chapter,Moi University,C16,4,6,No,6,1,2,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Moi University,COM19",SBC10102B,Student Branch Chapter,Moi University,COM19,15,6,Yes,9,5,2,2,Yes,Yes,,Yes,Yes,No,Yes,No,Met,3/3,Met
+"Moi University,PE31",SBC10102,Student Branch Chapter,Moi University,PE31,12,6,Yes,32,20,5,2,Yes,No,,No,No,No,No,No,Not Met,2/3,Not Met
+"Multimedia University of Kenya,C16",SBC60052951A,Student Branch Chapter,Multimedia University of Kenya,C16,7,6,Yes,8,6,1,2,Yes,Yes,,No,No,No,No,No,Partial,2/3,Not Met
+"Multimedia University of Kenya,IA34",SBC60052951D,Student Branch Chapter,Multimedia University of Kenya,IA34,11,6,Yes,24,21,4,2,Yes,Yes,,No,Yes,Yes,No,Yes,Partial,2/3,Not Met
+"Multimedia University of Kenya,PE31",SBC60052951,Student Branch Chapter,Multimedia University of Kenya,PE31,6,6,Yes,35,23,6,2,Yes,No,,No,No,No,No,Yes,Not Met,2/3,Not Met
+"Multimedia University of Kenya,PHO36",SBC60052951B,Student Branch Chapter,Multimedia University of Kenya,PHO36,2,6,No,11,4,0,2,Yes,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Multimedia University of Kenya,SEN39",SBC60052951C,Student Branch Chapter,Multimedia University of Kenya,SEN39,14,6,Yes,9,7,5,2,Yes,Yes,,No,No,No,No,No,Partial,2/3,Not Met
+"South Eastern Kenya University,AP03",SBC60221106,Student Branch Chapter,South Eastern Kenya University,AP03,52,6,Yes,9,5,4,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"South Eastern Kenya University,EMB18",SBC60221106B,Student Branch Chapter,South Eastern Kenya University,EMB18,26,6,Yes,7,4,4,2,Yes,No,,No,No,Yes,No,No,Not Met,2/3,Not Met
+"South Eastern Kenya University,EP21",SBC60221106D,Student Branch Chapter,South Eastern Kenya University,EP21,10,6,Yes,11,5,5,2,Yes,Yes,,Yes,No,No,No,No,Met,3/3,Met
+"South Eastern Kenya University,MTT17",SBC60221106C,Student Branch Chapter,South Eastern Kenya University,MTT17,44,6,Yes,9,3,6,2,Yes,No,,Yes,Yes,No,No,No,Partial,2/3,Not Met
+"South Eastern Kenya University,PE31",SBC60221106A,Student Branch Chapter,South Eastern Kenya University,PE31,25,6,Yes,34,25,2,2,Yes,Yes,,No,Yes,Yes,Yes,Yes,Partial,2/3,Not Met
+"Strathmore University,AP03",SBC11733,Student Branch Chapter,Strathmore University,AP03,34,6,Yes,4,4,1,2,Yes,Yes,,No,Yes,Yes,Yes,Yes,Partial,2/3,Not Met
+"Strathmore University,C16",SBC11733A,Student Branch Chapter,Strathmore University,C16,45,6,Yes,1,0,10,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Strathmore University,IA34",SBC11733D,Student Branch Chapter,Strathmore University,IA34,32,6,Yes,9,4,2,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Strathmore University,IE13",SBC11733C,Student Branch Chapter,Strathmore University,IE13,22,6,Yes,13,7,2,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Strathmore University,MTT17",SBC11733B,Student Branch Chapter,Strathmore University,MTT17,11,6,Yes,3,3,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Technical University of Kenya,AES10",SBC99364E,Student Branch Chapter,Technical University of Kenya,AES10,4,6,No,1,1,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Technical University of Kenya,AP03",SBC99364G,Student Branch Chapter,Technical University of Kenya,AP03,14,6,Yes,1,1,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Technical University of Kenya,CIS11",SBC99364H,Student Branch Chapter,Technical University of Kenya,CIS11,5,6,No,0,0,0,2,No,No,,No,Yes,No,No,No,Not Met,0/3,Not Met
+"Technical University of Kenya,COM19",SBC99364,Student Branch Chapter,Technical University of Kenya,COM19,9,6,Yes,5,5,0,2,Yes,No,,Yes,No,No,No,No,Partial,2/3,Not Met
+"Technical University of Kenya,ED15",SBC99364C,Student Branch Chapter,Technical University of Kenya,ED15,5,6,No,2,2,0,2,Yes,Yes,,No,No,No,No,No,Partial,1/3,Not Met
+"Technical University of Kenya,GRS29",SBC99364K,Student Branch Chapter,Technical University of Kenya,GRS29,24,6,Yes,7,4,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
+"Technical University of Kenya,IA34",SBC99364L,Student Branch Chapter,Technical University of Kenya,IA34,13,6,Yes,17,16,1,2,Yes,Yes,,No,No,No,No,No,Partial,2/3,Not Met
+"Technical University of Kenya,IE13,C16",SBC99364A,Student Branch Chapter,Technical University of Kenya,"IE13,C16",20,6,Yes,2,1,2,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Technical University of Kenya,ITSS38",SBC99364J,Student Branch Chapter,Technical University of Kenya,ITSS38,2,6,No,1,1,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Technical University of Kenya,MTT17",SBC99364I,Student Branch Chapter,Technical University of Kenya,MTT17,6,6,Yes,1,1,0,2,No,No,,No,No,Yes,No,No,Not Met,1/3,Not Met
+"Technical University of Kenya,PE31",SBC99364D,Student Branch Chapter,Technical University of Kenya,PE31,13,6,Yes,27,21,3,2,Yes,Yes,,No,Yes,Yes,Yes,Yes,Partial,2/3,Not Met
+"Technical University of Kenya,PHO36, CAS04, SP01",SBC99364B,Student Branch Chapter,Technical University of Kenya,"PHO36, CAS04, SP01",5,6,No,2,2,0,2,Yes,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Technical University of Kenya,RA24",SBC99364F,Student Branch Chapter,Technical University of Kenya,RA24,6,6,Yes,1,1,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Technical University of Mombasa,EMB18",SBC60101803,Student Branch Chapter,Technical University of Mombasa,EMB18,11,6,Yes,0,0,1,2,No,Yes,,Yes,Yes,Yes,No,No,Met,2/3,Not Met
+"University of Eldoret,C16",SBC60104095,Student Branch Chapter,University of Eldoret,C16,16,6,Yes,3,0,0,2,No,Yes,,Yes,Yes,Yes,No,Yes,Met,2/3,Not Met
+"University of Nairobi,AP03",SBC10110D,Student Branch Chapter,University of Nairobi,AP03,5,6,No,0,0,0,2,No,Yes,,No,No,No,No,No,Partial,0/3,Not Met
+"University of Nairobi,CAS04",SBC10110B,Student Branch Chapter,University of Nairobi,CAS04,10,6,Yes,2,2,1,2,Yes,Yes,,No,Yes,Yes,No,No,Partial,2/3,Not Met
+"University of Nairobi,GRS29",SBC10110C,Student Branch Chapter,University of Nairobi,GRS29,13,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"University of Nairobi,MTT17",SBC10110A,Student Branch Chapter,University of Nairobi,MTT17,10,6,Yes,0,0,2,2,No,Yes,,No,No,No,Yes,No,Partial,1/3,Not Met
+"University of Nairobi,RA24",SBC10110,Student Branch Chapter,University of Nairobi,RA24,9,6,Yes,6,0,1,2,No,No,,Yes,Yes,No,No,No,Partial,1/3,Not Met

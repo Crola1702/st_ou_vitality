@@ -1,0 +1,16 @@
+Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
+Chinese University of Hong Kong,STB05861,Student Branch,Chinese University of Hong Kong,,145,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+City Univ of Hong Kong,STB41689098,Student Branch,City Univ Of Hong Kong,,149,12,Yes,0,,0,4,No,Yes,Yes,,Yes,No,No,No,Met,2/3,Not Met
+Hong Kong Baptist University,STB02211,Student Branch,Hong Kong Baptist University,,26,12,Yes,0,,0,4,No,No,Yes,,No,No,No,Yes,Partial,1/3,Not Met
+Hong Kong Metropolitan University,STB05451,Student Branch,Hong Kong Metropolitan University,,49,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+Hong Kong Polytechnic,STB99211,Student Branch,Hong Kong Polytechnic,,63,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
+Hong Kong Univ,STB09111,Student Branch,Hong Kong University,,179,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
+Hong Kong Univ of Science & Tech,STB50271,Student Branch,Hong Kong University of Science and Technology,,209,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+The Education University of Hong Kong,STB60058742,Student Branch,Education University of Hong Kong,,16,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,Yes,No,Met,2/3,Not Met
+The Hang Seng University of Hong Kong,STB15162,Student Branch,The Hang Seng University of Hong Kong,,17,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Hong Kong Baptist University,SMC28",SBC022111,Student Branch Chapter,Hong Kong Baptist University,SMC28,1,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Hong Kong Polytechnic, SMC28",SBC99211,Student Branch Chapter,Hong Kong Polytechnic,SMC28,3,6,No,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,1/3,Not Met
+"Hong Kong Polytechnic, UFFC20",SBC99211A,Student Branch Chapter,Hong Kong Polytechnic,UFFC20,0,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"Hong Kong Univ of Science & Tech,ED15",SBC50271B,Student Branch Chapter,Hong Kong University of Science and Technology,ED15,18,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
+"Hong Kong Univ of Science & Tech,EP21",SBC50271,Student Branch Chapter,Hong Kong University of Science and Technology,EP21,0,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"Hong Kong Univ of Science & Tech,SSC37",SBC50271A,Student Branch Chapter,Hong Kong University of Science and Technology,SSC37,19,6,Yes,0,0,0,2,No,Yes,,Yes,No,No,Yes,No,Met,2/3,Not Met

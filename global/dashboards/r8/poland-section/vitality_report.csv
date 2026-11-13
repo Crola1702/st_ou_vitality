@@ -1,0 +1,18 @@
+Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
+"Silesian University of Technology,WIE",SBA11384,Affinity Group,Silesian University of Technology,WIE,7,6,Yes,0,,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Warsaw University of Technology, WIE",SBA50501,Affinity Group,Warsaw University of Technology,WIE,0,6,No,0,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+AGH University of Science and Technology,STB10631,Student Branch,AGH University of Krakow,,28,12,Yes,0,,0,4,No,Yes,Yes,,No,Yes,No,Yes,Met,2/3,Not Met
+Cracow University of Technology,STB11380,Student Branch,Cracow University of Technology,,9,12,No,0,,0,4,No,Yes,Yes,,Yes,No,No,Yes,Met,1/3,Not Met
+Lodz University of Technology,STB05441A,Student Branch,Lodz University of Technology,,28,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,No,Yes,Met,2/3,Not Met
+Lublin University of Technology,STB10018,Student Branch,Lublin University of Technology,,2,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Opole University of Technology,STB31701,Student Branch,Opole University of Technology,,10,12,No,1,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,1/3,Not Met
+Poznan University Of Technology,STB80051,Student Branch,Poznan University of Technology,,12,12,Yes,0,,0,4,No,Yes,Yes,,Yes,No,Yes,No,Met,2/3,Not Met
+Silesian University of Technology,STB11384,Student Branch,Silesian University of Technology,,14,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,No,Yes,Met,2/3,Not Met
+University of Applied Sciences in Elblag,STB10116,Student Branch,University of Applied Sciences in Elblag,,0,12,No,0,,0,4,No,No,Yes,,No,No,No,No,Partial,0/3,Not Met
+University of Warsaw,STB11530,Student Branch,University of Warsaw,,12,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,Yes,No,Met,2/3,Not Met
+Warsaw University of Technology,STB50501,Student Branch,Warsaw University of Technology,,18,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
+West Pomeranian University of Technology Szczecin,STB17141,Student Branch,West Pomeranian University of Technology Szczecin,,14,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,No,Yes,Met,2/3,Not Met
+"Silesian University of Technology,EMB18",SBC11384,Student Branch Chapter,Silesian University of Technology,EMB18,6,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"University of Warsaw,PHO36",SBC11530,Student Branch Chapter,University of Warsaw,PHO36,6,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Warsaw University of Technology, IE13",SBC50501,Student Branch Chapter,Warsaw University of Technology,IE13,5,6,No,0,0,3,2,No,No,,Yes,No,Yes,No,No,Partial,0/3,Not Met
+"West Pomeranian Univ of Tech Szczecin, PE31",SBC17141A,Student Branch Chapter,West Pomeranian University of Technology Szczecin,PE31,9,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met

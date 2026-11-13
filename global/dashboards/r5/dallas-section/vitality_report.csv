@@ -1,0 +1,18 @@
+Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
+Baylor Univ,STB06901,Student Branch,Baylor Univ,,47,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,No,Yes,Met,2/3,Not Met
+Collin County Community College,STB63031,Student Branch,Collin County Community College,,8,12,No,0,,1,4,No,Yes,Yes,,No,No,No,No,Met,1/3,Not Met
+Devry Inst Of  Technology-Irving,STB19061,Student Branch,Devry Inst of Technology-Irving,,2,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Southern Methodist Univ,STB01841,Student Branch,Southern Methodist Univ,,36,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
+Texas A&M University-Commerce,STB11736,Student Branch,Texas A&M University-Commerce,,9,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+University of Texas - Tyler,STB35391,Student Branch,University of Texas - Tyler,,41,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+University of Texas at Dallas,STB14821,Student Branch,University of Texas at Dallas,,220,12,Yes,5,,1,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Baylor Univ, MTT17",SBC06901,Student Branch Chapter,Baylor Univ,MTT17,5,6,No,0,0,0,2,No,Yes,,Yes,Yes,No,No,No,Met,1/3,Not Met
+"Devry Inst of Tech-Irving, C16",SBC19061,Student Branch Chapter,Devry Inst of Technology-Irving,C16,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Southern Methodist Univ,C16",SBC01841,Student Branch Chapter,Southern Methodist Univ,C16,5,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Texas Univ Of Tyler, NANO42",SBC353911,Student Branch Chapter,University of Texas - Tyler,NANO42,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Texas Univ Of-Dallas, IA34",SBC14821B,Student Branch Chapter,University of Texas at Dallas,IA34,2,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"University of Texas at Dallas,AP03/MTT17",SBC14821E,Student Branch Chapter,University of Texas at Dallas,AP03/MTT17,27,6,Yes,8,8,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"University of Texas at Dallas,C16",SBC148211,Student Branch Chapter,University of Texas at Dallas,C16,11,6,Yes,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,1/3,Not Met
+"University of Texas at Dallas,EMB18",SBC14821A,Student Branch Chapter,University of Texas at Dallas,EMB18,4,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"University of Texas at Dallas,PE31",SBC14821D,Student Branch Chapter,University of Texas at Dallas,PE31,13,6,Yes,1,1,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"University of Texas at Dallas,SSC37",SBC14821C,Student Branch Chapter,University of Texas at Dallas,SSC37,8,6,Yes,1,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met

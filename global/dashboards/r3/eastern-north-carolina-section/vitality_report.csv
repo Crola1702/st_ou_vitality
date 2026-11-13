@@ -1,0 +1,12 @@
+Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
+"North Carolina State Univ,WIE",SBA01321,Affinity Group,North Carolina State Univ,WIE,14,6,Yes,0,,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+Campbell University,STB11734,Student Branch,Campbell University,,13,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,No,No,Met,2/3,Not Met
+Duke University,STB00561,Student Branch,Duke University,,108,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
+East Carolina Univ,STB08651,Student Branch,East Carolina Univ,,2,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+North Carolina State Univ,STB01321,Student Branch,North Carolina State Univ,,298,12,Yes,1,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+Univ of North Carolina at Chapel Hill,STB04041,Student Branch,Univ of North Carolina at Chapel Hill,,62,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
+Wake Technical College,STB91602,Student Branch,Wake Technical College,,6,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+"Duke University,C16",SBC00561,Student Branch Chapter,Duke University,C16,7,6,Yes,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+"North Carolina State Univ,C16",SBC0132A,Student Branch Chapter,North Carolina State Univ,C16,13,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"North Carolina State Univ,PE31",SBC01321,Student Branch Chapter,North Carolina State Univ,PE31,15,6,Yes,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,1/3,Not Met
+"North Carolina State Univ,TEM14",SBC0132B,Student Branch Chapter,North Carolina State Univ,TEM14,7,6,Yes,6,2,0,2,Yes,Yes,,Yes,No,No,No,No,Met,3/3,Met

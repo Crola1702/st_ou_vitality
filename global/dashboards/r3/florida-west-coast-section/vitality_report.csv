@@ -1,0 +1,13 @@
+Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
+Florida Gulf Coast Univ,STB41387576,Student Branch,Florida Gulf Coast Univ,,20,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,Yes,No,Met,2/3,Not Met
+Florida Polytechnic University,STB64279,Student Branch,Florida Polytechnic University,,62,12,Yes,48,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,No,Met,3/3,Met
+University of South Florida,STB06451,Student Branch,University of South Florida,,251,12,Yes,133,,9,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Florida Gulf Coast Univ,C16",SBC41387576,Student Branch Chapter,Florida Gulf Coast Univ,C16,11,6,Yes,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+"Florida Polytechnic University,C16",SBC64279A,Student Branch Chapter,Florida Polytechnic University,C16,16,6,Yes,28,11,2,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
+"Florida Polytechnic University,PE31",SBC64279,Student Branch Chapter,Florida Polytechnic University,PE31,11,6,Yes,13,10,0,2,Yes,Yes,,Yes,Yes,Yes,No,No,Met,3/3,Met
+"Florida Polytechnic University,RA24",SBC64279B,Student Branch Chapter,Florida Polytechnic University,RA24,11,6,Yes,52,16,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
+"Univ of South Florida,C16",SBC0645A,Student Branch Chapter,University of South Florida,C16,31,6,Yes,93,21,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Univ of South Florida,MTT17",SBC0645B,Student Branch Chapter,University of South Florida,MTT17,15,6,Yes,6,1,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Univ of South Florida,PE31",SBC06451,Student Branch Chapter,University of South Florida,PE31,17,6,Yes,12,5,4,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"University of South Florida,ED15",SBC0645C,Student Branch Chapter,University of South Florida,ED15,5,6,No,2,0,0,2,No,Yes,,Yes,No,No,Yes,No,Met,1/3,Not Met
+"University of South Florida,RA24",SBC0645D,Student Branch Chapter,University of South Florida,RA24,15,6,Yes,13,1,0,2,No,Yes,,Yes,Yes,No,Yes,No,Met,2/3,Not Met

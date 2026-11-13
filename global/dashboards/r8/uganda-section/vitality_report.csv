@@ -1,0 +1,44 @@
+Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
+Ernest Cook University SB SIGHT,SBA60234352S,Affinity Group,Ernest Cook University,SB SIGHT,26,6,Yes,2,,0,2,Yes,Yes,,No,No,No,No,No,Partial,2/3,Not Met
+"Ernest Cook University,WIE",SBA60233011,Affinity Group,Ernest Cook University,WIE,27,6,Yes,4,,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
+ISBAT SB SIGHT,SBA60179470S,Affinity Group,ISBAT University,SIGHT,24,6,Yes,0,,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"ISBAT University Affinity Group,WIE",SBA60179470,Affinity Group,ISBAT University,"Affinity Group,WIE",10,6,Yes,0,,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Kyambogo University,SIGHT",SBA10122S,Affinity Group,Kyambogo University,SIGHT,33,6,Yes,2,,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
+"Kyambogo University,WIE",SBA10122,Affinity Group,Kyambogo University,WIE,22,6,Yes,7,,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+Makerere University SB SIGHT,SBA09341S,Affinity Group,Makerere University,SB SIGHT,69,6,Yes,0,,0,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
+"Makerere University,WIE",SBA09341,Affinity Group,Makerere University,WIE,82,6,Yes,3,,2,2,Yes,Yes,,No,Yes,No,Yes,Yes,Partial,2/3,Not Met
+Mbarara University of Science & Tech SB SIGHT,SBA11532S,Affinity Group,Mbarara University of Science and Technology,SIGHT,69,6,Yes,0,,0,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
+Mbarara University of Science and Technology.WIE,SBA11532,Affinity Group,Mbarara University of Science and Technology,.WIE,95,6,Yes,12,,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+Cavendish University Uganda,STB60106252,Student Branch,Cavendish University Uganda,,27,12,Yes,0,,0,4,No,Yes,Yes,,No,No,No,No,Met,2/3,Not Met
+Ernest Cook University,STB60233011,Student Branch,Ernest Cook University,,48,12,Yes,3,,1,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+ISBAT University,STB60179470,Student Branch,ISBAT University,,34,12,Yes,10,,1,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Kampala International University,STB60244244,Student Branch,Kampala International University,,16,12,Yes,1,,1,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+Kyambogo University,STB10122,Student Branch,Kyambogo University,,49,12,Yes,14,,1,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Makerere University,STB09341,Student Branch,Makerere University,,172,12,Yes,10,,6,4,Yes,Yes,Yes,,Yes,No,No,No,Met,3/3,Met
+Makerere University Business School,STB60242318,Student Branch,Makerere University Business School,,16,12,Yes,0,,0,4,No,Yes,Yes,,No,No,No,No,Met,2/3,Not Met
+Mbarara University of Science and Technology,STB11532,Student Branch,Mbarara University of Science and Technology,,130,12,Yes,20,,3,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Ndejje University,STB60208627,Student Branch,Ndejje University,,78,12,Yes,8,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Uganda Inst of Info and Comm Tech,STB60208757,Student Branch,Uganda Inst of Info and Comm Tech,,2,12,No,0,,0,4,No,No,Yes,,No,No,No,No,Partial,0/3,Not Met
+Uganda Technology and Management University,STB60207410,Student Branch,Uganda Technology and Management University,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+"Ernest Cook University,EMB18/IA34",SBC60233011,Student Branch Chapter,Ernest Cook University,EMB18/IA34,19,6,Yes,3,2,0,2,Yes,No,,Yes,No,No,No,No,Partial,2/3,Not Met
+"ISBAT University,PHO36",SBC60179470,Student Branch Chapter,ISBAT University,PHO36,0,6,No,3,3,0,2,Yes,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Kyambogo University,C16",SBC10122D,Student Branch Chapter,Kyambogo University,C16,17,6,Yes,7,3,2,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Kyambogo University,COM19",SBC10122B,Student Branch Chapter,Kyambogo University,COM19,22,6,Yes,4,2,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Kyambogo University,IE13/PE31",SBC10122A,Student Branch Chapter,Kyambogo University,IE13/PE31,13,6,Yes,7,4,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Kyambogo University,PHO36/EMB18",SBC10122,Student Branch Chapter,Kyambogo University,PHO36/EMB18,16,6,Yes,3,2,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Makerere University,AES10",SBC09341F,Student Branch Chapter,Makerere University,AES10,14,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,Yes,No,Yes,Met,2/3,Not Met
+"Makerere University,C16",SBC09341B,Student Branch Chapter,Makerere University,C16,30,6,Yes,4,1,1,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+"Makerere University,CAS04",SBC09341A,Student Branch Chapter,Makerere University,CAS04,83,6,Yes,3,2,3,2,Yes,Yes,,No,Yes,No,Yes,No,Partial,2/3,Not Met
+"Makerere University,COM19",SBC09341E,Student Branch Chapter,Makerere University,COM19,0,6,No,1,0,0,2,No,Yes,,Yes,No,No,No,No,Met,1/3,Not Met
+"Makerere University,IE13",SBC09341D,Student Branch Chapter,Makerere University,IE13,25,6,Yes,5,2,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Makerere University,PE31",SBC09341,Student Branch Chapter,Makerere University,PE31,17,6,Yes,4,2,3,2,Yes,Yes,,No,No,Yes,No,No,Partial,2/3,Not Met
+"Makerere University,PHO36",SBC09341C,Student Branch Chapter,Makerere University,PHO36,1,6,No,0,0,0,2,No,Yes,,No,No,No,No,No,Partial,0/3,Not Met
+"Mbarara University of Science and Technology,C16",SBC11532C,Student Branch Chapter,Mbarara University of Science and Technology,C16,62,6,Yes,6,2,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Mbarara University of Science and Technology,CAS04",SBC11532D,Student Branch Chapter,Mbarara University of Science and Technology,CAS04,46,6,Yes,4,1,2,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Mbarara University of Science and Technology,COM19",SBC11532E,Student Branch Chapter,Mbarara University of Science and Technology,COM19,78,6,Yes,4,3,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Mbarara University of Science and Technology,EMB18",SBC11532,Student Branch Chapter,Mbarara University of Science and Technology,EMB18,63,6,Yes,11,5,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Mbarara University of Science and Technology,IA34",SBC11532F,Student Branch Chapter,Mbarara University of Science and Technology,IA34,46,6,Yes,3,1,2,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Mbarara University of Science and Technology,PE31",SBC11532B,Student Branch Chapter,Mbarara University of Science and Technology,PE31,29,6,Yes,8,3,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Mbarara University of Science and Technology,PHO36",SBC11532A,Student Branch Chapter,Mbarara University of Science and Technology,PHO36,5,6,No,4,1,1,2,No,Yes,,Yes,Yes,No,Yes,Yes,Met,1/3,Not Met
+"Ndejje University,COM19",SBC60208627A,Student Branch Chapter,Ndejje University,COM19,34,6,Yes,2,1,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Ndejje University,PE31",SBC60208627,Student Branch Chapter,Ndejje University,PE31,29,6,Yes,4,1,0,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met

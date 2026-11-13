@@ -1,0 +1,23 @@
+Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
+"Kasetsart Univ, WIE",SBA17371,Affinity Group,Kasetsart Univ,WIE,0,6,No,1,,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+Asian Inst Of Tech,STB39531,Student Branch,Asian Inst Of Tech,,7,12,No,0,,0,4,No,No,Yes,,No,No,No,No,Partial,0/3,Not Met
+Assumption Univ,STB36151,Student Branch,Assumption Univ,,15,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
+Chiang Mai University,STB10086,Student Branch,Chiang Mai University,,51,12,Yes,1,,0,4,No,No,Yes,,No,No,No,Yes,Partial,1/3,Not Met
+Chulalongkorn Univ,STB10691,Student Branch,Chulalongkorn Univ,,71,12,Yes,0,,0,4,No,Yes,Yes,,No,No,No,No,Met,2/3,Not Met
+Kasetsart Univ,STB17371,Student Branch,Kasetsart Univ,,22,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+King Mongkut's Inst of Tech,STB40101,Student Branch,King Mongkut's Inst of Tech,,17,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+King Mongkut's University of Tech-North Bangkok,STB18451,Student Branch,King Mongkut's University of Tech-North Bangkok,,26,12,Yes,0,,0,4,No,Yes,No,,Yes,Yes,Yes,Yes,Partial,1/3,Not Met
+King Mongkut's University of Technology - Thonburi,STB07561,Student Branch,King Mongkut's University of Technology - Thonburi,,36,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
+Rajamangala Inst Of Tech,STB40003310,Student Branch,Rajamangala Inst Of Tech,,17,12,Yes,0,,0,4,No,Yes,Yes,,No,No,No,No,Met,2/3,Not Met
+Thammasat University,STB06201,Student Branch,Thammasat University,,18,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
+Walailak University,STB60222349,Student Branch,Walailak University,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+"Asian Inst Of Tech,PE31",SBC39531,Student Branch Chapter,Asian Inst Of Tech,PE31,0,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"Chiang Mai University,C16",SBC10086A,Student Branch Chapter,Chiang Mai University,C16,16,6,Yes,1,1,0,2,No,No,,Yes,No,No,No,Yes,Partial,1/3,Not Met
+"Chiang Mai University,RA24",SBC10086,Student Branch Chapter,Chiang Mai University,RA24,7,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Chulalongkorn Univ, PE31",SBC10691A,Student Branch Chapter,Chulalongkorn Univ,PE31,4,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Chulalongkorn Univ,C16",SBC106911,Student Branch Chapter,Chulalongkorn Univ,C16,1,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Kasetsart Univ,PE31",SBC17371,Student Branch Chapter,Kasetsart Univ,PE31,10,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"King Mongkut's Inst of Tech,IA34",SBC40101A,Student Branch Chapter,King Mongkut's Inst of Tech,IA34,1,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"King Mongkut's Univ of Tech-North Bangkok,E25",SBC18451B,Student Branch Chapter,King Mongkut's University of Tech-North Bangkok,E25,6,6,Yes,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+"King Mongkut's Univ of Tech-North Bangkok,IA34",SBC18451A,Student Branch Chapter,King Mongkut's University of Tech-North Bangkok,IA34,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"King Mongkut's Univ of Tech-North Bangkok,PE31",SBC18451,Student Branch Chapter,King Mongkut's University of Tech-North Bangkok,PE31,13,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met

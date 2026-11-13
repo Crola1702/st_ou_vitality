@@ -1,0 +1,46 @@
+Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
+KIIT IEEE SIGHT,SBA15681S,Affinity Group,Kalinga Institute of Industrial Technology,SIGHT,3,6,No,0,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Parala Maharaja Engineering College,WIE",SBA60229586,Affinity Group,Parala Maharaja Engineering College,WIE,32,6,Yes,0,,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+Centurion Univ of Tech and Mgmt-Paralakhemundi,STB14291,Student Branch,Centurion Univ of Tech and Mgmt-Paralakhemundi,,43,12,Yes,0,,1,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+Centurion University of Technology & Management,STB60095764,Student Branch,Centurion University of Technology & Management,,75,12,Yes,6,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+DRIEMS University School of Eng & Tech,STB60099891,Student Branch,DRIEMS University School of Eng & Tech,,19,12,Yes,0,,0,4,No,Yes,Yes,,No,No,No,No,Met,2/3,Not Met
+Government College of Engineering-Kalahandi,STB60233624,Student Branch,Government College of Engineering-Kalahandi,,1,12,No,1,,0,4,No,No,Yes,,No,No,No,No,Partial,0/3,Not Met
+Indian Institute of Tech - Bhubaneswar,STB08131,Student Branch,Indian Institute of Tech - Bhubaneswar,,40,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+International Institute of IT - Bhubaneswar,STB08891,Student Branch,International Institute of IT - Bhubaneswar,,9,12,No,1,,0,4,No,No,Yes,,No,No,No,No,Partial,0/3,Not Met
+Kalinga Institute of Industrial Technology,STB15681,Student Branch,Kalinga Institute of Industrial Technology,,163,12,Yes,10,,2,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Parala Maharaja Engineering College,STB60229586,Student Branch,Parala Maharaja Engineering College,,92,12,Yes,6,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Raajdhani Engineering College,STB60242339,Student Branch,Raajdhani Engineering College,,12,12,Yes,0,,0,4,No,Yes,No,,No,No,No,No,Partial,1/3,Not Met
+Siksha O Anusandhan,STB60098879,Student Branch,Siksha O Anusandhan,,90,12,Yes,3,,0,4,No,Yes,Yes,,No,No,No,No,Met,2/3,Not Met
+Silicon University,STB04531,Student Branch,Silicon University,,41,12,Yes,5,,0,4,Yes,No,Yes,,No,No,No,No,Partial,2/3,Not Met
+"Centurion Univ of Tech & Mgmt-Paralakhemundi,AP03",SBC14291A,Student Branch Chapter,Centurion Univ of Tech and Mgmt-Paralakhemundi,AP03,43,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Centurion Univ of Tech & Mgmt-Paralakhemundi,IA34",SBC14291,Student Branch Chapter,Centurion Univ of Tech and Mgmt-Paralakhemundi,IA34,18,6,Yes,0,0,0,2,No,Yes,,No,Yes,Yes,Yes,Yes,Partial,1/3,Not Met
+"Centurion Univ of Tech and Mgmt-Paralakhemundi,C16",SBC14291B,Student Branch Chapter,Centurion Univ of Tech and Mgmt-Paralakhemundi,C16,41,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Centurion Univ of Tech&Mgmt-Paralakhemundi,COM19",SBC14291D,Student Branch Chapter,Centurion Univ of Tech and Mgmt-Paralakhemundi,COM19,41,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Centurion Univ of Tech&Mgmt-Paralakhemundi,MTT17",SBC14291C,Student Branch Chapter,Centurion Univ of Tech and Mgmt-Paralakhemundi,MTT17,42,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Centurion University of Technology & Mgmt,C16",SBC60095764,Student Branch Chapter,Centurion University of Technology & Management,C16,59,6,Yes,2,2,1,2,Yes,Yes,,Yes,No,No,No,No,Met,3/3,Met
+"International Institute of IT - Bhubaneswar,AP03",SBC08891B,Student Branch Chapter,International Institute of IT - Bhubaneswar,AP03,6,6,Yes,4,4,1,2,Yes,Yes,,Yes,No,Yes,Yes,No,Met,3/3,Met
+"International Institute of IT - Bhubaneswar,RA24",SBC08891A,Student Branch Chapter,International Institute of IT - Bhubaneswar,RA24,2,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"Kalinga Institute of Industrial Technology,AES10",SBC15681M,Student Branch Chapter,Kalinga Institute of Industrial Technology,AES10,9,6,Yes,1,1,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Kalinga Institute of Industrial Technology,AP03",SBC15681,Student Branch Chapter,Kalinga Institute of Industrial Technology,AP03,20,6,Yes,3,3,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Kalinga Institute of Industrial Technology,C16",SBC15681N,Student Branch Chapter,Kalinga Institute of Industrial Technology,C16,40,6,Yes,7,5,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Kalinga Institute of Industrial Technology,CEDA44",SBC15681J,Student Branch Chapter,Kalinga Institute of Industrial Technology,CEDA44,34,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Kalinga Institute of Industrial Technology,CIS11",SBC15681E,Student Branch Chapter,Kalinga Institute of Industrial Technology,CIS11,9,6,Yes,1,1,0,2,No,Yes,,Yes,Yes,No,No,No,Met,2/3,Not Met
+"Kalinga Institute of Industrial Technology,CT08",SBC15681D,Student Branch Chapter,Kalinga Institute of Industrial Technology,CT08,16,6,Yes,2,2,0,2,Yes,Yes,,Yes,Yes,Yes,No,Yes,Met,3/3,Met
+"Kalinga Institute of Industrial Technology,ED15",SBC15681L,Student Branch Chapter,Kalinga Institute of Industrial Technology,ED15,9,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Kalinga Institute of Industrial Technology,IA34",SBC15681C,Student Branch Chapter,Kalinga Institute of Industrial Technology,IA34,18,6,Yes,2,2,1,2,Yes,No,,Yes,Yes,No,No,Yes,Partial,2/3,Not Met
+"Kalinga Institute of Industrial Technology,IE13",SBC15681A,Student Branch Chapter,Kalinga Institute of Industrial Technology,IE13,18,6,Yes,2,1,0,2,No,No,,Yes,Yes,Yes,Yes,Yes,Partial,1/3,Not Met
+"Kalinga Institute of Industrial Technology,MTT17",SBC15681F,Student Branch Chapter,Kalinga Institute of Industrial Technology,MTT17,28,6,Yes,2,2,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Kalinga Institute of Industrial Technology,PE31",SBC15681B,Student Branch Chapter,Kalinga Institute of Industrial Technology,PE31,14,6,Yes,2,1,2,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Kalinga Institute of Industrial Technology,PEL35",SBC15681I,Student Branch Chapter,Kalinga Institute of Industrial Technology,PEL35,1,6,No,0,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,1/3,Not Met
+"Kalinga Institute of Industrial Technology,SEN39",SBC15681H,Student Branch Chapter,Kalinga Institute of Industrial Technology,SEN39,43,6,Yes,1,1,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Kalinga Institute of Industrial Technology,SP01",SBC15681G,Student Branch Chapter,Kalinga Institute of Industrial Technology,SP01,19,6,Yes,3,3,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Kalinga Institute of Industrial Technology,SSC37",SBC15681K,Student Branch Chapter,Kalinga Institute of Industrial Technology,SSC37,7,6,Yes,0,0,0,2,No,Yes,,Yes,No,Yes,Yes,Yes,Met,2/3,Not Met
+"Kalinga Institute of Industrial Technology,SYS45",SBC15681O,Student Branch Chapter,Kalinga Institute of Industrial Technology,SYS45,59,6,Yes,2,1,1,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Parala Maharaja Engineering College,AP03/MTT17",SBC60229586B,Student Branch Chapter,Parala Maharaja Engineering College,AP03/MTT17,12,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Parala Maharaja Engineering College,CEDA44/ED15",SBC60229586,Student Branch Chapter,Parala Maharaja Engineering College,CEDA44/ED15,83,6,Yes,1,1,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Parala Maharaja Engineering College,PE31",SBC60229586A,Student Branch Chapter,Parala Maharaja Engineering College,PE31,16,6,Yes,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+"Siksha O Anusandhan,C16",SBC60098879,Student Branch Chapter,Siksha O Anusandhan,C16,27,6,Yes,3,3,0,2,Yes,Yes,,Yes,No,No,No,No,Met,3/3,Met
+"Silicon University,CIS11",SBC04531C,Student Branch Chapter,Silicon University,CIS11,8,6,Yes,1,1,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+"Silicon University,MTT17",SBC04531,Student Branch Chapter,Silicon University,MTT17,6,6,Yes,0,0,0,2,No,Yes,,No,Yes,Yes,Yes,Yes,Partial,1/3,Not Met
+"Silicon University,PE31",SBC04531A,Student Branch Chapter,Silicon University,PE31,0,6,No,5,5,0,2,Yes,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+"Silicon University,TEC802",SBC04531B,Student Branch Chapter,Silicon University,TEC802,2,6,No,5,5,0,2,Yes,No,,No,No,No,No,No,Not Met,1/3,Not Met

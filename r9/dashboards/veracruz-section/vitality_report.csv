@@ -13,7 +13,7 @@ Instituto Tecnologico Superior de Xalapa,STB01015,Student Branch,Instituto Tecno
 Instituto Tecnologico de Orizaba,STB37821,Student Branch,Instituto Tecnologico de Orizaba,,31,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 Universidad Cristobal Colon,STB63191,Student Branch,Universidad Cristobal Colon,,33,12,Yes,1,,1,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 Universidad Veracruzana - FIME,STB01022,Student Branch,Universidad Veracruzana - FIME,,55,12,Yes,4,,4,4,Yes,Yes,Yes,,Yes,Yes,Yes,No,Met,3/3,Met
-Universidad Veracruzana FIE,STB60191,Student Branch,Universidad Veracruzana FIE,,100,12,Yes,2,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+Universidad Veracruzana FIE,STB60191,Student Branch,Universidad Veracruzana FIE,,108,12,Yes,2,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 Universidad Veracruzana Ing Boca del Rio,STB65671,Student Branch,Universidad Veracruzana Ing Boca del Rio,,152,12,Yes,12,,5,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Universidad Veracruzana Microna,STB29161,Student Branch,Universidad Veracruzana Microna,,9,12,No,0,,0,4,No,Yes,Yes,,No,No,No,No,Met,1/3,Not Met
 Universidad Veracruzana Orizaba Cordoba,STB60235185,Student Branch,Universidad Veracruzana Orizaba Cordoba,,67,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
@@ -35,7 +35,7 @@ Universidad Veracruzana-Poza Rica,STB11700,Student Branch,Universidad Veracruzan
 "Universidad Veracruzana - FIME,ED15",SBC01022A,Student Branch Chapter,Universidad Veracruzana - FIME,ED15,40,6,Yes,1,1,1,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
 "Universidad Veracruzana - FIME,PE31",SBC01022,Student Branch Chapter,Universidad Veracruzana - FIME,PE31,43,6,Yes,1,1,1,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
 "Universidad Veracruzana FIE,AES10",SBC60191B,Student Branch Chapter,Universidad Veracruzana FIE,AES10,22,6,Yes,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
-"Universidad Veracruzana FIE,EMB18",SBC60191A,Student Branch Chapter,Universidad Veracruzana FIE,EMB18,24,6,Yes,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,1/3,Not Met
+"Universidad Veracruzana FIE,EMB18",SBC60191A,Student Branch Chapter,Universidad Veracruzana FIE,EMB18,31,6,Yes,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,1/3,Not Met
 "Universidad Veracruzana FIE,RA24",SBC60191,Student Branch Chapter,Universidad Veracruzana FIE,RA24,38,6,Yes,0,0,0,2,No,Yes,,No,No,No,No,No,Partial,1/3,Not Met
 "Universidad Veracruzana Ing Boca del Rio, CS23",SBC65671,Student Branch Chapter,Universidad Veracruzana Ing Boca del Rio,CS23,0,6,No,1,1,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad Veracruzana Ing Boca del Rio, ED15",SBC65671B,Student Branch Chapter,Universidad Veracruzana Ing Boca del Rio,ED15,12,6,Yes,0,0,1,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
@@ -44,8 +44,8 @@ Universidad Veracruzana-Poza Rica,STB11700,Student Branch,Universidad Veracruzan
 "Universidad Veracruzana Ing Boca del Rio,C16",SBC65671E,Student Branch Chapter,Universidad Veracruzana Ing Boca del Rio,C16,37,6,Yes,6,5,4,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Universidad Veracruzana Ing Boca del Rio,EMB18",SBC65671H,Student Branch Chapter,Universidad Veracruzana Ing Boca del Rio,EMB18,19,6,Yes,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
 "Universidad Veracruzana Ing Boca del Rio,PE31",SBC65671D,Student Branch Chapter,Universidad Veracruzana Ing Boca del Rio,PE31,2,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
-"Universidad Veracruzana Ing Boca del Rio,TEM14",SBC65671F,Student Branch Chapter,Universidad Veracruzana Ing Boca del Rio,TEM14,38,6,Yes,1,1,2,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
-"Universidad Veracruzana Ing Boca del Rio,VT06",SBC65671G,Student Branch Chapter,Universidad Veracruzana Ing Boca del Rio,VT06,27,6,Yes,0,0,0,2,No,No,,Yes,No,No,No,Yes,Partial,1/3,Not Met
+"Universidad Veracruzana Ing Boca del Rio,TEM14",SBC65671F,Student Branch Chapter,Universidad Veracruzana Ing Boca del Rio,TEM14,39,6,Yes,1,1,2,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Universidad Veracruzana Ing Boca del Rio,VT06",SBC65671G,Student Branch Chapter,Universidad Veracruzana Ing Boca del Rio,VT06,28,6,Yes,0,0,0,2,No,No,,Yes,No,No,No,Yes,Partial,1/3,Not Met
 "Universidad Veracruzana Microna,ED15",SBC29161,Student Branch Chapter,Universidad Veracruzana Microna,ED15,1,6,No,0,0,1,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
 "Universidad Veracruzana Sede Coatzacoalcos,ED15",SBC11411A,Student Branch Chapter,Universidad Veracruzana Sede Coatzacoalcos,ED15,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad Veracruzana Sede Coatzacoalcos,PE31",SBC11411,Student Branch Chapter,Universidad Veracruzana Sede Coatzacoalcos,PE31,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met

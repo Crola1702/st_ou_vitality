@@ -1,0 +1,18 @@
+Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
+"Stanford University, WIE",SBA01871,Affinity Group,Stanford University,WIE,14,6,Yes,0,,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+Carnegie Mellon Silicon Valley,STB60094636,Student Branch,Carnegie Mellon Silicon Valley,,2,12,No,0,,0,4,No,No,Yes,,No,No,No,No,Partial,0/3,Not Met
+Northeastern University Silicon Valley,STB14003,Student Branch,Northeastern University Silicon Valley,,2,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+San Jose State University,STB01751,Student Branch,San Jose State University,,65,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,Yes,No,Met,2/3,Not Met
+Santa Clara University,STB01761,Student Branch,Santa Clara University,,80,12,Yes,11,,2,4,Yes,Yes,Yes,,Yes,Yes,Yes,No,Met,3/3,Met
+Stanford University,STB01871,Student Branch,Stanford University,,227,12,Yes,6,,2,4,Yes,Yes,Yes,,No,No,Yes,No,Met,3/3,Met
+US Naval Postgraduate School,STB02081,Student Branch,US Naval Postgraduate School,,31,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,Yes,No,Met,2/3,Not Met
+University of California Santa Cruz,STB95011,Student Branch,University of California Santa Cruz,,81,12,Yes,1,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"San Jose State University,C16/EP21",SBC01751,Student Branch Chapter,San Jose State University,C16/EP21,15,6,Yes,2,1,3,2,No,Yes,,No,Yes,Yes,Yes,No,Partial,1/3,Not Met
+"San Jose State University,SP01",SBC0175B,Student Branch Chapter,San Jose State University,SP01,1,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"Santa Clara University,C16",SBC01761,Student Branch Chapter,Santa Clara University,C16,4,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Santa Clara University,ED15",SBC01761A,Student Branch Chapter,Santa Clara University,ED15,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Santa Clara University,PE31",SBC01761B,Student Branch Chapter,Santa Clara University,PE31,3,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Stanford University,C16",SBC01871,Student Branch Chapter,Stanford University,C16,13,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Stanford University,ED15",SBC0187A,Student Branch Chapter,Stanford University,ED15,8,6,Yes,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,1/3,Not Met
+"Stanford University,MTT17",SBC0187C,Student Branch Chapter,Stanford University,MTT17,13,6,Yes,2,2,2,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
+"Stanford University,PE31",SBC0187B,Student Branch Chapter,Stanford University,PE31,13,6,Yes,2,2,0,2,Yes,Yes,,Yes,Yes,No,No,No,Met,3/3,Met

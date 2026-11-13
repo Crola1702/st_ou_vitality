@@ -1,0 +1,23 @@
+Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
+"Macquarie University,WIE",SBA21541,Affinity Group,Macquarie University,WIE,4,6,No,0,,0,2,No,No,,Yes,No,No,No,Yes,Partial,0/3,Not Met
+"University of New South Wales,WIE",SBA33561,Affinity Group,University of New South Wales - Sydney,WIE,9,6,Yes,0,,0,2,No,No,,Yes,No,No,No,No,Partial,1/3,Not Met
+"University of Wollongong,WIE",SBA90071,Affinity Group,University of Wollongong,WIE,2,6,No,0,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+Charles Sturt University,STB62891,Student Branch,Charles Sturt University,,16,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+Macquarie University,STB21541,Student Branch,Macquarie University,,56,12,Yes,15,,3,4,Yes,No,Yes,,Yes,Yes,No,No,Partial,2/3,Not Met
+Melbourne Institute of Technology,STB60225246,Student Branch,Melbourne Institute of Technology,,26,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
+SP Jain School of Global Management,STB60172844,Student Branch,SP Jain School of Global Management,,6,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+The University of Sydney,STB83201,Student Branch,The University of Sydney,,122,12,Yes,0,,0,4,No,Yes,Yes,,Yes,No,No,No,Met,2/3,Not Met
+University of New South Wales - Sydney,STB33561,Student Branch,University of New South Wales - Sydney,,265,12,Yes,1,,0,4,No,Yes,Yes,,No,No,No,No,Met,2/3,Not Met
+University of Technology Sydney,STB04821,Student Branch,University of Technology Sydney,,130,12,Yes,8,,1,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+University of Wollongong,STB90071,Student Branch,University of Wollongong,,40,12,Yes,5,,0,4,Yes,Yes,Yes,,No,No,No,No,Met,3/3,Met
+Western Sydney University,STB38101,Student Branch,Western Sydney University,,21,12,Yes,4,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,No,Met,3/3,Met
+"Macquarie University,IA34",SBC21541C,Student Branch Chapter,Macquarie University,IA34,0,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"Macquarie University,MTT17",SBC21541A,Student Branch Chapter,Macquarie University,MTT17,3,6,No,1,1,1,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"Macquarie University,PE31",SBC21541B,Student Branch Chapter,Macquarie University,PE31,2,6,No,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,1/3,Not Met
+"The University of Sydney,EMB18",SBC83201,Student Branch Chapter,The University of Sydney,EMB18,12,6,Yes,3,2,1,2,Yes,Yes,,No,No,No,No,No,Partial,2/3,Not Met
+"University of Technology Sydney,AP03",SBC04821C,Student Branch Chapter,University of Technology Sydney,AP03,11,6,Yes,2,2,0,2,Yes,Yes,,Yes,No,No,No,No,Met,3/3,Met
+"University of Technology Sydney,EMB18",SBC04821B,Student Branch Chapter,University of Technology Sydney,EMB18,7,6,Yes,4,2,1,2,Yes,Yes,,Yes,Yes,No,No,No,Met,3/3,Met
+"University of Technology-Sydney,IA34",SBC16351A,Student Branch Chapter,University of Technology Sydney,IA34,6,6,Yes,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,1/3,Not Met
+"University of Technology-Sydney,SMC28",SBC04821A,Student Branch Chapter,University of Technology Sydney,SMC28,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"University of Wollongong,IA34",SBC90071A,Student Branch Chapter,University of Wollongong,IA34,15,6,Yes,4,3,1,2,Yes,No,,Yes,No,No,No,Yes,Partial,2/3,Not Met
+"University of Wollongong,PE31",SBC90071B,Student Branch Chapter,University of Wollongong,PE31,14,6,Yes,14,11,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met

@@ -1,0 +1,314 @@
+Date,SPO ID,Unit Type,University,Society,Member Count,Requirements Met,Members Met,Events Met,Officers Status,Overall Vitality
+2026-11-13,SBA17411S,Affinity Group,Ecole Nationale D'Ingenieurs De Tunis,SB SIGHT,310,3,Yes,Yes,Met,Met
+2026-11-13,SBA17411,Affinity Group,Ecole Nationale D'Ingenieurs De Tunis,WIE,218,3,Yes,Yes,Met,Met
+2026-11-13,SBA10019S,Affinity Group,Ecole Polytechnique de Sousse,SB SIGHT,181,3,Yes,Yes,Met,Met
+2026-11-13,SBA10019,Affinity Group,Ecole Polytechnique de Sousse,WIE,101,2,Yes,Yes,Partial,Not Met
+2026-11-13,SBA13021S,Affinity Group,Faculty of Science of Tunis,SB SIGHT Group,212,3,Yes,Yes,Met,Met
+2026-11-13,SBA13021,Affinity Group,Faculty of Science of Tunis,WIE,139,3,Yes,Yes,Met,Met
+2026-11-13,SBA14025,Affinity Group,Faculty of Sciences of Bizerte,WIE,58,3,Yes,Yes,Met,Met
+2026-11-13,SBA99999S,Affinity Group,Faculty of Sciences of Sfax,SB SIGHT,221,3,Yes,Yes,Met,Met
+2026-11-13,SBA99999,Affinity Group,Faculty of Sciences of Sfax,WIE,104,3,Yes,Yes,Met,Met
+2026-11-13,SBA11516S,Affinity Group,Higher Inst Informatics & Mathematics of Monastir,SIGHT,179,3,Yes,Yes,Met,Met
+2026-11-13,SBA11516,Affinity Group,Higher Inst Informatics & Mathematics of Monastir,WIE,165,3,Yes,Yes,Met,Met
+2026-11-13,SBA10225,Affinity Group,Higher Inst of Applied & Tech Sciences of Mateur,WIE,110,3,Yes,Yes,Met,Met
+2026-11-13,SBA16991S,Affinity Group,Higher Inst of Applied Science & Tech of Sousse,SIGHT,72,2,Yes,Yes,Partial,Not Met
+2026-11-13,SBA16991,Affinity Group,Higher Inst of Applied Science & Tech of Sousse,WIE,45,3,Yes,Yes,Met,Met
+2026-11-13,SBA10056S,Affinity Group,Higher Institute of Computer Science,SIGHT,130,2,Yes,Yes,Partial,Not Met
+2026-11-13,SBA99105,Affinity Group,Higher Institute of Industrial Management of Sfax,WIE,32,2,Yes,Yes,Partial,Not Met
+2026-11-13,SBA10222S,Affinity Group,Higher Inst of Informatics & Multimedia of Sfax,SIGHT,182,2,Yes,Yes,Partial,Not Met
+2026-11-13,SBA10222,Affinity Group,Higher Inst of Informatics & Multimedia of Sfax,WIE,196,3,Yes,Yes,Met,Met
+2026-11-13,SBA60168044S,Affinity Group,Higher Inst of Information Technologies & Comm.,SIGHT,85,2,Yes,Yes,Partial,Not Met
+2026-11-13,SBA60168044,Affinity Group,Higher Inst of Information Technologies & Comm.,WIE,74,2,Yes,Yes,Partial,Not Met
+2026-11-13,SBA20136S,Affinity Group,Higher Institute of Technological Studies-Djerba,SIGHT,7,1,Yes,No,Not Met,Not Met
+2026-11-13,SBA60122624S,Affinity Group,Higher Inst. of Computer Science Multimedia Gabes,SIGHT,19,1,Yes,No,Partial,Not Met
+2026-11-13,SBA60122624,Affinity Group,Higher Inst. of Computer Science Multimedia Gabes,WIE,18,1,Yes,No,Partial,Not Met
+2026-11-13,SBA10056,Affinity Group,Higher Institute of Computer Science,WIE,87,3,Yes,Yes,Met,Met
+2026-11-13,SBA39501,Affinity Group,Higher Institute of Informatics Mahdia,WIE,197,2,Yes,No,Met,Not Met
+2026-11-13,SBA10057,Affinity Group,Higher Institute of Technological Studies of Rades,WIE,166,3,Yes,Yes,Met,Met
+2026-11-13,SBA15160,Affinity Group,Higher Institute of Technological Studies ISET'COM,WIE,3,1,No,No,Met,Not Met
+2026-11-13,SBA66436,Affinity Group,Higher Institute of Tech. Studies of Kairouan,WIE,24,1,Yes,No,Partial,Not Met
+2026-11-13,SBA13271S,Affinity Group,Higher National Engineering School of Tunis,SIGHT,269,3,Yes,Yes,Met,Met
+2026-11-13,SBA13271,Affinity Group,Higher National Engineering School of Tunis,WIE,210,3,Yes,Yes,Met,Met
+2026-11-13,SBA09861,Affinity Group,Higher School of Communication of Tunis,WIE,129,2,Yes,No,Met,Not Met
+2026-11-13,SBA10213,Affinity Group,Higher School of Sciences & Tech of Hammam Sousse,WIE,102,3,Yes,Yes,Met,Met
+2026-11-13,SBA10213S,Affinity Group,Higher School of Sciences & Tech of Hammam Sousse,SIGHT,203,2,Yes,Yes,Partial,Not Met
+2026-11-13,SBA64692,Affinity Group,Institute of Technological Studies of Bizerte,WIE,74,3,Yes,Yes,Met,Met
+2026-11-13,SBA10106,Affinity Group,International Institute of Technology,WIE,116,3,Yes,Yes,Met,Met
+2026-11-13,SBA11413,Affinity Group,International Multidisciplinary School,WIE,55,2,Yes,Yes,Partial,Not Met
+2026-11-13,SBA13161,Affinity Group,National Engineering School of Bizerte,WIE,13,2,Yes,Yes,Partial,Not Met
+2026-11-13,SBA10060,Affinity Group,National Agronomic Institute of Tunisia,WIE,1,0,No,No,Not Met,Not Met
+2026-11-13,SBA12331,Affinity Group,National Engineering School of Carthage,WIE,214,3,Yes,Yes,Met,Met
+2026-11-13,SBA12511,Affinity Group,National Engineering School of Gabes (ENIG),WIE,108,2,Yes,Yes,Partial,Not Met
+2026-11-13,SBA13281,Affinity Group,National Engineering School of Monastir,WIE,24,2,Yes,Yes,Partial,Not Met
+2026-11-13,SBA03301S,Affinity Group,National Engineering School of Sfax,SB SIGHT,283,3,Yes,Yes,Met,Met
+2026-11-13,SBA03301,Affinity Group,National Engineering School of Sfax,WIE,173,3,Yes,Yes,Met,Met
+2026-11-13,SBA11321,Affinity Group,National Engineering School of Sousse,WIE,26,2,Yes,Yes,Partial,Not Met
+2026-11-13,SBA12541S,Affinity Group,National Institute of Applied Sciences &Technology,SIGHT,205,2,Yes,No,Met,Not Met
+2026-11-13,SBA12541,Affinity Group,National Institute of Applied Sciences &Technology,WIE,113,2,Yes,Yes,Not Met,Not Met
+2026-11-13,SBA09511,Affinity Group,National School of Computer Science ENSI,WIE,129,1,Yes,No,Not Met,Not Met
+2026-11-13,SBA14511,Affinity Group,National School of Electronics & Telecoms of Sfax,WIE,386,3,Yes,Yes,Met,Met
+2026-11-13,SBA17201,Affinity Group,Natl School of Advanced Sci & Tech of Borj Cedria,WIE,30,1,Yes,No,Partial,Not Met
+2026-11-13,SBA64613S,Affinity Group,Private Higher School of Engineering & Technology,SIGHT,990,3,Yes,Yes,Met,Met
+2026-11-13,SBA64613,Affinity Group,Private Higher School of Engineering & Technology,WIE,189,2,Yes,Yes,Partial,Not Met
+2026-11-13,SBA16311,Affinity Group,Private University of Tunis,WIE,0,0,No,No,Not Met,Not Met
+2026-11-13,SBA39451S,Affinity Group,SESAME University,SB SIGHT,85,2,Yes,Yes,Not Met,Not Met
+2026-11-13,SBA39451,Affinity Group,SESAME University,WIE,29,2,Yes,No,Met,Not Met
+2026-11-13,SBA99079,Affinity Group,South Mediterranean University,WIE,171,3,Yes,Yes,Met,Met
+2026-11-13,SBA20236,Affinity Group,TEK-UP Higher School of Technologies & Engineering,WIE,34,2,Yes,No,Met,Not Met
+2026-11-13,SBA40350454,Affinity Group,Tunisia Polytechnic School,WIE,16,1,Yes,No,Not Met,Not Met
+2026-11-13,STB60161010,Student Branch,Central University,,8,0,No,No,Not Met,Not Met
+2026-11-13,STB60211845,Student Branch,ESPIN University,,6,1,No,No,Met,Not Met
+2026-11-13,STB17411,Student Branch,Ecole Nationale D'Ingenieurs De Tunis,,261,3,Yes,Yes,Met,Met
+2026-11-13,STB10019,Student Branch,Ecole Polytechnique de Sousse,,119,3,Yes,Yes,Met,Met
+2026-11-13,STB60100223,Student Branch,Faculty of Economics and Management of Sfax,,51,3,Yes,Yes,Met,Met
+2026-11-13,STB13021,Student Branch,Faculty of Science of Tunis,,216,3,Yes,Yes,Met,Met
+2026-11-13,STB14025,Student Branch,Faculty of Sciences of Bizerte,,95,3,Yes,Yes,Met,Met
+2026-11-13,STB60221692,Student Branch,Faculty of Sciences of Gabes,,9,0,No,No,Partial,Not Met
+2026-11-13,STB99999,Student Branch,Faculty of Sciences of Sfax,,195,3,Yes,Yes,Met,Met
+2026-11-13,STB60241414,Student Branch,Higher Business School of Sfax,,15,2,Yes,No,Met,Not Met
+2026-11-13,STB11516,Student Branch,Higher Inst Informatics & Mathematics of Monastir,,172,3,Yes,Yes,Met,Met
+2026-11-13,STB10225,Student Branch,Higher Inst of Applied & Tech Sciences of Mateur,,131,3,Yes,Yes,Met,Met
+2026-11-13,STB16991,Student Branch,Higher Inst of Applied Science & Tech of Sousse,,83,3,Yes,Yes,Met,Met
+2026-11-13,STB60238634,Student Branch,Higher Inst of Business Administration of Sfax,,39,3,Yes,Yes,Met,Met
+2026-11-13,STB10222,Student Branch,Higher Inst of Informatics & Multimedia of Sfax,,204,3,Yes,Yes,Met,Met
+2026-11-13,STB60168044,Student Branch,Higher Inst of Information Technologies & Comm.,,115,3,Yes,Yes,Met,Met
+2026-11-13,STB60223315,Student Branch,Higher Inst of Technological Studies of Nabeul,,81,3,Yes,Yes,Met,Met
+2026-11-13,STB60122624,Student Branch,Higher Inst. of Computer Science Multimedia Gabes,,55,3,Yes,Yes,Met,Met
+2026-11-13,STB60112447,Student Branch,Higher Inst. of Technological Studies of Zaghouan,,25,3,Yes,Yes,Met,Met
+2026-11-13,STB10056,Student Branch,Higher Institute of Computer Science,,119,3,Yes,Yes,Met,Met
+2026-11-13,STB99105,Student Branch,Higher Institute of Industrial Management of Sfax,,82,3,Yes,Yes,Met,Met
+2026-11-13,STB39501,Student Branch,Higher Institute of Informatics Mahdia,,267,3,Yes,Yes,Met,Met
+2026-11-13,STB60211425,Student Branch,Higher Institute of Medical Tech of Tunis,,113,2,Yes,No,Met,Not Met
+2026-11-13,STB66436,Student Branch,Higher Institute of Tech. Studies of Kairouan,,29,1,Yes,No,Partial,Not Met
+2026-11-13,STB15160,Student Branch,Higher Institute of Technological Studies ISET'COM,,27,3,Yes,Yes,Met,Met
+2026-11-13,STB60223316,Student Branch,Higher Institute of Technological Studies of Kef,,0,0,No,No,Not Met,Not Met
+2026-11-13,STB10057,Student Branch,Higher Institute of Technological Studies of Rades,,168,3,Yes,Yes,Met,Met
+2026-11-13,STB20136,Student Branch,Higher Institute of Technological Studies-Djerba,,1,0,No,No,Partial,Not Met
+2026-11-13,STB13271,Student Branch,Higher National Engineering School of Tunis,,239,3,Yes,Yes,Met,Met
+2026-11-13,STB09861,Student Branch,Higher School of Communication of Tunis,,197,3,Yes,Yes,Met,Met
+2026-11-13,STB10213,Student Branch,Higher School of Sciences & Tech of Hammam Sousse,,135,3,Yes,Yes,Met,Met
+2026-11-13,STB60237886,Student Branch,Horizon School of Digital Technologies,,13,2,Yes,No,Met,Not Met
+2026-11-13,STB60245158,Student Branch,Institut Supérieur de Gestion de Tunis,,60,2,Yes,No,Met,Not Met
+2026-11-13,STB64692,Student Branch,Institute of Technological Studies of Bizerte,,76,3,Yes,Yes,Met,Met
+2026-11-13,STB10106,Student Branch,International Institute of Technology,,120,3,Yes,Yes,Met,Met
+2026-11-13,STB11413,Student Branch,International Multidisciplinary School,,124,3,Yes,Yes,Met,Met
+2026-11-13,STB60214145,Student Branch,Manouba School of Engineering,,7,1,No,No,Met,Not Met
+2026-11-13,STB10060,Student Branch,National Agronomic Institute of Tunisia,,1,0,No,No,Partial,Not Met
+2026-11-13,STB13161,Student Branch,National Engineering School of Bizerte,,57,2,Yes,Yes,Partial,Not Met
+2026-11-13,STB12331,Student Branch,National Engineering School of Carthage,,235,2,Yes,Yes,Partial,Not Met
+2026-11-13,STB12511,Student Branch,National Engineering School of Gabes (ENIG),,146,3,Yes,Yes,Met,Met
+2026-11-13,STB13281,Student Branch,National Engineering School of Monastir,,29,3,Yes,Yes,Met,Met
+2026-11-13,STB03301,Student Branch,National Engineering School of Sfax,,225,3,Yes,Yes,Met,Met
+2026-11-13,STB11321,Student Branch,National Engineering School of Sousse,,83,2,Yes,Yes,Partial,Not Met
+2026-11-13,STB60233272,Student Branch,National Inst of Technologies and Sciences of Kef,,22,1,Yes,No,Partial,Not Met
+2026-11-13,STB12541,Student Branch,National Institute of Applied Sciences &Technology,,485,3,Yes,Yes,Met,Met
+2026-11-13,STB09511,Student Branch,National School of Computer Science ENSI,,135,3,Yes,Yes,Met,Met
+2026-11-13,STB14511,Student Branch,National School of Electronics & Telecoms of Sfax,,401,3,Yes,Yes,Met,Met
+2026-11-13,STB17201,Student Branch,Natl School of Advanced Sci & Tech of Borj Cedria,,31,2,Yes,Yes,Partial,Not Met
+2026-11-13,STB10112,Student Branch,Polytech Sfax,,7,1,No,No,Met,Not Met
+2026-11-13,STB64634,Student Branch,Private Higher School of Eng. & Applied Tech,,13,1,Yes,No,Partial,Not Met
+2026-11-13,STB64613,Student Branch,Private Higher School of Engineering & Technology,,299,3,Yes,Yes,Met,Met
+2026-11-13,STB10024,Student Branch,Private Polytechnic School-Monastir,,15,2,Yes,No,Met,Not Met
+2026-11-13,STB16311,Student Branch,Private University of Tunis,,5,0,No,No,Partial,Not Met
+2026-11-13,STB39451,Student Branch,SESAME University,,56,3,Yes,Yes,Met,Met
+2026-11-13,STB60110670,Student Branch,Science Faculty of Monastir,,59,3,Yes,Yes,Met,Met
+2026-11-13,STB99079,Student Branch,South Mediterranean University,,285,3,Yes,Yes,Met,Met
+2026-11-13,STB20236,Student Branch,TEK-UP Higher School of Technologies & Engineering,,128,2,Yes,No,Met,Not Met
+2026-11-13,STB60239970,Student Branch,The Maghreb Private Higher School of Sci and Tech,,10,1,No,No,Met,Not Met
+2026-11-13,STB60146924,Student Branch,Tunis Business School,,138,3,Yes,Yes,Met,Met
+2026-11-13,STB40350454,Student Branch,Tunisia Polytechnic School,,18,1,Yes,No,Partial,Not Met
+2026-11-13,STB60239371,Student Branch,University of Ibn Khaldoun,,25,3,Yes,Yes,Met,Met
+2026-11-13,STB60226786,Student Branch,iTeam University,,47,3,Yes,Yes,Met,Met
+2026-11-13,SBC17411B,Student Branch Chapter,Ecole Nationale D'Ingenieurs De Tunis,C16,101,3,Yes,Yes,Met,Met
+2026-11-13,SBC17411D,Student Branch Chapter,Ecole Nationale D'Ingenieurs De Tunis,IE13,101,2,Yes,No,Met,Not Met
+2026-11-13,SBC17411C,Student Branch Chapter,Ecole Nationale D'Ingenieurs De Tunis,RA24/SEN39,35,3,Yes,Yes,Met,Met
+2026-11-13,SBC17411,Student Branch Chapter,Ecole Nationale D'Ingenieurs De Tunis,PE31/IA34/IE13,140,3,Yes,Yes,Met,Met
+2026-11-13,SBC10019,Student Branch Chapter,Ecole Polytechnique de Sousse,C16,50,3,Yes,Yes,Met,Met
+2026-11-13,SBC10019B,Student Branch Chapter,Ecole Polytechnique de Sousse,EMB18,34,2,Yes,No,Met,Not Met
+2026-11-13,SBC10019A,Student Branch Chapter,Ecole Polytechnique de Sousse,RA24,14,3,Yes,Yes,Met,Met
+2026-11-13,SBC13021A,Student Branch Chapter,Faculty of Science of Tunis,C16,44,3,Yes,Yes,Met,Met
+2026-11-13,SBC13021D,Student Branch Chapter,Faculty of Science of Tunis,GRS29,0,0,No,No,Not Met,Not Met
+2026-11-13,SBC13021B,Student Branch Chapter,Faculty of Science of Tunis,PE31/IA34,23,3,Yes,Yes,Met,Met
+2026-11-13,SBC13021,Student Branch Chapter,Faculty of Science of Tunis,RA24,49,3,Yes,Yes,Met,Met
+2026-11-13,SBC13021F,Student Branch Chapter,Faculty of Science of Tunis,AP03,9,3,Yes,Yes,Met,Met
+2026-11-13,SBC13021G,Student Branch Chapter,Faculty of Science of Tunis,IE13,14,3,Yes,Yes,Met,Met
+2026-11-13,SBC13021E,Student Branch Chapter,Faculty of Science of Tunis,MTT17,11,3,Yes,Yes,Met,Met
+2026-11-13,SBC14025,Student Branch Chapter,Faculty of Sciences of Bizerte,C16,19,2,Yes,Yes,Not Met,Not Met
+2026-11-13,SBC14025A,Student Branch Chapter,Faculty of Sciences of Bizerte,COM19,45,2,Yes,No,Met,Not Met
+2026-11-13,SBC14025B,Student Branch Chapter,Faculty of Sciences of Bizerte,RA24,24,3,Yes,Yes,Met,Met
+2026-11-13,SBC99999B,Student Branch Chapter,Faculty of Sciences of Sfax,AES10,7,2,Yes,Yes,Partial,Not Met
+2026-11-13,SBC99999,Student Branch Chapter,Faculty of Sciences of Sfax,C16,52,3,Yes,Yes,Met,Met
+2026-11-13,SBC99999E,Student Branch Chapter,Faculty of Sciences of Sfax,CAS04,16,1,Yes,No,Partial,Not Met
+2026-11-13,SBC99999H,Student Branch Chapter,Faculty of Sciences of Sfax,CIS11,10,3,Yes,Yes,Met,Met
+2026-11-13,SBC99999J,Student Branch Chapter,Faculty of Sciences of Sfax,COM19,80,3,Yes,Yes,Met,Met
+2026-11-13,SBC99999G,Student Branch Chapter,Faculty of Sciences of Sfax,GRS29,5,1,No,Yes,Partial,Not Met
+2026-11-13,SBC99999F,Student Branch Chapter,Faculty of Sciences of Sfax,IA34,19,3,Yes,Yes,Met,Met
+2026-11-13,SBC99999C,Student Branch Chapter,Faculty of Sciences of Sfax,IE13,15,2,Yes,Yes,Partial,Not Met
+2026-11-13,SBC99999D,Student Branch Chapter,Faculty of Sciences of Sfax,PE31,14,3,Yes,Yes,Met,Met
+2026-11-13,SBC99999A,Student Branch Chapter,Faculty of Sciences of Sfax,RA24,12,1,Yes,No,Partial,Not Met
+2026-11-13,SBC99999I,Student Branch Chapter,Faculty of Sciences of Sfax,SMC28,8,3,Yes,Yes,Met,Met
+2026-11-13,SBC11516C,Student Branch Chapter,Higher Inst Informatics & Mathematics of Monastir,IA34/PE31,42,3,Yes,Yes,Met,Met
+2026-11-13,SBC11516A,Student Branch Chapter,Higher Inst Informatics & Mathematics of Monastir,C16,100,3,Yes,Yes,Met,Met
+2026-11-13,SBC11516B,Student Branch Chapter,Higher Inst Informatics & Mathematics of Monastir,CIS11,0,0,No,No,Not Met,Not Met
+2026-11-13,SBC11516,Student Branch Chapter,Higher Inst Informatics & Mathematics of Monastir,RA24,2,0,No,No,Partial,Not Met
+2026-11-13,SBC10225,Student Branch Chapter,Higher Inst of Applied & Tech Sciences of Mateur,C16,77,3,Yes,Yes,Met,Met
+2026-11-13,SBC10225B,Student Branch Chapter,Higher Inst of Applied & Tech Sciences of Mateur,IA34,42,3,Yes,Yes,Met,Met
+2026-11-13,SBC10225A,Student Branch Chapter,Higher Inst of Applied & Tech Sciences of Mateur,RA24,49,3,Yes,Yes,Met,Met
+2026-11-13,SBC10225C,Student Branch Chapter,Higher Inst of Applied & Tech Sciences of Mateur,IE13,39,3,Yes,Yes,Met,Met
+2026-11-13,SBC16991D,Student Branch Chapter,Higher Inst of Applied Science & Tech of Sousse,C16,13,2,Yes,Yes,Partial,Not Met
+2026-11-13,SBC16991A,Student Branch Chapter,Higher Inst of Applied Science & Tech of Sousse,IA34,22,3,Yes,Yes,Met,Met
+2026-11-13,SBC16991,Student Branch Chapter,Higher Inst of Applied Science & Tech of Sousse,PE31,5,2,No,Yes,Met,Not Met
+2026-11-13,SBC16991C,Student Branch Chapter,Higher Inst of Applied Science & Tech of Sousse,RA24,10,2,Yes,Yes,Partial,Not Met
+2026-11-13,SBC16991B,Student Branch Chapter,Higher Inst of Applied Science & Tech of Sousse,SP01,0,0,No,No,Not Met,Not Met
+2026-11-13,SBC60122624B,Student Branch Chapter,Higher Inst. of Computer Science Multimedia Gabes,CIS11,8,1,Yes,No,Partial,Not Met
+2026-11-13,SBC99105A,Student Branch Chapter,Higher Institute of Industrial Management of Sfax,C16,22,3,Yes,Yes,Met,Met
+2026-11-13,SBC99105,Student Branch Chapter,Higher Institute of Industrial Management of Sfax,IA34,20,2,Yes,Yes,Partial,Not Met
+2026-11-13,SBC10222D,Student Branch Chapter,Higher Inst of Informatics & Multimedia of Sfax,IE13/PE31,35,3,Yes,Yes,Met,Met
+2026-11-13,SBC60168044A,Student Branch Chapter,Higher Inst of Information Technologies & Comm.,IA34/PE31,33,3,Yes,Yes,Met,Met
+2026-11-13,SBC10222C,Student Branch Chapter,Higher Inst of Informatics & Multimedia of Sfax,IA34,134,3,Yes,Yes,Met,Met
+2026-11-13,SBC10222B,Student Branch Chapter,Higher Inst of Informatics & Multimedia of Sfax,SMC28,36,3,Yes,Yes,Met,Met
+2026-11-13,SBC10222,Student Branch Chapter,Higher Inst of Informatics & Multimedia of Sfax,C16,104,3,Yes,Yes,Met,Met
+2026-11-13,SBC10222A,Student Branch Chapter,Higher Inst of Informatics & Multimedia of Sfax,RA24,22,3,Yes,Yes,Met,Met
+2026-11-13,SBC60168044D,Student Branch Chapter,Higher Inst of Information Technologies & Comm.,CAS04/SSC37,7,1,Yes,No,Partial,Not Met
+2026-11-13,SBC60168044E,Student Branch Chapter,Higher Inst of Information Technologies & Comm.,IE13,10,3,Yes,Yes,Met,Met
+2026-11-13,SBC60168044,Student Branch Chapter,Higher Inst of Information Technologies & Comm.,C16,54,3,Yes,Yes,Met,Met
+2026-11-13,SBC60168044C,Student Branch Chapter,Higher Inst of Information Technologies & Comm.,RA24,4,0,No,No,Partial,Not Met
+2026-11-13,SBC60223315,Student Branch Chapter,Higher Inst of Technological Studies of Nabeul,C16,52,2,Yes,No,Met,Not Met
+2026-11-13,SBC20136B,Student Branch Chapter,Higher Institute of Technological Studies-Djerba,C16,1,0,No,No,Not Met,Not Met
+2026-11-13,SBC20136A,Student Branch Chapter,Higher Institute of Technological Studies-Djerba,IA34,1,0,No,No,Not Met,Not Met
+2026-11-13,SBC20136,Student Branch Chapter,Higher Institute of Technological Studies-Djerba,RA24,1,0,No,No,Not Met,Not Met
+2026-11-13,SBC60122624A,Student Branch Chapter,Higher Inst. of Computer Science Multimedia Gabes,C16,12,1,Yes,No,Partial,Not Met
+2026-11-13,SBC60122624,Student Branch Chapter,Higher Inst. of Computer Science Multimedia Gabes,IA34,8,2,Yes,No,Met,Not Met
+2026-11-13,SBC60122624C,Student Branch Chapter,Higher Inst. of Computer Science Multimedia Gabes,RA24,6,2,Yes,No,Met,Not Met
+2026-11-13,SBC10056,Student Branch Chapter,Higher Institute of Computer Science,C016,14,3,Yes,Yes,Met,Met
+2026-11-13,SBC10056D,Student Branch Chapter,Higher Institute of Computer Science,AES10,6,3,Yes,Yes,Met,Met
+2026-11-13,SBC10056B,Student Branch Chapter,Higher Institute of Computer Science,EMB18,10,1,Yes,No,Partial,Not Met
+2026-11-13,SBC10056A,Student Branch Chapter,Higher Institute of Computer Science,IA34,0,2,No,Yes,Met,Not Met
+2026-11-13,SBC10056C,Student Branch Chapter,Higher Institute of Computer Science,RA24,7,3,Yes,Yes,Met,Met
+2026-11-13,SBC39501,Student Branch Chapter,Higher Institute of Informatics Mahdia,C16,33,3,Yes,Yes,Met,Met
+2026-11-13,SBC39501B,Student Branch Chapter,Higher Institute of Informatics Mahdia,CIS11,8,3,Yes,Yes,Met,Met
+2026-11-13,SBC39501A,Student Branch Chapter,Higher Institute of Informatics Mahdia,RA24,12,2,Yes,No,Met,Not Met
+2026-11-13,SBC60211425,Student Branch Chapter,Higher Institute of Medical Tech of Tunis,EMB18,54,2,Yes,Yes,Partial,Not Met
+2026-11-13,SBC10057,Student Branch Chapter,Higher Institute of Technological Studies of Rades,C16,119,3,Yes,Yes,Met,Met
+2026-11-13,SBC10057A,Student Branch Chapter,Higher Institute of Technological Studies of Rades,E25,0,0,No,No,Not Met,Not Met
+2026-11-13,SBC66436,Student Branch Chapter,Higher Institute of Tech. Studies of Kairouan,C16,2,0,No,No,Partial,Not Met
+2026-11-13,SBC13271A,Student Branch Chapter,Higher National Engineering School of Tunis,IA34/PE31/IE13,42,3,Yes,Yes,Met,Met
+2026-11-13,SBC13271D,Student Branch Chapter,Higher National Engineering School of Tunis,AES10,16,3,Yes,Yes,Met,Met
+2026-11-13,SBC13271C,Student Branch Chapter,Higher National Engineering School of Tunis,C16,136,3,Yes,Yes,Met,Met
+2026-11-13,SBC13271B,Student Branch Chapter,Higher National Engineering School of Tunis,RA24,22,3,Yes,Yes,Met,Met
+2026-11-13,SBC13271G,Student Branch Chapter,Higher National Engineering School of Tunis,VT06,54,3,Yes,Yes,Met,Met
+2026-11-13,SBC09861A,Student Branch Chapter,Higher School of Communication of Tunis,GRS029/AES10,97,2,Yes,No,Met,Not Met
+2026-11-13,SBC09861B,Student Branch Chapter,Higher School of Communication of Tunis,C16,102,2,Yes,No,Met,Not Met
+2026-11-13,SBC09861C,Student Branch Chapter,Higher School of Communication of Tunis,IA34/IE13,97,2,Yes,Yes,Partial,Not Met
+2026-11-13,SBC09861D,Student Branch Chapter,Higher School of Communication of Tunis,MTT17,15,2,Yes,No,Met,Not Met
+2026-11-13,SBC09861,Student Branch Chapter,Higher School of Communication of Tunis,RA24,13,2,Yes,Yes,Partial,Not Met
+2026-11-13,SBC10213C,Student Branch Chapter,Higher School of Sciences & Tech of Hammam Sousse,IA34,39,3,Yes,Yes,Met,Met
+2026-11-13,SBC10213E,Student Branch Chapter,Higher School of Sciences & Tech of Hammam Sousse,IE13,32,2,Yes,Yes,Partial,Not Met
+2026-11-13,SBC10213B,Student Branch Chapter,Higher School of Sciences & Tech of Hammam Sousse,PE31,31,3,Yes,Yes,Met,Met
+2026-11-13,SBC10213A,Student Branch Chapter,Higher School of Sciences & Tech of Hammam Sousse,RA24,28,3,Yes,Yes,Met,Met
+2026-11-13,SBC10213D,Student Branch Chapter,Higher School of Sciences & Tech of Hammam Sousse,AES10,17,2,Yes,Yes,Partial,Not Met
+2026-11-13,SBC10213,Student Branch Chapter,Higher School of Sciences & Tech of Hammam Sousse,C16,59,3,Yes,Yes,Met,Met
+2026-11-13,SBC64692,Student Branch Chapter,Institute of Technological Studies of Bizerte,IA34/IE13,27,3,Yes,Yes,Met,Met
+2026-11-13,SBC64692E,Student Branch Chapter,Institute of Technological Studies of Bizerte,TEM14,21,3,Yes,Yes,Met,Met
+2026-11-13,SBC64692C,Student Branch Chapter,Institute of Technological Studies of Bizerte,CIS11,18,3,Yes,Yes,Met,Met
+2026-11-13,SBC64692A,Student Branch Chapter,Institute of Technological Studies of Bizerte,C16,51,3,Yes,Yes,Met,Met
+2026-11-13,SBC64692B,Student Branch Chapter,Institute of Technological Studies of Bizerte,RA24,20,3,Yes,Yes,Met,Met
+2026-11-13,SBC10106A,Student Branch Chapter,International Institute of Technology,C16,49,3,Yes,Yes,Met,Met
+2026-11-13,SBC10106D,Student Branch Chapter,International Institute of Technology,EMB18,10,2,Yes,No,Met,Not Met
+2026-11-13,SBC10106B,Student Branch Chapter,International Institute of Technology,IA34,90,3,Yes,Yes,Met,Met
+2026-11-13,SBC10106,Student Branch Chapter,International Institute of Technology,RA24,13,3,Yes,Yes,Met,Met
+2026-11-13,SBC10106C,Student Branch Chapter,International Institute of Technology,SMC28,7,3,Yes,Yes,Met,Met
+2026-11-13,SBC11413A,Student Branch Chapter,International Multidisciplinary School,C16,6,3,Yes,Yes,Met,Met
+2026-11-13,SBC11413B,Student Branch Chapter,International Multidisciplinary School,CIS11,5,2,No,Yes,Met,Not Met
+2026-11-13,SBC11413,Student Branch Chapter,International Multidisciplinary School,IA34,7,2,Yes,Yes,Partial,Not Met
+2026-11-13,SBC11413C,Student Branch Chapter,International Multidisciplinary School,RA24,7,3,Yes,Yes,Met,Met
+2026-11-13,SBC13161,Student Branch Chapter,National Engineering School of Bizerte,IA34,20,2,Yes,Yes,Partial,Not Met
+2026-11-13,SBC17201C,Student Branch Chapter,Natl School of Advanced Sci & Tech of Borj Cedria,AES10,4,1,No,Yes,Partial,Not Met
+2026-11-13,SBC17201B,Student Branch Chapter,Natl School of Advanced Sci & Tech of Borj Cedria,CIS11,2,0,No,No,Not Met,Not Met
+2026-11-13,SBC17201,Student Branch Chapter,Natl School of Advanced Sci & Tech of Borj Cedria,IA34,30,1,Yes,No,Not Met,Not Met
+2026-11-13,SBC17201A,Student Branch Chapter,Natl School of Advanced Sci & Tech of Borj Cedria,PE31,1,0,No,No,Not Met,Not Met
+2026-11-13,SBC10060C,Student Branch Chapter,National Agronomic Institute of Tunisia,GRS29,0,0,No,No,Not Met,Not Met
+2026-11-13,SBC10060,Student Branch Chapter,National Agronomic Institute of Tunisia,IA34,1,0,No,No,Not Met,Not Met
+2026-11-13,SBC10060B,Student Branch Chapter,National Agronomic Institute of Tunisia,OE22,0,0,No,No,Not Met,Not Met
+2026-11-13,SBC10060A,Student Branch Chapter,National Agronomic Institute of Tunisia,PE31,0,0,No,No,Not Met,Not Met
+2026-11-13,SBC12331E,Student Branch Chapter,National Engineering School of Carthage,AES10,16,2,Yes,Yes,Partial,Not Met
+2026-11-13,SBC12331A,Student Branch Chapter,National Engineering School of Carthage,C16,116,2,Yes,Yes,Partial,Not Met
+2026-11-13,SBC12331B,Student Branch Chapter,National Engineering School of Carthage,IA34,109,3,Yes,Yes,Met,Met
+2026-11-13,SBC12331D,Student Branch Chapter,National Engineering School of Carthage,PE31,22,2,Yes,Yes,Partial,Not Met
+2026-11-13,SBC12331C,Student Branch Chapter,National Engineering School of Carthage,RA24,15,2,Yes,Yes,Partial,Not Met
+2026-11-13,SBC12511E,Student Branch Chapter,National Engineering School of Gabes (ENIG),C16,50,3,Yes,Yes,Met,Met
+2026-11-13,SBC12511B,Student Branch Chapter,National Engineering School of Gabes (ENIG),CS23,1,0,No,No,Partial,Not Met
+2026-11-13,SBC12511A,Student Branch Chapter,National Engineering School of Gabes (ENIG),IA34,53,3,Yes,Yes,Met,Met
+2026-11-13,SBC12511D,Student Branch Chapter,National Engineering School of Gabes (ENIG),PE31,24,2,Yes,Yes,Partial,Not Met
+2026-11-13,SBC12511C,Student Branch Chapter,National Engineering School of Gabes (ENIG),RA24,29,3,Yes,Yes,Met,Met
+2026-11-13,SBC12511F,Student Branch Chapter,National Engineering School of Gabes (ENIG),COM19,42,2,Yes,Yes,Partial,Not Met
+2026-11-13,SBC13281C,Student Branch Chapter,National Engineering School of Monastir,EMB18,2,0,No,No,Partial,Not Met
+2026-11-13,SBC13281A,Student Branch Chapter,National Engineering School of Monastir,PE31/IA34,22,2,Yes,No,Met,Not Met
+2026-11-13,SBC13281D,Student Branch Chapter,National Engineering School of Monastir,PEL35,0,0,No,No,Not Met,Not Met
+2026-11-13,SBC13281,Student Branch Chapter,National Engineering School of Monastir,RA24,3,0,No,No,Partial,Not Met
+2026-11-13,SBC03301A,Student Branch Chapter,National Engineering School of Sfax,AES10,8,3,Yes,Yes,Met,Met
+2026-11-13,SBC03301B,Student Branch Chapter,National Engineering School of Sfax,C16,64,3,Yes,Yes,Met,Met
+2026-11-13,SBC03301M,Student Branch Chapter,National Engineering School of Sfax,CAS04,128,3,Yes,Yes,Met,Met
+2026-11-13,SBC03301I,Student Branch Chapter,National Engineering School of Sfax,CEDA44,5,0,No,No,Not Met,Not Met
+2026-11-13,SBC03301G,Student Branch Chapter,National Engineering School of Sfax,CIS11,13,3,Yes,Yes,Met,Met
+2026-11-13,SBC03301C,Student Branch Chapter,National Engineering School of Sfax,E25,1,0,No,No,Partial,Not Met
+2026-11-13,SBC03301D,Student Branch Chapter,National Engineering School of Sfax,EMB18,47,2,Yes,Yes,Partial,Not Met
+2026-11-13,SBC03301H,Student Branch Chapter,National Engineering School of Sfax,IA34,108,3,Yes,Yes,Met,Met
+2026-11-13,SBC03301K,Student Branch Chapter,National Engineering School of Sfax,OE22,0,0,No,No,Partial,Not Met
+2026-11-13,SBC03301J,Student Branch Chapter,National Engineering School of Sfax,PE31,53,3,Yes,Yes,Met,Met
+2026-11-13,SBC03301E,Student Branch Chapter,National Engineering School of Sfax,RA24,6,3,Yes,Yes,Met,Met
+2026-11-13,SBC033011,Student Branch Chapter,National Engineering School of Sfax,SMC28,9,2,Yes,Yes,Partial,Not Met
+2026-11-13,SBC03301F,Student Branch Chapter,National Engineering School of Sfax,SP01,2,0,No,No,Partial,Not Met
+2026-11-13,SBC03301L,Student Branch Chapter,National Engineering School of Sfax,SSC37,17,3,Yes,Yes,Met,Met
+2026-11-13,SBC11321,Student Branch Chapter,National Engineering School of Sousse,IA34,29,1,Yes,No,Partial,Not Met
+2026-11-13,SBC11321A,Student Branch Chapter,National Engineering School of Sousse,PE31,2,0,No,No,Partial,Not Met
+2026-11-13,SBC11321B,Student Branch Chapter,National Engineering School of Sousse,SSC37,9,3,Yes,Yes,Met,Met
+2026-11-13,SBC12541G,Student Branch Chapter,National Institute of Applied Sciences &Technology,PE31/PEL35,13,3,Yes,Yes,Met,Met
+2026-11-13,SBC12541B,Student Branch Chapter,National Institute of Applied Sciences &Technology,C16,30,2,Yes,Yes,Partial,Not Met
+2026-11-13,SBC12541,Student Branch Chapter,National Institute of Applied Sciences &Technology,PE31,13,1,Yes,No,Partial,Not Met
+2026-11-13,SBC12541C,Student Branch Chapter,National Institute of Applied Sciences &Technology,RA24,22,2,Yes,Yes,Partial,Not Met
+2026-11-13,SBC12541A,Student Branch Chapter,National Institute of Applied Sciences &Technology,IA34,47,3,Yes,Yes,Met,Met
+2026-11-13,SBC12541D,Student Branch Chapter,National Institute of Applied Sciences &Technology,EMB18,18,1,Yes,No,Not Met,Not Met
+2026-11-13,SBC12541F,Student Branch Chapter,National Institute of Applied Sciences &Technology,PEL35,10,1,Yes,No,Not Met,Not Met
+2026-11-13,SBC12541E,Student Branch Chapter,National Institute of Applied Sciences &Technology,NPS05,0,0,No,No,Not Met,Not Met
+2026-11-13,SBC09511C,Student Branch Chapter,National School of Computer Science ENSI,C16,100,2,Yes,No,Met,Not Met
+2026-11-13,SBC09511B,Student Branch Chapter,National School of Computer Science ENSI,CIS11,2,1,No,Yes,Not Met,Not Met
+2026-11-13,SBC09511,Student Branch Chapter,National School of Computer Science ENSI,IA34,66,1,Yes,No,Not Met,Not Met
+2026-11-13,SBC09511A,Student Branch Chapter,National School of Computer Science ENSI,RA24,1,0,No,No,Not Met,Not Met
+2026-11-13,SBC14511A,Student Branch Chapter,National School of Electronics & Telecoms of Sfax,PE31/IE13,39,3,Yes,Yes,Met,Met
+2026-11-13,SBC14511E,Student Branch Chapter,National School of Electronics & Telecoms of Sfax,C16,285,3,Yes,Yes,Met,Met
+2026-11-13,SBC14511F,Student Branch Chapter,National School of Electronics & Telecoms of Sfax,CAS04,347,3,Yes,Yes,Met,Met
+2026-11-13,SBC14511C,Student Branch Chapter,National School of Electronics & Telecoms of Sfax,EMB18,232,3,Yes,Yes,Met,Met
+2026-11-13,SBC14511B,Student Branch Chapter,National School of Electronics & Telecoms of Sfax,IA34,173,3,Yes,Yes,Met,Met
+2026-11-13,SBC14511D,Student Branch Chapter,National School of Electronics & Telecoms of Sfax,RA24,30,3,Yes,Yes,Met,Met
+2026-11-13,SBC10112,Student Branch Chapter,Polytech Sfax,SEN39/IA34,2,0,No,No,Not Met,Not Met
+2026-11-13,SBC10112A,Student Branch Chapter,Polytech Sfax,PE31,0,0,No,No,Not Met,Not Met
+2026-11-13,SBC10112B,Student Branch Chapter,Polytech Sfax,RA024,1,1,No,No,Met,Not Met
+2026-11-13,SBC64634C,Student Branch Chapter,Private Higher School of Eng. & Applied Tech,IE/IA/PE,3,0,No,No,Partial,Not Met
+2026-11-13,SBC64613D,Student Branch Chapter,Private Higher School of Engineering & Technology,AES10/MTT17,30,3,Yes,Yes,Met,Met
+2026-11-13,SBC64613,Student Branch Chapter,Private Higher School of Engineering & Technology,IA34/IE13/PE31,75,3,Yes,Yes,Met,Met
+2026-11-13,SBC64634,Student Branch Chapter,Private Higher School of Eng. & Applied Tech,CAS04,0,0,No,No,Partial,Not Met
+2026-11-13,SBC64634A,Student Branch Chapter,Private Higher School of Eng. & Applied Tech,GRS29,3,0,No,No,Partial,Not Met
+2026-11-13,SBC64634B,Student Branch Chapter,Private Higher School of Eng. & Applied Tech,RA24,2,0,No,No,Partial,Not Met
+2026-11-13,SBC64613B,Student Branch Chapter,Private Higher School of Engineering & Technology,C16,113,3,Yes,Yes,Met,Met
+2026-11-13,SBC64613G,Student Branch Chapter,Private Higher School of Engineering & Technology,CIS11,76,3,Yes,Yes,Met,Met
+2026-11-13,SBC64613H,Student Branch Chapter,Private Higher School of Engineering & Technology,EMB18,34,3,Yes,Yes,Met,Met
+2026-11-13,SBC64613A,Student Branch Chapter,Private Higher School of Engineering & Technology,RA24,62,3,Yes,Yes,Met,Met
+2026-11-13,SBC10024,Student Branch Chapter,Private Polytechnic School-Monastir,IA34,0,0,No,No,Not Met,Not Met
+2026-11-13,SBC10024A,Student Branch Chapter,Private Polytechnic School-Monastir,PE31,0,0,No,No,Partial,Not Met
+2026-11-13,SBC16311A,Student Branch Chapter,Private University of Tunis,EMB18,0,0,No,No,Not Met,Not Met
+2026-11-13,SBC16311,Student Branch Chapter,Private University of Tunis,IA34,0,0,No,No,Not Met,Not Met
+2026-11-13,SBC16311B,Student Branch Chapter,Private University of Tunis,RA24,0,0,No,No,Not Met,Not Met
+2026-11-13,SBC39451A,Student Branch Chapter,SESAME University,C16,21,2,Yes,No,Met,Not Met
+2026-11-13,SBC39451,Student Branch Chapter,SESAME University,IA34/PE31,11,2,Yes,Yes,Partial,Not Met
+2026-11-13,SBC39451B,Student Branch Chapter,SESAME University,MTT17,2,0,No,No,Not Met,Not Met
+2026-11-13,SBC39451C,Student Branch Chapter,SESAME University,RA24,3,0,No,No,Not Met,Not Met
+2026-11-13,SBC99079,Student Branch Chapter,South Mediterranean University,C16,145,3,Yes,Yes,Met,Met
+2026-11-13,SBC99079A,Student Branch Chapter,South Mediterranean University,RA24,169,3,Yes,Yes,Met,Met
+2026-11-13,SBC99079B,Student Branch Chapter,South Mediterranean University,IA34,70,2,Yes,No,Met,Not Met
+2026-11-13,SBC99079D,Student Branch Chapter,South Mediterranean University,IE13,54,2,Yes,No,Met,Not Met
+2026-11-13,SBC99079C,Student Branch Chapter,South Mediterranean University,PE31,72,2,Yes,No,Met,Not Met
+2026-11-13,SBC20236,Student Branch Chapter,TEK-UP Higher School of Technologies & Engineering,C16,35,3,Yes,Yes,Met,Met
+2026-11-13,SBC20236A,Student Branch Chapter,TEK-UP Higher School of Technologies & Engineering,RA24,46,3,Yes,Yes,Met,Met
+2026-11-13,SBC40350454A,Student Branch Chapter,Tunisia Polytechnic School,C16,7,1,Yes,No,Partial,Not Met
+2026-11-13,SBC40350454,Student Branch Chapter,Tunisia Polytechnic School,SMC28,0,0,No,No,Not Met,Not Met

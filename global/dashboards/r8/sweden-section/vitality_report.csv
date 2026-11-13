@@ -1,0 +1,15 @@
+Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
+"Blekinge Inst Of Tech, WIE",SBA12021,Affinity Group,Blekinge Institute of Technology,WIE,1,6,No,0,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Chalmers University of Technology,WIE",SBA03141,Affinity Group,Chalmers University of Technology,WIE,2,6,No,0,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"KTH Royal Institute Of Technology, WIE",SBA05461,Affinity Group,KTH Royal Institute Of Technology,WIE,6,6,Yes,0,,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+Blekinge Institute of Technology,STB12021,Student Branch,Blekinge Institute of Technology,,5,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Chalmers University of Technology,STB03141,Student Branch,Chalmers University of Technology,,69,12,Yes,0,,0,4,No,Yes,No,,Yes,No,No,No,Partial,1/3,Not Met
+KTH Royal Institute Of Technology,STB05461,Student Branch,KTH Royal Institute Of Technology,,181,12,Yes,4,,1,4,Yes,Yes,Yes,,Yes,No,No,No,Met,3/3,Met
+Linkoping University,STB16021,Student Branch,Linkoping University,,44,12,Yes,3,,0,4,No,Yes,Yes,,No,No,No,No,Met,2/3,Not Met
+Lund University,STB06671,Student Branch,Lund University,,50,12,Yes,0,,1,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
+Uppsala University,STB06381,Student Branch,Uppsala University,,22,12,Yes,1,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+"Chalmers University of Technology,EP21",SBC03141,Student Branch Chapter,Chalmers University of Technology,EP21,0,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"KTH Royal Institute Of Technology, PE31",SBC05461A,Student Branch Chapter,KTH Royal Institute Of Technology,PE31,9,6,Yes,6,6,1,2,Yes,Yes,,Yes,Yes,No,No,No,Met,3/3,Met
+"KTH Royal Institute Of Technology,AP03",SBC05461C,Student Branch Chapter,KTH Royal Institute Of Technology,AP03,15,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"KTH Royal Institute Of Technology,MTT17",SBC05461B,Student Branch Chapter,KTH Royal Institute Of Technology,MTT17,13,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,No,Yes,Yes,Met,2/3,Not Met
+"Lund University,PE31",SBC06671,Student Branch Chapter,Lund University,PE31,3,6,No,0,0,1,2,No,Yes,,Yes,No,No,No,No,Met,1/3,Not Met

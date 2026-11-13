@@ -1,0 +1,53 @@
+Date,SPO ID,Unit Type,University,Society,Member Count,Requirements Met,Members Met,Events Met,Officers Status,Overall Vitality
+2026-11-13,SBA64264,Affinity Group,Universite Paris-Saclay,WIE,18,3,Yes,Yes,Met,Met
+2026-11-13,SBA02881,Affinity Group,University of Lille,WIE,2,1,No,Yes,Partial,Not Met
+2026-11-13,SBA40247902,Affinity Group,University of Rennes,WIE,10,3,Yes,Yes,Met,Met
+2026-11-13,STB64630,Student Branch,Ecole Polytechnique,,37,2,Yes,No,Met,Not Met
+2026-11-13,STB99801,Student Branch,Ecole Superieure d'Electronique de l'Ouest,,0,1,No,No,Met,Not Met
+2026-11-13,STB66001,Student Branch,Eurecom Institut,,8,0,No,No,Partial,Not Met
+2026-11-13,STB09711,Student Branch,Grenoble Alpes University,,48,2,Yes,No,Met,Not Met
+2026-11-13,STB62561,Student Branch,IMT-Atlantique,,24,1,Yes,No,Not Met,Not Met
+2026-11-13,STB60108042,Student Branch,INSA Centre Val de Loire,,10,1,No,No,Met,Not Met
+2026-11-13,STB10034,Student Branch,Inst Superieur de l'aeronautique et de l'Espace,,14,2,Yes,No,Met,Not Met
+2026-11-13,STB65921,Student Branch,Institut Mines Telecom - Telecom SudParis,,4,0,No,No,Not Met,Not Met
+2026-11-13,STB06661,Student Branch,Institut Superieur d'Electronique de Paris,,5,1,No,No,Met,Not Met
+2026-11-13,STB11699,Student Branch,Jean Monnet University,,5,0,No,No,Partial,Not Met
+2026-11-13,STB05391,Student Branch,Sorbonne University,,39,1,Yes,No,Not Met,Not Met
+2026-11-13,STB08231,Student Branch,Institut Mines Telecom - Telecom Paris,,16,1,Yes,No,Partial,Not Met
+2026-11-13,STB12551,Student Branch,University of Technology of Belfort-Montbeliard,,4,0,No,No,Not Met,Not Met
+2026-11-13,STB64264,Student Branch,Universite Paris-Saclay,,93,3,Yes,Yes,Met,Met
+2026-11-13,STB17521,Student Branch,Universite de Limoges,,7,0,No,No,Partial,Not Met
+2026-11-13,STB15361,Student Branch,University of Bordeaux,,39,3,Yes,Yes,Met,Met
+2026-11-13,STB18341,Student Branch,University of Franche-Comte,,3,0,No,No,Not Met,Not Met
+2026-11-13,STB02881,Student Branch,University of Lille,,17,2,Yes,No,Met,Not Met
+2026-11-13,STB60094858,Student Branch,University of Lorraine,,35,3,Yes,Yes,Met,Met
+2026-11-13,STB64381,Student Branch,University of Picardie Jules Verne,,5,0,No,No,Not Met,Not Met
+2026-11-13,STB08421,Student Branch,University of Reims Champagne-Ardenne,,2,0,No,No,Not Met,Not Met
+2026-11-13,STB40247902,Student Branch,University of Rennes,,31,3,Yes,Yes,Met,Met
+2026-11-13,STB40298158,Student Branch,University of Technology of Troyes,,4,0,No,No,Not Met,Not Met
+2026-11-13,STB99741,Student Branch,University of Toulouse,,10,0,No,No,Partial,Not Met
+2026-11-13,SBC09711A,Student Branch Chapter,Grenoble Alpes University,CAS04,4,0,No,No,Not Met,Not Met
+2026-11-13,SBC09711,Student Branch Chapter,Grenoble Alpes University,MTT17,5,0,No,No,Partial,Not Met
+2026-11-13,SBC10034A,Student Branch Chapter,Inst Superieur de l'aeronautique et de l'Espace,AES10,1,0,No,No,Not Met,Not Met
+2026-11-13,SBC10034B,Student Branch Chapter,Inst Superieur de l'aeronautique et de l'Espace,IA34,0,0,No,No,Not Met,Not Met
+2026-11-13,SBC10034,Student Branch Chapter,Inst Superieur de l'aeronautique et de l'Espace,NPS05,2,0,No,No,Partial,Not Met
+2026-11-13,SBC11699,Student Branch Chapter,Jean Monnet University,NPS05,3,0,No,No,Partial,Not Met
+2026-11-13,SBC12551A,Student Branch Chapter,University of Technology of Belfort-Montbeliard,IA34,0,0,No,No,Not Met,Not Met
+2026-11-13,SBC64264,Student Branch Chapter,Universite Paris-Saclay,COM19,13,3,Yes,Yes,Met,Met
+2026-11-13,SBC64264A,Student Branch Chapter,Universite Paris-Saclay,PE31,9,2,Yes,No,Met,Not Met
+2026-11-13,SBC15361H,Student Branch Chapter,University of Bordeaux,AES10,3,1,No,Yes,Partial,Not Met
+2026-11-13,SBC15361B,Student Branch Chapter,University of Bordeaux,AP03,12,2,Yes,Yes,Partial,Not Met
+2026-11-13,SBC15361C,Student Branch Chapter,University of Bordeaux,CAS04,10,2,Yes,Yes,Partial,Not Met
+2026-11-13,SBC15361I,Student Branch Chapter,University of Bordeaux,CS23,2,1,No,Yes,Not Met,Not Met
+2026-11-13,SBC15361F,Student Branch Chapter,University of Bordeaux,EMB18,0,1,No,Yes,Not Met,Not Met
+2026-11-13,SBC15361D,Student Branch Chapter,University of Bordeaux,IM09,4,2,No,Yes,Met,Not Met
+2026-11-13,SBC15361A,Student Branch Chapter,University of Bordeaux,MTT17,13,2,Yes,Yes,Partial,Not Met
+2026-11-13,SBC15361G,Student Branch Chapter,University of Bordeaux,SP01,4,2,No,Yes,Met,Not Met
+2026-11-13,SBC15361E,Student Branch Chapter,University of Bordeaux,SSC37,11,2,Yes,Yes,Partial,Not Met
+2026-11-13,SBC18341B,Student Branch Chapter,University of Franche-Comte,RA24,0,0,No,No,Not Met,Not Met
+2026-11-13,SBC18341A,Student Branch Chapter,University of Franche-Comte,UFFC20,0,0,No,No,Partial,Not Met
+2026-11-13,SBC02881,Student Branch Chapter,University of Lille,CAS04,1,0,No,No,Partial,Not Met
+2026-11-13,SBC02881B,Student Branch Chapter,University of Lille,CIS11,0,0,No,No,Not Met,Not Met
+2026-11-13,SBC02881A,Student Branch Chapter,University of Lille,SSC37,1,0,No,No,Partial,Not Met
+2026-11-13,SBC64381A,Student Branch Chapter,University of Picardie Jules Verne,IA34,0,0,No,No,Not Met,Not Met
+2026-11-13,SBC40247902,Student Branch Chapter,University of Rennes,AP03/MTT17,14,3,Yes,Yes,Met,Met

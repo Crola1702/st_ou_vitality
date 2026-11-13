@@ -1,0 +1,13 @@
+Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
+Central Missouri State Univ,STB57901,Student Branch,Central Missouri State Univ,,1,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Devry Inst of Tech-Kansas City,STB00352,Student Branch,Devry Insitute Of Tech-Kansas City,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Kansas State Univ,STB00811,Student Branch,Kansas State Univ,,34,12,Yes,2,,0,4,No,Yes,Yes,,No,No,No,No,Met,2/3,Not Met
+Missouri Univ of-Kansas City,STB12171,Student Branch,Missouri Univ Of-Kansas City,,35,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
+Pittsburg State Univ,STB28471,Student Branch,Pittsburg State Univ,,11,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+The University of Kansas,STB00821,Student Branch,University of Kansas,,71,12,Yes,3,,2,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Kansas State Univ, EMB18",SBC0081B,Student Branch Chapter,Kansas State Univ,EMB18,0,6,No,0,0,0,2,No,No,,Yes,No,No,No,Yes,Partial,0/3,Not Met
+"Kansas State Univ,IA34/PEL35/PE31",SBC0081C,Student Branch Chapter,Kansas State Univ,IA34/PEL35/PE31,4,6,No,1,0,0,2,No,Yes,,Yes,Yes,No,No,Yes,Met,1/3,Not Met
+"Kansas State Univ,PE31",SBC00811,Student Branch Chapter,Kansas State Univ,PE31,4,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"Kansas Univ of,AES10",SBC008211,Student Branch Chapter,University of Kansas,AES10,4,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"Missouri Univ Of-Kansas City,CIS11",SBC12171A,Student Branch Chapter,Missouri Univ Of-Kansas City,CIS11,1,6,No,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,1/3,Not Met
+"Missouri Univ Of-Kansas City,MTT17",SBC12171,Student Branch Chapter,Missouri Univ Of-Kansas City,MTT17,4,6,No,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,1/3,Not Met

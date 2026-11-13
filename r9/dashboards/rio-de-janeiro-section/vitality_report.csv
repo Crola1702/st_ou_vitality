@@ -4,12 +4,12 @@ Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Memb
 Federal Fluminense University SB SIGHT,SBA20521S,Affinity Group,Federal Fluminense University,SB SIGHT,57,6,Yes,0,,2,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
 "Federal Fluminense University,WIE",SBA20521,Affinity Group,Federal Fluminense University,WIE,18,6,Yes,0,,0,2,No,Yes,,No,No,No,No,No,Partial,1/3,Not Met
 "Instituto Federal Fluminense-Macae,WIE",SBA14010,Affinity Group,Instituto Federal Fluminense-Macae,WIE,13,6,Yes,0,,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
-"Universidade Federal do Rio de Janeiro,WIE",SBA03101,Affinity Group,Universidade Federal do Rio de Janeiro,WIE,4,6,No,0,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Universidade Federal do Rio de Janeiro,WIE",SBA03101,Affinity Group,Universidade Federal do Rio de Janeiro,WIE,5,6,No,0,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidade Veiga de Almeida UVA,WIE",SBA11750,Affinity Group,Universidade Veiga de Almeida UVA,WIE,2,6,No,0,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidade do Estado do Rio de Janeiro,SIGHT",SBA63211S,Affinity Group,Universidade do Estado do Rio de Janeiro,SIGHT,9,6,Yes,0,,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
 "Universidade do Estado do Rio de Janeiro,WIE",SBA63211,Affinity Group,Universidade do Estado do Rio de Janeiro,WIE,8,6,Yes,0,,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
 Catholic University of Petropolis,STB39071,Student Branch,Catholic University of Petropolis,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
-Cefet/RJ-Centro Federal De Educ Tec Csf,STB63491,Student Branch,Cefet/RJ-Centro Federal De Educ Tec Csf,,67,12,Yes,4,,0,4,Yes,Yes,Yes,,Yes,Yes,No,Yes,Met,3/3,Met
+Cefet/RJ-Centro Federal De Educ Tec Csf,STB63491,Student Branch,Cefet/RJ-Centro Federal De Educ Tec Csf,,67,12,Yes,4,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Federal Fluminense University,STB20521,Student Branch,Federal Fluminense University,,56,12,Yes,20,,1,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Instituto Federal Fluminense-Centro,STB14024,Student Branch,Instituto Federal Fluminense-Centro,,24,12,Yes,8,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Instituto Federal Fluminense-Macae,STB14010,Student Branch,Instituto Federal Fluminense-Macae,,17,12,Yes,4,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
@@ -23,7 +23,7 @@ Universidade do Estado do Rio de Janeiro,STB63211,Student Branch,Universidade do
 "Cefet/RJ-Centro Federal De Educ Tec Csf,PE31",SBC63491B,Student Branch Chapter,Cefet/RJ-Centro Federal De Educ Tec Csf,PE31,11,6,Yes,8,2,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Cefet/RJ-Centro Federal De Educ Tec Csf,PHO36",SBC63491G,Student Branch Chapter,Cefet/RJ-Centro Federal De Educ Tec Csf,PHO36,6,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
 "Cefet/RJ-Centro Federal De Educ Tec Csf,RA24",SBC63491A,Student Branch Chapter,Cefet/RJ-Centro Federal De Educ Tec Csf,RA24,8,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
-"Cefet/Rj-Centro Federal De Educ Tec Csf,AES10",SBC63491E,Student Branch Chapter,Cefet/RJ-Centro Federal De Educ Tec Csf,AES10,5,6,No,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,1/3,Not Met
+"Cefet/Rj-Centro Federal De Educ Tec Csf,AES10",SBC63491E,Student Branch Chapter,Cefet/RJ-Centro Federal De Educ Tec Csf,AES10,5,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
 "Cefet/Rj-Centro Federal De Educ Tec Csf,SIT30",SBC63491D,Student Branch Chapter,Cefet/RJ-Centro Federal De Educ Tec Csf,SIT30,1,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Federal Fluminense University,C16/EP21",SBC20521B,Student Branch Chapter,Federal Fluminense University,C16/EP21,16,6,Yes,6,4,3,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Federal Fluminense University,IA34",SBC20521A,Student Branch Chapter,Federal Fluminense University,IA34,3,6,No,0,0,0,2,No,No,,No,Yes,No,No,No,Not Met,0/3,Not Met
@@ -33,7 +33,7 @@ Universidade do Estado do Rio de Janeiro,STB63211,Student Branch,Universidade do
 "Instituto Federal Fluminense-Centro,PE31",SBC14024,Student Branch Chapter,Instituto Federal Fluminense-Centro,PE31,9,6,Yes,8,2,0,2,Yes,Yes,,No,Yes,Yes,Yes,Yes,Partial,2/3,Not Met
 "Instituto Federal Fluminense-Centro,RA24",SBC14024B,Student Branch Chapter,Instituto Federal Fluminense-Centro,RA24,9,6,Yes,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
 "Instituto Federal Fluminense-Macae,E25",SBC14010,Student Branch Chapter,Instituto Federal Fluminense-Macae,E25,6,6,Yes,1,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
-"Instituto Federal Fluminense-Macae,IE13",SBC14010A,Student Branch Chapter,Instituto Federal Fluminense-Macae,IE13,8,6,Yes,1,1,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Instituto Federal Fluminense-Macae,IE13",SBC14010A,Student Branch Chapter,Instituto Federal Fluminense-Macae,IE13,8,6,Yes,1,1,1,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 "Univ Federal do Espirito Santo-Sao Mateus,RA024",SBC10204,Student Branch Chapter,Universidade Federal do Espirito Santo-Sao Mateus,RA024,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Univ do Estado do Rio de Janeiro,AP03/COM19/SP01",SBC63211D,Student Branch Chapter,Universidade do Estado do Rio de Janeiro,AP03/COM19/SP01,9,6,Yes,4,2,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
 "Univ. Federal do Rio de Janeiro,PE31,PEL35,IA34",SBC03101B,Student Branch Chapter,Universidade Federal do Rio de Janeiro,IA34,6,6,Yes,4,2,0,2,Yes,Yes,,Yes,Yes,No,Yes,No,Met,3/3,Met
@@ -43,4 +43,4 @@ Universidade do Estado do Rio de Janeiro,STB63211,Student Branch,Universidade do
 "Universidade do Estado do Rio de Janeiro,C16",SBC63211C,Student Branch Chapter,Universidade do Estado do Rio de Janeiro,C16,4,6,No,4,1,0,2,No,Yes,,No,No,No,No,No,Partial,0/3,Not Met
 "Universidade do Estado do Rio de Janeiro,GRS29",SBC63211E,Student Branch Chapter,Universidade do Estado do Rio de Janeiro,GRS29,8,6,Yes,3,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
 "Universidade do Estado do Rio de Janeiro,PE31/IA34",SBC63211A,Student Branch Chapter,Universidade do Estado do Rio de Janeiro,PE31/IA34,4,6,No,15,5,0,2,Yes,Yes,,No,No,Yes,Yes,No,Partial,1/3,Not Met
-"Universidade do Estado do Rio de Janeiro,RA24",SBC63211,Student Branch Chapter,Universidade do Estado do Rio de Janeiro,RA24,2,6,No,2,2,0,2,Yes,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Universidade do Estado do Rio de Janeiro,RA24",SBC63211,Student Branch Chapter,Universidade do Estado do Rio de Janeiro,RA24,3,6,No,4,4,0,2,Yes,No,,No,No,No,No,No,Not Met,1/3,Not Met

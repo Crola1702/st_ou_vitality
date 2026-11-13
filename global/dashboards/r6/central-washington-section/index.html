@@ -1,0 +1,2058 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>IEEE Student OU Vitality: Central Washington Section</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  .viz-root {
+    color-scheme: light;
+    --surface-1:      #fcfcfb;
+    --page-plane:     #f9f9f7;
+    --text-primary:   #0b0b0b;
+    --text-secondary: #52514e;
+    --text-muted:     #898781;
+    --gridline:       #e1e0d9;
+    --border:         rgba(11,11,11,0.10);
+    --series-1:       #2a78d6;
+    --series-2:       #eb6834;
+    --series-3:       #1baf7a;
+    --series-4:       #eda100;
+    --series-5:       #e87ba4;
+    --series-6:       #008300;
+    --series-7:       #4a3aa7;
+    --series-8:       #e34948;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:where(:not([data-theme="light"])) .viz-root {
+      color-scheme: dark;
+      --surface-1:      #1a1a19;
+      --page-plane:     #0d0d0d;
+      --text-primary:   #ffffff;
+      --text-secondary: #c3c2b7;
+      --text-muted:     #898781;
+      --gridline:       #2c2c2a;
+      --border:         rgba(255,255,255,0.10);
+      --series-1:       #3987e5;
+      --series-2:       #d95926;
+      --series-3:       #199e70;
+      --series-4:       #c98500;
+      --series-5:       #d55181;
+      --series-6:       #008300;
+      --series-7:       #9085e9;
+      --series-8:       #e66767;
+    }
+  }
+  :root[data-theme="dark"] .viz-root {
+    color-scheme: dark;
+    --surface-1:      #1a1a19;
+    --page-plane:     #0d0d0d;
+    --text-primary:   #ffffff;
+    --text-secondary: #c3c2b7;
+    --text-muted:     #898781;
+    --gridline:       #2c2c2a;
+    --border:         rgba(255,255,255,0.10);
+    --series-1:       #3987e5;
+    --series-2:       #d95926;
+    --series-3:       #199e70;
+    --series-4:       #c98500;
+    --series-5:       #d55181;
+    --series-6:       #008300;
+    --series-7:       #9085e9;
+    --series-8:       #e66767;
+  }
+
+  * { box-sizing: border-box; }
+  body { margin: 0; }
+  .viz-root {
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    background: var(--page-plane);
+    color: var(--text-primary);
+    min-height: 100vh;
+    padding: 24px;
+  }
+  .container { max-width: 1800px; margin: 0 auto; }
+  h1 { font-size: 1.5rem; margin: 0 0 4px; }
+  .subtitle { color: var(--text-secondary); font-size: 0.9rem; margin: 0 0 20px; }
+
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-bottom: 24px; }
+  .tile {
+    background: var(--surface-1);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .tile-label { font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.03em; }
+  .tile-value { font-size: 1.5rem; font-weight: 600; margin-top: 4px; font-variant-numeric: tabular-nums; }
+
+  .filter-row { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
+  #search, .filter-row select {
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface-1);
+    color: var(--text-primary);
+    font-size: 0.9rem;
+  }
+  #search { width: 100%; max-width: 320px; }
+  .filter-row select { max-width: 260px; }
+  .filter-row { align-items: center; }
+  .type-filter { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; font-size: 0.88rem; color: var(--text-primary); }
+  .type-filter label { display: inline-flex; align-items: center; gap: 5px; cursor: pointer; }
+  .export-view-btn {
+    margin-left: auto; padding: 8px 16px; border-radius: 999px; border: 1px solid var(--text-primary);
+    background: var(--text-primary); color: var(--page-plane); font: inherit; font-size: 0.9rem; font-weight: 600; cursor: pointer;
+  }
+  .export-view-btn:hover { opacity: 0.88; }
+  @media (max-width: 720px) { .export-view-btn { margin-left: 0; } }
+
+  /* "Export current view" dialog: themed like the rest of the dashboard. */
+  .export-dialog {
+    width: min(560px, calc(100vw - 32px)); padding: 0; border: 1px solid var(--border); border-radius: 12px;
+    background: var(--surface-1); color: var(--text-primary);
+  }
+  .export-dialog [hidden] { display: none !important; }
+  .export-dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
+  .export-dialog form { padding: 20px 22px; position: relative; }
+  .export-dialog h2 { font-size: 1.1rem; margin: 0 0 8px; }
+  .export-dialog .muted { color: var(--text-secondary); font-size: 0.85rem; }
+  .export-summary { margin: 0 0 14px; font-size: 0.92rem; line-height: 1.45; }
+  .export-dialog fieldset { border: 0; padding: 0; margin: 0 0 10px; }
+  .export-dialog legend { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-secondary); margin-bottom: 4px; padding: 0; }
+  .export-dialog .opt { display: flex; align-items: flex-start; gap: 8px; margin: 5px 0; font-size: 0.9rem; cursor: pointer; line-height: 1.3; }
+  .export-dialog .opt input { margin: 2px 0 0; flex-shrink: 0; }
+  .export-count { font-weight: 600; font-size: 0.9rem; margin: 12px 0 10px; }
+  .export-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+  .export-actions button {
+    font: inherit; font-size: 0.88rem; cursor: pointer; padding: 8px 14px; border-radius: 8px;
+    border: 1px solid var(--border); background: var(--page-plane); color: var(--text-primary);
+  }
+  .export-actions button.primary { background: var(--text-primary); color: var(--page-plane); border-color: var(--text-primary); font-weight: 600; }
+  .export-actions button:disabled { opacity: 0.45; cursor: default; }
+  .export-hint { font-size: 0.8rem; color: var(--text-secondary); margin: 10px 0 0; }
+  .export-hint a { color: var(--text-primary); }
+  .export-close {
+    position: absolute; top: 14px; right: 16px; font: inherit; font-size: 0.8rem; cursor: pointer;
+    background: none; border: 1px solid var(--border); border-radius: 6px; padding: 3px 10px; color: var(--text-secondary);
+  }
+
+  .member-summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-bottom: 24px; max-width: 600px; }
+
+  .ou-section { margin-bottom: 32px; }
+  .ou-section h2 { font-size: 1.1rem; margin: 0 0 4px; }
+  .req-note { font-weight: 400; font-size: 0.8rem; color: var(--text-secondary); }
+  .tabs { display: flex; gap: 8px; margin-bottom: 16px; border-bottom: 1px solid var(--border); }
+  .tab-btn {
+    font: inherit; cursor: pointer; padding: 10px 16px; border: none; border-bottom: 2px solid transparent;
+    background: none; color: var(--text-secondary); font-weight: 600; font-size: 0.9rem;
+  }
+  .tab-btn:hover { color: var(--text-primary); }
+  .tab-btn.active { color: var(--text-primary); border-bottom-color: #ec835a; }
+  .tab-badge {
+    display: inline-block; margin-left: 4px; padding: 1px 7px; border-radius: 999px;
+    background: #ec835a; color: #fff; font-size: 0.72rem; font-weight: 700;
+  }
+  .tab-panel[hidden] { display: none; }
+
+  .group-by { display: inline-block; margin: 8px 0 12px; font-size: 0.85rem; }
+  .group-bar-row { display: grid; grid-template-columns: minmax(90px, 220px) 1fr minmax(110px, auto); gap: 10px; align-items: center; padding: 3px 0; font-size: 0.85rem; }
+  .group-bar-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .group-bar-track { background: var(--surface-1); border: 1px solid var(--border); border-radius: 4px; height: 16px; overflow: hidden; }
+  .group-bar-fill { display: block; height: 100%; background: var(--series-1); }
+  .group-bar-value { font-variant-numeric: tabular-nums; text-align: right; }
+
+  .trend-heading { font-size: 1rem; margin: 20px 0 4px; }
+  .trend-heading:first-of-type { margin-top: 0; }
+  .trend-card { background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px; padding: 16px; }
+  .promotion-detail {
+    margin-top: 12px; padding: 10px 12px; background: var(--page-plane);
+    border: 1px solid var(--border); border-radius: 8px; font-size: 0.85rem; color: var(--text-secondary);
+  }
+  .promotion-detail strong { color: var(--text-primary); }
+  .promotion-detail .promotion-row { margin-top: 4px; }
+  .society-filter { margin-bottom: 10px; }
+  .filter-toggle {
+    font: inherit; font-size: 0.8rem; color: var(--text-secondary); background: var(--page-plane);
+    border: 1px solid var(--border); border-radius: 6px; padding: 5px 10px; cursor: pointer;
+  }
+  .filter-toggle:hover { color: var(--text-primary); }
+  .filter-panel {
+    margin-top: 8px; padding: 10px 12px; background: var(--page-plane);
+    border: 1px solid var(--border); border-radius: 8px;
+  }
+  .filter-hint { margin: 0 0 8px; font-size: 0.78rem; color: var(--text-muted); }
+  .filter-checklist {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 4px 12px; max-height: 220px; overflow-y: auto;
+  }
+  .filter-check-item { display: flex; align-items: center; gap: 6px; font-size: 0.82rem; color: var(--text-secondary); }
+  .filter-check-item input:disabled + span { color: var(--text-muted); }
+  .filter-reset {
+    margin-top: 8px; font: inherit; font-size: 0.78rem; color: var(--text-secondary); background: none;
+    border: 1px solid var(--border); border-radius: 6px; padding: 4px 9px; cursor: pointer;
+  }
+  .filter-reset:hover { color: var(--text-primary); }
+  .trend-legend { display: flex; gap: 16px; margin-bottom: 8px; flex-wrap: wrap; }
+  .legend-item { display: inline-flex; align-items: center; gap: 6px; font-size: 0.8rem; color: var(--text-secondary); }
+  .legend-swatch { width: 12px; height: 3px; border-radius: 2px; flex: none; }
+  .trend-svg-wrap { position: relative; width: 100%; }
+  #trend-svg { width: 100%; display: block; }
+  .trend-axis-label { fill: var(--text-muted); font-size: 11px; font-variant-numeric: tabular-nums; }
+  .trend-direct-label { fill: var(--text-secondary); font-size: 11px; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .trend-tooltip {
+    position: absolute; background: var(--surface-1); border: 1px solid var(--border); border-radius: 8px;
+    padding: 8px 10px; font-size: 0.78rem; pointer-events: none; box-shadow: 0 4px 12px rgba(0,0,0,0.15); min-width: 140px;
+  }
+  .trend-tooltip-date { color: var(--text-muted); font-size: 0.7rem; margin-bottom: 4px; }
+  .trend-tooltip-row { display: flex; align-items: center; gap: 6px; margin: 2px 0; color: var(--text-secondary); }
+  .trend-tooltip-key { width: 10px; height: 3px; border-radius: 2px; flex: none; }
+  .trend-tooltip-row strong { color: var(--text-primary); font-variant-numeric: tabular-nums; }
+
+  .table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 10px; }
+  table { border-collapse: collapse; width: 100%; background: var(--surface-1); font-size: 0.88rem; }
+  th, td { padding: 9px 12px; text-align: left; white-space: nowrap; border-bottom: 1px solid var(--gridline); }
+  th { color: var(--text-secondary); font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.02em; }
+  td.name-cell { white-space: normal; min-width: 130px; max-width: 200px; }
+  th.sortable { cursor: pointer; user-select: none; }
+  th.sortable:hover { color: var(--text-primary); }
+  .sort-arrow { display: inline-block; width: 0.8em; }
+  td.mono { font-variant-numeric: tabular-nums; color: var(--text-secondary); }
+  tr.ou-row:hover td { background: var(--page-plane); }
+  .detail-row td { border-bottom: 1px solid var(--gridline); background: var(--page-plane); }
+  .empty { color: var(--text-muted); text-align: center; padding: 20px; }
+
+  td.clickable { cursor: pointer; }
+  td.clickable:hover .stat { text-decoration: underline; }
+
+  .stat { display: inline-flex; align-items: center; gap: 6px; font-variant-numeric: tabular-nums; font-weight: 600; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; flex: none; }
+
+  .detail-panel { padding: 6px 4px; font-size: 0.85rem; color: var(--text-secondary); white-space: normal; }
+  .chip-row { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--surface-1); border: 1px solid var(--border); border-radius: 999px;
+    padding: 4px 10px 4px 8px; font-size: 0.8rem;
+  }
+  .chip-tag { color: var(--text-muted); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.03em; }
+
+  .sub-note { margin-left: 6px; font-size: 0.75rem; font-weight: 400; color: var(--text-muted); white-space: nowrap; }
+  .unreported-note { margin-top: 6px; color: var(--text-muted); }
+
+  footer { color: var(--text-muted); font-size: 0.75rem; margin-top: 24px; line-height: 1.6; }
+
+  .byline { margin: 0 0 14px; display: flex; gap: 8px; flex-wrap: wrap; }
+  .byline a {
+    display: inline-flex; align-items: center; gap: 6px;
+    color: var(--text-secondary); font-size: 0.8rem; text-decoration: none;
+    border: 1px solid var(--border); border-radius: 999px; padding: 4px 12px;
+  }
+  .generated-at { margin-left: auto; align-self: center; color: var(--text-secondary); font-size: 0.8rem; font-variant-numeric: tabular-nums; }
+  .section-link { color: var(--text-secondary); font-size: 0.88rem; white-space: nowrap; }
+  .section-link:hover { color: var(--text-primary); }
+  .byline a:hover { color: var(--text-primary); border-color: var(--text-secondary); }
+  .scope-nav { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 0 0 20px; }
+  .scope-nav a { color: var(--text-secondary); font-size: 0.9rem; }
+  .scope-nav a:hover { color: var(--text-primary); }
+  .scope-nav select {
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface-1);
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    max-width: 320px;
+  }
+
+  .resources { margin: 0 0 24px; }
+  .resources summary {
+    cursor: pointer; font-weight: 600; font-size: 0.9rem; padding: 10px 14px;
+    background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px;
+  }
+  .resources[open] summary { border-radius: 10px 10px 0 0; }
+  .resources-body {
+    border: 1px solid var(--border); border-top: none; border-radius: 0 0 10px 10px;
+    padding: 14px 16px; background: var(--surface-1); font-size: 0.85rem; color: var(--text-secondary);
+  }
+  .resources-body h3 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.03em; color: var(--text-muted); margin: 14px 0 6px; }
+  .resources-body h3:first-child { margin-top: 0; }
+  .resources-body ul { margin: 0 0 4px; padding-left: 20px; }
+  .resources-body li { margin: 4px 0; }
+  .resources-body a { color: inherit; }
+</style>
+<style id="export-pages-css">
+/* Pages made by "Export current view" (export_view.js) for PDF / print.
+   Always light, like the print reports, whatever the dashboard theme: the
+   PDF writer (report_export.js) takes its colors from these styles. Scoped
+   to .export-pages so nothing here touches the dashboard itself.
+   #export-pages lives off-screen and only appears when printing an export;
+   automations/export_report_pdfs.py wraps a page in a bare .export-pages. */
+#export-pages { position: fixed; left: -10000px; top: 0; width: 900px; }
+.export-pages { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; color: #111; background: #fff; }
+.export-pages * { box-sizing: border-box; }
+.export-pages .group-page h1 { font-size: 1.5rem; margin: 0 0 2px; }
+.export-pages .group-page { background: #fff; border: 1px solid #ddd; border-radius: 4px; padding: 32px; margin: 0 0 28px; overflow-x: auto; }
+.export-pages .group-page h2 { font-size: 1.02rem; margin: 22px 0 8px; }
+.export-pages .context { color: #333; font-size: 0.92rem; margin: 2px 0; }
+.export-pages .subtitle { color: #555; font-size: 0.8rem; margin: 2px 0 14px; }
+.export-pages .type-note { font-weight: 600; font-size: 0.85rem; margin: -6px 0 14px; }
+.export-pages .stat-row { display: flex; flex-wrap: wrap; gap: 28px; margin-bottom: 14px; }
+.export-pages .stat-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.03em; color: #666; }
+.export-pages .stat-value { font-size: 1.35rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.export-pages .stat-value.good { color: #0ca30c; }
+.export-pages .bar-chart { margin-bottom: 8px; max-width: 640px; }
+.export-pages .bar-row { display: grid; grid-template-columns: 100px 1fr 32px; align-items: center; gap: 10px; margin: 5px 0; }
+.export-pages .bar-label { font-size: 0.76rem; color: #333; }
+.export-pages .bar-track { background: #eee; border-radius: 999px; height: 12px; overflow: hidden; }
+.export-pages .bar-fill { height: 100%; border-radius: 999px; }
+.export-pages .bar-value { font-size: 0.78rem; font-weight: 700; text-align: right; font-variant-numeric: tabular-nums; }
+.export-pages .checklist { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 8px; margin-bottom: 6px; }
+.export-pages .check { border: 1px solid #e3e3e0; border-radius: 6px; padding: 8px 10px; }
+.export-pages .check-label { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.03em; color: #666; }
+.export-pages .check-value { font-size: 1rem; font-weight: 700; margin-top: 2px; }
+.export-pages .note { color: #555; font-size: 0.85rem; }
+.export-pages .muted { color: #777; font-weight: 400; font-size: 0.85em; }
+.export-pages .ok { color: #0ca30c; }
+.export-pages .no { color: #d03b3b; }
+.export-pages table { border-collapse: collapse; width: 100%; font-size: 0.8rem; }
+.export-pages th, .export-pages td { padding: 5px 7px; text-align: left; border-bottom: 1px solid #eee; vertical-align: top; }
+.export-pages th { font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.02em; color: #666; }
+.export-pages td.num, .export-pages th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.export-pages td.mono { color: #555; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.export-pages td.missing { color: #d03b3b; }
+.export-pages tr.family th { background: #f4f4f1; color: #111; font-size: 0.78rem; text-transform: none; letter-spacing: 0; padding-top: 8px; }
+.export-pages tr.child td:first-child { padding-left: 20px; }
+
+@media print {
+  body.printing-export > * { display: none !important; }
+  body.printing-export > #export-pages { display: block !important; position: static; width: auto; }
+  body.printing-export { background: #fff; }
+  .export-pages .group-page { border: none; padding: 0; margin: 0; overflow: visible; page-break-after: always; }
+  .export-pages .group-page:last-child { page-break-after: auto; }
+  .export-pages table { font-size: 0.72rem; }
+  .export-pages th, .export-pages td { padding: 3px 5px; }
+  .export-pages thead { display: table-header-group; }
+  .export-pages tr { page-break-inside: avoid; }
+  .export-pages tr.family { page-break-after: avoid; }
+}
+
+</style>
+</head>
+<body>
+<div class="viz-root">
+  <div class="container">
+    <p class="byline"><a href="https://www.linkedin.com/in/cristobalarroyo/" target="_blank" rel="noopener">By Cristóbal Arroyo</a> <a href="https://github.com/Crola1702/st_ou_vitality" target="_blank" rel="noopener">See on GitHub</a> <span class="generated-at">Generated at 2026-11-13 08:34 -05</span></p>
+    <h1>IEEE Student OU Vitality: Central Washington Section</h1>
+    <p class="subtitle">Generated from local vTools exports. Events source: IEEE_vTools_Events_All.csv.</p>
+    <div class="scope-nav"><a href="../../index.html">← All regions</a> <a href="../index.html">Western USA - Region 6</a> <select id="scope-select" aria-label="Section" onchange="location.href=this.value"><option value="../alaska-section/index.html">Alaska Section</option><option value="../albuquerque-section/index.html">Albuquerque Section</option><option value="../boise-section/index.html">Boise Section</option><option value="../central-coast-section/index.html">Central Coast Section</option><option value="../central-montana-section/index.html">Central Montana Section</option><option value="../central-washington-section/index.html" selected>Central Washington Section</option><option value="../china-lake-bakersfield-section/index.html">China Lake-Bakersfield Section</option><option value="../coastal-los-angeles-section/index.html">Coastal Los Angeles Section</option><option value="../eastern-idaho-section/index.html">Eastern Idaho Section</option><option value="../foothill-section/index.html">Foothill Section</option><option value="../fort-huachuca-section/index.html">Fort Huachuca Section</option><option value="../hawaii-section/index.html">Hawaii Section</option><option value="../las-vegas-section/index.html">Las Vegas Section</option><option value="../metropolitan-los-angeles-section/index.html">Metropolitan Los Angeles Section</option><option value="../northern-nevada-section/index.html">Northern Nevada Section</option><option value="../oakland-east-bay-section/index.html">Oakland-East Bay Section</option><option value="../orange-county-section/index.html">Orange County Section</option><option value="../oregon-section/index.html">Oregon Section</option><option value="../palouse-section/index.html">Palouse Section</option><option value="../phoenix-section/index.html">Phoenix Section</option><option value="../richland-section/index.html">Richland Section</option><option value="../sacramento-valley-section/index.html">Sacramento Valley Section</option><option value="../san-diego-section/index.html">San Diego Section</option><option value="../san-fernando-valley-section/index.html">San Fernando Valley Section</option><option value="../san-francisco-section/index.html">San Francisco Section</option><option value="../santa-clara-valley-section/index.html">Santa Clara Valley Section</option><option value="../seattle-section/index.html">Seattle Section</option><option value="../spokane-section/index.html">Spokane Section</option><option value="../tucson-section/index.html">Tucson Section</option><option value="../utah-section/index.html">Utah Section</option><option value="../western-montana-section/index.html">Western Montana Section</option></select></div>
+
+    <details class="resources">
+      <summary>Requirements &amp; resources for students</summary>
+      <div class="resources-body">
+        <h3>Vitality rules</h3>
+        <ul>
+          <li><strong>Rama Estudiantil (Student Branch):</strong> &ge;12 miembros, &ge;4 eventos, Chair y Counselor</li>
+          <li><strong>Capítulo Estudiantil (Chapter):</strong> &ge;6 miembros, &ge;2 eventos técnicos, Chair y Advisor</li>
+          <li><strong>Grupo de Afinidad (Affinity Group):</strong> &ge;6 miembros, &ge;2 eventos, Chair y Advisor</li>
+        </ul>
+        <h3>How to meet them</h3>
+        <ul>
+          <li><a href="https://kb.ieee.org/vtools/blog/kb/creating-an-event/" target="_blank" rel="noopener">Cómo reportar eventos</a></li>
+          <li><a href="https://kb.ieee.org/vtools/blog/kb/adding-an-officer-to-an-organizational-unit/" target="_blank" rel="noopener">Cómo reportar officers (junta directiva)</a></li>
+          <li><a href="https://docs.google.com/presentation/d/1fWFIQsnbMlWU6ntJnggUviMP9IQuYSa6_9Kpz6CVN6E/edit?usp=drive_link" target="_blank" rel="noopener">Cómo atraer miembros</a></li>
+        </ul>
+      </div>
+    </details>
+
+    <div class="tiles">
+      <div class="tile" data-tile="total">
+          <div class="tile-label">Total OUs</div>
+          <div class="tile-value">1</div>
+        </div>
+<div class="tile" data-tile="met">
+          <div class="tile-label">Meeting Full Vitality (3/3)</div>
+          <div class="tile-value" style="color:#0ca30c">0 (0%)</div>
+        </div>
+<div class="tile" data-tile="branch">
+          <div class="tile-label">Student Branch</div>
+          <div class="tile-value">0/1 (0%)</div>
+        </div>
+<div class="tile" data-tile="chapter">
+          <div class="tile-label">Student Branch Chapter</div>
+          <div class="tile-value">0/0 (0%)</div>
+        </div>
+<div class="tile" data-tile="ag">
+          <div class="tile-label">Affinity Group</div>
+          <div class="tile-value">0/0 (0%)</div>
+        </div>
+    </div>
+
+    <div class="filter-row">
+      <input id="search" type="text" placeholder="Filter by unit name or SPO ID…">
+      
+      
+      <select id="university-filter" aria-label="University">
+        <option value="">All Universities</option>
+        <option value="central washington univ">Central Washington Univ</option>
+      </select>
+      <select id="society-filter" aria-label="Society">
+        <option value="">All Societies</option>
+        
+      </select>
+      <select id="status-filter" aria-label="Vitality">
+        <option value="">Any vitality</option>
+        <option value="met">Meeting full vitality</option>
+        <option value="notmet">Not meeting it</option>
+        <option value="one">Missing one requirement</option>
+        <option value="two">Missing two or more</option>
+      </select>
+      <span class="type-filter" id="type-filter" role="group" aria-label="OU types">
+        <label><input type="checkbox" value="branch" checked> Student Branches</label>
+        <label><input type="checkbox" value="chapter" checked> Chapters</label>
+        <label><input type="checkbox" value="ag" checked> Affinity Groups</label>
+      </span>
+      <button type="button" class="export-view-btn" id="export-view-btn">Export current view</button>
+    </div>
+
+    <dialog class="export-dialog" id="export-dialog" aria-labelledby="export-dialog-title">
+      <form method="dialog">
+        <h2 id="export-dialog-title">Export current view</h2>
+        <p class="export-summary" id="export-summary"></p>
+        <fieldset>
+          <legend>One report per</legend>
+          <label class="opt"><input type="radio" name="export-group" value="none" checked> Nothing: a single report</label><label class="opt"><input type="radio" name="export-group" value="branch"> Student Branch (with its Chapters and Affinity Groups)</label><label class="opt"><input type="radio" name="export-group" value="society"> Society</label>
+        </fieldset>
+        <label class="opt" id="export-nest-opt"><input type="checkbox" id="export-nest"> Inside each report, list Chapters and Affinity Groups under their Student Branch (instead of the order shown)</label>
+        <p class="export-count" id="export-count"></p>
+        <div class="export-actions">
+          <button type="button" class="primary" id="download-all-pdfs">Download PDFs</button>
+          <button type="button" id="export-csv">Download CSV</button>
+          <button type="button" id="export-print">Print</button>
+        </div>
+        <p class="export-hint" id="export-hint"></p>
+        <p class="export-hint">Everything, every column: <a href="vitality_report.csv" download>Full data (CSV)</a></p>
+        <button type="submit" class="export-close" aria-label="Close">Close</button>
+      </form>
+    </dialog>
+
+    <div class="member-summary">
+      <div class="tile" id="members-stb">
+          <div class="tile-label">Student Branch Members</div>
+          <div class="tile-value" data-sum="8">8</div>
+        </div>
+<div class="tile" id="members-sbc">
+          <div class="tile-label">Student Branch Chapter Members</div>
+          <div class="tile-value" data-sum="0">0</div>
+        </div>
+<div class="tile" id="members-sba">
+          <div class="tile-label">Affinity Group Members</div>
+          <div class="tile-value" data-sum="0">0</div>
+        </div>
+    </div>
+
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="overview" onclick="showTab('overview')">Overview</button>
+      <button class="tab-btn" data-tab="quick-wins" onclick="showTab('quick-wins')">Quick Wins <span class="tab-badge">0</span></button>
+      <button class="tab-btn" data-tab="by-group" onclick="showTab('by-group')">By Group</button>
+      <button class="tab-btn" data-tab="trends" onclick="showTab('trends')">Trends</button>
+    </div>
+
+    <div id="tab-overview" class="tab-panel">
+      
+        <section class="ou-section" data-type="branch">
+          <h2>Student Branch <span class="req-note">(≥12 members, ≥4 events; Chair &amp; Counselor required)</span></h2>
+          <div class="table-wrap">
+          <table id="table-stb">
+            <thead><tr><th>Unit Name</th><th>SPO ID</th><th class="sortable" onclick="sortByMembers('table-stb', this)" data-dir="desc">Members <span class="sort-arrow">▼</span></th><th>Events</th><th>Officers</th><th>Requirements Met</th></tr></thead>
+            <tbody>
+              <tr class="ou-row" data-name="central washington univ" data-spoid="stb21371" data-university="central washington univ" data-society="" data-members="8" data-type="branch" data-req="1" data-section="Central Washington Section" data-council="Region 6 - No Council">
+                  <td class="name-cell">Central Washington Univ</td>
+                  <td class="mono">STB21371</td>
+                  <td><span class="stat" style="color:#d03b3b"><span class="dot" style="background:#d03b3b"></span>8</span></td>
+                  <td class="clickable" onclick="toggleRow('ev-1')"><span class="stat" style="color:#d03b3b"><span class="dot" style="background:#d03b3b"></span>0 ▸</span><span class="sub-note">+3 unreported</span></td>
+                  <td class="clickable" onclick="toggleRow('of-1')"><span class="stat" style="color:#0ca30c"><span class="dot" style="background:#0ca30c"></span>Met ▸</span></td>
+                  <td><span class="stat" style="color:#ec835a"><span class="dot" style="background:#ec835a"></span>1/3 · Minimal</span></td>
+                </tr>
+                <tr class="detail-row" id="ev-1" style="display:none"><td colspan="6"><div class="detail-panel">Reported general events: <strong>0</strong> &nbsp;&middot;&nbsp; Reported technical events (informational): <strong>0</strong> &nbsp;&middot;&nbsp; Required: &ge; 4 reported events, any category<div class="unreported-note">⚠ 3 unreported events (3 technical) — scheduled in vTools but not yet reported; submit the post-event report to have them count.</div></div></td></tr>
+                <tr class="detail-row" id="of-1" style="display:none"><td colspan="6"><div class="detail-panel"><div class="chip-row"><span class="chip"><span class="stat" style="color:#0ca30c"><span class="dot" style="background:#0ca30c"></span>Chair</span><span class="chip-tag">required</span></span><span class="chip"><span class="stat" style="color:#0ca30c"><span class="dot" style="background:#0ca30c"></span>Counselor</span><span class="chip-tag">required</span></span><span class="chip"><span class="stat" style="color:#0ca30c"><span class="dot" style="background:#0ca30c"></span>Vice Chair</span><span class="chip-tag">optional</span></span><span class="chip"><span class="stat" style="color:#0ca30c"><span class="dot" style="background:#0ca30c"></span>Secretary</span><span class="chip-tag">optional</span></span><span class="chip"><span class="stat" style="color:#0ca30c"><span class="dot" style="background:#0ca30c"></span>Treasurer</span><span class="chip-tag">optional</span></span><span class="chip"><span class="stat" style="color:#0ca30c"><span class="dot" style="background:#0ca30c"></span>Webmaster</span><span class="chip-tag">optional</span></span></div></div></td></tr>
+              <tr class="filtered-empty" hidden><td colspan="6" class="empty">No units match the current filters.</td></tr>
+            </tbody>
+          </table>
+          </div>
+        </section>
+        
+        <section class="ou-section" data-type="chapter">
+          <h2>Student Branch Chapter <span class="req-note">(≥6 members, ≥2 technical events; Chair &amp; Advisor required)</span></h2>
+          <div class="table-wrap">
+          <table id="table-sbc">
+            <thead><tr><th>Unit Name</th><th>SPO ID</th><th class="sortable" onclick="sortByMembers('table-sbc', this)" data-dir="desc">Members <span class="sort-arrow">▼</span></th><th>Events</th><th>Officers</th><th>Requirements Met</th></tr></thead>
+            <tbody>
+              <tr><td colspan="6" class="empty">No units found</td></tr>
+              <tr class="filtered-empty" hidden><td colspan="6" class="empty">No units match the current filters.</td></tr>
+            </tbody>
+          </table>
+          </div>
+        </section>
+        
+        <section class="ou-section" data-type="ag">
+          <h2>Affinity Group <span class="req-note">(≥6 members, ≥2 events; Chair &amp; Advisor required)</span></h2>
+          <div class="table-wrap">
+          <table id="table-sba">
+            <thead><tr><th>Unit Name</th><th>SPO ID</th><th class="sortable" onclick="sortByMembers('table-sba', this)" data-dir="desc">Members <span class="sort-arrow">▼</span></th><th>Events</th><th>Officers</th><th>Requirements Met</th></tr></thead>
+            <tbody>
+              <tr><td colspan="6" class="empty">No units found</td></tr>
+              <tr class="filtered-empty" hidden><td colspan="6" class="empty">No units match the current filters.</td></tr>
+            </tbody>
+          </table>
+          </div>
+        </section>
+        
+    </div>
+
+    <div id="tab-quick-wins" class="tab-panel" hidden>
+      <p class="req-note">Units missing exactly one requirement (Members, Events, or Officers) — the fastest path to full vitality, sorted by smallest gap first.</p>
+      <p class="empty">No units are one requirement away right now.</p>
+    </div>
+
+    <div id="tab-by-group" class="tab-panel" hidden>
+      <p class="req-note">Share of units at full vitality (all 3 requirements), grouped by the chosen filter. Follows the filters above.</p>
+      <label class="group-by">Group by <select id="group-by-select"></select></label>
+      <button type="button" id="group-bars-jpg">Download JPG</button>
+      <div id="group-bars" class="group-bars"></div>
+    </div>
+
+    <div id="tab-trends" class="tab-panel" hidden>
+      <h3 class="trend-heading">Membership Grades (Student → Professional)</h3>
+      <p class="req-note">Member count over time for Student Member, Graduate Student Member, and Member, from Member Detail View.csv. Builds up as you re-run the script — currently 0 dates recorded. Click a bar group to see how many were promoted to a higher grade since the previous snapshot. A dashed, lighter bar (≈) is a back-estimated value for a grade a snapshot didn't capture — the next dated value minus promotions recorded flowing into it since, not a real recorded count.</p>
+      <p class="empty">No history yet — place Member Detail View.csv in the project directory and re-run the script on a later date to start building this trend.</p>
+
+      <h3 class="trend-heading">OU Vitality</h3>
+      <p class="req-note">% of OUs meeting full vitality (3/3) over time, by type. Builds up as you re-run the script — currently 1 date recorded.</p>
+      
+        <div class="trend-card">
+          <div class="trend-legend"><span class="legend-item"><span class="legend-swatch" style="background:var(--series-1)"></span>Student Branch</span><span class="legend-item"><span class="legend-swatch" style="background:var(--series-2)"></span>Chapter</span><span class="legend-item"><span class="legend-swatch" style="background:var(--series-3)"></span>Affinity Group</span></div>
+          <div id="trend-svg-wrap" class="trend-svg-wrap">
+            <svg id="trend-svg"></svg>
+            <div id="trend-tooltip" class="trend-tooltip" hidden></div>
+          </div>
+        </div>
+        
+
+      <h3 class="trend-heading">Society Memberships</h3>
+      <p class="req-note">Member count over time by IEEE Society, from Member Detail View.csv. Choose up to 8 to chart at once — defaults to the top 5 by latest count. Builds up as you re-run the script — currently 0 dates recorded.</p>
+      <p class="empty">No history yet — place Member Detail View.csv in the project directory and re-run the script on a later date to start building this trend.</p>
+    </div>
+
+    <footer>
+      Click an <strong>Events</strong> or <strong>Officers</strong> cell to see the detailed breakdown.<br>
+      Requirements Met is out of 3 (Members, Events, Officers):
+      <span class="stat" style="color:#0ca30c"><span class="dot" style="background:#0ca30c"></span>3/3 Full</span> &nbsp;
+      <span class="stat" style="color:#fab219"><span class="dot" style="background:#fab219"></span>2/3 Partial</span> &nbsp;
+      <span class="stat" style="color:#ec835a"><span class="dot" style="background:#ec835a"></span>1/3 Minimal</span> &nbsp;
+      <span class="stat" style="color:#d03b3b"><span class="dot" style="background:#d03b3b"></span>0/3 None</span><br>
+      Officers: <span class="stat" style="color:#0ca30c"><span class="dot" style="background:#0ca30c"></span>Met</span> = Chair &amp; Counselor/Advisor both present &nbsp;
+      <span class="stat" style="color:#fab219"><span class="dot" style="background:#fab219"></span>Partial</span> = only one present &nbsp;
+      <span class="stat" style="color:#d03b3b"><span class="dot" style="background:#d03b3b"></span>Not Met</span> = neither present.
+      In the detail panel, required officer chips (Chair, Counselor/Advisor) show red when missing; optional officer chips (Vice Chair, Secretary, Treasurer, Webmaster) show yellow when missing.
+      Event counts include events co-hosted with other OUs, from 2026 onward, excluding cancelled events.
+      Only <strong>reported</strong> events (post-event report submitted in vTools) count toward the Events requirement; unreported events appear as a "+N unreported" note and in the Events detail panel, but don't count until reported.
+    </footer>
+  </div>
+</div>
+<script>
+  const searchInput = document.getElementById('search');
+  const universitySelect = document.getElementById('university-filter');
+  const societySelect = document.getElementById('society-filter');
+  // Only on multi-Section pages (the R9 whole-region dashboard).
+  const councilSelect = document.getElementById('council-filter');
+  const sectionSelect = document.getElementById('section-filter');
+  const statusSelect = document.getElementById('status-filter');
+  const typeBoxes = Array.from(document.querySelectorAll('#type-filter input'));
+  const memberSlugByTable = { 'table-stb': 'stb', 'table-sbc': 'sbc', 'table-sba': 'sba' };
+  const typeOfTable = { 'table-stb': 'branch', 'table-sbc': 'chapter', 'table-sba': 'ag' };
+  const universityToSocieties = {};
+  const societyToUniversities = {};
+
+  function refineFilterOptions() {
+    const uni = universitySelect.value;
+    const soc = societySelect.value;
+
+    const validSocieties = uni ? new Set(universityToSocieties[uni] || []) : null;
+    Array.from(societySelect.options).forEach(opt => {
+      if (!opt.value) return; // "All Societies"
+      const visible = !validSocieties || validSocieties.has(opt.value);
+      opt.hidden = !visible;
+      opt.disabled = !visible;
+    });
+    if (soc && validSocieties && !validSocieties.has(soc)) societySelect.value = '';
+
+    const validUniversities = soc ? new Set(societyToUniversities[soc] || []) : null;
+    Array.from(universitySelect.options).forEach(opt => {
+      if (!opt.value) return; // "All Universities"
+      const visible = !validUniversities || validUniversities.has(opt.value);
+      opt.hidden = !visible;
+      opt.disabled = !visible;
+    });
+    if (uni && validUniversities && !validUniversities.has(uni)) universitySelect.value = '';
+
+    // Council narrows the Section list.
+    if (councilSelect && sectionSelect) {
+      const council = councilSelect.value;
+      Array.from(sectionSelect.options).forEach(opt => {
+        if (!opt.value) return;
+        const visible = !council || opt.dataset.council === council;
+        opt.hidden = !visible;
+        opt.disabled = !visible;
+      });
+      const chosen = sectionSelect.selectedOptions[0];
+      if (chosen && chosen.value && chosen.disabled) sectionSelect.value = '';
+    }
+  }
+
+  const selectedTypes = () => typeBoxes.filter(b => b.checked).map(b => b.value);
+
+  // The single test for "is this OU in the current view": the tables, tiles
+  // and "Export current view" all go through it.
+  function rowMatches(row) {
+    const q = searchInput.value.trim().toLowerCase();
+    const req = parseInt(row.dataset.req, 10);
+    const status = statusSelect.value;
+    return (!q || row.dataset.name.includes(q) || row.dataset.spoid.includes(q))
+      && (!universitySelect.value || row.dataset.university === universitySelect.value)
+      && (!societySelect.value || row.dataset.society === societySelect.value)
+      && (!councilSelect || !councilSelect.value || row.dataset.council === councilSelect.value)
+      && (!sectionSelect || !sectionSelect.value || row.dataset.section === sectionSelect.value)
+      && selectedTypes().includes(row.dataset.type)
+      && (!status || (status === 'met' && req === 3) || (status === 'notmet' && req < 3)
+          || (status === 'one' && req === 2) || (status === 'two' && req <= 1));
+  }
+
+  function applyFilters() {
+    const sums = { stb: 0, sbc: 0, sba: 0 };
+    const counts = { branch: [0, 0], chapter: [0, 0], ag: [0, 0] };  // [met, total]
+
+    document.querySelectorAll('table').forEach(table => {
+      const slug = memberSlugByTable[table.id];
+      let shown = 0;
+      table.querySelectorAll('.ou-row').forEach(row => {
+        const match = rowMatches(row);
+        row.style.display = match ? '' : 'none';
+        if (match) {
+          shown++;
+          if (slug) sums[slug] += parseInt(row.dataset.members, 10) || 0;
+          if (typeOfTable[table.id]) {
+            counts[row.dataset.type][1]++;
+            if (row.dataset.req === '3') counts[row.dataset.type][0]++;
+          }
+        }
+
+        let next = row.nextElementSibling;
+        while (next && next.classList.contains('detail-row')) {
+          if (!match) next.style.display = 'none';
+          next = next.nextElementSibling;
+        }
+      });
+      const empty = table.querySelector('.filtered-empty');
+      if (empty) empty.hidden = shown > 0 || !table.querySelector('.ou-row');
+      if (table.id === 'table-quick-wins') {
+        const badge = document.querySelector('.tab-btn[data-tab="quick-wins"] .tab-badge');
+        if (badge) badge.textContent = shown;
+      }
+    });
+
+    // A type that is switched off disappears with its section.
+    document.querySelectorAll('.ou-section[data-type]').forEach(sec => {
+      sec.hidden = !selectedTypes().includes(sec.dataset.type);
+    });
+
+    Object.keys(sums).forEach(slug => {
+      const el = document.querySelector(`#members-${slug} .tile-value`);
+      if (el) el.textContent = sums[slug];
+    });
+
+    const pct = (m, n) => (n ? Math.round((m / n) * 100) : 0);
+    const met = counts.branch[0] + counts.chapter[0] + counts.ag[0];
+    const total = counts.branch[1] + counts.chapter[1] + counts.ag[1];
+    const setTile = (key, text) => { const el = document.querySelector(`.tile[data-tile="${key}"] .tile-value`); if (el) el.textContent = text; };
+    setTile('total', String(total));
+    setTile('met', `${met} (${pct(met, total)}%)`);
+    Object.keys(counts).forEach(t => setTile(t, `${counts[t][0]}/${counts[t][1]} (${pct(counts[t][0], counts[t][1])}%)`));
+
+    const groupTab = document.getElementById('tab-by-group');
+    if (groupTab && !groupTab.hidden) renderGroupBars();
+
+    updateURLParams();
+  }
+
+  function updateURLParams() {
+    const params = new URLSearchParams();
+    if (searchInput.value.trim()) params.set('q', searchInput.value.trim());
+    if (councilSelect && councilSelect.value) params.set('council', councilSelect.value);
+    if (sectionSelect && sectionSelect.value) params.set('section', sectionSelect.value);
+    if (universitySelect.value) params.set('university', universitySelect.value);
+    if (societySelect.value) params.set('society', societySelect.value);
+    if (statusSelect.value) params.set('status', statusSelect.value);
+    if (selectedTypes().length !== typeBoxes.length) params.set('types', selectedTypes().join(','));
+    const qs = params.toString();
+    history.replaceState(null, '', qs ? `?${qs}` : window.location.pathname);
+
+    // "Open Section dashboard": the picked Section's own, lighter page, keeping the other filters.
+    const sectionLink = document.getElementById('section-link');
+    if (sectionLink) {
+      const href = sectionSelect.value && sectionSelect.selectedOptions[0].dataset.href;
+      sectionLink.hidden = !href;
+      if (href) {
+        params.delete('council');
+        params.delete('section');
+        sectionLink.href = href + (params.toString() ? `?${params}` : '');
+      }
+    }
+  }
+
+  function loadFiltersFromURL() {
+    const params = new URLSearchParams(window.location.search);
+    if (params.has('q')) searchInput.value = params.get('q');
+    if (councilSelect && params.has('council')) councilSelect.value = params.get('council');
+    if (sectionSelect && params.has('section')) sectionSelect.value = params.get('section');
+    if (params.has('university')) universitySelect.value = params.get('university');
+    if (params.has('society')) societySelect.value = params.get('society');
+    if (params.has('status')) statusSelect.value = params.get('status');
+    if (params.has('types')) {
+      const want = params.get('types').split(',');
+      if (typeBoxes.some(b => want.includes(b.value))) typeBoxes.forEach(b => { b.checked = want.includes(b.value); });
+    }
+  }
+
+  searchInput.addEventListener('input', applyFilters);
+  universitySelect.addEventListener('change', () => { refineFilterOptions(); applyFilters(); });
+  societySelect.addEventListener('change', () => { refineFilterOptions(); applyFilters(); });
+  [councilSelect, sectionSelect].forEach(sel => sel && sel.addEventListener('change', () => { refineFilterOptions(); applyFilters(); }));
+  statusSelect.addEventListener('change', applyFilters);
+  typeBoxes.forEach(b => b.addEventListener('change', () => {
+    if (!typeBoxes.some(x => x.checked)) b.checked = true;  // keep at least one type
+    applyFilters();
+  }));
+
+  loadFiltersFromURL();
+  refineFilterOptions();
+  applyFilters();
+
+  function toggleRow(id) {
+    const row = document.getElementById(id);
+    row.style.display = row.style.display === 'none' ? 'table-row' : 'none';
+  }
+
+  // "By Group" tab: % of OUs at full vitality per value of one filter dimension.
+  const optionLabels = sel => Object.fromEntries(Array.from(sel.options).map(o => [o.value, o.textContent]));
+  const groupDims = [
+    ...(councilSelect ? [{ id: 'council', label: 'Council', attr: 'council' }] : []),
+    ...(sectionSelect ? [{ id: 'section', label: 'Section', attr: 'section' }] : []),
+    { id: 'society', label: 'Society', attr: 'society', labels: optionLabels(societySelect) },
+    { id: 'university', label: 'University', attr: 'university', labels: optionLabels(universitySelect) },
+    { id: 'type', label: 'OU type', attr: 'type', labels: { branch: 'Student Branch', chapter: 'Chapter', ag: 'Affinity Group' } },
+  ];
+  const groupSelect = document.getElementById('group-by-select');
+  groupSelect.innerHTML = groupDims.map(d => `<option value="${d.id}">${d.label}</option>`).join('');
+  groupSelect.addEventListener('change', renderGroupBars);
+
+  function renderGroupBars() {
+    const dim = groupDims.find(d => d.id === groupSelect.value);
+    const groups = {};
+    document.querySelectorAll('#tab-overview .ou-row').forEach(row => {
+      if (!rowMatches(row)) return;
+      const key = row.dataset[dim.attr];
+      if (!key) return;  // OUs without this attribute (e.g. no society) are left out
+      const g = groups[key] || (groups[key] = [0, 0]);
+      g[1]++;
+      if (row.dataset.req === '3') g[0]++;
+    });
+    const esc = s => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+    const rows = Object.entries(groups)
+      .map(([key, [met, total]]) => ({ name: (dim.labels && dim.labels[key]) || key, met, total, pct: Math.round((met / total) * 100) }))
+      .sort((a, b) => b.pct - a.pct || b.total - a.total);
+    groupBarsView = { title: `Units at full vitality by ${dim.label}`, rows };
+    document.getElementById('group-bars').innerHTML = rows.length
+      ? rows.map(r => `<div class="group-bar-row"><span class="group-bar-name" title="${esc(r.name)}">${esc(r.name)}</span>`
+          + `<span class="group-bar-track"><span class="group-bar-fill" style="width:${r.pct}%"></span></span>`
+          + `<span class="group-bar-value">${r.pct}% (${r.met}/${r.total})</span></div>`).join('')
+      : '<p class="req-note">No units match the current filters.</p>';
+  }
+
+  let groupBarsView = { title: '', rows: [] };
+
+  // Always light-themed, like the other exports, whatever the dashboard theme.
+  document.getElementById('group-bars-jpg').addEventListener('click', () => {
+    const { title, rows } = groupBarsView;
+    if (!rows.length) return;
+    const W = 1000, rowH = 28, top = 56, nameW = 260, valueW = 130, pad = 20;
+    const barX = pad + nameW, barW = W - barX - valueW - pad;
+    const canvas = document.createElement('canvas');
+    canvas.width = W;
+    canvas.height = top + rows.length * rowH + pad;
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.textBaseline = 'middle';
+    ctx.fillStyle = '#1a1a1a';
+    ctx.font = 'bold 18px sans-serif';
+    ctx.fillText(title, pad, 26);
+    ctx.font = '13px sans-serif';
+    rows.forEach((r, i) => {
+      const y = top + i * rowH;
+      let name = r.name;
+      while (name.length > 1 && ctx.measureText(name).width > nameW - 10) name = name.slice(0, -1);
+      ctx.fillStyle = '#1a1a1a';
+      ctx.textAlign = 'left';
+      ctx.fillText(name === r.name ? name : name + '…', pad, y + rowH / 2);
+      ctx.fillStyle = '#e8e8e8';
+      ctx.fillRect(barX, y + 5, barW, rowH - 10);
+      ctx.fillStyle = '#2a78d6';
+      ctx.fillRect(barX, y + 5, barW * r.pct / 100, rowH - 10);
+      ctx.fillStyle = '#1a1a1a';
+      ctx.textAlign = 'right';
+      ctx.fillText(`${r.pct}% (${r.met}/${r.total})`, W - pad, y + rowH / 2);
+    });
+    const a = document.createElement('a');
+    a.href = canvas.toDataURL('image/jpeg', 0.92);
+    a.download = `vitality_${title.replace(/\W+/g, '_').toLowerCase()}.jpg`;
+    a.click();
+  });
+
+  function showTab(name) {
+    document.querySelectorAll('.tab-panel').forEach(p => { p.hidden = p.id !== `tab-${name}`; });
+    document.querySelectorAll('.tab-btn').forEach(b => { b.classList.toggle('active', b.dataset.tab === name); });
+    if (name === 'by-group') renderGroupBars();
+    if (name === 'trends') { renderTrendChart(); renderSocietyTrendChart(); renderGradeBarChart(); }
+  }
+
+  const trendData = {"dates": ["2026-11-13"], "series": {"Student Branch": [0.0], "Student Branch Chapter": [null], "Affinity Group": [null]}};
+  const trendSeriesDefs = [["Student Branch", "var(--series-1)", "Student Branch"], ["Student Branch Chapter", "var(--series-2)", "Chapter"], ["Affinity Group", "var(--series-3)", "Affinity Group"]];
+  const societyTrendData = {"dates": [], "series": {}, "labels": {}, "default_codes": []};
+  const societyAllDefs = [];
+  const societyDefaultCodes = [];
+  const gradeTrendData = {"dates": [], "series": {}, "estimated": {}};
+  const gradeSeriesDefs = [["Student Member", "var(--series-1)", "Student Member"], ["Graduate Student Member", "var(--series-2)", "Graduate Student Member"], ["Member", "var(--series-3)", "Member"]];
+  const gradePromotionsByDate = {};
+  const SOCIETY_MAX_SELECTED = 8;
+  const societySeriesVars = ['--series-1', '--series-2', '--series-3', '--series-4', '--series-5', '--series-6', '--series-7', '--series-8'];
+  let societySelected = new Set(societyDefaultCodes);
+
+  function renderLineChart(svgId, wrapId, tooltipId, dates, seriesDefs, dataSeries, mode) {
+    const svg = document.getElementById(svgId);
+    const wrap = document.getElementById(wrapId);
+    const tooltip = document.getElementById(tooltipId);
+    if (!svg || !wrap || !dates.length) return;
+
+    const width = wrap.clientWidth || 700;
+    const height = 280;
+    const pad = { top: 16, right: 16, bottom: 28, left: mode === 'count' ? 48 : 40 };
+    svg.setAttribute('width', width);
+    svg.setAttribute('height', height);
+    svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
+    svg.innerHTML = '';
+
+    const plotW = width - pad.left - pad.right;
+    const plotH = height - pad.top - pad.bottom;
+    const xFor = i => dates.length === 1 ? pad.left + plotW / 2 : pad.left + (i / (dates.length - 1)) * plotW;
+
+    let yMax, yTicks, fmt;
+    if (mode === 'percent') {
+      yMax = 100;
+      yTicks = [0, 25, 50, 75, 100];
+      fmt = v => v + '%';
+    } else {
+      let maxVal = 0;
+      seriesDefs.forEach(([key]) => {
+        (dataSeries[key] || []).forEach(v => { if (v !== null && v !== undefined && v > maxVal) maxVal = v; });
+      });
+      const steps = [1, 2, 5, 10, 20, 25, 50, 100, 200, 250, 500, 1000, 2000, 2500, 5000, 10000];
+      let step = steps[steps.length - 1];
+      for (const s of steps) { if (maxVal / s <= 4) { step = s; break; } }
+      yMax = step * 4 || 4;
+      yTicks = [0, step, step * 2, step * 3, step * 4];
+      fmt = v => String(v);
+    }
+    const yFor = v => pad.top + plotH - (v / yMax) * plotH;
+
+    const NS = 'http://www.w3.org/2000/svg';
+    function el(tag, attrs) {
+      const e = document.createElementNS(NS, tag);
+      for (const k in attrs) e.setAttribute(k, attrs[k]);
+      return e;
+    }
+
+    yTicks.forEach(v => {
+      const y = yFor(v);
+      svg.appendChild(el('line', { x1: pad.left, x2: width - pad.right, y1: y, y2: y, stroke: 'var(--gridline)', 'stroke-width': 1 }));
+      const label = el('text', { x: pad.left - 8, y: y + 4, 'text-anchor': 'end', class: 'trend-axis-label' });
+      label.textContent = fmt(v);
+      svg.appendChild(label);
+    });
+
+    const labelIdxs = dates.length <= 6 ? dates.map((_, i) => i) : [0, Math.floor((dates.length - 1) / 2), dates.length - 1];
+    labelIdxs.forEach(i => {
+      const label = el('text', { x: xFor(i), y: height - 6, 'text-anchor': 'middle', class: 'trend-axis-label' });
+      label.textContent = dates[i];
+      svg.appendChild(label);
+    });
+
+    seriesDefs.forEach(([key, color]) => {
+      const values = dataSeries[key] || [];
+      const points = values.map((v, i) => v === null || v === undefined ? null : [xFor(i), yFor(v)]).filter(Boolean);
+      if (points.length > 1) {
+        const d = points.map((p, i) => (i === 0 ? 'M' : 'L') + p[0] + ',' + p[1]).join(' ');
+        svg.appendChild(el('path', { d, fill: 'none', stroke: color, 'stroke-width': 2, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }));
+      }
+      points.forEach(([x, y]) => {
+        svg.appendChild(el('circle', { cx: x, cy: y, r: 5, fill: color, stroke: 'var(--surface-1)', 'stroke-width': 2 }));
+      });
+      if (points.length) {
+        const [lx, ly] = points[points.length - 1];
+        const lastVal = values[values.length - 1];
+        const label = el('text', { x: Math.min(lx + 8, width - pad.right - 28), y: ly + 4, class: 'trend-direct-label' });
+        label.textContent = fmt(lastVal);
+        svg.appendChild(label);
+      }
+    });
+
+    const crosshair = el('line', { x1: 0, x2: 0, y1: pad.top, y2: pad.top + plotH, stroke: 'var(--text-muted)', 'stroke-width': 1, visibility: 'hidden' });
+    svg.appendChild(crosshair);
+
+    svg.addEventListener('pointermove', (e) => {
+      const rect = svg.getBoundingClientRect();
+      const mx = e.clientX - rect.left;
+      let idx = 0, best = Infinity;
+      dates.forEach((_, i) => {
+        const d = Math.abs(xFor(i) - mx);
+        if (d < best) { best = d; idx = i; }
+      });
+      crosshair.setAttribute('x1', xFor(idx));
+      crosshair.setAttribute('x2', xFor(idx));
+      crosshair.setAttribute('visibility', 'visible');
+
+      tooltip.hidden = false;
+      tooltip.style.left = Math.min(xFor(idx) + 12, width - 150) + 'px';
+      tooltip.style.top = pad.top + 'px';
+      tooltip.textContent = '';
+      const dateEl = document.createElement('div');
+      dateEl.className = 'trend-tooltip-date';
+      dateEl.textContent = dates[idx];
+      tooltip.appendChild(dateEl);
+      seriesDefs.forEach(([key, color, label]) => {
+        const v = (dataSeries[key] || [])[idx];
+        const row = document.createElement('div');
+        row.className = 'trend-tooltip-row';
+        const keyEl = document.createElement('span');
+        keyEl.className = 'trend-tooltip-key';
+        keyEl.style.background = color;
+        const valueEl = document.createElement('strong');
+        valueEl.textContent = (v === null || v === undefined) ? '—' : fmt(v);
+        const labelEl = document.createElement('span');
+        labelEl.textContent = ' ' + label;
+        row.appendChild(keyEl);
+        row.appendChild(valueEl);
+        row.appendChild(labelEl);
+        tooltip.appendChild(row);
+      });
+    });
+    svg.addEventListener('pointerleave', () => {
+      crosshair.setAttribute('visibility', 'hidden');
+      tooltip.hidden = true;
+    });
+  }
+
+  function renderTrendChart() {
+    renderLineChart('trend-svg', 'trend-svg-wrap', 'trend-tooltip', trendData.dates, trendSeriesDefs, trendData.series, 'percent');
+  }
+
+  let gradeBarPinnedIndex = null;
+
+  function renderGradeBarChart() {
+    const svg = document.getElementById('grade-bar-svg');
+    const wrap = document.getElementById('grade-bar-svg-wrap');
+    const tooltip = document.getElementById('grade-bar-tooltip');
+    const detail = document.getElementById('grade-bar-detail');
+    const dates = gradeTrendData.dates;
+    if (!svg || !wrap || !dates.length) return;
+
+    const width = wrap.clientWidth || 700;
+    const height = 280;
+    const pad = { top: 16, right: 16, bottom: 28, left: 48 };
+    svg.setAttribute('width', width);
+    svg.setAttribute('height', height);
+    svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
+    svg.innerHTML = '';
+
+    const plotW = width - pad.left - pad.right;
+    const plotH = height - pad.top - pad.bottom;
+    const groupW = plotW / dates.length;
+
+    let maxVal = 0;
+    gradeSeriesDefs.forEach(([key]) => {
+      (gradeTrendData.series[key] || []).forEach(v => { if (v !== null && v !== undefined && v > maxVal) maxVal = v; });
+    });
+    const steps = [1, 2, 5, 10, 20, 25, 50, 100, 200, 250, 500, 1000, 2000, 2500, 5000, 10000];
+    let step = steps[steps.length - 1];
+    for (const s of steps) { if (maxVal / s <= 4) { step = s; break; } }
+    const yMax = step * 4 || 4;
+    const yTicks = [0, step, step * 2, step * 3, step * 4];
+    const yFor = v => pad.top + plotH - (v / yMax) * plotH;
+
+    const NS = 'http://www.w3.org/2000/svg';
+    function el(tag, attrs) {
+      const e = document.createElementNS(NS, tag);
+      for (const k in attrs) e.setAttribute(k, attrs[k]);
+      return e;
+    }
+    function barPath(x, yTop, w, h) {
+      const r = Math.max(0, Math.min(4, w / 2, h));
+      return `M${x},${yTop + h} L${x},${yTop + r} Q${x},${yTop} ${x + r},${yTop} L${x + w - r},${yTop} Q${x + w},${yTop} ${x + w},${yTop + r} L${x + w},${yTop + h} Z`;
+    }
+
+    yTicks.forEach(v => {
+      const y = yFor(v);
+      svg.appendChild(el('line', { x1: pad.left, x2: width - pad.right, y1: y, y2: y, stroke: 'var(--gridline)', 'stroke-width': 1 }));
+      const label = el('text', { x: pad.left - 8, y: y + 4, 'text-anchor': 'end', class: 'trend-axis-label' });
+      label.textContent = String(v);
+      svg.appendChild(label);
+    });
+
+    const BAR_MAX = 24, BAR_GAP = 2, GROUP_PAD = 0.18;
+    const usableGroupW = groupW * (1 - GROUP_PAD * 2);
+    const nSeries = gradeSeriesDefs.length;
+    const barW = Math.max(4, Math.min(BAR_MAX, (usableGroupW - BAR_GAP * (nSeries - 1)) / nSeries));
+    const groupContentW = barW * nSeries + BAR_GAP * (nSeries - 1);
+
+    const groupRects = [];
+    dates.forEach((date, i) => {
+      const groupCenterX = pad.left + i * groupW + groupW / 2;
+      const groupX = groupCenterX - groupContentW / 2;
+
+      const dateLabel = el('text', { x: groupCenterX, y: height - 6, 'text-anchor': 'middle', class: 'trend-axis-label' });
+      dateLabel.textContent = date;
+      svg.appendChild(dateLabel);
+
+      gradeSeriesDefs.forEach(([key, color], j) => {
+        const v = (gradeTrendData.series[key] || [])[i];
+        if (v === null || v === undefined) return;
+        const isEstimated = !!(gradeTrendData.estimated && gradeTrendData.estimated[key] && gradeTrendData.estimated[key][i]);
+        const x = groupX + j * (barW + BAR_GAP);
+        const yTop = yFor(v);
+        const h = pad.top + plotH - yTop;
+        const barAttrs = { d: barPath(x, yTop, barW, h), fill: color };
+        if (isEstimated) {
+          barAttrs['fill-opacity'] = '0.45';
+          barAttrs.stroke = color;
+          barAttrs['stroke-width'] = '1.5';
+          barAttrs['stroke-dasharray'] = '3,2';
+        }
+        svg.appendChild(el('path', barAttrs));
+        const valueLabel = el('text', { x: x + barW / 2, y: yTop - 6, 'text-anchor': 'middle', class: 'trend-direct-label' });
+        valueLabel.textContent = isEstimated ? `≈${v}` : String(v);
+        svg.appendChild(valueLabel);
+      });
+
+      const hit = el('rect', {
+        x: pad.left + i * groupW, y: pad.top, width: groupW, height: plotH, fill: 'transparent',
+        cursor: 'pointer', tabindex: '0', role: 'button',
+        'aria-label': `Show promotions recorded for ${date}`,
+      });
+      groupRects.push(hit);
+      svg.appendChild(hit);
+    });
+
+    const highlight = el('rect', { x: 0, y: pad.top, width: groupW, height: plotH, fill: 'var(--text-muted)', opacity: 0.08, visibility: 'hidden' });
+    svg.insertBefore(highlight, svg.firstChild);
+
+    function showGroupTooltip(i) {
+      const groupCenterX = pad.left + i * groupW + groupW / 2;
+      highlight.setAttribute('x', pad.left + i * groupW);
+      highlight.setAttribute('visibility', 'visible');
+
+      tooltip.hidden = false;
+      tooltip.style.left = Math.min(groupCenterX + 12, width - 170) + 'px';
+      tooltip.style.top = pad.top + 'px';
+      tooltip.textContent = '';
+      const dateEl = document.createElement('div');
+      dateEl.className = 'trend-tooltip-date';
+      dateEl.textContent = dates[i];
+      tooltip.appendChild(dateEl);
+      gradeSeriesDefs.forEach(([key, color, label]) => {
+        const v = (gradeTrendData.series[key] || [])[i];
+        const row = document.createElement('div');
+        row.className = 'trend-tooltip-row';
+        const keyEl = document.createElement('span');
+        keyEl.className = 'trend-tooltip-key';
+        keyEl.style.background = color;
+        const valueEl = document.createElement('strong');
+        valueEl.textContent = (v === null || v === undefined) ? '—' : String(v);
+        const labelEl = document.createElement('span');
+        labelEl.textContent = ' ' + label;
+        row.appendChild(keyEl);
+        row.appendChild(valueEl);
+        row.appendChild(labelEl);
+        tooltip.appendChild(row);
+      });
+    }
+
+    function showPromotionDetail(i) {
+      if (!detail) return;
+      detail.innerHTML = '';
+      const heading = document.createElement('strong');
+      if (i === 0) {
+        heading.textContent = `${dates[i]}: no earlier snapshot to compare against.`;
+        detail.appendChild(heading);
+      } else {
+        const entries = gradePromotionsByDate[dates[i]] || [];
+        if (!entries.length) {
+          heading.textContent = `No promotions recorded between ${dates[i - 1]} and ${dates[i]}.`;
+          detail.appendChild(heading);
+        } else {
+          heading.textContent = `Promoted since ${dates[i - 1]}:`;
+          detail.appendChild(heading);
+          entries.forEach(({from: fromGrade, to: toGrade, count}) => {
+            const row = document.createElement('div');
+            row.className = 'promotion-row';
+            row.textContent = `${count} ${fromGrade} → ${toGrade}`;
+            detail.appendChild(row);
+          });
+        }
+      }
+      detail.hidden = false;
+    }
+
+    function highlightPinned() {
+      if (gradeBarPinnedIndex === null) {
+        highlight.setAttribute('visibility', 'hidden');
+        return;
+      }
+      highlight.setAttribute('x', pad.left + gradeBarPinnedIndex * groupW);
+      highlight.setAttribute('visibility', 'visible');
+    }
+    highlightPinned();
+    if (gradeBarPinnedIndex !== null) showPromotionDetail(gradeBarPinnedIndex);
+
+    groupRects.forEach((hit, i) => {
+      hit.addEventListener('pointerenter', () => showGroupTooltip(i));
+      hit.addEventListener('pointermove', () => showGroupTooltip(i));
+      hit.addEventListener('pointerleave', () => {
+        tooltip.hidden = true;
+        highlightPinned();
+      });
+      function activate() {
+        gradeBarPinnedIndex = (gradeBarPinnedIndex === i) ? null : i;
+        highlightPinned();
+        if (gradeBarPinnedIndex === null) {
+          if (detail) detail.hidden = true;
+        } else {
+          showPromotionDetail(i);
+        }
+      }
+      hit.addEventListener('click', activate);
+      hit.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(); } });
+    });
+  }
+
+  function currentSocietySeriesDefs() {
+    return societyAllDefs
+      .filter(([code]) => societySelected.has(code))
+      .map(([code, label], i) => [code, `var(${societySeriesVars[i % societySeriesVars.length]})`, label]);
+  }
+
+  function toggleSocietyFilterPanel() {
+    const panel = document.getElementById('society-filter-panel');
+    if (panel) panel.hidden = !panel.hidden;
+  }
+
+  function renderSocietyFilterList() {
+    const list = document.getElementById('society-filter-list');
+    if (!list) return;
+    list.innerHTML = '';
+    societyAllDefs.forEach(([code, label]) => {
+      const item = document.createElement('label');
+      item.className = 'filter-check-item';
+      const cb = document.createElement('input');
+      cb.type = 'checkbox';
+      cb.checked = societySelected.has(code);
+      cb.disabled = !cb.checked && societySelected.size >= SOCIETY_MAX_SELECTED;
+      cb.addEventListener('change', () => {
+        if (cb.checked) societySelected.add(code); else societySelected.delete(code);
+        onSocietySelectionChange();
+      });
+      const span = document.createElement('span');
+      span.textContent = label;
+      item.appendChild(cb);
+      item.appendChild(span);
+      list.appendChild(item);
+    });
+  }
+
+  function renderSocietyLegend() {
+    const legend = document.getElementById('society-trend-legend');
+    if (!legend) return;
+    legend.innerHTML = '';
+    currentSocietySeriesDefs().forEach(([code, color, label]) => {
+      const item = document.createElement('span');
+      item.className = 'legend-item';
+      const swatch = document.createElement('span');
+      swatch.className = 'legend-swatch';
+      swatch.style.background = color;
+      item.appendChild(swatch);
+      item.appendChild(document.createTextNode(label));
+      legend.appendChild(item);
+    });
+  }
+
+  function onSocietySelectionChange() {
+    const toggle = document.getElementById('society-filter-toggle');
+    if (toggle) toggle.textContent = `Filter societies (${societySelected.size} shown) ▾`;
+    renderSocietyFilterList();
+    renderSocietyLegend();
+    renderSocietyTrendChart();
+  }
+
+  function resetSocietyFilter() {
+    societySelected = new Set(societyDefaultCodes);
+    onSocietySelectionChange();
+  }
+
+  function renderSocietyTrendChart() {
+    renderLineChart('society-trend-svg', 'society-trend-svg-wrap', 'society-trend-tooltip', societyTrendData.dates, currentSocietySeriesDefs(), societyTrendData.series, 'count');
+  }
+
+  renderSocietyFilterList();
+  renderSocietyLegend();
+
+  window.addEventListener('resize', () => {
+    const trendsTab = document.getElementById('tab-trends');
+    if (trendsTab && !trendsTab.hidden) { renderTrendChart(); renderSocietyTrendChart(); renderGradeBarChart(); }
+  });
+
+  function sortByMembers(tableId, th) {
+    const table = document.getElementById(tableId);
+    const tbody = table.querySelector('tbody');
+    const dir = th.dataset.dir === 'asc' ? 'desc' : 'asc';
+    table.querySelectorAll('th.sortable').forEach(h => { h.dataset.dir = ''; h.querySelector('.sort-arrow').textContent = ''; });
+    th.dataset.dir = dir;
+    th.querySelector('.sort-arrow').textContent = dir === 'asc' ? '▲' : '▼';
+
+    const rows = Array.from(tbody.children);
+    const groups = [];
+    for (let i = 0; i < rows.length; i++) {
+      if (rows[i].classList.contains('ou-row')) {
+        const group = [rows[i]];
+        let j = i + 1;
+        while (j < rows.length && rows[j].classList.contains('detail-row')) { group.push(rows[j]); j++; }
+        groups.push({ group, members: parseInt(rows[i].dataset.members, 10) || 0 });
+        i = j - 1;
+      }
+    }
+    groups.sort((a, b) => dir === 'asc' ? a.members - b.members : b.members - a.members);
+    // One DOM write: moving thousands of rows one by one froze the Region pages.
+    const frag = document.createDocumentFragment();
+    groups.forEach(g => frag.append(...g.group));
+    tbody.prepend(frag);  // keeps the "no units match" row last
+  }
+</script>
+<!-- "Export current view": the visible rows, in their on-screen order, as PDFs / CSV / print. -->
+<script id="export-data" type="application/json">{"scope":"Central Washington Section","generated":"2026-11-13","colors":{"3":"#0ca30c","2":"#fab219","1":"#ec835a","0":"#d03b3b"},"ous":[{"n":"Central Washington Univ","id":"STB21371","t":"branch","u":"Central Washington Univ","s":"","sd":"","se":"Central Washington Section","co":"Region 6 - No Council","m":8,"mm":12,"mo":false,"e":0,"em":4,"eo":false,"tech":false,"ch":true,"r2":"Counselor","cn":true,"rq":1,"ok":false,"miss":["Members 8/12","Reported events 0/4"]}]}</script>
+<div id="export-pages" class="export-pages" aria-hidden="true"></div>
+<script>
+// Batch PDF export for the dashboard's "Export current view". Inlined by
+// generate_vitality_report.py before export_view.js; no library, no
+// network.
+//
+// "Download all as PDF" turns every .group-page into its own PDF and packs
+// them into one ZIP (folders from data-folder, names from data-filename),
+// so each Student Branch / Section can be emailed its own file. The PDF
+// writer is minimal on purpose: the base-14 Helvetica fonts (no embedding),
+// WinAnsi text, and a layout engine that knows the handful of blocks these
+// pages are made of (title, stats, bars, checklist, headings, notes,
+// tables). Colors and bold come from the page's computed styles, so the PDF
+// matches what is on screen.
+
+(function () {
+  // ---------- fonts: Helvetica / Helvetica-Bold widths, chars 32..126 ----------
+  const HELV = [278,278,355,556,556,889,667,191,333,333,389,584,278,333,278,278,556,556,556,556,556,556,556,556,556,556,278,278,584,584,584,556,1015,667,667,722,722,667,611,778,722,278,500,667,556,833,722,778,667,778,722,667,611,722,667,944,667,667,611,278,278,278,469,556,333,556,556,500,556,556,278,556,556,222,222,500,222,833,556,556,556,556,333,500,278,556,500,722,500,500,500,334,260,334,584];
+  const HELV_B = [278,333,474,556,556,889,722,238,333,333,389,584,278,333,278,278,556,556,556,556,556,556,556,556,556,556,333,333,584,584,584,611,975,722,722,722,722,667,611,778,722,278,556,722,611,833,722,778,667,778,722,667,611,722,667,944,667,667,611,333,278,333,584,556,333,556,611,556,611,556,333,611,611,278,278,556,278,889,611,611,611,611,389,556,333,611,556,778,556,556,500,389,280,389,584];
+  // Unicode -> WinAnsi bytes 0x80..0x9F (the rest of Latin-1 maps 1:1).
+  const WINANSI = { 0x20AC: 0x80, 0x2026: 0x85, 0x2018: 0x91, 0x2019: 0x92, 0x201C: 0x93, 0x201D: 0x94, 0x2022: 0x95, 0x2013: 0x96, 0x2014: 0x97 };
+  const SPECIAL_WIDTH = { 0x80: 556, 0x85: 1000, 0x91: 222, 0x92: 222, 0x93: 333, 0x94: 333, 0x95: 350, 0x96: 556, 0x97: 1000, 0xB7: 278, 0xA0: 278 };
+
+  function toWinAnsi(str) {
+    let out = '';
+    for (const ch of str) {
+      const c = ch.codePointAt(0);
+      if ((c >= 32 && c < 127) || (c >= 0xA0 && c <= 0xFF)) out += ch;
+      else if (WINANSI[c]) out += String.fromCharCode(WINANSI[c]);
+      else if (c === 0x2192) out += '->';
+      else if (c === 9 || c === 10 || c === 13) out += ' ';
+      else {
+        const base = ch.normalize('NFD').replace(/[̀-ͯ]/g, '');
+        out += /^[\x20-\x7e]+$/.test(base) ? base : '?';
+      }
+    }
+    return out;
+  }
+
+  function charWidth(code, bold) {
+    if (code >= 32 && code <= 126) return (bold ? HELV_B : HELV)[code - 32];
+    if (SPECIAL_WIDTH[code]) return SPECIAL_WIDTH[code];
+    if (code >= 0xC0) {
+      const base = String.fromCharCode(code).normalize('NFD').charCodeAt(0);
+      if (base >= 32 && base <= 126) return (bold ? HELV_B : HELV)[base - 32];
+    }
+    return 556;
+  }
+
+  function textWidth(s, size, bold) {
+    let w = 0;
+    for (let i = 0; i < s.length; i++) w += charWidth(s.charCodeAt(i), bold);
+    return (w / 1000) * size;
+  }
+
+  // ---------- colors ----------
+  function parseColor(css, fallback) {
+    const m = /rgba?\(([^)]+)\)/.exec(css || '');
+    if (!m) return fallback || [0, 0, 0];
+    const p = m[1].split(',').map(v => parseFloat(v));
+    if (p.length === 4 && p[3] === 0) return fallback || [0, 0, 0];
+    return [p[0] / 255, p[1] / 255, p[2] / 255];
+  }
+  const GREY = [0.4, 0.4, 0.4], DARK = [0.07, 0.07, 0.07], RULE = [0.88, 0.88, 0.87], BAND = [0.955, 0.955, 0.945];
+  const f3 = n => (Math.round(n * 1000) / 1000).toString();
+  const rgb = c => c.map(f3).join(' ');
+
+  // ---------- text runs from the DOM ----------
+  // A run is {text, bold, color}; text is already WinAnsi.
+  function runsOf(el) {
+    const runs = [];
+    const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+    let node;
+    while ((node = walker.nextNode())) {
+      const parent = node.parentElement;
+      if (!parent || parent.closest('.no-print') || parent.closest('[hidden]')) continue;
+      let text = node.nodeValue.replace(/\s+/g, ' ');
+      if (!text) continue;
+      const cs = getComputedStyle(parent);
+      if (cs.textTransform === 'uppercase') text = text.toUpperCase();
+      const run = { text: toWinAnsi(text), bold: parseInt(cs.fontWeight, 10) >= 600, color: parseColor(cs.color, DARK) };
+      const last = runs[runs.length - 1];
+      if (last && last.bold === run.bold && last.color.join() === run.color.join()) last.text += run.text;
+      else runs.push(run);
+    }
+    if (runs.length) {
+      runs[0].text = runs[0].text.replace(/^ +/, '');
+      runs[runs.length - 1].text = runs[runs.length - 1].text.replace(/ +$/, '');
+    }
+    return runs.filter(r => r.text);
+  }
+
+  function forceStyle(runs, opts) {
+    return runs.map(r => ({ text: r.text, bold: opts.bold === undefined ? r.bold : opts.bold, color: opts.color || r.color }));
+  }
+
+  // Word-wrap runs into lines of segments {text, bold, color, w}.
+  function wrap(runs, size, maxWidth) {
+    const lines = [[]];
+    let lineW = 0;
+    const push = (seg) => { lines[lines.length - 1].push(seg); lineW += seg.w; };
+    const newLine = () => { lines.push([]); lineW = 0; };
+    for (const r of runs) {
+      for (const tok of r.text.split(/( +)/)) {
+        if (!tok) continue;
+        const isSpace = /^ +$/.test(tok);
+        let w = textWidth(tok, size, r.bold);
+        if (isSpace) {
+          if (lineW === 0) continue;
+          push({ text: tok, bold: r.bold, color: r.color, w });
+          continue;
+        }
+        if (lineW + w > maxWidth && lineW > 0) {
+          const line = lines[lines.length - 1];
+          while (line.length && /^ +$/.test(line[line.length - 1].text)) line.pop();
+          newLine();
+        }
+        if (w > maxWidth) {
+          // A single word wider than the column: break it by characters.
+          let chunk = '';
+          for (const ch of tok) {
+            const cw = textWidth(chunk + ch, size, r.bold);
+            if (cw > maxWidth - lineW && chunk) {
+              push({ text: chunk, bold: r.bold, color: r.color, w: textWidth(chunk, size, r.bold) });
+              newLine();
+              chunk = ch;
+            } else chunk += ch;
+          }
+          w = textWidth(chunk, size, r.bold);
+          push({ text: chunk, bold: r.bold, color: r.color, w });
+        } else push({ text: tok, bold: r.bold, color: r.color, w });
+      }
+    }
+    for (const line of lines) while (line.length && /^ +$/.test(line[line.length - 1].text)) line.pop();
+    return lines.filter((l, i) => l.length || i === 0);
+  }
+
+  const lineWidth = line => line.reduce((s, seg) => s + seg.w, 0);
+
+  // ---------- PDF document ----------
+  const PAGE_W = 612, PAGE_H = 792, MARGIN = 40, FOOTER = 22;
+  const CONTENT_W = PAGE_W - 2 * MARGIN;
+
+  function esc(s) { return s.replace(/\\/g, '\\\\').replace(/\(/g, '\\(').replace(/\)/g, '\\)'); }
+
+  class Doc {
+    constructor(title) { this.title = toWinAnsi(title); this.pages = []; this.newPage(); }
+    newPage() { this.ops = []; this.pages.push(this.ops); this.y = MARGIN; }
+    room(h) { return this.y + h <= PAGE_H - MARGIN - FOOTER; }
+    // Start a new page unless `h` points still fit (and we're not at the top).
+    ensure(h) { if (!this.room(h) && this.y > MARGIN) { this.newPage(); return true; } return false; }
+    text(x, baseline, s, size, bold, color) {
+      if (!s) return;
+      this.ops.push(`BT /${bold ? 'F2' : 'F1'} ${f3(size)} Tf ${rgb(color)} rg ${f3(x)} ${f3(PAGE_H - baseline)} Td (${esc(s)}) Tj ET`);
+    }
+    line(segs, x, baseline, size) {
+      let cx = x;
+      for (const s of segs) { this.text(cx, baseline, s.text, size, s.bold, s.color); cx += s.w; }
+    }
+    rect(x, y, w, h, color) { this.ops.push(`${rgb(color)} rg ${f3(x)} ${f3(PAGE_H - y - h)} ${f3(w)} ${f3(h)} re f`); }
+    stroke(x, y, w, h, color) { this.ops.push(`0.6 w ${rgb(color)} RG ${f3(x)} ${f3(PAGE_H - y - h)} ${f3(w)} ${f3(h)} re S`); }
+    hline(x1, x2, y, color) { this.ops.push(`0.5 w ${rgb(color)} RG ${f3(x1)} ${f3(PAGE_H - y)} m ${f3(x2)} ${f3(PAGE_H - y)} l S`); }
+
+    // Wrapped paragraph at the cursor.
+    para(runs, size, opts = {}) {
+      const lh = size * 1.25;
+      const lines = wrap(runs, size, opts.width || CONTENT_W);
+      for (const l of lines) {
+        this.ensure(lh);
+        this.line(l, opts.x || MARGIN, this.y + size, size);
+        this.y += lh;
+      }
+      this.y += opts.after || 0;
+    }
+
+    bytes() {
+      const n = this.pages.length;
+      const footerTitle = this.title;
+      this.pages.forEach((ops, i) => {
+        const label = `${footerTitle}  ·  ${i + 1}/${n}`;
+        ops.push(`BT /F1 7 Tf ${rgb(GREY)} rg ${MARGIN} ${MARGIN - 18} Td (${esc(toWinAnsi(label))}) Tj ET`);
+      });
+      const objs = [];
+      objs[1] = '<< /Type /Catalog /Pages 2 0 R >>';
+      const kids = this.pages.map((_, i) => `${6 + i * 2} 0 R`).join(' ');
+      objs[2] = `<< /Type /Pages /Kids [${kids}] /Count ${n} >>`;
+      objs[3] = '<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>';
+      objs[4] = '<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>';
+      objs[5] = `<< /Title (${esc(this.title)}) /Producer (IEEE Student OU Vitality) >>`;
+      this.pages.forEach((ops, i) => {
+        const content = ops.join('\n');
+        objs[6 + i * 2] = `<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ${PAGE_W} ${PAGE_H}] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents ${7 + i * 2} 0 R >>`;
+        objs[7 + i * 2] = `<< /Length ${content.length} >>\nstream\n${content}\nendstream`;
+      });
+      let out = '%PDF-1.4\n%âãÏÓ\n';
+      const offsets = [];
+      for (let i = 1; i < objs.length; i++) {
+        offsets[i] = out.length;
+        out += `${i} 0 obj\n${objs[i]}\nendobj\n`;
+      }
+      const xref = out.length;
+      out += `xref\n0 ${objs.length}\n0000000000 65535 f \n`;
+      for (let i = 1; i < objs.length; i++) out += `${String(offsets[i]).padStart(10, '0')} 00000 n \n`;
+      out += `trailer\n<< /Size ${objs.length} /Root 1 0 R /Info 5 0 R >>\nstartxref\n${xref}\n%%EOF\n`;
+      const bytes = new Uint8Array(out.length);
+      for (let i = 0; i < out.length; i++) bytes[i] = out.charCodeAt(i) & 0xFF;
+      return bytes;
+    }
+  }
+
+  // ---------- blocks ----------
+  function drawStats(doc, el) {
+    const stats = [...el.querySelectorAll('.stat')];
+    const colW = Math.min(170, CONTENT_W / Math.max(stats.length, 1));
+    doc.ensure(34);
+    stats.forEach((s, i) => {
+      const x = MARGIN + i * colW;
+      const label = s.querySelector('.stat-label'), value = s.querySelector('.stat-value');
+      if (label) doc.line(wrap(forceStyle(runsOf(label), { color: GREY }), 6.5, colW - 8)[0], x, doc.y + 7, 6.5);
+      if (value) doc.line(wrap(forceStyle(runsOf(value), { bold: true }), 14, colW - 8)[0], x, doc.y + 24, 14);
+    });
+    doc.y += 34;
+  }
+
+  function drawBars(doc, el) {
+    const rows = [...el.querySelectorAll('.bar-row')];
+    doc.ensure(rows.length * 13 + 6);
+    const labelW = 80, valueW = 26, trackX = MARGIN + labelW, trackW = CONTENT_W - labelW - valueW;
+    for (const row of rows) {
+      const label = row.querySelector('.bar-label'), fill = row.querySelector('.bar-fill'), value = row.querySelector('.bar-value');
+      if (label) doc.line(wrap(runsOf(label), 7.5, labelW - 6)[0], MARGIN, doc.y + 8, 7.5);
+      doc.rect(trackX, doc.y + 2, trackW, 7, BAND);
+      if (fill) {
+        const pct = parseFloat(fill.style.width) || 0;
+        doc.rect(trackX, doc.y + 2, (trackW * pct) / 100, 7, parseColor(getComputedStyle(fill).backgroundColor, GREY));
+      }
+      if (value) {
+        const segs = wrap(forceStyle(runsOf(value), { bold: true }), 7.5, valueW)[0];
+        doc.line(segs, MARGIN + CONTENT_W - lineWidth(segs), doc.y + 8, 7.5);
+      }
+      doc.y += 13;
+    }
+    doc.y += 8;
+  }
+
+  function drawChecklist(doc, el) {
+    const boxes = [...el.querySelectorAll('.check')];
+    const perRow = Math.max(1, Math.min(boxes.length, Math.floor(CONTENT_W / 95)));
+    const gap = 6, boxW = (CONTENT_W - gap * (perRow - 1)) / perRow;
+    for (let i = 0; i < boxes.length; i += perRow) {
+      const row = boxes.slice(i, i + perRow).map(b => {
+        const label = wrap(forceStyle(runsOf(b.querySelector('.check-label') || b), { color: GREY }), 6.5, boxW - 12);
+        const value = wrap(forceStyle(runsOf(b.querySelector('.check-value') || b), { bold: true }), 10.5, boxW - 12);
+        return { label, value, h: 10 + label.length * 8.5 + value.length * 13 };
+      });
+      const h = Math.max(...row.map(b => b.h));
+      doc.ensure(h + gap);
+      row.forEach((b, j) => {
+        const x = MARGIN + j * (boxW + gap);
+        doc.stroke(x, doc.y, boxW, h, RULE);
+        let y = doc.y + 4;
+        for (const l of b.label) { doc.line(l, x + 6, y + 6.5, 6.5); y += 8.5; }
+        y += 1;
+        for (const l of b.value) { doc.line(l, x + 6, y + 10.5, 10.5); y += 13; }
+      });
+      doc.y += h + gap;
+    }
+    doc.y += 2;
+  }
+
+  function drawTable(doc, table) {
+    const SIZE = 7.5, LH = 9.5, PAD = 3, HEAD = 6.5;
+    const shown = el => !el.hidden && getComputedStyle(el).display !== 'none';
+    const headCells = [...table.querySelectorAll('thead th')].filter(shown);
+    const head = headCells.map(th => ({
+      runs: forceStyle(runsOf(th), { bold: true, color: GREY }),
+      right: th.classList.contains('num'),
+    }));
+    const ncol = Math.max(head.length, 1);
+    const rows = [...table.querySelectorAll('tbody tr')].filter(shown).map(tr => {
+      const cells = [...tr.children].filter(shown);
+      if (cells.length === 1 && (cells[0].colSpan || 1) > 1) return { band: forceStyle(runsOf(cells[0]), { bold: true }) };
+      return {
+        child: tr.classList.contains('child'),
+        cells: cells.map(td => ({ runs: runsOf(td), right: td.classList.contains('num') })),
+      };
+    });
+
+    // Column widths: natural (one-line) width, but never below the longest
+    // word; squeeze the wrap-friendly columns first when it doesn't fit.
+    const nat = new Array(ncol).fill(20), minw = new Array(ncol).fill(18);
+    const consider = (i, runs, size) => {
+      if (i >= ncol) return;
+      const text = runs.map(r => r.text).join('');
+      const bold = runs.some(r => r.bold);
+      nat[i] = Math.max(nat[i], Math.min(textWidth(text, size, bold) + 2 * PAD, 260));
+      for (const word of text.split(' ')) minw[i] = Math.max(minw[i], Math.min(textWidth(word, size, bold) + 2 * PAD, 110));
+    };
+    head.forEach((h, i) => consider(i, h.runs, HEAD));
+    rows.forEach(r => r.cells && r.cells.forEach((c, i) => consider(i, c.runs, SIZE)));
+    let widths;
+    const sumNat = nat.reduce((a, b) => a + b, 0), sumMin = minw.reduce((a, b) => a + b, 0);
+    if (sumNat <= CONTENT_W) widths = nat.map(w => w + (CONTENT_W - sumNat) * (w / sumNat));
+    else if (sumMin >= CONTENT_W) widths = minw.map(w => (w * CONTENT_W) / sumMin);
+    else {
+      const slack = CONTENT_W - sumMin, want = nat.map((w, i) => w - minw[i]), sumWant = want.reduce((a, b) => a + b, 0) || 1;
+      widths = minw.map((w, i) => w + (slack * want[i]) / sumWant);
+    }
+    const xs = widths.reduce((acc, w, i) => (acc.push(i ? acc[i - 1] + widths[i - 1] : MARGIN), acc), []);
+
+    const drawHead = () => {
+      if (!head.length) return;
+      const lines = head.map((h, i) => wrap(h.runs, HEAD, widths[i] - 2 * PAD));
+      const h = Math.max(...lines.map(l => l.length)) * 8 + 5;
+      lines.forEach((ls, i) => ls.forEach((l, k) => {
+        const x = head[i].right ? xs[i] + widths[i] - PAD - lineWidth(l) : xs[i] + PAD;
+        doc.line(l, x, doc.y + 7 + k * 8, HEAD);
+      }));
+      doc.y += h;
+      doc.hline(MARGIN, MARGIN + CONTENT_W, doc.y, RULE);
+    };
+
+    doc.ensure(40);
+    drawHead();
+    for (const r of rows) {
+      if (r.band) {
+        const lines = wrap(r.band, 8, CONTENT_W - 2 * PAD);
+        const h = lines.length * 10 + 6;
+        if (doc.ensure(h + 2 * (LH + 5))) drawHead();  // keep a family header with its first rows
+        doc.rect(MARGIN, doc.y, CONTENT_W, h, BAND);
+        lines.forEach((l, k) => doc.line(l, MARGIN + PAD, doc.y + 10 + k * 10, 8));
+        doc.y += h;
+        continue;
+      }
+      const cellLines = r.cells.slice(0, ncol).map((c, i) => wrap(c.runs, SIZE, widths[i] - 2 * PAD - (i === 0 && r.child ? 10 : 0)));
+      const h = Math.max(1, ...cellLines.map(l => l.length)) * LH + 5;
+      if (doc.ensure(h)) drawHead();
+      cellLines.forEach((ls, i) => ls.forEach((l, k) => {
+        const indent = i === 0 && r.child ? 10 : 0;
+        const x = r.cells[i].right ? xs[i] + widths[i] - PAD - lineWidth(l) : xs[i] + PAD + indent;
+        doc.line(l, x, doc.y + 3 + SIZE + k * LH, SIZE);
+      }));
+      doc.y += h;
+      doc.hline(MARGIN, MARGIN + CONTENT_W, doc.y, RULE);
+    }
+    doc.y += 10;
+  }
+
+  function renderGroupPage(section) {
+    const title = (section.querySelector('h1') || section).textContent.trim();
+    const doc = new Doc(title);
+    for (const el of section.children) {
+      if (el.classList.contains('no-print') || el.classList.contains('page-toolbar') || el.hidden) continue;
+      if (el.tagName === 'H1') doc.para(forceStyle(runsOf(el), { bold: true, color: DARK }), 18, { after: 2 });
+      else if (el.tagName === 'H2') { doc.y += 6; doc.ensure(60); doc.para(runsOf(el).map(r => ({ ...r, bold: r.bold })), 11, { after: 4 }); }
+      else if (el.classList.contains('type-note')) { doc.y += 2; doc.para(forceStyle(runsOf(el), { bold: true, color: DARK }), 9, { after: 8 }); }
+      else if (el.classList.contains('context')) doc.para(runsOf(el), 10, { after: 1 });
+      else if (el.classList.contains('subtitle')) doc.para(forceStyle(runsOf(el), { color: GREY }), 8, { after: 10 });
+      else if (el.classList.contains('stat-row')) drawStats(doc, el);
+      else if (el.classList.contains('bar-chart')) drawBars(doc, el);
+      else if (el.classList.contains('checklist')) drawChecklist(doc, el);
+      else if (el.tagName === 'TABLE') drawTable(doc, el);
+      else { const runs = runsOf(el); if (runs.length) doc.para(runs, 9, { after: 6 }); }
+    }
+    return doc.bytes();
+  }
+
+  // ---------- ZIP (stored; PDFs here are small) ----------
+  const CRC_TABLE = (() => {
+    const t = new Uint32Array(256);
+    for (let n = 0; n < 256; n++) {
+      let c = n;
+      for (let k = 0; k < 8; k++) c = c & 1 ? 0xEDB88320 ^ (c >>> 1) : c >>> 1;
+      t[n] = c >>> 0;
+    }
+    return t;
+  })();
+  function crc32(bytes) {
+    let c = 0xFFFFFFFF;
+    for (let i = 0; i < bytes.length; i++) c = CRC_TABLE[(c ^ bytes[i]) & 0xFF] ^ (c >>> 8);
+    return (c ^ 0xFFFFFFFF) >>> 0;
+  }
+  function makeZip(files) {
+    const enc = new TextEncoder();
+    const chunks = [], central = [];
+    const now = new Date();
+    const dosTime = (now.getHours() << 11) | (now.getMinutes() << 5) | (now.getSeconds() >> 1);
+    const dosDate = ((now.getFullYear() - 1980) << 9) | ((now.getMonth() + 1) << 5) | now.getDate();
+    let offset = 0;
+    for (const f of files) {
+      const name = enc.encode(f.name), data = f.data, crc = crc32(data);
+      const local = new DataView(new ArrayBuffer(30));
+      local.setUint32(0, 0x04034b50, true); local.setUint16(4, 20, true);
+      local.setUint16(6, 0x0800, true);  // UTF-8 file names
+      local.setUint16(10, dosTime, true); local.setUint16(12, dosDate, true);
+      local.setUint32(14, crc, true); local.setUint32(18, data.length, true);
+      local.setUint32(22, data.length, true); local.setUint16(26, name.length, true);
+      chunks.push(local, name, data);
+      const cen = new DataView(new ArrayBuffer(46));
+      cen.setUint32(0, 0x02014b50, true); cen.setUint16(4, 20, true); cen.setUint16(6, 20, true);
+      cen.setUint16(8, 0x0800, true); cen.setUint16(12, dosTime, true); cen.setUint16(14, dosDate, true);
+      cen.setUint32(16, crc, true);
+      cen.setUint32(20, data.length, true); cen.setUint32(24, data.length, true);
+      cen.setUint16(28, name.length, true); cen.setUint32(42, offset, true);
+      central.push(cen, name);
+      offset += 30 + name.length + data.length;
+    }
+    const cenSize = central.reduce((s, c) => s + c.byteLength, 0);
+    const end = new DataView(new ArrayBuffer(22));
+    end.setUint32(0, 0x06054b50, true); end.setUint16(8, files.length, true);
+    end.setUint16(10, files.length, true); end.setUint32(12, cenSize, true); end.setUint32(16, offset, true);
+    return new Blob([...chunks, ...central, end], { type: 'application/zip' });
+  }
+
+  function saveBlob(blob, filename) {
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = filename;
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 2000);
+  }
+
+  const pdfName = page => (page.dataset.filename || page.id) + '.pdf';
+
+  // ---------- public entry points ----------
+  window.downloadPagePdf = function (id) {
+    const page = document.getElementById(id);
+    if (page) saveBlob(new Blob([renderGroupPage(page)], { type: 'application/pdf' }), pdfName(page));
+  };
+
+  window.downloadAllPdfs = async function (zipName, button) {
+    // Only pages that are shown.
+    const pages = [...document.querySelectorAll('.group-page')].filter(p => !p.hidden);
+    if (window.reportZipName) zipName = window.reportZipName(zipName);
+    const label = button ? button.innerHTML : '';
+    if (button) button.disabled = true;
+    try {
+      const files = [];
+      for (let i = 0; i < pages.length; i++) {
+        const page = pages[i];
+        files.push({ name: (page.dataset.folder ? page.dataset.folder + '/' : '') + pdfName(page), data: renderGroupPage(page) });
+        if (button && i % 5 === 0) {
+          button.textContent = `Building PDFs ${i + 1}/${pages.length}…`;
+          await new Promise(r => setTimeout(r));  // let the label repaint
+        }
+      }
+      saveBlob(makeZip(files), zipName);
+    } finally {
+      if (button) { button.innerHTML = label; button.disabled = false; }
+    }
+  };
+
+  // Exposed for tests / debugging.
+  window.__reportExport = { renderGroupPage, makeZip, toWinAnsi, wrap };
+
+})();
+
+</script>
+<script>
+// "Export current view": turns exactly what the dashboard shows (its
+// filtered Overview rows, in their on-screen order, e.g. after sorting by
+// members) into reports. Inlined into the dashboard by
+// generate_vitality_report.py after report_export.js, which turns the
+// `.group-page`s rendered here into PDFs (downloadAllPdfs/downloadPagePdf).
+//
+// Flow: visible `.ou-row`s (data-spoid) -> records from #export-data (one per
+// OU, already evaluated in Python: n name, id SPO ID, t type key, u
+// university, s/sd society code/name, se section, co council, m/mm members
+// and minimum, e/em counted events and minimum, mo/eo met flags, ch chair,
+// r2 second role, cn second role filled, rq requirements met 0-3, ok full
+// vitality, miss [missing requirements]) -> split by the dialog's "one
+// report per" -> one light `.group-page` per group in #export-pages
+// (off-screen; print shows only it) -> PDF ZIP / CSV / print.
+
+(function () {
+  const DATA = JSON.parse(document.getElementById('export-data').textContent);
+  const BY_ID = {};
+  DATA.ous.forEach(o => { BY_ID[o.id.toLowerCase()] = o; });
+  const TYPES = { branch: 'Student Branches', chapter: 'Chapters', ag: 'Affinity Groups' };
+  const TYPE_NAME = { branch: 'Student Branch', chapter: 'Student Branch Chapter', ag: 'Affinity Group' };
+  const STATUS = {
+    met: 'Meeting full vitality', notmet: 'Not meeting full vitality',
+    one: 'Missing one requirement', two: 'Missing two or more requirements',
+  };
+  const GROUP = { none: 'single report', branch: 'Student Branch', section: 'Section', council: 'Council', society: 'Society' };
+  const NO = { section: 'No Section', council: 'No Council', society: 'No Society (Student Branches)' };
+
+  const $ = id => document.getElementById(id);
+  const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const famKey = o => o.u || o.n;
+  const slug = s => s.normalize('NFKD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  const fileSafe = s => s.replace(/[\\/:*?"<>|\x00-\x1f]+/g, ' ').replace(/\s+/g, ' ').trim().replace(/\.+$/, '').slice(0, 150) || 'report';
+  const plural = (n, one, many) => `${n} ${n === 1 ? one : many}`;
+  const SOCIETY_NAMES = {};
+  DATA.ous.forEach(o => { if (o.s) SOCIETY_NAMES[o.s] = o.sd || o.s; });
+
+  // ---------- the current view ----------
+  // Overview rows only (the Quick Wins tab repeats some OUs), in DOM order,
+  // which is the on-screen order: types in table order, each table as sorted.
+  function viewRecords() {
+    return [...document.querySelectorAll('#tab-overview .ou-section:not([hidden]) .ou-row')]
+      .filter(r => r.style.display !== 'none')
+      .map(r => BY_ID[r.dataset.spoid])
+      .filter(Boolean);
+  }
+
+  const val = id => { const el = $(id); return el ? el.value : ''; };
+  const label = id => { const el = $(id); return el && el.value ? el.selectedOptions[0].textContent : ''; };
+  // `group`: the dimension the export is split by, left out (each page's
+  // title already says it).
+  function filterLine(group) {
+    const bits = [];
+    const types = [...document.querySelectorAll('#type-filter input')].filter(b => b.checked).map(b => b.value);
+    if (types.length !== 3) bits.push(types.map(t => TYPES[t]).join(', '));
+    if (STATUS[val('status-filter')]) bits.push(STATUS[val('status-filter')]);
+    if (val('council-filter') && group !== 'council') bits.push(`Council: ${label('council-filter')}`);
+    if (val('section-filter') && group !== 'section') bits.push(`Section: ${label('section-filter')}`);
+    if (val('university-filter') && group !== 'branch') bits.push(`University: ${label('university-filter')}`);
+    if (val('society-filter') && group !== 'society') bits.push(`Society: ${label('society-filter')}`);
+    if (val('search').trim()) bits.push(`Search: "${val('search').trim()}"`);
+    return bits;
+  }
+
+  function options() {
+    const g = document.querySelector('input[name=export-group]:checked');
+    return { group: g ? g.value : 'none', nest: $('export-nest').checked };
+  }
+
+  // ---------- grouping (keeps the view's order inside each group) ----------
+  function groupKey(o, group) {
+    if (group === 'branch') return famKey(o);
+    if (group === 'section') return o.se || NO.section;
+    if (group === 'council') return o.co || NO.council;
+    if (group === 'society') return o.s || NO.society;
+    return 'all';
+  }
+
+  // Families stay together (in order of first appearance), each Student
+  // Branch first, then its Chapters/AGs in view order.
+  function nestOrder(ous) {
+    const fams = new Map();
+    ous.forEach(o => { if (!fams.has(famKey(o))) fams.set(famKey(o), []); fams.get(famKey(o)).push(o); });
+    return [...fams.values()].flatMap(list => [...list.filter(o => o.t === 'branch'), ...list.filter(o => o.t !== 'branch')]);
+  }
+
+  function mostCommon(values) {
+    const counts = {};
+    values.filter(Boolean).forEach(v => { counts[v] = (counts[v] || 0) + 1; });
+    return Object.keys(counts).sort((a, b) => counts[b] - counts[a] || a.localeCompare(b))[0] || '';
+  }
+
+  function makeGroups(list, opts) {
+    const map = new Map();
+    list.forEach(o => {
+      const k = groupKey(o, opts.group);
+      if (!map.has(k)) map.set(k, []);
+      map.get(k).push(o);
+    });
+    const isNo = k => Object.values(NO).includes(k);
+    const keys = [...map.keys()].sort((a, b) => (isNo(a) - isNo(b)) || a.localeCompare(b));
+    const groups = keys.map((k, i) => ({ key: k, ous: map.get(k), id: `export-g${i}` }));
+    const sectionsSpanned = new Set(groups.map(g => mostCommon(g.ous.map(o => o.se))).filter(Boolean));
+    const taken = new Set();
+    groups.forEach(g => {
+      if (opts.nest && opts.group !== 'branch') g.ous = nestOrder(g.ous);
+      if (opts.group === 'branch') {
+        g.ous = nestOrder(g.ous);
+        g.title = g.key;
+        const branches = g.ous.filter(o => o.t === 'branch');
+        g.section = mostCommon((branches.length ? branches : g.ous).map(o => o.se));
+        const named = DATA.ous.filter(o => o.t === 'branch' && famKey(o) === g.key);  // even if branches are filtered out
+        g.subtitle = [named.map(b => `${b.n} (${b.id})`).join(', ') || 'No Student Branch on record', g.section].filter(Boolean).join(' · ');
+        g.file = (named.length ? named.map(b => b.id).join('+') + ' - ' : '') + g.key;
+        g.folder = sectionsSpanned.size > 1 ? slug(g.section || 'no-section') : '';
+      } else if (opts.group === 'society') {
+        const name = SOCIETY_NAMES[g.key] || g.key;
+        g.title = g.key === NO.society ? g.key : name;
+        g.subtitle = g.key !== NO.society && name !== g.key ? `${g.key} · ${DATA.scope}` : DATA.scope;
+        g.file = g.key === NO.society ? 'No Society' : (name !== g.key ? `${g.key} - ${name}` : g.key);
+        g.folder = '';
+      } else if (opts.group === 'section' || opts.group === 'council') {
+        g.title = g.key;
+        g.subtitle = opts.group === 'section' ? mostCommon(g.ous.map(o => o.co)) : '';
+        g.file = g.key;
+        g.folder = '';
+      } else {
+        g.title = val('section-filter') || DATA.scope;
+        g.subtitle = label('university-filter');
+        g.file = `Vitality report - ${g.title}`;
+        g.folder = '';
+      }
+      let name = fileSafe(g.file), n = 2;
+      while (taken.has(g.folder + '/' + name.toLowerCase())) name = `${fileSafe(g.file)} (${n++})`;
+      taken.add(g.folder + '/' + name.toLowerCase());
+      g.file = name;
+    });
+    return groups;
+  }
+
+  // ---------- page rendering ----------
+  const ratio = (v, min, ok) => `<span class="${ok ? 'ok' : 'no'}">${v}/${min}</span>`;
+  const yesNo = ok => `<span class="${ok ? 'ok' : 'no'}">${ok ? 'Yes' : 'No'}</span>`;
+  const reqCell = o => `<td class="num" style="color:${DATA.colors[o.rq]}">${o.rq}/3</td>`;
+
+  function stats(ous) {
+    const met = ous.filter(o => o.ok).length;
+    const levels = [3, 2, 1, 0].map(l => [l, ous.filter(o => o.rq === l).length]);
+    const max = Math.max(1, ...levels.map(x => x[1]));
+    const LABEL = { 3: 'Full', 2: 'Partial', 1: 'Minimal', 0: 'None' };
+    // Chapter and Affinity Group members are also Branch members, so summing every OU would double count.
+    const branches = ous.filter(o => o.t === 'branch');
+    const membersStat = branches.length ? ['Student Branch Members', branches.reduce((s, o) => s + o.m, 0)]
+      : ous.length === 1 ? ['Members', ous[0].m] : null;
+    return `<div class="stat-row">
+        <div class="stat"><div class="stat-label">OUs</div><div class="stat-value">${ous.length}</div></div>
+        <div class="stat"><div class="stat-label">Meeting full vitality</div><div class="stat-value good">${met}/${ous.length}</div></div>
+        ${membersStat ? `<div class="stat"><div class="stat-label">${membersStat[0]}</div><div class="stat-value">${membersStat[1]}</div></div>` : ''}
+      </div>
+      <div class="bar-chart">${levels.map(([l, n]) => `<div class="bar-row"><div class="bar-label">${LABEL[l]} (${l}/3)</div>
+        <div class="bar-track"><div class="bar-fill" style="width:${Math.round((n / max) * 100)}%;background:${DATA.colors[l]}"></div></div>
+        <div class="bar-value">${n}</div></div>`).join('')}</div>`;
+  }
+
+  function secondRoleHeader(ous) {
+    const hasB = ous.some(o => o.t === 'branch'), hasOther = ous.some(o => o.t !== 'branch');
+    return hasB && hasOther ? 'Counselor / Advisor' : hasB ? 'Counselor' : 'Advisor';
+  }
+
+  function ouTable(ous, { nest, showUniversity, showSection }) {
+    const showType = new Set(ous.map(o => o.t)).size > 1;
+    const head = ['<th>Unit</th>', showType ? '<th>Type</th>' : '', showUniversity ? '<th>University</th>' : '',
+      showSection ? '<th>Section</th>' : '', '<th>SPO ID</th>', '<th class="num">Members</th>', '<th class="num">Events</th>',
+      '<th>Chair</th>', `<th>${secondRoleHeader(ous)}</th>`, '<th class="num">Req.</th>', '<th>Missing</th>'].join('');
+    const ncol = (head.match(/<th/g) || []).length;
+    const row = (o, child) => `<tr${child ? ' class="child"' : ''}><td>${esc(o.n)}</td>` +
+      (showType ? `<td>${TYPE_NAME[o.t]}</td>` : '') + (showUniversity ? `<td>${esc(o.u)}</td>` : '') +
+      (showSection ? `<td>${esc(o.se)}</td>` : '') + `<td class="mono">${esc(o.id)}</td>` +
+      `<td class="num">${ratio(o.m, o.mm, o.mo)}</td><td class="num">${ratio(o.e, o.em, o.eo)}</td>` +
+      `<td>${yesNo(o.ch)}</td><td>${yesNo(o.cn)}</td>${reqCell(o)}<td class="missing">${esc(o.miss.join('; '))}</td></tr>`;
+    let body = '';
+    if (nest) {
+      let fam = null;
+      ous.forEach(o => {
+        if (famKey(o) !== fam) { fam = famKey(o); body += `<tr class="family"><th colspan="${ncol}">${esc(fam)}</th></tr>`; }
+        body += row(o, o.t !== 'branch');
+      });
+    } else body = ous.map(o => row(o, false)).join('');
+    return `<table><thead><tr>${head}</tr></thead><tbody>${body}</tbody></table>`;
+  }
+
+  // One line per university: the branch's result and how its Chapters / AGs do.
+  function branchSummary(ous) {
+    const fams = new Map();
+    ous.forEach(o => { if (!fams.has(famKey(o))) fams.set(famKey(o), []); fams.get(famKey(o)).push(o); });
+    if (fams.size < 2) return '';
+    const show = t => ous.some(o => o.t === t);
+    const metCell = list => (list.length
+      ? `<td class="num"><span class="${list.every(o => o.ok) ? 'ok' : 'no'}">${list.filter(o => o.ok).length}/${list.length}</span></td>`
+      : '<td class="num muted">none</td>');
+    const rows = [...fams].map(([uni, list]) => {
+      const b = list.filter(o => o.t === 'branch');
+      let cells = `<td>${esc(uni)}</td>`;
+      if (show('branch')) {
+        cells += b.length ? `<td class="num" style="color:${DATA.colors[Math.min(...b.map(x => x.rq))]}">${Math.min(...b.map(x => x.rq))}/3</td>`
+          + `<td class="missing">${esc(b.flatMap(x => x.miss).join('; '))}</td>`
+          : '<td class="num muted">none</td><td></td>';
+      }
+      if (show('chapter')) cells += metCell(list.filter(o => o.t === 'chapter'));
+      if (show('ag')) cells += metCell(list.filter(o => o.t === 'ag'));
+      return `<tr>${cells}</tr>`;
+    }).join('');
+    const head = '<th>University</th>' + (show('branch') ? '<th class="num">Branch req.</th><th>Missing at the Student Branch</th>' : '')
+      + (show('chapter') ? '<th class="num">Chapters met</th>' : '') + (show('ag') ? '<th class="num">Affinity Groups met</th>' : '');
+    return `<h2>Student Branches <span class="muted">${plural(fams.size, 'university', 'universities')}</span></h2>
+      <table><thead><tr>${head}</tr></thead><tbody>${rows}</tbody></table>`;
+  }
+
+  function branchPage(g) {
+    const branches = g.ous.filter(o => o.t === 'branch');
+    const children = g.ous.filter(o => o.t !== 'branch');
+    let out = '';
+    branches.forEach(b => {
+      out += `<h2>Student Branch: ${esc(b.n)}</h2><div class="checklist">
+        <div class="check"><div class="check-label">Members (min ${b.mm})</div><div class="check-value">${ratio(b.m, b.mm, b.mo)}</div></div>
+        <div class="check"><div class="check-label">Reported events (min ${b.em})</div><div class="check-value">${ratio(b.e, b.em, b.eo)}</div></div>
+        <div class="check"><div class="check-label">Chair</div><div class="check-value">${yesNo(b.ch)}</div></div>
+        <div class="check"><div class="check-label">${esc(b.r2)}</div><div class="check-value">${yesNo(b.cn)}</div></div>
+        <div class="check"><div class="check-label">Status</div><div class="check-value">${b.ok ? '<span class="ok">Meets full vitality</span>' : `<span class="no">Not met (${b.rq}/3)</span>`}</div></div>
+      </div>${b.miss.length ? `<p class="note">Missing: <span class="no">${esc(b.miss.join('; '))}</span></p>` : ''}`;
+    });
+    if (children.length) {
+      const what = [...new Set(children.map(o => o.t))].map(t => TYPES[t]).join(' & ');
+      out += `<h2>${what} <span class="muted">${children.filter(o => o.ok).length}/${children.length} meeting full vitality</span></h2>`
+        + ouTable(children, { nest: false, showUniversity: false, showSection: false });
+    }
+    return out;
+  }
+
+  function renderPage(g, opts, filters) {
+    const multiSection = new Set(g.ous.map(o => o.se).filter(Boolean)).size > 1;
+    let body;
+    if (opts.group === 'branch') body = branchPage(g);
+    else {
+      body = (opts.nest ? branchSummary(g.ous) : '') + `<h2>${opts.nest ? 'Detail by Student Branch' : 'OUs'}</h2>`
+        // A Student Branch's name already says its university.
+        + ouTable(g.ous, { nest: opts.nest, showUniversity: !opts.nest && g.ous.some(o => o.t !== 'branch'), showSection: multiSection && opts.group !== 'section' });
+    }
+    const note = filters.length ? `Includes only: ${filters.join(' · ')}` : '';
+    return `<section class="group-page" id="${g.id}" data-filename="${esc(g.file)}"${g.folder ? ` data-folder="${esc(g.folder)}"` : ''}>
+      <h1>${esc(g.title)}</h1>
+      ${g.subtitle ? `<p class="context">${esc(g.subtitle)}</p>` : ''}
+      <p class="subtitle">IEEE Student OU Vitality Report, generated ${esc(DATA.generated)}</p>
+      ${note ? `<p class="context type-note">${esc(note)}</p>` : ''}
+      ${stats(g.ous)}
+      ${body}
+    </section>`;
+  }
+
+  // Renders the current view into #export-pages; returns the groups.
+  function render(opts) {
+    opts = opts || options();
+    const groups = makeGroups(viewRecords(), opts);
+    const filters = filterLine(opts.group);
+    $('export-pages').innerHTML = groups.map(g => renderPage(g, opts, filters)).join('');
+    return groups;
+  }
+
+  // ---------- dialog ----------
+  function refreshDialog() {
+    const list = viewRecords();
+    const opts = options();
+    const groups = list.length ? makeGroups(list, opts) : [];
+    const filters = filterLine();
+    $('export-summary').innerHTML = list.length
+      ? `<strong>${plural(list.length, 'OU', 'OUs')}</strong>, ${list.filter(o => o.ok).length} meeting full vitality`
+        + (filters.length ? `<br><span class="muted">${esc(filters.join(' · '))}</span>` : '<br><span class="muted">No filters: everything on this dashboard</span>')
+      : '<strong>No OUs in the current view.</strong> Change the filters first.';
+    $('export-nest-opt').hidden = opts.group === 'branch';
+    $('export-count').textContent = groups.length > 1 ? `${groups.length} reports, one per ${GROUP[opts.group].toLowerCase()}` : (groups.length ? '1 report' : '');
+    const pdf = $('download-all-pdfs');
+    pdf.textContent = groups.length > 1 ? `Download ${groups.length} PDFs (.zip)` : 'Download PDF';
+    [pdf, $('export-csv'), $('export-print')].forEach(b => { b.disabled = !groups.length; });
+    $('export-hint').textContent = groups.length > 1
+      ? `One PDF per ${GROUP[opts.group].toLowerCase()}, named ${opts.group === 'branch' ? 'by SPO ID and university' : 'after it'}${groups.some(g => g.folder) ? ', in one folder per Section' : ''}. Rows keep the order shown on the dashboard.`
+      : 'Rows keep the order shown on the dashboard.';
+  }
+
+  function baseName(opts) {
+    const bits = ['vitality', slug(DATA.scope), opts.group === 'none' ? 'view' : `by-${opts.group}`];
+    const types = [...document.querySelectorAll('#type-filter input')].filter(b => b.checked).map(b => b.value);
+    if (types.length !== 3) bits.push(types.join('-'));
+    ['status-filter', 'council-filter', 'section-filter', 'university-filter', 'society-filter'].forEach(id => { if (val(id)) bits.push(slug(val(id))); });
+    return bits.filter(Boolean).join('_') + '_' + DATA.generated;
+  }
+
+  $('export-view-btn').addEventListener('click', () => { refreshDialog(); $('export-dialog').showModal(); });
+  $('export-dialog').addEventListener('change', refreshDialog);
+
+  $('download-all-pdfs').addEventListener('click', e => {
+    const opts = options();
+    const groups = render(opts);
+    if (groups.length === 1) window.downloadPagePdf(groups[0].id);
+    else if (groups.length) window.downloadAllPdfs(baseName(opts) + '.zip', e.currentTarget);
+  });
+
+  $('export-print').addEventListener('click', () => {
+    if (!render().length) return;
+    $('export-dialog').close();
+    document.body.classList.add('printing-export');
+    window.print();
+  });
+  window.addEventListener('afterprint', () => document.body.classList.remove('printing-export'));
+
+  $('export-csv').addEventListener('click', () => {
+    const opts = options();
+    const grouped = opts.group !== 'none';
+    const groups = makeGroups(viewRecords(), opts);
+    const cols = [...(grouped ? [GROUP[opts.group]] : []), 'Unit Name', 'SPO ID', 'Unit Type', 'University', 'Society', 'Section', 'Council',
+      'Member Count', 'Members Required', 'Events (Reported)', 'Events Required', 'Chair', 'Counselor / Advisor',
+      'Requirements Met', 'Overall Vitality', 'Missing'];
+    const cell = v => { const s = String(v == null ? '' : v); return /[",\n;]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s; };
+    const lines = [cols.map(cell).join(',')];
+    groups.forEach(g => g.ous.forEach(o => {
+      lines.push([...(grouped ? [g.title] : []), o.n, o.id, TYPE_NAME[o.t], o.u, o.s, o.se, o.co, o.m, o.mm, o.e, o.em,
+        o.ch ? 'Yes' : 'No', o.cn ? 'Yes' : 'No', `${o.rq}/3`, o.ok ? 'Met' : 'Not Met', o.miss.join('; ')].map(cell).join(','));
+    }));
+    const blob = new Blob(['﻿' + lines.join('\r\n') + '\r\n'], { type: 'text/csv;charset=utf-8' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob); a.download = baseName(opts) + '.csv';
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+  });
+
+  // For automations/export_report_pdfs.py and tests.
+  window.__exportView = { render, viewRecords, makeGroups };
+})();
+
+</script>
+</body>
+</html>

@@ -10,7 +10,7 @@ Universidad Catolica San Pablo WIE,SBA66271,Affinity Group,Universidad Catolica 
 "Universidad Catolica de Santa Maria, WIE",SBA04201,Affinity Group,Universidad Catolica de Santa Maria,WIE,9,6,Yes,0,,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
 Universidad Nacional Federico Villarreal WIE,SBA64001,Affinity Group,Universidad Nacional Federico Villarreal,WIE,23,6,Yes,0,,0,2,No,Yes,,No,No,No,No,No,Partial,1/3,Not Met
 Universidad Nacional Mayor de San Marcos SB SIGHT,SBA03221S,Affinity Group,Universidad Nacional Mayor de San Marcos,SB SIGHT,33,6,Yes,0,,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
-"Universidad Nacional Mayor de San Marcos, WIE",SBA03221,Affinity Group,Universidad Nacional Mayor de San Marcos,WIE,30,6,Yes,4,,3,2,Yes,Yes,,No,No,Yes,Yes,No,Partial,2/3,Not Met
+"Universidad Nacional Mayor de San Marcos, WIE",SBA03221,Affinity Group,Universidad Nacional Mayor de San Marcos,WIE,31,6,Yes,4,,3,2,Yes,Yes,,No,No,Yes,Yes,No,Partial,2/3,Not Met
 "Universidad Nacional Tecnologica de Lima Sur, WIE",SBA08771,Affinity Group,Universidad Nacional Tecnologica de Lima Sur,WIE,6,6,Yes,1,,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 "Universidad Nacional de Ingenieria Lima,WIE",SBA05821,Affinity Group,Universidad Nacional de Ingenieria Lima,WIE,12,6,Yes,3,,0,2,Yes,Yes,,No,Yes,Yes,Yes,No,Partial,2/3,Not Met
 "Universidad Nacional de Juliaca,WIE",SBA64612,Affinity Group,Universidad Nacional de Juliaca,WIE,7,6,Yes,1,,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
@@ -33,7 +33,7 @@ Universidad de San Martin de Porres (WIE),SBA62541,Affinity Group,Universidad de
 "Universidad del Pacifico,SIGHT",SBA64265S,Affinity Group,Universidad del Pacifico,SIGHT,14,6,Yes,0,,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
 "Universidad del Pacifico,WIE",SBA64265,Affinity Group,Universidad del Pacifico,WIE,6,6,Yes,2,,1,2,Yes,Yes,,Yes,Yes,No,No,No,Met,3/3,Met
 Asociacion TECSUP,STB18551,Student Branch,Asociacion TECSUP,,10,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
-Inst Superior Tec Privado TECSUP,STB12001,Student Branch,Inst Superior Tec Privado TECSUP,,121,12,Yes,9,,20,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Inst Superior Tec Privado TECSUP,STB12001,Student Branch,Inst Superior Tec Privado TECSUP,,123,12,Yes,9,,20,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 La Universidad Nacional Agraria de la Selva,STB64287,Student Branch,La Universidad Nacional Agraria de la Selva,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Pontificia Universidad Catolica del Peru,STB03241,Student Branch,Pontificia Universidad Catolica del Peru,,123,12,Yes,15,,1,4,Yes,Yes,Yes,,Yes,Yes,Yes,No,Met,3/3,Met
 Univ Nacional San Luis Gonzaga de Ica,STB03591,Student Branch,Univ Nacional San Luis Gonzaga de Ica,,2,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
@@ -60,7 +60,7 @@ Universidad Nacional de Trujillo-La Libertad,STB11523,Student Branch,Universidad
 Universidad Nacional del Altiplano,STB01301,Student Branch,Universidad Nacional del Altiplano,,53,12,Yes,10,,1,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Universidad Nacional del Callao,STB21571,Student Branch,Universidad Nacional del Callao,,72,12,Yes,4,,3,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Universidad Nacional del Centro del Peru,STB16851,Student Branch,Universidad Nacional del Centro del Peru,,12,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,Yes,No,Met,2/3,Not Met
-Universidad Particular Ricardo Palma,STB40501,Student Branch,Universidad Particular Ricardo Palma,,28,12,Yes,0,,3,4,No,Yes,No,,Yes,Yes,Yes,No,Partial,1/3,Not Met
+Universidad Particular Ricardo Palma,STB40501,Student Branch,Universidad Particular Ricardo Palma,,28,12,Yes,1,,3,4,No,Yes,No,,Yes,Yes,Yes,No,Partial,1/3,Not Met
 Universidad Peruana Cayetano Heredia,STB11477,Student Branch,Universidad Peruana Cayetano Heredia,,11,12,No,0,,1,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,1/3,Not Met
 Universidad Peruana Los Andes,STB18581,Student Branch,Universidad Peruana Los Andes,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Universidad Peruana de Ciencias Aplicadas,STB60381,Student Branch,Universidad Peruana de Ciencias Aplicadas,,166,12,Yes,1,,6,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
@@ -68,24 +68,24 @@ Universidad Privada Antenor Orrego,STB60031,Student Branch,Universidad Privada A
 Universidad Privada de Tacna,STB37351,Student Branch,Universidad Privada de Tacna,,3,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Universidad Privada del Norte,STB16881,Student Branch,Universidad Privada del Norte,,7,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Universidad Privada del Norte-Lima Norte,STB11419,Student Branch,Universidad Privada del Norte-Lima Norte,,10,12,No,0,,0,4,No,Yes,No,,Yes,No,Yes,No,Partial,0/3,Not Met
-Universidad San Ignacio De Loyola,STB17421,Student Branch,Universidad San Ignacio De Loyola,,22,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
+Universidad San Ignacio De Loyola,STB17421,Student Branch,Universidad San Ignacio De Loyola,,23,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
 Universidad Senor de Sipan,STB66261,Student Branch,Universidad Senor de Sipan,,18,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,Yes,No,Met,2/3,Not Met
-Universidad Tecnologica del Peru,STB63761,Student Branch,Universidad Tecnologica del Peru,,86,12,Yes,9,,1,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Universidad Tecnologica del Peru,STB63761,Student Branch,Universidad Tecnologica del Peru,,86,12,Yes,10,,1,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Universidad de Ciencias y Humanidades,STB18351,Student Branch,Universidad de Ciencias y Humanidades,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Universidad de Ingenieria y Tecnologia - UTEC,STB14431,Student Branch,Universidad de Ingenieria y Tecnologia - UTEC,,81,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,Yes,No,Met,2/3,Not Met
-Universidad de Lima,STB64011,Student Branch,Universidad de Lima,,11,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Universidad de Lima,STB64011,Student Branch,Universidad de Lima,,12,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
 Universidad de Piura,STB60621,Student Branch,Universidad de Piura,,18,12,Yes,3,,0,4,No,Yes,No,,Yes,No,No,No,Partial,1/3,Not Met
 Universidad de Piura - Sede Lima,STB10065,Student Branch,Universidad de Piura - Sede Lima,,1,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Universidad de San Martin de Porres,STB62541,Student Branch,Universidad de San Martin de Porres,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Universidad del Pacifico,STB64265,Student Branch,Universidad del Pacifico,,29,12,Yes,1,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 "Inst Superior Tec Privado TECSUP,C16",SBC12001D,Student Branch Chapter,Inst Superior Tec Privado TECSUP,C16,15,6,Yes,9,5,0,2,Yes,Yes,,Yes,Yes,Yes,No,Yes,Met,3/3,Met
 "Inst Superior Tec Privado TECSUP,COM19",SBC12001C,Student Branch Chapter,Inst Superior Tec Privado TECSUP,COM19,51,6,Yes,111,61,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
-"Inst Superior Tec Privado TECSUP,IA34",SBC12001E,Student Branch Chapter,Inst Superior Tec Privado TECSUP,IA34,15,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,No,Yes,Yes,Met,2/3,Not Met
+"Inst Superior Tec Privado TECSUP,IA34",SBC12001E,Student Branch Chapter,Inst Superior Tec Privado TECSUP,IA34,16,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,No,Yes,Yes,Met,2/3,Not Met
 "Inst Superior Tec Privado TECSUP,PE31",SBC12001B,Student Branch Chapter,Inst Superior Tec Privado TECSUP,PE31,18,6,Yes,0,0,0,2,No,No,,No,No,Yes,Yes,No,Not Met,1/3,Not Met
 "Inst Superior Tec Privado TECSUP,RA24",SBC12001A,Student Branch Chapter,Inst Superior Tec Privado TECSUP,RA24,25,6,Yes,0,0,26,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 "Pontificia Universidad Catolica Del Peru,COM19",SBC03243,Student Branch Chapter,Pontificia Universidad Catolica del Peru,COM19,10,6,Yes,3,1,0,2,No,Yes,,Yes,Yes,Yes,No,Yes,Met,2/3,Not Met
 "Pontificia Universidad Catolica del Peru,AES10",SBC03241A,Student Branch Chapter,Pontificia Universidad Catolica del Peru,AES10,5,6,No,7,4,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
-"Pontificia Universidad Catolica del Peru,C16",SBC03241C,Student Branch Chapter,Pontificia Universidad Catolica del Peru,C16,12,6,Yes,106,100,0,2,Yes,Yes,,No,Yes,Yes,Yes,No,Partial,2/3,Not Met
+"Pontificia Universidad Catolica del Peru,C16",SBC03241C,Student Branch Chapter,Pontificia Universidad Catolica del Peru,C16,12,6,Yes,106,100,0,2,Yes,Yes,,No,Yes,Yes,Yes,Yes,Partial,2/3,Not Met
 "Pontificia Universidad Catolica del Peru,CAS04",SBC0324A,Student Branch Chapter,Pontificia Universidad Catolica del Peru,CAS04,10,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
 "Pontificia Universidad Catolica del Peru,CIS11",SBC03241K,Student Branch Chapter,Pontificia Universidad Catolica del Peru,CIS11,3,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Pontificia Universidad Catolica del Peru,CT08",SBC03241H,Student Branch Chapter,Pontificia Universidad Catolica del Peru,CT08,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
@@ -103,14 +103,14 @@ Universidad del Pacifico,STB64265,Student Branch,Universidad del Pacifico,,29,12
 "Univ Continental de Ciencias e Ingenieria, IA34",SBC12011A,Student Branch Chapter,Universidad Continental de Ciencias e Ingenieria,IA34,8,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
 "Univ Nacional San Antonio Abad del Cusco,CAS04",SBC11731K,Student Branch Chapter,Universidad Nacional San Antonio Abad del Cusco,CAS04,15,6,Yes,1,1,7,2,No,Yes,,Yes,No,No,Yes,No,Met,2/3,Not Met
 "Univ Nacional San Antonio Abad del Cusco,COM19",SBC11731E,Student Branch Chapter,Universidad Nacional San Antonio Abad del Cusco,COM19,8,6,Yes,2,2,1,2,Yes,Yes,,No,No,No,No,No,Partial,2/3,Not Met
-"Univ Nacional San Antonio Abad del Cusco,ED15",SBC11731I,Student Branch Chapter,Universidad Nacional San Antonio Abad del Cusco,ED15,26,6,Yes,2,2,7,2,Yes,Yes,,No,Yes,Yes,No,Yes,Partial,2/3,Not Met
+"Univ Nacional San Antonio Abad del Cusco,ED15",SBC11731I,Student Branch Chapter,Universidad Nacional San Antonio Abad del Cusco,ED15,26,6,Yes,2,2,7,2,Yes,Yes,,Yes,Yes,Yes,No,Yes,Met,3/3,Met
 "Univ Nacional San Antonio Abad del Cusco,EMB18",SBC11731D,Student Branch Chapter,Universidad Nacional San Antonio Abad del Cusco,EMB18,3,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
-"Univ Nacional San Antonio Abad del Cusco,SSC37",SBC11731J,Student Branch Chapter,Universidad Nacional San Antonio Abad del Cusco,SSC37,12,6,Yes,1,1,1,2,No,Yes,,No,No,No,No,No,Partial,1/3,Not Met
+"Univ Nacional San Antonio Abad del Cusco,SSC37",SBC11731J,Student Branch Chapter,Universidad Nacional San Antonio Abad del Cusco,SSC37,12,6,Yes,1,1,1,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
 "Univ Nacional San Antonio Abad del Cusco,TEM14",SBC11731G,Student Branch Chapter,Universidad Nacional San Antonio Abad del Cusco,TEM14,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Univ Nacional San Luis Gonzaga de Ica,COM19",SBC035911,Student Branch Chapter,Univ Nacional San Luis Gonzaga de Ica,COM19,1,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Univ San Ignacio De Loyola,CS/NANO/SYS/TEC",SBC17421D,Student Branch Chapter,Universidad San Ignacio De Loyola,CS/NANO/SYS/TEC,4,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad Catolica San Pablo,C16",SBC66271A,Student Branch Chapter,Universidad Catolica San Pablo,C16,12,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
-"Universidad Catolica San Pablo,COM19",SBC662711,Student Branch Chapter,Universidad Catolica San Pablo,COM19,7,6,Yes,1,1,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Universidad Catolica San Pablo,COM19",SBC662711,Student Branch Chapter,Universidad Catolica San Pablo,COM19,7,6,Yes,2,2,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Universidad Catolica San Pablo,MTT17",SBC66271B,Student Branch Chapter,Universidad Catolica San Pablo,MTT17,11,6,Yes,1,1,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 "Universidad Catolica de Santa Maria, C16",SBC04201D,Student Branch Chapter,Universidad Catolica de Santa Maria,C16,2,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad Catolica de Santa Maria, CAS04",SBC04201B,Student Branch Chapter,Universidad Catolica de Santa Maria,CAS04,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
@@ -128,18 +128,18 @@ Universidad del Pacifico,STB64265,Student Branch,Universidad del Pacifico,,29,12
 "Universidad Nacional Mayor de San Marcos,AES10",SBC03221H,Student Branch Chapter,Universidad Nacional Mayor de San Marcos,AES10,9,6,Yes,0,0,78,2,No,Yes,,No,Yes,Yes,Yes,No,Partial,1/3,Not Met
 "Universidad Nacional Mayor de San Marcos,AP03",SBC03221C,Student Branch Chapter,Universidad Nacional Mayor de San Marcos,AP03,22,6,Yes,0,0,0,2,No,Yes,,No,Yes,Yes,Yes,No,Partial,1/3,Not Met
 "Universidad Nacional Mayor de San Marcos,C16",SBC03221,Student Branch Chapter,Universidad Nacional Mayor de San Marcos,C16,18,6,Yes,0,0,0,2,No,Yes,,No,No,No,No,No,Partial,1/3,Not Met
-"Universidad Nacional Mayor de San Marcos,CAS04",SBC03221M,Student Branch Chapter,Universidad Nacional Mayor de San Marcos,CAS04,20,6,Yes,2,0,1,2,No,Yes,,No,Yes,Yes,No,No,Partial,1/3,Not Met
+"Universidad Nacional Mayor de San Marcos,CAS04",SBC03221M,Student Branch Chapter,Universidad Nacional Mayor de San Marcos,CAS04,21,6,Yes,2,0,1,2,No,Yes,,No,Yes,Yes,No,No,Partial,1/3,Not Met
 "Universidad Nacional Mayor de San Marcos,CIS11",SBC03221G,Student Branch Chapter,Universidad Nacional Mayor de San Marcos,CIS11,18,6,Yes,3,3,1,2,Yes,Yes,,Yes,Yes,Yes,No,Yes,Met,3/3,Met
-"Universidad Nacional Mayor de San Marcos,COM19",SBC03221A,Student Branch Chapter,Universidad Nacional Mayor de San Marcos,COM19,21,6,Yes,7,6,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Universidad Nacional Mayor de San Marcos,COM19",SBC03221A,Student Branch Chapter,Universidad Nacional Mayor de San Marcos,COM19,22,6,Yes,7,6,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Universidad Nacional Mayor de San Marcos,ED15",SBC03221K,Student Branch Chapter,Universidad Nacional Mayor de San Marcos,ED15,41,6,Yes,0,0,1,2,No,Yes,,No,Yes,No,No,No,Partial,1/3,Not Met
-"Universidad Nacional Mayor de San Marcos,EMB18",SBC03221E,Student Branch Chapter,Universidad Nacional Mayor de San Marcos,EMB18,31,6,Yes,43,11,15,2,Yes,Yes,,No,Yes,Yes,Yes,No,Partial,2/3,Not Met
+"Universidad Nacional Mayor de San Marcos,EMB18",SBC03221E,Student Branch Chapter,Universidad Nacional Mayor de San Marcos,EMB18,31,6,Yes,43,11,15,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
 "Universidad Nacional Mayor de San Marcos,IA34",SBC03221F,Student Branch Chapter,Universidad Nacional Mayor de San Marcos,IA34,7,6,Yes,1,1,0,2,No,Yes,,Yes,Yes,Yes,No,No,Met,2/3,Not Met
 "Universidad Nacional Mayor de San Marcos,NPS05",SBC03221J,Student Branch Chapter,Universidad Nacional Mayor de San Marcos,NPS05,1,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad Nacional Mayor de San Marcos,PE31",SBC03221D,Student Branch Chapter,Universidad Nacional Mayor de San Marcos,PE31,15,6,Yes,20,16,16,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
-"Universidad Nacional Mayor de San Marcos,RA24",SBC03221B,Student Branch Chapter,Universidad Nacional Mayor de San Marcos,RA24,23,6,Yes,6,2,11,2,Yes,Yes,,No,Yes,Yes,Yes,Yes,Partial,2/3,Not Met
+"Universidad Nacional Mayor de San Marcos,RA24",SBC03221B,Student Branch Chapter,Universidad Nacional Mayor de San Marcos,RA24,24,6,Yes,6,2,11,2,Yes,Yes,,No,Yes,Yes,Yes,Yes,Partial,2/3,Not Met
 "Universidad Nacional Mayor de San Marcos,SP01",SBC03221L,Student Branch Chapter,Universidad Nacional Mayor de San Marcos,SP01,8,6,Yes,20,16,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Universidad Nacional Mayor de San Marcos,TEM14",SBC03221I,Student Branch Chapter,Universidad Nacional Mayor de San Marcos,TEM14,6,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
-"Universidad Nacional Tecnologica de Lima Sur, RA24",SBC08771B,Student Branch Chapter,Universidad Nacional Tecnologica de Lima Sur,RA24,5,6,No,4,2,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Universidad Nacional Tecnologica de Lima Sur, RA24",SBC08771B,Student Branch Chapter,Universidad Nacional Tecnologica de Lima Sur,RA24,5,6,No,4,2,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 "Universidad Nacional Tecnologica de Lima Sur,AP03",SBC08771,Student Branch Chapter,Universidad Nacional Tecnologica de Lima Sur,AP03,2,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad Nacional Tecnologica de Lima Sur,C16",SBC08771G,Student Branch Chapter,Universidad Nacional Tecnologica de Lima Sur,C16,4,6,No,3,3,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
 "Universidad Nacional Tecnologica de Lima Sur,CAS04",SBC08771C,Student Branch Chapter,Universidad Nacional Tecnologica de Lima Sur,CAS04,1,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
@@ -163,7 +163,7 @@ Universidad del Pacifico,STB64265,Student Branch,Universidad del Pacifico,,29,12
 "Universidad Nacional de Piura, IA34",SBC07491,Student Branch Chapter,Universidad Nacional de Piura,IA34,0,6,No,0,0,1,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad Nacional de Piura, RA24",SBC07491A,Student Branch Chapter,Universidad Nacional de Piura,RA24,11,6,Yes,0,0,1,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 "Universidad Nacional de San Agustin,C16",SBC37031E,Student Branch Chapter,Universidad Nacional de San Agustin,C16,18,6,Yes,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,1/3,Not Met
-"Universidad Nacional de San Agustin,COM19",SBC37031,Student Branch Chapter,Universidad Nacional de San Agustin,COM19,13,6,Yes,0,0,1,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
+"Universidad Nacional de San Agustin,COM19",SBC37031,Student Branch Chapter,Universidad Nacional de San Agustin,COM19,13,6,Yes,1,1,1,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
 "Universidad Nacional de San Agustin,EMB18",SBC37031C,Student Branch Chapter,Universidad Nacional de San Agustin,EMB18,1,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad Nacional de San Agustin,MTT17",SBC37031B,Student Branch Chapter,Universidad Nacional de San Agustin,MTT17,9,6,Yes,2,2,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
 "Universidad Nacional de San Agustin,PE31",SBC37031A,Student Branch Chapter,Universidad Nacional de San Agustin,PE31,7,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
@@ -171,7 +171,7 @@ Universidad del Pacifico,STB64265,Student Branch,Universidad del Pacifico,,29,12
 "Universidad Nacional de Trujillo-La Libertad,AES10",SBC11523B,Student Branch Chapter,Universidad Nacional de Trujillo-La Libertad,AES10,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad Nacional de Trujillo-La Libertad,C16",SBC11523A,Student Branch Chapter,Universidad Nacional de Trujillo-La Libertad,C16,1,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad Nacional de Trujillo-La Libertad,RA24",SBC11523,Student Branch Chapter,Universidad Nacional de Trujillo-La Libertad,RA24,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
-"Universidad Nacional del Altiplano, IA34",SBC01301,Student Branch Chapter,Universidad Nacional del Altiplano,IA34,11,6,Yes,4,3,2,2,Yes,Yes,,No,Yes,Yes,Yes,No,Partial,2/3,Not Met
+"Universidad Nacional del Altiplano, IA34",SBC01301,Student Branch Chapter,Universidad Nacional del Altiplano,IA34,11,6,Yes,5,4,2,2,Yes,Yes,,No,Yes,Yes,Yes,No,Partial,2/3,Not Met
 "Universidad Nacional del Altiplano, PE31",SBC01301B,Student Branch Chapter,Universidad Nacional del Altiplano,PE31,10,6,Yes,2,2,0,2,Yes,Yes,,No,Yes,No,Yes,No,Partial,2/3,Not Met
 "Universidad Nacional del Altiplano, RA24",SBC01301A,Student Branch Chapter,Universidad Nacional del Altiplano,RA24,8,6,Yes,1,1,0,2,No,Yes,,No,Yes,Yes,No,No,Partial,1/3,Not Met
 "Universidad Nacional del Altiplano,C16",SBC01301C,Student Branch Chapter,Universidad Nacional del Altiplano,C16,11,6,Yes,12,12,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
@@ -180,9 +180,9 @@ Universidad del Pacifico,STB64265,Student Branch,Universidad del Pacifico,,29,12
 "Universidad Nacional del Callao, C16",SBC21571C,Student Branch Chapter,Universidad Nacional del Callao,C16,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad Nacional del Callao, COM19",SBC21571F,Student Branch Chapter,Universidad Nacional del Callao,COM19,11,6,Yes,2,0,0,2,No,Yes,,No,Yes,Yes,Yes,Yes,Partial,1/3,Not Met
 "Universidad Nacional del Callao, CS23",SBC21571D,Student Branch Chapter,Universidad Nacional del Callao,CS23,6,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
-"Universidad Nacional del Callao, EMB18",SBC2157E,Student Branch Chapter,Universidad Nacional del Callao,EMB18,14,6,Yes,6,2,0,2,Yes,Yes,,No,Yes,Yes,Yes,Yes,Partial,2/3,Not Met
+"Universidad Nacional del Callao, EMB18",SBC2157E,Student Branch Chapter,Universidad Nacional del Callao,EMB18,14,6,Yes,6,2,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Universidad Nacional del Callao, IA34",SBC21571G,Student Branch Chapter,Universidad Nacional del Callao,IA34,14,6,Yes,4,2,2,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
-"Universidad Nacional del Callao, PE31",SBC21571,Student Branch Chapter,Universidad Nacional del Callao,PE31,18,6,Yes,7,5,3,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Universidad Nacional del Callao, PE31",SBC21571,Student Branch Chapter,Universidad Nacional del Callao,PE31,18,6,Yes,8,6,5,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Universidad Nacional del Callao,RA24",SBC2157B,Student Branch Chapter,Universidad Nacional del Callao,RA24,8,6,Yes,2,0,0,2,No,Yes,,Yes,No,Yes,Yes,Yes,Met,2/3,Not Met
 "Universidad Nacional del Centro del Peru,C16",SBC16851,Student Branch Chapter,Universidad Nacional del Centro del Peru,C16,1,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad Nacional del Centro del Peru,PE31",SBC16851A,Student Branch Chapter,Universidad Nacional del Centro del Peru,PE31,9,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
@@ -224,7 +224,7 @@ Universidad del Pacifico,STB64265,Student Branch,Universidad del Pacifico,,29,12
 "Universidad San Ignacio De Loyola,COM19",SBC17421C,Student Branch Chapter,Universidad San Ignacio De Loyola,COM19,1,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad San Ignacio De Loyola,EMB18",SBC17421B,Student Branch Chapter,Universidad San Ignacio De Loyola,EMB18,6,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,No,No,Yes,Met,2/3,Not Met
 "Universidad San Ignacio De Loyola,RA24",SBC17421,Student Branch Chapter,Universidad San Ignacio De Loyola,RA24,1,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
-"Universidad San Ignacio De Loyola,TEM14",SBC17421F,Student Branch Chapter,Universidad San Ignacio De Loyola,TEM14,4,6,No,3,1,1,2,No,Yes,,Yes,No,No,No,No,Met,1/3,Not Met
+"Universidad San Ignacio De Loyola,TEM14",SBC17421F,Student Branch Chapter,Universidad San Ignacio De Loyola,TEM14,5,6,No,3,1,1,2,No,Yes,,Yes,No,No,No,No,Met,1/3,Not Met
 "Universidad Senor de Sipan,COM19",SBC662611,Student Branch Chapter,Universidad Senor de Sipan,COM19,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad Tecnologica del Peru, C16",SBC63761C,Student Branch Chapter,Universidad Tecnologica del Peru,C16,13,6,Yes,3,3,0,2,Yes,Yes,,Yes,No,Yes,Yes,Yes,Met,3/3,Met
 "Universidad Tecnologica del Peru, COM19",SBC63761,Student Branch Chapter,Universidad Tecnologica del Peru,COM19,4,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met

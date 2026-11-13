@@ -1,0 +1,35 @@
+Date,SPO ID,Unit Type,University,Society,Member Count,Requirements Met,Members Met,Events Met,Officers Status,Overall Vitality
+2026-11-13,STB10711,Student Branch,East China Normal University,,163,1,Yes,No,Not Met,Not Met
+2026-11-13,STB11752,Student Branch,Fudan University,,500,1,Yes,No,Partial,Not Met
+2026-11-13,STB45896195,Student Branch,Shanghai Institute of Technical Physics,,3,1,No,No,Met,Not Met
+2026-11-13,STB03381,Student Branch,Shanghai Jiao Tong University,,708,1,Yes,No,Partial,Not Met
+2026-11-13,STB60114276,Student Branch,Shanghai University,,99,1,Yes,No,Not Met,Not Met
+2026-11-13,STB10132,Student Branch,Shanghai University of Electric Power,,178,1,Yes,No,Not Met,Not Met
+2026-11-13,STB60105653,Student Branch,ShanghaiTech University,,181,1,Yes,No,Partial,Not Met
+2026-11-13,STB18721,Student Branch,Tongji University,,217,2,Yes,No,Met,Not Met
+2026-11-13,STB12441,Student Branch,Univ of Chinese Academy of Sciences,,12,1,Yes,No,Not Met,Not Met
+2026-11-13,STB99372,Student Branch,Univ of Michigan Shanghai Jiao Tong Univ JI,,8,0,No,No,Partial,Not Met
+2026-11-13,SBC10711,Student Branch Chapter,East China Normal University,CAS04,4,0,No,No,Not Met,Not Met
+2026-11-13,SBC10711A,Student Branch Chapter,East China Normal University,GRS29,9,2,Yes,No,Met,Not Met
+2026-11-13,SBC11752G,Student Branch Chapter,Fudan University,AP03,77,2,Yes,No,Met,Not Met
+2026-11-13,SBC11752F,Student Branch Chapter,Fudan University,CAS04,39,2,Yes,No,Met,Not Met
+2026-11-13,SBC11752,Student Branch Chapter,Fudan University,EP21,3,0,No,No,Partial,Not Met
+2026-11-13,SBC11752A,Student Branch Chapter,Fudan University,GRS29,79,1,Yes,No,Partial,Not Met
+2026-11-13,SBC11752C,Student Branch Chapter,Fudan University,MTT17,11,1,Yes,No,Not Met,Not Met
+2026-11-13,SBC11752B,Student Branch Chapter,Fudan University,PEL35,2,0,No,No,Not Met,Not Met
+2026-11-13,SBC11752D,Student Branch Chapter,Fudan University,PHO36,5,0,No,No,Partial,Not Met
+2026-11-13,SBC11752E,Student Branch Chapter,Fudan University,SSC37,31,2,Yes,No,Met,Not Met
+2026-11-13,SBC03381B,Student Branch Chapter,Shanghai Jiao Tong University,CAS04,36,2,Yes,No,Met,Not Met
+2026-11-13,SBC03381H,Student Branch Chapter,Shanghai Jiao Tong University,GRS29,7,2,Yes,No,Met,Not Met
+2026-11-13,SBC03381D,Student Branch Chapter,Shanghai Jiao Tong University,IA34,3,0,No,No,Partial,Not Met
+2026-11-13,SBC03381C,Student Branch Chapter,Shanghai Jiao Tong University,IE13,14,2,Yes,No,Met,Not Met
+2026-11-13,SBC03381G,Student Branch Chapter,Shanghai Jiao Tong University,ITSS38,2,0,No,No,Not Met,Not Met
+2026-11-13,SBC03381,Student Branch Chapter,Shanghai Jiao Tong University,MTT17,56,1,Yes,No,Partial,Not Met
+2026-11-13,SBC03381A,Student Branch Chapter,Shanghai Jiao Tong University,OE22,6,1,Yes,No,Partial,Not Met
+2026-11-13,SBC03381F,Student Branch Chapter,Shanghai Jiao Tong University,PE31,47,2,Yes,No,Met,Not Met
+2026-11-13,SBC03381E,Student Branch Chapter,Shanghai Jiao Tong University,PEL35,13,1,Yes,No,Not Met,Not Met
+2026-11-13,SBC60114276,Student Branch Chapter,Shanghai University,PEL35,1,0,No,No,Not Met,Not Met
+2026-11-13,SBC18721A,Student Branch Chapter,Tongji University,AP03,12,1,Yes,No,Partial,Not Met
+2026-11-13,SBC18721B,Student Branch Chapter,Tongji University,GRS29,11,2,Yes,No,Met,Not Met
+2026-11-13,SBC18721,Student Branch Chapter,Tongji University,PEL35,1,0,No,No,Not Met,Not Met
+2026-11-13,SBC99372,Student Branch Chapter,Univ of Michigan Shanghai Jiao Tong Univ JI,TEM14,0,0,No,No,Not Met,Not Met

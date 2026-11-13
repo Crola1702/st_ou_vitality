@@ -1,0 +1,64 @@
+Date,SPO ID,Unit Type,University,Society,Member Count,Requirements Met,Members Met,Events Met,Officers Status,Overall Vitality
+2026-11-13,SBA98231,Affinity Group,Democritus University of Thrace,WIE,5,1,No,No,Met,Not Met
+2026-11-13,SBA07242,Affinity Group,International Hellenic University-Thessaloniki,WIE,3,0,No,No,Partial,Not Met
+2026-11-13,SBA07741,Affinity Group,International Hellenic University-Serres,WIE,0,1,No,No,Met,Not Met
+2026-11-13,SBA08051,Affinity Group,National Technical University of Athens,WIE,13,2,Yes,No,Met,Not Met
+2026-11-13,SBA40078950,Affinity Group,University of Macedonia,WIE,7,2,Yes,No,Met,Not Met
+2026-11-13,SBA66241,Affinity Group,University of Thessaly-Lamia,WIE,7,1,Yes,No,Not Met,Not Met
+2026-11-13,SBA64371,Affinity Group,University of Thessaly-Volos,WIE,0,0,No,No,Not Met,Not Met
+2026-11-13,SBA08201,Affinity Group,University of West Attica,WIE,14,1,Yes,No,Partial,Not Met
+2026-11-13,SBA11281,Affinity Group,University of Western Macedonia-Kastoria,WIE,9,2,Yes,No,Met,Not Met
+2026-11-13,STB15121,Student Branch,Aristotle University of Thessaloniki,,61,1,Yes,No,Partial,Not Met
+2026-11-13,STB98231,Student Branch,Democritus University of Thrace,,49,3,Yes,Yes,Met,Met
+2026-11-13,STB60210685,Student Branch,Hellenic Mediterranean University-Heraklion,,4,0,No,No,Not Met,Not Met
+2026-11-13,STB07741,Student Branch,International Hellenic University-Serres,,6,1,No,No,Met,Not Met
+2026-11-13,STB07242,Student Branch,International Hellenic University-Thessaloniki,,45,3,Yes,Yes,Met,Met
+2026-11-13,STB11377,Student Branch,Ionian University,,4,0,No,No,Partial,Not Met
+2026-11-13,STB08051,Student Branch,National Technical University of Athens,,146,3,Yes,Yes,Met,Met
+2026-11-13,STB63361,Student Branch,University of Piraeus,,13,2,Yes,No,Met,Not Met
+2026-11-13,STB13581,Student Branch,Technical University of Crete,,39,2,Yes,No,Met,Not Met
+2026-11-13,STB13031,Student Branch,University of Peloponnese-Tripolis,,2,0,No,No,Partial,Not Met
+2026-11-13,STB11911,Student Branch,University of Ioannina,,19,1,Yes,No,Partial,Not Met
+2026-11-13,STB60226132,Student Branch,University of Ioannina-Arta,,20,2,Yes,Yes,Partial,Not Met
+2026-11-13,STB40078950,Student Branch,University of Macedonia,,20,2,Yes,No,Met,Not Met
+2026-11-13,STB50001,Student Branch,University of Patras,,72,2,Yes,No,Met,Not Met
+2026-11-13,STB07731,Student Branch,University of Peloponnese-Patras,,6,0,No,No,Not Met,Not Met
+2026-11-13,STB66241,Student Branch,University of Thessaly-Lamia,,39,3,Yes,Yes,Met,Met
+2026-11-13,STB64371,Student Branch,University of Thessaly-Volos,,25,2,Yes,No,Met,Not Met
+2026-11-13,STB08201,Student Branch,University of West Attica,,56,2,Yes,No,Met,Not Met
+2026-11-13,STB11281,Student Branch,University of Western Macedonia-Kastoria,,26,3,Yes,Yes,Met,Met
+2026-11-13,STB06471,Student Branch,University of Western Macedonia-Kozani,,12,1,Yes,No,Partial,Not Met
+2026-11-13,STB63831,Student Branch,University of the Aegean,,30,3,Yes,Yes,Met,Met
+2026-11-13,SBC15121,Student Branch Chapter,Aristotle University of Thessaloniki,EMB18,3,0,No,No,Partial,Not Met
+2026-11-13,SBC1512B,Student Branch Chapter,Aristotle University of Thessaloniki,PE31,14,2,Yes,No,Met,Not Met
+2026-11-13,SBC1512A,Student Branch Chapter,Aristotle University of Thessaloniki,RA24,1,0,No,No,Partial,Not Met
+2026-11-13,SBC1512D,Student Branch Chapter,Aristotle University of Thessaloniki,IA34,15,2,Yes,Yes,Partial,Not Met
+2026-11-13,SBC98231,Student Branch Chapter,Democritus University of Thrace,EMB18,2,1,No,No,Met,Not Met
+2026-11-13,SBC98231D,Student Branch Chapter,Democritus University of Thrace,RA24,3,2,No,Yes,Met,Not Met
+2026-11-13,SBC98231C,Student Branch Chapter,Democritus University of Thrace,C16,4,2,No,Yes,Met,Not Met
+2026-11-13,SBC98231A,Student Branch Chapter,Democritus University of Thrace,IA34,6,2,Yes,No,Met,Not Met
+2026-11-13,SBC98231B,Student Branch Chapter,Democritus University of Thrace,PE31,3,1,No,No,Met,Not Met
+2026-11-13,SBC60210685,Student Branch Chapter,Hellenic Mediterranean University-Heraklion,EMB18,1,0,No,No,Partial,Not Met
+2026-11-13,SBC07741A,Student Branch Chapter,International Hellenic University-Serres,RA24,1,0,No,No,Partial,Not Met
+2026-11-13,SBC08051B,Student Branch Chapter,National Technical University of Athens,C16,17,3,Yes,Yes,Met,Met
+2026-11-13,SBC08051E,Student Branch Chapter,National Technical University of Athens,COM19,15,1,Yes,No,Partial,Not Met
+2026-11-13,SBC08051A,Student Branch Chapter,National Technical University of Athens,EMB18,7,2,Yes,No,Met,Not Met
+2026-11-13,SBC08051D,Student Branch Chapter,National Technical University of Athens,RA24,12,1,Yes,No,Partial,Not Met
+2026-11-13,SBC08051C,Student Branch Chapter,National Technical University of Athens,"SEN39,PE31",19,2,Yes,Yes,Partial,Not Met
+2026-11-13,SBC13581,Student Branch Chapter,Technical University of Crete,IA34,14,3,Yes,Yes,Met,Met
+2026-11-13,SBC40078950,Student Branch Chapter,University of Macedonia,RA24,0,1,No,Yes,Not Met,Not Met
+2026-11-13,SBC50001A,Student Branch Chapter,University of Patras,C16,9,1,Yes,No,Partial,Not Met
+2026-11-13,SBC50001B,Student Branch Chapter,University of Patras,EMB18,6,2,Yes,No,Met,Not Met
+2026-11-13,SBC50001C,Student Branch Chapter,University of Patras,PE31,8,2,Yes,No,Met,Not Met
+2026-11-13,SBC07731,Student Branch Chapter,University of Peloponnese-Patras,CAS04,0,0,No,No,Partial,Not Met
+2026-11-13,SBC66241B,Student Branch Chapter,University of Thessaly-Lamia,EMB18,4,0,No,No,Partial,Not Met
+2026-11-13,SBC66241A,Student Branch Chapter,University of Thessaly-Lamia,C16,1,0,No,No,Not Met,Not Met
+2026-11-13,SBC64371A,Student Branch Chapter,University of Thessaly-Volos,PE31,0,0,No,No,Not Met,Not Met
+2026-11-13,SBC64371,Student Branch Chapter,University of Thessaly-Volos,CAS04,1,0,No,No,Partial,Not Met
+2026-11-13,SBC08201B,Student Branch Chapter,University of West Attica,C16,9,2,Yes,No,Met,Not Met
+2026-11-13,SBC08201A,Student Branch Chapter,University of West Attica,EMB18,9,2,Yes,No,Met,Not Met
+2026-11-13,SBC08201,Student Branch Chapter,University of West Attica,PE31,9,2,Yes,No,Met,Not Met
+2026-11-13,SBC08201C,Student Branch Chapter,University of West Attica,RA24,10,2,Yes,No,Met,Not Met
+2026-11-13,SBC11281,Student Branch Chapter,University of Western Macedonia-Kastoria,CIS11,5,1,No,No,Met,Not Met
+2026-11-13,SBC06471A,Student Branch Chapter,University of Western Macedonia-Kozani,C16,1,0,No,No,Not Met,Not Met
+2026-11-13,SBC06471,Student Branch Chapter,University of Western Macedonia-Kozani,PE31,2,0,No,No,Not Met,Not Met

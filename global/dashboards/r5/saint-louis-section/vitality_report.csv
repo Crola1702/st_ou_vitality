@@ -1,0 +1,15 @@
+Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
+Missouri Univ of Science & Tech,STB01181,Student Branch,Missouri Univ of Science & Tech,,117,12,Yes,9,,3,4,Yes,No,Yes,,No,No,No,No,Partial,2/3,Not Met
+Parks College Of St Louis Univ,STB01731,Student Branch,Parks College Of St Louis Univ,,4,12,No,14,,0,4,Yes,Yes,Yes,,No,No,No,Yes,Met,2/3,Not Met
+Southern Illinois Univ-Carbondale,STB98591,Student Branch,Southern Illinois Univ-Carbondale,,26,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
+Southern Illinois Univ-Edwardsville,STB05781,Student Branch,Southern Illinois Univ-Edwardsville,,19,12,Yes,7,,0,4,Yes,Yes,Yes,,Yes,No,No,No,Met,3/3,Met
+St Louis Community College,STB28624,Student Branch,St Louis Community College,,3,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+University of Missouri,STB01171,Student Branch,University of Missouri,,59,12,Yes,11,,3,4,Yes,Yes,Yes,,No,No,Yes,Yes,Met,3/3,Met
+University of Missouri-St. Louis,STB2581403,Student Branch,University of Missouri St. Louis,,3,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Washington University-St. Louis,STB02231,Student Branch,Washington University-St. Louis,,64,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+"Missouri Univ of Science & Tech,AES10",SBC0118A,Student Branch Chapter,Missouri Univ of Science & Tech,AES10,3,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Missouri Univ of Science & Tech,C16",SBC01181,Student Branch Chapter,Missouri Univ of Science & Tech,C16,7,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Missouri Univ of Science & Tech,IA34",SBC01181A,Student Branch Chapter,Missouri Univ of Science & Tech,IA34,0,6,No,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,1/3,Not Met
+"Missouri Univ of Science & Tech,PE31",SBC0118B,Student Branch Chapter,Missouri Univ of Science & Tech,PE31,12,6,Yes,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+"Parks College Of St Louis Univ,C16",SBC01731,Student Branch Chapter,Parks College Of St Louis Univ,C16,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"University of Missouri,C16",SBC01171,Student Branch Chapter,University of Missouri,C16,6,6,Yes,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,1/3,Not Met

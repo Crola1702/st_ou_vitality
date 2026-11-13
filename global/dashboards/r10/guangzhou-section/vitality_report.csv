@@ -1,0 +1,18 @@
+Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
+Chinese University of Hong Kong-Shenzhen,STB60149565,Student Branch,Chinese University of Hong Kong-Shenzhen,,140,12,Yes,0,,0,4,No,Yes,Yes,,No,No,No,No,Met,2/3,Not Met
+Guangdong University of Technology,STB10028,Student Branch,Guangdong University of Technology,,91,12,Yes,1,,0,4,No,Yes,Yes,,No,No,No,No,Met,2/3,Not Met
+Harbin Institute of Tech Shenzhen Graduate School,STB65591,Student Branch,Harbin Institute of Tech Shenzhen Graduate School,,224,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,No,No,Met,2/3,Not Met
+Nanfang College-Guangzhou,STB60207385,Student Branch,Nanfang College-Guangzhou,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Shantou University,STB41513934,Student Branch,Shantou University,,8,12,No,0,,0,4,No,No,Yes,,No,No,No,No,Partial,0/3,Not Met
+Shenzhen Technology University,STB99395,Student Branch,Shenzhen Technology University,,18,12,Yes,0,,0,4,No,Yes,No,,No,No,No,No,Partial,1/3,Not Met
+Shenzhen University,STB15601,Student Branch,Shenzhen University,,356,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+South China University of Technology,STB07041,Student Branch,South China University of Technology,,591,12,Yes,3,,3,4,No,Yes,Yes,,Yes,Yes,No,No,Met,2/3,Not Met
+Tsinghua Shenzhen International Graduate School,STB11765,Student Branch,Tsinghua Shenzhen International Graduate School,,75,12,Yes,0,,0,4,No,Yes,Yes,,No,Yes,Yes,Yes,Met,2/3,Not Met
+"Guangdong University of Technology,IE13",SBC10028B,Student Branch Chapter,Guangdong University of Technology,IE13,2,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Guangdong University of Technology,PE31",SBC10028A,Student Branch Chapter,Guangdong University of Technology,PE31,1,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Guangdong University of Technology,SMC28",SBC10028,Student Branch Chapter,Guangdong University of Technology,SMC28,3,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"Harbin Inst of Tech Shenzhen Graduate School,IA34",SBC65591A,Student Branch Chapter,Harbin Institute of Tech Shenzhen Graduate School,IA34,1,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Nanfang College-Guangzhou,TEM14,SYS45",SBC60207385,Student Branch Chapter,Nanfang College-Guangzhou,"TEM14,SYS45",0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"South China University of Technology,IM09",SBC07041,Student Branch Chapter,South China University of Technology,IM09,13,6,Yes,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+"South China University of Technology,MTT17",SBC07041A,Student Branch Chapter,South China University of Technology,MTT17,149,6,Yes,0,0,0,2,No,Yes,,No,Yes,No,No,No,Partial,1/3,Not Met
+"Tsinghua Shenzhen International Grad School,PHO36",SBC11765,Student Branch Chapter,Tsinghua Shenzhen International Graduate School,PHO36,9,6,Yes,0,0,0,2,No,Yes,,Yes,No,Yes,Yes,Yes,Met,2/3,Not Met

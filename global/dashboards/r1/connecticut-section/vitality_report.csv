@@ -1,0 +1,17 @@
+Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
+Bridgeport Univ Of,STB00161,Student Branch,Bridgeport Univ Of,,1,12,No,0,,0,4,No,No,Yes,,No,No,No,No,Partial,0/3,Not Met
+Central Connecticut State University,STB10071,Student Branch,Central Connecticut State University,,6,12,No,0,,0,4,No,No,Yes,,No,No,No,No,Partial,0/3,Not Met
+Fairfield University,STB16331,Student Branch,Fairfield University,,21,12,Yes,0,,0,4,No,Yes,No,,Yes,Yes,Yes,No,Partial,1/3,Not Met
+Sacred Heart University,STB11485,Student Branch,Sacred Heart University,,4,12,No,0,,0,4,No,No,Yes,,No,No,No,No,Partial,0/3,Not Met
+Trinity College,STB05721,Student Branch,Trinity College,,6,12,No,0,,0,4,No,Yes,Yes,,No,No,No,No,Met,1/3,Not Met
+U S Coast Guard Academy,STB06131,Student Branch,U S Coast Guard Academy,,18,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
+University of Connecticut,STB00451,Student Branch,University of Connecticut,,73,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
+University of Hartford,STB03731,Student Branch,University of Hartford,,12,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
+University of New Haven,STB03821,Student Branch,University of New Haven,,14,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+Yale University,STB02351,Student Branch,Yale University,,57,12,Yes,0,,0,4,No,No,No,,No,No,No,Yes,Not Met,1/3,Not Met
+"Bridgeport Univ Of,C16",SBC00161,Student Branch Chapter,Bridgeport Univ Of,C16,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Central Connecticut State University, RA24",SBC10071A,Student Branch Chapter,Central Connecticut State University,RA24,0,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"Central Connecticut State University,AP03",SBC10071B,Student Branch Chapter,Central Connecticut State University,AP03,1,6,No,1,0,0,2,No,Yes,,Yes,No,No,No,No,Met,1/3,Not Met
+"Trinity College,RA24",SBC05721,Student Branch Chapter,Trinity College,RA24,0,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"University of Connecticut,CS23",SBC00451D,Student Branch Chapter,University of Connecticut,CS23,4,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"University of Connecticut,PEL35,PE31",SBC00451B,Student Branch Chapter,University of Connecticut,"PEL35,PE31",10,6,Yes,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,1/3,Not Met

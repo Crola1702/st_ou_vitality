@@ -1,0 +1,39 @@
+Date,SPO ID,Unit Type,University,Society,Member Count,Requirements Met,Members Met,Events Met,Officers Status,Overall Vitality
+2026-11-13,SBA66501,Affinity Group,Hamburg University of Technology,WIE,8,2,Yes,No,Met,Not Met
+2026-11-13,SBA32061,Affinity Group,University of Passau,WIE,2,0,No,No,Not Met,Not Met
+2026-11-13,STB02661,Student Branch,RWTH Aachen University,,150,1,Yes,No,Partial,Not Met
+2026-11-13,STB60096369,Student Branch,Brandenburg University of Tech Cottbus-Senftenberg,,23,2,Yes,No,Met,Not Met
+2026-11-13,STB29121,Student Branch,Kiel University,,23,2,Yes,No,Met,Not Met
+2026-11-13,STB07841,Student Branch,Fachhochschule Bielefeld,,102,2,Yes,No,Met,Not Met
+2026-11-13,STB33061,Student Branch,Fachhochschule Fur Technik Esslingen,,0,0,No,No,Partial,Not Met
+2026-11-13,STB29951,Student Branch,Fachhochschule Furtwangen,,0,0,No,No,Not Met,Not Met
+2026-11-13,STB66501,Student Branch,Hamburg University of Technology,,50,3,Yes,Yes,Met,Met
+2026-11-13,STB15341,Student Branch,Ilmenau University of Technology,,36,3,Yes,Yes,Met,Met
+2026-11-13,STB66401,Student Branch,Constructor University,,10,0,No,No,Not Met,Not Met
+2026-11-13,STB02641,Student Branch,Karlsruhe Institute of Technology,,164,3,Yes,Yes,Met,Met
+2026-11-13,STB02651,Student Branch,Leibniz University Hannover,,51,2,Yes,No,Met,Not Met
+2026-11-13,STB15291,Student Branch,Otto von Guericke University Magdeburg,,68,2,Yes,No,Met,Not Met
+2026-11-13,STB15441,Student Branch,RPTU University Kaiserslautern-Landau,,33,1,Yes,No,Not Met,Not Met
+2026-11-13,STB15631,Student Branch,Regensburg University of Applied Sciences,,12,1,Yes,No,Not Met,Not Met
+2026-11-13,STB2515683,Student Branch,RheinMain University of Applied Sciences,,8,1,No,No,Met,Not Met
+2026-11-13,STB28451,Student Branch,Ruhr University Bochum,,64,1,Yes,No,Not Met,Not Met
+2026-11-13,STB60214309,Student Branch,SRH University of Applied Sciences Heidelberg,,15,2,Yes,No,Met,Not Met
+2026-11-13,STB59201,Student Branch,University of Stuttgart,,106,1,Yes,No,Partial,Not Met
+2026-11-13,STB99376,Student Branch,Technical University of Darmstadt,,84,1,Yes,No,Partial,Not Met
+2026-11-13,STB14471,Student Branch,Technical University of Munich,,366,1,Yes,No,Partial,Not Met
+2026-11-13,STB99106,Student Branch,Technische Hochschule Mittelhessen,,7,1,No,No,Met,Not Met
+2026-11-13,STB19101,Student Branch,Technische Universitat Berlin,,106,1,Yes,No,Partial,Not Met
+2026-11-13,STB16271,Student Branch,Technische Universitat Chemnitz,,20,3,Yes,Yes,Met,Met
+2026-11-13,STB28311,Student Branch,University of Duisburg-Essen,,34,2,Yes,No,Met,Not Met
+2026-11-13,STB32061,Student Branch,University of Passau,,10,1,No,No,Met,Not Met
+2026-11-13,STB07111,Student Branch,University of Bonn,,26,1,Yes,No,Partial,Not Met
+2026-11-13,STB60206807,Student Branch,University of Europe for Applied Sciences,,21,2,Yes,No,Met,Not Met
+2026-11-13,SBC026611,Student Branch Chapter,RWTH Aachen University,PEL35/IA34/PE31,39,1,Yes,No,Not Met,Not Met
+2026-11-13,SBC15341A,Student Branch Chapter,Ilmenau University of Technology,EMB18,7,2,Yes,No,Met,Not Met
+2026-11-13,SBC15341,Student Branch Chapter,Ilmenau University of Technology,PE31,3,2,No,Yes,Met,Not Met
+2026-11-13,SBC15291A,Student Branch Chapter,Otto von Guericke University Magdeburg,EMB18,12,1,Yes,No,Partial,Not Met
+2026-11-13,SBC15291B,Student Branch Chapter,Otto von Guericke University Magdeburg,PE31,2,0,No,No,Not Met,Not Met
+2026-11-13,SBC2515683,Student Branch Chapter,RheinMain University of Applied Sciences,AP03,4,0,No,No,Not Met,Not Met
+2026-11-13,SBC2515683A,Student Branch Chapter,RheinMain University of Applied Sciences,MTT17,4,0,No,No,Partial,Not Met
+2026-11-13,SBC14471A,Student Branch Chapter,Technical University of Munich,EMB18,9,2,Yes,No,Met,Not Met
+2026-11-13,SBC32061,Student Branch Chapter,University of Passau,C16,1,0,No,No,Not Met,Not Met

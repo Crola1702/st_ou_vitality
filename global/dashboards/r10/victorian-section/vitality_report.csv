@@ -1,0 +1,24 @@
+Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
+"La Trobe University,WIE",SBA08611,Affinity Group,La Trobe University,WIE,0,6,No,1,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Monash University,WIE",SBA06371,Affinity Group,Monash University,WIE,1,6,No,0,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Royal Melbourne Institute of Technology,WIE",SBA03061,Affinity Group,Royal Melbourne Institute of Technology,WIE,7,6,Yes,0,,0,2,No,No,,Yes,No,No,No,No,Partial,1/3,Not Met
+"University of Melbourne,WIE",SBA06001,Affinity Group,University of Melbourne,WIE,9,6,Yes,4,,0,2,Yes,Yes,,Yes,No,No,No,No,Met,3/3,Met
+Deakin University,STB15171,Student Branch,Deakin University,,67,12,Yes,6,,1,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Federation University Australia,STB10177,Student Branch,Federation University Australia,,12,12,Yes,8,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,No,Met,3/3,Met
+La Trobe University,STB08611,Student Branch,La Trobe University,,23,12,Yes,1,,0,4,No,Yes,Yes,,Yes,No,Yes,No,Met,2/3,Not Met
+Monash University,STB06371,Student Branch,Monash University,,103,12,Yes,5,,0,4,Yes,No,Yes,,No,No,Yes,No,Partial,2/3,Not Met
+Royal Melbourne Institute of Technology,STB03061,Student Branch,Royal Melbourne Institute of Technology,,81,12,Yes,3,,0,4,No,Yes,Yes,,No,No,No,No,Met,2/3,Not Met
+Swinburne University of Technology,STB11111,Student Branch,Swinburne University of Technology,,32,12,Yes,5,,4,4,Yes,Yes,Yes,,No,Yes,Yes,No,Met,3/3,Met
+University of Melbourne,STB06001,Student Branch,University of Melbourne,,91,12,Yes,9,,1,4,Yes,Yes,Yes,,Yes,No,Yes,No,Met,3/3,Met
+University of Tasmania,STB05961,Student Branch,University of Tasmania,,11,12,No,7,,2,4,Yes,Yes,Yes,,Yes,Yes,No,Yes,Met,2/3,Not Met
+Victoria University,STB01461,Student Branch,Victoria University,,3,12,No,0,,0,4,No,No,Yes,,No,No,No,No,Partial,0/3,Not Met
+"Deakin Univ,IA34",SBC15171A,Student Branch Chapter,Deakin University,IA34,9,6,Yes,0,0,0,2,No,No,,Yes,No,Yes,No,Yes,Partial,1/3,Not Met
+"La Trobe University,C16",SBC08611,Student Branch Chapter,La Trobe University,C16,4,6,No,1,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"La Trobe University,IA34",SBC08611A,Student Branch Chapter,La Trobe University,IA34,3,6,No,1,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"La Trobe University,IE13",SBC08611B,Student Branch Chapter,La Trobe University,IE13,7,6,Yes,1,0,0,2,No,Yes,,No,No,No,No,No,Partial,1/3,Not Met
+"Monash University,GRS29",SBC06371B,Student Branch Chapter,Monash University,GRS29,8,6,Yes,4,3,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
+"Monash University,PE31",SBC06371A,Student Branch Chapter,Monash University,PE31,15,6,Yes,0,0,0,2,No,Yes,,No,No,No,No,No,Partial,1/3,Not Met
+"Royal Melbourne Institute of Technology,COM19",SBC03061B,Student Branch Chapter,Royal Melbourne Institute of Technology,COM19,3,6,No,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,1/3,Not Met
+"Royal Melbourne Institute of Technology,IA34",SBC03061A,Student Branch Chapter,Royal Melbourne Institute of Technology,IA34,5,6,No,2,1,0,2,No,Yes,,Yes,No,Yes,Yes,No,Met,1/3,Not Met
+"University of Melbourne,IA34",SBC06001,Student Branch Chapter,University of Melbourne,IA34,2,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"University of Tasmania,IA34",SBC05961,Student Branch Chapter,University of Tasmania,IA34,5,6,No,7,4,2,2,Yes,Yes,,Yes,No,No,No,No,Met,2/3,Not Met

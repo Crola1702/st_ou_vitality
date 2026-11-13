@@ -1,0 +1,18 @@
+Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
+International Burch University,STB20137,Student Branch,International Burch University,,1,12,No,1,,0,4,No,No,Yes,,No,No,No,No,Partial,0/3,Not Met
+International University of Sarajevo,STB60178386,Student Branch,International University of Sarajevo,,5,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Sarajevo School of Science & Technology,STB10135,Student Branch,Sarajevo School of Science & Technology,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+University of Banja Luka,STB17921,Student Branch,University of Banja Luka,,12,12,Yes,2,,1,4,No,Yes,No,,No,No,No,No,Partial,1/3,Not Met
+University of East Sarajevo,STB65151,Student Branch,University of East Sarajevo,,7,12,No,2,,0,4,No,Yes,Yes,,No,No,No,No,Met,1/3,Not Met
+University of Mostar,STB14009,Student Branch,University of Mostar,,1,12,No,0,,0,4,No,No,Yes,,No,No,No,Yes,Partial,0/3,Not Met
+University of Sarajevo,STB92301,Student Branch,University of Sarajevo,,12,12,Yes,6,,0,4,Yes,Yes,Yes,,No,No,No,No,Met,3/3,Met
+University of Tezla,STB17961,Student Branch,University of Tuzla,,0,12,No,0,,0,4,No,No,Yes,,No,No,No,No,Partial,0/3,Not Met
+"International Burch University,PE31",SBC20137,Student Branch Chapter,International Burch University,PE31,0,6,No,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,1/3,Not Met
+"Sarajevo University, EMB18",SBC92301,Student Branch Chapter,University of Sarajevo,EMB18,0,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"University of Banja Luka,IA34",SBC17921A,Student Branch Chapter,University of Banja Luka,IA34,3,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"University of East Sarajevo,C16",SBC65151B,Student Branch Chapter,University of East Sarajevo,C16,0,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"University of East Sarajevo,IA34",SBC65151A,Student Branch Chapter,University of East Sarajevo,IA34,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"University of Sarajevo,C16",SBC92301D,Student Branch Chapter,University of Sarajevo,C16,0,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"University of Sarajevo,COM19",SBC92301C,Student Branch Chapter,University of Sarajevo,COM19,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"University of Sarajevo,IA34",SBC92301A,Student Branch Chapter,University of Sarajevo,IA34,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"University of Sarajevo,PE31",SBC92301B,Student Branch Chapter,University of Sarajevo,PE31,2,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met

@@ -1,0 +1,23 @@
+Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
+"Eindhoven University of Technology,WIE",SBA03531,Affinity Group,Eindhoven University of Technology,WIE,4,6,No,0,,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"Katholieke Universiteit Leuven,WIE",SBA09181,Affinity Group,Katholieke Universiteit Leuven,WIE,9,6,Yes,0,,0,2,No,No,,Yes,No,No,No,No,Partial,1/3,Not Met
+Catholic University of Louvain,STB03631,Student Branch,Catholic University of Louvain,,43,12,Yes,0,,0,4,No,No,Yes,,Yes,Yes,No,Yes,Partial,1/3,Not Met
+Delft University of Technology,STB00511,Student Branch,Delft University of Technology,,232,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
+Eindhoven University of Technology,STB03531,Student Branch,Eindhoven University of Technology,,205,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,Yes,No,Met,2/3,Not Met
+Ghent University,STB03611,Student Branch,Ghent University,,76,12,Yes,1,,0,4,No,Yes,Yes,,No,No,Yes,No,Met,2/3,Not Met
+KU Leuven campus Brugge,STB39667,Student Branch,KU Leuven campus Brugge,,10,12,No,1,,1,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,1/3,Not Met
+Katholieke Universiteit Leuven,STB09181,Student Branch,Katholieke Universiteit Leuven,,116,12,Yes,11,,0,4,Yes,Yes,Yes,,Yes,No,Yes,No,Met,3/3,Met
+University of Liege-Sart Tilman,STB03621,Student Branch,University of Liege-Sart Tilman,,1,12,No,0,,0,4,No,No,Yes,,No,No,No,No,Partial,0/3,Not Met
+University of Luxembourg,STB45894960,Student Branch,University of Luxembourg,,55,12,Yes,0,,0,4,No,Yes,No,,Yes,Yes,Yes,Yes,Partial,1/3,Not Met
+University of Twente,STB08041,Student Branch,University of Twente,,86,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
+"Catholic University of Louvain, CAS04/ED15",SBC03631,Student Branch Chapter,Catholic University of Louvain,CAS04/ED15,1,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"Delft University of Technology,PE31",SBC00511A,Student Branch Chapter,Delft University of Technology,PE31,27,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Delft University of Technology,PEL35/IA34/IE13",SBC00511,Student Branch Chapter,Delft University of Technology,PEL35/IA34/IE13,20,6,Yes,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,1/3,Not Met
+"Eindhoven University of Technology,C16",SBC03531,Student Branch Chapter,Eindhoven University of Technology,C16,4,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Eindhoven University of Technology,COM19",SBC0353A,Student Branch Chapter,Eindhoven University of Technology,COM19,12,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Katholieke Universiteit Leuven,AP03,COM19,MTT17",SBC09181C,Student Branch Chapter,Katholieke Universiteit Leuven,"AP03,COM19,MTT17",16,6,Yes,5,5,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
+"Katholieke Universiteit Leuven,IA34/IE13",SBC09181A,Student Branch Chapter,Katholieke Universiteit Leuven,IA34/IE13,5,6,No,2,2,0,2,Yes,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Katholieke Universiteit Leuven,PE31",SBC091811,Student Branch Chapter,Katholieke Universiteit Leuven,PE31,27,6,Yes,13,4,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Katholieke Universiteit Leuven,PEL35",SBC09181D,Student Branch Chapter,Katholieke Universiteit Leuven,PEL35,10,6,Yes,1,1,0,2,No,Yes,,Yes,Yes,Yes,No,Yes,Met,2/3,Not Met
+"Katholieke Universiteit Leuven,SSC37",SBC09181B,Student Branch Chapter,Katholieke Universiteit Leuven,SSC37,15,6,Yes,9,7,0,2,Yes,Yes,,Yes,No,Yes,No,No,Met,3/3,Met
+"University of Twente,PHO36",SBC08041,Student Branch Chapter,University of Twente,PHO36,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met

@@ -1,0 +1,7 @@
+Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
+Kyungsung University,STB15151,Student Branch,Kyungsung University,,0,12,No,0,,0,4,No,No,Yes,,No,No,No,No,Partial,0/3,Not Met
+Pukyong National University,STB15271,Student Branch,Pukyong National University,,7,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Pusan National University,STB15521,Student Branch,Pusan National University,,60,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
+"Kyungsung University,IA34,IE13,PEL35",SBC15151A,Student Branch Chapter,Kyungsung University,"IA34,IE13,PEL35",0,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"Pukyong National University,IA34/IE13/PEL35",SBC15271A,Student Branch Chapter,Pukyong National University,IA34/IE13/PEL35,0,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"Pusan National University,IA34/IE13/PEL35",SBC15521A,Student Branch Chapter,Pusan National University,IA34/IE13/PEL35,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met

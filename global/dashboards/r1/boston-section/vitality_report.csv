@@ -1,0 +1,30 @@
+Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
+"Franklin W Olin College of Engineering,WIE",SBA64871,Affinity Group,Olin College of Engineering,WIE,1,6,No,0,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+Benjamin Franklin Institute of Technology,STB10471,Student Branch,Benjamin Franklin Institute of Technology,,0,12,No,0,,0,4,No,No,Yes,,No,No,No,No,Partial,0/3,Not Met
+Boston Univ,STB04071,Student Branch,Boston Univ,,137,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
+Curry College,STB15129,Student Branch,Curry College,,13,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+Franklin W Olin College of Engineering,STB64871,Student Branch,Olin College of Engineering,,13,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
+Harvard Univ,STB00671,Student Branch,Harvard Univ,,77,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
+Massachusetts Institute of Technology,STB01031,Student Branch,Massachusetts Institute of Technology,,307,12,Yes,0,,0,4,No,Yes,Yes,,No,No,No,No,Met,2/3,Not Met
+Merrimack College,STB02761,Student Branch,Merrimack College,,1,12,No,0,,0,4,No,Yes,Yes,,No,No,No,No,Met,1/3,Not Met
+Northeastern University,STB01351,Student Branch,Northeastern University,,270,12,Yes,0,,0,4,No,Yes,Yes,,Yes,No,No,No,Met,2/3,Not Met
+Suffolk Univ,STB12051,Student Branch,Suffolk Univ,,2,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Tufts University,STB02031,Student Branch,Tufts University,,55,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+University of Massachusetts-Lowell,STB00941,Student Branch,University of Massachusetts-Lowell,,82,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
+Wentworth Inst of Tech,STB02262,Student Branch,Wentworth Inst of Tech,,31,12,Yes,0,,0,4,No,Yes,Yes,,No,No,Yes,No,Met,2/3,Not Met
+"Benjamin Franklin Institute of Technology,PE31",SBC10471,Student Branch Chapter,Benjamin Franklin Institute of Technology,PE31,0,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"Boston Univ,C16",SBC04071,Student Branch Chapter,Boston Univ,C16,6,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Boston Univ,EMB18",SBC04071A,Student Branch Chapter,Boston Univ,EMB18,2,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Boston Univ,PHO36",SBC04071B,Student Branch Chapter,Boston Univ,PHO36,9,6,Yes,1,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Massachusetts Institute of Technology,C16",SBC0103C,Student Branch Chapter,Massachusetts Institute of Technology,C16,10,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Massachusetts Institute of Technology,PEL35",SBC0103D,Student Branch Chapter,Massachusetts Institute of Technology,PEL35,5,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"Massachusetts Institute of Technology,PHO36",SBC0103B,Student Branch Chapter,Massachusetts Institute of Technology,PHO36,1,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Massachusetts Institute of Technology,SP01",SBC0103A,Student Branch Chapter,Massachusetts Institute of Technology,SP01,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Merrimack College, PE31",SBC02761A,Student Branch Chapter,Merrimack College,PE31,0,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"Northeastern Univ,AP03/ED15/MAG33/MTT17",SBC0135A,Student Branch Chapter,Northeastern University,AP03/ED15/MAG33/MTT17,15,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Northeastern Univ,PE31",SBC01351,Student Branch Chapter,Northeastern University,PE31,4,6,No,0,0,0,2,No,Yes,,No,Yes,Yes,Yes,Yes,Partial,0/3,Not Met
+"Suffolk University, PE31",SBC12051A,Student Branch Chapter,Suffolk Univ,"ersity, PE31",0,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"Tufts University, PE31",SBC02031A,Student Branch Chapter,Tufts University,PE31,2,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"University of Massachusetts-Lowell,C16",SBC00941,Student Branch Chapter,University of Massachusetts-Lowell,C16,4,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"University of Massachusetts-Lowell,PE31",SBC00941A,Student Branch Chapter,University of Massachusetts-Lowell,PE31,2,6,No,0,0,0,2,No,No,,No,No,No,No,Yes,Not Met,0/3,Not Met
+"Wentworth Inst of Tech,PE31",SBC02262,Student Branch Chapter,Wentworth Inst of Tech,PE31,2,6,No,0,0,0,2,No,Yes,,Yes,Yes,No,No,No,Met,1/3,Not Met

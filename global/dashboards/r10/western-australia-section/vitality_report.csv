@@ -1,0 +1,7 @@
+Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
+Curtin University,STB36801,Student Branch,Curtin University,,37,12,Yes,14,,2,4,Yes,Yes,Yes,,No,No,No,No,Met,3/3,Met
+Edith Cowan University,STB18531,Student Branch,Edith Cowan University,,23,12,Yes,0,,0,4,No,Yes,No,,No,Yes,No,No,Partial,1/3,Not Met
+Murdoch University,STB63841,Student Branch,Murdoch University,,21,12,Yes,5,,1,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+The University of Western Australia,STB01431,Student Branch,The University of Western Australia,,25,12,Yes,2,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
+"Curtin University,IA34",SBC36801,Student Branch Chapter,Curtin University,IA34,3,6,No,0,0,0,2,No,No,,Yes,No,Yes,No,No,Partial,0/3,Not Met
+"Murdoch University,SMC28",SBC63841,Student Branch Chapter,Murdoch University,SMC28,1,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met

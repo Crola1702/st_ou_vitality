@@ -1,0 +1,17 @@
+Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
+"University of Washington-Seattle, WIE",SBA02241,Affinity Group,University of Washington-Seattle,WIE,19,6,Yes,3,,0,2,Yes,Yes,,Yes,No,No,No,No,Met,3/3,Met
+North Seattle College,STB11291,Student Branch,North Seattle College,,4,12,No,1,,0,4,No,Yes,No,,Yes,No,No,No,Partial,0/3,Not Met
+Seattle Pacific Univ,STB94061,Student Branch,Seattle Pacific Univ,,7,12,No,1,,0,4,No,Yes,Yes,,Yes,No,No,No,Met,1/3,Not Met
+Seattle University,STB01781,Student Branch,Seattle University,,18,12,Yes,6,,0,4,Yes,Yes,No,,Yes,Yes,Yes,Yes,Partial,2/3,Not Met
+University of Washington Bothell,STB09921,Student Branch,University of Washington Bothell,,34,12,Yes,2,,2,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+University of Washington Tacoma,STB13781,Student Branch,University of Washington Tacoma,,36,12,Yes,49,,3,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+University of Washington-Seattle,STB02241,Student Branch,University of Washington-Seattle,,213,12,Yes,0,,1,4,No,Yes,No,,Yes,Yes,No,No,Partial,1/3,Not Met
+Washington State University Everett,STB19051,Student Branch,Washington State University Everett,,18,12,Yes,11,,2,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Western Washington Univ,STB98091,Student Branch,Western Washington Univ,,26,12,Yes,22,,3,4,Yes,Yes,No,,Yes,Yes,Yes,Yes,Partial,2/3,Not Met
+"University of Washington Tacoma,AES10",SBC13781A,Student Branch Chapter,University of Washington Tacoma,AES10,2,6,No,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,1/3,Not Met
+"University of Washington Tacoma,COM19",SBC13781B,Student Branch Chapter,University of Washington Tacoma,COM19,12,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"University of Washington Tacoma,PE31",SBC13781,Student Branch Chapter,University of Washington Tacoma,PE31,6,6,Yes,19,5,1,2,Yes,No,,Yes,Yes,No,Yes,Yes,Partial,2/3,Not Met
+"University of Washington-Seattle,C16",SBC02241,Student Branch Chapter,University of Washington-Seattle,C16,9,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"University of Washington-Seattle,PE31",SBC0224A,Student Branch Chapter,University of Washington-Seattle,PE31,10,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Western Washington Univ, OE22",SBC98091A,Student Branch Chapter,Western Washington Univ,OE22,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Western Washington Univ,PE31",SBC98091,Student Branch Chapter,Western Washington Univ,PE31,17,6,Yes,3,0,0,2,No,Yes,,Yes,Yes,No,No,Yes,Met,2/3,Not Met

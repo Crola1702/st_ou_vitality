@@ -1,0 +1,4 @@
+Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
+Kagawa Univ,STB62031,Student Branch,Kagawa Univ,,7,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Tokushima University,STB70061,Student Branch,Tokushima University,,43,12,Yes,1,,0,4,No,Yes,Yes,,Yes,Yes,Yes,No,Met,2/3,Not Met
+"Tokushima University,CAS04",SBC70061,Student Branch Chapter,Tokushima University,CAS04,20,6,Yes,1,1,0,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met

@@ -1,0 +1,14 @@
+Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
+Excelsior College,STB05111,Student Branch,Excelsior College,,5,12,No,0,,0,4,No,No,Yes,,No,No,No,No,Partial,0/3,Not Met
+Hudson Valley Community College,STB05542,Student Branch,Hudson Valley Community College,,2,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+New York State Univ Of-Albany,STB10108,Student Branch,New York State Univ Of-Albany,,37,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
+Rensselaer Polytechnic Institute,STB01611,Student Branch,Rensselaer Polytechnic Institute,,120,12,Yes,11,,3,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Union College,STB02061,Student Branch,Union College,,9,12,No,1,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+"Rensselaer Poly Inst, C16",SBC0161A,Student Branch Chapter,Rensselaer Polytechnic Institute,C16,8,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Rensselaer Poly Inst, PE31",SBC0161G,Student Branch Chapter,Rensselaer Polytechnic Institute,PE31,3,6,No,1,1,1,2,No,Yes,,Yes,No,No,No,No,Met,1/3,Not Met
+"Rensselaer Poly Inst, RA24",SBC0161D,Student Branch Chapter,Rensselaer Polytechnic Institute,RA24,1,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Rensselaer Poly Inst, SMC28",SBC0161F,Student Branch Chapter,Rensselaer Polytechnic Institute,SMC28,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Rensselaer Poly Institute,COM19",SBC0161B,Student Branch Chapter,Rensselaer Polytechnic Institute,COM19,4,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Rensselaer Poly Institute,CS23",SBC0161E,Student Branch Chapter,Rensselaer Polytechnic Institute,CS23,3,6,No,1,1,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Rensselaer Poly Institute,EP21/ED15",SBC0161H,Student Branch Chapter,Rensselaer Polytechnic Institute,EP21/ED15,13,6,Yes,4,2,1,2,Yes,Yes,,No,Yes,Yes,Yes,No,Partial,2/3,Not Met
+"Rensselaer Poly Institute,SP01",SBC0161C,Student Branch Chapter,Rensselaer Polytechnic Institute,SP01,5,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met

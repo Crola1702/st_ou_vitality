@@ -1,0 +1,6 @@
+Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
+Christopher Newport Univ,STB64121,Student Branch,Christopher Newport Univ,,9,12,No,1,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Hampton Univ,STB12581,Student Branch,Hampton Univ,,10,12,No,0,,1,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Norfolk State Univ,STB05191,Student Branch,Norfolk State Univ,,28,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+Old Dominion University,STB06111,Student Branch,Old Dominion University,,91,12,Yes,6,,1,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Old Dominion University,C16",SBC06111,Student Branch Chapter,Old Dominion University,C16,7,6,Yes,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,1/3,Not Met

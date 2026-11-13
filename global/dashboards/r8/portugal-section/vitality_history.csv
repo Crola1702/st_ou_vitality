@@ -1,0 +1,53 @@
+Date,SPO ID,Unit Type,University,Society,Member Count,Requirements Met,Members Met,Events Met,Officers Status,Overall Vitality
+2026-11-13,SBA11541,Affinity Group,Lisbon University Institute,WIE,1,0,No,No,Not Met,Not Met
+2026-11-13,SBA28512,Affinity Group,Instituto Superior Tecnico,WIE,13,1,Yes,No,Partial,Not Met
+2026-11-13,SBA17621,Affinity Group,Instituto Superior de Engenharia de Lisboa,WIE,4,0,No,No,Not Met,Not Met
+2026-11-13,SBA11311,Affinity Group,Instituto Superior de Engenharia do Porto,WIE,0,0,No,No,Partial,Not Met
+2026-11-13,SBA28351,Affinity Group,Universidade de Aveiro,WIE,7,1,Yes,No,Partial,Not Met
+2026-11-13,SBA15001,Affinity Group,Universidade de Coimbra,WIE,15,2,Yes,No,Met,Not Met
+2026-11-13,SBA17191,Affinity Group,Universidade do Minho,WIE,7,2,Yes,No,Met,Not Met
+2026-11-13,SBA80701,Affinity Group,Universidade do Porto,WIE,8,3,Yes,Yes,Met,Met
+2026-11-13,STB11541,Student Branch,Lisbon University Institute,,21,1,Yes,No,Partial,Not Met
+2026-11-13,STB14061,Student Branch,Instituto Politecnico de Leiria,,20,1,Yes,No,Partial,Not Met
+2026-11-13,STB99393,Student Branch,Instituto Politecnico de Viana do Castelo,,7,0,No,No,Partial,Not Met
+2026-11-13,STB11552,Student Branch,Instituto Politecnico do Cavado e Ave,,2,0,No,No,Not Met,Not Met
+2026-11-13,STB28512,Student Branch,Instituto Superior Tecnico,,59,2,Yes,No,Met,Not Met
+2026-11-13,STB17621,Student Branch,Instituto Superior de Engenharia de Lisboa,,6,0,No,No,Partial,Not Met
+2026-11-13,STB11311,Student Branch,Instituto Superior de Engenharia do Porto,,8,1,No,No,Met,Not Met
+2026-11-13,STB91011,Student Branch,Universidade Nova de Lisboa,,26,2,Yes,No,Met,Not Met
+2026-11-13,STB63081,Student Branch,Universidade Politécnica de Castelo Branco,,2,1,No,No,Met,Not Met
+2026-11-13,STB28351,Student Branch,Universidade de Aveiro,,56,3,Yes,Yes,Met,Met
+2026-11-13,STB15001,Student Branch,Universidade de Coimbra,,40,3,Yes,Yes,Met,Met
+2026-11-13,STB37051,Student Branch,University of Tras-os-Montes and Alto Douro,,2,0,No,No,Not Met,Not Met
+2026-11-13,STB17191,Student Branch,Universidade do Minho,,28,3,Yes,Yes,Met,Met
+2026-11-13,STB80701,Student Branch,Universidade do Porto,,95,2,Yes,Yes,Partial,Not Met
+2026-11-13,STB14681,Student Branch,University of Beira Interior,,12,1,Yes,No,Partial,Not Met
+2026-11-13,STB11772,Student Branch,University of Lisbon - Faculty of Sciences,,8,1,No,No,Met,Not Met
+2026-11-13,SBC11541C,Student Branch Chapter,Lisbon University Institute,C16,0,0,No,No,Not Met,Not Met
+2026-11-13,SBC11541E,Student Branch Chapter,Lisbon University Institute,CIS11,0,0,No,No,Not Met,Not Met
+2026-11-13,SBC11541D,Student Branch Chapter,Lisbon University Institute,IM09,3,0,No,No,Partial,Not Met
+2026-11-13,SBC11541A,Student Branch Chapter,Lisbon University Institute,RA24,0,0,No,No,Partial,Not Met
+2026-11-13,SBC14061A,Student Branch Chapter,Instituto Politecnico de Leiria,AP03,5,1,No,No,Met,Not Met
+2026-11-13,SBC14061B,Student Branch Chapter,Instituto Politecnico de Leiria,PE31,10,2,Yes,No,Met,Not Met
+2026-11-13,SBC14061,Student Branch Chapter,Instituto Politecnico de Leiria,SP01,7,1,Yes,No,Not Met,Not Met
+2026-11-13,SBC28512B,Student Branch Chapter,Instituto Superior Tecnico,C16,5,1,No,No,Met,Not Met
+2026-11-13,SBC28512D,Student Branch Chapter,Instituto Superior Tecnico,EMB18,8,2,Yes,No,Met,Not Met
+2026-11-13,SBC28512A,Student Branch Chapter,Instituto Superior Tecnico,IA34,1,0,No,No,Not Met,Not Met
+2026-11-13,SBC28512C,Student Branch Chapter,Instituto Superior Tecnico,RA24,11,2,Yes,No,Met,Not Met
+2026-11-13,SBC28512E,Student Branch Chapter,Instituto Superior Tecnico,CAS04/SSC37,9,1,Yes,No,Partial,Not Met
+2026-11-13,SBC17621,Student Branch Chapter,Instituto Superior de Engenharia de Lisboa,EMB18,1,0,No,No,Not Met,Not Met
+2026-11-13,SBC28351B,Student Branch Chapter,Universidade de Aveiro,CAS04,0,0,No,No,Partial,Not Met
+2026-11-13,SBC28351,Student Branch Chapter,Universidade de Aveiro,EMB18,6,1,Yes,No,Partial,Not Met
+2026-11-13,SBC28351A,Student Branch Chapter,Universidade de Aveiro,MTT17/AP03,14,3,Yes,Yes,Met,Met
+2026-11-13,SBC28351C,Student Branch Chapter,Universidade de Aveiro,VT06/COM19,12,3,Yes,Yes,Met,Met
+2026-11-13,SBC15001,Student Branch Chapter,Universidade de Coimbra,EMB18,8,2,Yes,No,Met,Not Met
+2026-11-13,SBC15001A,Student Branch Chapter,Universidade de Coimbra,PE31,8,3,Yes,Yes,Met,Met
+2026-11-13,SBC15001B,Student Branch Chapter,Universidade de Coimbra,SP01,9,3,Yes,Yes,Met,Met
+2026-11-13,SBC15001C,Student Branch Chapter,Universidade de Coimbra,VT06,10,3,Yes,Yes,Met,Met
+2026-11-13,SBC17191,Student Branch Chapter,Universidade do Minho,EMB18,8,2,Yes,Yes,Partial,Not Met
+2026-11-13,SBC80701C,Student Branch Chapter,Universidade do Porto,C16,8,2,Yes,No,Met,Not Met
+2026-11-13,SBC80701A,Student Branch Chapter,Universidade do Porto,EMB18,23,3,Yes,Yes,Met,Met
+2026-11-13,SBC80701B,Student Branch Chapter,Universidade do Porto,PE31,2,1,No,No,Met,Not Met
+2026-11-13,SBC80701,Student Branch Chapter,Universidade do Porto,RA24,5,1,No,Yes,Not Met,Not Met
+2026-11-13,SBC80701D,Student Branch Chapter,Universidade do Porto,AES10,0,2,No,Yes,Met,Not Met
+2026-11-13,SBC11772,Student Branch Chapter,University of Lisbon - Faculty of Sciences,GRS29,0,0,No,No,Not Met,Not Met

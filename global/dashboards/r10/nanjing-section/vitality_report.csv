@@ -1,0 +1,59 @@
+Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
+Zhejiang Ocean University SB SIGHT,SBA60208225S,Affinity Group,Zhejiang Ocean University,SB SIGHT,17,6,Yes,0,,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Zhejiang Ocean University,WIE",SBA60208225,Affinity Group,Zhejiang Ocean University,WIE,10,6,Yes,0,,1,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+China University of Mining and Technology,STB99369,Student Branch,China University of Mining and Technology,,47,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+Hangzhou Dianzi University,STB41699050,Student Branch,Hangzhou Dianzi University,,134,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
+Hangzhou Intl Innovation Inst-Beihang University,STB60242452,Student Branch,Hangzhou Intl Innovation Inst-Beihang University,,17,12,Yes,1,,0,4,No,Yes,Yes,,No,No,No,No,Met,2/3,Not Met
+Hefei University of Technology,STB13601,Student Branch,Hefei University of Technology,,126,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+Hohai University,STB41292826,Student Branch,Hohai University,,104,12,Yes,0,,1,4,No,Yes,Yes,,No,No,No,Yes,Met,2/3,Not Met
+Nanjing Normal University,STB16371,Student Branch,Nanjing Normal University,,57,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
+Nanjing University of Aeronautics and Astronautics,STB13931,Student Branch,Nanjing University of Aeronautics and Astronautics,,372,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+Nanjing University of Science and Technology,STB02911,Student Branch,Nanjing University of Science and Technology,,224,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+New York Institute of Technology - Nanjing,STB12291,Student Branch,New York Institute of Technology - Nanjing,,0,12,No,0,,0,4,No,No,Yes,,No,No,No,No,Partial,0/3,Not Met
+Southeast University,STB32031,Student Branch,Southeast University,,1035,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+Suzhou University of Technology,STB60240568,Student Branch,Suzhou University of Technology,,28,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,No,No,Met,2/3,Not Met
+University of Science and Technology of China,STB08781,Student Branch,University of Science and Technology of China,,90,12,Yes,7,,0,4,Yes,No,Yes,,No,No,No,No,Partial,2/3,Not Met
+Westlake University,STB11547,Student Branch,Westlake University,,47,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+Xian Jiaotong-Liverpool University,STB11769,Student Branch,Xi'an Jiaotong-Liverpool University,,87,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
+Zhejiang Ocean University,STB60208225,Student Branch,Zhejiang Ocean University,,13,12,Yes,5,,2,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Zhejiang University,STB04151,Student Branch,Zhejiang University,,938,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+"Hefei University of Technology,PEL35",SBC13601A,Student Branch Chapter,Hefei University of Technology,PEL35,10,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Hohai University,PE31",SBC41292826A,Student Branch Chapter,Hohai University,PE31,17,6,Yes,0,0,1,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+"Hohai University,PEL35",SBC41292826,Student Branch Chapter,Hohai University,PEL35,2,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"Nanjing University of Aero & Astronautics,PEL35",SBC13931A,Student Branch Chapter,Nanjing University of Aeronautics and Astronautics,PEL35,6,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Nanjing University of Aero and Astronautics,MTT17",SBC13931B,Student Branch Chapter,Nanjing University of Aeronautics and Astronautics,MTT17,161,6,Yes,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,1/3,Not Met
+"Southeast University,IA34",SBC32031B,Student Branch Chapter,Southeast University,IA34,7,6,Yes,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,1/3,Not Met
+"Southeast University,IM09",SBC32031C,Student Branch Chapter,Southeast University,IM09,6,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Southeast University,MTT17",SBC32031E,Student Branch Chapter,Southeast University,MTT17,89,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Southeast University,PE31",SBC32031D,Student Branch Chapter,Southeast University,PE31,62,6,Yes,6,5,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
+"Southeast University,RA24",SBC32031A,Student Branch Chapter,Southeast University,RA24,24,6,Yes,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,1/3,Not Met
+"Suzhou University of Technology,GRS29",SBC60240568,Student Branch Chapter,Suzhou University of Technology,GRS29,9,6,Yes,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+"University of Science and Tech of China,ED15",SBC08781A,Student Branch Chapter,University of Science and Technology of China,ED15,2,6,No,3,3,0,2,Yes,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"University of Science and Tech of China,PHO36",SBC08781B,Student Branch Chapter,University of Science and Technology of China,PHO36,0,6,No,6,6,0,2,Yes,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+"University of Science and Tech of China,SSC37",SBC08781,Student Branch Chapter,University of Science and Technology of China,SSC37,1,6,No,5,5,0,2,Yes,No,,Yes,No,No,No,No,Partial,1/3,Not Met
+"University of Science and Tech of China,UFFC20",SBC08781C,Student Branch Chapter,University of Science and Technology of China,UFFC20,2,6,No,2,2,0,2,Yes,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Westlake University,CAS04",SBC11547,Student Branch Chapter,Westlake University,CAS04,6,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Xi'an Jiaotong-Liverpool University,CAS04/ED15",SBC11769,Student Branch Chapter,Xi'an Jiaotong-Liverpool University,CAS04/ED15,5,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Zhejiang Ocean University,BIO46",SBC60208225B,Student Branch Chapter,Zhejiang Ocean University,BIO46,10,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Zhejiang Ocean University,BT02",SBC60208225H,Student Branch Chapter,Zhejiang Ocean University,BT02,11,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Zhejiang Ocean University,COM19",SBC60208225F,Student Branch Chapter,Zhejiang Ocean University,COM19,10,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Zhejiang Ocean University,CSC41",SBC60208225E,Student Branch Chapter,Zhejiang Ocean University,CSC41,11,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Zhejiang Ocean University,ED15",SBC60208225O,Student Branch Chapter,Zhejiang Ocean University,ED15,11,6,Yes,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+"Zhejiang Ocean University,EMB18",SBC60208225P,Student Branch Chapter,Zhejiang Ocean University,EMB18,11,6,Yes,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+"Zhejiang Ocean University,EP21",SBC60208225J,Student Branch Chapter,Zhejiang Ocean University,EP21,11,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Zhejiang Ocean University,IA34",SBC60208225N,Student Branch Chapter,Zhejiang Ocean University,IA34,11,6,Yes,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+"Zhejiang Ocean University,MAG33",SBC60208225G,Student Branch Chapter,Zhejiang Ocean University,MAG33,1,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Zhejiang Ocean University,NANO42",SBC60208225K,Student Branch Chapter,Zhejiang Ocean University,NANO42,10,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Zhejiang Ocean University,OE22",SBC60208225M,Student Branch Chapter,Zhejiang Ocean University,OE22,4,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Zhejiang Ocean University,PHO36",SBC60208225,Student Branch Chapter,Zhejiang Ocean University,PHO36,7,6,Yes,5,0,2,2,No,Yes,,No,Yes,Yes,Yes,Yes,Partial,1/3,Not Met
+"Zhejiang Ocean University,RFID741",SBC60208225L,Student Branch Chapter,Zhejiang Ocean University,RFID741,11,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Zhejiang Ocean University,RL07",SBC60208225I,Student Branch Chapter,Zhejiang Ocean University,RL07,1,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Zhejiang Ocean University,SEN39",SBC60208225C,Student Branch Chapter,Zhejiang Ocean University,SEN39,10,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Zhejiang Ocean University,SYS45",SBC60208225D,Student Branch Chapter,Zhejiang Ocean University,SYS45,11,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Zhejiang Ocean University,TEC802",SBC60208225A,Student Branch Chapter,Zhejiang Ocean University,TEC802,10,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Zhejiang University,IA34",SBC04151A,Student Branch Chapter,Zhejiang University,IA34,42,6,Yes,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,1/3,Not Met
+"Zhejiang University,MTT17",SBC04151C,Student Branch Chapter,Zhejiang University,MTT17,22,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Zhejiang University,PE31",SBC04151D,Student Branch Chapter,Zhejiang University,PE31,74,6,Yes,0,0,1,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Zhejiang University,PEL35",SBC04151B,Student Branch Chapter,Zhejiang University,PEL35,74,6,Yes,0,0,3,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Zhejiang University,PHO36",SBC041511,Student Branch Chapter,Zhejiang University,PHO36,2,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Zhejiang University,SMC28",SBC04151E,Student Branch Chapter,Zhejiang University,SMC28,10,6,Yes,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met

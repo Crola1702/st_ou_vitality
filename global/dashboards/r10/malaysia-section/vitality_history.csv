@@ -1,0 +1,64 @@
+Date,SPO ID,Unit Type,University,Society,Member Count,Requirements Met,Members Met,Events Met,Officers Status,Overall Vitality
+2026-11-13,SBA66611,Affinity Group,Curtin University - Sarawak,WIE,76,3,Yes,Yes,Met,Met
+2026-11-13,SBA65471,Affinity Group,Multimedia University,WIE,24,1,Yes,No,Partial,Not Met
+2026-11-13,SBA61821,Affinity Group,Putra Malaysia Univ,WIE,17,1,Yes,No,Partial,Not Met
+2026-11-13,SBA03001,Affinity Group,Universiti Sains Malaysia,WIE,12,2,Yes,No,Met,Not Met
+2026-11-13,SBA02611,Affinity Group,University of Malaya,WIE,10,1,Yes,No,Partial,Not Met
+2026-11-13,STB15571,Student Branch,Asia Pacific Univ of Tech and Innovation,,13,2,Yes,No,Met,Not Met
+2026-11-13,STB66611,Student Branch,Curtin University - Sarawak,,105,3,Yes,Yes,Met,Met
+2026-11-13,STB99400,Student Branch,Geomatika University College,,0,0,No,No,Not Met,Not Met
+2026-11-13,STB16101,Student Branch,INTI International University,,7,0,No,No,Not Met,Not Met
+2026-11-13,STB65011,Student Branch,International Islamic University Malaysia,,11,0,No,No,Not Met,Not Met
+2026-11-13,STB65871,Student Branch,Monash Univ Sunway Campus,,40,2,Yes,No,Met,Not Met
+2026-11-13,STB65471,Student Branch,Multimedia University,,112,2,Yes,No,Met,Not Met
+2026-11-13,STB61821,Student Branch,Putra Malaysia Univ,,50,2,Yes,Yes,Partial,Not Met
+2026-11-13,STB60056015,Student Branch,Sunway University,,15,2,Yes,No,Met,Not Met
+2026-11-13,STB10075,Student Branch,Swinburne University of Technology-Kuching,,30,2,Yes,No,Met,Not Met
+2026-11-13,STB66422,Student Branch,Taylors University,,7,0,No,No,Not Met,Not Met
+2026-11-13,STB10144,Student Branch,UCSI University,,16,1,Yes,No,Partial,Not Met
+2026-11-13,STB33471,Student Branch,Universiti Kebangsaan Malaysia,,61,2,Yes,No,Met,Not Met
+2026-11-13,STB20231,Student Branch,Universiti Kuala Lumpur,,10,0,No,No,Partial,Not Met
+2026-11-13,STB18921,Student Branch,Universiti Malaysia Perlis,,21,1,Yes,No,Partial,Not Met
+2026-11-13,STB65461,Student Branch,Universiti Malaysia Sabah,,125,3,Yes,Yes,Met,Met
+2026-11-13,STB60019981,Student Branch,Universiti Malaysia Sarawak,,41,2,Yes,No,Met,Not Met
+2026-11-13,STB11745,Student Branch,Universiti Pendidikan Sultan Idris,,3,0,No,No,Partial,Not Met
+2026-11-13,STB60049645,Student Branch,Universiti Pertahanan Nasional Malaysia,,20,2,Yes,No,Met,Not Met
+2026-11-13,STB03001,Student Branch,Universiti Sains Malaysia,,48,2,Yes,Yes,Partial,Not Met
+2026-11-13,STB01004,Student Branch,Universiti Teknikal Malaysia Melaka,,27,1,Yes,No,Not Met,Not Met
+2026-11-13,STB18561,Student Branch,Universiti Teknologi Malaysia-Johor bahru,,40,1,Yes,No,Not Met,Not Met
+2026-11-13,STB99085,Student Branch,Universiti Teknologi Malaysia-Kuala Lumpur,,18,2,Yes,Yes,Not Met,Not Met
+2026-11-13,STB61561,Student Branch,Universiti Teknologi Mara,,71,3,Yes,Yes,Met,Met
+2026-11-13,STB64401,Student Branch,Petronas Universiti Teknologi,,24,1,Yes,No,Partial,Not Met
+2026-11-13,STB07451,Student Branch,Universiti Tenaga Nasional,,31,2,Yes,No,Met,Not Met
+2026-11-13,STB64293,Student Branch,Universiti Tun Hussein Onn Malaysia,,21,2,Yes,No,Met,Not Met
+2026-11-13,STB03271,Student Branch,University Tunku Abdul Rahman,,12,1,Yes,No,Not Met,Not Met
+2026-11-13,STB14801,Student Branch,Univ Utara Malaysia,,2,0,No,No,Partial,Not Met
+2026-11-13,STB02611,Student Branch,University of Malaya,,58,1,Yes,No,Partial,Not Met
+2026-11-13,STB13111,Student Branch,University of Nottingham - Malaysia Campus,,16,2,Yes,No,Met,Not Met
+2026-11-13,STB60202286,Student Branch,University of Southampton Malaysia,,33,1,Yes,No,Partial,Not Met
+2026-11-13,STB60206270,Student Branch,University of Technology Sarawak,,6,2,No,Yes,Met,Not Met
+2026-11-13,STB99064,Student Branch,Xiamen University Malaysia,,48,2,Yes,No,Met,Not Met
+2026-11-13,SBC15571A,Student Branch Chapter,Asia Pacific Univ of Tech and Innovation,C16,1,0,No,No,Partial,Not Met
+2026-11-13,SBC15571,Student Branch Chapter,Asia Pacific Univ of Tech and Innovation,CIS11,1,0,No,No,Not Met,Not Met
+2026-11-13,SBC15571B,Student Branch Chapter,Asia Pacific Univ of Tech and Innovation,COM19,0,0,No,No,Not Met,Not Met
+2026-11-13,SBC66611A,Student Branch Chapter,Curtin University - Sarawak,EMB18,2,1,No,No,Met,Not Met
+2026-11-13,SBC66611,Student Branch Chapter,Curtin University - Sarawak,IA34,2,2,No,Yes,Met,Not Met
+2026-11-13,SBC16101A,Student Branch Chapter,INTI International University,C16,1,0,No,No,Not Met,Not Met
+2026-11-13,SBC16101B,Student Branch Chapter,INTI International University,COM19,0,0,No,No,Partial,Not Met
+2026-11-13,SBC33471B,Student Branch Chapter,Universiti Kebangsaan Malaysia,ED15,38,2,Yes,No,Met,Not Met
+2026-11-13,SBC33471A,Student Branch Chapter,Universiti Kebangsaan Malaysia,IA34,0,0,No,No,Partial,Not Met
+2026-11-13,SBC33471,Student Branch Chapter,Universiti Kebangsaan Malaysia,PE31,33,2,Yes,No,Met,Not Met
+2026-11-13,SBC18561A,Student Branch Chapter,Universiti Teknologi Malaysia-Johor bahru,PE31,0,1,No,No,Met,Not Met
+2026-11-13,SBC65471,Student Branch Chapter,Multimedia University,PE31,98,2,Yes,No,Met,Not Met
+2026-11-13,SBC61821A,Student Branch Chapter,Putra Malaysia Univ,CAS04,15,2,Yes,No,Met,Not Met
+2026-11-13,SBC61821,Student Branch Chapter,Putra Malaysia Univ,PE31,17,1,Yes,No,Partial,Not Met
+2026-11-13,SBC10144C,Student Branch Chapter,UCSI University,C16,0,0,No,No,Not Met,Not Met
+2026-11-13,SBC99085,Student Branch Chapter,Universiti Teknologi Malaysia-Kuala Lumpur,PEL35,0,0,No,No,Partial,Not Met
+2026-11-13,SBC61561B,Student Branch Chapter,Universiti Teknologi Mara,C16,14,2,Yes,No,Met,Not Met
+2026-11-13,SBC61561A,Student Branch Chapter,Universiti Teknologi Mara,PE31,15,2,Yes,No,Met,Not Met
+2026-11-13,SBC07451,Student Branch Chapter,Universiti Tenaga Nasional,PE31,28,3,Yes,Yes,Met,Met
+2026-11-13,SBC03271,Student Branch Chapter,University Tunku Abdul Rahman,EMB18,0,0,No,No,Partial,Not Met
+2026-11-13,SBC02611,Student Branch Chapter,University of Malaya,C16,9,1,Yes,No,Partial,Not Met
+2026-11-13,SBC02611B,Student Branch Chapter,University of Malaya,CAS04,7,2,Yes,No,Met,Not Met
+2026-11-13,SBC02611A,Student Branch Chapter,University of Malaya,EP21,6,3,Yes,Yes,Met,Met
+2026-11-13,SBC13111,Student Branch Chapter,University of Nottingham - Malaysia Campus,EP21,8,2,Yes,No,Met,Not Met

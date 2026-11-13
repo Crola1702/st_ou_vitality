@@ -1,0 +1,30 @@
+Date,SPO ID,Unit Type,University,Society,Member Count,Requirements Met,Members Met,Events Met,Officers Status,Overall Vitality
+2026-11-13,SBA64871,Affinity Group,Olin College of Engineering,WIE,1,0,No,No,Not Met,Not Met
+2026-11-13,STB10471,Student Branch,Benjamin Franklin Institute of Technology,,0,0,No,No,Partial,Not Met
+2026-11-13,STB04071,Student Branch,Boston Univ,,137,1,Yes,No,Not Met,Not Met
+2026-11-13,STB15129,Student Branch,Curry College,,13,1,Yes,No,Partial,Not Met
+2026-11-13,STB64871,Student Branch,Olin College of Engineering,,13,1,Yes,No,Not Met,Not Met
+2026-11-13,STB00671,Student Branch,Harvard Univ,,77,1,Yes,No,Not Met,Not Met
+2026-11-13,STB01031,Student Branch,Massachusetts Institute of Technology,,307,2,Yes,No,Met,Not Met
+2026-11-13,STB02761,Student Branch,Merrimack College,,1,1,No,No,Met,Not Met
+2026-11-13,STB01351,Student Branch,Northeastern University,,270,2,Yes,No,Met,Not Met
+2026-11-13,STB12051,Student Branch,Suffolk Univ,,2,0,No,No,Not Met,Not Met
+2026-11-13,STB02031,Student Branch,Tufts University,,55,1,Yes,No,Partial,Not Met
+2026-11-13,STB00941,Student Branch,University of Massachusetts-Lowell,,82,1,Yes,No,Not Met,Not Met
+2026-11-13,STB02262,Student Branch,Wentworth Inst of Tech,,31,2,Yes,No,Met,Not Met
+2026-11-13,SBC10471,Student Branch Chapter,Benjamin Franklin Institute of Technology,PE31,0,0,No,No,Partial,Not Met
+2026-11-13,SBC04071,Student Branch Chapter,Boston Univ,C16,6,1,Yes,No,Not Met,Not Met
+2026-11-13,SBC04071A,Student Branch Chapter,Boston Univ,EMB18,2,0,No,No,Not Met,Not Met
+2026-11-13,SBC04071B,Student Branch Chapter,Boston Univ,PHO36,9,2,Yes,No,Met,Not Met
+2026-11-13,SBC0103C,Student Branch Chapter,Massachusetts Institute of Technology,C16,10,1,Yes,No,Not Met,Not Met
+2026-11-13,SBC0103D,Student Branch Chapter,Massachusetts Institute of Technology,PEL35,5,0,No,No,Partial,Not Met
+2026-11-13,SBC0103B,Student Branch Chapter,Massachusetts Institute of Technology,PHO36,1,0,No,No,Not Met,Not Met
+2026-11-13,SBC0103A,Student Branch Chapter,Massachusetts Institute of Technology,SP01,0,0,No,No,Not Met,Not Met
+2026-11-13,SBC02761A,Student Branch Chapter,Merrimack College,PE31,0,0,No,No,Partial,Not Met
+2026-11-13,SBC0135A,Student Branch Chapter,Northeastern University,AP03/ED15/MAG33/MTT17,15,1,Yes,No,Not Met,Not Met
+2026-11-13,SBC01351,Student Branch Chapter,Northeastern University,PE31,4,0,No,No,Partial,Not Met
+2026-11-13,SBC12051A,Student Branch Chapter,Suffolk Univ,"ersity, PE31",0,0,No,No,Partial,Not Met
+2026-11-13,SBC02031A,Student Branch Chapter,Tufts University,PE31,2,0,No,No,Not Met,Not Met
+2026-11-13,SBC00941,Student Branch Chapter,University of Massachusetts-Lowell,C16,4,0,No,No,Not Met,Not Met
+2026-11-13,SBC00941A,Student Branch Chapter,University of Massachusetts-Lowell,PE31,2,0,No,No,Not Met,Not Met
+2026-11-13,SBC02262,Student Branch Chapter,Wentworth Inst of Tech,PE31,2,1,No,No,Met,Not Met

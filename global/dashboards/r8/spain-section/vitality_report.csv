@@ -1,0 +1,45 @@
+Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
+"The Miguel Hernandez University of Elche,WIE",SBA11231,Affinity Group,Miguel Hernandez University of Elche,WIE,2,6,No,0,,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"Univ Nacional De Educacion A Distancia, WIE",SBA63751,Affinity Group,Universidad Nacional de Educacion a Distancia,WIE,0,6,No,0,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Universidad de Sevilla, WIE",SBA62501,Affinity Group,Universidad de Sevilla,WIE,4,6,No,0,,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"Universidad de Valencia - ETSE, WIE",SBA10031,Affinity Group,Universidad de Valencia - ETSE,WIE,0,6,No,0,,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"Universidad de Vigo,WIE",SBA12501,Affinity Group,Universidad de Vigo,WIE,3,6,No,0,,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"Universidad de Zaragoza, WIE",SBA36351,Affinity Group,Universidad de Zaragoza,WIE,1,6,No,0,,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"Universitad Politecnica de Valencia, WIE",SBA35771,Affinity Group,Universitad Politecnica de Valencia,WIE,2,6,No,0,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"University of Alicante,WIE",SBA10036,Affinity Group,University of Alicante,WIE,1,6,No,0,,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+Autonomous University of Barcelona,STB40240369,Student Branch,Autonomous University of Barcelona,,27,12,Yes,18,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Miguel Hernandez University of Elche,STB11231,Student Branch,Miguel Hernandez University of Elche,,10,12,No,0,,0,4,No,No,Yes,,No,No,No,No,Partial,0/3,Not Met
+Univ Publica De Navarra,STB40104836,Student Branch,Public University of Navarre,,20,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
+Universidad Alfonso X El Sabio,STB62471,Student Branch,Universidad Alfonso X El Sabio,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Universidad Carlos III de Madrid,STB61201,Student Branch,Universidad Carlos III de Madrid,,59,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,Yes,No,Met,2/3,Not Met
+Universidad Complutense de Madrid,STB61991,Student Branch,Universidad Complutense de Madrid,,14,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
+Universidad Nacional de Educacion a Distancia,STB63751,Student Branch,Universidad Nacional de Educacion a Distancia,,22,12,Yes,9,,3,4,Yes,Yes,Yes,,No,Yes,Yes,No,Met,3/3,Met
+Universidad Politecnica de Cartagena,STB13001,Student Branch,Universidad Politecnica de Cartagena,,6,12,No,0,,0,4,No,No,Yes,,No,No,No,No,Partial,0/3,Not Met
+Universidad Politecnica de Madrid,STB02471,Student Branch,Universidad Politecnica de Madrid,,71,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+Universidad Politecnica de Madrid - Campus Sur,STB07761,Student Branch,Universidad Politecnica de Madrid - Campus Sur,,6,12,No,3,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Universidad Rey Juan Carlos,STB03991,Student Branch,Universidad Rey Juan Carlos,,7,12,No,0,,0,4,No,No,Yes,,No,No,No,No,Partial,0/3,Not Met
+Universidad de Alcala,STB62751,Student Branch,Universidad de Alcala,,15,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+Universidad de Castilla La Mancha,STB61731,Student Branch,Universidad de Castilla La Mancha,,4,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Universidad de Granada,STB15621,Student Branch,Universidad de Granada,,16,12,Yes,0,,0,4,No,No,No,,No,No,No,Yes,Not Met,1/3,Not Met
+Universidad de Las Palmas de Gran Canaria-Etsii,STB37251,Student Branch,Universidad de Las Palmas de Gran Canaria-Etsii,,2,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Universidad de Malaga,STB36121,Student Branch,Universidad de Malaga,,8,12,No,0,,0,4,No,No,Yes,,No,No,No,No,Partial,0/3,Not Met
+Universidad de Oviedo,STB64591,Student Branch,Universidad de Oviedo,,28,12,Yes,2,,2,4,No,Yes,No,,Yes,Yes,Yes,Yes,Partial,1/3,Not Met
+Universidad de Sevilla,STB62501,Student Branch,Universidad de Sevilla,,25,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+Universidad de Valencia - ETSE,STB10031,Student Branch,Universidad de Valencia - ETSE,,23,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,Yes,No,Met,2/3,Not Met
+Universidad de Valladolid,STB10162,Student Branch,Universidad de Valladolid,,12,12,Yes,0,,1,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+Universidad de Vigo,STB12501,Student Branch,Universidad de Vigo,,24,12,Yes,0,,0,4,No,Yes,Yes,,No,No,No,No,Met,2/3,Not Met
+Universidad de Zaragoza,STB36351,Student Branch,Universidad de Zaragoza,,26,12,Yes,0,,0,4,No,Yes,Yes,,Yes,No,No,Yes,Met,2/3,Not Met
+Universitad Politecnica de Valencia,STB35771,Student Branch,Universitad Politecnica de Valencia,,39,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
+Universitat Politecnica de Catalunya,STB86161,Student Branch,Universitat Politecnica de Catalunya,,3,12,No,0,,0,4,No,No,Yes,,No,No,No,No,Partial,0/3,Not Met
+Universitat Rovira I Virgili,STB61241,Student Branch,Universitat Rovira I Virgili,,6,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+University of Alicante,STB10036,Student Branch,University of Alicante,,5,12,No,0,,0,4,No,No,Yes,,No,No,No,No,Partial,0/3,Not Met
+"Univ Nacional De Educacion A Distancia,E25",SBC637511,Student Branch Chapter,Universidad Nacional de Educacion a Distancia,E25,2,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"Univ Politecnica de Catalunya, AES/AP/GRS/MTT",SBC86161,Student Branch Chapter,Universitat Politecnica de Catalunya,AES/AP/GRS/MTT,1,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"Univ Politecnica de Catalunya, PE31",SBC86161A,Student Branch Chapter,Universitat Politecnica de Catalunya,PE31,0,6,No,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,1/3,Not Met
+"Univ Publica De Navarra,SEN39",SBC40104836,Student Branch Chapter,Public University of Navarre,SEN39,1,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Universidad Carlos III de Madrid,COM19",SBC61201,Student Branch Chapter,Universidad Carlos III de Madrid,COM19,16,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
+"Universidad Politecnica de Madrid,C16",SBC02471,Student Branch Chapter,Universidad Politecnica de Madrid,C16,2,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Universidad Politecnica de Madrid,IA34",SBC02471A,Student Branch Chapter,Universidad Politecnica de Madrid,IA34,0,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"Universidad de Oviedo, IA34/PEL35/PE31",SBC64591,Student Branch Chapter,Universidad de Oviedo,IA34/PEL35/PE31,17,6,Yes,2,2,2,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Universidad de Sevilla,C16",SBC62501,Student Branch Chapter,Universidad de Sevilla,C16,2,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"University of Alicante, RA24",SBC10036,Student Branch Chapter,University of Alicante,RA24,2,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met

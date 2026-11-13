@@ -1,0 +1,53 @@
+Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
+"ISCTE-Lisbon University Institute,WIE",SBA11541,Affinity Group,Lisbon University Institute,WIE,1,6,No,0,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Instituto Superior Tecnico, WIE",SBA28512,Affinity Group,Instituto Superior Tecnico,WIE,13,6,Yes,0,,1,2,No,Yes,,No,Yes,No,No,No,Partial,1/3,Not Met
+"Instituto Superior de Engenharia de Lisboa,WIE",SBA17621,Affinity Group,Instituto Superior de Engenharia de Lisboa,WIE,4,6,No,0,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Instituto Superior de Engenharia do Porto,WIE",SBA11311,Affinity Group,Instituto Superior de Engenharia do Porto,WIE,0,6,No,0,,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"Universidade de Aveiro, WIE",SBA28351,Affinity Group,Universidade de Aveiro,WIE,7,6,Yes,0,,0,2,No,No,,Yes,No,No,No,No,Partial,1/3,Not Met
+"Universidade de Coimbra, WIE",SBA15001,Affinity Group,Universidade de Coimbra,WIE,15,6,Yes,1,,2,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
+"Universidade do Minho, WIE",SBA17191,Affinity Group,Universidade do Minho,WIE,7,6,Yes,0,,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+"Universidade do Porto, WIE",SBA80701,Affinity Group,Universidade do Porto,WIE,8,6,Yes,2,,1,2,Yes,Yes,,Yes,Yes,No,No,No,Met,3/3,Met
+ISCTE-Lisbon University Institute,STB11541,Student Branch,Lisbon University Institute,,21,12,Yes,0,,1,4,No,Yes,No,,Yes,Yes,Yes,No,Partial,1/3,Not Met
+Instituto Politecnico de Leiria,STB14061,Student Branch,Instituto Politecnico de Leiria,,20,12,Yes,2,,1,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+Instituto Politecnico de Viana do Castelo,STB99393,Student Branch,Instituto Politecnico de Viana do Castelo,,7,12,No,0,,0,4,No,No,Yes,,No,No,No,No,Partial,0/3,Not Met
+Instituto Politecnico do Cavado e Ave,STB11552,Student Branch,Instituto Politecnico do Cavado e Ave,,2,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Instituto Superior Tecnico,STB28512,Student Branch,Instituto Superior Tecnico,,59,12,Yes,2,,0,4,No,Yes,Yes,,Yes,No,Yes,No,Met,2/3,Not Met
+Instituto Superior de Engenharia de Lisboa,STB17621,Student Branch,Instituto Superior de Engenharia de Lisboa,,6,12,No,0,,0,4,No,No,Yes,,No,No,No,No,Partial,0/3,Not Met
+Instituto Superior de Engenharia do Porto,STB11311,Student Branch,Instituto Superior de Engenharia do Porto,,8,12,No,0,,0,4,No,Yes,Yes,,Yes,Yes,Yes,No,Met,1/3,Not Met
+Universidade Nova de Lisboa,STB91011,Student Branch,Universidade Nova de Lisboa,,26,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,Yes,No,Met,2/3,Not Met
+Universidade Politécnica de Castelo Branco,STB63081,Student Branch,Universidade Politécnica de Castelo Branco,,2,12,No,0,,0,4,No,Yes,Yes,,Yes,Yes,Yes,No,Met,1/3,Not Met
+Universidade de Aveiro,STB28351,Student Branch,Universidade de Aveiro,,56,12,Yes,7,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Universidade de Coimbra,STB15001,Student Branch,Universidade de Coimbra,,40,12,Yes,4,,5,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Universidade de Tras-os-Montes e Alto Douro,STB37051,Student Branch,University of Tras-os-Montes and Alto Douro,,2,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Universidade do Minho,STB17191,Student Branch,Universidade do Minho,,28,12,Yes,60,,3,4,Yes,Yes,Yes,,Yes,Yes,Yes,No,Met,3/3,Met
+Universidade do Porto,STB80701,Student Branch,Universidade do Porto,,95,12,Yes,15,,22,4,Yes,Yes,No,,Yes,Yes,Yes,No,Partial,2/3,Not Met
+University of Beira Interior,STB14681,Student Branch,University of Beira Interior,,12,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+University of Lisbon - Faculty of Sciences,STB11772,Student Branch,University of Lisbon - Faculty of Sciences,,8,12,No,1,,0,4,No,Yes,Yes,,Yes,Yes,Yes,No,Met,1/3,Not Met
+"ISCTE-Lisbon University Institute,C16",SBC11541C,Student Branch Chapter,Lisbon University Institute,C16,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"ISCTE-Lisbon University Institute,CIS11",SBC11541E,Student Branch Chapter,Lisbon University Institute,CIS11,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"ISCTE-Lisbon University Institute,IM09",SBC11541D,Student Branch Chapter,Lisbon University Institute,IM09,3,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"ISCTE-Lisbon University Institute,RA24",SBC11541A,Student Branch Chapter,Lisbon University Institute,RA24,0,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"Instituto Politecnico de Leiria,AP03",SBC14061A,Student Branch Chapter,Instituto Politecnico de Leiria,AP03,5,6,No,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,1/3,Not Met
+"Instituto Politecnico de Leiria,PE31",SBC14061B,Student Branch Chapter,Instituto Politecnico de Leiria,PE31,10,6,Yes,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+"Instituto Politecnico de Leiria,SP01",SBC14061,Student Branch Chapter,Instituto Politecnico de Leiria,SP01,7,6,Yes,1,1,1,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Instituto Superior Tecnico, C16",SBC28512B,Student Branch Chapter,Instituto Superior Tecnico,C16,5,6,No,5,1,0,2,No,Yes,,Yes,Yes,No,No,No,Met,1/3,Not Met
+"Instituto Superior Tecnico, EMB18",SBC28512D,Student Branch Chapter,Instituto Superior Tecnico,EMB18,8,6,Yes,0,0,10,2,No,Yes,,Yes,Yes,Yes,No,No,Met,2/3,Not Met
+"Instituto Superior Tecnico, IA34",SBC28512A,Student Branch Chapter,Instituto Superior Tecnico,IA34,1,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Instituto Superior Tecnico, RA24",SBC28512C,Student Branch Chapter,Instituto Superior Tecnico,RA24,11,6,Yes,0,0,1,2,No,Yes,,Yes,Yes,Yes,No,No,Met,2/3,Not Met
+"Instituto Superior Tecnico,CAS04/SSC37",SBC28512E,Student Branch Chapter,Instituto Superior Tecnico,CAS04/SSC37,9,6,Yes,0,0,0,2,No,Yes,,No,Yes,Yes,No,No,Partial,1/3,Not Met
+"Instituto Superior de Engenharia de Lisboa,EMB18",SBC17621,Student Branch Chapter,Instituto Superior de Engenharia de Lisboa,EMB18,1,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Universidade de Aveiro, CAS04",SBC28351B,Student Branch Chapter,Universidade de Aveiro,CAS04,0,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"Universidade de Aveiro,EMB18",SBC28351,Student Branch Chapter,Universidade de Aveiro,EMB18,6,6,Yes,4,1,1,2,No,Yes,,No,Yes,Yes,Yes,Yes,Partial,1/3,Not Met
+"Universidade de Aveiro,MTT17/AP03",SBC28351A,Student Branch Chapter,Universidade de Aveiro,MTT17/AP03,14,6,Yes,2,2,0,2,Yes,Yes,,Yes,Yes,Yes,No,Yes,Met,3/3,Met
+"Universidade de Aveiro,VT06/COM19",SBC28351C,Student Branch Chapter,Universidade de Aveiro,VT06/COM19,12,6,Yes,5,5,4,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
+"Universidade de Coimbra, EMB18",SBC15001,Student Branch Chapter,Universidade de Coimbra,EMB18,8,6,Yes,16,1,1,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
+"Universidade de Coimbra,PE31",SBC15001A,Student Branch Chapter,Universidade de Coimbra,PE31,8,6,Yes,6,2,1,2,Yes,Yes,,Yes,Yes,No,No,No,Met,3/3,Met
+"Universidade de Coimbra,SP01",SBC15001B,Student Branch Chapter,Universidade de Coimbra,SP01,9,6,Yes,18,2,3,2,Yes,Yes,,Yes,Yes,Yes,No,No,Met,3/3,Met
+"Universidade de Coimbra,VT06",SBC15001C,Student Branch Chapter,Universidade de Coimbra,VT06,10,6,Yes,19,2,3,2,Yes,Yes,,Yes,Yes,Yes,No,No,Met,3/3,Met
+"Universidade do Minho,EMB18",SBC17191,Student Branch Chapter,Universidade do Minho,EMB18,8,6,Yes,7,3,1,2,Yes,Yes,,No,Yes,No,No,No,Partial,2/3,Not Met
+"Universidade do Porto, C16",SBC80701C,Student Branch Chapter,Universidade do Porto,C16,8,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,No,No,No,Met,2/3,Not Met
+"Universidade do Porto, EMB18",SBC80701A,Student Branch Chapter,Universidade do Porto,EMB18,23,6,Yes,14,4,3,2,Yes,Yes,,Yes,Yes,Yes,No,No,Met,3/3,Met
+"Universidade do Porto, PE31",SBC80701B,Student Branch Chapter,Universidade do Porto,PE31,2,6,No,0,0,0,2,No,Yes,,Yes,Yes,No,No,No,Met,1/3,Not Met
+"Universidade do Porto, RA24",SBC80701,Student Branch Chapter,Universidade do Porto,RA24,5,6,No,4,4,0,2,Yes,No,,No,Yes,No,No,No,Not Met,1/3,Not Met
+"Universidade do Porto,AES10",SBC80701D,Student Branch Chapter,Universidade do Porto,AES10,0,6,No,18,15,0,2,Yes,Yes,,Yes,Yes,No,No,No,Met,2/3,Not Met
+"University of Lisbon,GRS29",SBC11772,Student Branch Chapter,University of Lisbon - Faculty of Sciences,GRS29,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met

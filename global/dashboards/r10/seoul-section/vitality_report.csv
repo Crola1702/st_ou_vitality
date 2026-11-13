@@ -1,0 +1,33 @@
+Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
+Ajou University,STB20441,Student Branch,Ajou University,,65,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+Catholic University of Korea,STB65971,Student Branch,Catholic University of Korea,,10,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Chung-Ang Univ,STB79001,Student Branch,Chung-ang Univ,,84,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
+Dankook University,STB85201,Student Branch,Dankook Univ,,32,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+Ewha Womans University,STB66101,Student Branch,Ewha Womans University,,34,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
+Gachon University,STB60099272,Student Branch,Gachon University,,15,12,Yes,1,,1,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
+Hanyang University,STB86051,Student Branch,Hanyang University,,228,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
+Hongik University,STB01010,Student Branch,Hongik University,,25,12,Yes,0,,0,4,No,Yes,Yes,,No,Yes,No,No,Met,2/3,Not Met
+Inha Univ,STB03901,Student Branch,Inha Univ,,63,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
+Kon-Kuk Univ,STB16571,Student Branch,Kon-Kuk Univ,,1,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Korea Advanced Institute of Science and Technology,STB98701,Student Branch,Korea Advanced Institute of Science and Technology,,537,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+Korea University,STB21031,Student Branch,Korea University,,284,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+Seoul National Univ of Science and Technology,STB60113519,Student Branch,Seoul National Univ of Science and Technology,,49,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
+Seoul National University,STB04781,Student Branch,Seoul National University,,463,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+Seoul Natl Univ Of Tech,STB03238,Student Branch,Seoul Natl Univ Of Tech,,4,12,No,0,,0,4,No,No,Yes,,No,No,No,No,Partial,0/3,Not Met
+Sogang University,STB79201,Student Branch,Sogang University,,69,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+Soongsil Univ,STB65841,Student Branch,Soongsil University,,53,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+Sungkyunkwan Univ,STB14441,Student Branch,Sungkyunkwan Univ,,257,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+Yonsei University,STB98371,Student Branch,Yonsei University,,255,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
+Yonsei University Mirae Campus,STB60222105,Student Branch,Yonsei University Mirae Campus,,5,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+"Gachon University,SEN39",SBC60099272,Student Branch Chapter,Gachon University,SEN39,1,6,No,1,1,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Hanyang University,C16",SBC86051,Student Branch Chapter,Hanyang University,C16,6,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Hanyang University,CAS04",SBC8605B,Student Branch Chapter,Hanyang University,CAS04,30,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Hanyang University,COM19",SBC8605A,Student Branch Chapter,Hanyang University,COM19,13,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Hanyang University,ED15",SBC8605C,Student Branch Chapter,Hanyang University,ED15,3,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Korea University,IA34",SBC21031,Student Branch Chapter,Korea University,IA34,2,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"Seoul National Univ of Sci and Tech,EP21",SBC60113519,Student Branch Chapter,Seoul National Univ of Science and Technology,EP21,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Seoul Natl Univ Of Tech,PEL35",SBC03238,Student Branch Chapter,Seoul Natl Univ Of Tech,PEL35,0,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"Seoul Natl Univ,COM19",SBC04781,Student Branch Chapter,Seoul National University,COM19,26,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Sogang University, UFFC20",SBC79201A,Student Branch Chapter,Sogang University,UFFC20,1,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"Yonsei University, C16",SBC98371,Student Branch Chapter,Yonsei University,C16,9,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Yonsei University, COM19",SBC9837A,Student Branch Chapter,Yonsei University,COM19,21,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met

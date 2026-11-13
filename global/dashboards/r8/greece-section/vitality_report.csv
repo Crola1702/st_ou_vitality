@@ -1,0 +1,64 @@
+Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
+"Democritus University of Thrace,WIE",SBA98231,Affinity Group,Democritus University of Thrace,WIE,5,6,No,0,,0,2,No,Yes,,Yes,No,No,No,No,Met,1/3,Not Met
+"International Hellenic Univ-Thessaloniki,WIE",SBA07242,Affinity Group,International Hellenic University-Thessaloniki,WIE,3,6,No,0,,0,2,No,No,,Yes,No,No,No,Yes,Partial,0/3,Not Met
+"International Hellenic University-Serres, WIE",SBA07741,Affinity Group,International Hellenic University-Serres,WIE,0,6,No,1,,0,2,No,Yes,,Yes,No,No,No,No,Met,1/3,Not Met
+"National Technical University of Athens,WIE",SBA08051,Affinity Group,National Technical University of Athens,WIE,13,6,Yes,0,,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+"University of Macedonia,WIE",SBA40078950,Affinity Group,University of Macedonia,WIE,7,6,Yes,0,,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+"University of Thessaly-Lamia, WIE",SBA66241,Affinity Group,University of Thessaly-Lamia,WIE,7,6,Yes,0,,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"University of Thessaly-Volos,WIE",SBA64371,Affinity Group,University of Thessaly-Volos,WIE,0,6,No,0,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"University of West Attica,WIE",SBA08201,Affinity Group,University of West Attica,WIE,14,6,Yes,0,,1,2,No,No,,Yes,No,No,No,Yes,Partial,1/3,Not Met
+"University of Western Macedonia-Kastoria,WIE",SBA11281,Affinity Group,University of Western Macedonia-Kastoria,WIE,9,6,Yes,1,,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+Aristotle University of Thessaloniki,STB15121,Student Branch,Aristotle University of Thessaloniki,,61,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+Democritus University of Thrace,STB98231,Student Branch,Democritus University of Thrace,,49,12,Yes,7,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,No,Met,3/3,Met
+Hellenic Mediterranean University-Heraklion,STB60210685,Student Branch,Hellenic Mediterranean University-Heraklion,,4,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+International Hellenic University-Serres,STB07741,Student Branch,International Hellenic University-Serres,,6,12,No,1,,0,4,No,Yes,Yes,,No,No,No,No,Met,1/3,Not Met
+International Hellenic University-Thessaloniki,STB07242,Student Branch,International Hellenic University-Thessaloniki,,45,12,Yes,23,,2,4,Yes,Yes,Yes,,Yes,Yes,Yes,No,Met,3/3,Met
+Ionian University,STB11377,Student Branch,Ionian University,,4,12,No,0,,0,4,No,No,Yes,,No,No,No,Yes,Partial,0/3,Not Met
+National Technical University of Athens,STB08051,Student Branch,National Technical University of Athens,,146,12,Yes,5,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,No,Met,3/3,Met
+Piraeus Univ Of,STB63361,Student Branch,University of Piraeus,,13,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,Yes,No,Met,2/3,Not Met
+Technical University of Crete,STB13581,Student Branch,Technical University of Crete,,39,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,No,Yes,Met,2/3,Not Met
+Univ of Peloponnese-Tripolis,STB13031,Student Branch,University of Peloponnese-Tripolis,,2,12,No,0,,0,4,No,No,Yes,,No,No,No,No,Partial,0/3,Not Met
+University of Ioannina,STB11911,Student Branch,University of Ioannina,,19,12,Yes,0,,0,4,No,Yes,No,,No,No,No,No,Partial,1/3,Not Met
+University of Ioannina-Arta,STB60226132,Student Branch,University of Ioannina-Arta,,20,12,Yes,48,,1,4,Yes,Yes,No,,Yes,Yes,Yes,Yes,Partial,2/3,Not Met
+University of Macedonia,STB40078950,Student Branch,University of Macedonia,,20,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+University of Patras,STB50001,Student Branch,University of Patras,,72,12,Yes,3,,2,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+University of Peloponnese-Patras,STB07731,Student Branch,University of Peloponnese-Patras,,6,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+University of Thessaly-Lamia,STB66241,Student Branch,University of Thessaly-Lamia,,39,12,Yes,7,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+University of Thessaly-Volos,STB64371,Student Branch,University of Thessaly-Volos,,25,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+University of West Attica,STB08201,Student Branch,University of West Attica,,56,12,Yes,1,,8,4,No,Yes,Yes,,Yes,Yes,Yes,No,Met,2/3,Not Met
+University of Western Macedonia-Kastoria,STB11281,Student Branch,University of Western Macedonia-Kastoria,,26,12,Yes,8,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,No,Met,3/3,Met
+University of Western Macedonia-Kozani,STB06471,Student Branch,University of Western Macedonia-Kozani,,12,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+University of the Aegean,STB63831,Student Branch,University of the Aegean,,30,12,Yes,18,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Aristotle University of Thessaloniki, EMB18",SBC15121,Student Branch Chapter,Aristotle University of Thessaloniki,EMB18,3,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"Aristotle University of Thessaloniki, PE31",SBC1512B,Student Branch Chapter,Aristotle University of Thessaloniki,PE31,14,6,Yes,1,1,1,2,No,Yes,,Yes,Yes,No,No,No,Met,2/3,Not Met
+"Aristotle University of Thessaloniki, RA24",SBC1512A,Student Branch Chapter,Aristotle University of Thessaloniki,RA24,1,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"Aristotle University of Thessaloniki,IA34",SBC1512D,Student Branch Chapter,Aristotle University of Thessaloniki,IA34,15,6,Yes,4,4,0,2,Yes,Yes,,No,Yes,Yes,Yes,No,Partial,2/3,Not Met
+"Democritus Univ of Thrace,EMB18",SBC98231,Student Branch Chapter,Democritus University of Thrace,EMB18,2,6,No,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,1/3,Not Met
+"Democritus Univ of Thrace,RA24",SBC98231D,Student Branch Chapter,Democritus University of Thrace,RA24,3,6,No,4,4,0,2,Yes,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+"Democritus University of Thrace,C16",SBC98231C,Student Branch Chapter,Democritus University of Thrace,C16,4,6,No,3,3,0,2,Yes,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+"Democritus University of Thrace,IA34",SBC98231A,Student Branch Chapter,Democritus University of Thrace,IA34,6,6,Yes,1,1,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+"Democritus University of Thrace,PE31",SBC98231B,Student Branch Chapter,Democritus University of Thrace,PE31,3,6,No,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,1/3,Not Met
+"Hellenic Mediterranean University-Heraklion,EMB18",SBC60210685,Student Branch Chapter,Hellenic Mediterranean University-Heraklion,EMB18,1,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"International Hellenic University-Serres, RA24",SBC07741A,Student Branch Chapter,International Hellenic University-Serres,RA24,1,6,No,1,0,0,2,No,Yes,,No,No,No,No,No,Partial,0/3,Not Met
+"National Technical University of Athens,C16",SBC08051B,Student Branch Chapter,National Technical University of Athens,C16,17,6,Yes,14,14,0,2,Yes,Yes,,Yes,Yes,No,No,No,Met,3/3,Met
+"National Technical University of Athens,COM19",SBC08051E,Student Branch Chapter,National Technical University of Athens,COM19,15,6,Yes,0,0,0,2,No,Yes,,No,Yes,No,No,No,Partial,1/3,Not Met
+"National Technical University of Athens,EMB18",SBC08051A,Student Branch Chapter,National Technical University of Athens,EMB18,7,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,No,No,No,Met,2/3,Not Met
+"National Technical University of Athens,RA24",SBC08051D,Student Branch Chapter,National Technical University of Athens,RA24,12,6,Yes,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,1/3,Not Met
+"National Technical University of Athens,SEN39,PE31",SBC08051C,Student Branch Chapter,National Technical University of Athens,"SEN39,PE31",19,6,Yes,2,2,0,2,Yes,Yes,,No,Yes,No,No,No,Partial,2/3,Not Met
+"Technical University of Crete,IA34",SBC13581,Student Branch Chapter,Technical University of Crete,IA34,14,6,Yes,9,5,2,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"University of Macedonia,RA24",SBC40078950,Student Branch Chapter,University of Macedonia,RA24,0,6,No,2,2,0,2,Yes,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"University of Patras,C16",SBC50001A,Student Branch Chapter,University of Patras,C16,9,6,Yes,1,1,0,2,No,No,,Yes,No,No,No,No,Partial,1/3,Not Met
+"University of Patras,EMB18",SBC50001B,Student Branch Chapter,University of Patras,EMB18,6,6,Yes,1,1,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+"University of Patras,PE31",SBC50001C,Student Branch Chapter,University of Patras,PE31,8,6,Yes,1,1,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+"University of Peloponnese-Patras,CAS04",SBC07731,Student Branch Chapter,University of Peloponnese-Patras,CAS04,0,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"University of Thessaly, Lamia, EMB18",SBC66241B,Student Branch Chapter,University of Thessaly-Lamia,EMB18,4,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"University of Thessaly-Lamia, C16",SBC66241A,Student Branch Chapter,University of Thessaly-Lamia,C16,1,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"University of Thessaly-Volos, PE31",SBC64371A,Student Branch Chapter,University of Thessaly-Volos,PE31,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"University of Thessaly-Volos,CAS04",SBC64371,Student Branch Chapter,University of Thessaly-Volos,CAS04,1,6,No,0,0,0,2,No,Yes,,No,No,No,No,No,Partial,0/3,Not Met
+"University of West Attica,C16",SBC08201B,Student Branch Chapter,University of West Attica,C16,9,6,Yes,0,0,2,2,No,Yes,,Yes,Yes,Yes,No,No,Met,2/3,Not Met
+"University of West Attica,EMB18",SBC08201A,Student Branch Chapter,University of West Attica,EMB18,9,6,Yes,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+"University of West Attica,PE31",SBC08201,Student Branch Chapter,University of West Attica,PE31,9,6,Yes,0,0,1,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+"University of West Attica,RA24",SBC08201C,Student Branch Chapter,University of West Attica,RA24,10,6,Yes,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+"University of Western Macedonia-Kastoria,CIS11",SBC11281,Student Branch Chapter,University of Western Macedonia-Kastoria,CIS11,5,6,No,1,1,0,2,No,Yes,,Yes,No,No,No,No,Met,1/3,Not Met
+"University of Western Macedonia-Kozani,C16",SBC06471A,Student Branch Chapter,University of Western Macedonia-Kozani,C16,1,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"University of Western Macedonia-Kozani,PE31",SBC06471,Student Branch Chapter,University of Western Macedonia-Kozani,PE31,2,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met

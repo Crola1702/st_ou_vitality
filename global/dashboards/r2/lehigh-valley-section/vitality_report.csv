@@ -1,0 +1,8 @@
+Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
+Lafayette College,STB00851,Student Branch,Lafayette College,,12,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,Yes,No,Met,2/3,Not Met
+Lehigh University,STB00891,Student Branch,Lehigh University,,77,12,Yes,6,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+University of Scranton,STB94801,Student Branch,University of Scranton,,30,12,Yes,9,,1,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Wilkes University,STB79501,Student Branch,Wilkes University,,13,12,Yes,5,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,No,Met,3/3,Met
+"Lehigh University,PE31",SBC00891A,Student Branch Chapter,Lehigh University,PE31,5,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"Lehigh University,PHO36",SBC008911,Student Branch Chapter,Lehigh University,PHO36,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"University of Scranton,ED15",SBC94801,Student Branch Chapter,University of Scranton,ED15,0,6,No,0,0,2,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met

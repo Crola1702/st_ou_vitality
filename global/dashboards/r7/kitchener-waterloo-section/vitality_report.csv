@@ -1,0 +1,11 @@
+Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
+Conestoga College Inst of Tech & Advanced Learning,STB11452,Student Branch,Conestoga College Inst of Tech & Advanced Learning,,3,12,No,3,,0,4,No,No,Yes,,No,Yes,No,Yes,Partial,0/3,Not Met
+University of Guelph,STB60311,Student Branch,University of Guelph,,31,12,Yes,1,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
+University of Waterloo,STB03501,Student Branch,University of Waterloo,,176,12,Yes,0,,0,4,No,No,Yes,,No,No,No,Yes,Partial,1/3,Not Met
+"University of Waterloo, AES10",SBC03501A,Student Branch Chapter,University of Waterloo,AES10,2,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"University of Waterloo, C16/COM19/CS23/IT12",SBC03501,Student Branch Chapter,University of Waterloo,C16/COM19/CS23/IT12,22,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"University of Waterloo, EP21",SBC03501B,Student Branch Chapter,University of Waterloo,EP21,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"University of Waterloo,AP03",SBC03501E,Student Branch Chapter,University of Waterloo,AP03,10,6,Yes,12,2,0,2,Yes,Yes,,Yes,No,No,No,No,Met,3/3,Met
+"University of Waterloo,EMC27",SBC03501F,Student Branch Chapter,University of Waterloo,EMC27,7,6,Yes,12,2,0,2,Yes,Yes,,Yes,No,No,No,No,Met,3/3,Met
+"University of Waterloo,MTT17",SBC03501D,Student Branch Chapter,University of Waterloo,MTT17,15,6,Yes,12,2,0,2,Yes,Yes,,Yes,Yes,No,Yes,Yes,Met,3/3,Met
+"University of Waterloo,SSC37",SBC03501C,Student Branch Chapter,University of Waterloo,SSC37,13,6,Yes,4,2,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met

@@ -1,0 +1,15 @@
+Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
+Gheorghe Asachi Technical University,STB99065,Student Branch,Gheorghe Asachi Technical University,,20,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+Politehnica University of Bucharest,STB63061,Student Branch,Politehnica University of Bucharest,,77,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+Politehnica University of Timisoara,STB10127,Student Branch,Politehnica University of Timisoara,,9,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Technical Univ Of Cluj Napoca,STB10228,Student Branch,Technical University of Cluj-Napoca,,31,12,Yes,1,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+Universitatea Alexandru Ioan Cuza,STB64721,Student Branch,Universitatea Alexandru Ioan Cuza,,8,12,No,1,,0,4,No,Yes,Yes,,No,No,No,No,Met,1/3,Not Met
+Universitatea Valahia din Targoviste,STB60049289,Student Branch,Universitatea Valahia din Targoviste,,15,12,Yes,1,,1,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+University Lucian Blaga Sibiu,STB60031668,Student Branch,University Lucian Blaga Sibiu,,15,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Gheorghe Asachi Technical University,EP21",SBC99065,Student Branch Chapter,Gheorghe Asachi Technical University,EP21,4,6,No,2,1,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,1/3,Not Met
+"Politehnica University of Bucharest,EP21",SBC63061,Student Branch Chapter,Politehnica University of Bucharest,EP21,8,6,Yes,3,2,1,2,Yes,Yes,,Yes,No,No,No,No,Met,3/3,Met
+"Politehnica University of Bucharest,NANO42",SBC63061A,Student Branch Chapter,Politehnica University of Bucharest,NANO42,6,6,Yes,5,4,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Politehnica University of Bucharest,RA24",SBC63061B,Student Branch Chapter,Politehnica University of Bucharest,RA24,3,6,No,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,1/3,Not Met
+"Politehnica University of Timisoara,EP21",SBC10127,Student Branch Chapter,Politehnica University of Timisoara,EP21,1,6,No,2,2,0,2,Yes,No,,Yes,No,No,No,No,Partial,1/3,Not Met
+"Technical Univ Of Cluj Napoca,EP21",SBC10228,Student Branch Chapter,Technical University of Cluj-Napoca,EP21,4,6,No,6,4,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"University Lucian Blaga Sibiu,EP21",SBC60031668,Student Branch Chapter,University Lucian Blaga Sibiu,EP21,12,6,Yes,4,3,1,2,Yes,No,,No,No,No,No,No,Not Met,2/3,Not Met

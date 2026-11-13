@@ -1,0 +1,15 @@
+Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
+Northwestern Polytechnical University,STB65631,Student Branch,Northwestern Polytechnical University,,268,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+Xi'an Institute of Optics and Precision-CAS,STB18941,Student Branch,Xi'an Institute of Optics and Precision-CAS,,0,12,No,0,,0,4,No,No,Yes,,No,No,No,No,Partial,0/3,Not Met
+Xi'an Jiaotong University,STB29831,Student Branch,Xi'an Jiaotong University,,519,12,Yes,3,,2,4,No,Yes,Yes,,No,No,No,No,Met,2/3,Not Met
+Xidian University,STB04911,Student Branch,Xidian University,,515,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+"Xian Jiaotong Univ,CAS04",SBC29831D,Student Branch Chapter,Xi'an Jiaotong University,CAS04,11,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Xian Jiaotong Univ,IA34",SBC29831C,Student Branch Chapter,Xi'an Jiaotong University,IA34,2,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"Xian Jiaotong Univ,IM09",SBC29831A,Student Branch Chapter,Xi'an Jiaotong University,IM09,10,6,Yes,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,1/3,Not Met
+"Xian Jiaotong Univ,MTT17",SBC29831F,Student Branch Chapter,Xi'an Jiaotong University,MTT17,1,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Xian Jiaotong Univ,PE31",SBC29831E,Student Branch Chapter,Xi'an Jiaotong University,PE31,100,6,Yes,7,4,0,2,Yes,Yes,,Yes,Yes,Yes,No,No,Met,3/3,Met
+"Xian Jiaotong Univ,PEL35",SBC29831,Student Branch Chapter,Xi'an Jiaotong University,PEL35,52,6,Yes,7,4,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Xian Jiaotong Univ,SMC28",SBC29831G,Student Branch Chapter,Xi'an Jiaotong University,SMC28,15,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Xian Jiaotong Univ,UFFC20",SBC29831B,Student Branch Chapter,Xi'an Jiaotong University,UFFC20,0,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"Xidian University,GRS29",SBC04911,Student Branch Chapter,Xidian University,GRS29,15,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Xidian University,MTT17",SBC04911A,Student Branch Chapter,Xidian University,MTT17,12,6,Yes,0,0,0,2,No,Yes,,No,Yes,No,No,No,Partial,1/3,Not Met

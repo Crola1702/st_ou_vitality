@@ -16,11 +16,11 @@ Institucion Universitaria de Barranquilla,STB66461,Student Branch,Institucion Un
 Politecnico de la Costa Atlantica,STB99095,Student Branch,Politecnico de la Costa Atlantica,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Univ Cooperativa de Colombia Sede Santa Martac,STB64131,Student Branch,Univ Cooperativa de Colombia Sede Santa Martac,,19,12,Yes,18,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Universidad Autonoma del Caribe,STB09871,Student Branch,Universidad Autonoma del Caribe,,57,12,Yes,18,,4,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
-Universidad Libre–Barranquilla,STB60231786,Student Branch,Universidad Libre–Barranquilla,,21,12,Yes,9,,5,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Universidad Libre–Barranquilla,STB60231786,Student Branch,Universidad Libre–Barranquilla,,21,12,Yes,9,,6,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Universidad Nacional de Colombia Sede de La Paz,STB60227842,Student Branch,Universidad Nacional de Colombia Sede de La Paz,,5,12,No,1,,0,4,No,Yes,No,,Yes,Yes,Yes,No,Partial,0/3,Not Met
 Universidad Pontificia Bolivariana-Monteria,STB60211405,Student Branch,Universidad Pontificia Bolivariana-Monteria,,21,12,Yes,2,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 Universidad Popular Del Cesar,STB65351,Student Branch,Universidad Popular Del Cesar,,1,12,No,0,,0,4,No,Yes,Yes,,No,No,No,Yes,Met,1/3,Not Met
-Universidad Simon Bolivar,STB60043388,Student Branch,Universidad Simon Bolivar,,72,12,Yes,7,,4,4,Yes,Yes,Yes,,No,Yes,Yes,Yes,Met,3/3,Met
+Universidad Simon Bolivar,STB60043388,Student Branch,Universidad Simon Bolivar,,72,12,Yes,8,,4,4,Yes,Yes,Yes,,No,Yes,Yes,Yes,Met,3/3,Met
 Universidad Tecnologica De Bolivar,STB13761,Student Branch,Universidad Tecnologica De Bolivar,,148,12,Yes,38,,25,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Universidad de Cordoba,STB20126,Student Branch,Universidad de Cordoba,,11,12,No,0,,0,4,No,No,Yes,,No,No,No,No,Partial,0/3,Not Met
 Universidad de Sucre,STB60225041,Student Branch,Universidad de Sucre,,10,12,No,6,,2,4,Yes,Yes,No,,No,No,No,No,Partial,1/3,Not Met
@@ -49,7 +49,7 @@ University of Atlántico,STB60239952,Student Branch,University of Atlántico,,31
 "Universidad De La Costa,COM19",SBC65981,Student Branch Chapter,Universidad de la Costa,COM19,1,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad Libre–Barranquilla,CIS11/C16",SBC60231786,Student Branch Chapter,Universidad Libre–Barranquilla,CIS11/C16,18,6,Yes,0,0,5,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 "Universidad Simon Bolivar,C16",SBC60043388,Student Branch Chapter,Universidad Simon Bolivar,C16,23,6,Yes,12,3,0,2,Yes,Yes,,No,Yes,No,Yes,Yes,Partial,2/3,Not Met
-"Universidad Simon Bolivar,CIS11",SBC60043388B,Student Branch Chapter,Universidad Simon Bolivar,CIS11,16,6,Yes,12,6,1,2,Yes,Yes,,No,Yes,Yes,Yes,Yes,Partial,2/3,Not Met
+"Universidad Simon Bolivar,CIS11",SBC60043388B,Student Branch Chapter,Universidad Simon Bolivar,CIS11,16,6,Yes,13,7,1,2,Yes,Yes,,No,Yes,Yes,Yes,Yes,Partial,2/3,Not Met
 "Universidad Simon Bolivar,ED15",SBC60043388F,Student Branch Chapter,Universidad Simon Bolivar,ED15,10,6,Yes,3,3,2,2,Yes,Yes,,Yes,Yes,No,Yes,Yes,Met,3/3,Met
 "Universidad Simon Bolivar,EMB18",SBC60043388E,Student Branch Chapter,Universidad Simon Bolivar,EMB18,10,6,Yes,2,1,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
 "Universidad Simon Bolivar,NPS05",SBC60043388D,Student Branch Chapter,Universidad Simon Bolivar,NPS05,3,6,No,8,7,0,2,Yes,Yes,,No,No,No,Yes,No,Partial,1/3,Not Met
@@ -78,4 +78,4 @@ University of Atlántico,STB60239952,Student Branch,University of Atlántico,,31
 "Universidad del Norte,IA34",SBC63011H,Student Branch Chapter,Universidad del Norte,IA34,44,6,Yes,16,9,0,2,Yes,Yes,,Yes,No,Yes,Yes,Yes,Met,3/3,Met
 "Universidad del Norte,TEM14",SBC63011J,Student Branch Chapter,Universidad del Norte,TEM14,11,6,Yes,2,1,0,2,No,Yes,,No,Yes,Yes,Yes,Yes,Partial,1/3,Not Met
 "Universidad del Norte,VT06",SBC63011G,Student Branch Chapter,Universidad del Norte,VT06,22,6,Yes,7,6,0,2,Yes,Yes,,Yes,No,Yes,Yes,Yes,Met,3/3,Met
-"University of Atlántico,NPS05",SBC60239952,Student Branch Chapter,University of Atlántico,NPS05,18,6,Yes,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+"University of Atlántico,NPS05",SBC60239952,Student Branch Chapter,University of Atlántico,NPS05,18,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met

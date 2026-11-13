@@ -1,0 +1,9 @@
+Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
+Kazan Federal University,STB99384,Student Branch,Kazan Federal University,,2,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Lipetsk State Technical University,STB10230,Student Branch,Lipetsk State Technical University,,12,12,Yes,0,,0,4,No,Yes,Yes,,Yes,No,Yes,Yes,Met,2/3,Not Met
+Moscow Power Engineering Institute,STB60571,Student Branch,Moscow Power Engineering Institute,,9,12,No,1,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,1/3,Not Met
+National Research Univ. of Electronic Technology,STB64296,Student Branch,National Research Univ. of Electronic Technology,,2,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Skolkovo Institute of Science and Technology,STB10226,Student Branch,Skolkovo Institute of Science and Technology,,5,12,No,0,,0,4,No,No,Yes,,No,No,No,Yes,Partial,0/3,Not Met
+Southern Federal University,STB13861,Student Branch,Southern Federal University,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+"Lipetsk State Technical University,IA34/IE13",SBC10230,Student Branch Chapter,Lipetsk State Technical University,IA34/IE13,12,6,Yes,0,0,0,2,No,Yes,,No,No,No,No,Yes,Partial,1/3,Not Met
+"National Research Univ of Electronic Tech, EMB18",SBC64296A,Student Branch Chapter,National Research Univ. of Electronic Technology,EMB18,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met

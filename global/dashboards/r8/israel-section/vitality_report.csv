@@ -1,0 +1,8 @@
+Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
+Azrieli College of Engineering Jerusalem,STB03081,Student Branch,Azrieli College of Engineering Jerusalem,,1,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Ben Gurion University of the Negev,STB84901,Student Branch,Ben Gurion University of the Negev,,38,12,Yes,0,,1,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
+Technion-Israel Institute of Technology,STB02781,Student Branch,Technion-Israel Institute of Technology,,68,12,Yes,4,,0,4,Yes,No,Yes,,No,No,No,No,Partial,2/3,Not Met
+Tel Aviv University,STB09101,Student Branch,Tel Aviv University,,34,12,Yes,0,,1,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+University of Haifa,STB60153704,Student Branch,University of Haifa,,20,12,Yes,0,,1,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Tel Aviv University,EMB18",SBC09101,Student Branch Chapter,Tel Aviv University,EMB18,1,6,No,1,1,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"University of Haifa,OE22",SBC60153704,Student Branch Chapter,University of Haifa,OE22,11,6,Yes,1,1,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met

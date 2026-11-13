@@ -1,0 +1,46 @@
+Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
+"Politecnico Di Milano, WIE",SBA05231,Affinity Group,Politecnico Di Milano,WIE,9,6,Yes,0,,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+"Politecnico di Torino, WIE",SBA06971,Affinity Group,Politecnico di Torino,WIE,10,6,Yes,11,,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Universita Degli Studi Di Pavia,WIE",SBA10871,Affinity Group,Universita degli Studi di Pavia,WIE,2,6,No,0,,0,2,No,Yes,,Yes,No,No,No,No,Met,1/3,Not Met
+Genoa Univ of,STB05491,Student Branch,University of Genoa,,81,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+Parma Universita Degli Studi Di,STB34371,Student Branch,Universita degli Studi di Parma,,15,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
+Politecnico Di Milano,STB05231,Student Branch,Politecnico Di Milano,,254,12,Yes,1,,8,4,No,Yes,Yes,,Yes,Yes,Yes,No,Met,2/3,Not Met
+Politecnico di Torino,STB06971,Student Branch,Politecnico di Torino,,219,12,Yes,13,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Polytechnic University of Bari,STB08061,Student Branch,Polytechnic University of Bari,,41,12,Yes,4,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,No,Met,3/3,Met
+Polytechnic University of the Marches,STB60027500,Student Branch,Polytechnic University of the Marches,,33,12,Yes,5,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,No,Met,3/3,Met
+Sapienza University of Rome,STB04031,Student Branch,Sapienza University of Rome,,93,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+Scuola Superiore Di Studi Univ Sant'Anna,STB11241,Student Branch,Sant'Anna School of Advanced Studies,,29,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
+Tor Vergata University of Rome,STB39661,Student Branch,Tor Vergata University of Rome,,22,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+Universita Campus Bio Medico Di Roma,STB11422,Student Branch,Universita Campus Bio Medico di Roma,,33,12,Yes,8,,4,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Universita Degli Studi Di Napoli Parthenope,STB63881,Student Branch,Universita Degli Studi Di Napoli Parthenope,,22,12,Yes,5,,0,4,Yes,Yes,Yes,,No,No,No,No,Met,3/3,Met
+Universita degli Studi di Pavia,STB10871,Student Branch,Universita degli Studi di Pavia,,73,12,Yes,1,,1,4,No,Yes,Yes,,Yes,No,Yes,Yes,Met,2/3,Not Met
+Universita di Catania,STB28741,Student Branch,Universita di Catania,,37,12,Yes,11,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Universita di Pisa,STB15911,Student Branch,Universita di Pisa,,73,12,Yes,8,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+University of Basilicata,STB16734,Student Branch,University of Basilicata,,14,12,Yes,6,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+University of Bologna,STB00151,Student Branch,University of Bologna,,89,12,Yes,4,,1,4,Yes,Yes,Yes,,Yes,Yes,Yes,No,Met,3/3,Met
+University of Brescia,STB01019,Student Branch,University of Brescia,,38,12,Yes,1,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+University of Cagliari,STB13821,Student Branch,University of Cagliari,,22,12,Yes,1,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+University of Calabria,STB81221,Student Branch,University of Calabria,,19,12,Yes,0,,0,4,No,Yes,Yes,,No,Yes,Yes,No,Met,2/3,Not Met
+University of Florence,STB50701,Student Branch,University of Florence,,27,12,Yes,3,,1,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+University of Modena and Reggio Emilia,STB41562416,Student Branch,University of Modena and Reggio Emilia,,47,12,Yes,2,,0,4,No,Yes,Yes,,No,No,No,No,Met,2/3,Not Met
+University of Naples Federico II,STB64309,Student Branch,University of Naples Federico II,,88,12,Yes,9,,3,4,Yes,Yes,Yes,,Yes,No,No,Yes,Met,3/3,Met
+University of Padova,STB03251,Student Branch,University of Padova,,110,12,Yes,4,,0,4,Yes,No,No,,No,No,No,No,Not Met,2/3,Not Met
+University of Salento,STB10101,Student Branch,University of Salento,,10,12,No,0,,0,4,No,No,Yes,,No,No,No,No,Partial,0/3,Not Met
+University of Salerno,STB63041,Student Branch,University of Salerno,,35,12,Yes,3,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+University of Trieste,STB04131,Student Branch,University of Trieste,,9,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+University of Verona,STB61591,Student Branch,University of Verona,,19,12,Yes,5,,4,4,Yes,Yes,Yes,,No,No,Yes,No,Met,3/3,Met
+"Politecnico Di Milano, C16",SBC05231,Student Branch Chapter,Politecnico Di Milano,C16,25,6,Yes,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,1/3,Not Met
+"Politecnico Di Milano, EMB18",SBC05231A,Student Branch Chapter,Politecnico Di Milano,EMB18,20,6,Yes,1,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
+"Politecnico Di Milano,RA24/IE13",SBC05231B,Student Branch Chapter,Politecnico Di Milano,RA24/IE13,24,6,Yes,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,1/3,Not Met
+"Politecnico di Torino,CAS04",SBC06971,Student Branch Chapter,Politecnico di Torino,CAS04,10,6,Yes,10,5,0,2,Yes,Yes,,Yes,Yes,Yes,No,Yes,Met,3/3,Met
+"Politecnico di Torino,MTT17",SBC06971A,Student Branch Chapter,Politecnico di Torino,MTT17,8,6,Yes,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+"Sapienza University of Rome, IA34",SBC040311,Student Branch Chapter,Sapienza University of Rome,IA34,5,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"Tor Vergata University of Rome,AES10",SBC39661,Student Branch Chapter,Tor Vergata University of Rome,AES10,1,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"Universita Campus Bio Medico di Roma,SEN39",SBC11422,Student Branch Chapter,Universita Campus Bio Medico di Roma,SEN39,11,6,Yes,1,1,4,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Universita Degli Studi Di Pavia,AP03",SBC10871A,Student Branch Chapter,Universita degli Studi di Pavia,AP03,2,6,No,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,1/3,Not Met
+"Universita Degli Studi Di Pavia,MTT17",SBC10871,Student Branch Chapter,Universita degli Studi di Pavia,MTT17,3,6,No,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,1/3,Not Met
+"Universita degli Studi di Pavia,NPS05",SBC10871B,Student Branch Chapter,Universita degli Studi di Pavia,NPS05,5,6,No,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,1/3,Not Met
+"University of Bologna,COM19",SBC00151,Student Branch Chapter,University of Bologna,COM19,16,6,Yes,1,1,0,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
+"University of Bologna,IE13",SBC00151A,Student Branch Chapter,University of Bologna,IE13,12,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"University of Cagliari, SMC28",SBC13821A,Student Branch Chapter,University of Cagliari,SMC28,2,6,No,0,0,0,2,No,No,,Yes,No,No,No,Yes,Partial,0/3,Not Met
+"University of Florence,OE22",SBC50701,Student Branch Chapter,University of Florence,OE22,6,6,Yes,4,4,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met

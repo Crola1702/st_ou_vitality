@@ -1,0 +1,9 @@
+Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
+California State University-Chico,STB04931,Student Branch,California State University-Chico,,17,12,Yes,0,,1,4,No,Yes,No,,No,No,No,No,Partial,1/3,Not Met
+California State University-Sacramento,STB01701,Student Branch,California State University-Sacramento,,46,12,Yes,11,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+University of California-Davis,STB06021,Student Branch,University of California-Davis,,86,12,Yes,1,,16,4,No,Yes,Yes,,No,No,No,No,Met,2/3,Not Met
+University of the Pacific,STB05711,Student Branch,University of the Pacific,,4,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+"California State University-Sacramento,C16",SBC01701,Student Branch Chapter,California State University-Sacramento,C16,1,6,No,1,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"University of California-Davis,EP12",SBC06021B,Student Branch Chapter,University of California-Davis,EP12,6,6,Yes,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+"University of California-Davis,MTT17",SBC06021A,Student Branch Chapter,University of California-Davis,MTT17,3,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"University of the Pacific,C16",SBC05711,Student Branch Chapter,University of the Pacific,C16,1,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met

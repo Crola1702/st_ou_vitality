@@ -247,6 +247,9 @@
     color: var(--text-secondary); font-size: 0.8rem; text-decoration: none;
     border: 1px solid var(--border); border-radius: 999px; padding: 4px 12px;
   }
+  .generated-at { margin-left: auto; align-self: center; color: var(--text-secondary); font-size: 0.8rem; font-variant-numeric: tabular-nums; }
+  .section-link { color: var(--text-secondary); font-size: 0.88rem; white-space: nowrap; }
+  .section-link:hover { color: var(--text-primary); }
   .byline a:hover { color: var(--text-primary); border-color: var(--text-secondary); }
   .scope-nav { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 0 0 20px; }
   .scope-nav a { color: var(--text-secondary); font-size: 0.9rem; }
@@ -338,7 +341,7 @@
 <body>
 <div class="viz-root">
   <div class="container">
-    <p class="byline"><a href="https://www.linkedin.com/in/cristobalarroyo/" target="_blank" rel="noopener">By Cristóbal Arroyo</a> <a href="https://github.com/Crola1702/st_ou_vitality" target="_blank" rel="noopener">See on GitHub</a></p>
+    <p class="byline"><a href="https://www.linkedin.com/in/cristobalarroyo/" target="_blank" rel="noopener">By Cristóbal Arroyo</a> <a href="https://github.com/Crola1702/st_ou_vitality" target="_blank" rel="noopener">See on GitHub</a> <span class="generated-at">Generated at 2026-11-13 08:34 -05</span></p>
     <h1>IEEE Student OU Vitality: Dominican Republic Section</h1>
     <p class="subtitle">Generated from local vTools exports. Events source: IEEE_vTools_Events_R9.csv.</p>
     <div class="scope-nav"><a href="../index.html">&larr; All sections</a><select id="scope-select" aria-label="Section" onchange="location.href=this.value"><option value="../region/index.html">Latin America - Region 9</option><option value="../aguascalientes-section/index.html">Aguascalientes Section</option><option value="../argentina-section/index.html">Argentina Section</option><option value="../bolivia-section/index.html">Bolivia Section</option><option value="../centro-occidente-section/index.html">Centro Occidente Section</option><option value="../centro-norte-brasil-section/index.html">Centro-Norte Brasil Section</option><option value="../chile-section/index.html">Chile Section</option><option value="../chile-sur-section/index.html">Chile Sur Section</option><option value="../colombia-section/index.html">Colombia Section</option><option value="../colombian-caribbean-section/index.html">Colombian Caribbean Section</option><option value="../costa-rica-section/index.html">Costa Rica Section</option><option value="../dominican-republic-section/index.html" selected>Dominican Republic Section</option><option value="../ecuador-section/index.html">Ecuador Section</option><option value="../el-salvador-section/index.html">El Salvador Section</option><option value="../guadalajara-section/index.html">Guadalajara Section</option><option value="../guanajuato-section/index.html">Guanajuato Section</option><option value="../guatemala-section/index.html">Guatemala Section</option><option value="../honduras-section/index.html">Honduras Section</option><option value="../mexico-section/index.html">Mexico Section</option><option value="../minas-gerais-section/index.html">Minas Gerais Section</option><option value="../monterrey-section/index.html">Monterrey Section</option><option value="../morelos-section/index.html">Morelos Section</option><option value="../nicaragua-section/index.html">Nicaragua Section</option><option value="../northeast-brazil-section/index.html">Northeast Brazil Section</option><option value="../panama-section/index.html">Panama Section</option><option value="../paraguay-section/index.html">Paraguay Section</option><option value="../peru-section/index.html">Peru Section</option><option value="../puebla-section/index.html">Puebla Section</option><option value="../puerto-rico-caribbean-section/index.html">Puerto Rico &amp; Caribbean Section</option><option value="../queretaro-section/index.html">Queretaro Section</option><option value="../rio-de-janeiro-section/index.html">Rio De Janeiro Section</option><option value="../south-brazil-section/index.html">South Brazil Section</option><option value="../trinidad-and-tobago-section/index.html">Trinidad And Tobago Section</option><option value="../uruguay-section/index.html">Uruguay Section</option><option value="../venezuela-section/index.html">Venezuela Section</option><option value="../veracruz-section/index.html">Veracruz Section</option><option value="../western-puerto-rico-section/index.html">Western Puerto Rico Section</option></select></div>
@@ -460,7 +463,7 @@
           <h2>Student Branch <span class="req-note">(≥12 members, ≥4 events; Chair &amp; Counselor required)</span></h2>
           <div class="table-wrap">
           <table id="table-stb">
-            <thead><tr><th>Unit Name</th><th>SPO ID</th><th class="sortable" onclick="sortByMembers('table-stb', this)" data-dir="">Members <span class="sort-arrow"></span></th><th>Events</th><th>Officers</th><th>Requirements Met</th></tr></thead>
+            <thead><tr><th>Unit Name</th><th>SPO ID</th><th class="sortable" onclick="sortByMembers('table-stb', this)" data-dir="desc">Members <span class="sort-arrow">▼</span></th><th>Events</th><th>Officers</th><th>Requirements Met</th></tr></thead>
             <tbody>
               <tr class="ou-row" data-name="universidad apec" data-spoid="stb18771" data-university="universidad apec" data-society="" data-members="10" data-type="branch" data-req="1" data-section="Dominican Republic Section" data-council="Region 9 - No Council">
                   <td class="name-cell">Universidad APEC</td>
@@ -482,7 +485,7 @@
           <h2>Student Branch Chapter <span class="req-note">(≥6 members, ≥2 technical events; Chair &amp; Advisor required)</span></h2>
           <div class="table-wrap">
           <table id="table-sbc">
-            <thead><tr><th>Unit Name</th><th>SPO ID</th><th class="sortable" onclick="sortByMembers('table-sbc', this)" data-dir="">Members <span class="sort-arrow"></span></th><th>Events</th><th>Officers</th><th>Requirements Met</th></tr></thead>
+            <thead><tr><th>Unit Name</th><th>SPO ID</th><th class="sortable" onclick="sortByMembers('table-sbc', this)" data-dir="desc">Members <span class="sort-arrow">▼</span></th><th>Events</th><th>Officers</th><th>Requirements Met</th></tr></thead>
             <tbody>
               <tr><td colspan="6" class="empty">No units found</td></tr>
               <tr class="filtered-empty" hidden><td colspan="6" class="empty">No units match the current filters.</td></tr>
@@ -495,7 +498,7 @@
           <h2>Affinity Group <span class="req-note">(≥6 members, ≥2 events; Chair &amp; Advisor required)</span></h2>
           <div class="table-wrap">
           <table id="table-sba">
-            <thead><tr><th>Unit Name</th><th>SPO ID</th><th class="sortable" onclick="sortByMembers('table-sba', this)" data-dir="">Members <span class="sort-arrow"></span></th><th>Events</th><th>Officers</th><th>Requirements Met</th></tr></thead>
+            <thead><tr><th>Unit Name</th><th>SPO ID</th><th class="sortable" onclick="sortByMembers('table-sba', this)" data-dir="desc">Members <span class="sort-arrow">▼</span></th><th>Events</th><th>Officers</th><th>Requirements Met</th></tr></thead>
             <tbody>
               <tr><td colspan="6" class="empty">No units found</td></tr>
               <tr class="filtered-empty" hidden><td colspan="6" class="empty">No units match the current filters.</td></tr>
@@ -524,7 +527,7 @@
       <p class="empty">No history yet — place Member Detail View.csv in the project directory and re-run the script on a later date to start building this trend.</p>
 
       <h3 class="trend-heading">OU Vitality</h3>
-      <p class="req-note">% of OUs meeting full vitality (3/3) over time, by type. Builds up as you re-run the script — currently 7 dates recorded.</p>
+      <p class="req-note">% of OUs meeting full vitality (3/3) over time, by type. Builds up as you re-run the script — currently 8 dates recorded.</p>
       
         <div class="trend-card">
           <div class="trend-legend"><span class="legend-item"><span class="legend-swatch" style="background:var(--series-1)"></span>Student Branch</span><span class="legend-item"><span class="legend-swatch" style="background:var(--series-2)"></span>Chapter</span><span class="legend-item"><span class="legend-swatch" style="background:var(--series-3)"></span>Affinity Group</span></div>
@@ -692,6 +695,18 @@
     if (selectedTypes().length !== typeBoxes.length) params.set('types', selectedTypes().join(','));
     const qs = params.toString();
     history.replaceState(null, '', qs ? `?${qs}` : window.location.pathname);
+
+    // "Open Section dashboard": the picked Section's own, lighter page, keeping the other filters.
+    const sectionLink = document.getElementById('section-link');
+    if (sectionLink) {
+      const href = sectionSelect.value && sectionSelect.selectedOptions[0].dataset.href;
+      sectionLink.hidden = !href;
+      if (href) {
+        params.delete('council');
+        params.delete('section');
+        sectionLink.href = href + (params.toString() ? `?${params}` : '');
+      }
+    }
   }
 
   function loadFiltersFromURL() {
@@ -810,7 +825,7 @@
     if (name === 'trends') { renderTrendChart(); renderSocietyTrendChart(); renderGradeBarChart(); }
   }
 
-  const trendData = {"dates": ["2026-09-21", "2026-10-30", "2026-11-04", "2026-11-05", "2026-11-06", "2026-11-08", "2026-11-11"], "series": {"Student Branch": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "Student Branch Chapter": [null, null, null, null, null, null, null], "Affinity Group": [null, null, null, null, null, null, null]}};
+  const trendData = {"dates": ["2026-09-21", "2026-10-30", "2026-11-04", "2026-11-05", "2026-11-06", "2026-11-08", "2026-11-11", "2026-11-13"], "series": {"Student Branch": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "Student Branch Chapter": [null, null, null, null, null, null, null, null], "Affinity Group": [null, null, null, null, null, null, null, null]}};
   const trendSeriesDefs = [["Student Branch", "var(--series-1)", "Student Branch"], ["Student Branch Chapter", "var(--series-2)", "Chapter"], ["Affinity Group", "var(--series-3)", "Affinity Group"]];
   const societyTrendData = {"dates": [], "series": {}, "labels": {}, "default_codes": []};
   const societyAllDefs = [];
@@ -1233,11 +1248,14 @@
       }
     }
     groups.sort((a, b) => dir === 'asc' ? a.members - b.members : b.members - a.members);
-    groups.forEach(g => g.group.forEach(el => tbody.appendChild(el)));
+    // One DOM write: moving thousands of rows one by one froze the Region pages.
+    const frag = document.createDocumentFragment();
+    groups.forEach(g => frag.append(...g.group));
+    tbody.prepend(frag);  // keeps the "no units match" row last
   }
 </script>
 <!-- "Export current view": the visible rows, in their on-screen order, as PDFs / CSV / print. -->
-<script id="export-data" type="application/json">{"scope":"Dominican Republic Section","generated":"2026-11-11","colors":{"3":"#0ca30c","2":"#fab219","1":"#ec835a","0":"#d03b3b"},"ous":[{"n":"Universidad APEC","id":"STB18771","t":"branch","u":"Universidad APEC","s":"","sd":"","se":"Dominican Republic Section","co":"Region 9 - No Council","m":10,"mm":12,"mo":false,"e":2,"em":4,"eo":false,"tech":false,"ch":true,"r2":"Counselor","cn":true,"rq":1,"ok":false,"miss":["Members 10/12","Reported events 2/4"]}]}</script>
+<script id="export-data" type="application/json">{"scope":"Dominican Republic Section","generated":"2026-11-13","colors":{"3":"#0ca30c","2":"#fab219","1":"#ec835a","0":"#d03b3b"},"ous":[{"n":"Universidad APEC","id":"STB18771","t":"branch","u":"Universidad APEC","s":"","sd":"","se":"Dominican Republic Section","co":"Region 9 - No Council","m":10,"mm":12,"mo":false,"e":2,"em":4,"eo":false,"tech":false,"ch":true,"r2":"Counselor","cn":true,"rq":1,"ok":false,"miss":["Members 10/12","Reported events 2/4"]}]}</script>
 <div id="export-pages" class="export-pages" aria-hidden="true"></div>
 <script>
 // Batch PDF export for the dashboard's "Export current view". Inlined by

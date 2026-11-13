@@ -1,0 +1,13 @@
+Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
+Arizona State Univ-Polytechnic,STB28251,Student Branch,Arizona State Univ-Polytechnic,,26,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
+Arizona State University -Tempe,STB00101,Student Branch,Arizona State University -Tempe,,393,12,Yes,2,,2,4,No,Yes,No,,Yes,No,Yes,No,Partial,1/3,Not Met
+DeVry University-Phoenix,STB10821,Student Branch,DeVry University-Phoenix,,0,12,No,0,,0,4,No,No,Yes,,No,No,No,No,Partial,0/3,Not Met
+Embry-Riddle Aeronautical Univ,STB35821,Student Branch,Embry-Riddle Aeronautical Univ,,19,12,Yes,0,,0,4,No,Yes,Yes,,No,No,Yes,No,Met,2/3,Not Met
+Grand Canyon University,STB10176,Student Branch,Grand Canyon University,,10,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Northern Arizona Univ,STB11401,Student Branch,Northern Arizona Univ,,16,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
+"Arizona State University -Tempe,C16",SBC00101,Student Branch Chapter,Arizona State University -Tempe,C16,33,6,Yes,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,1/3,Not Met
+"Arizona State University -Tempe,COM19",SBC00101B,Student Branch Chapter,Arizona State University -Tempe,COM19,21,6,Yes,6,6,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Arizona State University -Tempe,PE31",SBC00101A,Student Branch Chapter,Arizona State University -Tempe,PE31,28,6,Yes,4,3,0,2,Yes,Yes,,Yes,Yes,No,Yes,Yes,Met,3/3,Met
+"DeVry University-Phoenix,C16",SBC10821,Student Branch Chapter,DeVry University-Phoenix,C16,0,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"Embry-Riddle Aeronautical Univ,C16",SBC35821,Student Branch Chapter,Embry-Riddle Aeronautical Univ,C16,2,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Northern Arizona Univ, C16",SBC11401,Student Branch Chapter,Northern Arizona Univ,C16,2,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met

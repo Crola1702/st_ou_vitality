@@ -1,0 +1,27 @@
+Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
+Chung Yuan Christian University,STB15671,Student Branch,Chung Yuan Christian University,,15,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+Ming Chi University of Technology,STB60234905,Student Branch,Ming Chi University of Technology,,18,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+National Central Univ,STB29711,Student Branch,National Central Univ,,46,12,Yes,0,,0,4,No,Yes,No,,No,No,No,No,Partial,1/3,Not Met
+National Chiao Tung University,STB02561,Student Branch,National Chiao Tung University,,10,12,No,0,,0,4,No,No,Yes,,No,No,No,No,Partial,0/3,Not Met
+National Chung Hsing University,STB03981,Student Branch,National Chung Hsing University,,24,12,Yes,0,,0,4,No,Yes,Yes,,No,No,No,No,Met,2/3,Not Met
+National Sun Yat-sen University,STB29421,Student Branch,National Sun Yat-sen University,,48,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+National Taipai University of Technology,STB17271,Student Branch,National Taipai University of Technology,,24,12,Yes,0,,0,4,No,Yes,Yes,,No,No,No,No,Met,2/3,Not Met
+National Taiwan Univ,STB17321,Student Branch,National Taiwan Univ,,26,12,Yes,0,,0,4,No,Yes,Yes,,No,No,No,No,Met,2/3,Not Met
+National Taiwan University,STB60024681,Student Branch,National Taiwan University,,231,12,Yes,2,,3,4,No,No,Yes,,No,No,Yes,Yes,Partial,1/3,Not Met
+National Taiwan University of Science & Technology,STB65761,Student Branch,National Taiwan University of Science & Technology,,54,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+National Tsing Hua University,STB02541,Student Branch,National Tsing Hua University,,104,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+Natl Taiwan Ocean Univ,STB65861,Student Branch,Natl Taiwan Ocean Univ,,9,12,No,0,,0,4,No,No,Yes,,No,No,No,No,Partial,0/3,Not Met
+Yuan Ze Univ,STB65121,Student Branch,Yuan Ze Univ,,25,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+"National Chiao Tung University,CT08",SBC025611,Student Branch Chapter,National Chiao Tung University,CT08,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"National Chiao Tung University,ED15",SBC02561A,Student Branch Chapter,National Chiao Tung University,ED15,0,6,No,1,1,0,2,No,Yes,,Yes,No,No,No,No,Met,1/3,Not Met
+"National Chung Hsing University,SMC28",SBC039811,Student Branch Chapter,National Chung Hsing University,SMC28,1,6,No,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,1/3,Not Met
+"National Taiwan Univ,ED15",SBC17321A,Student Branch Chapter,National Taiwan Univ,ED15,0,6,No,2,2,0,2,Yes,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+"National Taiwan University of Sci & Tech,IA34",SBC65761A,Student Branch Chapter,National Taiwan University of Science & Technology,IA34,2,6,No,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,1/3,Not Met
+"National Taiwan University of Sci & Tech,PHO36",SBC65761B,Student Branch Chapter,National Taiwan University of Science & Technology,PHO36,1,6,No,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,1/3,Not Met
+"National Taiwan University of Sci & Tech,SMC28",SBC65761,Student Branch Chapter,National Taiwan University of Science & Technology,SMC28,0,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"National Taiwan University,PHO36",SBC60024681,Student Branch Chapter,National Taiwan University,PHO36,7,6,Yes,1,0,1,2,No,No,,Yes,No,No,No,No,Partial,1/3,Not Met
+"National Tsing Hua University,ED15",SBC02541A,Student Branch Chapter,National Tsing Hua University,ED15,14,6,Yes,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+"National Tsing Hua University,IA34",SBC02541B,Student Branch Chapter,National Tsing Hua University,IA34,3,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"National Tsing Hua University,PEL35",SBC025411,Student Branch Chapter,National Tsing Hua University,PEL35,2,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Natl Taiwan Ocean Univ,SMC28",SBC65861,Student Branch Chapter,Natl Taiwan Ocean Univ,SMC28,0,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"Yuan Ze Univ,SMC28",SBC651211,Student Branch Chapter,Yuan Ze Univ,SMC28,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met

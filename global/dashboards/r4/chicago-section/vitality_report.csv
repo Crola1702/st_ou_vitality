@@ -1,0 +1,20 @@
+Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
+"Concordia University Chicago,WIE",SBA14541,Affinity Group,Concordia University Chicago,WIE,33,6,Yes,0,,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+Chicago State University,STB60020832,Student Branch,Chicago State University,,5,12,No,0,,0,4,No,Yes,Yes,,Yes,Yes,Yes,No,Met,1/3,Not Met
+Concordia University Chicago,STB14541,Student Branch,Concordia University Chicago,,47,12,Yes,0,,0,4,No,Yes,Yes,,No,Yes,No,No,Met,2/3,Not Met
+Depaul Univ,STB70101,Student Branch,Depaul Univ,,9,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Devry University-Chicago,STB00541,Student Branch,DeVry University-Chicago,,2,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Illinois Inst of Tech,STB00721,Student Branch,Illinois Inst of Tech,,61,12,Yes,0,,0,4,No,Yes,Yes,,Yes,No,Yes,No,Met,2/3,Not Met
+Lewis University,STB99998,Student Branch,Lewis University,,4,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Loyola University Chicago,STB10080,Student Branch,Loyola University Chicago,,6,12,No,0,,0,4,No,No,Yes,,No,No,No,No,Partial,0/3,Not Met
+Northwestern Univ,STB01361,Student Branch,Northwestern Univ,,98,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+Olivet Nazarene University,STB11732,Student Branch,Olivet Nazarene University,,6,12,No,0,,1,4,No,Yes,Yes,,No,No,No,No,Met,1/3,Not Met
+University of Illinois - Springfield,STB40326301,Student Branch,University of Illinois - Springfield,,7,12,No,0,,1,4,No,Yes,No,,Yes,Yes,Yes,No,Partial,0/3,Not Met
+University of Illinois-Chicago,STB04171,Student Branch,University of Illinois-Chicago,,130,12,Yes,0,,1,4,No,Yes,No,,Yes,Yes,Yes,Yes,Partial,1/3,Not Met
+"Concordia University Chicago,C16",SBC1451A,Student Branch Chapter,Concordia University Chicago,C16,12,6,Yes,0,0,0,2,No,No,,Yes,Yes,No,No,No,Partial,1/3,Not Met
+"Depaul Univ, C16",SBC70101,Student Branch Chapter,Depaul Univ,C16,3,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Illinois Inst of Tech,C16",SBC00721,Student Branch Chapter,Illinois Inst of Tech,C16,5,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Loyola University Chicago,EMB18",SBC10080,Student Branch Chapter,Loyola University Chicago,EMB18,1,6,No,1,1,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"Northwestern Univ,C16",SBC01361,Student Branch Chapter,Northwestern Univ,C16,4,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
+"University of Illinois-Chicago, EMB18",SBC04171,Student Branch Chapter,University of Illinois-Chicago,EMB18,12,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
+"University of Illinois-Chicago,COM19",SBC04171A,Student Branch Chapter,University of Illinois-Chicago,COM19,9,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
