@@ -2,7 +2,7 @@ Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Memb
 "Univ Catolica Nuestra Senora de la Asuncion,WIE",SBA11535,Affinity Group,Universidad Catolica Nuestra Senora de la Asuncion,WIE,9,6,Yes,4,,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
 "Univ del Cono Sur de las Americas, WIE",SBA04861,Affinity Group,Universidad del Cono Sur de Las Americas,WIE,10,6,Yes,0,,0,2,No,Yes,,Yes,Yes,Yes,No,No,Met,2/3,Not Met
 Universidad Nacional De Asuncion (UNA) SB SIGHT,SBA37161S,Affinity Group,Universidad Nacional de Asuncion,(UNA) SB SIGHT,21,6,Yes,4,,2,2,Yes,Yes,,No,Yes,No,No,No,Partial,2/3,Not Met
-"Universidad Nacional de Asuncion,WIE",SBA37161,Affinity Group,Universidad Nacional de Asuncion,WIE,17,6,Yes,3,,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Universidad Nacional de Asuncion,WIE",SBA37161,Affinity Group,Universidad Nacional de Asuncion,WIE,17,6,Yes,3,,1,2,Yes,Yes,,No,Yes,Yes,Yes,Yes,Partial,2/3,Not Met
 "Universidad Privada del Este,WIE",SBA60216322,Affinity Group,Universidad Privada del Este,WIE,8,6,Yes,0,,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
 Catholic University of Asuncion,STB40276807,Student Branch,Catholic University of Asuncion,,2,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Univ Nacional de Villarrica del Espiritu Santo,STB60216316,Student Branch,Univ Nacional de Villarrica del Espiritu Santo,,1,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
