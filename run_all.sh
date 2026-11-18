@@ -51,7 +51,8 @@ case "${1:-}" in
     echo "             see its --help for other splits and filters)."
     echo "  --drive-folder <url>  Implies --pdfs; also uploads the per-Section PDFs into that"
     echo "             Drive folder (automations/upload_reports.py login first) and refills"
-    echo "             the Report Link column of r9/section_sheet.csv."
+    echo "             the Report Link column of r9/section_sheet.csv, then uploads that CSV
+             to the top of the same folder."
     echo "  --global   Also fetch the worldwide exports and events (about 5 more minutes)"
     echo "             and rebuild global/dashboards/ (every Region and Section)."
     exit 0
@@ -135,6 +136,7 @@ if [ -n "$DRIVE_FOLDER" ]; then
   echo "== Region 9: upload Section PDFs to Drive, then refill Report Link =="
   "$VENV_PY" automations/upload_reports.py upload --folder-url "$DRIVE_FOLDER"
   python3 r9/generate_section_sheet.py
+  "$VENV_PY" automations/upload_reports.py upload-sheet --folder-url "$DRIVE_FOLDER"
 fi
 
 if [ "$RUN_GLOBAL" = 1 ]; then

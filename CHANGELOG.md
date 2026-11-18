@@ -4,6 +4,14 @@ Notable changes to this project. Format loosely follows
 [Keep a Changelog](https://keepachangelog.com/), dated by day rather than by
 version since this project doesn't cut releases.
 
+## 2026-11-18
+
+### Changed
+
+- `./run_all.sh --drive-folder <url>` now also uploads `r9/section_sheet.csv` to
+  the top of that Drive folder (`upload_reports.py upload-sheet`), updated in
+  place on re-runs. It holds officer emails, so keep the folder's sharing tight.
+
 ## 2026-11-13
 
 ### Added

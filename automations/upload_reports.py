@@ -42,6 +42,7 @@ REPO_DIR = HERE.parent
 # Next to this script (not the caller's cwd), like the Playwright session files.
 TOKEN_FILE = HERE / "drive_token.json"
 LINKS_FILE = REPO_DIR / "report_pdfs" / "section_report_links.csv"
+SHEET_FILE = REPO_DIR / "r9" / "section_sheet.csv"
 # Full `drive` scope: drive.file can't see a folder the user created by hand.
 SCOPES = ["https://www.googleapis.com/auth/drive"]
 FOLDER_MIME = "application/vnd.google-apps.folder"
@@ -161,6 +162,24 @@ def cmd_upload(pdf_dir: Path, folder: str, anyone: bool, folder_url: str | None 
           "re-run r9/generate_section_sheet.py to fill the Report Link column.", file=sys.stderr)
 
 
+def cmd_upload_sheet(folder: str, folder_url: str | None = None) -> None:
+    """Upload r9/section_sheet.csv to the top of the target folder (updated in place by name)."""
+    from googleapiclient.http import MediaFileUpload
+
+    if not SHEET_FILE.exists():
+        sys.exit(f"{SHEET_FILE} not found: run r9/generate_section_sheet.py first.")
+    drive = _service()
+    root = folder_id(folder_url) if folder_url else _folder(drive, folder, None)
+    media = MediaFileUpload(str(SHEET_FILE), mimetype="text/csv")
+    existing = _find(drive, SHEET_FILE.name, root)
+    if existing:
+        file = drive.files().update(fileId=existing, media_body=media, fields="webViewLink").execute()
+    else:
+        file = drive.files().create(body={"name": SHEET_FILE.name, "parents": [root]}, media_body=media,
+                                    fields="webViewLink").execute()
+    print(f"Uploaded {SHEET_FILE.name} (officer emails, private to the folder's sharing): {file['webViewLink']}")
+
+
 if __name__ == "__main__":
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -170,8 +189,13 @@ if __name__ == "__main__":
     up.add_argument("--folder", default="R9 Vitality Reports", help="top-level Drive folder name (default: %(default)s)")
     up.add_argument("--folder-url", help="existing Drive folder link or id to upload into (overrides --folder)")
     up.add_argument("--anyone-with-link", action="store_true", help="make each file readable by anyone with its link")
+    sh = sub.add_parser("upload-sheet", help="Upload r9/section_sheet.csv into the folder")
+    sh.add_argument("--folder", default="R9 Vitality Reports", help="top-level Drive folder name (default: %(default)s)")
+    sh.add_argument("--folder-url", help="existing Drive folder link or id (overrides --folder)")
     args = ap.parse_args()
     if args.cmd == "login":
         cmd_login()
+    elif args.cmd == "upload-sheet":
+        cmd_upload_sheet(args.folder, args.folder_url)
     else:
         cmd_upload(args.dir or latest_pdf_dir(), args.folder, args.anyone_with_link, args.folder_url)
