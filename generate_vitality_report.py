@@ -1389,6 +1389,7 @@ def build_dashboard(
         <div class="export-actions">
           <button type="button" class="primary" id="download-all-pdfs">Download PDFs</button>
           <button type="button" id="export-csv">Download CSV</button>
+          <button type="button" id="export-xlsx">Download Excel</button>
           <button type="button" id="export-print">Print</button>
         </div>
         <p class="export-hint" id="export-hint"></p>

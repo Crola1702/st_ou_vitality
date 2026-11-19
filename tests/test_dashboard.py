@@ -46,7 +46,7 @@ class DashboardTest(unittest.TestCase):
         page = self.page
         for needle in ('id="status-filter"', '<input type="checkbox" value="chapter" checked>', 'id="export-view-btn"',
                        '<dialog class="export-dialog" id="export-dialog"', 'name="export-group" value="branch"',
-                       'id="download-all-pdfs"', 'id="export-csv"', 'id="export-print"', 'href="vitality_report.csv" download',
+                       'id="download-all-pdfs"', 'id="export-csv"', 'id="export-xlsx"', 'id="export-print"', 'href="vitality_report.csv" download',
                        '<div id="export-pages" class="export-pages"', 'window.__exportView'):
             self.assertIn(needle, page)
         # Single-Section page: no Council/Section filters or splits; no builder page any more.

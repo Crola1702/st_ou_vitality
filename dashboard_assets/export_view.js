@@ -11,7 +11,7 @@
 // r2 second role, cn second role filled, rq requirements met 0-3, ok full
 // vitality, miss [missing requirements]) -> split by the dialog's "one
 // report per" -> one light `.group-page` per group in #export-pages
-// (off-screen; print shows only it) -> PDF ZIP / CSV / print.
+// (off-screen; print shows only it) -> PDF ZIP / CSV / XLSX / print.
 
 (function () {
   const DATA = JSON.parse(document.getElementById('export-data').textContent);
@@ -280,7 +280,7 @@
     $('export-count').textContent = groups.length > 1 ? `${groups.length} reports, one per ${GROUP[opts.group].toLowerCase()}` : (groups.length ? '1 report' : '');
     const pdf = $('download-all-pdfs');
     pdf.textContent = groups.length > 1 ? `Download ${groups.length} PDFs (.zip)` : 'Download PDF';
-    [pdf, $('export-csv'), $('export-print')].forEach(b => { b.disabled = !groups.length; });
+    [pdf, $('export-csv'), $('export-xlsx'), $('export-print')].forEach(b => { b.disabled = !groups.length; });
     $('export-hint').textContent = groups.length > 1
       ? `One PDF per ${GROUP[opts.group].toLowerCase()}, named ${opts.group === 'branch' ? 'by SPO ID and university' : 'after it'}${groups.some(g => g.folder) ? ', in one folder per Section' : ''}. Rows keep the order shown on the dashboard.`
       : 'Rows keep the order shown on the dashboard.';
@@ -312,24 +312,61 @@
   });
   window.addEventListener('afterprint', () => document.body.classList.remove('printing-export'));
 
-  $('export-csv').addEventListener('click', () => {
-    const opts = options();
+  // Header + one array per OU, shared by the CSV and .xlsx downloads.
+  function tableRows(opts) {
     const grouped = opts.group !== 'none';
-    const groups = makeGroups(viewRecords(), opts);
     const cols = [...(grouped ? [GROUP[opts.group]] : []), 'Unit Name', 'SPO ID', 'Unit Type', 'University', 'Society', 'Section', 'Council',
       'Member Count', 'Members Required', 'Events (Reported)', 'Events Required', 'Chair', 'Counselor / Advisor',
       'Requirements Met', 'Overall Vitality', 'Missing'];
-    const cell = v => { const s = String(v == null ? '' : v); return /[",\n;]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s; };
-    const lines = [cols.map(cell).join(',')];
-    groups.forEach(g => g.ous.forEach(o => {
-      lines.push([...(grouped ? [g.title] : []), o.n, o.id, TYPE_NAME[o.t], o.u, o.s, o.se, o.co, o.m, o.mm, o.e, o.em,
-        o.ch ? 'Yes' : 'No', o.cn ? 'Yes' : 'No', `${o.rq}/3`, o.ok ? 'Met' : 'Not Met', o.miss.join('; ')].map(cell).join(','));
+    const rows = [cols];
+    makeGroups(viewRecords(), opts).forEach(g => g.ous.forEach(o => {
+      rows.push([...(grouped ? [g.title] : []), o.n, o.id, TYPE_NAME[o.t], o.u, o.s, o.se, o.co, o.m, o.mm, o.e, o.em,
+        o.ch ? 'Yes' : 'No', o.cn ? 'Yes' : 'No', `${o.rq}/3`, o.ok ? 'Met' : 'Not Met', o.miss.join('; ')]);
     }));
-    const blob = new Blob(['﻿' + lines.join('\r\n') + '\r\n'], { type: 'text/csv;charset=utf-8' });
+    return rows;
+  }
+
+  function saveFile(blob, name) {
     const a = document.createElement('a');
-    a.href = URL.createObjectURL(blob); a.download = baseName(opts) + '.csv';
+    a.href = URL.createObjectURL(blob); a.download = name;
     document.body.appendChild(a); a.click(); a.remove();
     setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+  }
+
+  $('export-csv').addEventListener('click', () => {
+    const opts = options();
+    const cell = v => { const s = String(v == null ? '' : v); return /[",\n;]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s; };
+    const lines = tableRows(opts).map(r => r.map(cell).join(','));
+    saveFile(new Blob(['﻿' + lines.join('\r\n') + '\r\n'], { type: 'text/csv;charset=utf-8' }), baseName(opts) + '.csv');
+  });
+
+  // Minimal one-sheet workbook (inline strings, no styles), zipped with report_export.js's writer.
+  function xlsxBlob(rows) {
+    const x = v => String(v).replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F]/g, '')
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    const colName = i => (i >= 26 ? String.fromCharCode(64 + Math.floor(i / 26)) : '') + String.fromCharCode(65 + i % 26);
+    const sheetRows = rows.map((r, ri) => `<row r="${ri + 1}">` + r.map((v, ci) => {
+      const ref = colName(ci) + (ri + 1);
+      if (typeof v === 'number' && isFinite(v)) return `<c r="${ref}"><v>${v}</v></c>`;
+      return `<c r="${ref}" t="inlineStr"><is><t xml:space="preserve">${x(v == null ? '' : v)}</t></is></c>`;
+    }).join('') + '</row>').join('');
+    const head = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>';
+    const ns = 'http://schemas.openxmlformats.org';
+    const files = {
+      '[Content_Types].xml': `${head}<Types xmlns="${ns}/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/xl/workbook.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml"/><Override PartName="/xl/worksheets/sheet1.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml"/></Types>`,
+      '_rels/.rels': `${head}<Relationships xmlns="${ns}/package/2006/relationships"><Relationship Id="rId1" Type="${ns}/officeDocument/2006/relationships/officeDocument" Target="xl/workbook.xml"/></Relationships>`,
+      'xl/workbook.xml': `${head}<workbook xmlns="${ns}/spreadsheetml/2006/main" xmlns:r="${ns}/officeDocument/2006/relationships"><sheets><sheet name="Vitality" sheetId="1" r:id="rId1"/></sheets></workbook>`,
+      'xl/_rels/workbook.xml.rels': `${head}<Relationships xmlns="${ns}/package/2006/relationships"><Relationship Id="rId1" Type="${ns}/officeDocument/2006/relationships/worksheet" Target="worksheets/sheet1.xml"/></Relationships>`,
+      'xl/worksheets/sheet1.xml': `${head}<worksheet xmlns="${ns}/spreadsheetml/2006/main"><sheetData>${sheetRows}</sheetData></worksheet>`,
+    };
+    const enc = new TextEncoder();
+    const blob = window.makeZip(Object.entries(files).map(([name, s]) => ({ name, data: enc.encode(s) })));
+    return new Blob([blob], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+  }
+
+  $('export-xlsx').addEventListener('click', () => {
+    const opts = options();
+    saveFile(xlsxBlob(tableRows(opts)), baseName(opts) + '.xlsx');
   });
 
   // For automations/export_report_pdfs.py and tests.

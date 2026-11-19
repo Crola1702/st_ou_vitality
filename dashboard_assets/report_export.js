@@ -426,6 +426,8 @@
     if (page) saveBlob(new Blob([renderGroupPage(page)], { type: 'application/pdf' }), pdfName(page));
   };
 
+  window.makeZip = makeZip;  // also used by the .xlsx export
+
   window.downloadAllPdfs = async function (zipName, button) {
     // Only pages that are shown.
     const pages = [...document.querySelectorAll('.group-page')].filter(p => !p.hidden);

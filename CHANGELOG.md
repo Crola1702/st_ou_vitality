@@ -6,6 +6,13 @@ version since this project doesn't cut releases.
 
 ## 2026-11-18
 
+### Added
+
+- "Export current view" has a **Download Excel** button beside Download CSV:
+  same rows, columns and order, as a one-sheet `.xlsx` (built in the browser
+  with the existing ZIP writer, no library). Member and event counts are
+  numeric cells.
+
 ### Changed
 
 - `./run_all.sh --drive-folder <url>` now also uploads `r9/section_sheet.csv` to
