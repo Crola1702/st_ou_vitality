@@ -341,7 +341,7 @@
 <body>
 <div class="viz-root">
   <div class="container">
-    <p class="byline"><a href="https://www.linkedin.com/in/cristobalarroyo/" target="_blank" rel="noopener">By Cristóbal Arroyo</a> <a href="https://github.com/Crola1702/st_ou_vitality" target="_blank" rel="noopener">See on GitHub</a> <span class="generated-at">Generated at 2026-11-18 11:11 -05</span></p>
+    <p class="byline"><a href="https://www.linkedin.com/in/cristobalarroyo/" target="_blank" rel="noopener">By Cristóbal Arroyo</a> <a href="https://github.com/Crola1702/st_ou_vitality" target="_blank" rel="noopener">See on GitHub</a> <span class="generated-at">Generated at 2026-11-22 18:16 -05</span></p>
     <h1>IEEE Student OU Vitality: Uruguay Section</h1>
     <p class="subtitle">Generated from local vTools exports. Events source: IEEE_vTools_Events_R9.csv.</p>
     <div class="scope-nav"><a href="../index.html">&larr; All sections</a><select id="scope-select" aria-label="Section" onchange="location.href=this.value"><option value="../region/index.html">Latin America - Region 9</option><option value="../aguascalientes-section/index.html">Aguascalientes Section</option><option value="../argentina-section/index.html">Argentina Section</option><option value="../bolivia-section/index.html">Bolivia Section</option><option value="../centro-occidente-section/index.html">Centro Occidente Section</option><option value="../centro-norte-brasil-section/index.html">Centro-Norte Brasil Section</option><option value="../chile-section/index.html">Chile Section</option><option value="../chile-sur-section/index.html">Chile Sur Section</option><option value="../colombia-section/index.html">Colombia Section</option><option value="../colombian-caribbean-section/index.html">Colombian Caribbean Section</option><option value="../costa-rica-section/index.html">Costa Rica Section</option><option value="../dominican-republic-section/index.html">Dominican Republic Section</option><option value="../ecuador-section/index.html">Ecuador Section</option><option value="../el-salvador-section/index.html">El Salvador Section</option><option value="../guadalajara-section/index.html">Guadalajara Section</option><option value="../guanajuato-section/index.html">Guanajuato Section</option><option value="../guatemala-section/index.html">Guatemala Section</option><option value="../honduras-section/index.html">Honduras Section</option><option value="../mexico-section/index.html">Mexico Section</option><option value="../minas-gerais-section/index.html">Minas Gerais Section</option><option value="../monterrey-section/index.html">Monterrey Section</option><option value="../morelos-section/index.html">Morelos Section</option><option value="../nicaragua-section/index.html">Nicaragua Section</option><option value="../northeast-brazil-section/index.html">Northeast Brazil Section</option><option value="../panama-section/index.html">Panama Section</option><option value="../paraguay-section/index.html">Paraguay Section</option><option value="../peru-section/index.html">Peru Section</option><option value="../puebla-section/index.html">Puebla Section</option><option value="../puerto-rico-caribbean-section/index.html">Puerto Rico &amp; Caribbean Section</option><option value="../queretaro-section/index.html">Queretaro Section</option><option value="../rio-de-janeiro-section/index.html">Rio De Janeiro Section</option><option value="../south-brazil-section/index.html">South Brazil Section</option><option value="../trinidad-and-tobago-section/index.html">Trinidad And Tobago Section</option><option value="../uruguay-section/index.html" selected>Uruguay Section</option><option value="../venezuela-section/index.html">Venezuela Section</option><option value="../veracruz-section/index.html">Veracruz Section</option><option value="../western-puerto-rico-section/index.html">Western Puerto Rico Section</option></select></div>
@@ -427,6 +427,7 @@
         <div class="export-actions">
           <button type="button" class="primary" id="download-all-pdfs">Download PDFs</button>
           <button type="button" id="export-csv">Download CSV</button>
+          <button type="button" id="export-xlsx">Download Excel</button>
           <button type="button" id="export-print">Print</button>
         </div>
         <p class="export-hint" id="export-hint"></p>
@@ -651,7 +652,7 @@
       <p class="empty">No history yet — place Member Detail View.csv in the project directory and re-run the script on a later date to start building this trend.</p>
 
       <h3 class="trend-heading">OU Vitality</h3>
-      <p class="req-note">% of OUs meeting full vitality (3/3) over time, by type. Builds up as you re-run the script — currently 10 dates recorded.</p>
+      <p class="req-note">% of OUs meeting full vitality (3/3) over time, by type. Builds up as you re-run the script — currently 11 dates recorded.</p>
       
         <div class="trend-card">
           <div class="trend-legend"><span class="legend-item"><span class="legend-swatch" style="background:var(--series-1)"></span>Student Branch</span><span class="legend-item"><span class="legend-swatch" style="background:var(--series-2)"></span>Chapter</span><span class="legend-item"><span class="legend-swatch" style="background:var(--series-3)"></span>Affinity Group</span></div>
@@ -949,7 +950,7 @@
     if (name === 'trends') { renderTrendChart(); renderSocietyTrendChart(); renderGradeBarChart(); }
   }
 
-  const trendData = {"dates": ["2026-09-21", "2026-10-30", "2026-11-04", "2026-11-05", "2026-11-06", "2026-11-08", "2026-11-11", "2026-11-13", "2026-11-17", "2026-11-18"], "series": {"Student Branch": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16.7], "Student Branch Chapter": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "Affinity Group": [null, null, null, null, null, null, null, null, null, null]}};
+  const trendData = {"dates": ["2026-09-21", "2026-10-30", "2026-11-04", "2026-11-05", "2026-11-06", "2026-11-08", "2026-11-11", "2026-11-13", "2026-11-17", "2026-11-18", "2026-11-22"], "series": {"Student Branch": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16.7, 16.7], "Student Branch Chapter": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "Affinity Group": [null, null, null, null, null, null, null, null, null, null, null]}};
   const trendSeriesDefs = [["Student Branch", "var(--series-1)", "Student Branch"], ["Student Branch Chapter", "var(--series-2)", "Chapter"], ["Affinity Group", "var(--series-3)", "Affinity Group"]];
   const societyTrendData = {"dates": [], "series": {}, "labels": {}, "default_codes": []};
   const societyAllDefs = [];
@@ -1379,7 +1380,7 @@
   }
 </script>
 <!-- "Export current view": the visible rows, in their on-screen order, as PDFs / CSV / print. -->
-<script id="export-data" type="application/json">{"scope":"Uruguay Section","generated":"2026-11-18","colors":{"3":"#0ca30c","2":"#fab219","1":"#ec835a","0":"#d03b3b"},"ous":[{"n":"Ort Instituto Tecnologico-Uruguay","id":"STB60261","t":"branch","u":"Ort Instituto Tecnologico-Uruguay","s":"","sd":"","se":"Uruguay Section","co":"Cono Sur Council","m":1,"mm":12,"mo":false,"e":2,"em":4,"eo":false,"tech":false,"ch":false,"r2":"Counselor","cn":false,"rq":0,"ok":false,"miss":["Members 1/12","Reported events 2/4","Chair","Counselor"]},{"n":"Ort Instituto Tecnologico - Uruguay, PE31","id":"SBC602611","t":"chapter","u":"Ort Instituto Tecnologico-Uruguay","s":"PE31","sd":"IEEE Power & Energy Society","se":"Uruguay Section","co":"Cono Sur Council","m":0,"mm":6,"mo":false,"e":0,"em":2,"eo":false,"tech":true,"ch":false,"r2":"Advisor","cn":false,"rq":0,"ok":false,"miss":["Members 0/6","Reported technical events 0/2","Chair","Advisor"]},{"n":"Univ Mayor De La Republica Oriental Del Uruguay","id":"STB17841","t":"branch","u":"Univ Mayor De La Republica Oriental Del Uruguay","s":"","sd":"","se":"Uruguay Section","co":"Cono Sur Council","m":3,"mm":12,"mo":false,"e":10,"em":4,"eo":true,"tech":false,"ch":true,"r2":"Counselor","cn":false,"rq":1,"ok":false,"miss":["Members 3/12","Counselor"]},{"n":"Univ Mayor De La Republica Oriental-Uruguay,EMB18","id":"SBC178411","t":"chapter","u":"Univ Mayor De La Republica Oriental Del Uruguay","s":"EMB18","sd":"IEEE Engineering in Medicine and Biology Society","se":"Uruguay Section","co":"Cono Sur Council","m":0,"mm":6,"mo":false,"e":1,"em":2,"eo":false,"tech":true,"ch":true,"r2":"Advisor","cn":true,"rq":1,"ok":false,"miss":["Members 0/6","Reported technical events 1/2"]},{"n":"Universidad De Montevideo","id":"STB45891747","t":"branch","u":"Universidad De Montevideo","s":"","sd":"","se":"Uruguay Section","co":"Cono Sur Council","m":8,"mm":12,"mo":false,"e":7,"em":4,"eo":true,"tech":false,"ch":true,"r2":"Counselor","cn":true,"rq":2,"ok":false,"miss":["Members 8/12"]},{"n":"Universidad De Montevideo,COM19/C16","id":"SBC45891747A","t":"chapter","u":"Universidad De Montevideo","s":"COM19/C16","sd":"IEEE Communications Society / IEEE Computer Society","se":"Uruguay Section","co":"Cono Sur Council","m":5,"mm":6,"mo":false,"e":0,"em":2,"eo":false,"tech":true,"ch":true,"r2":"Advisor","cn":false,"rq":0,"ok":false,"miss":["Members 5/6","Reported technical events 0/2","Advisor"]},{"n":"Universidad De Montevideo,RA24","id":"SBC45891747","t":"chapter","u":"Universidad De Montevideo","s":"RA24","sd":"IEEE Robotics and Automation Society","se":"Uruguay Section","co":"Cono Sur Council","m":4,"mm":6,"mo":false,"e":0,"em":2,"eo":false,"tech":true,"ch":false,"r2":"Advisor","cn":false,"rq":0,"ok":false,"miss":["Members 4/6","Reported technical events 0/2","Chair","Advisor"]},{"n":"Universidad Tecnológica del Uruguay","id":"STB60216685","t":"branch","u":"Universidad Tecnológica del Uruguay","s":"","sd":"","se":"Uruguay Section","co":"Cono Sur Council","m":28,"mm":12,"mo":true,"e":7,"em":4,"eo":true,"tech":false,"ch":true,"r2":"Counselor","cn":true,"rq":3,"ok":true,"miss":[]},{"n":"Universidad Tecnológica del Uruguay,COM19","id":"SBC60216685A","t":"chapter","u":"Universidad Tecnológica del Uruguay","s":"COM19","sd":"IEEE Communications Society","se":"Uruguay Section","co":"Cono Sur Council","m":12,"mm":6,"mo":true,"e":0,"em":2,"eo":false,"tech":true,"ch":true,"r2":"Advisor","cn":true,"rq":2,"ok":false,"miss":["Reported technical events 0/2"]},{"n":"Universidad Tecnológica del Uruguay,EMB18","id":"SBC60216685","t":"chapter","u":"Universidad Tecnológica del Uruguay","s":"EMB18","sd":"IEEE Engineering in Medicine and Biology Society","se":"Uruguay Section","co":"Cono Sur Council","m":11,"mm":6,"mo":true,"e":1,"em":2,"eo":false,"tech":true,"ch":true,"r2":"Advisor","cn":true,"rq":2,"ok":false,"miss":["Reported technical events 1/2"]},{"n":"Uruguay Catolica Univ De Damas Larranag","id":"STB60011","t":"branch","u":"Uruguay Univ Catolica De Damaso Larranaga","s":"","sd":"","se":"Uruguay Section","co":"Cono Sur Council","m":9,"mm":12,"mo":false,"e":2,"em":4,"eo":false,"tech":false,"ch":true,"r2":"Counselor","cn":false,"rq":0,"ok":false,"miss":["Members 9/12","Reported events 2/4","Counselor"]},{"n":"Uruguay Univ del Trabajo","id":"STB60001","t":"branch","u":"Uruguay Univ del Trabajo","s":"","sd":"","se":"Uruguay Section","co":"Cono Sur Council","m":0,"mm":12,"mo":false,"e":1,"em":4,"eo":false,"tech":false,"ch":true,"r2":"Counselor","cn":false,"rq":0,"ok":false,"miss":["Members 0/12","Reported events 1/4","Counselor"]}]}</script>
+<script id="export-data" type="application/json">{"scope":"Uruguay Section","generated":"2026-11-22","colors":{"3":"#0ca30c","2":"#fab219","1":"#ec835a","0":"#d03b3b"},"ous":[{"n":"Ort Instituto Tecnologico-Uruguay","id":"STB60261","t":"branch","u":"Ort Instituto Tecnologico-Uruguay","s":"","sd":"","se":"Uruguay Section","co":"Cono Sur Council","m":1,"mm":12,"mo":false,"e":2,"em":4,"eo":false,"tech":false,"ch":false,"r2":"Counselor","cn":false,"rq":0,"ok":false,"miss":["Members 1/12","Reported events 2/4","Chair","Counselor"]},{"n":"Ort Instituto Tecnologico - Uruguay, PE31","id":"SBC602611","t":"chapter","u":"Ort Instituto Tecnologico-Uruguay","s":"PE31","sd":"IEEE Power & Energy Society","se":"Uruguay Section","co":"Cono Sur Council","m":0,"mm":6,"mo":false,"e":0,"em":2,"eo":false,"tech":true,"ch":false,"r2":"Advisor","cn":false,"rq":0,"ok":false,"miss":["Members 0/6","Reported technical events 0/2","Chair","Advisor"]},{"n":"Univ Mayor De La Republica Oriental Del Uruguay","id":"STB17841","t":"branch","u":"Univ Mayor De La Republica Oriental Del Uruguay","s":"","sd":"","se":"Uruguay Section","co":"Cono Sur Council","m":3,"mm":12,"mo":false,"e":10,"em":4,"eo":true,"tech":false,"ch":true,"r2":"Counselor","cn":false,"rq":1,"ok":false,"miss":["Members 3/12","Counselor"]},{"n":"Univ Mayor De La Republica Oriental-Uruguay,EMB18","id":"SBC178411","t":"chapter","u":"Univ Mayor De La Republica Oriental Del Uruguay","s":"EMB18","sd":"IEEE Engineering in Medicine and Biology Society","se":"Uruguay Section","co":"Cono Sur Council","m":0,"mm":6,"mo":false,"e":1,"em":2,"eo":false,"tech":true,"ch":true,"r2":"Advisor","cn":true,"rq":1,"ok":false,"miss":["Members 0/6","Reported technical events 1/2"]},{"n":"Universidad De Montevideo","id":"STB45891747","t":"branch","u":"Universidad De Montevideo","s":"","sd":"","se":"Uruguay Section","co":"Cono Sur Council","m":8,"mm":12,"mo":false,"e":7,"em":4,"eo":true,"tech":false,"ch":true,"r2":"Counselor","cn":true,"rq":2,"ok":false,"miss":["Members 8/12"]},{"n":"Universidad De Montevideo,COM19/C16","id":"SBC45891747A","t":"chapter","u":"Universidad De Montevideo","s":"COM19/C16","sd":"IEEE Communications Society / IEEE Computer Society","se":"Uruguay Section","co":"Cono Sur Council","m":5,"mm":6,"mo":false,"e":0,"em":2,"eo":false,"tech":true,"ch":true,"r2":"Advisor","cn":false,"rq":0,"ok":false,"miss":["Members 5/6","Reported technical events 0/2","Advisor"]},{"n":"Universidad De Montevideo,RA24","id":"SBC45891747","t":"chapter","u":"Universidad De Montevideo","s":"RA24","sd":"IEEE Robotics and Automation Society","se":"Uruguay Section","co":"Cono Sur Council","m":4,"mm":6,"mo":false,"e":0,"em":2,"eo":false,"tech":true,"ch":false,"r2":"Advisor","cn":false,"rq":0,"ok":false,"miss":["Members 4/6","Reported technical events 0/2","Chair","Advisor"]},{"n":"Universidad Tecnológica del Uruguay","id":"STB60216685","t":"branch","u":"Universidad Tecnológica del Uruguay","s":"","sd":"","se":"Uruguay Section","co":"Cono Sur Council","m":28,"mm":12,"mo":true,"e":7,"em":4,"eo":true,"tech":false,"ch":true,"r2":"Counselor","cn":true,"rq":3,"ok":true,"miss":[]},{"n":"Universidad Tecnológica del Uruguay,COM19","id":"SBC60216685A","t":"chapter","u":"Universidad Tecnológica del Uruguay","s":"COM19","sd":"IEEE Communications Society","se":"Uruguay Section","co":"Cono Sur Council","m":12,"mm":6,"mo":true,"e":0,"em":2,"eo":false,"tech":true,"ch":true,"r2":"Advisor","cn":true,"rq":2,"ok":false,"miss":["Reported technical events 0/2"]},{"n":"Universidad Tecnológica del Uruguay,EMB18","id":"SBC60216685","t":"chapter","u":"Universidad Tecnológica del Uruguay","s":"EMB18","sd":"IEEE Engineering in Medicine and Biology Society","se":"Uruguay Section","co":"Cono Sur Council","m":11,"mm":6,"mo":true,"e":1,"em":2,"eo":false,"tech":true,"ch":true,"r2":"Advisor","cn":true,"rq":2,"ok":false,"miss":["Reported technical events 1/2"]},{"n":"Uruguay Catolica Univ De Damas Larranag","id":"STB60011","t":"branch","u":"Uruguay Univ Catolica De Damaso Larranaga","s":"","sd":"","se":"Uruguay Section","co":"Cono Sur Council","m":9,"mm":12,"mo":false,"e":2,"em":4,"eo":false,"tech":false,"ch":true,"r2":"Counselor","cn":false,"rq":0,"ok":false,"miss":["Members 9/12","Reported events 2/4","Counselor"]},{"n":"Uruguay Univ del Trabajo","id":"STB60001","t":"branch","u":"Uruguay Univ del Trabajo","s":"","sd":"","se":"Uruguay Section","co":"Cono Sur Council","m":0,"mm":12,"mo":false,"e":1,"em":4,"eo":false,"tech":false,"ch":true,"r2":"Counselor","cn":false,"rq":0,"ok":false,"miss":["Members 0/12","Reported events 1/4","Counselor"]}]}</script>
 <div id="export-pages" class="export-pages" aria-hidden="true"></div>
 <script>
 // Batch PDF export for the dashboard's "Export current view". Inlined by
@@ -1810,6 +1811,8 @@
     if (page) saveBlob(new Blob([renderGroupPage(page)], { type: 'application/pdf' }), pdfName(page));
   };
 
+  window.makeZip = makeZip;  // also used by the .xlsx export
+
   window.downloadAllPdfs = async function (zipName, button) {
     // Only pages that are shown.
     const pages = [...document.querySelectorAll('.group-page')].filter(p => !p.hidden);
@@ -1852,7 +1855,7 @@
 // r2 second role, cn second role filled, rq requirements met 0-3, ok full
 // vitality, miss [missing requirements]) -> split by the dialog's "one
 // report per" -> one light `.group-page` per group in #export-pages
-// (off-screen; print shows only it) -> PDF ZIP / CSV / print.
+// (off-screen; print shows only it) -> PDF ZIP / CSV / XLSX / print.
 
 (function () {
   const DATA = JSON.parse(document.getElementById('export-data').textContent);
@@ -2121,7 +2124,7 @@
     $('export-count').textContent = groups.length > 1 ? `${groups.length} reports, one per ${GROUP[opts.group].toLowerCase()}` : (groups.length ? '1 report' : '');
     const pdf = $('download-all-pdfs');
     pdf.textContent = groups.length > 1 ? `Download ${groups.length} PDFs (.zip)` : 'Download PDF';
-    [pdf, $('export-csv'), $('export-print')].forEach(b => { b.disabled = !groups.length; });
+    [pdf, $('export-csv'), $('export-xlsx'), $('export-print')].forEach(b => { b.disabled = !groups.length; });
     $('export-hint').textContent = groups.length > 1
       ? `One PDF per ${GROUP[opts.group].toLowerCase()}, named ${opts.group === 'branch' ? 'by SPO ID and university' : 'after it'}${groups.some(g => g.folder) ? ', in one folder per Section' : ''}. Rows keep the order shown on the dashboard.`
       : 'Rows keep the order shown on the dashboard.';
@@ -2153,24 +2156,61 @@
   });
   window.addEventListener('afterprint', () => document.body.classList.remove('printing-export'));
 
-  $('export-csv').addEventListener('click', () => {
-    const opts = options();
+  // Header + one array per OU, shared by the CSV and .xlsx downloads.
+  function tableRows(opts) {
     const grouped = opts.group !== 'none';
-    const groups = makeGroups(viewRecords(), opts);
     const cols = [...(grouped ? [GROUP[opts.group]] : []), 'Unit Name', 'SPO ID', 'Unit Type', 'University', 'Society', 'Section', 'Council',
       'Member Count', 'Members Required', 'Events (Reported)', 'Events Required', 'Chair', 'Counselor / Advisor',
       'Requirements Met', 'Overall Vitality', 'Missing'];
-    const cell = v => { const s = String(v == null ? '' : v); return /[",\n;]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s; };
-    const lines = [cols.map(cell).join(',')];
-    groups.forEach(g => g.ous.forEach(o => {
-      lines.push([...(grouped ? [g.title] : []), o.n, o.id, TYPE_NAME[o.t], o.u, o.s, o.se, o.co, o.m, o.mm, o.e, o.em,
-        o.ch ? 'Yes' : 'No', o.cn ? 'Yes' : 'No', `${o.rq}/3`, o.ok ? 'Met' : 'Not Met', o.miss.join('; ')].map(cell).join(','));
+    const rows = [cols];
+    makeGroups(viewRecords(), opts).forEach(g => g.ous.forEach(o => {
+      rows.push([...(grouped ? [g.title] : []), o.n, o.id, TYPE_NAME[o.t], o.u, o.s, o.se, o.co, o.m, o.mm, o.e, o.em,
+        o.ch ? 'Yes' : 'No', o.cn ? 'Yes' : 'No', `${o.rq}/3`, o.ok ? 'Met' : 'Not Met', o.miss.join('; ')]);
     }));
-    const blob = new Blob(['﻿' + lines.join('\r\n') + '\r\n'], { type: 'text/csv;charset=utf-8' });
+    return rows;
+  }
+
+  function saveFile(blob, name) {
     const a = document.createElement('a');
-    a.href = URL.createObjectURL(blob); a.download = baseName(opts) + '.csv';
+    a.href = URL.createObjectURL(blob); a.download = name;
     document.body.appendChild(a); a.click(); a.remove();
     setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+  }
+
+  $('export-csv').addEventListener('click', () => {
+    const opts = options();
+    const cell = v => { const s = String(v == null ? '' : v); return /[",\n;]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s; };
+    const lines = tableRows(opts).map(r => r.map(cell).join(','));
+    saveFile(new Blob(['﻿' + lines.join('\r\n') + '\r\n'], { type: 'text/csv;charset=utf-8' }), baseName(opts) + '.csv');
+  });
+
+  // Minimal one-sheet workbook (inline strings, no styles), zipped with report_export.js's writer.
+  function xlsxBlob(rows) {
+    const x = v => String(v).replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F]/g, '')
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    const colName = i => (i >= 26 ? String.fromCharCode(64 + Math.floor(i / 26)) : '') + String.fromCharCode(65 + i % 26);
+    const sheetRows = rows.map((r, ri) => `<row r="${ri + 1}">` + r.map((v, ci) => {
+      const ref = colName(ci) + (ri + 1);
+      if (typeof v === 'number' && isFinite(v)) return `<c r="${ref}"><v>${v}</v></c>`;
+      return `<c r="${ref}" t="inlineStr"><is><t xml:space="preserve">${x(v == null ? '' : v)}</t></is></c>`;
+    }).join('') + '</row>').join('');
+    const head = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>';
+    const ns = 'http://schemas.openxmlformats.org';
+    const files = {
+      '[Content_Types].xml': `${head}<Types xmlns="${ns}/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/xl/workbook.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml"/><Override PartName="/xl/worksheets/sheet1.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml"/></Types>`,
+      '_rels/.rels': `${head}<Relationships xmlns="${ns}/package/2006/relationships"><Relationship Id="rId1" Type="${ns}/officeDocument/2006/relationships/officeDocument" Target="xl/workbook.xml"/></Relationships>`,
+      'xl/workbook.xml': `${head}<workbook xmlns="${ns}/spreadsheetml/2006/main" xmlns:r="${ns}/officeDocument/2006/relationships"><sheets><sheet name="Vitality" sheetId="1" r:id="rId1"/></sheets></workbook>`,
+      'xl/_rels/workbook.xml.rels': `${head}<Relationships xmlns="${ns}/package/2006/relationships"><Relationship Id="rId1" Type="${ns}/officeDocument/2006/relationships/worksheet" Target="worksheets/sheet1.xml"/></Relationships>`,
+      'xl/worksheets/sheet1.xml': `${head}<worksheet xmlns="${ns}/spreadsheetml/2006/main"><sheetData>${sheetRows}</sheetData></worksheet>`,
+    };
+    const enc = new TextEncoder();
+    const blob = window.makeZip(Object.entries(files).map(([name, s]) => ({ name, data: enc.encode(s) })));
+    return new Blob([blob], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+  }
+
+  $('export-xlsx').addEventListener('click', () => {
+    const opts = options();
+    saveFile(xlsxBlob(tableRows(opts)), baseName(opts) + '.xlsx');
   });
 
   // For automations/export_report_pdfs.py and tests.
