@@ -30,6 +30,12 @@ python tableau_export.py login
 python vtools_export.py login
 ```
 
+To skip typing the credentials, export `IEEE_EMAIL` and `IEEE_PASSWORD`
+(e.g. from a git-ignored `.envrc` with `export IEEE_EMAIL=...`); `login` then
+fills in the SSO form itself and saves the session without waiting for Enter.
+`./run_all.sh` loads the repo-root `.envrc` itself (no `export` or direnv
+needed there) and logs in automatically when both variables are set.
+
 This saves `storage_state.json` and `vtools_storage_state.json` next to
 these scripts — **both are session cookies and must stay git-ignored** (see
 the repo's `.gitignore`). Re-run `login` whenever a script fails with an

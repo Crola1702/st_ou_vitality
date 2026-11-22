@@ -4,6 +4,17 @@ Notable changes to this project. Format loosely follows
 [Keep a Changelog](https://keepachangelog.com/), dated by day rather than by
 version since this project doesn't cut releases.
 
+## 2026-11-22
+
+### Added
+
+- `tableau_export.py login` and `vtools_export.py login` fill in the IEEE SSO
+  form automatically when `IEEE_EMAIL` and `IEEE_PASSWORD` are set (e.g.
+  exported from a git-ignored `.envrc`); without them they still wait for a
+  manual login.
+- `./run_all.sh` loads `.envrc` when present and, if both variables are
+  set, runs the Tableau login automatically before fetching.
+
 ## 2026-11-18
 
 ### Added

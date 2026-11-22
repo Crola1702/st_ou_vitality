@@ -45,6 +45,8 @@ from pathlib import Path
 
 from playwright.sync_api import sync_playwright
 
+from sso_login import sso_login
+
 BASE = "https://events.vtools.ieee.org"
 LOGIN_URL = f"{BASE}/tego_/authentication/sign_in?_landing=/events/search/advanced"
 # Relative to this script's own directory, not the caller's cwd — see the
@@ -57,9 +59,7 @@ def cmd_login() -> None:
         browser = p.chromium.launch(headless=False)
         context = browser.new_context()
         page = context.new_page()
-        page.goto(LOGIN_URL)
-        print("Complete the IEEE SSO login in the browser window, then press Enter here...")
-        input()
+        sso_login(page, LOGIN_URL, "events.vtools.ieee.org")
         context.storage_state(path=str(STATE_FILE))
         browser.close()
     print(f"Session saved to {STATE_FILE}")

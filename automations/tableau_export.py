@@ -45,6 +45,8 @@ from pathlib import Path
 
 from playwright.sync_api import sync_playwright
 
+from sso_login import sso_login
+
 BASE = "https://tblanalytics.ieee.org"
 SITE = "IEEE"  # the /t/IEEE/ segment seen throughout the captured URLs
 # Relative to this script's own directory, not the caller's cwd, so the saved
@@ -204,9 +206,7 @@ def cmd_login() -> None:
         browser = p.chromium.launch(headless=False)
         context = browser.new_context()
         page = context.new_page()
-        page.goto(f"{BASE}/")
-        print("Complete the IEEE SSO login in the browser window, then press Enter here...")
-        input()
+        sso_login(page, f"{BASE}/", "tblanalytics.ieee.org")
         context.storage_state(path=str(STATE_FILE))
         browser.close()
     print(f"Session saved to {STATE_FILE}")

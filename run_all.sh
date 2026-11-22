@@ -7,9 +7,10 @@
 # that).
 #
 # Assumes you've already run the one-time setup in automations/README.md.
-# The main pipeline below does NOT log in itself — if a fetch step fails
-# with an auth error, run the login steps first (or `./run_all.sh --login`),
-# then re-run this:
+# Login: if .envrc (git-ignored) sets IEEE_EMAIL and IEEE_PASSWORD, it is
+# loaded and the Tableau login runs automatically at the start of every run.
+# Otherwise the saved session is reused; if a fetch step fails with an auth
+# error, run `./run_all.sh --login` (or the command below), then re-run this:
 #   automations/.venv/bin/python automations/tableau_export.py login
 #
 # Region 9: it then fetches the region-wide Tableau exports and vTools events
@@ -24,6 +25,14 @@ set -euo pipefail
 cd "$(dirname "${BASH_SOURCE[0]}")"
 
 VENV_PY="automations/.venv/bin/python"
+
+if [ -f .envrc ]; then
+  set -a
+  . ./.envrc
+  set +a
+fi
+HAS_CREDENTIALS=0
+[ -n "${IEEE_EMAIL:-}" ] && [ -n "${IEEE_PASSWORD:-}" ] && HAS_CREDENTIALS=1
 
 EXPORT_PDFS=0
 DRIVE_FOLDER=""
@@ -71,8 +80,12 @@ if [ ! -x "$VENV_PY" ]; then
   echo "automations/.venv not found — see automations/README.md's Setup section first." >&2
   exit 1
 fi
-if [ ! -f "automations/storage_state.json" ]; then
-  echo "No saved login session — run the login step in automations/README.md first:" >&2
+if [ "$HAS_CREDENTIALS" = 1 ]; then
+  echo "== Logging in to Tableau with the .envrc credentials =="
+  "$VENV_PY" automations/tableau_export.py login
+elif [ ! -f "automations/storage_state.json" ]; then
+  echo "No saved login session and no IEEE_EMAIL/IEEE_PASSWORD in .envrc." >&2
+  echo "Fill in .envrc, or run the login step in automations/README.md first:" >&2
   echo "  $VENV_PY automations/tableau_export.py login" >&2
   exit 1
 fi
