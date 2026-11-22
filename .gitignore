@@ -64,3 +64,13 @@ r9/section_sheet.csv
 # automations/upload_reports.py: Google OAuth client secret and the saved Drive token.
 automations/client_secret*.json
 automations/drive_token.json
+
+# IEEE SSO credentials (IEEE_EMAIL/IEEE_PASSWORD) read by run_all.sh — never commit.
+.envrc
+
+# Ad-hoc member/officer exports and lists (PII)
+Member Detail View*.xlsx
+co_professional_officers_gsm.csv
+
+# Local agent tooling
+.atl/
