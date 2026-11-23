@@ -157,6 +157,11 @@ by hand, those files stay git-ignored (see their sections below).
    - OU Position Status: `Filled`
    - Officer Position Status: `Active`
 
+   Do **not** filter by Section: that filters on the officer's own Section
+   and drops officers of Colombia OUs registered elsewhere, who still count.
+   `./run_all.sh` exports every Region and keeps the Colombia OUs with
+   `automations/scope_volunteers.py`.
+
    Then export/download the results. Must include: `OU Name`,
    `OU SPO ID`, `OU Position`, `OU Position Status`.
 
@@ -219,7 +224,7 @@ which `./run_all.sh` fetches for you:
   Affinity Group reads as having no officers. Past officers, if listed, are
   ignored by the loader). This export misses officers whose own membership
   is outside Region 9, so when `global/data/Volunteer List by OU.csv` exists
-  and is at least as fresh (`./run_all.sh --global`), it is read instead
+  and is at least as fresh (`./run_all.sh` fetches it every run), it is read instead
 - Any `*Events*.csv`
 
 ```sh

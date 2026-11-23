@@ -4,6 +4,16 @@ Notable changes to this project. Format loosely follows
 [Keep a Changelog](https://keepachangelog.com/), dated by day rather than by
 version since this project doesn't cut releases.
 
+## 2026-11-23
+
+### Fixed
+
+- Officers registered outside the OU's own Section or Region now count
+  (e.g. the Andes SSC37 Chapter Advisor, a member of R6): `./run_all.sh`
+  fetches the all-Regions volunteer export every run, the R9 dashboards read
+  it, and the new `automations/scope_volunteers.py` cuts it to the Colombia
+  OUs for the root dashboard and tools.
+
 ## 2026-11-22
 
 ### Added

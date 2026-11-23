@@ -96,8 +96,13 @@ echo "== 1/5: Student Branch Summary (both crosstabs) =="
   --sheetdoc-id "{9F37FD96-C0CB-44E2-B6C0-4AD55CC98A4A}" --out "Student Branch and Member Count.csv" \
   --sheetdoc-id "{CED8B60A-2103-44CD-9018-C8E76B42E9BA}" --out "Student Branch Chapters and Affinity Group Member Count.csv"
 
-echo "== 2/5: Volunteer List by OU =="
-"$VENV_PY" automations/tableau_export.py export-preset volunteer_positions --out "Volunteer List by OU.csv" --headed
+echo "== 2/5: Volunteer List by OU (all Regions) =="
+# The Colombia and R9 presets filter on the officer's own Section/Region, so
+# they miss officers of our OUs registered elsewhere (IEEE still counts them).
+# Fetch every Region once: r9/ reads it directly, the root gets a Colombia cut.
+mkdir -p global/data
+"$VENV_PY" automations/tableau_export.py export-preset volunteer_positions_all --out "global/data/Volunteer List by OU.csv" --headed
+python3 automations/scope_volunteers.py "global/data/Volunteer List by OU.csv" "Volunteer List by OU.csv"
 
 echo "== 3/5: Member Detail View =="
 "$VENV_PY" automations/tableau_export.py export-preset members_detail --out "Member Detail View.csv" --headed
@@ -120,19 +125,10 @@ echo "== Region 9: Student Branch Summary (both crosstabs) =="
   --workbook GeoOUAnalysis --view StudentBranchSummary --sheet "Student Branch Summary" \
   --sheetdoc-id "{9F37FD96-C0CB-44E2-B6C0-4AD55CC98A4A}" --out "$R9_DATA/Student Branch and Member Count.csv" \
   --sheetdoc-id "{CED8B60A-2103-44CD-9018-C8E76B42E9BA}" --out "$R9_DATA/Student Branch Chapters and Affinity Group Member Count.csv"
-echo "== Region 9: Volunteer List by OU =="
-"$VENV_PY" automations/tableau_export.py export-preset volunteer_positions_r9 --out "$R9_DATA/Volunteer List by OU.csv" --headed
 echo "== Region 9: Section officers (Chair, SSAC, SSR) =="
 "$VENV_PY" automations/tableau_export.py export-preset volunteer_positions_r9_section_officers --out "$R9_DATA/Section Officers.csv" --headed
 echo "== Region 9: vTools Events (public feed, all of R9, ~4 min) =="
 python3 automations/vtools_feed_export.py --out "$R9_DATA/IEEE_vTools_Events_R9.csv"
-if [ "$RUN_GLOBAL" = 1 ]; then
-  # Fetched here, not with the other worldwide steps: the R9 dashboards prefer
-  # it over the R9 export, which misses officers whose membership is outside R9.
-  mkdir -p global/data
-  echo "== Worldwide: Volunteer List by OU =="
-  "$VENV_PY" automations/tableau_export.py export-preset volunteer_positions_all --out "global/data/Volunteer List by OU.csv" --headed
-fi
 echo "== Region 9: dashboards =="
 python3 r9/generate_r9_vitality.py
 echo "== Region 9: SAC outreach sheet rows =="

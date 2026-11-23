@@ -55,8 +55,11 @@ python automations/tableau_export.py export --headed \
   --sheetdoc-id "{9F37FD96-C0CB-44E2-B6C0-4AD55CC98A4A}" --out "Student Branch and Member Count.csv" \
   --sheetdoc-id "{CED8B60A-2103-44CD-9018-C8E76B42E9BA}" --out "Student Branch Chapters and Affinity Group Member Count.csv"
 
-# 3: Volunteer List by OU
-python automations/tableau_export.py export-preset volunteer_positions --out "Volunteer List by OU.csv" --headed
+# 3: Volunteer List by OU. Fetch every Region, then keep the Colombia OUs: the
+# `volunteer_positions` preset filters on the officer's own Section and misses
+# officers registered elsewhere (e.g. a Chapter Advisor living in R6).
+python automations/tableau_export.py export-preset volunteer_positions_all --out "global/data/Volunteer List by OU.csv" --headed
+python automations/scope_volunteers.py "global/data/Volunteer List by OU.csv" "Volunteer List by OU.csv"
 
 # 4: Members and Affiliates -> Detail (needed for the Society Memberships trend
 # and member_society_lookup/ — optional, skip if you don't need those)
