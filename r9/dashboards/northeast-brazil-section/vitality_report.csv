@@ -29,7 +29,7 @@ Federal Institute of Rio Grande do Norte,STB60229023,Student Branch,Federal Inst
 Federal University of Bahia,STB93051,Student Branch,Federal University of Bahia,,62,12,Yes,8,,27,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Federal University of Ceara,STB62081,Student Branch,Federal University of Ceara,,93,12,Yes,0,,7,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 Federal University of Sergipe,STB60020518,Student Branch,Federal University of Sergipe,,53,12,Yes,10,,1,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
-IFBA-Campus Vitoria da Conquista,STB39666,Student Branch,IFBA-Campus Vitoria da Conquista,,10,12,No,0,,0,4,No,No,Yes,,No,No,No,No,Partial,0/3,Not Met
+IFBA-Campus Vitoria da Conquista,STB39666,Student Branch,IFBA-Campus Vitoria da Conquista,,10,12,No,0,,0,4,No,No,Yes,,No,No,No,Yes,Partial,0/3,Not Met
 Inst Fed de Educacao Ciencia e Tecn da Paraiba,STB04261,Student Branch,Inst Fed de Educacao Ciencia e Tecn da Paraiba,,10,12,No,0,,0,4,No,Yes,Yes,,No,No,No,No,Met,1/3,Not Met
 Instituto Federal da Bahia-Paulo Afonso,STB11416,Student Branch,Instituto Federal da Bahia-Paulo Afonso,,23,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
 Instituto Federal de Educacao Ciencia e Tec-Bahia,STB64651,Student Branch,Instituto Federal de Educacao Ciencia e Tec-Bahia,,4,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
@@ -76,7 +76,7 @@ University of Pernambuco,STB60060452,Student Branch,University of Pernambuco,,20
 "Inst Fed de Educacao Ciencia e Tec da Paraiba,PE31",SBC04261B,Student Branch Chapter,Inst Fed de Educacao Ciencia e Tecn da Paraiba,PE31,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Univ Federal Da Bahia,AES10",SBC93051C,Student Branch Chapter,Federal University of Bahia,AES10,0,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
 "Univ Federal do Reconcavo da Bahia-UFRB,SMC28/C16",SBC20150C,Student Branch Chapter,Universidade Federal do Reconcavo da Bahia,SMC28/C16,22,6,Yes,9,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
-"Univ Federal do Rio Grande do Norte,PEL35,IA34",SBC66301B,Student Branch Chapter,Universidade Federal do Rio Grande do Norte,IA34,76,6,Yes,5,3,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
+"Univ Federal do Rio Grande do Norte,PEL35,IA34",SBC66301B,Student Branch Chapter,Universidade Federal do Rio Grande do Norte,IA34,78,6,Yes,5,3,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
 "Universidad del Salvador,PE31",SBC63451,Student Branch Chapter,Universidad del Salvador,PE31,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad del Salvador,RA24",SBC63451A,Student Branch Chapter,Universidad del Salvador,RA24,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidade Estadual de Feira de Santana,IE13",SBC11151A,Student Branch Chapter,Universidade Estadual de Feira de Santana,IE13,6,6,Yes,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
