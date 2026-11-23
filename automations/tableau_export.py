@@ -177,6 +177,19 @@ FILTER_PRESETS = {
              "op": "replace", "indices": [2, 21, 26, 27]},
         ],
     },
+    # Students -> Detail: one row per student member with School Name and every
+    # society/SIG list, captured from manual_exports/Students_DetailedView.har.
+    # No filters: the data is already scoped to the logged-in volunteer's Section.
+    # Feeds ou_members/.
+    "students_detail": {
+        "workbook": "Students",
+        "view": "Dashboard",
+        "landing_sheet": "Dashboard",
+        "export_sheet": "Detail",
+        "sheetdoc_id": "{4DFCF3E4-596C-4666-BF5E-E5DA3B306431}",
+        "parameters": [],
+        "filters": [],
+    },
     "members_detail": {
         "workbook": "MembersandAffiliates",
         "view": "Dashboard",       # filters only exist on the Dashboard tab, not Detail directly

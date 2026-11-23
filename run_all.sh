@@ -101,6 +101,7 @@ echo "== 2/5: Volunteer List by OU =="
 
 echo "== 3/5: Member Detail View =="
 "$VENV_PY" automations/tableau_export.py export-preset members_detail --out "Member Detail View.csv" --headed
+"$VENV_PY" automations/tableau_export.py export-preset students_detail --out "Students Detailed View.csv" --headed
 
 echo "== 4/5: vTools Events (public feed, no login) =="
 python3 automations/vtools_feed_export.py --ou-universe --out "IEEE_vTools_Events_2026.csv"
@@ -110,6 +111,7 @@ python3 generate_vitality_report.py
 python3 chapter_outreach/generate_chapter_outreach.py
 python3 officer_terms/generate_officer_terms.py
 python3 member_society_lookup/generate_member_society_lookup.py
+python3 ou_members/generate_ou_members.py
 
 R9_DATA="r9/R9 Data"
 mkdir -p "$R9_DATA"

@@ -735,6 +735,64 @@ def load_grade_history_trend(path: Path, promotions_by_date: dict[str, list[dict
     return {"dates": dates, "series": series, "estimated": estimated}
 
 
+# Tableau Students -> Detail: one row per student member with School Name and
+# every society/SIG list. Optional, PII (git-ignored). Read by ou_members/.
+STUDENTS_DETAIL_FILE = BASE_DIR / "Students Detailed View.csv"
+MEMBER_CODE_COLUMNS = (
+    "Active Society List",
+    "Technical Council List",
+    "Technical Community List",
+    "Special Interest Group List",
+)
+
+
+def load_students(path: Path = STUDENTS_DETAIL_FILE) -> list[dict]:
+    """Rows of the Students detail export, keys/values stripped; [] if absent."""
+    if not path.exists():
+        return []
+    return [{k.strip(): (v or "").strip() for k, v in row.items() if k} for row in read_vtools_tsv(path)]
+
+
+def code_key(token: str, member_side: bool) -> tuple[str, int | None]:
+    """("PE", 31) for an OU's "PE31" or a member's "MEMPE031"; ("WIE", None) for "WIE"."""
+    token = token.strip().upper().replace(" ", "")
+    if member_side:
+        token = re.sub(r"^(MEM|CNC|CMY)", "", token)
+    match = re.match(r"^([A-Z]+)(\d*)$", token)
+    if not match:
+        return (token, None)
+    letters, digits = match.groups()
+    return (letters, int(digits) if digits else None)
+
+
+def member_codes(row: dict) -> set[tuple[str, int | None]]:
+    return {code_key(t, True) for col in MEMBER_CODE_COLUMNS for t in row.get(col, "").split(",") if t.strip()}
+
+
+def _codes_match(ou_codes: set, codes: set) -> bool:
+    # An OU code without a number ("WIE", "SIGHT") matches on letters alone.
+    return any(
+        code in codes if code[1] is not None else any(c[0] == code[0] for c in codes)
+        for code in ou_codes
+    )
+
+
+def members_by_ou(units: dict[str, OU], students: list[dict]) -> dict[str, list[dict]]:
+    """SPOID -> student rows: a Branch gets every student of its School Name,
+    a Chapter/Affinity Group only those who also carry its society/SIG code."""
+    by_school: dict[str, list[dict]] = {}
+    for row in students:
+        by_school.setdefault(row["School Name"].lower(), []).append(row)
+    result = {}
+    for spoid, ou in units.items():
+        rows = by_school.get(ou.university.lower(), [])
+        if ou.ou_type != "Student Branch":
+            ou_codes = {code_key(part, False) for part in ou.society.split("/")}
+            rows = [r for r in rows if _codes_match(ou_codes, member_codes(r))]
+        result[spoid] = rows
+    return result
+
+
 def load_member_directory() -> dict[str, dict]:
     """Member/Customer Number -> {grade, first, last, email}, every
     Colombia Section row in Member Detail View.csv. Returns {} if the

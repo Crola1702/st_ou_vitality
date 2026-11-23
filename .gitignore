@@ -4,6 +4,7 @@ Student Branch and Member Count.csv
 Student Branch Chapters and Affinity Group Member Count.csv
 Volunteer List by OU.csv
 Member Detail View.csv
+Students Detailed View.csv
 *Events*.csv
 
 # Region-wide raw exports for r9/ — the whole folder, since some of the
@@ -15,6 +16,8 @@ global/data/
 # Generated outreach lists contain officer names/emails — also PII, never commit.
 chapter_outreach/chapter_outreach.csv
 officer_terms/officer_terms.csv
+# Per-OU member roster (names, emails, phones) — never commit.
+ou_members/ou_members.csv
 
 # Embeds membership number -> society pairs for every member — never commit.
 member_society_lookup/lookup.html
@@ -57,6 +60,7 @@ colombia_counselors_advisors.csv
 .codegraph/
 events_intelligence/
 manual_exports/
+manual_data_tests/
 
 # R9 SAC outreach sheet rows (Section officer emails, PII), made by r9/generate_section_sheet.py
 r9/section_sheet.csv

@@ -369,6 +369,23 @@ pair that's either:
 Sorted most-urgent first. **This file contains personal data and is
 git-ignored — never commit it.**
 
+## Members per OU
+
+`ou_members/generate_ou_members.py` lists who belongs to each Student
+Branch, Chapter and Affinity Group. It reads `Students Detailed View.csv`
+(Tableau Students -> Detail, one row per student member; fetch it with
+`tableau_export.py export-preset students_detail`) plus the two member-count
+exports. A member belongs to a Branch when their School Name matches it, and
+to a Chapter or Affinity Group when one of their society, council, technical
+community or SIG codes also matches the OU's code (`PE31` = `MEMPE031`, `WIE`
+= `MEMWIE050`, `SIGHT` = `MEMSIGHT`). It writes `ou_members/ou_members.csv`
+(**names, emails, phones: git-ignored, never commit it**) and prints every
+OU whose computed count differs from vTools's own count.
+
+```sh
+python3 ou_members/generate_ou_members.py
+```
+
 ## Society membership lookup
 
 Given a list of IEEE membership numbers (e.g. an event's registration list,
