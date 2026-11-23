@@ -8,6 +8,17 @@ version since this project doesn't cut releases.
 
 ### Added
 
+- `ou_members/generate_ou_members.py`: lists who belongs to each Student
+  Branch, Chapter and Affinity Group (by School Name plus the OU's society,
+  council or SIG code) into a git-ignored `ou_members/ou_members.csv`, and
+  reports every OU whose computed count differs from vTools's. Fed by the new
+  `students_detail` Tableau preset (`Students Detailed View.csv`), which
+  `./run_all.sh` now fetches and runs.
+- Colombia dashboard: each OU's member count shows its grade split
+  (`StM · GSM · Member · Other`) from `Students Detailed View.csv`, only
+  when the matched members add up to vTools's count. Region 9 and worldwide
+  dashboards are unchanged.
+
 - `tableau_export.py login` and `vtools_export.py login` fill in the IEEE SSO
   form automatically when `IEEE_EMAIL` and `IEEE_PASSWORD` are set (e.g.
   exported from a git-ignored `.envrc`); without them they still wait for a

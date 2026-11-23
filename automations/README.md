@@ -62,6 +62,10 @@ python automations/tableau_export.py export-preset volunteer_positions --out "Vo
 # and member_society_lookup/ — optional, skip if you don't need those)
 python automations/tableau_export.py export-preset members_detail --out "Member Detail View.csv" --headed
 
+# 4b: Students -> Detail (one row per student with School Name; needed only
+# for ou_members/)
+python automations/tableau_export.py export-preset students_detail --out "Students Detailed View.csv" --headed
+
 # 5: vTools Events (adjust meeting_after / section_spoid for your section/year)
 python automations/vtools_export.py export \
   --search-url "https://events.vtools.ieee.org/events/search/advanced?sub=true&store_values=true&search=&category_id=&subcategory_id=&meeting%5Bregion_spoid%5D=R9&meeting%5Bsection_spoid%5D=R90705&meeting%5Bou_spoid%5D=&society=&meeting_after=01+Jan+2026+12%3A00+AM&meeting_before=&geo_distance=&geo_search=&order=start_time&per_page=30" \
