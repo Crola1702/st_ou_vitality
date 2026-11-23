@@ -14,10 +14,6 @@ version since this project doesn't cut releases.
   reports every OU whose computed count differs from vTools's. Fed by the new
   `students_detail` Tableau preset (`Students Detailed View.csv`), which
   `./run_all.sh` now fetches and runs.
-- Colombia dashboard: each OU's member count shows its grade split
-  (`StM · GSM · Member · Other`) from `Students Detailed View.csv`, only
-  when the matched members add up to vTools's count. Region 9 and worldwide
-  dashboards are unchanged.
 
 - `tableau_export.py login` and `vtools_export.py login` fill in the IEEE SSO
   form automatically when `IEEE_EMAIL` and `IEEE_PASSWORD` are set (e.g.

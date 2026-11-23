@@ -4,7 +4,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from generate_vitality_report import OU, grade_breakdown, members_by_ou
+from generate_vitality_report import OU, members_by_ou
 from ou_members.generate_ou_members import phone
 
 
@@ -30,19 +30,6 @@ class MembersByOUTest(unittest.TestCase):
         ]
         got = {s: [r["Member/Customer Number"] for r in rows] for s, rows in members_by_ou(units, students).items()}
         self.assertEqual(got, {"STB1": ["1", "2", "3"], "SBC1": ["1"], "SBC2": ["3"], "SBA1": ["2"]})
-
-    def test_grade_breakdown_only_when_total_matches(self):
-        units = {
-            "STB1": OU("Universidad X", "STB1", "Student Branch", "Universidad X", 3),
-            "STB2": OU("Universidad Y", "STB2", "Student Branch", "Universidad Y", 5),
-        }
-        students = [
-            {**student("1", "Universidad X"), "Grade": "Student Member"},
-            {**student("2", "Universidad X"), "Grade": "Student Member"},
-            {**student("3", "Universidad X"), "Grade": "Senior Member"},
-            {**student("4", "Universidad Y"), "Grade": "Member"},
-        ]
-        self.assertEqual(grade_breakdown(units, students), {"STB1": {"StM": 2, "Other": 1}})
 
     def test_phone_skips_bare_plus(self):
         self.assertEqual(phone({"School Number": "+", "Home Number": "+57601"}), "+57601")

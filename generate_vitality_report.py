@@ -736,8 +736,7 @@ def load_grade_history_trend(path: Path, promotions_by_date: dict[str, list[dict
 
 
 # Tableau Students -> Detail: one row per student member with School Name and
-# every society/SIG list. Optional, PII (git-ignored). Read by the Colombia
-# dashboard's grade breakdown and by ou_members/.
+# every society/SIG list. Optional, PII (git-ignored). Read by ou_members/.
 STUDENTS_DETAIL_FILE = BASE_DIR / "Students Detailed View.csv"
 MEMBER_CODE_COLUMNS = (
     "Active Society List",
@@ -745,7 +744,6 @@ MEMBER_CODE_COLUMNS = (
     "Technical Community List",
     "Special Interest Group List",
 )
-GRADE_SHORT_LABELS = {"Student Member": "StM", "Graduate Student Member": "GSM", "Member": "Member"}
 
 
 def load_students(path: Path = STUDENTS_DETAIL_FILE) -> list[dict]:
@@ -792,22 +790,6 @@ def members_by_ou(units: dict[str, OU], students: list[dict]) -> dict[str, list[
             ou_codes = {code_key(part, False) for part in ou.society.split("/")}
             rows = [r for r in rows if _codes_match(ou_codes, member_codes(r))]
         result[spoid] = rows
-    return result
-
-
-def grade_breakdown(units: dict[str, OU], students: list[dict]) -> dict[str, dict[str, int]]:
-    """SPOID -> {"StM": n, "GSM": n, "Member": n, "Other": n} (zeros dropped),
-    only for OUs whose matched total equals vTools's own member count, so a
-    breakdown is never shown for a count it doesn't add up to."""
-    result = {}
-    for spoid, rows in members_by_ou(units, students).items():
-        if not rows or len(rows) != units[spoid].member_count:
-            continue
-        counts: dict[str, int] = {}
-        for r in rows:
-            label = GRADE_SHORT_LABELS.get(r["Grade"], "Other")
-            counts[label] = counts.get(label, 0) + 1
-        result[spoid] = {k: counts[k] for k in ("StM", "GSM", "Member", "Other") if k in counts}
     return result
 
 
@@ -984,7 +966,6 @@ def build_dashboard(
     scope_label: str | None = None,
     generated_on: str | None = None,
     section_links: dict[str, str] | None = None,
-    grade_breakdowns: dict[str, dict[str, int]] | None = None,
 ) -> None:
     """Write the self-contained dashboard page. `title` is the page/H1
     title; `nav_html` is raw HTML inserted under the subtitle (multi-section
@@ -994,12 +975,8 @@ def build_dashboard(
     `generated_on` is the date printed on exported reports (default: today;
     a rebuild from committed outputs passes the data's date).
     `section_links` maps a Section name to its own dashboard's href, for the
-    "Open Section dashboard" link next to the Section filter.
-    `grade_breakdowns` (SPOID -> grade label -> count, from grade_breakdown())
-    adds a "StM · GSM · Member" note under each OU's member count; only the
-    Colombia pipeline passes it."""
+    "Open Section dashboard" link next to the Section filter."""
     section_links = section_links or {}
-    grade_breakdowns = grade_breakdowns or {}
     generated_at = datetime.now().astimezone().strftime("%Y-%m-%d %H:%M %Z")
     by_type: dict[str, list[OU]] = {"Student Branch": [], "Student Branch Chapter": [], "Affinity Group": []}
     for ou in units:
@@ -1113,10 +1090,6 @@ def build_dashboard(
 
             member_color = STATUS_GOOD if result["members_met"] else STATUS_CRITICAL
             member_cell = stat_span(ou.member_count, member_color)
-            if ou.spoid in grade_breakdowns:
-                member_cell += '<span class="sub-note">' + " · ".join(
-                    f"{label} {n}" for label, n in grade_breakdowns[ou.spoid].items()
-                ) + "</span>"
 
             events_color = STATUS_GOOD if result["events_met"] else STATUS_CRITICAL
             events_cell = stat_span(f"{result['event_count']} ▸", events_color)
@@ -1871,7 +1844,6 @@ def main() -> None:
     build_dashboard(
         units, html_path, events_path, history_path, society_history_path, grade_history_path, PROMOTIONS_SUMMARY_FILE,
         scope_label="Colombia Section",  # the root pipeline is the Colombia Section's exports
-        grade_breakdowns=grade_breakdown(units_map, load_students()),
     )
     build_university_report(units, university_report_path)
     build_society_report(units, society_report_path)
