@@ -47,7 +47,7 @@ Universidad Estatal Peninsula de Santa Elena,STB20209,Student Branch,Universidad
 Universidad Indoamerica,STB60210971,Student Branch,Universidad Indoamerica,,25,12,Yes,1,,1,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 Universidad Internacional del Ecuador,STB15611,Student Branch,Universidad Internacional del Ecuador,,97,12,Yes,1,,0,4,No,Yes,Yes,,Yes,No,Yes,Yes,Met,2/3,Not Met
 Universidad Laica Eloy Alfaro de Manabi,STB10044,Student Branch,Universidad Laica Eloy Alfaro de Manabi,,21,12,Yes,4,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
-Universidad Nacional De Loja,STB65231,Student Branch,Universidad Nacional De Loja,,92,12,Yes,7,,10,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Universidad Nacional De Loja,STB65231,Student Branch,Universidad Nacional De Loja,,92,12,Yes,8,,9,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Universidad Nacional de Chimborazo,STB00141,Student Branch,Universidad Nacional de Chimborazo,,37,12,Yes,4,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Universidad Politecnica Salesiana - Quito,STB00751,Student Branch,Universidad Politecnica Salesiana - Quito,,37,12,Yes,1,,0,4,No,Yes,Yes,,Yes,No,Yes,Yes,Met,2/3,Not Met
 Universidad Politecnica Salesiana-Cuenca,STB65241,Student Branch,Universidad Politecnica Salesiana-Cuenca,,172,12,Yes,2,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
@@ -82,7 +82,7 @@ Yachay Tech University,STB11735,Student Branch,Yachay Tech University,,145,12,Ye
 "Escuela Superior Politecnica Del Litoral,CS23",SBC19041F,Student Branch Chapter,Escuela Superior Politecnica del Litoral,CS23,23,6,Yes,12,7,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
 "Escuela Superior Politecnica Del Litoral,IA34",SBC19041,Student Branch Chapter,Escuela Superior Politecnica del Litoral,IA34,101,6,Yes,57,21,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Escuela Superior Politecnica Del Litoral,OE22",SBC19041E,Student Branch Chapter,Escuela Superior Politecnica del Litoral,OE22,6,6,Yes,5,1,1,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
-"Escuela Superior Politecnica Del Litoral,PE31",SBC19041C,Student Branch Chapter,Escuela Superior Politecnica del Litoral,PE31,61,6,Yes,15,7,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Escuela Superior Politecnica Del Litoral,PE31",SBC19041C,Student Branch Chapter,Escuela Superior Politecnica del Litoral,PE31,61,6,Yes,15,7,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Escuela Superior Politecnica Del Litoral,RA24",SBC19041D,Student Branch Chapter,Escuela Superior Politecnica del Litoral,RA24,45,6,Yes,6,4,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Escuela Superior Politecnica de Chimborazo,AP03",SBC65531A,Student Branch Chapter,Escuela Superior Politecnica de Chimborazo,AP03,32,6,Yes,0,0,0,2,No,Yes,,No,Yes,Yes,Yes,Yes,Partial,1/3,Not Met
 "Escuela Superior Politecnica de Chimborazo,C16",SBC65531E,Student Branch Chapter,Escuela Superior Politecnica de Chimborazo,C16,64,6,Yes,4,2,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
@@ -112,7 +112,7 @@ Universidad Estatal Peninsula de Santa Elena.RA24,SBC20209A,Student Branch Chapt
 "Universidad Laica Eloy Alfaro de Manabi, IA34",SBC10044B,Student Branch Chapter,Universidad Laica Eloy Alfaro de Manabi,IA34,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad Laica Eloy Alfaro de Manabi, PE31",SBC10044D,Student Branch Chapter,Universidad Laica Eloy Alfaro de Manabi,PE31,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad Laica Eloy Alfaro de Manabi, RA24",SBC10044A,Student Branch Chapter,Universidad Laica Eloy Alfaro de Manabi,RA24,2,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
-"Universidad Nacional De Loja,C16",SBC65231,Student Branch Chapter,Universidad Nacional De Loja,C16,46,6,Yes,1,0,6,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Universidad Nacional De Loja,C16",SBC65231,Student Branch Chapter,Universidad Nacional De Loja,C16,46,6,Yes,2,1,5,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 "Universidad Nacional De Loja,E25",SBC65231A,Student Branch Chapter,Universidad Nacional De Loja,E25,24,6,Yes,2,1,2,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 "Universidad Nacional de Chimborazo,AP03",SBC00141,Student Branch Chapter,Universidad Nacional de Chimborazo,AP03,20,6,Yes,3,1,0,2,No,Yes,,Yes,Yes,Yes,No,Yes,Met,2/3,Not Met
 "Universidad Nacional de Chimborazo,EMB18",SBC00141A,Student Branch Chapter,Universidad Nacional de Chimborazo,EMB18,9,6,Yes,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,1/3,Not Met
@@ -138,7 +138,7 @@ Universidad Estatal Peninsula de Santa Elena.RA24,SBC20209A,Student Branch Chapt
 "Universidad San Francisco de Quito,AES10",SBC14971E,Student Branch Chapter,Universidad San Francisco de Quito,AES10,5,6,No,1,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,1/3,Not Met
 "Universidad San Francisco de Quito,C16",SBC14971D,Student Branch Chapter,Universidad San Francisco de Quito,C16,64,6,Yes,5,4,2,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Universidad San Francisco de Quito,CAS04",SBC14971C,Student Branch Chapter,Universidad San Francisco de Quito,CAS04,7,6,Yes,0,0,5,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
-"Universidad San Francisco de Quito,CIS11",SBC14971G,Student Branch Chapter,Universidad San Francisco de Quito,CIS11,34,6,Yes,3,2,3,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Universidad San Francisco de Quito,CIS11",SBC14971G,Student Branch Chapter,Universidad San Francisco de Quito,CIS11,34,6,Yes,3,2,5,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Universidad San Francisco de Quito,ED15",SBC14971,Student Branch Chapter,Universidad San Francisco de Quito,ED15,8,6,Yes,0,0,4,2,No,Yes,,No,Yes,Yes,Yes,Yes,Partial,1/3,Not Met
 "Universidad San Francisco de Quito,EMB18",SBC14971A,Student Branch Chapter,Universidad San Francisco de Quito,EMB18,5,6,No,2,0,1,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,1/3,Not Met
 "Universidad San Francisco de Quito,NPS05",SBC14971F,Student Branch Chapter,Universidad San Francisco de Quito,NPS05,7,6,Yes,4,2,0,2,Yes,Yes,,No,Yes,Yes,Yes,Yes,Partial,2/3,Not Met
