@@ -1,6 +1,6 @@
 Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
-"Antonio Narino University,WIE",SBA64411,Affinity Group,Antonio Narino University,WIE,45,6,Yes,1,,2,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
-"Corporación Universitaria del Huila – CORHUILA,WIE",SBA60236869,Affinity Group,Corporación Universitaria del Huila – CORHUILA,WIE,8,6,Yes,2,,0,2,Yes,Yes,,Yes,No,No,No,No,Met,3/3,Met
+"Antonio Narino University,WIE",SBA64411,Affinity Group,Antonio Narino University,WIE,45,6,Yes,2,,2,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Corporación Universitaria del Huila – CORHUILA,WIE",SBA60236869,Affinity Group,Corporación Universitaria del Huila – CORHUILA,WIE,8,6,Yes,5,,0,2,Yes,Yes,,Yes,No,No,No,No,Met,3/3,Met
 "Escuela Colombiana De Ing Julio Garavito, WIE",SBA27011,Affinity Group,Escuela Colombiana De Ingenieria Julio Garavito,WIE,3,6,No,0,,0,2,No,Yes,,No,No,No,No,No,Partial,0/3,Not Met
 "Escuela Colombiana de Carreras Industriales,WIE",SBA05421,Affinity Group,Escuela Colombiana de Carreras Industriales,WIE,19,6,Yes,3,,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Escuela Tecnologica Instituto Tecnico Central, WIE",SBA13041,Affinity Group,Escuela Tecnologica Instituto Tecnico Central,WIE,7,6,Yes,0,,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
@@ -36,10 +36,10 @@ Univ. Distrital Francisco Jose de Caldas SB SIGHT,SBA04331S,Affinity Group,Unive
 "Universidad del Cauca,WIE",SBA09161,Affinity Group,Universidad del Cauca,WIE,38,6,Yes,4,,0,2,Yes,Yes,,Yes,Yes,Yes,No,No,Met,3/3,Met
 "Universidad del Quindio,WIE",SBA65911,Affinity Group,Universidad del Quindio,WIE,7,6,Yes,5,,0,2,Yes,Yes,,No,Yes,No,No,No,Partial,2/3,Not Met
 "Universidad del Valle,WIE",SBA95801,Affinity Group,Universidad del Valle,WIE,34,6,Yes,2,,0,2,Yes,Yes,,Yes,No,Yes,Yes,Yes,Met,3/3,Met
-Antonio Narino University,STB64411A,Student Branch,Antonio Narino University,,56,12,Yes,4,,1,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Antonio Narino University,STB64411A,Student Branch,Antonio Narino University,,56,12,Yes,7,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Corporacion Universitaria Minuto de Dios UNIMINUTO,STB60103228,Student Branch,Corporacion Universitaria Minuto de Dios UNIMINUTO,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Corporacion Universitaria Unitec,STB18371,Student Branch,Corporacion Universitaria Unitec,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
-Corporación Universitaria del Huila – CORHUILA,STB60236869,Student Branch,Corporación Universitaria del Huila – CORHUILA,,31,12,Yes,10,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Corporación Universitaria del Huila – CORHUILA,STB60236869,Student Branch,Corporación Universitaria del Huila – CORHUILA,,31,12,Yes,13,,1,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 De La Salle University,STB40010389,Student Branch,De La Salle University,,6,12,No,0,,0,4,No,Yes,Yes,,No,No,No,No,Met,1/3,Not Met
 Escuela Colombiana De Ingenieria Julio Garavito,STB27011,Student Branch,Escuela Colombiana De Ingenieria Julio Garavito,,10,12,No,1,,1,4,No,Yes,Yes,,Yes,Yes,No,Yes,Met,1/3,Not Met
 Escuela Colombiana de Carreras Industriales,STB05421,Student Branch,Escuela Colombiana de Carreras Industriales,,20,12,Yes,6,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
@@ -100,11 +100,11 @@ Universidad del Valle,STB95801,Student Branch,Universidad del Valle,,111,12,Yes,
 Universidad el Bosque,STB60951,Student Branch,Universidad El Bosque,,7,12,No,0,,0,4,No,No,Yes,,No,No,No,No,Partial,0/3,Not Met
 University of Pamplona,STB41556639,Student Branch,University of Pamplona,,45,12,Yes,4,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 University of San Buenaventura,STB03171,Student Branch,University of San Buenaventura,,2,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
-"Antonio Narino University,COM19",SBC64411D,Student Branch Chapter,Antonio Narino University,COM19,28,6,Yes,0,0,1,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
-"Antonio Narino University,EMB18",SBC64411C,Student Branch Chapter,Antonio Narino University,EMB18,21,6,Yes,1,0,1,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
-"Antonio Narino University,RA24",SBC64411B,Student Branch Chapter,Antonio Narino University,RA24,30,6,Yes,2,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
-"Antonio Narino University,TEM14",SBC64411A,Student Branch Chapter,Antonio Narino University,TEM14,29,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
-"Corporación Universitaria del Huila–CORHUILA,RA24",SBC60236869,Student Branch Chapter,Corporación Universitaria del Huila – CORHUILA,RA24,10,6,Yes,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+"Antonio Narino University,COM19",SBC64411D,Student Branch Chapter,Antonio Narino University,COM19,28,6,Yes,1,1,1,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Antonio Narino University,EMB18",SBC64411C,Student Branch Chapter,Antonio Narino University,EMB18,21,6,Yes,2,1,1,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Antonio Narino University,RA24",SBC64411B,Student Branch Chapter,Antonio Narino University,RA24,30,6,Yes,3,1,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Antonio Narino University,TEM14",SBC64411A,Student Branch Chapter,Antonio Narino University,TEM14,29,6,Yes,3,1,1,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Corporación Universitaria del Huila–CORHUILA,RA24",SBC60236869,Student Branch Chapter,Corporación Universitaria del Huila – CORHUILA,RA24,10,6,Yes,4,3,0,2,Yes,Yes,,Yes,No,No,No,No,Met,3/3,Met
 "De La Salle University,AES10",SBC40010389B,Student Branch Chapter,De La Salle University,AES10,0,6,No,0,0,0,2,No,No,,No,No,No,No,Yes,Not Met,0/3,Not Met
 "De La Salle University,PE31",SBC40010389A,Student Branch Chapter,De La Salle University,PE31,1,6,No,0,0,0,2,No,Yes,,No,Yes,No,No,Yes,Partial,0/3,Not Met
 "De La Salle University,RA24",SBC40010389,Student Branch Chapter,De La Salle University,RA24,1,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
