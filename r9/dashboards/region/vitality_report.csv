@@ -3,8 +3,8 @@ Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Memb
 "Benemerita Univ Autonoma De Puebla, WIE",SBA64141,Affinity Group,Benemerita Universidad Autonoma De Puebla,WIE,7,6,Yes,1,,0,2,No,No,,Yes,No,No,No,No,Partial,1/3,Not Met
 "Catholic University of Petropolis,WIE",SBA39071,Affinity Group,Catholic University of Petropolis,WIE,0,6,No,0,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Cefet/RJ-Centro Federal De Educ Tec Csf,WIE",SBA63491,Affinity Group,Cefet/RJ-Centro Federal De Educ Tec Csf,WIE,25,6,Yes,0,,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
-"Centroamericana Univ Jose Simeon Canas,SIGHT",SBA53001S,Affinity Group,Centroamericana Univ Jose Simeon Canas,SIGHT,15,6,Yes,1,,0,2,No,Yes,,No,No,No,No,No,Partial,1/3,Not Met
-"Centroamericana Univ Jose Simeon Canas,WIE",SBA53001,Affinity Group,Centroamericana Univ Jose Simeon Canas,WIE,10,6,Yes,2,,1,2,Yes,Yes,,No,No,No,No,No,Partial,2/3,Not Met
+"Centroamericana Univ Jose Simeon Canas,SIGHT",SBA53001S,Affinity Group,Centroamericana Univ Jose Simeon Canas,SIGHT,16,6,Yes,1,,0,2,No,Yes,,No,No,No,No,No,Partial,1/3,Not Met
+"Centroamericana Univ Jose Simeon Canas,WIE",SBA53001,Affinity Group,Centroamericana Univ Jose Simeon Canas,WIE,11,6,Yes,2,,1,2,Yes,Yes,,No,No,No,No,No,Partial,2/3,Not Met
 "Chapingo Autonomous University,WIE",SBA60226280,Affinity Group,Chapingo Autonomous University,WIE,15,6,Yes,1,,0,2,No,Yes,,No,No,No,Yes,Yes,Partial,1/3,Not Met
 "Cinvestav Guadalajara, WIE",SBA60361,Affinity Group,Cinvestav Guadalajara,WIE,5,6,No,0,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Cinvestav Zacatenco,WIE",SBA60521,Affinity Group,Cinvestav Zacatenco,WIE,17,6,Yes,4,,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
@@ -143,7 +143,7 @@ Universidad Don Bosco SB SIGHT Group,SBA60431S,Affinity Group,Universidad Don Bo
 "Universidad Nacional Abierta y a Distancia,WIE",SBA13071,Affinity Group,Universidad Nacional Abierta y a Distancia,WIE,10,6,Yes,11,,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Universidad Nacional Autonoma De Mexico, WIE",SBA05681,Affinity Group,Universidad Nacional Autonoma De Mexico,WIE,6,6,Yes,7,,0,2,Yes,No,,Yes,No,No,No,No,Partial,2/3,Not Met
 Universidad Nacional De Asuncion (UNA) SB SIGHT,SBA37161S,Affinity Group,Universidad Nacional de Asuncion,(UNA) SB SIGHT,22,6,Yes,5,,1,2,Yes,Yes,,No,Yes,No,No,No,Partial,2/3,Not Met
-"Universidad Nacional De Colombia Sede-Bogota,WIE",SBA06431,Affinity Group,Universidad Nacional De Colombia Sede Bogota,WIE,22,6,Yes,5,,2,2,Yes,Yes,,Yes,Yes,No,No,Yes,Met,3/3,Met
+"Universidad Nacional De Colombia Sede-Bogota,WIE",SBA06431,Affinity Group,Universidad Nacional De Colombia Sede Bogota,WIE,22,6,Yes,7,,0,2,Yes,Yes,,Yes,Yes,No,No,Yes,Met,3/3,Met
 "Universidad Nacional De Loja, WIE",SBA65231,Affinity Group,Universidad Nacional De Loja,WIE,39,6,Yes,6,,4,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 Universidad Nacional Federico Villarreal WIE,SBA64001,Affinity Group,Universidad Nacional Federico Villarreal,WIE,23,6,Yes,14,,0,2,Yes,Yes,,No,No,No,No,No,Partial,2/3,Not Met
 Universidad Nacional Mayor de San Marcos SB SIGHT,SBA03221S,Affinity Group,Universidad Nacional Mayor de San Marcos,SB SIGHT,34,6,Yes,0,,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
@@ -177,7 +177,7 @@ Universidad Peruana de Ciencias Aplicadas SB SIGHT,SBA60381S,Affinity Group,Univ
 "Universidad Privada del Norte-Lima Norte,WIE",SBA11419,Affinity Group,Universidad Privada del Norte-Lima Norte,WIE,5,6,No,0,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad San Francisco de Quito,WIE",SBA14971,Affinity Group,Universidad San Francisco de Quito,WIE,13,6,Yes,3,,0,2,Yes,Yes,,Yes,Yes,No,Yes,Yes,Met,3/3,Met
 "Universidad San Ignacio De Loyola,WIE",SBA17421,Affinity Group,Universidad San Ignacio De Loyola,WIE,7,6,Yes,3,,1,2,Yes,Yes,,Yes,No,No,No,No,Met,3/3,Met
-"Universidad Santiago de Cali,WIE",SBA64461,Affinity Group,Universidad Santiago de Cali,WIE,13,6,Yes,21,,1,2,Yes,Yes,,No,Yes,Yes,Yes,Yes,Partial,2/3,Not Met
+"Universidad Santiago de Cali,WIE",SBA64461,Affinity Group,Universidad Santiago de Cali,WIE,13,6,Yes,21,,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Universidad Santo Tomas - Tunja, SIGHT",SBA04081S,Affinity Group,Universidad Santo Tomas - Tunja,SIGHT,28,6,Yes,0,,0,2,No,No,,Yes,No,No,No,No,Partial,1/3,Not Met
 "Universidad Santo Tomas - Tunja, WIE",SBA04081,Affinity Group,Universidad Santo Tomas - Tunja,WIE,22,6,Yes,0,,0,2,No,Yes,,No,No,No,No,No,Partial,1/3,Not Met
 "Universidad Sergio Arboleda,WIE",SBA01201,Affinity Group,Universidad Sergio Arboleda,WIE,0,6,No,0,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
@@ -238,7 +238,7 @@ Universidad de las Fuerzas Armadas - ESPE SB SIGHT,SBA63741S,Affinity Group,Univ
 "Universidade Estadual de Maringa,WIE",SBA64306,Affinity Group,Universidade Estadual de Maringa,WIE,14,6,Yes,0,,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
 "Universidade Estadual do Oeste do Parana,WIE",SBA61791,Affinity Group,Universidade Estadual do Oeste do Parana,WIE,4,6,No,0,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidade Federal De Juiz De Fora,SIGHT",SBA13491S,Affinity Group,Universidade Federal De Juiz De Fora,SIGHT,101,6,Yes,2,,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
-"Universidade Federal De Juiz De Fora,WIE",SBA13491,Affinity Group,Universidade Federal De Juiz De Fora,WIE,86,6,Yes,16,,2,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
+"Universidade Federal De Juiz De Fora,WIE",SBA13491,Affinity Group,Universidade Federal De Juiz De Fora,WIE,86,6,Yes,16,,3,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
 "Universidade Federal Rural do Semi-Arido,WIE",SBA99373,Affinity Group,Universidade Federal Rural do Semi-Arido,WIE,18,6,Yes,7,,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
 "Universidade Federal da Paraiba,WIE",SBA14711,Affinity Group,Universidade Federal da Paraiba,WIE,9,6,Yes,0,,6,2,No,Yes,,No,Yes,Yes,Yes,Yes,Partial,1/3,Not Met
 "Universidade Federal de Alagoas,WIE",SBA10043,Affinity Group,Universidade Federal de Alagoas,WIE,9,6,Yes,0,,0,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
@@ -295,14 +295,14 @@ De La Salle University,STB40010389,Student Branch,De La Salle University,,6,12,N
 Escola Politecnica Universidade de Sao Paulo,STB03651,Student Branch,Escola Politecnica Universidade de Sao Paulo,,10,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Escola de Engenharia de Sao Carlos,STB03151,Student Branch,Escola de Engenharia de Sao Carlos,,30,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,Yes,No,Met,2/3,Not Met
 Escuela Colombiana De Ingenieria Julio Garavito,STB27011,Student Branch,Escuela Colombiana De Ingenieria Julio Garavito,,10,12,No,1,,1,4,No,Yes,Yes,,Yes,Yes,No,Yes,Met,1/3,Not Met
-Escuela Colombiana de Carreras Industriales,STB05421,Student Branch,Escuela Colombiana de Carreras Industriales,,20,12,Yes,6,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Escuela Colombiana de Carreras Industriales,STB05421,Student Branch,Escuela Colombiana de Carreras Industriales,,21,12,Yes,6,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Escuela De Aviacion Del Ejercito,STB60204105,Student Branch,Escuela De Aviacion Del Ejercito,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Escuela Especializada Ingenieria ITCA-FEPADE,STB11409,Student Branch,Escuela Especializada Ingenieria ITCA-FEPADE,,23,12,Yes,16,,1,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Escuela Militar de Ingenieria-La Paz,STB60961,Student Branch,Escuela Militar de Ingenieria-La Paz,,24,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 Escuela Militar de Ingenieria-Santa Cruz,STB11681,Student Branch,Escuela Militar de Ingenieria-Santa Cruz,,0,12,No,0,,0,4,No,No,Yes,,No,No,No,No,Partial,0/3,Not Met
 Escuela Politecnica Nacional,STB12801,Student Branch,Escuela Politecnica Nacional,,255,12,Yes,26,,9,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Escuela Superior Politecnica Del Litoral,STB19041,Student Branch,Escuela Superior Politecnica del Litoral,,280,12,Yes,23,,1,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
-Escuela Superior Politecnica de Chimborazo,STB65531,Student Branch,Escuela Superior Politecnica de Chimborazo,,266,12,Yes,4,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Escuela Superior Politecnica de Chimborazo,STB65531,Student Branch,Escuela Superior Politecnica de Chimborazo,,268,12,Yes,4,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Escuela Superior de Computo del IPN,STB66061,Student Branch,Escuela Superior de Computo del IPN,,13,12,Yes,3,,1,4,No,Yes,No,,Yes,Yes,Yes,No,Partial,1/3,Not Met
 Escuela Tecnologica Instituto Tecnico Central,STB13041,Student Branch,Escuela Tecnologica Instituto Tecnico Central,,11,12,No,1,,0,4,No,No,Yes,,No,No,No,No,Partial,0/3,Not Met
 Faculdade de Tecnologia Senai Cimatec,STB06891,Student Branch,Faculdade de Tecnologia Senai Cimatec,,9,12,No,1,,0,4,No,No,No,,Yes,No,No,No,Not Met,0/3,Not Met
@@ -315,20 +315,20 @@ Federal Institute of Paraiba-Campina Grande,STB13561,Student Branch,Federal Inst
 Federal Institute of Rio Grande do Norte,STB60229023,Student Branch,Federal Institute of Rio Grande do Norte,,24,12,Yes,0,,2,4,No,Yes,Yes,,Yes,Yes,No,Yes,Met,2/3,Not Met
 Federal University of Amazonas,STB60021833,Student Branch,Federal University of Amazonas,,23,12,Yes,0,,0,4,No,Yes,Yes,,No,No,No,No,Met,2/3,Not Met
 Federal University of Bahia,STB93051,Student Branch,Federal University of Bahia,,62,12,Yes,8,,27,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
-Federal University of Ceara,STB62081,Student Branch,Federal University of Ceara,,93,12,Yes,0,,7,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+Federal University of Ceara,STB62081,Student Branch,Federal University of Ceara,,94,12,Yes,0,,7,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 Federal University of Goias,STB08571,Student Branch,Federal University of Goias,,71,12,Yes,6,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Federal University of Mato Grosso,STB40192365,Student Branch,Federal University of Mato Grosso,,13,12,Yes,1,,0,4,No,Yes,No,,Yes,Yes,Yes,Yes,Partial,1/3,Not Met
 Federal University of Minas Gerais,STB12521,Student Branch,Federal University of Minas Gerais,,27,12,Yes,1,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
 Federal University of Ouro Preto,STB40273279,Student Branch,Federal University of Ouro Preto,,13,12,Yes,3,,0,4,No,Yes,Yes,,Yes,Yes,Yes,No,Met,2/3,Not Met
 Federal University of Parana,STB35901,Student Branch,Federal University of Parana,,28,12,Yes,1,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 Federal University of Pelotas,STB40053131,Student Branch,Federal University of Pelotas,,49,12,Yes,4,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,No,Met,3/3,Met
-Federal University of Rio Grande,STB11375,Student Branch,Federal University of Rio Grande,,3,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Federal University of Rio Grande,STB11375,Student Branch,Federal University of Rio Grande,,15,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
 Federal University of Rio Grande do Sul,STB66441,Student Branch,Federal University of Rio Grande do Sul,,66,12,Yes,1,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 Federal University of Rondônia Foundation,STB60222106,Student Branch,Federal University of Rondônia Foundation,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Federal University of Sao Carlos,STB60271,Student Branch,Federal University of Sao Carlos,,3,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Federal University of Sao Joao del-Rei,STB11757,Student Branch,Federal University of Sao Joao del-Rei,,17,12,Yes,3,,0,4,No,Yes,Yes,,Yes,Yes,Yes,No,Met,2/3,Not Met
 Federal University of Sergipe,STB60020518,Student Branch,Federal University of Sergipe,,53,12,Yes,10,,1,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
-Federal University of Tocantins,STB18491,Student Branch,Federal University of Tocantins,,20,12,Yes,5,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Federal University of Tocantins,STB18491,Student Branch,Federal University of Tocantins,,21,12,Yes,5,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Federal University of Vicosa,STB66311,Student Branch,Federal University of Vicosa,,4,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Federico Santa Maria Technical University,STB04321,Student Branch,Federico Santa Maria Technical University,,54,12,Yes,1,,3,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
 Fidelitas Univ,STB62171,Student Branch,Fidelitas Univ,,5,12,No,1,,0,4,No,Yes,No,,No,No,No,No,Partial,0/3,Not Met
@@ -343,7 +343,7 @@ Inst Fed de Educacao Ciencia e Tecn da Paraiba,STB04261,Student Branch,Inst Fed 
 Inst Politecnico Nacional Micro y Nanotecnologias,STB60233006,Student Branch,Inst Politecnico Nacional Micro y Nanotecnologias,,18,12,Yes,21,,2,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Inst Superior Tec Privado TECSUP,STB12001,Student Branch,Inst Superior Tec Privado TECSUP,,140,12,Yes,54,,1,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Inst Superior Tecnologico Martha Bucaram Roldos,STB60222645,Student Branch,Inst Superior Tecnologico Martha Bucaram Roldos,,1,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
-Inst Tec Estudios Sup - Sonora Norte,STB60242562,Student Branch,Inst Tec Estudios Sup - Sonora Norte,,37,12,Yes,0,,0,4,No,Yes,Yes,,No,No,No,No,Met,2/3,Not Met
+Inst Tec Estudios Sup - Sonora Norte,STB60242562,Student Branch,Inst Tec Estudios Sup - Sonora Norte,,37,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 Inst Tec Estudios Sup Monterrey - Puebla Campus,STB66031,Student Branch,Inst Tec Estudios Sup Monterrey - Puebla Campus,,49,12,Yes,17,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Inst Tec Sup de Calkini en el Estado de Campeche,STB11512,Student Branch,Inst Tec Sup de Calkini en el Estado de Campeche,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Inst Tec Superior de Acatlan de Osorio,STB60217766,Student Branch,Inst Tec Superior de Acatlan de Osorio,,42,12,Yes,1,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
@@ -374,11 +374,11 @@ Instituto Tecnologico De Chihuahua,STB38681,Student Branch,Instituto Tecnologico
 Instituto Tecnologico De Ciudad Madero,STB89501,Student Branch,Instituto Tecnologico De Ciudad Madero,,27,12,Yes,3,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 Instituto Tecnologico De Cuautla,STB08251,Student Branch,Instituto Tecnologico de Cuautla,,0,12,No,2,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Instituto Tecnologico De Durango,STB39201,Student Branch,Instituto Tecnologico De Durango,,15,12,Yes,0,,5,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
-Instituto Tecnologico De Hermosillo,STB34381,Student Branch,Instituto Tecnologico de Hermosillo,,26,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,No,No,Met,2/3,Not Met
+Instituto Tecnologico De Hermosillo,STB34381,Student Branch,Instituto Tecnologico de Hermosillo,,27,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,No,No,Met,2/3,Not Met
 Instituto Tecnologico De Lazaro Cardenas,STB99992A,Student Branch,Instituto Tecnologico De Lazaro Cardenas,,81,12,Yes,5,,0,4,Yes,Yes,No,,No,No,No,No,Partial,2/3,Not Met
 Instituto Tecnologico De Morelia,STB99521,Student Branch,Instituto Tecnologico de Morelia,,97,12,Yes,10,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Instituto Tecnologico De Puebla,STB60081,Student Branch,Instituto Tecnologico de Puebla,,2,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
-Instituto Tecnologico De Queretaro,STB99111,Student Branch,Instituto Tecnologico de Queretaro,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Instituto Tecnologico De Queretaro,STB99111,Student Branch,Instituto Tecnologico de Queretaro,,1,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Instituto Tecnologico De San Luis Potosi,STB13551,Student Branch,Instituto Tecnologico De San Luis Potosi,,1,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Instituto Tecnologico De Sonora,STB35761,Student Branch,Instituto Tecnologico De Sonora,,53,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,Yes,No,Met,2/3,Not Met
 Instituto Tecnologico De Tuxtla Gutierrez,STB34571,Student Branch,Instituto Tecnologico De Tuxtla Gutierrez,,11,12,No,0,,0,4,No,Yes,Yes,,Yes,No,No,No,Met,1/3,Not Met
@@ -390,7 +390,7 @@ Instituto Tecnologico Superior de Atlixco,STB11479,Student Branch,Instituto Tecn
 Instituto Tecnologico Superior de Coatzacoalcos,STB03571,Student Branch,Instituto Tecnologico Superior de Coatzacoalcos,,57,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 Instituto Tecnologico Superior de Comalcalco,STB12301,Student Branch,Instituto Tecnologico Superior de Comalcalco,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Instituto Tecnologico Superior de Guanajuato,STB17441,Student Branch,Instituto Tecnologico Superior de Guanajuato,,10,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
-Instituto Tecnologico Superior de Huauchinango,STB60207226,Student Branch,Instituto Tecnologico Superior de Huauchinango,,73,12,Yes,6,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Instituto Tecnologico Superior de Huauchinango,STB60207226,Student Branch,Instituto Tecnologico Superior de Huauchinango,,74,12,Yes,6,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Instituto Tecnologico Superior de Huichapan,STB14921,Student Branch,Instituto Tecnologico Superior de Huichapan,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Instituto Tecnologico Superior de Lerdo,STB60631,Student Branch,Instituto Tecnologico Superior de Lerdo,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Instituto Tecnologico Superior de Misantla,STB60224241,Student Branch,Instituto Tecnologico Superior de Misantla,,16,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
@@ -421,7 +421,7 @@ La Universidad Nacional Agraria de la Selva,STB64287,Student Branch,La Universid
 Leon Instituto Tecnologico,STB11011,Student Branch,Leon Instituto Tecnologico,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Mackenzie University-Escola De Eng,STB11071,Student Branch,Mackenzie University-Escola De Eng,,1,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 National Univ of Central Buenos Aires (UNICEN),STB61851,Student Branch,National University of Central Buenos Aires,,1,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
-National University of Costa Rica,STB40239987,Student Branch,National University of Costa Rica,,42,12,Yes,10,,3,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+National University of Costa Rica,STB40239987,Student Branch,National University of Costa Rica,,41,12,Yes,10,,3,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 National University of Entre Rios,STB13251,Student Branch,National University of Entre Rios,,1,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 National University of Rio Cuarto,STB63731,Student Branch,National University of Rio Cuarto,,7,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 National University of the Northeast-Argentina,STB40000286,Student Branch,National University of the Northeast-Argentina,,40,12,Yes,0,,0,4,No,Yes,Yes,,No,No,No,No,Met,2/3,Not Met
@@ -429,7 +429,7 @@ Nicaragua Univ Nacional De Ingenieria,STB86101,Student Branch,Nicaragua Univ Nac
 Ort Instituto Tecnologico-Uruguay,STB60261,Student Branch,Ort Instituto Tecnologico-Uruguay,,1,12,No,2,,1,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 PUC Minas-Pocos de Caldas,STB20129,Student Branch,PUC Minas-Pocos de Caldas,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Politecnico de la Costa Atlantica,STB99095,Student Branch,Politecnico de la Costa Atlantica,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
-Polytechnic University of Puerto Rico,STB29291,Student Branch,Polytechnic University of Puerto Rico,,65,12,Yes,0,,0,4,No,Yes,No,,No,No,No,No,Partial,1/3,Not Met
+Polytechnic University of Puerto Rico,STB29291,Student Branch,Polytechnic University of Puerto Rico,,66,12,Yes,0,,0,4,No,Yes,No,,No,No,No,No,Partial,1/3,Not Met
 Pontifical Catholic University of Minas Gerais,STB04981,Student Branch,Pontifical Catholic University of Minas Gerais,,1,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Pontifical Catholic University of Rio de Janeiro,STB14071,Student Branch,Pontifical Catholic University of Rio de Janeiro,,8,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Pontificia Univ Javeriana Sede Bogota,STB04591,Student Branch,Pontificia Univ Javeriana Sede Bogota,,54,12,Yes,100,,5,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
@@ -512,7 +512,7 @@ Universidad Autonoma del Carmen,STB09251,Student Branch,Universidad Autonoma del
 Universidad Autonoma del Estado de Mexico,STB11766,Student Branch,Universidad Autonoma del Estado de Mexico,,18,12,Yes,1,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 Universidad Autonoma del Estado de Morelos,STB62781,Student Branch,Universidad Autonoma del Estado de Morelos,,16,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
 Universidad Autonoma del Peru,STB10180,Student Branch,Universidad Autonoma del Peru,,1,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
-Universidad Bolivariana del Ecuador,STB60216295,Student Branch,Universidad Bolivariana del Ecuador,,15,12,Yes,7,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Universidad Bolivariana del Ecuador,STB60216295,Student Branch,Universidad Bolivariana del Ecuador,,15,12,Yes,7,,0,4,Yes,Yes,No,,Yes,Yes,Yes,Yes,Partial,2/3,Not Met
 Universidad Catolica Boliviana - Cochabamba,STB03232,Student Branch,Universidad Catolica Boliviana - Cochabamba,,3,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Universidad Catolica Boliviana La Paz,STB60821,Student Branch,Universidad Catolica Boliviana La Paz,,71,12,Yes,3,,1,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 Universidad Catolica Boliviana Santa Cruz,STB10179,Student Branch,Universidad Catolica Boliviana - Santa Cruz,,1,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
@@ -520,7 +520,7 @@ Universidad Catolica Nuestra Senora de la Asuncion,STB11535,Student Branch,Unive
 Universidad Catolica San Pablo,STB66271,Student Branch,Universidad Catolica San Pablo,,38,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 Universidad Catolica Santo Toribio de Mogrovejo,STB04621,Student Branch,Universidad Catolica Santo Toribio de Mogrovejo,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Universidad Catolica de Colombia,STB62201,Student Branch,Universidad Catolica de Colombia,,1,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
-Universidad Catolica de Cuenca,STB08441,Student Branch,Universidad Catolica de Cuenca,,63,12,Yes,1,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+Universidad Catolica de Cuenca,STB08441,Student Branch,Universidad Catolica de Cuenca,,64,12,Yes,1,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 Universidad Catolica de Santa Maria,STB04201,Student Branch,Universidad Catolica de Santa Maria,,21,12,Yes,1,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 Universidad Catolica de Santiago de Guayaquil,STB01211,Student Branch,Universidad Catolica Santiago de Guayaquil,,19,12,Yes,1,,0,4,No,Yes,Yes,,Yes,Yes,Yes,No,Met,2/3,Not Met
 Universidad Catolica de Santiago del Estero,STB14004,Student Branch,Universidad Catolica de Santiago del Estero,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
@@ -532,7 +532,7 @@ Universidad Cesar Vallejo-Piura,STB09241,Student Branch,Universidad Cesar Vallej
 Universidad Continental de Ciencias e Ingenieria,STB12011,Student Branch,Universidad Continental de Ciencias e Ingenieria,,14,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
 Universidad Continental-Arequipa Campus,STB60209374,Student Branch,Universidad Continental-Arequipa Campus,,17,12,Yes,1,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 Universidad Cristobal Colon,STB63191,Student Branch,Universidad Cristobal Colon,,33,12,Yes,2,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
-Universidad De Chile,STB11791,Student Branch,Universidad De Chile,,110,12,Yes,24,,7,4,Yes,Yes,Yes,,Yes,Yes,Yes,No,Met,3/3,Met
+Universidad De Chile,STB11791,Student Branch,Universidad De Chile,,112,12,Yes,24,,7,4,Yes,Yes,Yes,,Yes,Yes,Yes,No,Met,3/3,Met
 Universidad De Montevideo,STB45891747,Student Branch,Universidad De Montevideo,,8,12,No,7,,2,4,Yes,Yes,Yes,,No,No,No,Yes,Met,2/3,Not Met
 Universidad Del Azuay,STB11021,Student Branch,Universidad del Azuay,,10,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Universidad Del Bio-Bio,STB33031,Student Branch,Universidad Del Bio-Bio,,18,12,Yes,1,,1,4,No,Yes,Yes,,Yes,Yes,Yes,No,Met,2/3,Not Met
@@ -605,16 +605,16 @@ Universidad Nacional del Callao,STB21571,Student Branch,Universidad Nacional del
 Universidad Nacional del Centro del Peru,STB16851,Student Branch,Universidad Nacional del Centro del Peru,,12,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,Yes,No,Met,2/3,Not Met
 Universidad Nacional del Este,STB60209263,Student Branch,Universidad Nacional del Este,,3,12,No,1,,2,4,No,Yes,No,,No,No,No,No,Partial,0/3,Not Met
 Universidad Nacional del Sur,STB06361,Student Branch,Universidad Nacional del Sur,,22,12,Yes,2,,3,4,No,Yes,Yes,,Yes,No,Yes,No,Met,2/3,Not Met
-Universidad Nacional sede Manizales,STB61301,Student Branch,Universidad Nacional sede Manizales,,5,12,No,12,,0,4,Yes,Yes,Yes,,No,No,Yes,No,Met,2/3,Not Met
+Universidad Nacional sede Manizales,STB61301,Student Branch,Universidad Nacional sede Manizales,,8,12,No,12,,0,4,Yes,Yes,Yes,,No,No,Yes,No,Met,2/3,Not Met
 Universidad Panamericana,STB37101,Student Branch,Universidad Panamericana,,1,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Universidad Panamericana - Bonaterra,STB33751,Student Branch,Universidad Panamericana - Bonaterra,,7,12,No,4,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 Universidad Panamericana Campus Guadalajara,STB60209096,Student Branch,Universidad Panamericana Campus Guadalajara,,1,12,No,1,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
-Universidad Particular Ricardo Palma,STB40501,Student Branch,Universidad Particular Ricardo Palma,,28,12,Yes,1,,3,4,No,Yes,No,,Yes,Yes,Yes,No,Partial,1/3,Not Met
+Universidad Particular Ricardo Palma,STB40501,Student Branch,Universidad Particular Ricardo Palma,,28,12,Yes,1,,4,4,No,Yes,No,,Yes,Yes,Yes,No,Partial,1/3,Not Met
 Universidad Pedagogica Nacional,STB08221,Student Branch,Universidad Pedagogica Nacional,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Universidad Pedagogica Y Tec de Colombia,STB60931,Student Branch,Universidad Pedagogica Y Tec de Colombia,,1,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Universidad Peruana Cayetano Heredia,STB11477,Student Branch,Universidad Peruana Cayetano Heredia,,11,12,No,0,,1,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,1/3,Not Met
 Universidad Peruana Los Andes,STB18581,Student Branch,Universidad Peruana Los Andes,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
-Universidad Peruana de Ciencias Aplicadas,STB60381,Student Branch,Universidad Peruana de Ciencias Aplicadas,,170,12,Yes,13,,6,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Universidad Peruana de Ciencias Aplicadas,STB60381,Student Branch,Universidad Peruana de Ciencias Aplicadas,,173,12,Yes,13,,6,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Universidad Piloto de Colombia,STB81721,Student Branch,Universidad Piloto de Colombia,,22,12,Yes,20,,3,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Universidad Politecnica Salesiana - Quito,STB00751,Student Branch,Universidad Politecnica Salesiana - Quito,,37,12,Yes,1,,0,4,No,Yes,Yes,,Yes,No,Yes,Yes,Met,2/3,Not Met
 Universidad Politecnica Salesiana-Cuenca,STB65241,Student Branch,Universidad Politecnica Salesiana-Cuenca,,172,12,Yes,2,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
@@ -661,6 +661,7 @@ Universidad Tecnica Estatal de Quevedo,STB60216631,Student Branch,Universidad Te
 Universidad Tecnica Particular de Loja,STB63711,Student Branch,Universidad Tecnica Particular de Loja,,17,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
 Universidad Tecnica de Ambato,STB65711,Student Branch,Universidad Tecnica de Ambato,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Universidad Tecnica de Cotopaxi,STB14005,Student Branch,Universidad Tecnica de Cotopaxi,,1,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Universidad Tecnica de Machala,STB45891464,Student Branch,Universidad Tecnica de Machala,,12,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
 Universidad Tecnica de Manabi,STB35737,Student Branch,Universidad Tecnica de Manabi,,2,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Universidad Tecnica de Oruro,STB13461,Student Branch,Universidad Tecnica de Oruro,,1,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Universidad Tecnologica De Bolivar,STB13761,Student Branch,Universidad Tecnologica De Bolivar,,148,12,Yes,40,,25,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
@@ -669,7 +670,7 @@ Universidad Tecnologica Naciona-Resistencia,STB60160804,Student Branch,Universid
 Universidad Tecnologica Nacional-Buenos Aires,STB05911,Student Branch,Universidad Tecnologica Nacional-Buenos Aires,,25,12,Yes,1,,0,4,No,Yes,Yes,,No,No,No,No,Met,2/3,Not Met
 Universidad Tecnologica Nacional-Tucuman,STB64626,Student Branch,Universidad Tecnologica Nacional-Tucuman,,1,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Universidad Tecnologica Oteima,STB03751,Student Branch,Universidad Tecnologica Oteima,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
-Universidad Tecnologica de Campeche,STB18881,Student Branch,Universidad Tecnologica de Campeche,,39,12,Yes,7,,2,4,Yes,Yes,Yes,,Yes,Yes,No,Yes,Met,3/3,Met
+Universidad Tecnologica de Campeche,STB18881,Student Branch,Universidad Tecnologica de Campeche,,39,12,Yes,7,,3,4,Yes,Yes,Yes,,Yes,Yes,No,Yes,Met,3/3,Met
 Universidad Tecnologica de Honduras,STB08721,Student Branch,Universidad Tecnologica de Honduras,,16,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
 Universidad Tecnologica de Mexico-Atizapan,STB03181,Student Branch,Universidad Tecnologica de Mexico-Atizapan,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Universidad Tecnologica de Nezahualcoyotl,STB65521,Student Branch,Universidad Tecnologica de Nezahualcoyotl,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
@@ -691,7 +692,7 @@ Universidad Veracruzana-LSCA,STB60221827,Student Branch,Universidad Veracruzana-
 Universidad Veracruzana-Poza Rica,STB11700,Student Branch,Universidad Veracruzana-Poza Rica,,17,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,Yes,No,Met,2/3,Not Met
 Universidad de Antioquia,STB14361,Student Branch,Universidad de Antioquia,,33,12,Yes,4,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Universidad de Antofagasta,STB28261,Student Branch,Universidad de Antofagasta,,21,12,Yes,1,,3,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
-Universidad de Buenos Aires,STB00231,Student Branch,Universidad de Buenos Aires,,56,12,Yes,8,,2,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Universidad de Buenos Aires,STB00231,Student Branch,Universidad de Buenos Aires,,57,12,Yes,8,,2,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Universidad de Ciencias y Artes de Chiapas UNICACH,STB10062,Student Branch,Universidad de Ciencias y Artes de Chiapas,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Universidad de Ciencias y Humanidades,STB18351,Student Branch,Universidad de Ciencias y Humanidades,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Universidad de Colima - Sede Manzanillo,STB66251,Student Branch,Universidad de Colima - Sede Manzanillo,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
@@ -713,7 +714,7 @@ Universidad de Los Lagos,STB60243777,Student Branch,Universidad de Los Lagos,,16
 Universidad de Medellin,STB07871,Student Branch,Universidad de Medellin,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Universidad de Monterrey,STB14941,Student Branch,Universidad de Monterrey,,67,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 Universidad de Narino,STB64151,Student Branch,Universidad de Narino,,5,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
-Universidad de O'Higgins,STB60226547,Student Branch,Universidad de O'Higgins,,6,12,No,7,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,No,Met,2/3,Not Met
+Universidad de O'Higgins,STB60226547,Student Branch,Universidad de O'Higgins,,6,12,No,7,,0,4,Yes,Yes,No,,Yes,Yes,Yes,No,Partial,1/3,Not Met
 Universidad de Panama,STB60171,Student Branch,Universidad de Panama,,38,12,Yes,6,,3,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Universidad de Piura,STB60621,Student Branch,Universidad de Piura,,18,12,Yes,3,,0,4,No,Yes,Yes,,Yes,No,No,No,Met,2/3,Not Met
 Universidad de Piura - Sede Lima,STB10065,Student Branch,Universidad de Piura - Sede Lima,,1,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
@@ -731,7 +732,7 @@ Universidad de Valparaiso,STB64627,Student Branch,Universidad de Valparaiso,,27,
 Universidad de el Salvador,STB99671,Student Branch,Universidad de el Salvador,,94,12,Yes,10,,20,4,Yes,Yes,Yes,,Yes,Yes,No,Yes,Met,3/3,Met
 Universidad de la Costa,STB65981,Student Branch,Universidad de la Costa,,72,12,Yes,36,,3,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Universidad de la Fuerzas Armadas ESPE - Latacunga,STB11457,Student Branch,Universidad de la Fuerzas Armadas ESPE - Latacunga,,56,12,Yes,6,,3,4,Yes,Yes,Yes,,Yes,Yes,No,Yes,Met,3/3,Met
-Universidad de la Sabana,STB66041,Student Branch,Universidad de la Sabana,,35,12,Yes,4,,0,4,Yes,Yes,Yes,,Yes,No,No,Yes,Met,3/3,Met
+Universidad de la Sabana,STB66041,Student Branch,Universidad de la Sabana,,37,12,Yes,4,,0,4,Yes,Yes,Yes,,Yes,No,No,Yes,Met,3/3,Met
 Universidad de las Americas-Quito,STB10045,Student Branch,Universidad de las Americas-Quito,,72,12,Yes,0,,0,4,No,Yes,No,,Yes,Yes,Yes,Yes,Partial,1/3,Not Met
 Universidad de las Fuerzas Armadas - ESPE,STB63741,Student Branch,Universidad de las Fuerzas Armadas - ESPE,,150,12,Yes,25,,2,4,Yes,Yes,Yes,,Yes,Yes,No,Yes,Met,3/3,Met
 Universidad de los Andes,STB12991,Student Branch,Universidad de los Andes,,124,12,Yes,124,,9,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
@@ -746,17 +747,18 @@ Universidad del Quindio,STB65911,Student Branch,Universidad del Quindio,,8,12,No
 Universidad del Rosario,STB99411,Student Branch,Universidad del Rosario,,15,12,Yes,4,,1,4,Yes,Yes,Yes,,Yes,No,No,No,Met,3/3,Met
 Universidad del Salvador,STB63451,Student Branch,Universidad del Salvador,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Universidad del Sol,STB62511,Student Branch,Universidad del Sol,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
-Universidad del Valle,STB95801,Student Branch,Universidad del Valle,,111,12,Yes,50,,1,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Universidad del Valle,STB95801,Student Branch,Universidad del Valle,,111,12,Yes,52,,1,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Universidad del Valle de Atemajac,STB63131,Student Branch,Universidad del Valle de Atemajac,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Universidad del Valle de Guatemala,STB28211,Student Branch,Universidad del Valle de Guatemala,,19,12,Yes,1,,0,4,No,No,Yes,,No,Yes,Yes,Yes,Partial,1/3,Not Met
 Universidad del Valle-Cochabamba,STB11478,Student Branch,Universidad del Valle-Cochabamba,,15,12,Yes,1,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
 Universidad del Zulia,STB29631,Student Branch,Universidad del Zulia,,3,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Universidad el Bosque,STB60951,Student Branch,Universidad El Bosque,,7,12,No,0,,0,4,No,No,Yes,,No,No,No,No,Partial,0/3,Not Met
+Universidade Estadual Paulista,STB60133266,Student Branch,Universidade Estadual Paulista,,15,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
 Universidade Estadual de Campinas,STB91201,Student Branch,Universidade Estadual de Campinas,,95,12,Yes,0,,0,4,No,Yes,Yes,,Yes,No,Yes,No,Met,2/3,Not Met
 Universidade Estadual de Feira de Santana,STB11151,Student Branch,Universidade Estadual de Feira de Santana,,17,12,Yes,1,,1,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 Universidade Estadual de Maringa,STB64306,Student Branch,Universidade Estadual de Maringa,,24,12,Yes,0,,2,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 Universidade Estadual do Oeste do Parana,STB61791,Student Branch,Universidade Estadual do Oeste do Parana,,14,12,Yes,1,,2,4,No,Yes,No,,Yes,Yes,No,No,Partial,1/3,Not Met
-Universidade Federal De Juiz De Fora,STB13491,Student Branch,Universidade Federal De Juiz De Fora,,105,12,Yes,67,,7,4,Yes,Yes,Yes,,Yes,Yes,Yes,No,Met,3/3,Met
+Universidade Federal De Juiz De Fora,STB13491,Student Branch,Universidade Federal De Juiz De Fora,,105,12,Yes,67,,9,4,Yes,Yes,Yes,,Yes,Yes,Yes,No,Met,3/3,Met
 Universidade Federal Rural de Pernambuco,STB11448,Student Branch,Universidade Federal Rural de Pernambuco,,2,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Universidade Federal Rural do Semi-Arido,STB99373,Student Branch,Universidade Federal Rural do Semi-Arido,,29,12,Yes,0,,0,4,No,No,Yes,,Yes,No,No,No,Partial,1/3,Not Met
 Universidade Federal da Paraiba,STB14711,Student Branch,Universidade Federal da Paraiba,,58,12,Yes,0,,2,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
@@ -769,7 +771,7 @@ Universidade Federal de Santa Catarina,STB08701,Student Branch,Universidade Fede
 Universidade Federal de Santa Maria,STB15155,Student Branch,Universidade Federal de Santa Maria,,97,12,Yes,6,,2,4,Yes,Yes,Yes,,Yes,Yes,Yes,No,Met,3/3,Met
 Universidade Federal de Sao Carlos,STB39471,Student Branch,Universidade Federal de Sao Carlos,,3,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Universidade Federal do ABC,STB03741,Student Branch,Universidade Federal do ABC,,42,12,Yes,0,,0,4,No,Yes,Yes,,No,No,No,No,Met,2/3,Not Met
-Universidade Federal do Acre,STB60096817,Student Branch,Universidade Federal do Acre,,17,12,Yes,2,,1,4,No,Yes,Yes,,No,No,No,No,Met,2/3,Not Met
+Universidade Federal do Acre,STB60096817,Student Branch,Universidade Federal do Acre,,18,12,Yes,2,,1,4,No,Yes,Yes,,No,No,No,No,Met,2/3,Not Met
 Universidade Federal do Amapa,STB35736,Student Branch,Universidade Federal do Amapa,,7,12,No,0,,1,4,No,Yes,No,,Yes,Yes,Yes,No,Partial,0/3,Not Met
 Universidade Federal do Ceara - Sobral,STB99072,Student Branch,Universidade Federal do Ceara - Sobral,,3,12,No,0,,0,4,No,Yes,No,,No,No,No,No,Partial,0/3,Not Met
 Universidade Federal do Espirito Santo-Sao Mateus,STB10204,Student Branch,Universidade Federal do Espirito Santo-Sao Mateus,,1,12,No,0,,0,4,No,Yes,Yes,,Yes,Yes,No,No,Met,1/3,Not Met
@@ -837,11 +839,11 @@ Yachay Tech University,STB11735,Student Branch,Yachay Tech University,,146,12,Ye
 "Centro de Investigacion en Computacion,CIS11",SBC41492028A,Student Branch Chapter,Centro de Investigacion en Computacion,CIS11,18,6,Yes,0,0,0,2,No,No,,No,Yes,Yes,Yes,Yes,Not Met,1/3,Not Met
 "Centro de Investigacion en Computacion,SMC28",SBC41492028,Student Branch Chapter,Centro de Investigacion en Computacion,SMC28,17,6,Yes,1,1,0,2,No,Yes,,Yes,Yes,Yes,No,No,Met,2/3,Not Met
 "Centro de Investigacion en Computacion,SSC37",SBC41492028B,Student Branch Chapter,Centro de Investigacion en Computacion,SSC37,10,6,Yes,5,3,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
-"Centroamericana Univ Jose Simeon Canas,C16",SBC53001,Student Branch Chapter,Centroamericana Univ Jose Simeon Canas,C16,13,6,Yes,2,1,1,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Centroamericana Univ Jose Simeon Canas,C16",SBC53001,Student Branch Chapter,Centroamericana Univ Jose Simeon Canas,C16,14,6,Yes,2,1,1,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 "Centroamericana Univ Jose Simeon Canas,COM19",SBC53001A,Student Branch Chapter,Centroamericana Univ Jose Simeon Canas,COM19,2,6,No,1,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
-"Centroamericana Univ Jose Simeon Canas,IA34",SBC53001B,Student Branch Chapter,Centroamericana Univ Jose Simeon Canas,IA34,10,6,Yes,1,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
-"Centroamericana Univ Jose Simeon Canas,PE31",SBC53001C,Student Branch Chapter,Centroamericana Univ Jose Simeon Canas,PE31,9,6,Yes,2,1,3,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
-"Centroamericana Univ Jose Simeon Canas,RA24",SBC53001D,Student Branch Chapter,Centroamericana Univ Jose Simeon Canas,RA24,9,6,Yes,7,6,0,2,Yes,Yes,,Yes,Yes,No,No,Yes,Met,3/3,Met
+"Centroamericana Univ Jose Simeon Canas,IA34",SBC53001B,Student Branch Chapter,Centroamericana Univ Jose Simeon Canas,IA34,11,6,Yes,1,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Centroamericana Univ Jose Simeon Canas,PE31",SBC53001C,Student Branch Chapter,Centroamericana Univ Jose Simeon Canas,PE31,10,6,Yes,2,1,3,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
+"Centroamericana Univ Jose Simeon Canas,RA24",SBC53001D,Student Branch Chapter,Centroamericana Univ Jose Simeon Canas,RA24,10,6,Yes,7,6,0,2,Yes,Yes,,Yes,Yes,No,No,Yes,Met,3/3,Met
 "Chapingo Autonomous University,C16",SBC60226280A,Student Branch Chapter,Chapingo Autonomous University,C16,16,6,Yes,4,3,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Chapingo Autonomous University,PE31",SBC60226280B,Student Branch Chapter,Chapingo Autonomous University,PE31,7,6,Yes,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
 "Chapingo Autonomous University,RA24",SBC60226280,Student Branch Chapter,Chapingo Autonomous University,RA24,21,6,Yes,3,2,1,2,Yes,Yes,,No,Yes,Yes,Yes,Yes,Partial,2/3,Not Met
@@ -855,13 +857,13 @@ Yachay Tech University,STB11735,Student Branch,Yachay Tech University,,146,12,Ye
 "Cinvestav Zacatenco,CS23",SBC60521G,Student Branch Chapter,Cinvestav Zacatenco,CS23,11,6,Yes,11,11,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Cinvestav Zacatenco,ED15",SBC60521,Student Branch Chapter,Cinvestav Zacatenco,ED15,20,6,Yes,12,11,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Cinvestav Zacatenco,EMB18",SBC60521A,Student Branch Chapter,Cinvestav Zacatenco,EMB18,9,6,Yes,8,2,5,2,Yes,Yes,,Yes,Yes,Yes,No,Yes,Met,3/3,Met
-"Cinvestav Zacatenco,NANO42",SBC60521E,Student Branch Chapter,Cinvestav Zacatenco,NANO42,2,6,No,17,4,2,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Cinvestav Zacatenco,NANO42",SBC60521E,Student Branch Chapter,Cinvestav Zacatenco,NANO42,21,6,Yes,17,4,2,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Cinvestav Zacatenco,RA24",SBC60521C,Student Branch Chapter,Cinvestav Zacatenco,RA24,10,6,Yes,0,0,3,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
 "Cinvestav Zacatenco,SSC37",SBC60521B,Student Branch Chapter,Cinvestav Zacatenco,SSC37,26,6,Yes,9,3,4,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Cordoba Univ Tec Facultad Regional,RA24",SBC60021,Student Branch Chapter,Cordoba Univ Tec Facultad Regional,RA24,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Corporación Universitaria del Huila–CORHUILA,RA24",SBC60236869,Student Branch Chapter,Corporación Universitaria del Huila – CORHUILA,RA24,10,6,Yes,4,3,0,2,Yes,Yes,,Yes,No,No,No,No,Met,3/3,Met
 "Costa Rica Inst of Technology,ED15",SBC39461J,Student Branch Chapter,Costa Rica Institute of Technology,ED15,16,6,Yes,13,6,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
-"Costa Rica Inst of Technology,RFID741,BIO46",SBC39461F,Student Branch Chapter,Costa Rica Institute of Technology,BIO46,1,6,No,0,0,0,2,No,Yes,,No,No,No,No,No,Partial,0/3,Not Met
+"Costa Rica Inst of Technology,RFID741,BIO46",SBC39461F,Student Branch Chapter,Costa Rica Institute of Technology,BIO46,4,6,No,0,0,0,2,No,Yes,,No,No,No,No,No,Partial,0/3,Not Met
 "Costa Rica Institute of Technology,AES10",SBC39461I,Student Branch Chapter,Costa Rica Institute of Technology,AES10,12,6,Yes,2,1,0,2,No,Yes,,No,Yes,Yes,No,No,Partial,1/3,Not Met
 "Costa Rica Institute of Technology,C16",SBC39461E,Student Branch Chapter,Costa Rica Institute of Technology,C16,30,6,Yes,0,0,0,2,No,Yes,,Yes,No,Yes,Yes,Yes,Met,2/3,Not Met
 "Costa Rica Institute of Technology,CAS04",SBC39461B,Student Branch Chapter,Costa Rica Institute of Technology,CAS04,7,6,Yes,1,1,0,2,No,Yes,,No,No,No,Yes,No,Partial,1/3,Not Met
@@ -871,7 +873,7 @@ Yachay Tech University,STB11735,Student Branch,Yachay Tech University,,146,12,Ye
 "Costa Rica Institute of Technology,NPS05",SBC39461A,Student Branch Chapter,Costa Rica Institute of Technology,NPS05,9,6,Yes,1,1,0,2,No,Yes,,No,Yes,Yes,Yes,Yes,Partial,1/3,Not Met
 "Costa Rica Institute of Technology,PE31",SBC39461,Student Branch Chapter,Costa Rica Institute of Technology,PE31,2,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Costa Rica Institute of Technology,RA24",SBC39461H,Student Branch Chapter,Costa Rica Institute of Technology,RA24,19,6,Yes,6,4,2,2,Yes,Yes,,Yes,No,Yes,No,Yes,Met,3/3,Met
-"De La Salle University,AES10",SBC40010389B,Student Branch Chapter,De La Salle University,AES10,0,6,No,0,0,0,2,No,No,,No,No,No,No,Yes,Not Met,0/3,Not Met
+"De La Salle University,AES10",SBC40010389B,Student Branch Chapter,De La Salle University,AES10,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "De La Salle University,PE31",SBC40010389A,Student Branch Chapter,De La Salle University,PE31,1,6,No,0,0,0,2,No,Yes,,No,Yes,No,No,Yes,Partial,0/3,Not Met
 "De La Salle University,RA24",SBC40010389,Student Branch Chapter,De La Salle University,RA24,1,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Escola Politecnica Universidade de Sao Paulo,C16",SBC03651A,Student Branch Chapter,Escola Politecnica Universidade de Sao Paulo,C16,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
@@ -896,10 +898,10 @@ Yachay Tech University,STB11735,Student Branch,Yachay Tech University,,146,12,Ye
 "Escuela Politecnica Nacional, PE31",SBC1280C,Student Branch Chapter,Escuela Politecnica Nacional,PE31,62,6,Yes,12,7,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Escuela Politecnica Nacional, RA24/CS23",SBC1280B,Student Branch Chapter,Escuela Politecnica Nacional,RA24/CS23,55,6,Yes,1,1,1,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 "Escuela Politecnica Nacional,AES10",SBC1280I,Student Branch Chapter,Escuela Politecnica Nacional,AES10,16,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
-"Escuela Politecnica Nacional,AP03/MTT17/RFID741",SBC1280F,Student Branch Chapter,Escuela Politecnica Nacional,AP03/MTT17/RFID741,44,6,Yes,6,5,6,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Escuela Politecnica Nacional,AP03/MTT17/RFID741",SBC1280F,Student Branch Chapter,Escuela Politecnica Nacional,AP03/MTT17/RFID741,49,6,Yes,6,5,6,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Escuela Politecnica Nacional,EMB18",SBC1280G,Student Branch Chapter,Escuela Politecnica Nacional,EMB18,38,6,Yes,28,5,4,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Escuela Politecnica Nacional,PHO36",SBC12801F,Student Branch Chapter,Escuela Politecnica Nacional,PHO36,17,6,Yes,6,3,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
-"Escuela Politecnica Nacional,TEC802/ITSS38/VT06",SBC1280H,Student Branch Chapter,Escuela Politecnica Nacional,TEC802/ITSS38/VT06,42,6,Yes,0,0,1,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Escuela Politecnica Nacional,TEC802/ITSS38/VT06",SBC1280H,Student Branch Chapter,Escuela Politecnica Nacional,TEC802/ITSS38/VT06,50,6,Yes,0,0,1,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 "Escuela Superior Politecnica Del Litoral,C16",SBC19041A,Student Branch Chapter,Escuela Superior Politecnica del Litoral,C16,75,6,Yes,27,13,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
 "Escuela Superior Politecnica Del Litoral,COM19",SBC19041B,Student Branch Chapter,Escuela Superior Politecnica del Litoral,COM19,33,6,Yes,3,1,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 "Escuela Superior Politecnica Del Litoral,CS23",SBC19041F,Student Branch Chapter,Escuela Superior Politecnica del Litoral,CS23,23,6,Yes,12,7,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
@@ -947,7 +949,7 @@ Yachay Tech University,STB11735,Student Branch,Yachay Tech University,,146,12,Ye
 "Federal University of Ceara,CAS04",SBC62081,Student Branch Chapter,Federal University of Ceara,CAS04,9,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 "Federal University of Ceara,COM19/SP01",SBC62081C,Student Branch Chapter,Federal University of Ceara,COM19/SP01,38,6,Yes,1,1,1,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 "Federal University of Ceara,RA24",SBC62081A,Student Branch Chapter,Federal University of Ceara,RA24,27,6,Yes,1,0,10,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
-"Federal University of Ceara,TEC802/PEL35/IA34",SBC62081B,Student Branch Chapter,Federal University of Ceara,TEC802/PEL35/IA34,31,6,Yes,3,2,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
+"Federal University of Ceara,TEC802/PEL35/IA34",SBC62081B,Student Branch Chapter,Federal University of Ceara,TEC802/PEL35/IA34,32,6,Yes,3,2,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
 "Federal University of Goias,EMB18",SBC08571,Student Branch Chapter,Federal University of Goias,EMB18,10,6,Yes,0,0,0,2,No,Yes,,Yes,No,Yes,No,Yes,Met,2/3,Not Met
 "Federal University of Mato Grosso,IE13",SBC40192365,Student Branch Chapter,Federal University of Mato Grosso,IE13,9,6,Yes,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,1/3,Not Met
 "Federal University of Minas Gerais,IA34",SBC12521,Student Branch Chapter,Federal University of Minas Gerais,IA34,2,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
@@ -960,8 +962,8 @@ Yachay Tech University,STB11735,Student Branch,Yachay Tech University,,146,12,Ye
 "Federal University of Sao Joao del-Rei,RA24",SBC11757,Student Branch Chapter,Federal University of Sao Joao del-Rei,RA24,2,6,No,1,0,0,2,No,Yes,,No,No,No,No,No,Partial,0/3,Not Met
 "Federal University of Sergipe,CAS04",SBC60020518A,Student Branch Chapter,Federal University of Sergipe,CAS04,18,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 "Federal University of Sergipe,PE31",SBC60020518,Student Branch Chapter,Federal University of Sergipe,PE31,15,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
-"Federal University of Tocantins,IE13",SBC18491A,Student Branch Chapter,Federal University of Tocantins,IE13,19,6,Yes,1,1,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
-"Federal University of Tocantins,PE31",SBC18491,Student Branch Chapter,Federal University of Tocantins,PE31,12,6,Yes,2,2,0,2,Yes,Yes,,No,Yes,Yes,Yes,Yes,Partial,2/3,Not Met
+"Federal University of Tocantins,IE13",SBC18491A,Student Branch Chapter,Federal University of Tocantins,IE13,20,6,Yes,1,1,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Federal University of Tocantins,PE31",SBC18491,Student Branch Chapter,Federal University of Tocantins,PE31,13,6,Yes,2,2,0,2,Yes,Yes,,No,Yes,Yes,Yes,Yes,Partial,2/3,Not Met
 "Federico Santa Maria Tech Univ,CAS04/SSC37/ED15",SBC04321A,Student Branch Chapter,Federico Santa Maria Technical University,CAS04/SSC37/ED15,9,6,Yes,2,1,1,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
 "Federico Santa Maria Technical University,C16",SBC04321,Student Branch Chapter,Federico Santa Maria Technical University,C16,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Federico Santa Maria Technical University,PE31",SBC04321B,Student Branch Chapter,Federico Santa Maria Technical University,PE31,2,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
@@ -1174,7 +1176,7 @@ Icesi University COM19,SBC02571A,Student Branch Chapter,Icesi University,COM19,1
 "UDG-Centro Universitario de Tonala,PE31",SBC10203,Student Branch Chapter,Universidad de Guadalajara-Centro Univ de Tonala,PE31,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "UPIBI - IPN, RA24",SBC65511A,Student Branch Chapter,UPIBI - IPN,RA24,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "UTN-Facultad Regional San Nicolas,EMB18",SBC64294,Student Branch Chapter,Universidad Tecnologica Nacional-San Nicolas,EMB18,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
-"Uni Nac de Colombia Sede Bogota,EMC27/NANO42/SEN39",SBC06431H,Student Branch Chapter,Universidad Nacional De Colombia Sede Bogota,EMC27/NANO42/SEN39,6,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Uni Nac de Colombia Sede Bogota,EMC27/NANO42/SEN39",SBC06431H,Student Branch Chapter,Universidad Nacional De Colombia Sede Bogota,EMC27/NANO42/SEN39,13,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
 "Unifesspa–Federal Univ of South&Southeast-Pará,C16",SBC60236490,Student Branch Chapter,Unifesspa–Federal Univ of South and Southeast-Pará,C16,7,6,Yes,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
 "Univ Autonoma Metropolitana-Iztapalapa,COM19",SBC39941A,Student Branch Chapter,Univ Autonoma Metropolitana-Iztapalapa,COM19,3,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Univ Autonoma Metropolitana-Iztapalapa,PE31",SBC39941,Student Branch Chapter,Univ Autonoma Metropolitana-Iztapalapa,PE31,3,6,No,0,0,0,2,No,Yes,,No,Yes,No,No,No,Partial,0/3,Not Met
@@ -1202,7 +1204,7 @@ Icesi University COM19,SBC02571A,Student Branch Chapter,Icesi University,COM19,1
 "Univ Distrital Francisco Jose De Caldas, AES10",SBC0433K,Student Branch Chapter,Universidad Distrital Francisco Jose de Caldas,AES10,2,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Univ Distrital Francisco Jose De Caldas, CAS04",SBC0433D,Student Branch Chapter,Universidad Distrital Francisco Jose de Caldas,CAS04,23,6,Yes,3,3,2,2,Yes,Yes,,No,Yes,No,No,No,Partial,2/3,Not Met
 "Univ Distrital Francisco Jose De Caldas, CS23",SBC0433C,Student Branch Chapter,Universidad Distrital Francisco Jose de Caldas,CS23,2,6,No,1,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
-"Univ Distrital Francisco Jose De Caldas, PEL35",SBC0433L,Student Branch Chapter,Universidad Distrital Francisco Jose de Caldas,PEL35,19,6,Yes,14,6,3,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Univ Distrital Francisco Jose De Caldas, PEL35",SBC0433L,Student Branch Chapter,Universidad Distrital Francisco Jose de Caldas,PEL35,21,6,Yes,14,6,3,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Univ Distrital Francisco Jose De Caldas, SP01",SBC0433A,Student Branch Chapter,Universidad Distrital Francisco Jose de Caldas,SP01,2,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Univ Distrital Francisco Jose De Caldas,C16",SBC04331,Student Branch Chapter,Universidad Distrital Francisco Jose de Caldas,C16,17,6,Yes,0,0,0,2,No,Yes,,No,No,No,No,No,Partial,1/3,Not Met
 "Univ Distrital Francisco Jose De Caldas,COM19",SBC0433B,Student Branch Chapter,Universidad Distrital Francisco Jose de Caldas,COM19,18,6,Yes,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
@@ -1233,7 +1235,7 @@ Icesi University COM19,SBC02571A,Student Branch Chapter,Icesi University,COM19,1
 "Univ Nacional Sede Manizales, PE31",SBC61301A,Student Branch Chapter,Universidad Nacional sede Manizales,PE31,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Univ Nacional Sede Manizales,ED15",SBC61301B,Student Branch Chapter,Universidad Nacional sede Manizales,ED15,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Univ Pontificia Bolivariana (UPB),COM19",SBC090211,Student Branch Chapter,Univ Pontificia Bolivariana (UPB),COM19,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
-"Univ San Ignacio De Loyola,CS/NANO/SYS/TEC",SBC17421D,Student Branch Chapter,Universidad San Ignacio De Loyola,CS/NANO/SYS/TEC,2,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Univ San Ignacio De Loyola,CS/NANO/SYS/TEC",SBC17421D,Student Branch Chapter,Universidad San Ignacio De Loyola,CS/NANO/SYS/TEC,4,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Univ Santo Tomas De Aquino,C16",SBC0985A,Student Branch Chapter,Univ Santo Tomas De Aquino,C16,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Univ Santo Tomas De Aquino,COM19",SBC09851,Student Branch Chapter,Univ Santo Tomas De Aquino,COM19,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Univ Santo Tomas De Aquino,PE31",SBC09851B,Student Branch Chapter,Univ Santo Tomas De Aquino,PE31,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
@@ -1258,7 +1260,7 @@ Icesi University COM19,SBC02571A,Student Branch Chapter,Icesi University,COM19,1
 "Univ de la Fuerzas Armadas ESPE - Latacunga,VT06",SBC11457D,Student Branch Chapter,Universidad de la Fuerzas Armadas ESPE - Latacunga,VT06,5,6,No,0,0,1,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,1/3,Not Met
 "Univ del Cono Sur de las Americas,IA34",SBC04861B,Student Branch Chapter,Universidad del Cono Sur de Las Americas,IA34,6,6,Yes,5,5,0,2,Yes,Yes,,Yes,No,Yes,No,No,Met,3/3,Met
 "Univ do Estado do Rio de Janeiro,AP03/COM19/SP01",SBC63211D,Student Branch Chapter,Universidade do Estado do Rio de Janeiro,AP03/COM19/SP01,10,6,Yes,9,2,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
-"Univ. Federal do Acre,TEC802/SYSC45/SEN39/NANO42",SBC60096817B,Student Branch Chapter,Universidade Federal do Acre,TEC802/SYSC45/SEN39/NANO42,6,6,Yes,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+"Univ. Federal do Acre,TEC802/SYSC45/SEN39/NANO42",SBC60096817B,Student Branch Chapter,Universidade Federal do Acre,TEC802/SYSC45/SEN39/NANO42,0,6,No,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,1/3,Not Met
 "Univ. Federal do Rio de Janeiro,PE31,PEL35,IA34",SBC03101B,Student Branch Chapter,Universidade Federal do Rio de Janeiro,IA34,6,6,Yes,5,3,0,2,Yes,Yes,,Yes,Yes,No,Yes,No,Met,3/3,Met
 "Universidad Ana G Mendez,PE31",SBC61461,Student Branch Chapter,Universidad Ana G Mendez,PE31,4,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad Andres Bello,RA24,CIS11,C16",SBC10224,Student Branch Chapter,Universidad Andres Bello,"RA24,CIS11,C16",1,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
@@ -1327,7 +1329,7 @@ Icesi University COM19,SBC02571A,Student Branch Chapter,Icesi University,COM19,1
 "Universidad De Chile,IA34",SBC11791B,Student Branch Chapter,Universidad De Chile,IA34,9,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
 "Universidad De Chile,PE31",SBC11791A,Student Branch Chapter,Universidad De Chile,PE31,15,6,Yes,14,6,2,2,Yes,Yes,,No,Yes,Yes,Yes,Yes,Partial,2/3,Not Met
 "Universidad De Chile,RA24",SBC11791C,Student Branch Chapter,Universidad De Chile,RA24,13,6,Yes,27,19,4,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
-"Universidad De Chile,TEC802",SBC11791F,Student Branch Chapter,Universidad De Chile,TEC802,0,6,No,0,0,0,2,No,Yes,,Yes,No,Yes,No,No,Met,1/3,Not Met
+"Universidad De Chile,TEC802",SBC11791F,Student Branch Chapter,Universidad De Chile,TEC802,13,6,Yes,0,0,0,2,No,Yes,,Yes,No,Yes,No,No,Met,2/3,Not Met
 "Universidad De La Costa,COM19",SBC65981,Student Branch Chapter,Universidad de la Costa,COM19,1,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad De Montevideo,COM19/C16",SBC45891747A,Student Branch Chapter,Universidad De Montevideo,COM19/C16,5,6,No,4,0,0,2,No,Yes,,No,No,No,No,No,Partial,0/3,Not Met
 "Universidad De Montevideo,RA24",SBC45891747,Student Branch Chapter,Universidad De Montevideo,RA24,4,6,No,4,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
@@ -1393,7 +1395,7 @@ Universidad Estatal Peninsula de Santa Elena.RA24,SBC20209A,Student Branch Chapt
 "Universidad Mayor de San Andres,COM19",SBC1344A,Student Branch Chapter,Universidad Mayor de San Andres,COM19,39,6,Yes,19,13,5,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Universidad Mayor de San Andres,CS23",SBC1344B,Student Branch Chapter,Universidad Mayor de San Andres,CS23,4,6,No,2,1,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad Mayor de San Andres,EMB18",SBC1344F,Student Branch Chapter,Universidad Mayor de San Andres,EMB18,29,6,Yes,4,1,1,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
-"Universidad Mayor de San Andres,NANO42",SBC1344D,Student Branch Chapter,Universidad Mayor de San Andres,NANO42,3,6,No,1,1,0,2,No,Yes,,No,Yes,No,No,No,Partial,0/3,Not Met
+"Universidad Mayor de San Andres,NANO42",SBC1344D,Student Branch Chapter,Universidad Mayor de San Andres,NANO42,23,6,Yes,1,1,0,2,No,Yes,,No,Yes,No,No,No,Partial,1/3,Not Met
 "Universidad Mayor de San Andres,PE31",SBC13441,Student Branch Chapter,Universidad Mayor de San Andres,PE31,5,6,No,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,1/3,Not Met
 "Universidad Mayor de San Andres,RA24",SBC13441C,Student Branch Chapter,Universidad Mayor de San Andres,RA24,18,6,Yes,6,2,3,2,Yes,Yes,,Yes,No,Yes,Yes,Yes,Met,3/3,Met
 "Universidad Mayor de San Andres,TEM14",SBC1344G,Student Branch Chapter,Universidad Mayor de San Andres,TEM14,10,6,Yes,8,4,0,2,Yes,Yes,,Yes,Yes,Yes,No,Yes,Met,3/3,Met
@@ -1408,7 +1410,7 @@ Universidad Estatal Peninsula de Santa Elena.RA24,SBC20209A,Student Branch Chapt
 "Universidad Nacional Autonoma De Mexico,AES10",SBC05681G,Student Branch Chapter,Universidad Nacional Autonoma De Mexico,AES10,44,6,Yes,10,5,2,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
 "Universidad Nacional Autonoma De Mexico,C16",SBC05681F,Student Branch Chapter,Universidad Nacional Autonoma De Mexico,C16,13,6,Yes,1,1,3,2,No,No,,Yes,No,No,No,No,Partial,1/3,Not Met
 "Universidad Nacional Autonoma De Mexico,CAS04",SBC05681E,Student Branch Chapter,Universidad Nacional Autonoma De Mexico,CAS04,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
-"Universidad Nacional De Colombia Sede Bogota,AES10",SBC06431I,Student Branch Chapter,Universidad Nacional De Colombia Sede Bogota,AES10,4,6,No,2,1,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,1/3,Not Met
+"Universidad Nacional De Colombia Sede Bogota,AES10",SBC06431I,Student Branch Chapter,Universidad Nacional De Colombia Sede Bogota,AES10,5,6,No,2,1,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,1/3,Not Met
 "Universidad Nacional De Colombia Sede Bogota,AP03",SBC06431G,Student Branch Chapter,Universidad Nacional De Colombia Sede Bogota,AP03,21,6,Yes,3,2,4,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
 "Universidad Nacional De Colombia Sede Bogota,C16",SBC06431F,Student Branch Chapter,Universidad Nacional De Colombia Sede Bogota,C16,13,6,Yes,11,5,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Universidad Nacional De Colombia Sede Bogota,CAS04",SBC06431A,Student Branch Chapter,Universidad Nacional De Colombia Sede Bogota,CAS04,11,6,Yes,3,2,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
@@ -1416,8 +1418,8 @@ Universidad Estatal Peninsula de Santa Elena.RA24,SBC20209A,Student Branch Chapt
 "Universidad Nacional De Colombia Sede Bogota,ED15",SBC06431J,Student Branch Chapter,Universidad Nacional De Colombia Sede Bogota,ED15,8,6,Yes,5,3,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Universidad Nacional De Colombia Sede Bogota,EMB18",SBC06431E,Student Branch Chapter,Universidad Nacional De Colombia Sede Bogota,EMB18,6,6,Yes,2,0,0,2,No,Yes,,No,Yes,No,No,No,Partial,1/3,Not Met
 "Universidad Nacional De Colombia Sede Bogota,IA34",SBC06431B,Student Branch Chapter,Universidad Nacional De Colombia Sede Bogota,IA34,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
-"Universidad Nacional De Colombia Sede Bogota,NPS05",SBC06431L,Student Branch Chapter,Universidad Nacional De Colombia Sede Bogota,NPS05,11,6,Yes,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
-"Universidad Nacional De Colombia Sede Bogota,PE31",SBC064311,Student Branch Chapter,Universidad Nacional De Colombia Sede Bogota,PE31,5,6,No,1,0,2,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,1/3,Not Met
+"Universidad Nacional De Colombia Sede Bogota,NPS05",SBC06431L,Student Branch Chapter,Universidad Nacional De Colombia Sede Bogota,NPS05,11,6,Yes,1,1,1,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+"Universidad Nacional De Colombia Sede Bogota,PE31",SBC064311,Student Branch Chapter,Universidad Nacional De Colombia Sede Bogota,PE31,5,6,No,3,2,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 "Universidad Nacional De Colombia Sede Bogota,RA24",SBC06431D,Student Branch Chapter,Universidad Nacional De Colombia Sede Bogota,RA24,9,6,Yes,29,15,12,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Universidad Nacional De Colombia Sede Bogota,TEM14",SBC06431K,Student Branch Chapter,Universidad Nacional De Colombia Sede Bogota,TEM14,9,6,Yes,7,3,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Universidad Nacional De Loja,C16",SBC65231,Student Branch Chapter,Universidad Nacional De Loja,C16,46,6,Yes,2,1,5,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
@@ -1514,7 +1516,7 @@ Universidad Estatal Peninsula de Santa Elena.RA24,SBC20209A,Student Branch Chapt
 "Universidad Nacional del Sur,IA34",SBC06361C,Student Branch Chapter,Universidad Nacional del Sur,IA34,1,6,No,0,0,3,2,No,Yes,,Yes,No,No,No,No,Met,1/3,Not Met
 "Universidad Nacional del Sur,PE31",SBC06361B,Student Branch Chapter,Universidad Nacional del Sur,PE31,0,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
 "Universidad Nacional del Sur,SP01",SBC06361A,Student Branch Chapter,Universidad Nacional del Sur,SP01,0,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
-"Universidad Nacional sede Manizales,IA34",SBC61301,Student Branch Chapter,Universidad Nacional sede Manizales,IA34,5,6,No,5,3,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
+"Universidad Nacional sede Manizales,IA34",SBC61301,Student Branch Chapter,Universidad Nacional sede Manizales,IA34,8,6,Yes,5,3,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
 "Universidad Nat'l San Antonio Abad del Cusco,AES10",SBC11731F,Student Branch Chapter,Universidad Nacional San Antonio Abad del Cusco,AES10,18,6,Yes,0,0,0,2,No,Yes,,No,Yes,Yes,Yes,Yes,Partial,1/3,Not Met
 "Universidad Nat'l San Antonio Abad del Cusco,C16",SBC11731H,Student Branch Chapter,Universidad Nacional San Antonio Abad del Cusco,C16,2,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad Nat'l San Antonio Abad del Cusco,EMB18",SBC117311,Student Branch Chapter,Universidad Nacional San Antonio Abad del Cusco,EMB18,3,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
@@ -1531,7 +1533,7 @@ Universidad Estatal Peninsula de Santa Elena.RA24,SBC20209A,Student Branch Chapt
 "Universidad Peruana Cayetano Heredia,EMB18",SBC11477,Student Branch Chapter,Universidad Peruana Cayetano Heredia,EMB18,5,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad Peruana de Ciencias Aplicadas,AES10",SBC60381E,Student Branch Chapter,Universidad Peruana de Ciencias Aplicadas,AES10,10,6,Yes,1,0,0,2,No,Yes,,Yes,Yes,Yes,No,No,Met,2/3,Not Met
 "Universidad Peruana de Ciencias Aplicadas,C16",SBC60381,Student Branch Chapter,Universidad Peruana de Ciencias Aplicadas,C16,17,6,Yes,6,4,2,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
-"Universidad Peruana de Ciencias Aplicadas,CAS04",SBC60381F,Student Branch Chapter,Universidad Peruana de Ciencias Aplicadas,CAS04,13,6,Yes,9,8,0,2,Yes,Yes,,No,Yes,Yes,Yes,No,Partial,2/3,Not Met
+"Universidad Peruana de Ciencias Aplicadas,CAS04",SBC60381F,Student Branch Chapter,Universidad Peruana de Ciencias Aplicadas,CAS04,15,6,Yes,9,8,0,2,Yes,Yes,,No,Yes,Yes,Yes,No,Partial,2/3,Not Met
 "Universidad Peruana de Ciencias Aplicadas,CIS11",SBC60381G,Student Branch Chapter,Universidad Peruana de Ciencias Aplicadas,CIS11,5,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad Peruana de Ciencias Aplicadas,COM19",SBC60381C,Student Branch Chapter,Universidad Peruana de Ciencias Aplicadas,COM19,12,6,Yes,20,15,9,2,Yes,Yes,,Yes,No,Yes,Yes,Yes,Met,3/3,Met
 "Universidad Peruana de Ciencias Aplicadas,E25",SBC60381J,Student Branch Chapter,Universidad Peruana de Ciencias Aplicadas,E25,15,6,Yes,8,7,6,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
@@ -1540,7 +1542,7 @@ Universidad Estatal Peninsula de Santa Elena.RA24,SBC20209A,Student Branch Chapt
 "Universidad Peruana de Ciencias Aplicadas,OE22",SBC60381H,Student Branch Chapter,Universidad Peruana de Ciencias Aplicadas,OE22,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad Peruana de Ciencias Aplicadas,RA24",SBC60381A,Student Branch Chapter,Universidad Peruana de Ciencias Aplicadas,RA24,24,6,Yes,2,0,11,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
 "Universidad Peruana de Ciencias Aplicadas,TEM14",SBC60381I,Student Branch Chapter,Universidad Peruana de Ciencias Aplicadas,TEM14,1,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
-"Universidad Piloto de Colombia,ITSS38",SBC81721,Student Branch Chapter,Universidad Piloto de Colombia,ITSS38,14,6,Yes,2,1,0,2,No,Yes,,Yes,Yes,No,Yes,No,Met,2/3,Not Met
+"Universidad Piloto de Colombia,ITSS38",SBC81721,Student Branch Chapter,Universidad Piloto de Colombia,ITSS38,14,6,Yes,3,1,0,2,No,Yes,,Yes,Yes,No,Yes,No,Met,2/3,Not Met
 "Universidad Politecnica Salesiana - Guayaqui,CS23",SBC02631B,Student Branch Chapter,Universidad Politecnica Salesiana-Guayaquil,CS23,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad Politecnica Salesiana - Guayaquil,C16",SBC02631,Student Branch Chapter,Universidad Politecnica Salesiana-Guayaquil,C16,12,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
 "Universidad Politecnica Salesiana - Quito,C16",SBC00751E,Student Branch Chapter,Universidad Politecnica Salesiana - Quito,C16,11,6,Yes,0,0,2,2,No,Yes,,No,No,No,No,No,Partial,1/3,Not Met
@@ -1678,7 +1680,7 @@ Universidad Estatal Peninsula de Santa Elena.RA24,SBC20209A,Student Branch Chapt
 "Universidad Tecnologica del Peru, EMB18",SBC63761E,Student Branch Chapter,Universidad Tecnologica del Peru,EMB18,22,6,Yes,32,15,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
 "Universidad Tecnologica del Peru, IA34",SBC63761B,Student Branch Chapter,Universidad Tecnologica del Peru,IA34,4,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad Tecnologica del Peru, PE31",SBC63761D,Student Branch Chapter,Universidad Tecnologica del Peru,PE31,7,6,Yes,29,24,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
-"Universidad Tecnologica del Peru, RA24",SBC63761A,Student Branch Chapter,Universidad Tecnologica del Peru,RA24,19,6,Yes,11,5,22,2,Yes,Yes,,No,Yes,Yes,Yes,No,Partial,2/3,Not Met
+"Universidad Tecnologica del Peru, RA24",SBC63761A,Student Branch Chapter,Universidad Tecnologica del Peru,RA24,19,6,Yes,11,5,25,2,Yes,Yes,,No,Yes,Yes,Yes,No,Partial,2/3,Not Met
 "Universidad Tecnológica del Uruguay,COM19",SBC60216685A,Student Branch Chapter,Universidad Tecnológica del Uruguay,COM19,12,6,Yes,2,0,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
 "Universidad Tecnológica del Uruguay,EMB18",SBC60216685,Student Branch Chapter,Universidad Tecnológica del Uruguay,EMB18,11,6,Yes,1,1,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
 "Universidad Veracruzana - FIME,ED15",SBC01022A,Student Branch Chapter,Universidad Veracruzana - FIME,ED15,40,6,Yes,1,1,1,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
@@ -1702,7 +1704,7 @@ Universidad Estatal Peninsula de Santa Elena.RA24,SBC20209A,Student Branch Chapt
 "Universidad de Antioquia, PE31",SBC14361A,Student Branch Chapter,Universidad de Antioquia,PE31,2,6,No,1,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad de Antofagasta,PE31",SBC28261,Student Branch Chapter,Universidad de Antofagasta,PE31,7,6,Yes,1,1,0,2,No,Yes,,No,No,No,No,No,Partial,1/3,Not Met
 "Universidad de Antofagasta,RA24",SBC28261A,Student Branch Chapter,Universidad de Antofagasta,RA24,7,6,Yes,0,0,0,2,No,Yes,,No,No,No,No,No,Partial,1/3,Not Met
-"Universidad de Buenos Aires,C16",SBC00231A,Student Branch Chapter,Universidad de Buenos Aires,C16,9,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Universidad de Buenos Aires,C16",SBC00231A,Student Branch Chapter,Universidad de Buenos Aires,C16,10,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 "Universidad de Buenos Aires,CAS04",SBC00321B,Student Branch Chapter,Universidad de Buenos Aires,CAS04,2,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad de Buenos Aires,COM19",SBC00321D,Student Branch Chapter,Universidad de Buenos Aires,COM19,12,6,Yes,10,9,2,2,Yes,Yes,,Yes,Yes,Yes,No,Yes,Met,3/3,Met
 "Universidad de Buenos Aires,CS23",SBC00231,Student Branch Chapter,Universidad de Buenos Aires,CS23,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
@@ -1747,7 +1749,7 @@ Universidad Estatal Peninsula de Santa Elena.RA24,SBC20209A,Student Branch Chapt
 "Universidad de Las Americas-Puebla,RA24",SBC167111,Student Branch Chapter,Univ de Las Americas-Puebla,RA24,5,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad de Los Andes-Merida,C16",SBC17851,Student Branch Chapter,Universidad de Los Andes-Merida,C16,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad de Monterrey, EMB18",SBC14941B,Student Branch Chapter,Universidad de Monterrey,EMB18,11,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
-"Universidad de Monterrey, RA24",SBC14941A,Student Branch Chapter,Universidad de Monterrey,RA24,4,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Universidad de Monterrey, RA24",SBC14941A,Student Branch Chapter,Universidad de Monterrey,RA24,5,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad de Monterrey,CAS04",SBC14941D,Student Branch Chapter,Universidad de Monterrey,CAS04,13,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 "Universidad de Narino, CIS11",SBC64151,Student Branch Chapter,Universidad de Narino,CIS11,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad de Narino, RA24",SBC64151B,Student Branch Chapter,Universidad de Narino,RA24,1,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
@@ -1840,7 +1842,7 @@ Universidad Estatal Peninsula de Santa Elena.RA24,SBC20209A,Student Branch Chapt
 "Universidad de los Andes,SP01",SBC12991D,Student Branch Chapter,Universidad de los Andes,SP01,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad de los Andes,SSC37",SBC12991P,Student Branch Chapter,Universidad de los Andes,SSC37,7,6,Yes,4,2,0,2,Yes,Yes,,Yes,Yes,No,Yes,Yes,Met,3/3,Met
 "Universidad de los Andes,VT06",SBC12991N,Student Branch Chapter,Universidad de los Andes,VT06,6,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
-"Universidad del Cauca,AES10",SBC09161C,Student Branch Chapter,Universidad del Cauca,AES10,11,6,Yes,17,15,0,2,Yes,Yes,,Yes,No,Yes,Yes,Yes,Met,3/3,Met
+"Universidad del Cauca,AES10",SBC09161C,Student Branch Chapter,Universidad del Cauca,AES10,11,6,Yes,17,15,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Universidad del Cauca,C16",SBC09161B,Student Branch Chapter,Universidad del Cauca,C16,15,6,Yes,3,2,0,2,Yes,Yes,,No,No,No,No,No,Partial,2/3,Not Met
 "Universidad del Cauca,C16/COM19",SBC09161,Student Branch Chapter,Universidad del Cauca,C16/COM19,27,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
 "Universidad del Cauca,COM19",SBC09161A,Student Branch Chapter,Universidad del Cauca,COM19,21,6,Yes,2,2,0,2,Yes,Yes,,No,Yes,No,No,No,Partial,2/3,Not Met
@@ -1851,8 +1853,8 @@ Universidad Estatal Peninsula de Santa Elena.RA24,SBC20209A,Student Branch Chapt
 "Universidad del Magdalena, GRS29",SBC08871A,Student Branch Chapter,Universidad del Magdalena,GRS29,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad del Magdalena,C16",SBC08871D,Student Branch Chapter,Universidad del Magdalena,C16,11,6,Yes,4,2,0,2,Yes,Yes,,No,Yes,Yes,Yes,Yes,Partial,2/3,Not Met
 "Universidad del Magdalena,OE22",SBC08871E,Student Branch Chapter,Universidad del Magdalena,OE22,7,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
-"Universidad del Magdalena,PE31/SYS45",SBC08871B,Student Branch Chapter,Universidad del Magdalena,PE31/SYS45,2,6,No,1,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
-"Universidad del Magdalena,RA24/SEN39/SYS45",SBC08871C,Student Branch Chapter,Universidad del Magdalena,RA24/SEN39/SYS45,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Universidad del Magdalena,PE31/SYS45",SBC08871B,Student Branch Chapter,Universidad del Magdalena,PE31/SYS45,3,6,No,1,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Universidad del Magdalena,RA24/SEN39/SYS45",SBC08871C,Student Branch Chapter,Universidad del Magdalena,RA24/SEN39/SYS45,1,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad del Norte,AES010",SBC63011I,Student Branch Chapter,Universidad del Norte,AES010,6,6,Yes,3,2,0,2,Yes,Yes,,No,Yes,Yes,Yes,Yes,Partial,2/3,Not Met
 "Universidad del Norte,E25",SBC63011K,Student Branch Chapter,Universidad del Norte,E25,28,6,Yes,17,3,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Universidad del Norte,IA34",SBC63011H,Student Branch Chapter,Universidad del Norte,IA34,44,6,Yes,16,9,0,2,Yes,Yes,,Yes,No,Yes,Yes,Yes,Met,3/3,Met
@@ -1902,7 +1904,7 @@ Universidad Estatal Peninsula de Santa Elena.RA24,SBC20209A,Student Branch Chapt
 "Universidade Federal De Juiz De Fora,C16",SBC13491G,Student Branch Chapter,Universidade Federal De Juiz De Fora,C16,71,6,Yes,20,15,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Universidade Federal De Juiz De Fora,CAS04",SBC13491B,Student Branch Chapter,Universidade Federal De Juiz De Fora,CAS04,24,6,Yes,10,9,1,2,Yes,Yes,,Yes,Yes,Yes,No,No,Met,3/3,Met
 "Universidade Federal De Juiz De Fora,COM19",SBC13491C,Student Branch Chapter,Universidade Federal De Juiz De Fora,COM19,60,6,Yes,6,4,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
-"Universidade Federal De Juiz De Fora,E25",SBC13491E,Student Branch Chapter,Universidade Federal De Juiz De Fora,E25,63,6,Yes,39,8,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Universidade Federal De Juiz De Fora,E25",SBC13491E,Student Branch Chapter,Universidade Federal De Juiz De Fora,E25,63,6,Yes,39,8,3,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Universidade Federal De Juiz De Fora,PE31",SBC13491,Student Branch Chapter,Universidade Federal De Juiz De Fora,PE31,60,6,Yes,36,34,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Universidade Federal De Juiz De Fora,VT06",SBC13491F,Student Branch Chapter,Universidade Federal De Juiz De Fora,VT06,43,6,Yes,2,1,1,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
 "Universidade Federal Rural do Semi-Arido,AP03",SBC99373B,Student Branch Chapter,Universidade Federal Rural do Semi-Arido,AP03,15,6,Yes,1,0,1,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
@@ -1968,7 +1970,7 @@ Universidad Estatal Peninsula de Santa Elena.RA24,SBC20209A,Student Branch Chapt
 "Universidade de Brasilia,CS23/IE13",SBC12381G,Student Branch Chapter,Universidade de Brasilia,CS23/IE13,10,6,Yes,4,0,0,2,No,Yes,,Yes,Yes,Yes,No,No,Met,2/3,Not Met
 "Universidade de Brasilia,E25",SBC12381D,Student Branch Chapter,Universidade de Brasilia,E25,15,6,Yes,0,0,1,2,No,Yes,,No,No,No,No,No,Partial,1/3,Not Met
 "Universidade de Brasilia,EMB18",SBC12381B,Student Branch Chapter,Universidade de Brasilia,EMB18,32,6,Yes,2,0,3,2,No,Yes,,Yes,Yes,Yes,No,No,Met,2/3,Not Met
-"Universidade de Brasilia,MTT17",SBC12381L,Student Branch Chapter,Universidade de Brasilia,MTT17,17,6,Yes,5,4,0,2,Yes,Yes,,Yes,No,Yes,Yes,Yes,Met,3/3,Met
+"Universidade de Brasilia,MTT17",SBC12381L,Student Branch Chapter,Universidade de Brasilia,MTT17,17,6,Yes,5,4,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Universidade de Brasilia,PE31",SBC12381F,Student Branch Chapter,Universidade de Brasilia,PE31,41,6,Yes,3,2,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Universidade de Brasilia,RA24",SBC12381A,Student Branch Chapter,Universidade de Brasilia,RA24,9,6,Yes,0,0,4,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 "Universidade de Brasilia,SIT30",SBC12381I,Student Branch Chapter,Universidade de Brasilia,SIT30,3,6,No,0,0,0,2,No,Yes,,No,No,No,No,No,Partial,0/3,Not Met
@@ -2002,6 +2004,6 @@ Universidad Estatal Peninsula de Santa Elena.RA24,SBC20209A,Student Branch Chapt
 "Yachay Tech University,EP21",SBC11735C,Student Branch Chapter,Yachay Tech University,EP21,27,6,Yes,8,7,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Yachay Tech University,GRS29",SBC11735D,Student Branch Chapter,Yachay Tech University,GRS29,14,6,Yes,2,1,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 "Yachay Tech University,MTT17",SBC11735H,Student Branch Chapter,Yachay Tech University,MTT17,10,6,Yes,3,1,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
-"Yachay Tech University,NANO42",SBC11735F,Student Branch Chapter,Yachay Tech University,NANO42,7,6,Yes,7,3,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Yachay Tech University,NANO42",SBC11735F,Student Branch Chapter,Yachay Tech University,NANO42,37,6,Yes,7,3,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Yachay Tech University,PHO36",SBC11735J,Student Branch Chapter,Yachay Tech University,PHO36,7,6,Yes,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
 "Yachay Tech University,RA24",SBC11735E,Student Branch Chapter,Yachay Tech University,RA24,5,6,No,4,2,6,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met

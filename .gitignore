@@ -78,3 +78,6 @@ co_professional_officers_gsm.csv
 
 # Local agent tooling
 .atl/
+
+# One-off queries (may contain PII)
+random_queries/

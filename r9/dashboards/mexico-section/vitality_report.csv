@@ -21,7 +21,7 @@ Cicese Research Center,STB2598933,Student Branch,Cicese Research Center,,29,12,Y
 Cinvestav Zacatenco,STB60521,Student Branch,Cinvestav Zacatenco,,70,12,Yes,15,,7,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Escuela Superior de Computo del IPN,STB66061,Student Branch,Escuela Superior de Computo del IPN,,13,12,Yes,3,,1,4,No,Yes,No,,Yes,Yes,Yes,No,Partial,1/3,Not Met
 Inst Politecnico Nacional Micro y Nanotecnologias,STB60233006,Student Branch,Inst Politecnico Nacional Micro y Nanotecnologias,,18,12,Yes,21,,2,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
-Inst Tec Estudios Sup - Sonora Norte,STB60242562,Student Branch,Inst Tec Estudios Sup - Sonora Norte,,37,12,Yes,0,,0,4,No,Yes,Yes,,No,No,No,No,Met,2/3,Not Met
+Inst Tec Estudios Sup - Sonora Norte,STB60242562,Student Branch,Inst Tec Estudios Sup - Sonora Norte,,37,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 Inst Tec Sup de Calkini en el Estado de Campeche,STB11512,Student Branch,Inst Tec Sup de Calkini en el Estado de Campeche,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Instituto Politecnico Nacional Culhuacan-Esime,STB29441,Student Branch,Instituto Politecnico Nacional Culhuacan-Esime,,41,12,Yes,1,,0,4,No,Yes,Yes,,Yes,Yes,Yes,No,Met,2/3,Not Met
 Instituto Politecnico Nacional-Azcapotzalco,STB40111287,Student Branch,Instituto Politecnico Nacional-Azcapotzalco,,6,12,No,2,,0,4,No,No,No,,No,No,No,Yes,Not Met,0/3,Not Met
@@ -31,7 +31,7 @@ Instituto Tecnologico Autonomo De Mexico,STB39981,Student Branch,Instituto Tecno
 Instituto Tecnologico De Apizaco,STB63701,Student Branch,Instituto Tecnologico de Apizaco,,4,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Instituto Tecnologico De Chihuahua,STB38681,Student Branch,Instituto Tecnologico De Chihuahua,,11,12,No,1,,0,4,No,No,Yes,,No,No,No,No,Partial,0/3,Not Met
 Instituto Tecnologico De Durango,STB39201,Student Branch,Instituto Tecnologico De Durango,,15,12,Yes,0,,5,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
-Instituto Tecnologico De Hermosillo,STB34381,Student Branch,Instituto Tecnologico de Hermosillo,,26,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,No,No,Met,2/3,Not Met
+Instituto Tecnologico De Hermosillo,STB34381,Student Branch,Instituto Tecnologico de Hermosillo,,27,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,No,No,Met,2/3,Not Met
 Instituto Tecnologico De San Luis Potosi,STB13551,Student Branch,Instituto Tecnologico De San Luis Potosi,,1,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Instituto Tecnologico De Sonora,STB35761,Student Branch,Instituto Tecnologico De Sonora,,53,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,Yes,No,Met,2/3,Not Met
 Instituto Tecnologico De Tuxtla Gutierrez,STB34571,Student Branch,Instituto Tecnologico De Tuxtla Gutierrez,,11,12,No,0,,0,4,No,Yes,Yes,,Yes,No,No,No,Met,1/3,Not Met
@@ -70,7 +70,7 @@ Universidad Nacional Autonoma De Mexico,STB05681,Student Branch,Universidad Naci
 Universidad Politecnica de Pachuca,STB13261,Student Branch,Universidad Politecnica de Pachuca,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Universidad Politecnica de Tulancingo,STB15311,Student Branch,Universidad Politecnica de Tulancingo,,12,12,Yes,5,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Universidad Politecnica de Yucatan,STB11403,Student Branch,Universidad Politecnica de Yucatan,,9,12,No,2,,0,4,No,Yes,Yes,,Yes,Yes,No,Yes,Met,1/3,Not Met
-Universidad Tecnologica de Campeche,STB18881,Student Branch,Universidad Tecnologica de Campeche,,39,12,Yes,7,,2,4,Yes,Yes,Yes,,Yes,Yes,No,Yes,Met,3/3,Met
+Universidad Tecnologica de Campeche,STB18881,Student Branch,Universidad Tecnologica de Campeche,,39,12,Yes,7,,3,4,Yes,Yes,Yes,,Yes,Yes,No,Yes,Met,3/3,Met
 Universidad Tecnologica de Mexico-Atizapan,STB03181,Student Branch,Universidad Tecnologica de Mexico-Atizapan,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Universidad Tecnologica de Nezahualcoyotl,STB65521,Student Branch,Universidad Tecnologica de Nezahualcoyotl,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Universidad Tecnologica de Tula-Tepeji,STB60201,Student Branch,Universidad Tecnologica de Tula-Tepeji,,1,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
@@ -91,7 +91,7 @@ Universidad de Sonora,STB20222,Student Branch,Universidad de Sonora,,2,12,No,0,,
 "Cinvestav Zacatenco,CS23",SBC60521G,Student Branch Chapter,Cinvestav Zacatenco,CS23,11,6,Yes,11,11,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Cinvestav Zacatenco,ED15",SBC60521,Student Branch Chapter,Cinvestav Zacatenco,ED15,20,6,Yes,12,11,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Cinvestav Zacatenco,EMB18",SBC60521A,Student Branch Chapter,Cinvestav Zacatenco,EMB18,9,6,Yes,8,2,5,2,Yes,Yes,,Yes,Yes,Yes,No,Yes,Met,3/3,Met
-"Cinvestav Zacatenco,NANO42",SBC60521E,Student Branch Chapter,Cinvestav Zacatenco,NANO42,2,6,No,17,4,2,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Cinvestav Zacatenco,NANO42",SBC60521E,Student Branch Chapter,Cinvestav Zacatenco,NANO42,21,6,Yes,17,4,2,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Cinvestav Zacatenco,RA24",SBC60521C,Student Branch Chapter,Cinvestav Zacatenco,RA24,10,6,Yes,0,0,3,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
 "Cinvestav Zacatenco,SSC37",SBC60521B,Student Branch Chapter,Cinvestav Zacatenco,SSC37,26,6,Yes,9,3,4,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Escuela Superior de Computo del IPN,C16",SBC660611,Student Branch Chapter,Escuela Superior de Computo del IPN,C16,1,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met

@@ -60,10 +60,10 @@ Universidad Nacional de Trujillo-La Libertad,STB11523,Student Branch,Universidad
 Universidad Nacional del Altiplano,STB01301,Student Branch,Universidad Nacional del Altiplano,,53,12,Yes,13,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Universidad Nacional del Callao,STB21571,Student Branch,Universidad Nacional del Callao,,72,12,Yes,52,,2,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Universidad Nacional del Centro del Peru,STB16851,Student Branch,Universidad Nacional del Centro del Peru,,12,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,Yes,No,Met,2/3,Not Met
-Universidad Particular Ricardo Palma,STB40501,Student Branch,Universidad Particular Ricardo Palma,,28,12,Yes,1,,3,4,No,Yes,No,,Yes,Yes,Yes,No,Partial,1/3,Not Met
+Universidad Particular Ricardo Palma,STB40501,Student Branch,Universidad Particular Ricardo Palma,,28,12,Yes,1,,4,4,No,Yes,No,,Yes,Yes,Yes,No,Partial,1/3,Not Met
 Universidad Peruana Cayetano Heredia,STB11477,Student Branch,Universidad Peruana Cayetano Heredia,,11,12,No,0,,1,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,1/3,Not Met
 Universidad Peruana Los Andes,STB18581,Student Branch,Universidad Peruana Los Andes,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
-Universidad Peruana de Ciencias Aplicadas,STB60381,Student Branch,Universidad Peruana de Ciencias Aplicadas,,170,12,Yes,13,,6,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Universidad Peruana de Ciencias Aplicadas,STB60381,Student Branch,Universidad Peruana de Ciencias Aplicadas,,173,12,Yes,13,,6,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Universidad Privada Antenor Orrego,STB60031,Student Branch,Universidad Privada Antenor Orrego,,22,12,Yes,1,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
 Universidad Privada de Tacna,STB37351,Student Branch,Universidad Privada de Tacna,,3,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Universidad Privada del Norte,STB16881,Student Branch,Universidad Privada del Norte,,7,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
@@ -108,7 +108,7 @@ Universidad del Pacifico,STB64265,Student Branch,Universidad del Pacifico,,29,12
 "Univ Nacional San Antonio Abad del Cusco,SSC37",SBC11731J,Student Branch Chapter,Universidad Nacional San Antonio Abad del Cusco,SSC37,12,6,Yes,6,3,1,2,Yes,Yes,,Yes,No,No,No,No,Met,3/3,Met
 "Univ Nacional San Antonio Abad del Cusco,TEM14",SBC11731G,Student Branch Chapter,Universidad Nacional San Antonio Abad del Cusco,TEM14,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Univ Nacional San Luis Gonzaga de Ica,COM19",SBC035911,Student Branch Chapter,Univ Nacional San Luis Gonzaga de Ica,COM19,1,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
-"Univ San Ignacio De Loyola,CS/NANO/SYS/TEC",SBC17421D,Student Branch Chapter,Universidad San Ignacio De Loyola,CS/NANO/SYS/TEC,2,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Univ San Ignacio De Loyola,CS/NANO/SYS/TEC",SBC17421D,Student Branch Chapter,Universidad San Ignacio De Loyola,CS/NANO/SYS/TEC,4,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad Catolica San Pablo,C16",SBC66271A,Student Branch Chapter,Universidad Catolica San Pablo,C16,12,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 "Universidad Catolica San Pablo,COM19",SBC662711,Student Branch Chapter,Universidad Catolica San Pablo,COM19,7,6,Yes,8,8,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Universidad Catolica San Pablo,MTT17",SBC66271B,Student Branch Chapter,Universidad Catolica San Pablo,MTT17,11,6,Yes,1,1,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
@@ -201,7 +201,7 @@ Universidad del Pacifico,STB64265,Student Branch,Universidad del Pacifico,,29,12
 "Universidad Peruana Cayetano Heredia,EMB18",SBC11477,Student Branch Chapter,Universidad Peruana Cayetano Heredia,EMB18,5,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad Peruana de Ciencias Aplicadas,AES10",SBC60381E,Student Branch Chapter,Universidad Peruana de Ciencias Aplicadas,AES10,10,6,Yes,1,0,0,2,No,Yes,,Yes,Yes,Yes,No,No,Met,2/3,Not Met
 "Universidad Peruana de Ciencias Aplicadas,C16",SBC60381,Student Branch Chapter,Universidad Peruana de Ciencias Aplicadas,C16,17,6,Yes,6,4,2,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
-"Universidad Peruana de Ciencias Aplicadas,CAS04",SBC60381F,Student Branch Chapter,Universidad Peruana de Ciencias Aplicadas,CAS04,13,6,Yes,9,8,0,2,Yes,Yes,,No,Yes,Yes,Yes,No,Partial,2/3,Not Met
+"Universidad Peruana de Ciencias Aplicadas,CAS04",SBC60381F,Student Branch Chapter,Universidad Peruana de Ciencias Aplicadas,CAS04,15,6,Yes,9,8,0,2,Yes,Yes,,No,Yes,Yes,Yes,No,Partial,2/3,Not Met
 "Universidad Peruana de Ciencias Aplicadas,CIS11",SBC60381G,Student Branch Chapter,Universidad Peruana de Ciencias Aplicadas,CIS11,5,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad Peruana de Ciencias Aplicadas,COM19",SBC60381C,Student Branch Chapter,Universidad Peruana de Ciencias Aplicadas,COM19,12,6,Yes,20,15,9,2,Yes,Yes,,Yes,No,Yes,Yes,Yes,Met,3/3,Met
 "Universidad Peruana de Ciencias Aplicadas,E25",SBC60381J,Student Branch Chapter,Universidad Peruana de Ciencias Aplicadas,E25,15,6,Yes,8,7,6,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
@@ -231,7 +231,7 @@ Universidad del Pacifico,STB64265,Student Branch,Universidad del Pacifico,,29,12
 "Universidad Tecnologica del Peru, EMB18",SBC63761E,Student Branch Chapter,Universidad Tecnologica del Peru,EMB18,22,6,Yes,32,15,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
 "Universidad Tecnologica del Peru, IA34",SBC63761B,Student Branch Chapter,Universidad Tecnologica del Peru,IA34,4,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad Tecnologica del Peru, PE31",SBC63761D,Student Branch Chapter,Universidad Tecnologica del Peru,PE31,7,6,Yes,29,24,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
-"Universidad Tecnologica del Peru, RA24",SBC63761A,Student Branch Chapter,Universidad Tecnologica del Peru,RA24,19,6,Yes,11,5,22,2,Yes,Yes,,No,Yes,Yes,Yes,No,Partial,2/3,Not Met
+"Universidad Tecnologica del Peru, RA24",SBC63761A,Student Branch Chapter,Universidad Tecnologica del Peru,RA24,19,6,Yes,11,5,25,2,Yes,Yes,,No,Yes,Yes,Yes,No,Partial,2/3,Not Met
 "Universidad de Ciencias y Humanidades, RA24",SBC18351,Student Branch Chapter,Universidad de Ciencias y Humanidades,RA24,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad de Ingenieria y Tecn - UTEC, IA34",SBC14431A,Student Branch Chapter,Universidad de Ingenieria y Tecnologia - UTEC,IA34,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad de Ingenieria y Tecn - UTEC, PE31",SBC14431B,Student Branch Chapter,Universidad de Ingenieria y Tecnologia - UTEC,PE31,5,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met

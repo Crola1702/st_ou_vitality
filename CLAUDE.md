@@ -64,6 +64,14 @@ schedule triggers). A new CI capability (a new deploy target, mirror, or
 workflow that publishes or syncs something) is a feature and does get an
 entry.
 
+## Random queries
+
+One-off requests that are not about developing the dashboard itself (ad hoc
+rankings, contact lists, outreach emails/scripts, etc.) go in
+`random_queries/`, one subfolder per topic, with the script that produced the
+output next to it. The folder is git-ignored (outputs often contain officer
+emails), so no `CHANGELOG.md` entry is needed for anything in it.
+
 ## Required local input files (never commit these)
 
 Four vTools exports must exist in the repo root before running

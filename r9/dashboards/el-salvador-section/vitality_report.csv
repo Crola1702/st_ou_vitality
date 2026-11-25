@@ -1,6 +1,6 @@
 Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
-"Centroamericana Univ Jose Simeon Canas,SIGHT",SBA53001S,Affinity Group,Centroamericana Univ Jose Simeon Canas,SIGHT,15,6,Yes,1,,0,2,No,Yes,,No,No,No,No,No,Partial,1/3,Not Met
-"Centroamericana Univ Jose Simeon Canas,WIE",SBA53001,Affinity Group,Centroamericana Univ Jose Simeon Canas,WIE,10,6,Yes,2,,1,2,Yes,Yes,,No,No,No,No,No,Partial,2/3,Not Met
+"Centroamericana Univ Jose Simeon Canas,SIGHT",SBA53001S,Affinity Group,Centroamericana Univ Jose Simeon Canas,SIGHT,16,6,Yes,1,,0,2,No,Yes,,No,No,No,No,No,Partial,1/3,Not Met
+"Centroamericana Univ Jose Simeon Canas,WIE",SBA53001,Affinity Group,Centroamericana Univ Jose Simeon Canas,WIE,11,6,Yes,2,,1,2,Yes,Yes,,No,No,No,No,No,Partial,2/3,Not Met
 "Escuela Especializada Ingenieria ITCA-FEPADE,WIE",SBA11409,Affinity Group,Escuela Especializada Ingenieria ITCA-FEPADE,WIE,10,6,Yes,5,,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 Universidad Don Bosco SB SIGHT Group,SBA60431S,Affinity Group,Universidad Don Bosco,SB SIGHT Group,75,6,Yes,6,,4,2,Yes,Yes,,No,Yes,Yes,Yes,No,Partial,2/3,Not Met
 "Universidad Don Bosco,WIE",SBA60431,Affinity Group,Universidad Don Bosco,WIE,59,6,Yes,8,,4,2,Yes,Yes,,Yes,No,No,No,No,Met,3/3,Met
@@ -19,11 +19,11 @@ Universidad Evangélica de El Salvador,STB29381A,Student Branch,Universidad Evan
 Universidad Politecnica de El Salvador,STB30041,Student Branch,Universidad Politecnica de El Salvador,,1,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Universidad de Sonsonate,STB07081,Student Branch,Universidad de Sonsonate,,1,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Universidad de el Salvador,STB99671,Student Branch,Universidad de el Salvador,,94,12,Yes,10,,20,4,Yes,Yes,Yes,,Yes,Yes,No,Yes,Met,3/3,Met
-"Centroamericana Univ Jose Simeon Canas,C16",SBC53001,Student Branch Chapter,Centroamericana Univ Jose Simeon Canas,C16,13,6,Yes,2,1,1,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Centroamericana Univ Jose Simeon Canas,C16",SBC53001,Student Branch Chapter,Centroamericana Univ Jose Simeon Canas,C16,14,6,Yes,2,1,1,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 "Centroamericana Univ Jose Simeon Canas,COM19",SBC53001A,Student Branch Chapter,Centroamericana Univ Jose Simeon Canas,COM19,2,6,No,1,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
-"Centroamericana Univ Jose Simeon Canas,IA34",SBC53001B,Student Branch Chapter,Centroamericana Univ Jose Simeon Canas,IA34,10,6,Yes,1,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
-"Centroamericana Univ Jose Simeon Canas,PE31",SBC53001C,Student Branch Chapter,Centroamericana Univ Jose Simeon Canas,PE31,9,6,Yes,2,1,3,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
-"Centroamericana Univ Jose Simeon Canas,RA24",SBC53001D,Student Branch Chapter,Centroamericana Univ Jose Simeon Canas,RA24,9,6,Yes,7,6,0,2,Yes,Yes,,Yes,Yes,No,No,Yes,Met,3/3,Met
+"Centroamericana Univ Jose Simeon Canas,IA34",SBC53001B,Student Branch Chapter,Centroamericana Univ Jose Simeon Canas,IA34,11,6,Yes,1,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Centroamericana Univ Jose Simeon Canas,PE31",SBC53001C,Student Branch Chapter,Centroamericana Univ Jose Simeon Canas,PE31,10,6,Yes,2,1,3,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
+"Centroamericana Univ Jose Simeon Canas,RA24",SBC53001D,Student Branch Chapter,Centroamericana Univ Jose Simeon Canas,RA24,10,6,Yes,7,6,0,2,Yes,Yes,,Yes,Yes,No,No,Yes,Met,3/3,Met
 "Escuela Especializada Ingenieria ITCA-FEPADE,ED15",SBC11409,Student Branch Chapter,Escuela Especializada Ingenieria ITCA-FEPADE,ED15,13,6,Yes,9,5,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Facultad Multidisciplinaria de Occidente UES,GRS29",SBC11702,Student Branch Chapter,Facultad Multidisciplinaria de Occidente UES,GRS29,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad Don Bosco,AES10",SBC60431D,Student Branch Chapter,Universidad Don Bosco,AES10,12,6,Yes,7,4,1,2,Yes,Yes,,Yes,No,Yes,No,Yes,Met,3/3,Met
