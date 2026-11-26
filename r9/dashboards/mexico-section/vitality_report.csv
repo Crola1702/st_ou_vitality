@@ -91,7 +91,7 @@ Universidad de Sonora,STB20222,Student Branch,Universidad de Sonora,,2,12,No,0,,
 "Cinvestav Zacatenco,CS23",SBC60521G,Student Branch Chapter,Cinvestav Zacatenco,CS23,11,6,Yes,11,11,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Cinvestav Zacatenco,ED15",SBC60521,Student Branch Chapter,Cinvestav Zacatenco,ED15,20,6,Yes,12,11,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Cinvestav Zacatenco,EMB18",SBC60521A,Student Branch Chapter,Cinvestav Zacatenco,EMB18,9,6,Yes,8,2,5,2,Yes,Yes,,Yes,Yes,Yes,No,Yes,Met,3/3,Met
-"Cinvestav Zacatenco,NANO42",SBC60521E,Student Branch Chapter,Cinvestav Zacatenco,NANO42,21,6,Yes,17,4,2,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Cinvestav Zacatenco,NANO42",SBC60521E,Student Branch Chapter,Cinvestav Zacatenco,NANO42,2,6,No,17,4,2,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 "Cinvestav Zacatenco,RA24",SBC60521C,Student Branch Chapter,Cinvestav Zacatenco,RA24,10,6,Yes,0,0,3,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
 "Cinvestav Zacatenco,SSC37",SBC60521B,Student Branch Chapter,Cinvestav Zacatenco,SSC37,26,6,Yes,9,3,5,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Escuela Superior de Computo del IPN,C16",SBC660611,Student Branch Chapter,Escuela Superior de Computo del IPN,C16,1,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
@@ -121,7 +121,7 @@ Universidad de Sonora,STB20222,Student Branch,Universidad de Sonora,,2,12,No,0,,
 "Univ Autonoma Metropolitana-Iztapalapa,COM19",SBC39941A,Student Branch Chapter,Univ Autonoma Metropolitana-Iztapalapa,COM19,3,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Univ Autonoma Metropolitana-Iztapalapa,PE31",SBC39941,Student Branch Chapter,Univ Autonoma Metropolitana-Iztapalapa,PE31,3,6,No,0,0,0,2,No,Yes,,No,Yes,No,No,No,Partial,0/3,Not Met
 "Universidad Autonoma de Chihuahua,EMB18",SBC11592,Student Branch Chapter,Universidad Autonoma de Chihuahua,EMB18,23,6,Yes,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
-"Universidad Autonoma de Yucatan,RA24",SBC03105,Student Branch Chapter,Universidad Autonoma de Yucatan,RA24,15,6,Yes,2,0,1,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Universidad Autonoma de Yucatan,RA24",SBC03105,Student Branch Chapter,Universidad Autonoma de Yucatan,RA24,15,6,Yes,2,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 "Universidad Autonoma de la Ciudad de Mexico, C16",SBC040511,Student Branch Chapter,Universidad Autonoma de la Ciudad de Mexico,C16,1,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad Autonoma del Estado de Mexico,AES10",SBC11766B,Student Branch Chapter,Universidad Autonoma del Estado de Mexico,AES10,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad Autonoma del Estado de Mexico,C16",SBC11766A,Student Branch Chapter,Universidad Autonoma del Estado de Mexico,C16,2,6,No,0,0,0,2,No,Yes,,No,No,No,No,No,Partial,0/3,Not Met
