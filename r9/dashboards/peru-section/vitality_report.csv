@@ -48,7 +48,7 @@ Universidad Continental-Arequipa Campus,STB60209374,Student Branch,Universidad C
 Universidad Nacional Federico Villarreal,STB64001,Student Branch,Universidad Nacional Federico Villarreal,,28,12,Yes,13,,1,4,Yes,Yes,Yes,,Yes,Yes,Yes,No,Met,3/3,Met
 Universidad Nacional Hermilio Valdizan,STB60211650,Student Branch,Universidad Nacional Hermilio Valdizan,,18,12,Yes,1,,0,4,No,Yes,Yes,,Yes,Yes,Yes,No,Met,2/3,Not Met
 Universidad Nacional Jorge Basadre Grohmann,STB60045248,Student Branch,Universidad Nacional Jorge Basadre Grohmann,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
-Universidad Nacional Mayor de San Marcos,STB03221,Student Branch,Universidad Nacional Mayor de San Marcos,,186,12,Yes,38,,6,4,Yes,Yes,Yes,,Yes,Yes,Yes,No,Met,3/3,Met
+Universidad Nacional Mayor de San Marcos,STB03221,Student Branch,Universidad Nacional Mayor de San Marcos,,186,12,Yes,38,,8,4,Yes,Yes,Yes,,Yes,Yes,Yes,No,Met,3/3,Met
 Universidad Nacional Pedro Ruiz Gallo,STB60531,Student Branch,Universidad Nacional Pedro Ruiz Gallo,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Universidad Nacional San Antonio Abad del Cusco,STB11731,Student Branch,Universidad Nacional San Antonio Abad del Cusco,,99,12,Yes,1,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 Universidad Nacional Tecnologica de Lima Sur,STB08771,Student Branch,Universidad Nacional Tecnologica de Lima Sur,,32,12,Yes,0,,0,4,No,Yes,Yes,,No,Yes,Yes,Yes,Met,2/3,Not Met
@@ -70,7 +70,7 @@ Universidad Privada del Norte,STB16881,Student Branch,Universidad Privada del No
 Universidad Privada del Norte-Lima Norte,STB11419,Student Branch,Universidad Privada del Norte-Lima Norte,,10,12,No,0,,0,4,No,Yes,No,,Yes,No,Yes,No,Partial,0/3,Not Met
 Universidad San Ignacio De Loyola,STB17421,Student Branch,Universidad San Ignacio De Loyola,,23,12,Yes,1,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
 Universidad Senor de Sipan,STB66261,Student Branch,Universidad Senor de Sipan,,18,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,Yes,No,Met,2/3,Not Met
-Universidad Tecnologica del Peru,STB63761,Student Branch,Universidad Tecnologica del Peru,,86,12,Yes,22,,1,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Universidad Tecnologica del Peru,STB63761,Student Branch,Universidad Tecnologica del Peru,,86,12,Yes,22,,2,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Universidad de Ciencias y Humanidades,STB18351,Student Branch,Universidad de Ciencias y Humanidades,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Universidad de Ingenieria y Tecnologia - UTEC,STB14431,Student Branch,Universidad de Ingenieria y Tecnologia - UTEC,,81,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,Yes,No,Met,2/3,Not Met
 Universidad de Lima,STB64011,Student Branch,Universidad de Lima,,12,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
@@ -103,7 +103,7 @@ Universidad del Pacifico,STB64265,Student Branch,Universidad del Pacifico,,29,12
 "Univ Continental de Ciencias e Ingenieria, IA34",SBC12011A,Student Branch Chapter,Universidad Continental de Ciencias e Ingenieria,IA34,10,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
 "Univ Nacional San Antonio Abad del Cusco,CAS04",SBC11731K,Student Branch Chapter,Universidad Nacional San Antonio Abad del Cusco,CAS04,15,6,Yes,6,3,7,2,Yes,Yes,,Yes,No,No,Yes,No,Met,3/3,Met
 "Univ Nacional San Antonio Abad del Cusco,COM19",SBC11731E,Student Branch Chapter,Universidad Nacional San Antonio Abad del Cusco,COM19,8,6,Yes,5,4,1,2,Yes,Yes,,No,No,No,No,No,Partial,2/3,Not Met
-"Univ Nacional San Antonio Abad del Cusco,ED15",SBC11731I,Student Branch Chapter,Universidad Nacional San Antonio Abad del Cusco,ED15,26,6,Yes,7,4,7,2,Yes,Yes,,Yes,Yes,Yes,No,Yes,Met,3/3,Met
+"Univ Nacional San Antonio Abad del Cusco,ED15",SBC11731I,Student Branch Chapter,Universidad Nacional San Antonio Abad del Cusco,ED15,26,6,Yes,7,4,8,2,Yes,Yes,,Yes,Yes,Yes,No,Yes,Met,3/3,Met
 "Univ Nacional San Antonio Abad del Cusco,EMB18",SBC11731D,Student Branch Chapter,Universidad Nacional San Antonio Abad del Cusco,EMB18,3,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Univ Nacional San Antonio Abad del Cusco,SSC37",SBC11731J,Student Branch Chapter,Universidad Nacional San Antonio Abad del Cusco,SSC37,12,6,Yes,6,3,1,2,Yes,Yes,,Yes,No,No,No,No,Met,3/3,Met
 "Univ Nacional San Antonio Abad del Cusco,TEM14",SBC11731G,Student Branch Chapter,Universidad Nacional San Antonio Abad del Cusco,TEM14,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met

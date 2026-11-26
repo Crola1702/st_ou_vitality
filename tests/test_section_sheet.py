@@ -77,6 +77,15 @@ class SectionSheetTest(unittest.TestCase):
     def test_drive_query_literal_is_escaped(self):
         self.assertEqual(upload_reports.q_literal("Cote d'Ivoire \\ x"), "Cote d\\'Ivoire \\\\ x")
 
+    def test_branch_rows_list_every_branch_with_requirements(self):
+        units = [branch("2", "B Section", "", False), branch("1", "A Section", "", True),
+                 OU("C1", "SBC1", "Student Branch Chapter", "Uni", 10, "A Section")]
+        rows = sheet.build_branch_rows(units)
+        self.assertEqual([r["SPOID"] for r in rows], ["1", "2"])
+        self.assertEqual(list(rows[0]), sheet.BRANCH_COLUMNS)
+        self.assertEqual((rows[0]["2026 Events"], rows[0]["Chair"], rows[0]["Vitality 2026"]), (4, "Yes", "Yes"))
+        self.assertEqual((rows[1]["Counselor"], rows[1]["Vitality 2026"]), ("No", "No"))
+
 
 if __name__ == "__main__":
     unittest.main()

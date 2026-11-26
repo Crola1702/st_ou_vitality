@@ -4,6 +4,15 @@ Notable changes to this project. Format loosely follows
 [Keep a Changelog](https://keepachangelog.com/), dated by day rather than by
 version since this project doesn't cut releases.
 
+## 2026-11-25
+
+### Added
+
+- `./run_all.sh --drive-folder` also uploads `r9/branch_sheet.csv`: one row
+  per Region 9 Student Branch with University, SPOID, Section, Total Members,
+  2026 Events, Chair, Counselor and Vitality 2026 (full vitality), made by
+  `r9/generate_section_sheet.py`.
+
 ## 2026-11-23
 
 ### Fixed

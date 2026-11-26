@@ -61,6 +61,7 @@ case "${1:-}" in
     echo "  --drive-folder <url>  Implies --pdfs; also uploads the per-Section PDFs into that"
     echo "             Drive folder (automations/upload_reports.py login first) and refills"
     echo "             the Report Link column of r9/section_sheet.csv, then uploads that CSV
+             and r9/branch_sheet.csv (every Student Branch and its requirements)
              to the top of the same folder."
     echo "  --global   Also fetch the worldwide exports and events (about 5 more minutes)"
     echo "             and rebuild global/dashboards/ (every Region and Section)."

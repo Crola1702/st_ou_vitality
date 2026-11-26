@@ -76,7 +76,7 @@ Universidad Nacional de Colombia Sede Medellin,STB66021,Student Branch,Universid
 Universidad Nacional sede Manizales,STB61301,Student Branch,Universidad Nacional sede Manizales,,8,12,No,12,,0,4,Yes,Yes,Yes,,No,No,Yes,No,Met,2/3,Not Met
 Universidad Pedagogica Nacional,STB08221,Student Branch,Universidad Pedagogica Nacional,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Universidad Pedagogica Y Tec de Colombia,STB60931,Student Branch,Universidad Pedagogica Y Tec de Colombia,,1,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
-Universidad Piloto de Colombia,STB81721,Student Branch,Universidad Piloto de Colombia,,22,12,Yes,20,,3,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Universidad Piloto de Colombia,STB81721,Student Branch,Universidad Piloto de Colombia,,22,12,Yes,22,,3,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Universidad Santiago de Cali,STB64461,Student Branch,Universidad Santiago de Cali,,26,12,Yes,28,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Universidad Santo Tomas - Tunja,STB04081,Student Branch,Universidad Santo Tomas - Tunja,,23,12,Yes,2,,0,4,No,Yes,No,,No,No,No,No,Partial,1/3,Not Met
 Universidad Santo Tomas-Bucaramanga,STB60232106,Student Branch,Universidad Santo Tomas-Bucaramanga,,32,12,Yes,7,,2,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
@@ -103,7 +103,7 @@ University of San Buenaventura,STB03171,Student Branch,University of San Buenave
 "Antonio Narino University,COM19",SBC64411D,Student Branch Chapter,Antonio Narino University,COM19,28,6,Yes,1,1,1,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 "Antonio Narino University,EMB18",SBC64411C,Student Branch Chapter,Antonio Narino University,EMB18,21,6,Yes,2,1,1,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 "Antonio Narino University,RA24",SBC64411B,Student Branch Chapter,Antonio Narino University,RA24,30,6,Yes,3,1,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
-"Antonio Narino University,TEM14",SBC64411A,Student Branch Chapter,Antonio Narino University,TEM14,29,6,Yes,3,1,1,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Antonio Narino University,TEM14",SBC64411A,Student Branch Chapter,Antonio Narino University,TEM14,29,6,Yes,4,1,1,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 "Corporación Universitaria del Huila–CORHUILA,RA24",SBC60236869,Student Branch Chapter,Corporación Universitaria del Huila – CORHUILA,RA24,10,6,Yes,4,3,0,2,Yes,Yes,,Yes,No,No,No,No,Met,3/3,Met
 "De La Salle University,AES10",SBC40010389B,Student Branch Chapter,De La Salle University,AES10,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "De La Salle University,PE31",SBC40010389A,Student Branch Chapter,De La Salle University,PE31,1,6,No,0,0,0,2,No,Yes,,No,Yes,No,No,Yes,Partial,0/3,Not Met
@@ -216,7 +216,7 @@ Icesi University COM19,SBC02571A,Student Branch Chapter,Icesi University,COM19,1
 "Universidad Nacional De Colombia Sede Bogota,TEM14",SBC06431K,Student Branch Chapter,Universidad Nacional De Colombia Sede Bogota,TEM14,9,6,Yes,7,3,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Universidad Nacional sede Manizales,IA34",SBC61301,Student Branch Chapter,Universidad Nacional sede Manizales,IA34,8,6,Yes,5,3,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
 "Universidad Pedagogica Nacional, E25",SBC08221,Student Branch Chapter,Universidad Pedagogica Nacional,E25,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
-"Universidad Piloto de Colombia,ITSS38",SBC81721,Student Branch Chapter,Universidad Piloto de Colombia,ITSS38,14,6,Yes,3,1,0,2,No,Yes,,Yes,Yes,No,Yes,No,Met,2/3,Not Met
+"Universidad Piloto de Colombia,ITSS38",SBC81721,Student Branch Chapter,Universidad Piloto de Colombia,ITSS38,14,6,Yes,4,3,0,2,Yes,Yes,,Yes,Yes,No,Yes,No,Met,3/3,Met
 "Universidad Santiago de Cali,C16",SBC64461,Student Branch Chapter,Universidad Santiago de Cali,C16,6,6,Yes,15,11,0,2,Yes,Yes,,Yes,Yes,Yes,No,Yes,Met,3/3,Met
 "Universidad Santiago de Cali,EMB18",SBC64461B,Student Branch Chapter,Universidad Santiago de Cali,EMB18,7,6,Yes,21,11,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Universidad Santiago de Cali,RA24",SBC64461A,Student Branch Chapter,Universidad Santiago de Cali,RA24,8,6,Yes,20,11,0,2,Yes,Yes,,Yes,Yes,No,Yes,Yes,Met,3/3,Met

@@ -43,6 +43,7 @@ REPO_DIR = HERE.parent
 TOKEN_FILE = HERE / "drive_token.json"
 LINKS_FILE = REPO_DIR / "report_pdfs" / "section_report_links.csv"
 SHEET_FILE = REPO_DIR / "r9" / "section_sheet.csv"
+BRANCH_FILE = REPO_DIR / "r9" / "branch_sheet.csv"
 # Full `drive` scope: drive.file can't see a folder the user created by hand.
 SCOPES = ["https://www.googleapis.com/auth/drive"]
 FOLDER_MIME = "application/vnd.google-apps.folder"
@@ -163,22 +164,23 @@ def cmd_upload(pdf_dir: Path, folder: str, anyone: bool, folder_url: str | None 
 
 
 def cmd_upload_sheet(folder: str, folder_url: str | None = None) -> None:
-    """Upload r9/section_sheet.csv to the top of the target folder (updated in place by name)."""
+    """Upload r9/section_sheet.csv and r9/branch_sheet.csv to the top of the target folder (updated in place by name)."""
     from googleapiclient.http import MediaFileUpload
 
-    if not SHEET_FILE.exists():
-        sys.exit(f"{SHEET_FILE} not found: run r9/generate_section_sheet.py first.")
+    for path in (SHEET_FILE, BRANCH_FILE):
+        if not path.exists():
+            sys.exit(f"{path} not found: run r9/generate_section_sheet.py first.")
     drive = _service()
     root = folder_id(folder_url) if folder_url else _folder(drive, folder, None)
-    media = MediaFileUpload(str(SHEET_FILE), mimetype="text/csv")
-    existing = _find(drive, SHEET_FILE.name, root)
-    if existing:
-        file = drive.files().update(fileId=existing, media_body=media, fields="webViewLink").execute()
-    else:
-        file = drive.files().create(body={"name": SHEET_FILE.name, "parents": [root]}, media_body=media,
-                                    fields="webViewLink").execute()
-    print(f"Uploaded {SHEET_FILE.name} (officer emails, private to the folder's sharing): {file['webViewLink']}")
-
+    for path in (SHEET_FILE, BRANCH_FILE):
+        media = MediaFileUpload(str(path), mimetype="text/csv")
+        existing = _find(drive, path.name, root)
+        if existing:
+            file = drive.files().update(fileId=existing, media_body=media, fields="webViewLink").execute()
+        else:
+            file = drive.files().create(body={"name": path.name, "parents": [root]}, media_body=media,
+                                        fields="webViewLink").execute()
+        print(f"Uploaded {path.name} (private to the folder's sharing): {file['webViewLink']}")
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -189,7 +191,7 @@ if __name__ == "__main__":
     up.add_argument("--folder", default="R9 Vitality Reports", help="top-level Drive folder name (default: %(default)s)")
     up.add_argument("--folder-url", help="existing Drive folder link or id to upload into (overrides --folder)")
     up.add_argument("--anyone-with-link", action="store_true", help="make each file readable by anyone with its link")
-    sh = sub.add_parser("upload-sheet", help="Upload r9/section_sheet.csv into the folder")
+    sh = sub.add_parser("upload-sheet", help="Upload r9/section_sheet.csv and r9/branch_sheet.csv into the folder")
     sh.add_argument("--folder", default="R9 Vitality Reports", help="top-level Drive folder name (default: %(default)s)")
     sh.add_argument("--folder-url", help="existing Drive folder link or id (overrides --folder)")
     args = ap.parse_args()

@@ -16,6 +16,10 @@ re-run this script after uploading to fill it.
 
 Writes `r9/section_sheet.csv`: it holds officer emails (PII), so it is
 git-ignored. Import it into a new tab of the Google Sheet.
+
+Also writes `r9/branch_sheet.csv`: one row per R9 Student Branch with its
+requirements (members, 2026 events, Chair, Counselor, Vitality 2026 = full
+vitality), uploaded beside the section sheet by `./run_all.sh --drive-folder`.
 """
 
 from __future__ import annotations
@@ -43,6 +47,7 @@ DATA_DIR = R9_DIR / "R9 Data"
 OFFICERS_FILE = DATA_DIR / "Section Officers.csv"
 LINKS_FILE = REPO_DIR / "report_pdfs" / "section_report_links.csv"
 OUT_FILE = R9_DIR / "section_sheet.csv"
+BRANCH_FILE = R9_DIR / "branch_sheet.csv"
 
 NO_COUNCIL = "Region 9 - No Council"  # vTools's placeholder for Sections outside every Council
 
@@ -50,6 +55,9 @@ NO_COUNCIL = "Region 9 - No Council"  # vTools's placeholder for Sections outsid
 EMAIL_POSITIONS = ["Chair", "Student Activities", "Student Representative"]
 COLUMNS = ["OU Name", "Emails (Chair, SSAC, SSR)", "# Branches Met", "# Branches Total",
            "% Vitality", "Report Link", "Sent At"]
+# Same columns as the SAC Colombia branch tracking sheet, in English, with Section in place of the sub-section.
+BRANCH_COLUMNS = ["University", "SPOID", "Section", "Total Members", "2026 Events",
+                  "Chair", "Counselor", "Vitality 2026"]
 
 
 def ou_emails(rows) -> dict[str, str]:
@@ -113,6 +121,27 @@ def build_rows(units, emails: dict[str, str], links: dict[str, str]) -> list[dic
     ]
 
 
+def build_branch_rows(units) -> list[dict]:
+    """One row per Student Branch, sorted by Section then university.
+    Vitality 2026 = full vitality (the same evaluate() as every dashboard)."""
+    branches = sorted((ou for ou in units if ou.ou_type == "Student Branch"),
+                      key=lambda ou: (ou.section, ou.university, ou.spoid))
+    rows = []
+    for ou in branches:
+        status = evaluate(ou)
+        rows.append({
+            "University": ou.university,
+            "SPOID": ou.spoid,
+            "Section": ou.section,
+            "Total Members": ou.member_count,
+            "2026 Events": ou.events_general + ou.events_technical,
+            "Chair": "Yes" if status["chair_met"] else "No",
+            "Counselor": "Yes" if status["counselor_met"] else "No",
+            "Vitality 2026": "Yes" if status["overall"] else "No",
+        })
+    return rows
+
+
 def main() -> None:
     if not OFFICERS_FILE.exists():
         sys.exit(f"{OFFICERS_FILE} not found: run ./run_all.sh or the "
@@ -129,6 +158,13 @@ def main() -> None:
         writer = csv.DictWriter(f, fieldnames=COLUMNS)
         writer.writeheader()
         writer.writerows(rows)
+
+    branch_rows = build_branch_rows(units_map.values())
+    with open(BRANCH_FILE, "w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=BRANCH_COLUMNS)
+        writer.writeheader()
+        writer.writerows(branch_rows)
+    print(f"Wrote {len(branch_rows)} Student Branches -> {BRANCH_FILE.relative_to(REPO_DIR)}")
 
     no_email = [r["OU Name"] for r in rows if not r["Emails (Chair, SSAC, SSR)"]]
     print(f"Wrote {len(rows)} rows -> {OUT_FILE.relative_to(REPO_DIR)} "
