@@ -3,6 +3,7 @@
 Run from the repo root: python3 -m unittest discover tests
 Uses only synthetic OUs in a temp dir, so it needs none of the vTools exports.
 """
+import csv
 import json
 import re
 import shutil
@@ -153,11 +154,22 @@ class OutputsTest(unittest.TestCase):
         gvr.write_csv(self.units, out)
         self.assertEqual(len(out.read_text(encoding="utf-8").strip().splitlines()), 3)
 
-    def test_write_history_is_idempotent_per_day(self):
+    def test_write_history_rerun_same_day_replaces_todays_rows(self):
         out = self.tmp / "h.csv"
+        out.write_text(
+            "Date,SPO ID,Unit Type,University,Society,Member Count,Requirements Met,Members Met,Events Met,Officers Status,Overall Vitality\n"
+            "2020-01-01,OLD1,Student Branch,U,,1,0,No,No,Not Met,Not Met\n",
+            encoding="utf-8",
+        )
         gvr.write_history(self.units, out)
+        self.units[0].member_count = 999  # e.g. a re-export later the same day
         gvr.write_history(self.units, out)
-        self.assertEqual(len(out.read_text(encoding="utf-8").strip().splitlines()), 3)
+        with open(out, encoding="utf-8") as f:
+            rows = list(csv.DictReader(f))
+        self.assertEqual(len(rows), 3)  # older day kept, today's 2 rows not duplicated
+        self.assertEqual(rows[0]["SPO ID"], "OLD1")
+        self.assertIn("999", [r["Member Count"] for r in rows[1:]])
+        self.assertFalse(out.with_name("h.csv.tmp").exists())
 
     def test_print_reports_build(self):
         for builder in (gvr.build_university_report, gvr.build_society_report):
@@ -366,12 +378,15 @@ class SourceLoadersTest(unittest.TestCase):
             f"{year}-02-01 10:00:00 UTC,STB1,N/A,Technical,0\n"
             f"{year}-02-01 10:00:00 UTC,STB1,2026-02-02,Technical,1\n"
             f"{year - 1}-02-01 10:00:00 UTC,STB1,2026-02-02,Technical,0\n"
+            f"{year}-02-01 10:00:00 UTC,STB1,,Technical,0\n"  # empty Reported On: unreported
+            # 31 Dec 20:00 in Bogotá is already next year in UTC: still last year here.
+            f"{year}-01-01 01:00:00 UTC,STB1,2026-02-02,Technical,0\n"
             "garbage,STB1,2026-02-02,Technical,0\n",
         )
         gvr.load_events(self.units, events)
         stb = self.units["STB1"]
         self.assertEqual((stb.events_general, stb.events_technical), (1, 1))
-        self.assertEqual(stb.events_unreported_general, 1)
+        self.assertEqual(stb.events_unreported_general, 2)
         self.assertEqual(self.units["SBC1"].events_general, 1)
         self.assertEqual(gvr.find_events_file(self.tmp), events)
 
@@ -462,6 +477,11 @@ class RenderAssetTest(unittest.TestCase):
 
 
 class SharedHelpersTest(unittest.TestCase):
+    def test_script_json_cannot_close_the_script_tag(self):
+        out = gvr.script_json({"u": "A </script><b>"})
+        self.assertNotIn("</", out)
+        self.assertEqual(json.loads(out), {"u": "A </script><b>"})
+
     def test_read_vtools_tsv_utf16(self):
         with tempfile.TemporaryDirectory() as d:
             p = Path(d) / "x.csv"

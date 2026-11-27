@@ -21,6 +21,7 @@ from __future__ import annotations
 import html
 import re
 import sys
+from datetime import timezone
 from pathlib import Path
 
 GLOBAL_DIR = Path(__file__).resolve().parent
@@ -109,7 +110,7 @@ def main() -> None:
     units_map = load_ou_universe(BRANCH_MEMBER_FILE, CHAPTER_MEMBER_FILE)
     load_officers(units_map, volunteer_file)
     events_path = find_events_file(DATA_DIR)
-    load_events(units_map, events_path)
+    load_events(units_map, events_path, tz=timezone.utc)  # every time zone at once: no one local clock fits
 
     units = sorted(units_map.values(), key=lambda o: (o.ou_type, o.name))
     regions = build_region_scopes(units)

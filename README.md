@@ -40,8 +40,8 @@ first — the fastest path to full compliance for each of them.
 Every run also appends a snapshot to `vitality_history.csv` (one row per
 OU: date, requirements met, members/events/officers status — no personal
 data, safe to commit) so trends build up over time as you re-run the
-script. Re-running on the same day is a no-op (it won't duplicate that
-day's snapshot).
+script. Re-running on the same day replaces that day's snapshot (it won't
+duplicate it), so a later re-export corrects an earlier run.
 
 The dashboard's **Trends** tab charts % of OUs meeting full vitality over
 time, one line per OU type, built from `vitality_history.csv`. With a
@@ -284,7 +284,7 @@ Regions, 340 Sections). It reads `global/data/` (git-ignored), which
   login, paginated, about 43,000 events in about 5 minutes)
 
 ```sh
-./run_all.sh --global                      # fetch + build (after the usual steps)
+./run_all.sh --global                      # fetch + build, worldwide only (skips Colombia and Region 9)
 python3 global/generate_global_vitality.py  # build only, from global/data/
 ```
 

@@ -14,6 +14,8 @@ pages:
     # Region 9 dashboards (beta): served as-is under /beta_r9/, so the
     # section picker's relative links keep working.
     - '[ -d r9/dashboards ] && cp -r r9/dashboards public/beta_r9 || true'
+    # Worldwide dashboards (beta), same idea, under /beta_global/.
+    - '[ -d global/dashboards ] && cp -r global/dashboards public/beta_global || true'
   artifacts:
     paths:
       - public
@@ -27,4 +29,5 @@ pages:
         - university_report.html
         - society_report.html
         - r9/dashboards/**/*
+        - global/dashboards/**/*
         - .gitlab-ci.yml

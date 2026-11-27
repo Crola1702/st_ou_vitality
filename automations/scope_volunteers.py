@@ -31,6 +31,9 @@ def main(src: Path, dst: Path) -> None:
     rows = read_vtools_tsv(src)
     first = next(rows)
     kept = list(scope_rows([first, *rows], spoids))
+    # A header-only or wrongly filtered export would otherwise wipe every officer.
+    if not kept:
+        sys.exit(f"0 officer rows for our {len(spoids)} OUs in {src}; not overwriting {dst}")
     with open(dst, "w", encoding="utf-16", newline="") as f:
         w = csv.DictWriter(f, fieldnames=list(first), delimiter="\t", lineterminator="\n")
         w.writeheader()

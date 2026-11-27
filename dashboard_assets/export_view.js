@@ -27,7 +27,7 @@
   const NO = { section: 'No Section', council: 'No Council', society: 'No Society (Student Branches)' };
 
   const $ = id => document.getElementById(id);
-  const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const esc = escapeHtml;  // from dashboard.js
   const famKey = o => o.u || o.n;
   const slug = s => s.normalize('NFKD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
   const fileSafe = s => s.replace(/[\\/:*?"<>|\x00-\x1f]+/g, ' ').replace(/\s+/g, ' ').trim().replace(/\.+$/, '').slice(0, 150) || 'report';

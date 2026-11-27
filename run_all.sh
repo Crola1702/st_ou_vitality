@@ -16,11 +16,11 @@
 # Region 9: it then fetches the region-wide Tableau exports and vTools events
 # (public feed, no login) into r9/R9 Data/ and rebuilds r9/dashboards/.
 #
-# Worldwide (opt-in, --global): fetches the unfiltered Tableau exports and
-# every vTools event since Jan 1 into global/data/ and rebuilds
-# global/dashboards/ (published at /beta_global/).
+# Worldwide (--global, a separate run): fetches only the unfiltered Tableau
+# exports and every vTools event since Jan 1 into global/data/ and rebuilds
+# global/dashboards/ (published at /beta_global/); skips Colombia and Region 9.
 #
-# Usage: ./run_all.sh [-h|--help] [--login] [--pdfs] [--drive-folder <url>] [--global]
+# Usage: ./run_all.sh [-h|--help] [--login] [--pdfs] [--drive-folder <url>] [--global] [--colombia]
 set -euo pipefail
 cd "$(dirname "${BASH_SOURCE[0]}")"
 
@@ -37,9 +37,13 @@ HAS_CREDENTIALS=0
 EXPORT_PDFS=0
 DRIVE_FOLDER=""
 RUN_GLOBAL=0
-while [ "${1:-}" = "--pdfs" ] || [ "${1:-}" = "--drive-folder" ] || [ "${1:-}" = "--global" ]; do
+COLOMBIA_ONLY=0
+while [ "${1:-}" = "--pdfs" ] || [ "${1:-}" = "--drive-folder" ] || [ "${1:-}" = "--global" ] || [ "${1:-}" = "--colombia" ]; do
   if [ "$1" = "--pdfs" ]; then
     EXPORT_PDFS=1
+    shift
+  elif [ "$1" = "--colombia" ]; then
+    COLOMBIA_ONLY=1
     shift
   elif [ "$1" = "--global" ]; then
     RUN_GLOBAL=1
@@ -50,6 +54,14 @@ while [ "${1:-}" = "--pdfs" ] || [ "${1:-}" = "--drive-folder" ] || [ "${1:-}" =
     shift 2
   fi
 done
+if [ "$COLOMBIA_ONLY" = 1 ] && { [ -n "$DRIVE_FOLDER" ] || [ "$RUN_GLOBAL" = 1 ]; }; then
+  echo "--colombia skips Region 9, so it cannot be combined with --drive-folder or --global." >&2
+  exit 1
+fi
+if [ "$RUN_GLOBAL" = 1 ] && [ "$EXPORT_PDFS" = 1 ]; then
+  echo "--global only rebuilds the worldwide dashboards (no PDFs), so it cannot be combined with --pdfs or --drive-folder." >&2
+  exit 1
+fi
 
 case "${1:-}" in
   -h|--help)
@@ -63,8 +75,11 @@ case "${1:-}" in
     echo "             the Report Link column of r9/section_sheet.csv, then uploads that CSV
              and r9/branch_sheet.csv (every Student Branch and its requirements)
              to the top of the same folder."
-    echo "  --global   Also fetch the worldwide exports and events (about 5 more minutes)"
-    echo "             and rebuild global/dashboards/ (every Region and Section)."
+    echo "  --global   Only the worldwide steps: fetch the worldwide exports and events"
+    echo "             (about 10 minutes) and rebuild global/dashboards/ (every Region and"
+    echo "             Section). Skips every Colombia and Region 9 fetch and dashboard."
+    echo "  --colombia Only the Colombia steps: skip every Region 9 fetch and dashboard"
+    echo "             (with --pdfs, only the Colombia PDFs)."
     exit 0
     ;;
   --login)
@@ -89,6 +104,24 @@ elif [ ! -f "automations/storage_state.json" ]; then
   echo "Fill in .envrc, or run the login step in automations/README.md first:" >&2
   echo "  $VENV_PY automations/tableau_export.py login" >&2
   exit 1
+fi
+
+if [ "$RUN_GLOBAL" = 1 ]; then
+  GLOBAL_DATA="global/data"
+  mkdir -p "$GLOBAL_DATA"
+  echo "== Worldwide 1/4: Student Branch Summary (both crosstabs, unfiltered) =="
+  "$VENV_PY" automations/tableau_export.py export --headed \
+    --workbook GeoOUAnalysis --view StudentBranchSummary --sheet "Student Branch Summary" \
+    --sheetdoc-id "{9F37FD96-C0CB-44E2-B6C0-4AD55CC98A4A}" --out "$GLOBAL_DATA/Student Branch and Member Count.csv" \
+    --sheetdoc-id "{CED8B60A-2103-44CD-9018-C8E76B42E9BA}" --out "$GLOBAL_DATA/Student Branch Chapters and Affinity Group Member Count.csv"
+  echo "== Worldwide 2/4: Volunteer List by OU (all Regions) =="
+  "$VENV_PY" automations/tableau_export.py export-preset volunteer_positions_all --out "$GLOBAL_DATA/Volunteer List by OU.csv" --headed
+  echo "== Worldwide 3/4: vTools Events (Events List API, every event since Jan 1, ~5 min) =="
+  python3 automations/vtools_feed_export.py --all --out "$GLOBAL_DATA/IEEE_vTools_Events_All.csv"
+  echo "== Worldwide 4/4: dashboards =="
+  python3 global/generate_global_vitality.py
+  echo "== Done =="
+  exit 0
 fi
 
 echo "== 1/5: Student Branch Summary (both crosstabs) =="
@@ -118,6 +151,15 @@ python3 chapter_outreach/generate_chapter_outreach.py
 python3 officer_terms/generate_officer_terms.py
 python3 member_society_lookup/generate_member_society_lookup.py
 python3 ou_members/generate_ou_members.py
+
+if [ "$COLOMBIA_ONLY" = 1 ]; then
+  if [ "$EXPORT_PDFS" = 1 ]; then
+    echo "== Extra: one PDF per Student Branch (Colombia) =="
+    "$VENV_PY" automations/export_report_pdfs.py
+  fi
+  echo "== Done =="
+  exit 0
+fi
 
 R9_DATA="r9/R9 Data"
 mkdir -p "$R9_DATA"
@@ -149,20 +191,6 @@ if [ -n "$DRIVE_FOLDER" ]; then
   "$VENV_PY" automations/upload_reports.py upload --folder-url "$DRIVE_FOLDER"
   python3 r9/generate_section_sheet.py
   "$VENV_PY" automations/upload_reports.py upload-sheet --folder-url "$DRIVE_FOLDER"
-fi
-
-if [ "$RUN_GLOBAL" = 1 ]; then
-  GLOBAL_DATA="global/data"
-  mkdir -p "$GLOBAL_DATA"
-  echo "== Worldwide: Student Branch Summary (both crosstabs, unfiltered) =="
-  "$VENV_PY" automations/tableau_export.py export --headed \
-    --workbook GeoOUAnalysis --view StudentBranchSummary --sheet "Student Branch Summary" \
-    --sheetdoc-id "{9F37FD96-C0CB-44E2-B6C0-4AD55CC98A4A}" --out "$GLOBAL_DATA/Student Branch and Member Count.csv" \
-    --sheetdoc-id "{CED8B60A-2103-44CD-9018-C8E76B42E9BA}" --out "$GLOBAL_DATA/Student Branch Chapters and Affinity Group Member Count.csv"
-  echo "== Worldwide: vTools Events (Events List API, every event since Jan 1, ~5 min) =="
-  python3 automations/vtools_feed_export.py --all --out "$GLOBAL_DATA/IEEE_vTools_Events_All.csv"
-  echo "== Worldwide: dashboards =="
-  python3 global/generate_global_vitality.py
 fi
 
 echo "== Done =="

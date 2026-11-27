@@ -41,8 +41,9 @@ import json
 import re
 import unicodedata
 from collections.abc import Callable
-from datetime import datetime
+from datetime import datetime, timezone, tzinfo
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 BASE_DIR = Path(__file__).resolve().parent
 
@@ -51,6 +52,9 @@ CHAPTER_MEMBER_FILE = BASE_DIR / "Student Branch Chapters and Affinity Group Mem
 VOLUNTEER_FILE = BASE_DIR / "Volunteer List by OU.csv"
 
 MIN_EVENT_YEAR = 2026
+# Local time for the event year cutoff: Colombia, and close enough for the
+# rest of Region 9 (UTC-3 to UTC-6). The worldwide run passes UTC instead.
+EVENT_TIMEZONE = ZoneInfo("America/Bogota")
 
 OPTIONAL_OFFICERS = ["Vice Chair", "Secretary", "Treasurer", "Webmaster"]
 
@@ -327,20 +331,23 @@ def parse_event_date(value: str) -> datetime | None:
         return None
 
 
-def load_events(units: dict[str, OU], events_path: Path | None = None) -> None:
+def load_events(units: dict[str, OU], events_path: Path | None = None, tz: tzinfo = EVENT_TIMEZONE) -> None:
+    """`tz` decides which year an event near New Year falls in: vTools dates
+    are UTC, so 31 Dec 20:00 in Bogotá is already "2026" in UTC."""
     if events_path is None:
         events_path = find_events_file()
     with open(events_path, encoding="utf-8-sig") as f:
         for row in csv.DictReader(f):
             event_date = parse_event_date(row.get("Event Date", ""))
-            if event_date is None or event_date.year < MIN_EVENT_YEAR:
+            if event_date is None or event_date.replace(tzinfo=timezone.utc).astimezone(tz).year < MIN_EVENT_YEAR:
                 continue
             if row.get("Cancelled", "").strip() == "1":
                 continue
 
             spoids = {s.strip() for s in row.get("SPOID", "").split(",") if s.strip()}
             reported_values = [v.strip() for v in row.get("Reported On", "").split(",")]
-            is_reported = bool(reported_values) and all(v != "N/A" for v in reported_values)
+            # An empty cell splits to [""], which must not count as reported.
+            is_reported = all(v and v != "N/A" for v in reported_values)
             is_technical = row.get("Event Category", "").strip() == "Technical"
 
             for spoid in spoids:
@@ -473,42 +480,46 @@ HISTORY_FIELDNAMES = [
 ]
 
 
-def write_history(units: list[OU], path: Path) -> None:
-    """Append one snapshot row per OU for today's run, so re-running this
-    script over time builds up a trend history. No personal data — safe to
-    commit. Skips appending if today's date is already recorded, so
-    re-running the script the same day doesn't create duplicate rows."""
+def write_daily_snapshot(path: Path, fieldnames: list[str], rows: list[dict]) -> None:
+    """Store `rows` as today's snapshot in a per-day history CSV, replacing
+    any rows already dated today, so a later run the same day (e.g. after a
+    re-export) corrects the earlier one instead of being ignored. Written to
+    a temp file and swapped in, so a crash never leaves a truncated history."""
     run_date = datetime.now().strftime("%Y-%m-%d")
-
+    kept = []
     if path.exists():
-        with open(path, encoding="utf-8") as f:
-            existing_dates = {row["Date"] for row in csv.DictReader(f)}
-        if run_date in existing_dates:
-            print(f"{path.name} already has a snapshot for {run_date}, skipping.")
-            return
+        with open(path, encoding="utf-8", newline="") as f:
+            kept = [row for row in csv.DictReader(f) if row["Date"] != run_date]
+    tmp = path.with_name(path.name + ".tmp")
+    with open(tmp, "w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(kept)
+        writer.writerows({"Date": run_date, **row} for row in rows)
+    tmp.replace(path)
 
-    write_header = not path.exists()
-    with open(path, "a", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=HISTORY_FIELDNAMES)
-        if write_header:
-            writer.writeheader()
-        for ou in units:
-            result = evaluate(ou)
-            writer.writerow(
-                {
-                    "Date": run_date,
-                    "SPO ID": ou.spoid,
-                    "Unit Type": ou.ou_type,
-                    "University": ou.university,
-                    "Society": ou.society,
-                    "Member Count": ou.member_count,
-                    "Requirements Met": result["requirements_met"],
-                    "Members Met": "Yes" if result["members_met"] else "No",
-                    "Events Met": "Yes" if result["events_met"] else "No",
-                    "Officers Status": result["officers_status"],
-                    "Overall Vitality": "Met" if result["overall"] else "Not Met",
-                }
-            )
+
+def write_history(units: list[OU], path: Path) -> None:
+    """Today's snapshot, one row per OU, so re-running this script over time
+    builds up a trend history. No personal data, safe to commit."""
+    rows = []
+    for ou in units:
+        result = evaluate(ou)
+        rows.append(
+            {
+                "SPO ID": ou.spoid,
+                "Unit Type": ou.ou_type,
+                "University": ou.university,
+                "Society": ou.society,
+                "Member Count": ou.member_count,
+                "Requirements Met": result["requirements_met"],
+                "Members Met": "Yes" if result["members_met"] else "No",
+                "Events Met": "Yes" if result["events_met"] else "No",
+                "Officers Status": result["officers_status"],
+                "Overall Vitality": "Met" if result["overall"] else "Not Met",
+            }
+        )
+    write_daily_snapshot(path, HISTORY_FIELDNAMES, rows)
 
 
 def load_history_trend(path: Path) -> dict:
@@ -577,35 +588,16 @@ def count_society_memberships() -> dict[str, int]:
 
 
 def write_society_history(counts: dict[str, int], path: Path) -> None:
-    """Append one snapshot row per society for today's run, mirroring
-    write_history(). Aggregate counts only — no personal data, safe to
-    commit. No-op if Member Detail View.csv wasn't present this run."""
+    """Today's snapshot, one row per society, like write_history().
+    Aggregate counts only, no personal data, safe to commit. No-op if
+    Member Detail View.csv wasn't present this run (keeps today's rows)."""
     if not counts:
         return
-
-    run_date = datetime.now().strftime("%Y-%m-%d")
-
-    if path.exists():
-        with open(path, encoding="utf-8") as f:
-            existing_dates = {row["Date"] for row in csv.DictReader(f)}
-        if run_date in existing_dates:
-            print(f"{path.name} already has a snapshot for {run_date}, skipping.")
-            return
-
-    write_header = not path.exists()
-    with open(path, "a", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=SOCIETY_HISTORY_FIELDNAMES)
-        if write_header:
-            writer.writeheader()
-        for code, count in sorted(counts.items()):
-            writer.writerow(
-                {
-                    "Date": run_date,
-                    "Society Code": code,
-                    "Society Name": SOCIETY_MEMBERSHIP_CODES.get(code, code),
-                    "Member Count": count,
-                }
-            )
+    rows = [
+        {"Society Code": code, "Society Name": SOCIETY_MEMBERSHIP_CODES.get(code, code), "Member Count": count}
+        for code, count in sorted(counts.items())
+    ]
+    write_daily_snapshot(path, SOCIETY_HISTORY_FIELDNAMES, rows)
 
 
 def load_society_history_trend(path: Path, default_top_n: int = SOCIETY_TREND_TOP_N) -> dict:
@@ -654,28 +646,13 @@ def count_member_grades(directory: dict[str, dict]) -> dict[str, int]:
 
 
 def write_grade_history(counts: dict[str, int], path: Path) -> None:
-    """Append one snapshot row per membership grade for today's run,
-    mirroring write_society_history(). No-op if Member Detail View.csv
-    wasn't present this run."""
+    """Today's snapshot, one row per membership grade, like
+    write_society_history(). No-op if Member Detail View.csv wasn't present
+    this run (keeps today's rows)."""
     if not counts:
         return
-
-    run_date = datetime.now().strftime("%Y-%m-%d")
-
-    if path.exists():
-        with open(path, encoding="utf-8") as f:
-            existing_dates = {row["Date"] for row in csv.DictReader(f)}
-        if run_date in existing_dates:
-            print(f"{path.name} already has a snapshot for {run_date}, skipping.")
-            return
-
-    write_header = not path.exists()
-    with open(path, "a", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=GRADE_HISTORY_FIELDNAMES)
-        if write_header:
-            writer.writeheader()
-        for grade, count in sorted(counts.items()):
-            writer.writerow({"Date": run_date, "Grade": grade, "Member Count": count})
+    rows = [{"Grade": grade, "Member Count": count} for grade, count in sorted(counts.items())]
+    write_daily_snapshot(path, GRADE_HISTORY_FIELDNAMES, rows)
 
 
 def load_grade_history_trend(path: Path, promotions_by_date: dict[str, list[dict]] | None = None) -> dict:
@@ -934,6 +911,12 @@ def stat_span(text: str, color: str) -> str:
     return f'<span class="stat" style="color:{color}">{dot(color)}{html.escape(str(text))}</span>'
 
 
+def script_json(value: object, **kwargs) -> str:
+    """JSON to inline in a <script>: escaping "</" keeps data like "</script>"
+    from closing the tag early."""
+    return json.dumps(value, **kwargs).replace("</", "<\\/")
+
+
 ASSETS_DIR = BASE_DIR / "dashboard_assets"
 
 
@@ -1054,8 +1037,8 @@ def build_dashboard(
         u_key, s_key = ou.university.lower(), ou.society.lower()
         university_to_societies.setdefault(u_key, set()).add(s_key)
         society_to_universities.setdefault(s_key, set()).add(u_key)
-    university_to_societies_json = json.dumps({k: sorted(v) for k, v in university_to_societies.items()})
-    society_to_universities_json = json.dumps({k: sorted(v) for k, v in society_to_universities.items()})
+    university_to_societies_json = script_json({k: sorted(v) for k, v in university_to_societies.items()})
+    society_to_universities_json = script_json({k: sorted(v) for k, v in society_to_universities.items()})
 
     def ou_row_attrs(ou: OU) -> str:
         """What the dashboard's filters (and "Export current view") read."""
@@ -1220,13 +1203,13 @@ def build_dashboard(
     quick_wins_html, quick_wins_count = render_quick_wins(units)
 
     trend_data = load_history_trend(history_path)
-    trend_json = json.dumps(trend_data)
+    trend_json = script_json(trend_data)
     trend_series = [
         ("Student Branch", "Student Branch", "--series-1"),
         ("Student Branch Chapter", "Chapter", "--series-2"),
         ("Affinity Group", "Affinity Group", "--series-3"),
     ]
-    trend_series_js = json.dumps([[key, f"var({var})", label] for key, label, var in trend_series])
+    trend_series_js = script_json([[key, f"var({var})", label] for key, label, var in trend_series])
 
     n_dates = len(trend_data["dates"])
     trend_note = (
@@ -1251,10 +1234,10 @@ def build_dashboard(
         '''
 
     society_trend_data = load_society_history_trend(society_history_path)
-    society_trend_json = json.dumps(society_trend_data)
+    society_trend_json = script_json(society_trend_data)
     society_all_codes = list(society_trend_data["series"].keys())  # already ordered by latest count, descending
-    society_all_defs_js = json.dumps([[code, society_trend_data["labels"][code]] for code in society_all_codes])
-    society_default_codes_js = json.dumps(society_trend_data["default_codes"])
+    society_all_defs_js = script_json([[code, society_trend_data["labels"][code]] for code in society_all_codes])
+    society_default_codes_js = script_json(society_trend_data["default_codes"])
 
     n_society_dates = len(society_trend_data["dates"])
     n_default = len(society_trend_data["default_codes"])
@@ -1290,9 +1273,9 @@ def build_dashboard(
 
     grade_promotions_by_date = load_promotions_summary(promotions_summary_path)
     grade_trend_data = load_grade_history_trend(grade_history_path, grade_promotions_by_date)
-    grade_trend_json = json.dumps(grade_trend_data)
-    grade_series_js = json.dumps([[grade, f"var({var})", grade] for grade, var in zip(GRADE_TREND_KEYS, GRADE_SERIES_VARS)])
-    grade_promotions_json = json.dumps(grade_promotions_by_date)
+    grade_trend_json = script_json(grade_trend_data)
+    grade_series_js = script_json([[grade, f"var({var})", grade] for grade, var in zip(GRADE_TREND_KEYS, GRADE_SERIES_VARS)])
+    grade_promotions_json = script_json(grade_promotions_by_date)
 
     n_grade_dates = len(grade_trend_data["dates"])
     grade_trend_note = (
@@ -1342,7 +1325,7 @@ def build_dashboard(
 
     if scope_label is None:
         scope_label = sections[0] if len(sections) == 1 else "IEEE Student OUs"
-    export_data = json.dumps(
+    export_data = script_json(
         {
             "scope": scope_label,
             "generated": generated_on or datetime.now().strftime("%Y-%m-%d"),
@@ -1351,7 +1334,7 @@ def build_dashboard(
         },
         ensure_ascii=False,
         separators=(",", ":"),
-    ).replace("</", "<\\/")
+    )
     split_options = "".join(
         f'<label class="opt"><input type="radio" name="export-group" value="{value}"{" checked" if value == "none" else ""}> {label}</label>'
         for value, label, show in (

@@ -4,6 +4,44 @@ Notable changes to this project. Format loosely follows
 [Keep a Changelog](https://keepachangelog.com/), dated by day rather than by
 version since this project doesn't cut releases.
 
+## 2026-11-27
+
+### Changed
+
+- `./run_all.sh --global` now runs only the worldwide steps (Branch Summary,
+  all-Regions volunteers, every event, `global/dashboards/`) and skips every
+  Colombia and Region 9 fetch and dashboard. It can't be combined with
+  `--pdfs`, `--drive-folder` or `--colombia`.
+
+### Fixed
+
+- Re-running the pipeline on the same day now replaces that day's rows in
+  `vitality_history.csv`, `society_membership_history.csv` and
+  `membership_type_history.csv` (root and every `r9/` scope) instead of
+  skipping, so an evening refresh corrects the morning snapshot in the
+  Trends tab. The files are rewritten through a temp file, so a crash can't
+  truncate them.
+- `automations/scope_volunteers.py` exits with an error instead of
+  overwriting `Volunteer List by OU.csv` when the worldwide export has no
+  officer rows for our OUs (e.g. a header-only download), which stops
+  `./run_all.sh` before every OU is reported as missing its officers.
+- An event with an empty "Reported On" cell now counts as unreported (it
+  used to count as reported).
+- The `MIN_EVENT_YEAR` cutoff now uses Bogotá time instead of UTC (Colombia,
+  Region 9, chapter outreach), so an event on the evening of 31 December
+  no longer counts toward the next year. The worldwide dashboards keep UTC.
+- Every data block inlined into the dashboard's `<script>` tags is now
+  escaped against `</script>` (only the export data was before).
+- The IEEE GitLab Pages mirror now also publishes the worldwide dashboards
+  at `/beta_global/`, like GitHub Pages.
+
+## 2026-11-26
+
+### Added
+
+- `./run_all.sh --colombia` runs only the Colombia steps, skipping every
+  Region 9 fetch and dashboard (with `--pdfs`, only the Colombia PDFs).
+
 ## 2026-11-25
 
 ### Added

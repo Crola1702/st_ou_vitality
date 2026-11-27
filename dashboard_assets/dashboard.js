@@ -1,3 +1,5 @@
+  // Shared with export_view.js, which is inlined after this file.
+  const escapeHtml = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const searchInput = document.getElementById('search');
   const universitySelect = document.getElementById('university-filter');
   const societySelect = document.getElementById('society-filter');
@@ -204,7 +206,7 @@
       g[1]++;
       if (row.dataset.req === '3') g[0]++;
     });
-    const esc = s => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+    const esc = escapeHtml;
     const rows = Object.entries(groups)
       .map(([key, [met, total]]) => ({ name: (dim.labels && dim.labels[key]) || key, met, total, pct: Math.round((met / total) * 100) }))
       .sort((a, b) => b.pct - a.pct || b.total - a.total);

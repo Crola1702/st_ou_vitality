@@ -4,8 +4,10 @@ our OUs. Synthetic data only.
 Run from the repo root: python3 -m unittest discover tests
 """
 import sys
+import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "automations"))
@@ -28,6 +30,16 @@ class ScopeRowsTest(unittest.TestCase):
         ]
         kept = list(sv.scope_rows(rows, {"SBC12991P"}))
         self.assertEqual(kept, [rows[0]])
+
+    def test_no_kept_rows_leaves_destination_untouched(self):
+        with tempfile.TemporaryDirectory() as d:
+            src, dst = Path(d) / "src.csv", Path(d) / "dst.csv"
+            src.write_text("OU SPO ID\tOU Position\nSBC99999\tChair\n", encoding="utf-16")
+            dst.write_text("previous officers", encoding="utf-8")
+            with mock.patch.object(sv, "load_ou_universe", return_value={"SBC12991P": None}):
+                with self.assertRaises(SystemExit):
+                    sv.main(src, dst)
+            self.assertEqual(dst.read_text(encoding="utf-8"), "previous officers")
 
 
 if __name__ == "__main__":
