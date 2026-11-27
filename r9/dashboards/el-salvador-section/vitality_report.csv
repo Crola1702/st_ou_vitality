@@ -15,7 +15,7 @@ Escuela Especializada Ingenieria ITCA-FEPADE,STB11409,Student Branch,Escuela Esp
 Facultad Multidisciplinaria de Occidente UES,STB11702,Student Branch,Facultad Multidisciplinaria de Occidente UES,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Universidad Don Bosco,STB60431,Student Branch,Universidad Don Bosco,,156,12,Yes,55,,8,4,Yes,Yes,Yes,,Yes,No,Yes,Yes,Met,3/3,Met
 Universidad Dr Jose Matias Delgado,STB10117,Student Branch,Universidad Dr Jose Matias Delgado,,49,12,Yes,11,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
-Universidad Evangélica de El Salvador,STB29381A,Student Branch,Universidad Evangélica de El Salvador,,46,12,Yes,26,,1,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Universidad Evangélica de El Salvador,STB29381A,Student Branch,Universidad Evangélica de El Salvador,,46,12,Yes,27,,1,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Universidad Politecnica de El Salvador,STB30041,Student Branch,Universidad Politecnica de El Salvador,,1,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Universidad de Sonsonate,STB07081,Student Branch,Universidad de Sonsonate,,1,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Universidad de el Salvador,STB99671,Student Branch,Universidad de el Salvador,,94,12,Yes,10,,20,4,Yes,Yes,Yes,,Yes,Yes,No,Yes,Met,3/3,Met
@@ -36,7 +36,7 @@ Universidad de el Salvador,STB99671,Student Branch,Universidad de el Salvador,,9
 "Universidad Don Bosco,PE31",SBC60431,Student Branch Chapter,Universidad Don Bosco,PE31,19,6,Yes,3,2,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Universidad Don Bosco,RA24",SBC60431B,Student Branch Chapter,Universidad Don Bosco,RA24,20,6,Yes,11,6,4,2,Yes,Yes,,Yes,No,No,No,No,Met,3/3,Met
 "Universidad Don Bosco,TEM14",SBC60431F,Student Branch Chapter,Universidad Don Bosco,TEM14,24,6,Yes,9,4,1,2,Yes,Yes,,Yes,Yes,No,No,Yes,Met,3/3,Met
-"Universidad Evangélica de El Salvador,C16",SBC29381A,Student Branch Chapter,Universidad Evangélica de El Salvador,C16,18,6,Yes,2,1,1,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Universidad Evangélica de El Salvador,C16",SBC29381A,Student Branch Chapter,Universidad Evangélica de El Salvador,C16,18,6,Yes,3,2,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Universidad Evangélica de El Salvador,RA24",SBC29381,Student Branch Chapter,Universidad Evangélica de El Salvador,RA24,12,6,Yes,5,3,0,2,Yes,Yes,,Yes,No,No,No,No,Met,3/3,Met
 "Universidad Politecnica de El Salvador,PE31",SBC30041,Student Branch Chapter,Universidad Politecnica de El Salvador,PE31,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Universidad de Sonsonate, C16",SBC07081A,Student Branch Chapter,Universidad de Sonsonate,C16,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met

@@ -8,7 +8,7 @@ Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Memb
 "Ghulam Ishaq Khan Inst of Eng Science,WIE",SBA60221,Affinity Group,Ghulam Ishaq Khan Inst of Eng Science,WIE,0,6,No,0,,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
 "HITEC University, WIE",SBA18251,Affinity Group,HITEC University,WIE,0,6,No,0,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Institute of Space Technology, WIE",SBA63901,Affinity Group,Institute of Space Technology,WIE,0,6,No,0,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
-"Military College of Signals, WIE",SBA06181,Affinity Group,Military College of Signals,WIE,0,6,No,0,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Military College of Signals, WIE",SBA06181,Affinity Group,Military College of Signals,WIE,0,6,No,3,,0,2,Yes,No,,No,No,No,No,No,Not Met,1/3,Not Met
 "Mirpur University of Science and Technology,WIE",SBA60059617,Affinity Group,Mirpur University of Science and Technology,WIE,0,6,No,0,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "NUST College of Electrical & Mechanical Eng, WIE",SBA60121,Affinity Group,NUST College of Electrical & Mechanical Eng,WIE,6,6,Yes,0,,0,2,No,Yes,,No,No,No,No,No,Partial,1/3,Not Met
 NUST School of Electrical Eng and CS WIE,SBA64681,Affinity Group,NUST School of Electrical Eng and Computer Science,WIE,0,6,No,3,,0,2,Yes,No,,Yes,No,No,No,No,Partial,1/3,Not Met
@@ -21,21 +21,21 @@ School of Computing FAST NUCES Islamabad SB SIGHT,SBA60236831S,Affinity Group,Sc
 "Taxila Univ Of Engineering And Tech, WIE",SBA60871,Affinity Group,Taxila Univ of Engineering and Tech,WIE,15,6,Yes,10,,1,2,Yes,Yes,,No,Yes,Yes,Yes,Yes,Partial,2/3,Not Met
 "University of Engineering and Tech-Peshawar,WIE",SBA35611,Affinity Group,University of Engineering and Technology-Peshawar,WIE,0,6,No,0,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 Abasyn University-Islamabad Campus,STB01008,Student Branch,Abasyn University-Islamabad Campus,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
-Abdul Wali Khan University,STB60105303,Student Branch,Abdul Wali Khan University,,47,12,Yes,2,,1,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+Abdul Wali Khan University,STB60105303,Student Branch,Abdul Wali Khan University,,47,12,Yes,3,,1,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 Air University,STB08191,Student Branch,Air University,,23,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
 Bahria University - Islamabad H-11 Campus,STB00091,Student Branch,Bahria University - Islamabad H-11 Campus,,41,12,Yes,2,,0,4,No,Yes,Yes,,Yes,Yes,No,No,Met,2/3,Not Met
-Bahria University Islamabad E-8 Campus,STB60240875,Student Branch,Bahria University Islamabad E-8 Campus,,2,12,No,0,,1,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,1/3,Not Met
+Bahria University Islamabad E-8 Campus,STB60240875,Student Branch,Bahria University Islamabad E-8 Campus,,2,12,No,4,,1,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 COMSATS Inst of Info Technology - Abbottabad,STB09991,Student Branch,COMSATS Inst of Info Technology - Abbottabad,,2,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
-COMSATS University Islamabad,STB17241,Student Branch,COMSATS University Islamabad,,15,12,Yes,0,,14,4,No,No,No,,No,No,Yes,Yes,Not Met,1/3,Not Met
+COMSATS University Islamabad,STB17241,Student Branch,COMSATS University Islamabad,,16,12,Yes,0,,14,4,No,No,No,,No,No,Yes,Yes,Not Met,1/3,Not Met
 "COMSATS University Islamabad, Wah Campus",STB18201,Student Branch,"COMSATS University Islamabad, Wah Campus",,13,12,Yes,6,,0,4,Yes,Yes,Yes,,Yes,No,Yes,Yes,Met,3/3,Met
 Capital University of Science & Technology,STB04991,Student Branch,Capital University of Science & Technology,,17,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
 Fatima Jinnah Women University,STB66141,Student Branch,Fatima Jinnah Women University,,12,12,Yes,2,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 Ghulam Ishaq Khan Inst of Eng Science,STB60221,Student Branch,Ghulam Ishaq Khan Inst of Eng Science,,5,12,No,0,,0,4,No,No,Yes,,No,No,No,No,Partial,0/3,Not Met
-HITEC University,STB18251,Student Branch,HITEC University,,1,12,No,0,,0,4,No,No,Yes,,No,No,No,No,Partial,0/3,Not Met
-Hamdard University Islamabad,STB60212106,Student Branch,Hamdard University Islamabad,,11,12,No,2,,2,4,No,No,Yes,,No,No,No,No,Partial,0/3,Not Met
+HITEC University,STB18251,Student Branch,HITEC University,,0,12,No,0,,0,4,No,No,Yes,,No,No,No,No,Partial,0/3,Not Met
+Hamdard University Islamabad,STB60212106,Student Branch,Hamdard University Islamabad,,11,12,No,4,,2,4,Yes,No,Yes,,No,No,No,No,Partial,1/3,Not Met
 Institute of Space Technology,STB63901,Student Branch,Institute of Space Technology,,3,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Kohsar University Murree,STB60242443,Student Branch,Kohsar University Murree,,14,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
-Military College of Signals,STB06181,Student Branch,Military College of Signals,,4,12,No,1,,0,4,No,Yes,Yes,,Yes,Yes,Yes,No,Met,1/3,Not Met
+Military College of Signals,STB06181,Student Branch,Military College of Signals,,4,12,No,4,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,No,Met,2/3,Not Met
 Mirpur University of Science and Technology,STB60059617,Student Branch,Mirpur University of Science and Technology,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 NUST College of Electrical & Mechanical Eng,STB60121,Student Branch,NUST College of Electrical & Mechanical Eng,,26,12,Yes,1,,0,4,No,Yes,Yes,,Yes,Yes,Yes,No,Met,2/3,Not Met
 NUST School of Electrical Eng and Computer Science,STB64681,Student Branch,NUST School of Electrical Eng and Computer Science,,4,12,No,6,,0,4,Yes,No,Yes,,No,No,No,No,Partial,1/3,Not Met
@@ -51,13 +51,13 @@ Pakistan Inst of Engineering & Applied Sciences,STB13621,Student Branch,Pakistan
 Peshawar Univ Of,STB20228,Student Branch,Peshawar Univ Of,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Riphah International University,STB65271,Student Branch,Riphah International University,,20,12,Yes,0,,0,4,No,Yes,No,,No,No,No,No,Partial,1/3,Not Met
 Riphah University FC,STB99389,Student Branch,Riphah University FC,,6,12,No,1,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,1/3,Not Met
-School of Computing - FAST NUCES Islamabad,STB60236831,Student Branch,School of Computing - FAST NUCES Islamabad,,10,12,No,2,,0,4,No,Yes,Yes,,Yes,Yes,Yes,No,Met,1/3,Not Met
+School of Computing - FAST NUCES Islamabad,STB60236831,Student Branch,School of Computing - FAST NUCES Islamabad,,11,12,No,2,,0,4,No,Yes,Yes,,Yes,Yes,Yes,No,Met,1/3,Not Met
 Shaheed Zulifqar Ali Bhuto Inst of S&T - Islamabad,STB99096,Student Branch,Shaheed Zulifqar Ali Bhuto Inst of S&T - Islamabad,,1,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Sir Syed CASE Institute of Technology,STB11611,Student Branch,Sir Syed CASE Institute of Technology,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Taxila Univ of Engineering and Tech,STB60871,Student Branch,Taxila Univ of Engineering and Tech,,56,12,Yes,39,,1,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 University of Engineering and Technology Mardan,STB60234267,Student Branch,University of Engineering and Technology Mardan,,24,12,Yes,2,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
-University of Engineering and Technology-Peshawar,STB35611,Student Branch,University of Engineering and Technology-Peshawar,,7,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
-University of Technology-Nowshera,STB60207865,Student Branch,University of Technology-Nowshera,,13,12,Yes,3,,1,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+University of Engineering and Technology-Peshawar,STB35611,Student Branch,University of Engineering and Technology-Peshawar,,8,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+University of Technology-Nowshera,STB60207865,Student Branch,University of Technology-Nowshera,,13,12,Yes,5,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 WAH Engineering College,STB15146,Student Branch,WAH Engineering College,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 "Bahria University - Islamabad,C16",SBC00091A,Student Branch Chapter,Bahria University - Islamabad H-11 Campus,C16,1,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "COMSATS Inst of Info Technology - Abbottabad,C16",SBC09991A,Student Branch Chapter,COMSATS Inst of Info Technology - Abbottabad,C16,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
@@ -76,7 +76,7 @@ WAH Engineering College,STB15146,Student Branch,WAH Engineering College,,0,12,No
 "Ghulam Ishaq Khan Inst of Eng,PE31",SBC60221,Student Branch Chapter,Ghulam Ishaq Khan Inst of Eng Science,PE31,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "HITEC University,C16",SBC18251A,Student Branch Chapter,HITEC University,C16,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "HITEC University,EMB18",SBC18251,Student Branch Chapter,HITEC University,EMB18,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
-"Hamdard University Islamabad,CIS11",SBC60212106,Student Branch Chapter,Hamdard University Islamabad,CIS11,0,6,No,2,2,0,2,Yes,No,,Yes,No,No,No,No,Partial,1/3,Not Met
+"Hamdard University Islamabad,CIS11",SBC60212106,Student Branch Chapter,Hamdard University Islamabad,CIS11,0,6,No,3,3,0,2,Yes,No,,Yes,No,No,No,No,Partial,1/3,Not Met
 "Hamdard University Islamabad,RA24",SBC60212106A,Student Branch Chapter,Hamdard University Islamabad,RA24,0,6,No,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,1/3,Not Met
 "Mirpur University of Science and Technology,C16",SBC60059617A,Student Branch Chapter,Mirpur University of Science and Technology,C16,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Mirpur University of Science and Technology,PE31",SBC60059617,Student Branch Chapter,Mirpur University of Science and Technology,PE31,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met

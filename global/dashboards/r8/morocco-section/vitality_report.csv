@@ -3,15 +3,15 @@ Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Memb
 Abdelmalek Essaadi University,STB64361,Student Branch,Abdelmalek Essaadi University,,23,12,Yes,0,,1,4,No,Yes,Yes,,Yes,Yes,Yes,No,Met,2/3,Not Met
 Al Akhawayn University,STB41397368,Student Branch,Al Akhawayn University,,2,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Cadi Ayyad University,STB65931,Student Branch,Cadi Ayyad University,,6,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
-Ecole Mohammadia d'Ingenieurs,STB99366,Student Branch,Ecole Mohammadia d'Ingenieurs,,11,12,No,0,,0,4,No,No,Yes,,No,No,No,No,Partial,0/3,Not Met
-Ecole Nationale des Sciences Appliquees-Fes,STB64693,Student Branch,Ecole Nationale des Sciences Appliquees-Fes,,15,12,Yes,5,,5,4,Yes,Yes,No,,Yes,Yes,Yes,No,Partial,2/3,Not Met
-Ibn Tofail University,STB10025,Student Branch,Ibn Tofail University,,4,12,No,0,,0,4,No,No,Yes,,No,No,No,No,Partial,0/3,Not Met
+Ecole Mohammadia d'Ingenieurs,STB99366,Student Branch,Ecole Mohammadia d'Ingenieurs,,12,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+Ecole Nationale des Sciences Appliquees-Fes,STB64693,Student Branch,Ecole Nationale des Sciences Appliquees-Fes,,15,12,Yes,6,,6,4,Yes,Yes,No,,Yes,Yes,Yes,No,Partial,2/3,Not Met
+Ibn Tofail University,STB10025,Student Branch,Ibn Tofail University,,5,12,No,0,,0,4,No,No,Yes,,No,No,No,No,Partial,0/3,Not Met
 Inst National des Postes et Telecommunications,STB17651,Student Branch,Institut National des Postes et Telecommunications,,8,12,No,0,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,1/3,Not Met
 International Mohammed VI of Civil Aviation AIAC,STB99409,Student Branch,International Mohammed VI of Civil Aviation,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Rabat Mohammed V University,STB94501,Student Branch,Rabat Mohammed V University,,15,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
 Sidi Mohamed Ben Abdellah University,STB65961,Student Branch,Sidi Mohamed Ben Abdellah University,,3,12,No,0,,0,4,No,No,Yes,,No,No,No,No,Partial,0/3,Not Met
 University Mohammed V Souissi - ENSIAS,STB14671,Student Branch,University Mohammed V Souissi - ENSIAS,,4,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
-University of Hassan II Casablanca,STB64305,Student Branch,Universite Hassan II Casablanca,,37,12,Yes,9,,0,4,Yes,Yes,Yes,,No,Yes,No,No,Met,3/3,Met
+University of Hassan II Casablanca,STB64305,Student Branch,Universite Hassan II Casablanca,,38,12,Yes,9,,0,4,Yes,Yes,Yes,,No,Yes,No,No,Met,3/3,Met
 "Abdelmalek Essaadi University,C16",SBC643611,Student Branch Chapter,Abdelmalek Essaadi University,C16,0,6,No,0,0,1,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Ecole Mohammadia d'Ingenieurs,AES10",SBC99366,Student Branch Chapter,Ecole Mohammadia d'Ingenieurs,AES10,0,6,No,0,0,0,2,No,No,,No,No,No,No,Yes,Not Met,0/3,Not Met
 "Ecole Mohammadia d'Ingenieurs,PE31",SBC99366A,Student Branch Chapter,Ecole Mohammadia d'Ingenieurs,PE31,2,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met

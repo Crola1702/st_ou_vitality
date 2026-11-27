@@ -7,10 +7,10 @@ Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Memb
 "GMRIT Deemed to be University,WIE",SBA10281,Affinity Group,GMRIT Deemed to be University,WIE,22,6,Yes,0,,1,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
 "GVP College of Engineering For Women,WIE",SBA11517,Affinity Group,GVP College of Engineering For Women,WIE,2,6,No,0,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Gayatri Vidya Parishad College of Engrg, WIE",SBA63321,Affinity Group,Gayatri Vidya Parishad College Of Engrg,WIE,1,6,No,2,,0,2,Yes,No,,No,No,No,No,No,Not Met,1/3,Not Met
-"Lendi Institute Of Engineering & Technology,WIE",SBA10154,Affinity Group,Lendi Institute Of Engineering & Technology,WIE,194,6,Yes,0,,0,2,No,No,,Yes,No,No,No,No,Partial,1/3,Not Met
+"Lendi Institute Of Engineering & Technology,WIE",SBA10154,Affinity Group,Lendi Institute Of Engineering & Technology,WIE,194,6,Yes,0,,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
 "Raghu Institute of Technology,WIE",SBA03240,Affinity Group,Raghu Institute of Technology,WIE,0,6,No,0,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Sasi Institute of Technology & Engineering,WIE",SBA64284,Affinity Group,Sasi Institute of Technology & Engineering,WIE,42,6,Yes,0,,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
-"Sir C.R.Reddy College Of Eng,WIE",SBA11558,Affinity Group,Sir C.R.Reddy College Of Eng,WIE,114,6,Yes,5,,0,2,Yes,Yes,,Yes,No,Yes,No,No,Met,3/3,Met
+"Sir C.R.Reddy College Of Eng,WIE",SBA11558,Affinity Group,Sir C.R.Reddy College Of Eng,WIE,114,6,Yes,5,,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Swarnandhra College Of Engineering & Tech,WIE",SBA64622,Affinity Group,Swarnandhra College Of Engineering & Technology,WIE,24,6,Yes,2,,2,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Vignan's Institute of Information Technology,WIE",SBA01034,Affinity Group,Vignan's Institute of Information Technology,WIE,84,6,Yes,1,,0,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
 Aditya College of Engineering and Technology,STB10104,Student Branch,Aditya College of Engineering and Technology,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
@@ -22,10 +22,10 @@ BVC College of Engineering,STB60214097,Student Branch,BVC College of Engineering
 BVC Engineering College,STB13691,Student Branch,Bvc Engineering College,,20,12,Yes,6,,0,4,Yes,Yes,Yes,,Yes,Yes,No,No,Met,3/3,Met
 Bonam Venkata Chalamayya Inst of Tech & Science,STB13201,Student Branch,Bonam Venkata Chalamayya Inst of Tech & Science,,49,12,Yes,2,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 "Centurion Univ of Technology & Management, AP",STB60135444,Student Branch,"Centurion Univ of Technology & Management, AP",,62,12,Yes,5,,3,4,Yes,Yes,Yes,,Yes,Yes,Yes,No,Met,3/3,Met
-Dadi Institute of Engineering & Technology,STB66091,Student Branch,Dadi Institute of Engineering & Technology,,188,12,Yes,15,,0,4,Yes,Yes,Yes,,No,No,No,No,Met,3/3,Met
+Dadi Institute of Engineering & Technology,STB66091,Student Branch,Dadi Institute of Engineering & Technology,,188,12,Yes,15,,0,4,Yes,No,Yes,,No,No,No,No,Partial,2/3,Not Met
 Dhanekula Institute Of Engineering & Technology,STB39663,Student Branch,Dhanekula Institute Of Engineering & Technology,,27,12,Yes,4,,6,4,Yes,Yes,Yes,,No,No,No,No,Met,3/3,Met
 Dr Lankapalli Bullayya College of Eng,STB60213105,Student Branch,Dr Lankapalli Bullayya College of Eng,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
-GITAM University,STB33071,Student Branch,GITAM University,,52,12,Yes,0,,0,4,No,Yes,Yes,,No,No,Yes,Yes,Met,2/3,Not Met
+GITAM University,STB33071,Student Branch,GITAM University,,54,12,Yes,0,,0,4,No,Yes,Yes,,No,No,Yes,Yes,Met,2/3,Not Met
 GMRIT Deemed to be University,STB10281,Student Branch,GMRIT Deemed to be University,,79,12,Yes,2,,11,4,No,Yes,Yes,,No,No,No,Yes,Met,2/3,Not Met
 GVP College of Engineering For Women,STB11517,Student Branch,GVP College of Engineering For Women,,2,12,No,0,,0,4,No,No,Yes,,No,No,No,No,Partial,0/3,Not Met
 Gayatri Vidya Parishad College of Engrg,STB63321,Student Branch,Gayatri Vidya Parishad College Of Engrg,,34,12,Yes,3,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
@@ -38,16 +38,16 @@ National Institute of Technology-Andhra Pradesh,STB11564,Student Branch,National
 Pragati Engineering College,STB09541,Student Branch,Pragati Engineering College-East Godavari,,1,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Raghu Engineering College,STB64881,Student Branch,Raghu Engineering College - Visakhapatnam,,179,12,Yes,5,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Raghu Institute of Technology,STB03240,Student Branch,Raghu Institute of Technology,,1,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
-Ramachandra College of Engineering-Eluru,STB60209933,Student Branch,Ramachandra College of Engineering-Eluru,,97,12,Yes,0,,1,4,No,Yes,Yes,,No,No,No,No,Met,2/3,Not Met
+Ramachandra College of Engineering-Eluru,STB60209933,Student Branch,Ramachandra College of Engineering-Eluru,,103,12,Yes,0,,1,4,No,Yes,Yes,,No,No,No,No,Met,2/3,Not Met
 Sagi Ramakrishnam Raju Engineering College,STB38301,Student Branch,Sagi Ramakrishnam Raju Engrg College,,12,12,Yes,0,,0,4,No,Yes,Yes,,No,No,Yes,No,Met,2/3,Not Met
 Sasi Institute of Technology & Engineering,STB64284,Student Branch,Sasi Institute of Technology & Engineering,,253,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
 Shri Vishnu Engineering College For Women,STB08731,Student Branch,Shri Vishnu Engineering College For Women,,53,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
-Sir C.R.Reddy College Of Eng,STB11558,Student Branch,Sir C.R.Reddy College Of Eng,,125,12,Yes,9,,0,4,Yes,Yes,Yes,,No,Yes,No,No,Met,3/3,Met
+Sir C.R.Reddy College Of Eng,STB11558,Student Branch,Sir C.R.Reddy College Of Eng,,125,12,Yes,9,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Srinivasa Institute of Engineering & Technology,STB60229365,Student Branch,Srinivasa Institute of Engineering & Technology,,52,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
 Swarnandhra College Of Engineering & Technology,STB64622,Student Branch,Swarnandhra College Of Engineering & Technology,,38,12,Yes,2,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 Vignan's Institute Of Information Technology,STB01034,Student Branch,Vignan's Institute of Information Technology,,122,12,Yes,2,,0,4,No,Yes,Yes,,No,Yes,No,No,Met,2/3,Not Met
 Vignans Institute of Engineering for Women,STB66412,Student Branch,Vignans Institute of Engineering for Women,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
-Vishnu Institute Of Technology,STB11436,Student Branch,Vishnu Institute of Technology,,123,12,Yes,6,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Vishnu Institute Of Technology,STB11436,Student Branch,Vishnu Institute of Technology,,129,12,Yes,7,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Aditya University,CSC41/SEN39",SBC60112884,Student Branch Chapter,Aditya University,CSC41/SEN39,17,6,Yes,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,1/3,Not Met
 "Aditya University,SP01",SBC60112884A,Student Branch Chapter,Aditya University,SP01,22,6,Yes,5,2,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Anil Neerukonda Inst Of Tech & Sciences,AES10",SBC03871J,Student Branch Chapter,Anil Neerukonda Inst Of Tech & Sciences,AES10,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
@@ -80,20 +80,20 @@ Vishnu Institute Of Technology,STB11436,Student Branch,Vishnu Institute of Techn
 "Dhanekula Institute Of Engineering & Tech,C16",SBC39663A,Student Branch Chapter,Dhanekula Institute Of Engineering & Technology,C16,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Dhanekula Institute Of Engineering & Tech,PE31",SBC39663,Student Branch Chapter,Dhanekula Institute Of Engineering & Technology,PE31,0,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
 "GITAM University,AP03",SBC33071E,Student Branch Chapter,GITAM University,AP03,8,6,Yes,3,3,0,2,Yes,No,,Yes,No,No,No,No,Partial,2/3,Not Met
-"GITAM University,C16",SBC33071A,Student Branch Chapter,GITAM University,C16,32,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"GITAM University,C16",SBC33071A,Student Branch Chapter,GITAM University,C16,33,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
 "GITAM University,CIS11",SBC33071B,Student Branch Chapter,GITAM University,CIS11,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "GITAM University,CS23",SBC33071C,Student Branch Chapter,GITAM University,CS23,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "GITAM University,PE31",SBC330711,Student Branch Chapter,GITAM University,PE31,2,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
 "GITAM University,RA24",SBC33071D,Student Branch Chapter,GITAM University,RA24,2,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "GITAM University,SP01",SBC33071F,Student Branch Chapter,GITAM University,SP01,2,6,No,0,0,3,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
-"GMRIT Deemed to be University,AP03",SBC10281,Student Branch Chapter,GMRIT Deemed to be University,AP03,37,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
-"GMRIT Deemed to be University,BIO46",SBC10281G,Student Branch Chapter,GMRIT Deemed to be University,BIO46,42,6,Yes,0,0,1,2,No,Yes,,No,No,No,No,No,Partial,1/3,Not Met
-"GMRIT Deemed to be University,CAS04",SBC10281C,Student Branch Chapter,GMRIT Deemed to be University,CAS04,31,6,Yes,1,1,2,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"GMRIT Deemed to be University,AP03",SBC10281,Student Branch Chapter,GMRIT Deemed to be University,AP03,37,6,Yes,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,1/3,Not Met
+"GMRIT Deemed to be University,BIO46",SBC10281G,Student Branch Chapter,GMRIT Deemed to be University,BIO46,42,6,Yes,0,0,1,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+"GMRIT Deemed to be University,CAS04",SBC10281C,Student Branch Chapter,GMRIT Deemed to be University,CAS04,31,6,Yes,1,1,2,2,No,No,,Yes,No,No,No,No,Partial,1/3,Not Met
 "GMRIT Deemed to be University,COM19",SBC10281B,Student Branch Chapter,GMRIT Deemed to be University,COM19,35,6,Yes,0,0,3,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
 "GMRIT Deemed to be University,E25",SBC10281A,Student Branch Chapter,GMRIT Deemed to be University,E25,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "GMRIT Deemed to be University,SEN39",SBC10281D,Student Branch Chapter,GMRIT Deemed to be University,SEN39,45,6,Yes,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,1/3,Not Met
 "GMRIT Deemed to be University,SYS45",SBC10281E,Student Branch Chapter,GMRIT Deemed to be University,SYS45,43,6,Yes,0,0,1,2,No,Yes,,Yes,No,No,No,Yes,Met,2/3,Not Met
-"GMRIT Deemed to be University,TEC802",SBC10281F,Student Branch Chapter,GMRIT Deemed to be University,TEC802,35,6,Yes,0,0,1,2,No,Yes,,No,Yes,Yes,Yes,Yes,Partial,1/3,Not Met
+"GMRIT Deemed to be University,TEC802",SBC10281F,Student Branch Chapter,GMRIT Deemed to be University,TEC802,35,6,Yes,0,0,1,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 "Gayatri Vidya Parishad College Of Engrg,C16",SBC63321A,Student Branch Chapter,Gayatri Vidya Parishad College Of Engrg,C16,0,6,No,1,1,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
 "Gayatri Vidya Parishad College Of Engrg,PE31",SBC63321,Student Branch Chapter,Gayatri Vidya Parishad College Of Engrg,PE31,0,6,No,1,1,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Lendi Institute Of Engineering & Technology,C16",SBC10154B,Student Branch Chapter,Lendi Institute Of Engineering & Technology,C16,222,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
@@ -114,10 +114,10 @@ Vishnu Institute Of Technology,STB11436,Student Branch,Vishnu Institute of Techn
 "Raghu Institute of Technology,COM19/SP01",SBC03240A,Student Branch Chapter,Raghu Institute of Technology,COM19/SP01,1,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Raghu Institute of Technology,PE31",SBC03240E,Student Branch Chapter,Raghu Institute of Technology,PE31,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Raghu Institute of Technology,SP01",SBC03240C,Student Branch Chapter,Raghu Institute of Technology,SP01,0,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
-"Ramachandra College of Engineering-Eluru,AP03",SBC60209933,Student Branch Chapter,Ramachandra College of Engineering-Eluru,AP03,83,6,Yes,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+"Ramachandra College of Engineering-Eluru,AP03",SBC60209933,Student Branch Chapter,Ramachandra College of Engineering-Eluru,AP03,86,6,Yes,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
 "Ramachandra College of Engineering-Eluru,CIS11",SBC60209933B,Student Branch Chapter,Ramachandra College of Engineering-Eluru,CIS11,24,6,Yes,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
 "Ramachandra College of Engineering-Eluru,COM19",SBC60209933A,Student Branch Chapter,Ramachandra College of Engineering-Eluru,COM19,83,6,Yes,0,0,1,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
-"Sasi Institute of Technology & Engineering,AP03",SBC64284D,Student Branch Chapter,Sasi Institute of Technology & Engineering,AP03,206,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Sasi Institute of Technology & Engineering,AP03",SBC64284D,Student Branch Chapter,Sasi Institute of Technology & Engineering,AP03,206,6,Yes,2,2,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Sasi Institute of Technology & Engineering,C16",SBC64284,Student Branch Chapter,Sasi Institute of Technology & Engineering,C16,21,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,Yes,No,No,Met,2/3,Not Met
 "Sasi Institute of Technology & Engineering,IA34",SBC64284C,Student Branch Chapter,Sasi Institute of Technology & Engineering,IA34,15,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
 "Sasi Institute of Technology & Engineering,PC26",SBC64284E,Student Branch Chapter,Sasi Institute of Technology & Engineering,PC26,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
@@ -130,7 +130,7 @@ Vishnu Institute Of Technology,STB11436,Student Branch,Vishnu Institute of Techn
 "Sir C.R.Reddy College Of Eng,C16",SBC11558C,Student Branch Chapter,Sir C.R.Reddy College Of Eng,C16,91,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,No,No,Yes,Met,2/3,Not Met
 "Sir C.R.Reddy College Of Eng,PE31",SBC11558B,Student Branch Chapter,Sir C.R.Reddy College Of Eng,PE31,5,6,No,1,0,1,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,1/3,Not Met
 "Sir C.R.Reddy College Of Eng,PEL35/IA34",SBC11558D,Student Branch Chapter,Sir C.R.Reddy College Of Eng,PEL35/IA34,8,6,Yes,1,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
-"Sir C.R.Reddy College Of Eng,SEN39",SBC11558A,Student Branch Chapter,Sir C.R.Reddy College Of Eng,SEN39,70,6,Yes,1,1,0,2,No,Yes,,Yes,No,Yes,No,No,Met,2/3,Not Met
+"Sir C.R.Reddy College Of Eng,SEN39",SBC11558A,Student Branch Chapter,Sir C.R.Reddy College Of Eng,SEN39,70,6,Yes,1,1,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 "Sir C.R.Reddy College Of Eng,SP01",SBC11558,Student Branch Chapter,Sir C.R.Reddy College Of Eng,SP01,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Srinivasa Institute of Engineering & Tech,AP03",SBC60229365A,Student Branch Chapter,Srinivasa Institute of Engineering & Technology,AP03,47,6,Yes,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
 "Srinivasa Institute of Engineering & Tech,SP01",SBC60229365,Student Branch Chapter,Srinivasa Institute of Engineering & Technology,SP01,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
@@ -139,7 +139,7 @@ Vishnu Institute Of Technology,STB11436,Student Branch,Vishnu Institute of Techn
 "Swarnandhra College Of Eng & Tech,CIS11",SBC64622E,Student Branch Chapter,Swarnandhra College Of Engineering & Technology,CIS11,1,6,No,0,0,0,2,No,Yes,,No,No,No,No,No,Partial,0/3,Not Met
 "Swarnandhra College Of Eng & Tech,COM19",SBC64622C,Student Branch Chapter,Swarnandhra College Of Engineering & Technology,COM19,10,6,Yes,1,1,0,2,No,Yes,,Yes,Yes,Yes,No,Yes,Met,2/3,Not Met
 "Swarnandhra College Of Eng & Tech,IT12",SBC64622D,Student Branch Chapter,Swarnandhra College Of Engineering & Technology,IT12,5,6,No,0,0,0,2,No,Yes,,No,Yes,No,No,No,Partial,0/3,Not Met
-"Vignan's Institute of Information Tech,PE31/IE13",SBC01034E,Student Branch Chapter,Vignan's Institute of Information Technology,PE31/IE13,8,6,Yes,4,4,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Vignan's Institute of Information Tech,PE31/IE13",SBC01034E,Student Branch Chapter,Vignan's Institute of Information Technology,PE31/IE13,8,6,Yes,5,5,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Vignan's Institute of Information Technology,AP03",SBC01034,Student Branch Chapter,Vignan's Institute of Information Technology,AP03,85,6,Yes,2,2,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Vignan's Institute of Information Technology,C16",SBC01034B,Student Branch Chapter,Vignan's Institute of Information Technology,C16,50,6,Yes,1,1,1,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 "Vignan's Institute of Information Technology,CAS04",SBC01034A,Student Branch Chapter,Vignan's Institute of Information Technology,CAS04,30,6,Yes,2,0,1,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
@@ -149,5 +149,6 @@ Vishnu Institute Of Technology,STB11436,Student Branch,Vishnu Institute of Techn
 "Vignan's Institute of Information Technology,RA24",SBC01034H,Student Branch Chapter,Vignan's Institute of Information Technology,RA24,9,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 "Vignan's Institute of Information Technology,SP01",SBC01034C,Student Branch Chapter,Vignan's Institute of Information Technology,SP01,28,6,Yes,1,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 "Vignans Institute of Engineering for Women,SP01",SBC66412,Student Branch Chapter,Vignans Institute of Engineering for Women,SP01,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Vishnu Institute of Technology,COM19",SBC11436B,Student Branch Chapter,Vishnu Institute of Technology,COM19,58,6,Yes,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
 "Vishnu Institute of Technology,ED15",SBC11436A,Student Branch Chapter,Vishnu Institute of Technology,ED15,72,6,Yes,2,2,0,2,Yes,Yes,,Yes,Yes,No,Yes,Yes,Met,3/3,Met
 "Vishnu Institute of Technology,PE31",SBC11436,Student Branch Chapter,Vishnu Institute of Technology,PE31,29,6,Yes,5,4,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met

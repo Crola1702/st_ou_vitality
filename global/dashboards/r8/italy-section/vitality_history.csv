@@ -44,3 +44,48 @@ Date,SPO ID,Unit Type,University,Society,Member Count,Requirements Met,Members M
 2026-11-13,SBC00151A,Student Branch Chapter,University of Bologna,IE13,12,2,Yes,No,Met,Not Met
 2026-11-13,SBC13821A,Student Branch Chapter,University of Cagliari,SMC28,2,0,No,No,Partial,Not Met
 2026-11-13,SBC50701,Student Branch Chapter,University of Florence,OE22,6,3,Yes,Yes,Met,Met
+2026-11-27,SBA05231,Affinity Group,Politecnico Di Milano,WIE,9,2,Yes,No,Met,Not Met
+2026-11-27,SBA06971,Affinity Group,Politecnico di Torino,WIE,11,3,Yes,Yes,Met,Met
+2026-11-27,SBA10871,Affinity Group,Universita degli Studi di Pavia,WIE,2,1,No,No,Met,Not Met
+2026-11-27,STB05491,Student Branch,University of Genoa,,83,1,Yes,No,Partial,Not Met
+2026-11-27,STB34371,Student Branch,Universita degli Studi di Parma,,15,1,Yes,No,Not Met,Not Met
+2026-11-27,STB05231,Student Branch,Politecnico Di Milano,,260,2,Yes,No,Met,Not Met
+2026-11-27,STB06971,Student Branch,Politecnico di Torino,,242,3,Yes,Yes,Met,Met
+2026-11-27,STB08061,Student Branch,Polytechnic University of Bari,,41,3,Yes,Yes,Met,Met
+2026-11-27,STB60027500,Student Branch,Polytechnic University of the Marches,,33,3,Yes,Yes,Met,Met
+2026-11-27,STB04031,Student Branch,Sapienza University of Rome,,94,1,Yes,No,Partial,Not Met
+2026-11-27,STB11241,Student Branch,Sant'Anna School of Advanced Studies,,29,1,Yes,No,Not Met,Not Met
+2026-11-27,STB39661,Student Branch,Tor Vergata University of Rome,,23,1,Yes,No,Partial,Not Met
+2026-11-27,STB11422,Student Branch,Universita Campus Bio Medico di Roma,,34,3,Yes,Yes,Met,Met
+2026-11-27,STB63881,Student Branch,Universita Degli Studi Di Napoli Parthenope,,23,3,Yes,Yes,Met,Met
+2026-11-27,STB10871,Student Branch,Universita degli Studi di Pavia,,74,2,Yes,No,Met,Not Met
+2026-11-27,STB28741,Student Branch,Universita di Catania,,37,3,Yes,Yes,Met,Met
+2026-11-27,STB15911,Student Branch,Universita di Pisa,,77,3,Yes,Yes,Met,Met
+2026-11-27,STB16734,Student Branch,University of Basilicata,,14,3,Yes,Yes,Met,Met
+2026-11-27,STB00151,Student Branch,University of Bologna,,93,3,Yes,Yes,Met,Met
+2026-11-27,STB01019,Student Branch,University of Brescia,,39,2,Yes,No,Met,Not Met
+2026-11-27,STB13821,Student Branch,University of Cagliari,,22,1,Yes,No,Partial,Not Met
+2026-11-27,STB81221,Student Branch,University of Calabria,,20,2,Yes,No,Met,Not Met
+2026-11-27,STB50701,Student Branch,University of Florence,,27,2,Yes,No,Met,Not Met
+2026-11-27,STB41562416,Student Branch,University of Modena and Reggio Emilia,,50,2,Yes,No,Met,Not Met
+2026-11-27,STB64309,Student Branch,University of Naples Federico II,,88,3,Yes,Yes,Met,Met
+2026-11-27,STB03251,Student Branch,University of Padova,,117,2,Yes,Yes,Not Met,Not Met
+2026-11-27,STB10101,Student Branch,University of Salento,,11,0,No,No,Partial,Not Met
+2026-11-27,STB63041,Student Branch,University of Salerno,,37,1,Yes,No,Partial,Not Met
+2026-11-27,STB04131,Student Branch,University of Trieste,,9,0,No,No,Not Met,Not Met
+2026-11-27,STB61591,Student Branch,University of Verona,,19,3,Yes,Yes,Met,Met
+2026-11-27,SBC05231,Student Branch Chapter,Politecnico Di Milano,C16,25,1,Yes,No,Partial,Not Met
+2026-11-27,SBC05231A,Student Branch Chapter,Politecnico Di Milano,EMB18,20,2,Yes,No,Met,Not Met
+2026-11-27,SBC05231B,Student Branch Chapter,Politecnico Di Milano,RA24/IE13,24,1,Yes,No,Partial,Not Met
+2026-11-27,SBC06971,Student Branch Chapter,Politecnico di Torino,CAS04,11,3,Yes,Yes,Met,Met
+2026-11-27,SBC06971A,Student Branch Chapter,Politecnico di Torino,MTT17,9,2,Yes,No,Met,Not Met
+2026-11-27,SBC040311,Student Branch Chapter,Sapienza University of Rome,IA34,5,0,No,No,Partial,Not Met
+2026-11-27,SBC39661,Student Branch Chapter,Tor Vergata University of Rome,AES10,1,0,No,No,Partial,Not Met
+2026-11-27,SBC11422,Student Branch Chapter,Universita Campus Bio Medico di Roma,SEN39,11,2,Yes,No,Met,Not Met
+2026-11-27,SBC10871A,Student Branch Chapter,Universita degli Studi di Pavia,AP03,2,1,No,No,Met,Not Met
+2026-11-27,SBC10871,Student Branch Chapter,Universita degli Studi di Pavia,MTT17,3,1,No,No,Met,Not Met
+2026-11-27,SBC10871B,Student Branch Chapter,Universita degli Studi di Pavia,NPS05,5,1,No,No,Met,Not Met
+2026-11-27,SBC00151,Student Branch Chapter,University of Bologna,COM19,16,2,Yes,Yes,Partial,Not Met
+2026-11-27,SBC00151A,Student Branch Chapter,University of Bologna,IE13,15,2,Yes,No,Met,Not Met
+2026-11-27,SBC13821A,Student Branch Chapter,University of Cagliari,SMC28,2,0,No,No,Partial,Not Met
+2026-11-27,SBC50701,Student Branch Chapter,University of Florence,OE22,6,3,Yes,Yes,Met,Met

@@ -1,7 +1,7 @@
 Unit Name,SPO ID,Unit Type,University,Society,Member Count,Members Required,Members Met,Events (General),Events (Technical),Events (Unreported),Events Required,Events Met,Chair,Counselor,Advisor,Vice Chair,Secretary,Treasurer,Webmaster,Officers Status,Requirements Met,Overall Vitality
 "ABES Engineering College, WIE",SBA04661,Affinity Group,ABES Engineering College,WIE,0,6,No,0,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Ajay Kumar Garg Engineering College-Ghaziabad,WIE",SBA10651,Affinity Group,Ajay Kumar Garg Engineering College-Ghaziabad,WIE,11,6,Yes,5,,2,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
-"Amity University Greater Noida Campus,WIE",SBA17001,Affinity Group,Amity University Greater Noida Campus,WIE,13,6,Yes,45,,87,2,Yes,No,,Yes,Yes,Yes,Yes,Yes,Partial,2/3,Not Met
+"Amity University Greater Noida Campus,WIE",SBA17001,Affinity Group,Amity University Greater Noida Campus,WIE,13,6,Yes,45,,87,2,Yes,Yes,,Yes,No,Yes,Yes,Yes,Met,3/3,Met
 "Amity University Uttar Pradesh Lucknow Campus,WIE",SBA99083,Affinity Group,Amity University Uttar Pradesh Lucknow Campus,WIE,19,6,Yes,58,,1,2,Yes,Yes,,Yes,Yes,Yes,No,Yes,Met,3/3,Met
 Babu Banarasi Das Inst of Tech & Mgmt SB SIGHT,SBA10214S,Affinity Group,Babu Banarasi Das Inst of Tech & Mgmt,SB SIGHT,25,6,Yes,10,,9,2,Yes,No,,No,Yes,Yes,No,No,Not Met,2/3,Not Met
 "Babu Banarasi Das Inst of Tech & Mgmt,WIE",SBA10214,Affinity Group,Babu Banarasi Das Inst of Tech & Mgmt,WIE,22,6,Yes,10,,9,2,Yes,Yes,,Yes,Yes,No,Yes,Yes,Met,3/3,Met
@@ -11,11 +11,11 @@ Babu Banarasi Das Inst of Tech & Mgmt SB SIGHT,SBA10214S,Affinity Group,Babu Ban
 "Bennett University,WIE",SBA64300,Affinity Group,Bennett University,WIE,1,6,No,0,,0,2,No,Yes,,Yes,No,No,No,No,Met,1/3,Not Met
 "Buddha Institute of Technology,WIE",SBA60204165,Affinity Group,Buddha Institute of Technology,WIE,4,6,No,0,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Dayalbagh Educational Inst,WIE",SBA14111,Affinity Group,Dayalbagh Educational Inst,WIE,6,6,Yes,0,,0,2,No,No,,Yes,No,No,No,Yes,Partial,1/3,Not Met
-"FoET - University of Lucknow,WIE",SBA60214568,Affinity Group,FoET - University of Lucknow,WIE,20,6,Yes,12,,3,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"FoET - University of Lucknow,WIE",SBA60214568,Affinity Group,FoET - University of Lucknow,WIE,20,6,Yes,13,,2,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "GLA University - Mathura, WIE",SBA08151,Affinity Group,GLA University - Mathura,WIE,5,6,No,0,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Galgotias College Of Engineering & Technology,WIE",SBA07021,Affinity Group,Galgotias College of Engineering and Technology,WIE,2,6,No,0,,1,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
-"Galgotias University, WIE",SBA11971,Affinity Group,Galgotias University,WIE,83,6,Yes,1,,3,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
-"Harcourt Butler Technical University,WIE",SBA11519,Affinity Group,Harcourt Butler Technical University,WIE,11,6,Yes,42,,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Galgotias University, WIE",SBA11971,Affinity Group,Galgotias University,WIE,91,6,Yes,1,,3,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Harcourt Butler Technical University,WIE",SBA11519,Affinity Group,Harcourt Butler Technical University,WIE,11,6,Yes,48,,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 IEEE Amity University SIGHT,SBA17001S,Affinity Group,Amity University Greater Noida Campus,SIGHT,16,6,Yes,0,,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
 IEEE ITS Engineering College SIGHT,SBA16051S,Affinity Group,ITS Engineering College,SIGHT,1,6,No,0,,0,2,No,Yes,,No,Yes,No,No,No,Partial,0/3,Not Met
 IEEE Integral Univ Lucknow SIGHT,SBA17471S,Affinity Group,Integral University,SIGHT,17,6,Yes,0,,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
@@ -23,7 +23,7 @@ IEEE UPES SIGHT,SBA10991S,Affinity Group,Univ of Petroleum & Energy Studies,SIGH
 IILM University Greater Noida SB SIGHT,SBA60224835S,Affinity Group,IILM University-Greater Noida,SIGHT,55,6,Yes,0,,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
 "ITS Engineering College, WIE",SBA16051,Affinity Group,ITS Engineering College,WIE,1,6,No,0,,0,2,No,Yes,,Yes,No,No,No,No,Met,1/3,Not Met
 "Inderprastha Engineering College,WIE",SBA18131,Affinity Group,Inderprastha Engineering College,WIE,2,6,No,0,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
-"Indian Inst of Technology-Kanpur,WIE",SBA05261,Affinity Group,Indian Inst of Technology-Kanpur,WIE,8,6,Yes,0,,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
+"Indian Inst of Technology-Kanpur,WIE",SBA05261,Affinity Group,Indian Inst of Technology-Kanpur,WIE,7,6,Yes,0,,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
 Indian Institute of Info Tech-Allahabad SIGHT,SBA14321S,Affinity Group,Indian Institute of Information Tech-Allahabad,SIGHT,3,6,No,2,,0,2,Yes,Yes,,No,No,No,No,No,Partial,1/3,Not Met
 "Indian Institute of Info Tech-Allahabad, WIE",SBA14321,Affinity Group,Indian Institute of Information Tech-Allahabad,WIE,12,6,Yes,3,,0,2,Yes,Yes,,Yes,No,No,No,No,Met,3/3,Met
 "Institute of Engineering & Tech - Lucknow,WIE",SBA62961,Affinity Group,Institute of Engineering & Technology - Lucknow,WIE,5,6,No,0,,1,2,No,Yes,,No,No,Yes,Yes,Yes,Partial,0/3,Not Met
@@ -31,17 +31,17 @@ Indian Institute of Info Tech-Allahabad SIGHT,SBA14321S,Affinity Group,Indian In
 "JSS Academy of Technical Education - Noida,WIE",SBA05571,Affinity Group,JSS Academy of Technical Education - Noida,WIE,6,6,Yes,4,,0,2,Yes,No,,Yes,No,No,No,No,Partial,2/3,Not Met
 "JSS University-Noida,WIE",SBA60228176,Affinity Group,JSS University-Noida,WIE,41,6,Yes,10,,1,2,Yes,Yes,,Yes,No,No,No,No,Met,3/3,Met
 "Jaypee Institute of Information Technology,WIE",SBA01711,Affinity Group,Jaypee Institute of Information Technology,WIE,3,6,No,1,,1,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
-"KIET Group Of Institutions,WIE",SBA11398,Affinity Group,KIET Group Of Institutions,WIE,19,6,Yes,9,,0,2,Yes,Yes,,Yes,No,Yes,Yes,Yes,Met,3/3,Met
+"KIET Group Of Institutions,WIE",SBA11398,Affinity Group,KIET Group Of Institutions,WIE,19,6,Yes,10,,0,2,Yes,Yes,,Yes,No,Yes,Yes,Yes,Met,3/3,Met
 "Krishna Inst of Engineering & Tech,SIGHT",SBA09951S,Affinity Group,Krishna Inst of Engineering & Tech,SIGHT,0,6,No,0,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 MMM University of Technology Gorakhpur (UP) SIGHT,SBA32071S,Affinity Group,Madan Mohan Malaviya Univ of Tech-Gorakhpur,SIGHT,24,6,Yes,2,,0,2,Yes,Yes,,No,Yes,Yes,Yes,No,Partial,2/3,Not Met
 "Madan Mohan Malaviya Univ of Tech-Gorakhpur, WIE",SBA32071,Affinity Group,Madan Mohan Malaviya Univ of Tech-Gorakhpur,WIE,19,6,Yes,1,,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
-"Motilal Nehru National Institute of Tech, WIE",SBA08071,Affinity Group,Motilal Nehru National Institute of Tech,WIE,16,6,Yes,2,,0,2,Yes,No,,Yes,No,No,No,No,Partial,2/3,Not Met
+"Motilal Nehru National Institute of Tech, WIE",SBA08071,Affinity Group,Motilal Nehru National Institute of Tech,WIE,20,6,Yes,2,,0,2,Yes,No,,Yes,No,No,No,No,Partial,2/3,Not Met
 "Noida Institute of Engineering & Technology,WIE",SBA60049987,Affinity Group,Noida Institute of Engineering & Technology,WIE,14,6,Yes,2,,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 Pranveer Singh Institute of Technology SIGHT,SBA14028S,Affinity Group,Pranveer Singh Institute of Technology,SIGHT,2,6,No,0,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Pranveer Singh Institute of Technology,WIE",SBA14028,Affinity Group,Pranveer Singh Institute of Technology,WIE,13,6,Yes,0,,0,2,No,Yes,,No,Yes,No,No,No,Partial,1/3,Not Met
 "Quantum University-Roorkee, WIE",SBA10039,Affinity Group,Quantum University-Roorkee,WIE,0,6,No,0,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Raj Kumar Goel Inst of Tech,WIE",SBA66531,Affinity Group,Raj Kumar Goel Inst of Tech,WIE,72,6,Yes,0,,0,2,No,Yes,,Yes,Yes,Yes,No,No,Met,2/3,Not Met
-"Rajiv Gandhi Institute of Petroleum Technology,WIE",SBA99414,Affinity Group,Rajiv Gandhi Institute of Petroleum Technology,WIE,11,6,Yes,57,,31,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Rajiv Gandhi Institute of Petroleum Technology,WIE",SBA99414,Affinity Group,Rajiv Gandhi Institute of Petroleum Technology,WIE,11,6,Yes,57,,31,2,Yes,No,,Yes,No,No,No,No,Partial,2/3,Not Met
 "Rajkiya Engineering College, Ambedkar Nagar,WIE",SBA11386,Affinity Group,"Rajkiya Engineering College, Ambedkar Nagar",WIE,0,6,No,0,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Rajkiya Engineering College, Banda,WIE",SBA11533,Affinity Group,"Rajkiya Engineering College, Banda",WIE,20,6,Yes,2,,13,2,Yes,Yes,,No,Yes,Yes,Yes,Yes,Partial,2/3,Not Met
 "Rajkiya Engineering College, Kannauj,WIE",SBA11540,Affinity Group,Rajkiya Engineering College-Kannauj,WIE,1,6,No,0,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
@@ -54,7 +54,7 @@ Pranveer Singh Institute of Technology SIGHT,SBA14028S,Affinity Group,Pranveer S
 "Swami Rama Himalayan University,WIE",SBA60226050,Affinity Group,Swami Rama Himalayan University,WIE,36,6,Yes,19,,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Teerthanker Mahaveer University,WIE",SBA15123,Affinity Group,Teerthanker Mahaveer University,WIE,2,6,No,0,,4,2,No,Yes,,No,No,No,No,No,Partial,0/3,Not Met
 "Tulas Inst, The Engg & Man Coll-Dehradun,WIE",SBA17561,Affinity Group,"Tulas Institute, The Engg & Man Coll-Dehradun",WIE,0,6,No,0,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
-"United College of Eng & Research-Allahabad,WIE",SBA15147,Affinity Group,United College of Engineering & Research-Allahabad,WIE,65,6,Yes,1,,1,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"United College of Eng & Research-Allahabad,WIE",SBA15147,Affinity Group,United College of Engineering & Research-Allahabad,WIE,65,6,Yes,2,,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Univ of Petroleum & Energy Studies,WIE",SBA10991,Affinity Group,Univ of Petroleum & Energy Studies,WIE,34,6,Yes,2,,2,2,Yes,Yes,,No,Yes,Yes,Yes,Yes,Partial,2/3,Not Met
 Uttarakhand Technical University SIGHT,SBA18811S,Affinity Group,Uttarakhand Technical University,SIGHT,0,6,No,0,,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Women Institute of Technology, Dehradun, WIE",SBA01012,Affinity Group,Women Institute of Technology-Dehradun,WIE,31,6,Yes,24,,6,2,Yes,Yes,,Yes,No,No,No,No,Met,3/3,Met
@@ -65,7 +65,7 @@ ABES Institute of Technology,STB05871A,Student Branch,ABES Institute of Technolo
 Ajay Kumar Garg Engineering College-Ghaziabad,STB10651,Student Branch,Ajay Kumar Garg Engineering College-Ghaziabad,,96,12,Yes,0,,0,4,No,Yes,No,,Yes,No,No,No,Partial,1/3,Not Met
 Ajay Kumar Garg Institute of Management,STB60231904,Student Branch,Ajay Kumar Garg Institute of Management,,8,12,No,4,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 Ambalika Institute of Management & Technology,STB60219722,Student Branch,Ambalika Institute of Management & Technology,,59,12,Yes,3,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
-Amity School of Engineering & Technology - Noida,STB10010,Student Branch,Amity School of Engineering & Technology - Noida,,22,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+Amity School of Engineering & Technology - Noida,STB10010,Student Branch,Amity School of Engineering & Technology - Noida,,24,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
 Amity University Greater Noida Campus,STB17001,Student Branch,Amity University Greater Noida Campus,,222,12,Yes,47,,87,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Amity University Uttar Pradesh Lucknow Campus,STB99083,Student Branch,Amity University Uttar Pradesh Lucknow Campus,,25,12,Yes,58,,1,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Amity University-Noida,STB07271,Student Branch,Amity University - Noida,,37,12,Yes,3,,12,4,No,Yes,Yes,,No,No,No,No,Met,2/3,Not Met
@@ -73,35 +73,35 @@ Ashoka Institute of Technology and Management,STB60219648,Student Branch,Ashoka 
 BN College of Engineering and Technology,STB60218566,Student Branch,BN College of Engineering and Technology,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Babu Banarasi Das Inst of Tech & Mgmt,STB10214,Student Branch,Babu Banarasi Das Inst of Tech & Mgmt,,30,12,Yes,10,,9,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Babu Banarasi Das Northern India Inst of Tech,STB99403,Student Branch,Babu Banarasi Das Northern India Inst of Tech,,63,12,Yes,17,,1,4,Yes,Yes,Yes,,No,No,No,No,Met,3/3,Met
-Babu Banarasi Das University-Lucknow,STB60225135,Student Branch,Babu Banarasi Das University-Lucknow,,13,12,Yes,3,,0,4,No,Yes,No,,No,Yes,No,Yes,Partial,1/3,Not Met
+Babu Banarasi Das University-Lucknow,STB60225135,Student Branch,Babu Banarasi Das University-Lucknow,,15,12,Yes,3,,0,4,No,Yes,No,,No,Yes,No,Yes,Partial,1/3,Not Met
 Bansal Inst of Engin and Tech-Lucknow,STB66434,Student Branch,Bansal Inst of Engin and Tech-Lucknow,,61,12,Yes,27,,1,4,Yes,Yes,No,,Yes,Yes,Yes,Yes,Partial,2/3,Not Met
-Bennett University,STB64300,Student Branch,Bennett University,,12,12,Yes,5,,7,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Bennett University,STB64300,Student Branch,Bennett University,,13,12,Yes,5,,7,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Bhagwant Institute of Technology,STB06801,Student Branch,Bhagwant Institute of Technology,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
-Bipin Tripathi Kumaon Institute of Technology,STB12461,Student Branch,Bipin Tripathi Kumaon Institute of Technology,,28,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+Bipin Tripathi Kumaon Institute of Technology,STB12461,Student Branch,Bipin Tripathi Kumaon Institute of Technology,,34,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
 Buddha Institute of Technology,STB60204165,Student Branch,Buddha Institute of Technology,,9,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 COER University,STB60221385,Student Branch,COER University,,16,12,Yes,0,,5,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
-Chandigarh University-Uttar Pradesh,STB60237146,Student Branch,Chandigarh University-Uttar Pradesh,,54,12,Yes,20,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Chandigarh University-Uttar Pradesh,STB60237146,Student Branch,Chandigarh University-Uttar Pradesh,,54,12,Yes,21,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Christ University-Delhi,STB60216825,Student Branch,Christ University-Delhi,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 College of Engineering-Roorkee,STB41493079,Student Branch,College of Engineering-Roorkee,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Dayalbagh Educational Inst,STB14111,Student Branch,Dayalbagh Educational Inst,,14,12,Yes,0,,0,4,No,Yes,Yes,,Yes,No,No,Yes,Met,2/3,Not Met
 Dehradun Institute of Technology,STB05881,Student Branch,Dehradun Institute of Technology,,5,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Dev Bhoomi Institute of Technology Dehradun,STB99973,Student Branch,Dev Bhoomi Institute of Technology Dehradun,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
-Dewan VS Group of Institutes,STB99078,Student Branch,Dewan VS Group of Institutes,,27,12,Yes,1,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+Dewan VS Group of Institutes,STB99078,Student Branch,Dewan VS Group of Institutes,,27,12,Yes,1,,1,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 Dharma Samaj College-Aligarh,STB60241580,Student Branch,Dharma Samaj College-Aligarh,,11,12,No,0,,0,4,No,Yes,Yes,,No,No,No,No,Met,1/3,Not Met
 Dronacharya Group of Institutions,STB13991,Student Branch,Dronacharya Group of Institutions,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
-FoET - University of Lucknow,STB60214568,Student Branch,FoET - University of Lucknow,,31,12,Yes,14,,3,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+FoET - University of Lucknow,STB60214568,Student Branch,FoET - University of Lucknow,,31,12,Yes,15,,2,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 G. B. Pant Inst of Engg and Tech-Pauri Garhwal,STB10172,Student Branch,G. B. Pant Inst of Engg and Tech-Pauri Garhwal,,25,12,Yes,0,,0,4,No,Yes,Yes,,Yes,No,No,Yes,Met,2/3,Not Met
-G. L. Bajaj Group of Institutions - Mathura,STB15661,Student Branch,G. L. Bajaj Group of Institutions - Mathura,,14,12,Yes,0,,3,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+G. L. Bajaj Group of Institutions - Mathura,STB15661,Student Branch,G. L. Bajaj Group of Institutions - Mathura,,14,12,Yes,0,,5,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 GL Bajaj Inst of Tech & Mgmt,STB04091,Student Branch,GL Bajaj Inst of Tech & Mgmt,,26,12,Yes,0,,11,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 GLA University - Mathura,STB08151,Student Branch,GLA University - Mathura,,17,12,Yes,0,,0,4,No,Yes,Yes,,Yes,No,No,No,Met,2/3,Not Met
 Galgotias College of Engineering and Technology,STB07021,Student Branch,Galgotias College of Engineering and Technology,,4,12,No,0,,0,4,No,No,No,,No,No,No,Yes,Not Met,0/3,Not Met
-Galgotias University,STB11971,Student Branch,Galgotias University,,268,12,Yes,6,,7,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Galgotias University,STB11971,Student Branch,Galgotias University,,277,12,Yes,7,,7,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Gautam Buddha University,STB10301,Student Branch,Gautam Buddha University,,28,12,Yes,0,,0,4,No,No,No,,No,No,No,No,Not Met,1/3,Not Met
 "Graphic Era Hill University, Dehradun",STB99213,Student Branch,Graphic Era Hill University-Dehradun,,46,12,Yes,3,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 Graphic Era Hill University-Bhimtal,STB60224143,Student Branch,Graphic Era Hill University-Bhimtal,,7,12,No,0,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,1/3,Not Met
-Graphic Era University,STB06701,Student Branch,Graphic Era University - Dehradun,,58,12,Yes,7,,0,4,Yes,No,Yes,,No,No,No,No,Partial,2/3,Not Met
-Greater Noida Inst of Tech,STB18511,Student Branch,Greater Noida Inst of Tech,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
-Harcourt Butler Technical University,STB11519,Student Branch,Harcourt Butler Technical University,,82,12,Yes,48,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Graphic Era University,STB06701,Student Branch,Graphic Era University - Dehradun,,59,12,Yes,7,,0,4,Yes,No,Yes,,No,No,No,No,Partial,2/3,Not Met
+Greater Noida Inst of Tech,STB18511,Student Branch,Greater Noida Inst of Tech,,6,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Harcourt Butler Technical University,STB11519,Student Branch,Harcourt Butler Technical University,,85,12,Yes,55,,1,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 IFTM University,STB18231,Student Branch,IFTM University,,2,12,No,0,,0,4,No,Yes,No,,No,No,No,No,Partial,0/3,Not Met
 IILM University-Greater Noida,STB60224835,Student Branch,IILM University-Greater Noida,,22,12,Yes,0,,0,4,No,Yes,No,,Yes,Yes,Yes,No,Partial,1/3,Not Met
 IIMT College of Engineering Greater Noida,STB17771,Student Branch,IIMT College of Engineering Greater Noida,,60,12,Yes,40,,7,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
@@ -109,10 +109,10 @@ IIMT University,STB60214585,Student Branch,IIMT University,,1,12,No,0,,0,4,No,No
 IIMT University-Greater Noida Campus,STB60245422,Student Branch,IIMT University-Greater Noida Campus,,19,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 IMS Engineering College,STB03671,Student Branch,IMS Engineering College,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 ITS Engineering College,STB16051,Student Branch,ITS Engineering College,,70,12,Yes,3,,1,4,No,Yes,No,,No,No,No,Yes,Partial,1/3,Not Met
-Inderprastha Engineering College,STB18131,Student Branch,Inderprastha Engineering College,,6,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
-Indian Inst of Tech (Banarus Hindu U) Varanasi,STB06321,Student Branch,Indian Inst of Tech (Banarus Hindu U) Varanasi,,94,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
-Indian Inst of Technology-Kanpur,STB05261,Student Branch,Indian Inst of Technology-Kanpur,,38,12,Yes,0,,15,4,No,Yes,Yes,,No,No,No,No,Met,2/3,Not Met
-Indian Inst of Technology-Roorkee,STB56701,Student Branch,Indian Inst of Technology-Roorkee,,227,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+Inderprastha Engineering College,STB18131,Student Branch,Inderprastha Engineering College,,6,12,No,0,,0,4,No,Yes,Yes,,No,No,No,No,Met,1/3,Not Met
+Indian Inst of Tech (Banarus Hindu U) Varanasi,STB06321,Student Branch,Indian Inst of Tech (Banarus Hindu U) Varanasi,,96,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
+Indian Inst of Technology-Kanpur,STB05261,Student Branch,Indian Inst of Technology-Kanpur,,37,12,Yes,0,,15,4,No,Yes,Yes,,No,No,No,No,Met,2/3,Not Met
+Indian Inst of Technology-Roorkee,STB56701,Student Branch,Indian Inst of Technology-Roorkee,,232,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
 Indian Institute of Information Tech-Allahabad,STB14321,Student Branch,Indian Institute of Information Tech-Allahabad,,80,12,Yes,38,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Institute of Engineering & Technology - Lucknow,STB62961,Student Branch,Institute of Engineering & Technology - Lucknow,,8,12,No,0,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,1/3,Not Met
 Institute of Technology Gopeshwar,STB11429,Student Branch,Institute of Technology Gopeshwar,,11,12,No,7,,1,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
@@ -134,17 +134,17 @@ Mangalayatan University,STB17121A,Student Branch,Mangalayatan University,,13,12,
 Mangalmay Institute of Management & Technology,STB60113889,Student Branch,Mangalmay Institute of Management & Technology,,13,12,Yes,0,,3,4,No,Yes,No,,No,No,No,No,Partial,1/3,Not Met
 "Meerut Institute of Engineering & Tech, Meerut",STB11418,Student Branch,"Meerut Institute of Engineering & Tech, Meerut",,37,12,Yes,0,,0,4,No,Yes,Yes,,Yes,Yes,No,No,Met,2/3,Not Met
 Moradabad Institute of Technology,STB15154,Student Branch,Moradabad Institute of Technology,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
-Motilal Nehru National Institute of Tech,STB08071,Student Branch,Motilal Nehru National Institute of Tech,,24,12,Yes,4,,0,4,Yes,Yes,Yes,,No,No,No,No,Met,3/3,Met
+Motilal Nehru National Institute of Tech,STB08071,Student Branch,Motilal Nehru National Institute of Tech,,38,12,Yes,4,,0,4,Yes,Yes,Yes,,No,No,No,No,Met,3/3,Met
 National Institute of Technology - Uttarakhand,STB20130,Student Branch,National Institute of Technology - Uttarakhand,,2,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Noida Institute of Engineering & Technology,STB60049987,Student Branch,Noida Institute of Engineering & Technology,,25,12,Yes,16,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
-Noida International University,STB60229163,Student Branch,Noida International University,,24,12,Yes,6,,2,4,Yes,Yes,Yes,,Yes,Yes,No,Yes,Met,3/3,Met
-Pranveer Singh Institute of Technology,STB14028,Student Branch,Pranveer Singh Institute of Technology,,32,12,Yes,7,,1,4,Yes,Yes,Yes,,Yes,Yes,Yes,No,Met,3/3,Met
+Noida International University,STB60229163,Student Branch,Noida International University,,25,12,Yes,6,,2,4,Yes,Yes,Yes,,Yes,Yes,No,Yes,Met,3/3,Met
+Pranveer Singh Institute of Technology,STB14028,Student Branch,Pranveer Singh Institute of Technology,,33,12,Yes,7,,1,4,Yes,Yes,Yes,,Yes,Yes,Yes,No,Met,3/3,Met
 Quantum University-Roorkee,STB10039,Student Branch,Quantum University-Roorkee,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Raj Kumar Goel Inst of Tech,STB66531,Student Branch,Raj Kumar Goel Inst of Tech,,76,12,Yes,15,,4,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
-Rajiv Gandhi Institute of Petroleum Technology,STB99414,Student Branch,Rajiv Gandhi Institute of Petroleum Technology,,18,12,Yes,62,,30,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+Rajiv Gandhi Institute of Petroleum Technology,STB99414,Student Branch,Rajiv Gandhi Institute of Petroleum Technology,,18,12,Yes,62,,30,4,Yes,No,No,,No,No,No,No,Not Met,2/3,Not Met
 "Rajkiya Engineering College, Ambedkar Nagar",STB11386,Student Branch,"Rajkiya Engineering College, Ambedkar Nagar",,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 "Rajkiya Engineering College, Banda",STB11533,Student Branch,"Rajkiya Engineering College, Banda",,21,12,Yes,20,,14,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
-"Rajkiya Engineering College, Mainpuri",STB10148,Student Branch,"Rajkiya Engineering College, Mainpuri",,55,12,Yes,10,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Rajkiya Engineering College, Mainpuri",STB10148,Student Branch,"Rajkiya Engineering College, Mainpuri",,55,12,Yes,10,,1,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Rajkiya Engineering College-Kannauj,STB11540,Student Branch,Rajkiya Engineering College-Kannauj,,2,12,No,0,,0,4,No,No,Yes,,No,No,No,No,Partial,0/3,Not Met
 Rajkiya Engineering College-Sonbhadra,STB60228534,Student Branch,Rajkiya Engineering College-Sonbhadra,,30,12,Yes,2,,0,4,No,Yes,Yes,,Yes,No,Yes,No,Met,2/3,Not Met
 Rohilkhand Univ,STB20138,Student Branch,Rohilkhand Univ,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
@@ -152,20 +152,20 @@ Roorkee College of Engineering-Roorkee,STB99088,Student Branch,Roorkee College o
 Roorkee Institute of Technology,STB11763,Student Branch,Roorkee Institute of Technology,,22,12,Yes,7,,0,4,Yes,Yes,No,,No,No,No,No,Partial,2/3,Not Met
 S.R. Institute of Management & Technology-Lucknow,STB60219265,Student Branch,S.R. Institute of Management & Technology-Lucknow,,13,12,Yes,5,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 "SRM Institute of Science and Tech,   NCR Campus",STB08411,Student Branch,"SRM Institute of Science and Tech, NCR Campus",,15,12,Yes,0,,0,4,No,No,Yes,,No,No,No,No,Partial,1/3,Not Met
-Sanskriti University,STB60202237,Student Branch,Sanskriti University,,2,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+Sanskriti University,STB60202237,Student Branch,Sanskriti University,,3,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Shambhunath Institute of Engineering & Tech,STB99524,Student Branch,Shambhunath Institute of Engineering & Tech,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
-Sharda University,STB11396,Student Branch,Sharda University,,29,12,Yes,2,,4,4,No,Yes,Yes,,Yes,Yes,Yes,No,Met,2/3,Not Met
+Sharda University,STB11396,Student Branch,Sharda University,,30,12,Yes,2,,4,4,No,Yes,Yes,,Yes,Yes,Yes,No,Met,2/3,Not Met
 Shiv Nadar University,STB17081,Student Branch,Shiv Nadar University,,37,12,Yes,1,,0,4,No,Yes,Yes,,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 Shobhit Institute of Engineering & Technology,STB99413,Student Branch,Shobhit Institute of Engineering & Technology,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Shri Ram Murti Smarak College Of Eng and Tech,STB60240834,Student Branch,Shri Ram Murti Smarak College Of Eng and Tech,,16,12,Yes,6,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Shri Ramswaroop Memorial College Of Eng & Mngnt,STB99408,Student Branch,Shri Ramswaroop Memorial College Of Eng & Mngnt,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Shri Ramswaroop Memorial University,STB11394,Student Branch,Shri Ramswaroop Memorial University,,0,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Swami Rama Himalayan University,STB60226050,Student Branch,Swami Rama Himalayan University,,91,12,Yes,31,,0,4,Yes,No,Yes,,Yes,Yes,Yes,Yes,Partial,2/3,Not Met
-Teerthanker Mahaveer University,STB15123,Student Branch,Teerthanker Mahaveer University,,19,12,Yes,49,,6,4,Yes,Yes,Yes,,No,No,No,No,Met,3/3,Met
-"Tulas Institute, The Engg & Man Coll-Dehradun",STB17561,Student Branch,"Tulas Institute, The Engg & Man Coll-Dehradun",,27,12,Yes,2,,0,4,No,Yes,Yes,,No,No,No,No,Met,2/3,Not Met
+Teerthanker Mahaveer University,STB15123,Student Branch,Teerthanker Mahaveer University,,19,12,Yes,56,,7,4,Yes,Yes,Yes,,No,No,No,No,Met,3/3,Met
+"Tulas Institute, The Engg & Man Coll-Dehradun",STB17561,Student Branch,"Tulas Institute, The Engg & Man Coll-Dehradun",,27,12,Yes,2,,1,4,No,Yes,Yes,,No,No,No,No,Met,2/3,Not Met
 UNS Institute Of Engineering & Technology,STB60229183,Student Branch,UNS Institute Of Engineering & Technology,,12,12,Yes,10,,1,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
-United College of Engineering & Research,STB13091,Student Branch,United College of Engineering & Research,,4,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
-United College of Engineering & Research-Allahabad,STB15147,Student Branch,United College of Engineering & Research-Allahabad,,93,12,Yes,56,,1,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
+United College of Engineering & Research,STB13091,Student Branch,United College of Engineering & Research,,5,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
+United College of Engineering & Research-Allahabad,STB15147,Student Branch,United College of Engineering & Research-Allahabad,,93,12,Yes,57,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 United Institute of Technology,STB60206787,Student Branch,United Institute of Technology,,76,12,Yes,76,,0,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
 Univ of Petroleum & Energy Studies,STB10991,Student Branch,Univ of Petroleum & Energy Studies,,53,12,Yes,0,,0,4,No,Yes,Yes,,No,No,No,No,Met,2/3,Not Met
 University of Allahabad,STB09171,Student Branch,University of Allahabad,,2,12,No,0,,0,4,No,No,Yes,,No,No,No,No,Partial,0/3,Not Met
@@ -174,7 +174,7 @@ Uttaranchal University,STB10206,Student Branch,Uttaranchal University,,13,12,Yes
 Veer Bahadur Singh Purvanchal University - Jaunpur,STB11537,Student Branch,Veer Bahadur Singh Purvanchal University - Jaunpur,,10,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 Vivekananda College of Technology & Management,STB17161,Student Branch,Vivekananda College of Technology & Management,,1,12,No,0,,0,4,No,No,No,,No,No,No,No,Not Met,0/3,Not Met
 "Women Institute of Technology, Dehradun",STB01012,Student Branch,Women Institute of Technology-Dehradun,,31,12,Yes,24,,6,4,Yes,Yes,Yes,,Yes,Yes,Yes,Yes,Met,3/3,Met
-Zakir Hussain Coll of Engineering & Tech,STB08111,Student Branch,Zakir Hussain Coll of Engineering & Tech,,50,12,Yes,0,,0,4,No,Yes,No,,No,No,No,Yes,Partial,1/3,Not Met
+Zakir Hussain Coll of Engineering & Tech,STB08111,Student Branch,Zakir Hussain Coll of Engineering & Tech,,51,12,Yes,0,,1,4,No,Yes,No,,No,No,No,Yes,Partial,1/3,Not Met
 "ABES Engineering College,AP03",SBC04661B,Student Branch Chapter,ABES Engineering College,AP03,7,6,Yes,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
 "ABES Engineering College,MTT17",SBC046611,Student Branch Chapter,ABES Engineering College,MTT17,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "ABES Engineering College,PE31",SBC04661A,Student Branch Chapter,ABES Engineering College,PE31,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
@@ -201,18 +201,18 @@ Zakir Hussain Coll of Engineering & Tech,STB08111,Student Branch,Zakir Hussain C
 "Bansal Inst of Engin and Tech-Lucknow,RA24",SBC66434C,Student Branch Chapter,Bansal Inst of Engin and Tech-Lucknow,RA24,20,6,Yes,12,8,0,2,Yes,Yes,,No,Yes,Yes,Yes,Yes,Partial,2/3,Not Met
 "Bhagwant Institute of Technology,MTT17",SBC068011,Student Branch Chapter,Bhagwant Institute of Technology,MTT17,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Bipin Tripathi Kumaon Institute of Tech,PEL35",SBC12461B,Student Branch Chapter,Bipin Tripathi Kumaon Institute of Technology,PEL35,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
-"Bipin Tripathi Kumaon Institute of Tech,SSC37",SBC12461D,Student Branch Chapter,Bipin Tripathi Kumaon Institute of Technology,SSC37,0,6,No,36,26,4,2,Yes,No,,Yes,No,No,No,No,Partial,1/3,Not Met
-"Bipin Tripathi Kumaon Institute of Technology,ED15",SBC12461F,Student Branch Chapter,Bipin Tripathi Kumaon Institute of Technology,ED15,7,6,Yes,37,27,4,2,Yes,No,,Yes,No,No,No,No,Partial,2/3,Not Met
-"Bipin Tripathi Kumaon Institute of Technology,EP21",SBC12461,Student Branch Chapter,Bipin Tripathi Kumaon Institute of Technology,EP21,6,6,Yes,37,27,4,2,Yes,No,,Yes,Yes,Yes,Yes,No,Partial,2/3,Not Met
+"Bipin Tripathi Kumaon Institute of Tech,SSC37",SBC12461D,Student Branch Chapter,Bipin Tripathi Kumaon Institute of Technology,SSC37,1,6,No,36,26,4,2,Yes,No,,Yes,No,No,No,No,Partial,1/3,Not Met
+"Bipin Tripathi Kumaon Institute of Technology,ED15",SBC12461F,Student Branch Chapter,Bipin Tripathi Kumaon Institute of Technology,ED15,9,6,Yes,37,27,4,2,Yes,No,,Yes,No,No,No,No,Partial,2/3,Not Met
+"Bipin Tripathi Kumaon Institute of Technology,EP21",SBC12461,Student Branch Chapter,Bipin Tripathi Kumaon Institute of Technology,EP21,9,6,Yes,37,27,4,2,Yes,No,,Yes,Yes,Yes,Yes,No,Partial,2/3,Not Met
 "Bipin Tripathi Kumaon Institute of Technology,IA34",SBC12461C,Student Branch Chapter,Bipin Tripathi Kumaon Institute of Technology,IA34,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
-"Bipin Tripathi Kumaon Institute of Technology,RA24",SBC12461E,Student Branch Chapter,Bipin Tripathi Kumaon Institute of Technology,RA24,0,6,No,22,17,2,2,Yes,No,,Yes,No,No,No,No,Partial,1/3,Not Met
+"Bipin Tripathi Kumaon Institute of Technology,RA24",SBC12461E,Student Branch Chapter,Bipin Tripathi Kumaon Institute of Technology,RA24,2,6,No,22,17,2,2,Yes,No,,Yes,No,No,No,No,Partial,1/3,Not Met
 "Bipin Tripathi Kumaon Institute of Technology,SP01",SBC12461A,Student Branch Chapter,Bipin Tripathi Kumaon Institute of Technology,SP01,2,6,No,22,17,2,2,Yes,No,,Yes,No,No,No,No,Partial,1/3,Not Met
 "Chandigarh University-Uttar Pradesh,CIS11",SBC60237146,Student Branch Chapter,Chandigarh University-Uttar Pradesh,CIS11,17,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,No,Met,2/3,Not Met
 "Dayalbagh Educational Inst,IA34",SBC14111,Student Branch Chapter,Dayalbagh Educational Inst,IA34,6,6,Yes,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
 "Dehradun Institute of Technology,C16",SBC05881,Student Branch Chapter,Dehradun Institute of Technology,C16,1,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
 "Dewan VS Group of Institutes,IA34,PE31",SBC99078,Student Branch Chapter,Dewan VS Group of Institutes,"IA34,PE31",2,6,No,8,5,0,2,Yes,Yes,,Yes,No,Yes,No,No,Met,2/3,Not Met
 "Dewan VS Group of Institutes,RA24",SBC99078A,Student Branch Chapter,Dewan VS Group of Institutes,RA24,6,6,Yes,6,5,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
-"FoET - University of Lucknow,RA24",SBC60214568,Student Branch Chapter,FoET - University of Lucknow,RA24,11,6,Yes,9,5,1,2,Yes,Yes,,Yes,No,Yes,No,No,Met,3/3,Met
+"FoET - University of Lucknow,RA24",SBC60214568,Student Branch Chapter,FoET - University of Lucknow,RA24,11,6,Yes,10,6,0,2,Yes,Yes,,Yes,No,Yes,No,No,Met,3/3,Met
 "G L Bajaj Inst of Tech & Mgmt,RA24",SBC04091A,Student Branch Chapter,GL Bajaj Inst of Tech & Mgmt,RA24,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "G. B.Pant Engineering College - Pauri Garhwal,PE31",SBC10172,Student Branch Chapter,G. B. Pant Inst of Engg and Tech-Pauri Garhwal,PE31,0,6,No,9,8,0,2,Yes,No,,No,No,No,No,No,Not Met,1/3,Not Met
 "GL Bajaj Inst of Tech & Mgmt,MTT17",SBC04091B,Student Branch Chapter,GL Bajaj Inst of Tech & Mgmt,MTT17,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
@@ -220,8 +220,8 @@ Zakir Hussain Coll of Engineering & Tech,STB08111,Student Branch,Zakir Hussain C
 "GLA University - Mathura,IA34",SBC08151,Student Branch Chapter,GLA University - Mathura,IA34,0,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
 "GLA University - Mathura,PE31",SBC08151B,Student Branch Chapter,GLA University - Mathura,PE31,0,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
 "Galgotias University,C16",SBC11971A,Student Branch Chapter,Galgotias University,C16,71,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,Yes,No,Yes,Met,2/3,Not Met
-"Galgotias University,CIS11",SBC11971C,Student Branch Chapter,Galgotias University,CIS11,23,6,Yes,0,0,3,2,No,No,,Yes,No,No,No,No,Partial,1/3,Not Met
-"Galgotias University,EMB18",SBC11971H,Student Branch Chapter,Galgotias University,EMB18,14,6,Yes,3,3,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Galgotias University,CIS11",SBC11971C,Student Branch Chapter,Galgotias University,CIS11,26,6,Yes,0,0,3,2,No,No,,Yes,No,No,No,No,Partial,1/3,Not Met
+"Galgotias University,EMB18",SBC11971H,Student Branch Chapter,Galgotias University,EMB18,14,6,Yes,4,4,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Galgotias University,GRS29",SBC11971G,Student Branch Chapter,Galgotias University,GRS29,15,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,No,No,No,Met,2/3,Not Met
 "Galgotias University,IA34",SBC11971B,Student Branch Chapter,Galgotias University,IA34,24,6,Yes,4,4,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Galgotias University,MTT17",SBC11971,Student Branch Chapter,Galgotias University,MTT17,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
@@ -230,9 +230,9 @@ Zakir Hussain Coll of Engineering & Tech,STB08111,Student Branch,Zakir Hussain C
 "Galgotias University,TEM14",SBC11971D,Student Branch Chapter,Galgotias University,TEM14,28,6,Yes,0,0,2,2,No,No,,Yes,No,No,No,No,Partial,1/3,Not Met
 "Graphic Era University,CS23",SBC06701A,Student Branch Chapter,Graphic Era University - Dehradun,CS23,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Graphic Era University,MTT17",SBC06701,Student Branch Chapter,Graphic Era University - Dehradun,MTT17,17,6,Yes,1,1,2,2,No,Yes,,No,Yes,No,Yes,No,Partial,1/3,Not Met
-"Harcourt Butler Technical University,CIS11",SBC11519B,Student Branch Chapter,Harcourt Butler Technical University,CIS11,10,6,Yes,3,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
-"Harcourt Butler Technical University,COM19",SBC11519A,Student Branch Chapter,Harcourt Butler Technical University,COM19,32,6,Yes,12,3,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
-"Harcourt Butler Technical University,PEL35",SBC11519,Student Branch Chapter,Harcourt Butler Technical University,PEL35,5,6,No,42,6,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Harcourt Butler Technical University,CIS11",SBC11519B,Student Branch Chapter,Harcourt Butler Technical University,CIS11,11,6,Yes,3,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Harcourt Butler Technical University,COM19",SBC11519A,Student Branch Chapter,Harcourt Butler Technical University,COM19,32,6,Yes,13,3,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Harcourt Butler Technical University,PEL35",SBC11519,Student Branch Chapter,Harcourt Butler Technical University,PEL35,10,6,Yes,49,12,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "IILM University-Greater Noida,C16",SBC60224835B,Student Branch Chapter,IILM University-Greater Noida,C16,0,6,No,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,1/3,Not Met
 "IILM University-Greater Noida,EP21",SBC60224835A,Student Branch Chapter,IILM University-Greater Noida,EP21,0,6,No,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,1/3,Not Met
 "IILM University-Greater Noida,SP01",SBC60224835,Student Branch Chapter,IILM University-Greater Noida,SP01,0,6,No,0,0,0,2,No,Yes,,No,No,No,No,No,Partial,0/3,Not Met
@@ -249,7 +249,7 @@ Zakir Hussain Coll of Engineering & Tech,STB08111,Student Branch,Zakir Hussain C
 "Indian Inst Tech (Banarus Hindu U) Varanasi,C16",SBC06321,Student Branch Chapter,Indian Inst of Tech (Banarus Hindu U) Varanasi,C16,1,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Indian Inst Tech (Banarus Hindu U) Varanasi,CS23",SBC06321I,Student Branch Chapter,Indian Inst of Tech (Banarus Hindu U) Varanasi,CS23,5,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Indian Inst of Information Tech-Allahabad,C16",SBC14321B,Student Branch Chapter,Indian Institute of Information Tech-Allahabad,C16,14,6,Yes,12,8,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
-"Indian Inst of Information Tech-Allahabad,CAS04",SBC14321E,Student Branch Chapter,Indian Institute of Information Tech-Allahabad,CAS04,12,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
+"Indian Inst of Information Tech-Allahabad,CAS04",SBC14321E,Student Branch Chapter,Indian Institute of Information Tech-Allahabad,CAS04,12,6,Yes,0,0,1,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 "Indian Inst of Information Tech-Allahabad,PHO36",SBC14321D,Student Branch Chapter,Indian Institute of Information Tech-Allahabad,PHO36,6,6,Yes,14,0,1,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 "Indian Inst of Information Tech-Allahabad,RA24",SBC14321A,Student Branch Chapter,Indian Institute of Information Tech-Allahabad,RA24,2,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
 "Indian Inst of Information Tech-Allahabad,SP01",SBC14321C,Student Branch Chapter,Indian Institute of Information Tech-Allahabad,SP01,13,6,Yes,7,4,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,No,Met,3/3,Met
@@ -260,20 +260,20 @@ Zakir Hussain Coll of Engineering & Tech,STB08111,Student Branch,Zakir Hussain C
 "Indian Inst of Tech(Banarus Hindu U)Varanasi,PE31",SBC06321D,Student Branch Chapter,Indian Inst of Tech (Banarus Hindu U) Varanasi,PE31,15,6,Yes,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,1/3,Not Met
 "Indian Inst of Tech-Roorke,PHO36/SEN39/NANO42",SBC56701F,Student Branch Chapter,Indian Inst of Technology-Roorkee,PHO36/SEN39/NANO42,9,6,Yes,0,0,0,2,No,No,,No,No,No,No,No,Not Met,1/3,Not Met
 "Indian Inst of Technology-Kanpur,AES10",SBC05261G,Student Branch Chapter,Indian Inst of Technology-Kanpur,AES10,6,6,Yes,2,1,1,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
-"Indian Inst of Technology-Kanpur,AP03",SBC05261C,Student Branch Chapter,Indian Inst of Technology-Kanpur,AP03,15,6,Yes,1,1,15,2,No,Yes,,Yes,No,Yes,No,No,Met,2/3,Not Met
+"Indian Inst of Technology-Kanpur,AP03",SBC05261C,Student Branch Chapter,Indian Inst of Technology-Kanpur,AP03,14,6,Yes,1,1,15,2,No,Yes,,Yes,No,Yes,No,No,Met,2/3,Not Met
 "Indian Inst of Technology-Kanpur,DEI32",SBC05261F,Student Branch Chapter,Indian Inst of Technology-Kanpur,DEI32,3,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Indian Inst of Technology-Kanpur,IA34",SBC05261B,Student Branch Chapter,Indian Inst of Technology-Kanpur,IA34,2,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
-"Indian Inst of Technology-Kanpur,MTT17",SBC05261A,Student Branch Chapter,Indian Inst of Technology-Kanpur,MTT17,16,6,Yes,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+"Indian Inst of Technology-Kanpur,MTT17",SBC05261A,Student Branch Chapter,Indian Inst of Technology-Kanpur,MTT17,15,6,Yes,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
 "Indian Inst of Technology-Kanpur,PE31",SBC05261D,Student Branch Chapter,Indian Inst of Technology-Kanpur,PE31,7,6,Yes,7,3,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Indian Inst of Technology-Kanpur,SP01",SBC05261E,Student Branch Chapter,Indian Inst of Technology-Kanpur,SP01,4,6,No,6,6,0,2,Yes,Yes,,Yes,No,Yes,No,No,Met,2/3,Not Met
-"Indian Inst of Technology-Roorkee,AP03",SBC56701I,Student Branch Chapter,Indian Inst of Technology-Roorkee,AP03,21,6,Yes,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+"Indian Inst of Technology-Roorkee,AP03",SBC56701I,Student Branch Chapter,Indian Inst of Technology-Roorkee,AP03,21,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,No,No,No,Met,2/3,Not Met
 "Indian Inst of Technology-Roorkee,CAS04",SBC56701C,Student Branch Chapter,Indian Inst of Technology-Roorkee,CAS04,15,6,Yes,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,1/3,Not Met
-"Indian Inst of Technology-Roorkee,COM19",SBC56701D,Student Branch Chapter,Indian Inst of Technology-Roorkee,COM19,22,6,Yes,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,1/3,Not Met
+"Indian Inst of Technology-Roorkee,COM19",SBC56701D,Student Branch Chapter,Indian Inst of Technology-Roorkee,COM19,24,6,Yes,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,1/3,Not Met
 "Indian Inst of Technology-Roorkee,ED15",SBC56701B,Student Branch Chapter,Indian Inst of Technology-Roorkee,ED15,23,6,Yes,6,6,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Indian Inst of Technology-Roorkee,GRS29",SBC56701G,Student Branch Chapter,Indian Inst of Technology-Roorkee,GRS29,25,6,Yes,11,10,0,2,Yes,Yes,,Yes,Yes,No,Yes,Yes,Met,3/3,Met
-"Indian Inst of Technology-Roorkee,IA34",SBC56701E,Student Branch Chapter,Indian Inst of Technology-Roorkee,IA34,31,6,Yes,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+"Indian Inst of Technology-Roorkee,IA34",SBC56701E,Student Branch Chapter,Indian Inst of Technology-Roorkee,IA34,34,6,Yes,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
 "Indian Inst of Technology-Roorkee,MTT17",SBC56701A,Student Branch Chapter,Indian Inst of Technology-Roorkee,MTT17,27,6,Yes,4,3,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
-"Indian Inst of Technology-Roorkee,SP01",SBC56701H,Student Branch Chapter,Indian Inst of Technology-Roorkee,SP01,8,6,Yes,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,2/3,Not Met
+"Indian Inst of Technology-Roorkee,SP01",SBC56701H,Student Branch Chapter,Indian Inst of Technology-Roorkee,SP01,8,6,Yes,1,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 "Institute of Engineering & Tech - Lucknow,PE31",SBC62961,Student Branch Chapter,Institute of Engineering & Technology - Lucknow,PE31,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Institute of Technology Gopeshwar,PE31",SBC11429,Student Branch Chapter,Institute of Technology Gopeshwar,PE31,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "JSS Academy of Technical Education - Noida,RA24",SBC05571A,Student Branch Chapter,JSS Academy of Technical Education - Noida,RA24,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
@@ -281,23 +281,23 @@ Zakir Hussain Coll of Engineering & Tech,STB08111,Student Branch,Zakir Hussain C
 "Jaypee Institute of Information Technology,AP03",SBC01711,Student Branch Chapter,Jaypee Institute of Information Technology,AP03,24,6,Yes,7,7,0,2,Yes,Yes,,No,Yes,Yes,Yes,Yes,Partial,2/3,Not Met
 "Jaypee Institute of Information Technology,MTT17",SBC01711A,Student Branch Chapter,Jaypee Institute of Information Technology,MTT17,24,6,Yes,7,7,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "KIET Group Of Institutions,CIS11",SBC11398,Student Branch Chapter,KIET Group Of Institutions,CIS11,6,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
-"KIET Group Of Institutions,SP01",SBC11398A,Student Branch Chapter,KIET Group Of Institutions,SP01,16,6,Yes,9,4,0,2,Yes,Yes,,Yes,Yes,Yes,No,No,Met,3/3,Met
+"KIET Group Of Institutions,SP01",SBC11398A,Student Branch Chapter,KIET Group Of Institutions,SP01,16,6,Yes,10,5,0,2,Yes,Yes,,Yes,Yes,Yes,No,No,Met,3/3,Met
 "Lloyd Inst of Engin & Techn,SP01",SBC60209325,Student Branch Chapter,Lloyd Inst of Engin & Techn,SP01,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Madan Mohan Malaviya Univ of Tech-Gorakhpur,PE31",SBC32071,Student Branch Chapter,Madan Mohan Malaviya Univ of Tech-Gorakhpur,PE31,2,6,No,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,1/3,Not Met
 "Meerut Institute of Engineering & Tech,IA34/PE31",SBC11418,Student Branch Chapter,"Meerut Institute of Engineering & Tech, Meerut",IA34/PE31,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Moradabad Institute of Technology,COM19",SBC15154A,Student Branch Chapter,Moradabad Institute of Technology,COM19,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Motilal Nehru National Institute of Tech,AES10",SBC08071M,Student Branch Chapter,Motilal Nehru National Institute of Tech,AES10,5,6,No,3,2,0,2,Yes,Yes,,No,No,No,No,Yes,Partial,1/3,Not Met
-"Motilal Nehru National Institute of Tech,AP03",SBC08071H,Student Branch Chapter,Motilal Nehru National Institute of Tech,AP03,12,6,Yes,3,2,0,2,Yes,Yes,,No,No,No,No,No,Partial,2/3,Not Met
+"Motilal Nehru National Institute of Tech,AP03",SBC08071H,Student Branch Chapter,Motilal Nehru National Institute of Tech,AP03,26,6,Yes,3,2,0,2,Yes,Yes,,No,No,No,No,No,Partial,2/3,Not Met
 "Motilal Nehru National Institute of Tech,BT02",SBC08071B,Student Branch Chapter,Motilal Nehru National Institute of Tech,BT02,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Motilal Nehru National Institute of Tech,C16",SBC08071J,Student Branch Chapter,Motilal Nehru National Institute of Tech,C16,0,6,No,0,0,0,2,No,Yes,,Yes,No,No,No,No,Met,1/3,Not Met
 "Motilal Nehru National Institute of Tech,CAS04",SBC08071D,Student Branch Chapter,Motilal Nehru National Institute of Tech,CAS04,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Motilal Nehru National Institute of Tech,CIS11",SBC08071K,Student Branch Chapter,Motilal Nehru National Institute of Tech,CIS11,0,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
-"Motilal Nehru National Institute of Tech,COM19",SBC08071C,Student Branch Chapter,Motilal Nehru National Institute of Tech,COM19,9,6,Yes,3,2,0,2,Yes,No,,Yes,No,No,No,Yes,Partial,2/3,Not Met
+"Motilal Nehru National Institute of Tech,COM19",SBC08071C,Student Branch Chapter,Motilal Nehru National Institute of Tech,COM19,23,6,Yes,3,2,0,2,Yes,No,,Yes,No,No,No,Yes,Partial,2/3,Not Met
 "Motilal Nehru National Institute of Tech,ED15",SBC08071N,Student Branch Chapter,Motilal Nehru National Institute of Tech,ED15,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
-"Motilal Nehru National Institute of Tech,MTT17",SBC08071,Student Branch Chapter,Motilal Nehru National Institute of Tech,MTT17,9,6,Yes,4,3,0,2,Yes,No,,Yes,Yes,No,No,Yes,Partial,2/3,Not Met
+"Motilal Nehru National Institute of Tech,MTT17",SBC08071,Student Branch Chapter,Motilal Nehru National Institute of Tech,MTT17,23,6,Yes,4,3,0,2,Yes,No,,Yes,Yes,No,No,Yes,Partial,2/3,Not Met
 "Motilal Nehru National Institute of Tech,PE31",SBC08071A,Student Branch Chapter,Motilal Nehru National Institute of Tech,PE31,3,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
 "Motilal Nehru National Institute of Tech,PHO36",SBC08071I,Student Branch Chapter,Motilal Nehru National Institute of Tech,PHO36,3,6,No,1,1,0,2,No,Yes,,Yes,No,No,No,Yes,Met,1/3,Not Met
-"Motilal Nehru National Institute of Tech,SEN39",SBC08071L,Student Branch Chapter,Motilal Nehru National Institute of Tech,SEN39,11,6,Yes,1,1,3,2,No,Yes,,Yes,Yes,Yes,No,Yes,Met,2/3,Not Met
+"Motilal Nehru National Institute of Tech,SEN39",SBC08071L,Student Branch Chapter,Motilal Nehru National Institute of Tech,SEN39,14,6,Yes,1,1,3,2,No,Yes,,Yes,Yes,Yes,No,Yes,Met,2/3,Not Met
 "Motilal Nehru National Institute of Tech,SP01",SBC08071E,Student Branch Chapter,Motilal Nehru National Institute of Tech,SP01,1,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Motilal Nehru National Institute of Tech,SSC37",SBC08071G,Student Branch Chapter,Motilal Nehru National Institute of Tech,SSC37,0,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
 "National Institute of Technology-Uttarakhand,MTT17",SBC20130C,Student Branch Chapter,National Institute of Technology - Uttarakhand,MTT17,0,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
@@ -314,12 +314,12 @@ Zakir Hussain Coll of Engineering & Tech,STB08111,Student Branch,Zakir Hussain C
 "Pranveer Singh Institute of Technology,PE31",SBC14028C,Student Branch Chapter,Pranveer Singh Institute of Technology,PE31,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Pranveer Singh Institute of Technology,RA24",SBC14028B,Student Branch Chapter,Pranveer Singh Institute of Technology,RA24,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Quantum University-Roorkee, RA24",SBC10039,Student Branch Chapter,Quantum University-Roorkee,RA24,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
-"Rajiv Gandhi Institute of Petroleum Tech,COM19",SBC99414,Student Branch Chapter,Rajiv Gandhi Institute of Petroleum Technology,COM19,9,6,Yes,52,48,35,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
-"Rajiv Gandhi Institute of Petroleum Tech,RA24",SBC99414A,Student Branch Chapter,Rajiv Gandhi Institute of Petroleum Technology,RA24,6,6,Yes,58,52,17,2,Yes,Yes,,Yes,No,Yes,Yes,Yes,Met,3/3,Met
+"Rajiv Gandhi Institute of Petroleum Tech,COM19",SBC99414,Student Branch Chapter,Rajiv Gandhi Institute of Petroleum Technology,COM19,9,6,Yes,52,48,35,2,Yes,No,,Yes,No,No,No,No,Partial,2/3,Not Met
+"Rajiv Gandhi Institute of Petroleum Tech,RA24",SBC99414A,Student Branch Chapter,Rajiv Gandhi Institute of Petroleum Technology,RA24,6,6,Yes,58,52,17,2,Yes,Yes,,Yes,No,No,No,No,Met,3/3,Met
 "Rajkiya Engineering College, Ambedkar Nagar,PE31",SBC11386,Student Branch Chapter,"Rajkiya Engineering College, Ambedkar Nagar",PE31,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Rajkiya Engineering College, Banda,PE31",SBC11533,Student Branch Chapter,"Rajkiya Engineering College, Banda",PE31,17,6,Yes,8,3,13,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Rajkiya Engineering College, Mainpuri,C16",SBC10148B,Student Branch Chapter,"Rajkiya Engineering College, Mainpuri",C16,27,6,Yes,8,3,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
-"Rajkiya Engineering College, Mainpuri,IA34",SBC10148A,Student Branch Chapter,"Rajkiya Engineering College, Mainpuri",IA34,28,6,Yes,10,3,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
+"Rajkiya Engineering College, Mainpuri,IA34",SBC10148A,Student Branch Chapter,"Rajkiya Engineering College, Mainpuri",IA34,28,6,Yes,10,3,1,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Rajkiya Engineering College, Mainpuri,PE31",SBC10148,Student Branch Chapter,"Rajkiya Engineering College, Mainpuri",PE31,25,6,Yes,8,3,0,2,Yes,Yes,,Yes,Yes,Yes,Yes,Yes,Met,3/3,Met
 "Rajkiya Engineering College-Kannauj,C16",SBC11540,Student Branch Chapter,Rajkiya Engineering College-Kannauj,C16,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Rajkiya Engineering College-Kannauj,EMB18",SBC11540C,Student Branch Chapter,Rajkiya Engineering College-Kannauj,EMB18,2,6,No,0,0,0,2,No,No,,Yes,No,No,No,No,Partial,0/3,Not Met
@@ -346,7 +346,7 @@ Zakir Hussain Coll of Engineering & Tech,STB08111,Student Branch,Zakir Hussain C
 "Tulas Inst, The Engg & Man Coll-Dehradun,C16",SBC17561B,Student Branch Chapter,"Tulas Institute, The Engg & Man Coll-Dehradun",C16,0,6,No,4,3,0,2,Yes,No,,No,No,No,No,No,Not Met,1/3,Not Met
 "Tulas Inst, The Engg & Man Coll-Dehradun,MTT17",SBC17561,Student Branch Chapter,"Tulas Institute, The Engg & Man Coll-Dehradun",MTT17,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "Tulas Inst, The Engg & Man Coll-Dehradun,PE31",SBC17561A,Student Branch Chapter,"Tulas Institute, The Engg & Man Coll-Dehradun",PE31,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
-"Tulas Inst,Dehradun,IE13,NANO42,CEDA44,CSC41,SEN39",SBC17561C,Student Branch Chapter,"Tulas Institute, The Engg & Man Coll-Dehradun",SEN39,4,6,No,1,1,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
+"Tulas Inst,Dehradun,IE13,NANO42,CEDA44,CSC41,SEN39",SBC17561C,Student Branch Chapter,"Tulas Institute, The Engg & Man Coll-Dehradun",SEN39,4,6,No,1,1,1,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "United College of Eng & Research-Allahabad,C16",SBC15147,Student Branch Chapter,United College of Engineering & Research-Allahabad,C16,31,6,Yes,0,0,0,2,No,Yes,,Yes,Yes,Yes,Yes,Yes,Met,2/3,Not Met
 "United College of Engineering & Research,C16",SBC13091C,Student Branch Chapter,United College of Engineering & Research,C16,2,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
 "United College of Engineering & Research,MTT17",SBC13091A,Student Branch Chapter,United College of Engineering & Research,MTT17,0,6,No,0,0,0,2,No,No,,No,No,No,No,No,Not Met,0/3,Not Met
